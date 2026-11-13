@@ -64,10 +64,12 @@ REGISTER = os.path.join(ROOT, 'sources', 'data', 'meeting-register.csv')
 STAMPS = os.path.join(ROOT, 'sources', 'data', 'meeting-document-timestamps.csv')
 MEET = os.path.join(ROOT, 'sources', 'meetings')
 TEXT = os.path.join(MEET, 'text')
-OUT = os.path.join(ROOT, 'sources', 'data', 'oml-reviews')
+OUT = os.environ.get('OML_OUT') or os.path.join(ROOT, 'sources', 'data', 'oml-reviews')
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data', 'oml')
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
-MODEL = 'sonnet'
+# OML_MODEL / OML_OUT: a pilot on another model writes beside, never over, the held reviews,
+# and publishes nothing (12 November 2026, the Haiku pilot).
+MODEL = os.environ.get('OML_MODEL', 'sonnet')
 TIMEOUT = 900
 SITE = 'https://lunenburgbudgetproject.org'
 
@@ -562,7 +564,8 @@ def review(board, date, dry=False):
                     'at': dt.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'), 'cost_usd': cost},
     }
     write_json(out_path(board, date, ctx['video_id']), doc)
-    write_json(pub_path(board, date, ctx['video_id']), doc)
+    if not os.environ.get('OML_OUT'):
+        write_json(pub_path(board, date, ctx['video_id']), doc)
     print('wrote %s: %d finding(s) kept, %d dropped; %s' % (
         rel(out_path(board, date, ctx['video_id'])), len(kept), len(dropped),
         ', '.join('%d %s' % (v, k) for k, v in counts.items())))
