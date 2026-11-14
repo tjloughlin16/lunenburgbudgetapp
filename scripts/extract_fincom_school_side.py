@@ -515,8 +515,22 @@ def extract_e5():
                             break
                     if sport_name is None:
                         continue
-                    for yc, year in ((c0 + 1, 2020), (c0 + 2, 2021), (c0 + 3, 2022),
-                                      (c0 + 4, 2023)):
+                    # THE YEARS ARE READ OFF THE BLOCK'S OWN HEADER ROW, AND CONVERTED TO A
+                    # FISCAL YEAR. The header prints the season's CALENDAR year: `2023` on the
+                    # fall sheet is fall 2023, which is FY2024; on the winter sheet it is the
+                    # season that starts in 2023 (the sheet is titled `Winter 23-24`), also
+                    # FY2024; on the spring sheet `2024` is spring 2024, FY2024. This used to
+                    # store the calendar year as fiscal_year and assume 2020-2023 for every
+                    # sheet, so fall and winter were a year early and spring -- whose header
+                    # runs 2021-2024 -- was shifted a column as well (Q-HWFVR, fixed 14
+                    # November 2026).
+                    hdr_row = r - back
+                    spring = 'spring' in sheet_name.lower()
+                    for yc in range(c0 + 1, c0 + 5):
+                        cal = ws4.cell(row=hdr_row, column=yc).value
+                        if not isinstance(cal, (int, float)) or not 2000 < cal < 2100:
+                            continue
+                        year = int(cal) if spring else int(cal) + 1
                         val = ws4.cell(row=r, column=yc).value
                         if val is None or val in ('', 'N/A'):
                             continue
