@@ -322,7 +322,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [For AI assistants](/ask) | reference | — / 12.0 min | *(none declared)* |
 | [Ask us a question](/ask-a-question) | reference | — / 6.5 min | *(none declared)* |
 | [The blog](/blog) | reference | — / 6.8 min | *(none declared)* |
-| [The boards — each one, in one place](/boards) | reference | — / 11.6 min | *(none declared)* |
+| [The boards — each one, in one place](/boards) | reference | — / 11.7 min | *(none declared)* |
 | [Agricultural Commission](/boards/agricultural-commission) | reference | — / 7.6 min | *(none declared)* |
 | [Agricultural Commission — about](/boards/agricultural-commission/about) | reference | — / 7.3 min | *(none declared)* |
 | [Agricultural Commission — meetings](/boards/agricultural-commission/meetings) | reference | — / 7.4 min | *(none declared)* |
@@ -349,23 +349,23 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board of Assessors](/boards/board-of-assessors) | reference | — / 7.9 min | *(none declared)* |
 | [Board of Assessors — about](/boards/board-of-assessors/about) | reference | — / 6.0 min | *(none declared)* |
 | [Board of Assessors — finances](/boards/board-of-assessors/finance) | reference | — / 15.0 min | *(none declared)* |
-| [Board of Assessors — meetings](/boards/board-of-assessors/meetings) | reference | — / 11.1 min | *(none declared)* |
+| [Board of Assessors — meetings](/boards/board-of-assessors/meetings) | reference | — / 11.5 min | *(none declared)* |
 | [Board of Assessors — missing records](/boards/board-of-assessors/records) | reference | — / 9.9 min | *(none declared)* |
 | [Board of Assessors — budget schedule](/boards/board-of-assessors/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Assessors — where the time goes](/boards/board-of-assessors/time) | reference | — / 6.0 min | *(none declared)* |
 | [Board of Assessors: transfers](/boards/board-of-assessors/transfers) | reference | — / 6.7 min | *(none declared)* |
-| [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 59.4 min | *(none declared)* |
+| [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 59.5 min | *(none declared)* |
 | [Board of Health](/boards/board-of-health) | reference | — / 7.8 min | *(none declared)* |
 | [Board of Health — about](/boards/board-of-health/about) | reference | — / 7.0 min | *(none declared)* |
 | [Board of Health — finances](/boards/board-of-health/finance) | reference | — / 15.9 min | *(none declared)* |
-| [Board of Health — meetings](/boards/board-of-health/meetings) | reference | — / 7.5 min | *(none declared)* |
+| [Board of Health — meetings](/boards/board-of-health/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Board of Health — missing records](/boards/board-of-health/records) | reference | — / 13.1 min | *(none declared)* |
 | [Board of Health — budget schedule](/boards/board-of-health/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Board of Health — where the time goes](/boards/board-of-health/time) | reference | — / 5.9 min | *(none declared)* |
 | [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 47.8 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Registrars — about](/boards/board-of-registrars/about) | reference | — / 5.8 min | *(none declared)* |
-| [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.1 min | *(none declared)* |
+| [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Board of Registrars — missing records](/boards/board-of-registrars/records) | reference | — / 8.7 min | *(none declared)* |
 | [Budget Task Force](/boards/budget-task-force) | reference | — / 7.1 min | *(none declared)* |
 | [Budget Task Force — about](/boards/budget-task-force/about) | reference | — / 8.2 min | *(none declared)* |
@@ -373,17 +373,17 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Budget Task Force — missing records](/boards/budget-task-force/records) | reference | — / 7.6 min | *(none declared)* |
 | [Budget Task Force — where the time goes](/boards/budget-task-force/time) | reference | — / 5.9 min | *(none declared)* |
 | [Budget Task Force — votes](/boards/budget-task-force/votes) | reference | — / 8.4 min | *(none declared)* |
-| [Building Reuse Committee](/boards/building-reuse-committee) | reference | — / 7.0 min | *(none declared)* |
+| [Building Reuse Committee](/boards/building-reuse-committee) | reference | — / 7.1 min | *(none declared)* |
 | [Building Reuse Committee — meetings](/boards/building-reuse-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Building Reuse Committee — missing records](/boards/building-reuse-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [Building Reuse Committee — budget schedule](/boards/building-reuse-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Building Reuse Committee — votes](/boards/building-reuse-committee/votes) | reference | — / 11.1 min | *(none declared)* |
+| [Building Reuse Committee — votes](/boards/building-reuse-committee/votes) | reference | — / 12.5 min | *(none declared)* |
 | [By-Law Committee](/boards/by-law-committee) | reference | — / 7.4 min | *(none declared)* |
 | [By-Law Committee — about](/boards/by-law-committee/about) | reference | — / 5.9 min | *(none declared)* |
 | [By-Law Committee — meetings](/boards/by-law-committee/meetings) | reference | — / 7.4 min | *(none declared)* |
 | [By-Law Committee — missing records](/boards/by-law-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [By-Law Committee — budget schedule](/boards/by-law-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [By-Law Committee — votes](/boards/by-law-committee/votes) | reference | — / 11.5 min | *(none declared)* |
+| [By-Law Committee — votes](/boards/by-law-committee/votes) | reference | — / 11.7 min | *(none declared)* |
 | [Cable Advisory Committee](/boards/cable-advisory-committee) | reference | — / 7.9 min | *(none declared)* |
 | [Cable Advisory Committee — about](/boards/cable-advisory-committee/about) | reference | — / 6.7 min | *(none declared)* |
 | [Cable Advisory Committee — meetings](/boards/cable-advisory-committee/meetings) | reference | — / 7.0 min | *(none declared)* |
@@ -394,11 +394,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 7.7 min | *(none declared)* |
 | [Capital Planning Committee — about](/boards/capital-planning-committee/about) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — finances](/boards/capital-planning-committee/finance) | reference | — / 15.3 min | *(none declared)* |
-| [Capital Planning Committee — meetings](/boards/capital-planning-committee/meetings) | reference | — / 10.8 min | *(none declared)* |
+| [Capital Planning Committee — meetings](/boards/capital-planning-committee/meetings) | reference | — / 10.9 min | *(none declared)* |
 | [Capital Planning Committee — missing records](/boards/capital-planning-committee/records) | reference | — / 11.7 min | *(none declared)* |
 | [Capital Planning Committee — budget schedule](/boards/capital-planning-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Capital Planning Committee — where the time goes](/boards/capital-planning-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 27.7 min | *(none declared)* |
+| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 29.5 min | *(none declared)* |
 | [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.9 min | *(none declared)* |
 | [Cemetery Commission — about](/boards/cemetery-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Cemetery Commission — finances](/boards/cemetery-commission/finance) | reference | — / 16.0 min | *(none declared)* |
@@ -420,42 +420,42 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Conservation Commission Public Hearing — meetings](/boards/conservation-commission-public-hearing/meetings) | reference | — / 6.1 min | *(none declared)* |
 | [Conservation Commission — about](/boards/conservation-commission/about) | reference | — / 6.6 min | *(none declared)* |
 | [Conservation Commission — finances](/boards/conservation-commission/finance) | reference | — / 15.3 min | *(none declared)* |
-| [Conservation Commission — meetings](/boards/conservation-commission/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Conservation Commission — meetings](/boards/conservation-commission/meetings) | reference | — / 11.0 min | *(none declared)* |
 | [Conservation Commission — missing records](/boards/conservation-commission/records) | reference | — / 13.0 min | *(none declared)* |
 | [Conservation Commission — budget schedule](/boards/conservation-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Conservation Commission — where the time goes](/boards/conservation-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Conservation Commission: transfers](/boards/conservation-commission/transfers) | reference | — / 7.2 min | *(none declared)* |
-| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 189.5 min | *(none declared)* |
-| [Council on Aging](/boards/council-on-aging) | reference | — / 8.6 min | *(none declared)* |
+| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 189.6 min | *(none declared)* |
+| [Council on Aging](/boards/council-on-aging) | reference | — / 8.7 min | *(none declared)* |
 | [Council on Aging — about](/boards/council-on-aging/about) | reference | — / 6.5 min | *(none declared)* |
 | [Council on Aging — finances](/boards/council-on-aging/finance) | reference | — / 15.1 min | *(none declared)* |
-| [Council on Aging — meetings](/boards/council-on-aging/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Council on Aging — meetings](/boards/council-on-aging/meetings) | reference | — / 11.0 min | *(none declared)* |
 | [Council on Aging — missing records](/boards/council-on-aging/records) | reference | — / 9.4 min | *(none declared)* |
 | [Council on Aging — budget schedule](/boards/council-on-aging/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Council on Aging — where the time goes](/boards/council-on-aging/time) | reference | — / 5.9 min | *(none declared)* |
-| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 39.3 min | *(none declared)* |
+| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 38.3 min | *(none declared)* |
 | [Cultural Council](/boards/cultural-council) | reference | — / 6.9 min | *(none declared)* |
 | [Cultural Council — about](/boards/cultural-council/about) | reference | — / 6.9 min | *(none declared)* |
 | [Cultural Council — finances](/boards/cultural-council/finance) | reference | — / 14.5 min | *(none declared)* |
 | [Cultural Council — meetings](/boards/cultural-council/meetings) | reference | — / 7.4 min | *(none declared)* |
 | [Cultural Council — missing records](/boards/cultural-council/records) | reference | — / 9.0 min | *(none declared)* |
 | [Cultural Council — votes](/boards/cultural-council/votes) | reference | — / 26.1 min | *(none declared)* |
-| [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 7.0 min | *(none declared)* |
+| [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 7.2 min | *(none declared)* |
 | [Devens Regional Oversight Committee — meetings](/boards/devens-regional-oversight-committee/meetings) | reference | — / 6.5 min | *(none declared)* |
 | [Devens Regional Oversight Committee — missing records](/boards/devens-regional-oversight-committee/records) | reference | — / 7.6 min | *(none declared)* |
 | [Devens Regional Oversight Committee — budget schedule](/boards/devens-regional-oversight-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 8.5 min | *(none declared)* |
+| [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 10.6 min | *(none declared)* |
 | [Economic Development Committee](/boards/economic-development-committee) | reference | — / 7.6 min | *(none declared)* |
 | [Economic Development Committee — about](/boards/economic-development-committee/about) | reference | — / 8.5 min | *(none declared)* |
-| [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 9.0 min | *(none declared)* |
+| [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 8.8 min | *(none declared)* |
 | [Economic Development Committee — missing records](/boards/economic-development-committee/records) | reference | — / 8.5 min | *(none declared)* |
 | [Economic Development Committee — where the time goes](/boards/economic-development-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Economic Development Committee — votes](/boards/economic-development-committee/votes) | reference | — / 9.2 min | *(none declared)* |
 | [Federal Energy Regulatory Commission](/boards/ferc) | reference | — / 6.0 min | *(none declared)* |
 | [Federal Energy Regulatory Commission — meetings](/boards/ferc/meetings) | reference | — / 5.9 min | *(none declared)* |
-| [Finance Committee](/boards/finance-committee) | reference | — / 8.9 min | *(none declared)* |
+| [Finance Committee](/boards/finance-committee) | reference | — / 8.5 min | *(none declared)* |
 | [Finance Committee Appointing Committee](/boards/finance-committee-appointing-committee) | reference | — / 7.7 min | *(none declared)* |
-| [Finance Committee Appointing Committee — meetings](/boards/finance-committee-appointing-committee/meetings) | reference | — / 7.1 min | *(none declared)* |
+| [Finance Committee Appointing Committee — meetings](/boards/finance-committee-appointing-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Finance Committee Appointing Committee — missing records](/boards/finance-committee-appointing-committee/records) | reference | — / 8.3 min | *(none declared)* |
 | [Finance Committee Appointing Committee — where the time goes](/boards/finance-committee-appointing-committee/time) | reference | — / 5.7 min | *(none declared)* |
 | [Finance Committee Appointing Committee — votes](/boards/finance-committee-appointing-committee/votes) | reference | — / 13.6 min | *(none declared)* |
@@ -465,7 +465,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee Public Hearing — votes](/boards/finance-committee-public-hearing/votes) | reference | — / 11.1 min | *(none declared)* |
 | [Finance Committee — about](/boards/finance-committee/about) | reference | — / 7.2 min | *(none declared)* |
 | [Finance Committee — finances](/boards/finance-committee/finance) | reference | — / 14.2 min | *(none declared)* |
-| [Finance Committee — meetings](/boards/finance-committee/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Finance Committee — meetings](/boards/finance-committee/meetings) | reference | — / 10.6 min | *(none declared)* |
 | [Finance Committee — missing records](/boards/finance-committee/records) | reference | — / 13.6 min | *(none declared)* |
 | [Finance Committee — budget schedule](/boards/finance-committee/schedule) | reference | — / 7.5 min | *(none declared)* |
 | [Finance Committee — where the time goes](/boards/finance-committee/time) | reference | — / 5.9 min | *(none declared)* |
@@ -476,7 +476,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Green Communities Committee — meetings](/boards/green-communities-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Green Communities Committee — missing records](/boards/green-communities-committee/records) | reference | — / 9.0 min | *(none declared)* |
 | [Green Communities Committee — budget schedule](/boards/green-communities-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [Green Communities Committee — votes](/boards/green-communities-committee/votes) | reference | — / 16.4 min | *(none declared)* |
+| [Green Communities Committee — votes](/boards/green-communities-committee/votes) | reference | — / 20.6 min | *(none declared)* |
 | [Green Community Task Force](/boards/green-community-task-force) | reference | — / 7.4 min | *(none declared)* |
 | [Green Community Task Force — about](/boards/green-community-task-force/about) | reference | — / 5.7 min | *(none declared)* |
 | [Green Community Task Force — meetings](/boards/green-community-task-force/meetings) | reference | — / 9.2 min | *(none declared)* |
@@ -485,11 +485,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Historical Commission](/boards/historical-commission) | reference | — / 7.5 min | *(none declared)* |
 | [Historical Commission — about](/boards/historical-commission/about) | reference | — / 6.8 min | *(none declared)* |
 | [Historical Commission — finances](/boards/historical-commission/finance) | reference | — / 15.1 min | *(none declared)* |
-| [Historical Commission — meetings](/boards/historical-commission/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Historical Commission — meetings](/boards/historical-commission/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [Historical Commission — missing records](/boards/historical-commission/records) | reference | — / 12.5 min | *(none declared)* |
 | [Historical Commission — budget schedule](/boards/historical-commission/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Historical Commission — where the time goes](/boards/historical-commission/time) | reference | — / 5.9 min | *(none declared)* |
-| [Historical Commission — votes](/boards/historical-commission/votes) | reference | — / 27.8 min | *(none declared)* |
+| [Historical Commission — votes](/boards/historical-commission/votes) | reference | — / 27.9 min | *(none declared)* |
 | [Land Acquisition Committee](/boards/land-acquisition-committee) | reference | — / 6.3 min | *(none declared)* |
 | [Land Acquisition Committee — meetings](/boards/land-acquisition-committee/meetings) | reference | — / 6.3 min | *(none declared)* |
 | [Land Acquisition Committee — missing records](/boards/land-acquisition-committee/records) | reference | — / 7.4 min | *(none declared)* |
@@ -514,10 +514,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lunenburg Hazard Mitigation Plan Team Committee — missing records](/boards/lunenburg-hazard-mitigation-plan-team-committee/records) | reference | — / 7.2 min | *(none declared)* |
 | [Lunenburg Housing Authority](/boards/lunenburg-housing-authority) | reference | — / 7.4 min | *(none declared)* |
 | [Lunenburg Housing Authority — about](/boards/lunenburg-housing-authority/about) | reference | — / 6.1 min | *(none declared)* |
-| [Lunenburg Housing Authority — meetings](/boards/lunenburg-housing-authority/meetings) | reference | — / 7.4 min | *(none declared)* |
+| [Lunenburg Housing Authority — meetings](/boards/lunenburg-housing-authority/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [Lunenburg Housing Authority — missing records](/boards/lunenburg-housing-authority/records) | reference | — / 8.5 min | *(none declared)* |
 | [Lunenburg Housing Authority — budget schedule](/boards/lunenburg-housing-authority/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 41.0 min | *(none declared)* |
+| [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 41.1 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 8.1 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — about](/boards/lunenburg-municipal-building-design-committee/about) | reference | — / 6.8 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — meetings](/boards/lunenburg-municipal-building-design-committee/meetings) | reference | — / 10.8 min | *(none declared)* |
@@ -538,13 +538,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Massachusetts Energy Facilities Siting Board — meetings](/boards/ma-efsb/meetings) | reference | — / 5.9 min | *(none declared)* |
 | [Master Plan Steering Committee](/boards/master-plan-steering-committee) | reference | — / 7.7 min | *(none declared)* |
 | [Master Plan Steering Committee — about](/boards/master-plan-steering-committee/about) | reference | — / 9.3 min | *(none declared)* |
-| [Master Plan Steering Committee — meetings](/boards/master-plan-steering-committee/meetings) | reference | — / 9.3 min | *(none declared)* |
+| [Master Plan Steering Committee — meetings](/boards/master-plan-steering-committee/meetings) | reference | — / 9.4 min | *(none declared)* |
 | [Master Plan Steering Committee — missing records](/boards/master-plan-steering-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [Master Plan Steering Committee — budget schedule](/boards/master-plan-steering-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Master Plan Steering Committee — where the time goes](/boards/master-plan-steering-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Master Plan Steering Committee — votes](/boards/master-plan-steering-committee/votes) | reference | — / 12.0 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee](/boards/nashoba-valley-reginal-dispatch-committee) | reference | — / 7.4 min | *(none declared)* |
-| [Nashoba Valley Reginal Dispatch Committee — meetings](/boards/nashoba-valley-reginal-dispatch-committee/meetings) | reference | — / 6.7 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee — meetings](/boards/nashoba-valley-reginal-dispatch-committee/meetings) | reference | — / 6.8 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee — missing records](/boards/nashoba-valley-reginal-dispatch-committee/records) | reference | — / 7.9 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee — budget schedule](/boards/nashoba-valley-reginal-dispatch-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee: transfers](/boards/nashoba-valley-reginal-dispatch-committee/transfers) | reference | — / 6.9 min | *(none declared)* |
@@ -558,11 +558,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Open Space Committee — missing records](/boards/open-space-committee/records) | reference | — / 10.2 min | *(none declared)* |
 | [Open Space Committee — budget schedule](/boards/open-space-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Open Space Committee — where the time goes](/boards/open-space-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 30.3 min | *(none declared)* |
+| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 30.6 min | *(none declared)* |
 | [Parks Commission](/boards/parks-commission) | reference | — / 8.2 min | *(none declared)* |
 | [Parks Commission — about](/boards/parks-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Parks Commission — finances](/boards/parks-commission/finance) | reference | — / 16.0 min | *(none declared)* |
-| [Parks Commission — meetings](/boards/parks-commission/meetings) | reference | — / 11.1 min | *(none declared)* |
+| [Parks Commission — meetings](/boards/parks-commission/meetings) | reference | — / 11.2 min | *(none declared)* |
 | [Parks Commission — missing records](/boards/parks-commission/records) | reference | — / 10.0 min | *(none declared)* |
 | [Parks Commission — budget schedule](/boards/parks-commission/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Parks Commission — where the time goes](/boards/parks-commission/time) | reference | — / 5.9 min | *(none declared)* |
@@ -574,16 +574,16 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Personnel Committee — missing records](/boards/personnel-committee/records) | reference | — / 9.7 min | *(none declared)* |
 | [Personnel Committee — budget schedule](/boards/personnel-committee/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Personnel Committee — where the time goes](/boards/personnel-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 53.2 min | *(none declared)* |
+| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 53.4 min | *(none declared)* |
 | [Planning Board](/boards/planning-board) | reference | — / 8.7 min | *(none declared)* |
 | [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 7.5 min | *(none declared)* |
-| [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Planning Board Public Hearing — missing records](/boards/planning-board-public-hearing/records) | reference | — / 6.9 min | *(none declared)* |
 | [Planning Board Public Hearing — budget schedule](/boards/planning-board-public-hearing/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Planning Board Public Hearing — votes](/boards/planning-board-public-hearing/votes) | reference | — / 9.8 min | *(none declared)* |
 | [Planning Board — about](/boards/planning-board/about) | reference | — / 8.6 min | *(none declared)* |
 | [Planning Board — finances](/boards/planning-board/finance) | reference | — / 15.4 min | *(none declared)* |
-| [Planning Board — meetings](/boards/planning-board/meetings) | reference | — / 11.6 min | *(none declared)* |
+| [Planning Board — meetings](/boards/planning-board/meetings) | reference | — / 11.7 min | *(none declared)* |
 | [Planning Board — missing records](/boards/planning-board/records) | reference | — / 13.4 min | *(none declared)* |
 | [Planning Board — budget schedule](/boards/planning-board/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Planning Board — where the time goes](/boards/planning-board/time) | reference | — / 5.9 min | *(none declared)* |
@@ -596,55 +596,56 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC) — budget schedule](/boards/public-access-cable-committee-pacc/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — where the time goes](/boards/public-access-cable-committee-pacc/time) | reference | — / 5.9 min | *(none declared)* |
 | [Public Access Cable Committee (PACC): transfers](/boards/public-access-cable-committee-pacc/transfers) | reference | — / 6.9 min | *(none declared)* |
-| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 41.8 min | *(none declared)* |
-| [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.8 min | *(none declared)* |
-| [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.4 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 41.7 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.9 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — missing records](/boards/school-advisory-councils-committees/records) | reference | — / 14.9 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — budget schedule](/boards/school-advisory-councils-committees/schedule) | reference | — / 6.1 min | *(none declared)* |
-| [School Advisory Councils &amp; Committees — votes](/boards/school-advisory-councils-committees/votes) | reference | — / 14.6 min | *(none declared)* |
-| [School Building Committee](/boards/school-building-committee) | reference | — / 6.7 min | *(none declared)* |
-| [School Building Committee Meeting](/boards/school-building-committee-meeting) | reference | — / 7.3 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — votes](/boards/school-advisory-councils-committees/votes) | reference | — / 14.9 min | *(none declared)* |
+| [School Building Committee](/boards/school-building-committee) | reference | — / 7.2 min | *(none declared)* |
+| [School Building Committee Meeting](/boards/school-building-committee-meeting) | reference | — / 7.4 min | *(none declared)* |
 | [School Building Committee Meeting — meetings](/boards/school-building-committee-meeting/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [School Building Committee Meeting — missing records](/boards/school-building-committee-meeting/records) | reference | — / 9.7 min | *(none declared)* |
 | [School Building Committee Meeting — budget schedule](/boards/school-building-committee-meeting/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [School Building Committee Meeting — votes](/boards/school-building-committee-meeting/votes) | reference | — / 35.8 min | *(none declared)* |
-| [School Building Committee — meetings](/boards/school-building-committee/meetings) | reference | — / 6.7 min | *(none declared)* |
-| [School Building Committee — where the time goes](/boards/school-building-committee/time) | reference | — / 5.7 min | *(none declared)* |
-| [School Building Committee — votes](/boards/school-building-committee/votes) | reference | — / 7.7 min | *(none declared)* |
-| [School Committee](/boards/school-committee) | reference | — / 9.4 min | *(none declared)* |
+| [School Building Committee Meeting — votes](/boards/school-building-committee-meeting/votes) | reference | — / 36.5 min | *(none declared)* |
+| [School Building Committee — meetings](/boards/school-building-committee/meetings) | reference | — / 8.3 min | *(none declared)* |
+| [School Building Committee — where the time goes](/boards/school-building-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [School Building Committee: transfers](/boards/school-building-committee/transfers) | reference | — / 6.7 min | *(none declared)* |
+| [School Building Committee — votes](/boards/school-building-committee/votes) | reference | — / 18.6 min | *(none declared)* |
+| [School Committee](/boards/school-committee) | reference | — / 9.5 min | *(none declared)* |
 | [School Committee — about](/boards/school-committee/about) | reference | — / 11.2 min | *(none declared)* |
-| [School Committee — meetings](/boards/school-committee/meetings) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee — meetings](/boards/school-committee/meetings) | reference | — / 11.5 min | *(none declared)* |
 | [School Committee — missing records](/boards/school-committee/records) | reference | — / 17.6 min | *(none declared)* |
 | [School Committee — budget schedule](/boards/school-committee/schedule) | reference | — / 6.8 min | *(none declared)* |
 | [School Committee — where the time goes](/boards/school-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 7.8 min | *(none declared)* |
-| [School Committee — votes](/boards/school-committee/votes) | reference | — / 98.4 min | *(none declared)* |
-| [Select Board](/boards/select-board) | reference | — / 9.6 min | *(none declared)* |
+| [School Committee — votes](/boards/school-committee/votes) | reference | — / 98.9 min | *(none declared)* |
+| [Select Board](/boards/select-board) | reference | — / 9.9 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
 | [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.4 min | *(none declared)* |
 | [Select Board — about](/boards/select-board/about) | reference | — / 6.1 min | *(none declared)* |
 | [Select Board — finances](/boards/select-board/finance) | reference | — / 17.8 min | *(none declared)* |
-| [Select Board — meetings](/boards/select-board/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Select Board — meetings](/boards/select-board/meetings) | reference | — / 11.2 min | *(none declared)* |
 | [Select Board — missing records](/boards/select-board/records) | reference | — / 16.6 min | *(none declared)* |
 | [Select Board — budget schedule](/boards/select-board/schedule) | reference | — / 7.8 min | *(none declared)* |
 | [Select Board — where the time goes](/boards/select-board/time) | reference | — / 5.9 min | *(none declared)* |
 | [Select Board: transfers](/boards/select-board/transfers) | reference | — / 10.9 min | *(none declared)* |
-| [Select Board — votes](/boards/select-board/votes) | reference | — / 128.0 min | *(none declared)* |
-| [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 7.3 min | *(none declared)* |
-| [Senior Citizens Tax Work Off Committee — meetings](/boards/senior-citizens-tax-work-off-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Select Board — votes](/boards/select-board/votes) | reference | — / 131.6 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 7.4 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — meetings](/boards/senior-citizens-tax-work-off-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — missing records](/boards/senior-citizens-tax-work-off-committee/records) | reference | — / 7.7 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — budget schedule](/boards/senior-citizens-tax-work-off-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — where the time goes](/boards/senior-citizens-tax-work-off-committee/time) | reference | — / 5.7 min | *(none declared)* |
-| [Senior Citizens Tax Work Off Committee — votes](/boards/senior-citizens-tax-work-off-committee/votes) | reference | — / 11.1 min | *(none declared)* |
-| [Sewer Commission](/boards/sewer-commission) | reference | — / 8.3 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — votes](/boards/senior-citizens-tax-work-off-committee/votes) | reference | — / 11.8 min | *(none declared)* |
+| [Sewer Commission](/boards/sewer-commission) | reference | — / 9.0 min | *(none declared)* |
 | [Sewer Commission — about](/boards/sewer-commission/about) | reference | — / 8.0 min | *(none declared)* |
 | [Sewer Commission — finances](/boards/sewer-commission/finance) | reference | — / 15.5 min | *(none declared)* |
-| [Sewer Commission — meetings](/boards/sewer-commission/meetings) | reference | — / 10.7 min | *(none declared)* |
+| [Sewer Commission — meetings](/boards/sewer-commission/meetings) | reference | — / 11.8 min | *(none declared)* |
 | [Sewer Commission — missing records](/boards/sewer-commission/records) | reference | — / 15.8 min | *(none declared)* |
 | [Sewer Commission — budget schedule](/boards/sewer-commission/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Sewer Commission — where the time goes](/boards/sewer-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Sewer Commission: transfers](/boards/sewer-commission/transfers) | reference | — / 7.3 min | *(none declared)* |
-| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 49.0 min | *(none declared)* |
+| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 49.2 min | *(none declared)* |
 | [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 7.8 min | *(none declared)* |
 | [Stormwater Task Force — about](/boards/stormwater-task-force/about) | reference | — / 6.9 min | *(none declared)* |
 | [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.2 min | *(none declared)* |
@@ -658,23 +659,23 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [TCP Building Design Committee — votes](/boards/tcp-building-design-committee/votes) | reference | — / 15.1 min | *(none declared)* |
 | [Town Manager Screening Committee](/boards/town-manager-screening-committee) | reference | — / 7.4 min | *(none declared)* |
 | [Town Manager Screening Committee — about](/boards/town-manager-screening-committee/about) | reference | — / 7.3 min | *(none declared)* |
-| [Town Manager Screening Committee — meetings](/boards/town-manager-screening-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Town Manager Screening Committee — meetings](/boards/town-manager-screening-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Town Manager Screening Committee — missing records](/boards/town-manager-screening-committee/records) | reference | — / 7.5 min | *(none declared)* |
 | [Town Manager Screening Committee — where the time goes](/boards/town-manager-screening-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Town Manager Screening Committee — votes](/boards/town-manager-screening-committee/votes) | reference | — / 9.3 min | *(none declared)* |
+| [Town Manager Screening Committee — votes](/boards/town-manager-screening-committee/votes) | reference | — / 9.2 min | *(none declared)* |
 | [Town Meeting](/boards/town-meeting) | reference | — / 7.7 min | *(none declared)* |
 | [Town Meeting — finances](/boards/town-meeting/finance) | reference | — / 14.5 min | *(none declared)* |
-| [Town Meeting — meetings](/boards/town-meeting/meetings) | reference | — / 8.3 min | *(none declared)* |
+| [Town Meeting — meetings](/boards/town-meeting/meetings) | reference | — / 8.8 min | *(none declared)* |
 | [Town Meeting — where the time goes](/boards/town-meeting/time) | reference | — / 5.9 min | *(none declared)* |
 | [Town Meeting: transfers](/boards/town-meeting/transfers) | reference | — / 7.6 min | *(none declared)* |
-| [Town Meeting — votes](/boards/town-meeting/votes) | reference | — / 99.3 min | *(none declared)* |
+| [Town Meeting — votes](/boards/town-meeting/votes) | reference | — / 119.8 min | *(none declared)* |
 | [Tri-Board](/boards/tri-board) | reference | — / 6.0 min | *(none declared)* |
 | [Tri-Board — about](/boards/tri-board/about) | reference | — / 5.7 min | *(none declared)* |
 | [Tri-Board — meetings](/boards/tri-board/meetings) | reference | — / 6.2 min | *(none declared)* |
 | [Trust Fund Commission](/boards/trust-fund-commission) | reference | — / 8.1 min | *(none declared)* |
 | [Trust Fund Commission — about](/boards/trust-fund-commission/about) | reference | — / 6.4 min | *(none declared)* |
 | [Trust Fund Commission — finances](/boards/trust-fund-commission/finance) | reference | — / 15.1 min | *(none declared)* |
-| [Trust Fund Commission — meetings](/boards/trust-fund-commission/meetings) | reference | — / 9.6 min | *(none declared)* |
+| [Trust Fund Commission — meetings](/boards/trust-fund-commission/meetings) | reference | — / 9.7 min | *(none declared)* |
 | [Trust Fund Commission — missing records](/boards/trust-fund-commission/records) | reference | — / 7.7 min | *(none declared)* |
 | [Trust Fund Commission — budget schedule](/boards/trust-fund-commission/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Trust Fund Commission — where the time goes](/boards/trust-fund-commission/time) | reference | — / 5.9 min | *(none declared)* |
@@ -682,11 +683,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals](/boards/zoning-board-of-appeals) | reference | — / 8.1 min | *(none declared)* |
 | [Zoning Board of Appeals — about](/boards/zoning-board-of-appeals/about) | reference | — / 7.0 min | *(none declared)* |
 | [Zoning Board of Appeals — finances](/boards/zoning-board-of-appeals/finance) | reference | — / 14.5 min | *(none declared)* |
-| [Zoning Board of Appeals — meetings](/boards/zoning-board-of-appeals/meetings) | reference | — / 10.9 min | *(none declared)* |
+| [Zoning Board of Appeals — meetings](/boards/zoning-board-of-appeals/meetings) | reference | — / 11.0 min | *(none declared)* |
 | [Zoning Board of Appeals — missing records](/boards/zoning-board-of-appeals/records) | reference | — / 14.7 min | *(none declared)* |
 | [Zoning Board of Appeals — where the time goes](/boards/zoning-board-of-appeals/time) | reference | — / 5.9 min | *(none declared)* |
-| [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 32.9 min | *(none declared)* |
-| [The budget feed — FY28](/budget-feed) | reference | — / 23.0 min | *(none declared)* |
+| [Zoning Board of Appeals — votes](/boards/zoning-board-of-appeals/votes) | reference | — / 33.4 min | *(none declared)* |
+| [The budget feed — FY28](/budget-feed) | reference | — / 22.7 min | *(none declared)* |
 | [Build your own budget](/build-your-own-budget) | tool | — / 16.4 min | *(none declared)* |
 | [The database](/database) | reference | — / 7.8 min | *(none declared)* |
 | [The departments](/departments) | reference | — / 7.7 min | *(none declared)* |
@@ -711,9 +712,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Worcester Regional Retirement System](/departments/worcester-regional-retirement) | reference | — / 14.0 min | *(none declared)* |
 | [Find the money](/find-the-money) | tool | — / 11.9 min | *(none declared)* |
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
-| [Grants open to Lunenburg — DESE programs a school district can apply for](/grants-open-to-lunenburg) | reference | — / 17.8 min | *(none declared)* |
-| [Job postings — the town and the schools](/jobs) | reference | — / 14.9 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 657.6 min | *(none declared)* |
+| [Grants open to Lunenburg — DESE programs a school district can apply for](/grants-open-to-lunenburg) | reference | — / 17.2 min | *(none declared)* |
+| [Job postings — the town and the schools](/jobs) | reference | — / 15.3 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 727.5 min | *(none declared)* |
 | [Agricultural Commission, June 18, 2020](/meeting-minutes/agricultural-commission/2020-06-18-FcoS_Nv9ecA) | reference | — / 9.7 min | *(none declared)* |
 | [Agricultural Commission, July 16, 2020](/meeting-minutes/agricultural-commission/2020-07-16-E1edQaRdCbg) | reference | — / 9.7 min | *(none declared)* |
 | [Agricultural Commission, August 27, 2020](/meeting-minutes/agricultural-commission/2020-08-27-h1zx0jdZoZk) | reference | — / 11.5 min | *(none declared)* |
@@ -999,6 +1000,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Charter Review Committee, February 13, 2019](/meeting-minutes/charter-review-committee/2019-02-13-odXhiDeUTPs) | reference | — / 11.2 min | *(none declared)* |
 | [Charter Review Committee, March 6, 2019](/meeting-minutes/charter-review-committee/2019-03-06-2QbNYUUsvX8) | reference | — / 11.3 min | *(none declared)* |
 | [Charter Review Committee, March 13, 2019](/meeting-minutes/charter-review-committee/2019-03-13-ehoTRe9mxuU) | reference | — / 11.5 min | *(none declared)* |
+| [Conservation Commission, June 15, 2016](/meeting-minutes/conservation-commission/2016-06-15-CbRnJhxVg0w) | reference | — / 12.6 min | *(none declared)* |
+| [Conservation Commission, August 17, 2016](/meeting-minutes/conservation-commission/2016-08-17-gI6KDES9l6s) | reference | — / 11.8 min | *(none declared)* |
+| [Conservation Commission, February 15, 2017](/meeting-minutes/conservation-commission/2017-02-15-GI3xyP6PeiY) | reference | — / 15.3 min | *(none declared)* |
+| [Conservation Commission, May 17, 2017](/meeting-minutes/conservation-commission/2017-05-17-FmUl1WsxnKE) | reference | — / 9.5 min | *(none declared)* |
 | [Conservation Commission, June 21, 2017](/meeting-minutes/conservation-commission/2017-06-21-xO4KytR9YO4) | reference | — / 11.7 min | *(none declared)* |
 | [Conservation Commission, July 19, 2017](/meeting-minutes/conservation-commission/2017-07-19-Sbz9L1yF5tc) | reference | — / 15.5 min | *(none declared)* |
 | [Conservation Commission, August 16, 2017](/meeting-minutes/conservation-commission/2017-08-16-33F25QDG6HA) | reference | — / 11.2 min | *(none declared)* |
@@ -1230,6 +1235,28 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-PbkkhwgRyUQ) | reference | — / 9.5 min | *(none declared)* |
 | [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-aRgNS23pU6U) | reference | — / 9.5 min | *(none declared)* |
 | [Finance Committee Appointing Committee, July 6, 2026](/meeting-minutes/finance-committee-appointing-committee/2026-07-06-CqrerhpDpWk) | reference | — / 10.4 min | *(none declared)* |
+| [Finance Committee, October 10, 2013](/meeting-minutes/finance-committee/2013-10-10-8HqpZ1U9D1c) | reference | — / 13.3 min | *(none declared)* |
+| [Finance Committee, December 12, 2013](/meeting-minutes/finance-committee/2013-12-12-7d1xDTZf60M) | reference | — / 14.1 min | *(none declared)* |
+| [Finance Committee, December 19, 2013](/meeting-minutes/finance-committee/2013-12-19-RwUgNJWh6T8) | reference | — / 12.8 min | *(none declared)* |
+| [Finance Committee, February 27, 2014](/meeting-minutes/finance-committee/2014-02-27-q8B6W3q3QkQ) | reference | — / 12.7 min | *(none declared)* |
+| [Finance Committee, March 6, 2014](/meeting-minutes/finance-committee/2014-03-06-zfnPvJcxBnI) | reference | — / 13.2 min | *(none declared)* |
+| [Finance Committee, March 13, 2014](/meeting-minutes/finance-committee/2014-03-13-MKRzn8ImAt4) | reference | — / 13.1 min | *(none declared)* |
+| [Finance Committee, March 20, 2014](/meeting-minutes/finance-committee/2014-03-20-Ek-E5flRzWM) | reference | — / 10.5 min | *(none declared)* |
+| [Finance Committee, March 27, 2014](/meeting-minutes/finance-committee/2014-03-27-UTQPme-_cj4) | reference | — / 14.2 min | *(none declared)* |
+| [Finance Committee, April 3, 2014](/meeting-minutes/finance-committee/2014-04-03-A76gkF8zW6E) | reference | — / 15.1 min | *(none declared)* |
+| [Finance Committee, January 22, 2015](/meeting-minutes/finance-committee/2015-01-22-oOHwY65r0hI) | reference | — / 13.4 min | *(none declared)* |
+| [Finance Committee, February 24, 2015](/meeting-minutes/finance-committee/2015-02-24-3P2rjA8OrGE) | reference | — / 9.0 min | *(none declared)* |
+| [Finance Committee, February 26, 2015](/meeting-minutes/finance-committee/2015-02-26-rTjgY9oJwAo) | reference | — / 12.1 min | *(none declared)* |
+| [Finance Committee, March 5, 2015](/meeting-minutes/finance-committee/2015-03-05-sutaEEUCZ5c) | reference | — / 12.3 min | *(none declared)* |
+| [Finance Committee, March 19, 2015](/meeting-minutes/finance-committee/2015-03-19-w_mdnw3HDxA) | reference | — / 12.2 min | *(none declared)* |
+| [Finance Committee, March 26, 2015](/meeting-minutes/finance-committee/2015-03-26-FrlXC2pFJPk) | reference | — / 12.5 min | *(none declared)* |
+| [Finance Committee, April 2, 2015](/meeting-minutes/finance-committee/2015-04-02-9uL9LpTYVXY) | reference | — / 17.1 min | *(none declared)* |
+| [Finance Committee, November 12, 2015](/meeting-minutes/finance-committee/2015-11-12-jE7wqiSdkXY) | reference | — / 14.5 min | *(none declared)* |
+| [Finance Committee, January 28, 2016](/meeting-minutes/finance-committee/2016-01-28-ONLoyi6CxU4) | reference | — / 13.6 min | *(none declared)* |
+| [Finance Committee, February 11, 2016](/meeting-minutes/finance-committee/2016-02-11-VFmXDqbsesw) | reference | — / 12.0 min | *(none declared)* |
+| [Finance Committee, February 18, 2016](/meeting-minutes/finance-committee/2016-02-18-303ZekkWayk) | reference | — / 14.1 min | *(none declared)* |
+| [Finance Committee, February 25, 2016](/meeting-minutes/finance-committee/2016-02-25-9AlkD_ffurE) | reference | — / 14.7 min | *(none declared)* |
+| [Finance Committee, March 31, 2016](/meeting-minutes/finance-committee/2016-03-31-p2XdUcCIN7U) | reference | — / 11.8 min | *(none declared)* |
 | [Finance Committee, November 9, 2017](/meeting-minutes/finance-committee/2017-11-09-HcnHYZ9EY5Y) | reference | — / 11.5 min | *(none declared)* |
 | [Finance Committee, February 8, 2018](/meeting-minutes/finance-committee/2018-02-08--IinRaeqvYs) | reference | — / 11.2 min | *(none declared)* |
 | [Finance Committee, February 15, 2018](/meeting-minutes/finance-committee/2018-02-15-QMGzQxm8HQ8) | reference | — / 10.8 min | *(none declared)* |
@@ -1451,6 +1478,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Green Community Task Force, September 8, 2025](/meeting-minutes/green-community-task-force/2025-09-08-d65uWizxA7g) | reference | — / 10.9 min | *(none declared)* |
 | [Green Community Task Force, December 15, 2025](/meeting-minutes/green-community-task-force/2025-12-15-bhjksjeL-rw) | reference | — / 12.1 min | *(none declared)* |
 | [Green Community Task Force, April 27, 2026](/meeting-minutes/green-community-task-force/2026-04-27-rjCqM1XMcwk) | reference | — / 12.6 min | *(none declared)* |
+| [Historical Commission, June 30, 2014](/meeting-minutes/historical-commission/2014-06-30-WLnP1uSGm34) | reference | — / 10.0 min | *(none declared)* |
 | [Historical Commission, July 2, 2020](/meeting-minutes/historical-commission/2020-07-02-4PwmG2UTmUk) | reference | — / 10.5 min | *(none declared)* |
 | [Historical Commission, September 17, 2020](/meeting-minutes/historical-commission/2020-09-17-v_1IGpd3rqw) | reference | — / 8.4 min | *(none declared)* |
 | [Historical Commission, October 26, 2020](/meeting-minutes/historical-commission/2020-10-26-VxZVTpvadZE) | reference | — / 10.4 min | *(none declared)* |
@@ -1867,6 +1895,45 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Personnel Committee, September 3, 2026](/meeting-minutes/personnel-committee/2026-09-03-x4HDKD0Ol7c) | reference | — / 10.0 min | *(none declared)* |
 | [Personnel Committee, September 21, 2026](/meeting-minutes/personnel-committee/2026-09-21-aJWq6GB5GYc) | reference | — / 10.5 min | *(none declared)* |
 | [Personnel Committee, October 19, 2026](/meeting-minutes/personnel-committee/2026-10-19-EXW6yhlcWlY) | reference | — / 9.9 min | *(none declared)* |
+| [Planning Board, June 10, 2013](/meeting-minutes/planning-board/2013-06-10-0YJSBY-9lsw) | reference | — / 13.4 min | *(none declared)* |
+| [Planning Board, July 8, 2013](/meeting-minutes/planning-board/2013-07-08-CDW6Nwubqqw) | reference | — / 14.1 min | *(none declared)* |
+| [Planning Board, July 22, 2013](/meeting-minutes/planning-board/2013-07-22-g19CDRLzoDU) | reference | — / 16.7 min | *(none declared)* |
+| [Planning Board, August 12, 2013](/meeting-minutes/planning-board/2013-08-12-z2swllG1iE8) | reference | — / 15.4 min | *(none declared)* |
+| [Planning Board, August 26, 2013](/meeting-minutes/planning-board/2013-08-26-sH8yi54qJrU) | reference | — / 11.8 min | *(none declared)* |
+| [Planning Board, September 9, 2013](/meeting-minutes/planning-board/2013-09-09-7PX0YramRPw) | reference | — / 12.8 min | *(none declared)* |
+| [Planning Board, November 25, 2013](/meeting-minutes/planning-board/2013-11-25-CMOb9Aurt_0) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, January 13, 2014](/meeting-minutes/planning-board/2014-01-13-ALKEF6yV9o0) | reference | — / 13.6 min | *(none declared)* |
+| [Planning Board, February 10, 2014](/meeting-minutes/planning-board/2014-02-10-IsYl3wJzd7M) | reference | — / 14.3 min | *(none declared)* |
+| [Planning Board, March 10, 2014](/meeting-minutes/planning-board/2014-03-10--XGreDrMA30) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, April 14, 2014](/meeting-minutes/planning-board/2014-04-14-n_5cGJEB3ME) | reference | — / 16.0 min | *(none declared)* |
+| [Planning Board, May 12, 2014](/meeting-minutes/planning-board/2014-05-12-OJloAP98XlY) | reference | — / 13.5 min | *(none declared)* |
+| [Planning Board, June 9, 2014](/meeting-minutes/planning-board/2014-06-09-tvrtXDhW07c) | reference | — / 15.6 min | *(none declared)* |
+| [Planning Board, June 23, 2014](/meeting-minutes/planning-board/2014-06-23-btjmX_gnK54) | reference | — / 13.4 min | *(none declared)* |
+| [Planning Board, July 14, 2014](/meeting-minutes/planning-board/2014-07-14-HGiC4glD9WQ) | reference | — / 14.5 min | *(none declared)* |
+| [Planning Board, August 11, 2014](/meeting-minutes/planning-board/2014-08-11-h3tzNz75FMk) | reference | — / 13.7 min | *(none declared)* |
+| [Planning Board, August 25, 2014](/meeting-minutes/planning-board/2014-08-25-LelqS4pFT4Q) | reference | — / 14.1 min | *(none declared)* |
+| [Planning Board, September 8, 2014](/meeting-minutes/planning-board/2014-09-08-nqWwQOhxTU0) | reference | — / 12.5 min | *(none declared)* |
+| [Planning Board, November 10, 2014](/meeting-minutes/planning-board/2014-11-10-x8ePni1dyDE) | reference | — / 14.8 min | *(none declared)* |
+| [Planning Board, December 8, 2014](/meeting-minutes/planning-board/2014-12-08-sSyacnoixxA) | reference | — / 14.7 min | *(none declared)* |
+| [Planning Board, December 22, 2014](/meeting-minutes/planning-board/2014-12-22-vlljKY5OzoE) | reference | — / 13.1 min | *(none declared)* |
+| [Planning Board, January 12, 2015](/meeting-minutes/planning-board/2015-01-12-3JLEEJlk9M0) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, February 23, 2015](/meeting-minutes/planning-board/2015-02-23-K5aQ5yFjsoI) | reference | — / 13.1 min | *(none declared)* |
+| [Planning Board, March 2, 2015](/meeting-minutes/planning-board/2015-03-02-CcNfEFjV6QI) | reference | — / 13.5 min | *(none declared)* |
+| [Planning Board, March 9, 2015](/meeting-minutes/planning-board/2015-03-09-10sRAiFtZVA) | reference | — / 13.0 min | *(none declared)* |
+| [Planning Board, March 23, 2015](/meeting-minutes/planning-board/2015-03-23-StB4V-1glFI) | reference | — / 13.0 min | *(none declared)* |
+| [Planning Board, April 13, 2015](/meeting-minutes/planning-board/2015-04-13-uoQbJj3QVXU) | reference | — / 14.6 min | *(none declared)* |
+| [Planning Board, April 27, 2015](/meeting-minutes/planning-board/2015-04-27-Vz1yHFFQIXY) | reference | — / 13.9 min | *(none declared)* |
+| [Planning Board, May 11, 2015](/meeting-minutes/planning-board/2015-05-11-bxgGiXUKinI) | reference | — / 13.6 min | *(none declared)* |
+| [Planning Board, July 2, 2015](/meeting-minutes/planning-board/2015-07-02-y--aF96KTyU) | reference | — / 10.4 min | *(none declared)* |
+| [Planning Board, February 22, 2016](/meeting-minutes/planning-board/2016-02-22-UgNSdIn3C6k) | reference | — / 13.2 min | *(none declared)* |
+| [Planning Board, March 14, 2016](/meeting-minutes/planning-board/2016-03-14-gmbkzK59nos) | reference | — / 16.1 min | *(none declared)* |
+| [Planning Board, May 23, 2016](/meeting-minutes/planning-board/2016-05-23-tt0AFosdrCk) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, June 27, 2016](/meeting-minutes/planning-board/2016-06-27-VutkZfqfVxE) | reference | — / 13.3 min | *(none declared)* |
+| [Planning Board, April 24, 2017](/meeting-minutes/planning-board/2017-04-24-p1rEPaJgOiQ) | reference | — / 12.3 min | *(none declared)* |
+| [Planning Board, May 8, 2017](/meeting-minutes/planning-board/2017-05-08-0iB0oUh0rkM) | reference | — / 10.0 min | *(none declared)* |
+| [Planning Board, May 22, 2017](/meeting-minutes/planning-board/2017-05-22-98zhqGE0aKk) | reference | — / 12.7 min | *(none declared)* |
+| [Planning Board, June 12, 2017](/meeting-minutes/planning-board/2017-06-12-fQtYllex7Xc) | reference | — / 10.8 min | *(none declared)* |
+| [Planning Board, June 12, 2017](/meeting-minutes/planning-board/2017-06-12-gjV8Wm8UlE0) | reference | — / 10.0 min | *(none declared)* |
 | [Planning Board, June 26, 2017](/meeting-minutes/planning-board/2017-06-26-8Emlw64M-Vc) | reference | — / 10.3 min | *(none declared)* |
 | [Planning Board, July 10, 2017](/meeting-minutes/planning-board/2017-07-10-sSKgfZhNVFI) | reference | — / 10.2 min | *(none declared)* |
 | [Planning Board, July 24, 2017](/meeting-minutes/planning-board/2017-07-24-GSiNBMaYENc) | reference | — / 11.7 min | *(none declared)* |
@@ -2054,6 +2121,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Planning Board, September 28, 2026](/meeting-minutes/planning-board/2026-09-28-JGeGZxGcC7I) | reference | — / 12.1 min | *(none declared)* |
 | [Planning Board, October 19, 2026](/meeting-minutes/planning-board/2026-10-19-zR2QmmC_450) | reference | — / 10.6 min | *(none declared)* |
 | [Planning Board, November 9, 2026](/meeting-minutes/planning-board/2026-11-09-g7q9b-2wlfE) | reference | — / 10.1 min | *(none declared)* |
+| [Public Access Cable Committee (PACC), December 2, 2013](/meeting-minutes/public-access-cable-committee-pacc/2013-12-02-6vgTcwm1MR0) | reference | — / 13.6 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), June 1, 2020](/meeting-minutes/public-access-cable-committee-pacc/2020-06-01-ggJtTUnF7OQ) | reference | — / 11.6 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), July 6, 2020](/meeting-minutes/public-access-cable-committee-pacc/2020-07-06-BwfgYSCCLR4) | reference | — / 10.8 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), August 3, 2020](/meeting-minutes/public-access-cable-committee-pacc/2020-08-03-nlV01FlmUC0) | reference | — / 13.5 min | *(none declared)* |
@@ -2126,7 +2194,57 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC), September 16, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0) | reference | — / 12.5 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), October 19, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-10-19-j9toEn9gN2o) | reference | — / 11.0 min | *(none declared)* |
 | [Public Access Cable Committee (PACC), November 9, 2026](/meeting-minutes/public-access-cable-committee-pacc/2026-11-09-t_QpKFeXtsY) | reference | — / 11.4 min | *(none declared)* |
+| [School Building Committee, June 17, 2013](/meeting-minutes/school-building-committee/2013-06-17-2zMn2XtZJUA) | reference | — / 10.1 min | *(none declared)* |
+| [School Building Committee, July 24, 2013](/meeting-minutes/school-building-committee/2013-07-24-cGKomTOpMXc) | reference | — / 9.7 min | *(none declared)* |
+| [School Building Committee, August 28, 2013](/meeting-minutes/school-building-committee/2013-08-28-djB39Y-URAA) | reference | — / 10.0 min | *(none declared)* |
+| [School Building Committee, September 30, 2013](/meeting-minutes/school-building-committee/2013-09-30-RZ7zBkEHFM8) | reference | — / 11.8 min | *(none declared)* |
+| [School Building Committee, December 5, 2013](/meeting-minutes/school-building-committee/2013-12-05-jHCQIWAVtec) | reference | — / 11.6 min | *(none declared)* |
+| [School Building Committee, January 15, 2014](/meeting-minutes/school-building-committee/2014-01-15-R_1epHndRXo) | reference | — / 10.3 min | *(none declared)* |
+| [School Building Committee, January 13, 2016](/meeting-minutes/school-building-committee/2016-01-13-YSShNfHEX0I) | reference | — / 10.9 min | *(none declared)* |
+| [School Building Committee, February 10, 2016](/meeting-minutes/school-building-committee/2016-02-10-_XXd7eUsUes) | reference | — / 13.6 min | *(none declared)* |
+| [School Building Committee, April 13, 2016](/meeting-minutes/school-building-committee/2016-04-13-RDWhhvw5NPA) | reference | — / 9.9 min | *(none declared)* |
+| [School Building Committee, May 11, 2016](/meeting-minutes/school-building-committee/2016-05-11-_K89gi5cI4k) | reference | — / 9.4 min | *(none declared)* |
+| [School Building Committee, July 13, 2016](/meeting-minutes/school-building-committee/2016-07-13-GNbmXcyuFWI) | reference | — / 9.5 min | *(none declared)* |
+| [School Building Committee, August 10, 2016](/meeting-minutes/school-building-committee/2016-08-10-41ZzgeJmJhY) | reference | — / 9.8 min | *(none declared)* |
+| [School Building Committee, October 12, 2016](/meeting-minutes/school-building-committee/2016-10-12-fDmmB2rBBNQ) | reference | — / 9.2 min | *(none declared)* |
+| [School Building Committee, November 9, 2016](/meeting-minutes/school-building-committee/2016-11-09-L0rFI-EPmjg) | reference | — / 9.7 min | *(none declared)* |
+| [School Building Committee, December 14, 2016](/meeting-minutes/school-building-committee/2016-12-14-2RsDexPJG0A) | reference | — / 9.5 min | *(none declared)* |
+| [School Building Committee, January 11, 2017](/meeting-minutes/school-building-committee/2017-01-11-spWtEnps7eQ) | reference | — / 8.9 min | *(none declared)* |
+| [School Building Committee, February 8, 2017](/meeting-minutes/school-building-committee/2017-02-08-oO1ES03BG74) | reference | — / 9.5 min | *(none declared)* |
+| [School Building Committee, May 10, 2017](/meeting-minutes/school-building-committee/2017-05-10-mxNuLnxi5cU) | reference | — / 9.5 min | *(none declared)* |
 | [School Building Committee, January 10, 2018](/meeting-minutes/school-building-committee/2018-01-10-hLvyvM0uQDA) | reference | — / 11.2 min | *(none declared)* |
+| [School Committee, May 2, 2012](/meeting-minutes/school-committee/2012-05-02-WaaC5yXBZvo) | reference | — / 7.7 min | *(none declared)* |
+| [School Committee, September 4, 2013](/meeting-minutes/school-committee/2013-09-04-1nHDB9PNHZk) | reference | — / 9.2 min | *(none declared)* |
+| [School Committee, October 2, 2013](/meeting-minutes/school-committee/2013-10-02-EYX1hAkSXMs) | reference | — / 10.5 min | *(none declared)* |
+| [School Committee, October 16, 2013](/meeting-minutes/school-committee/2013-10-16-7pwhIvNov3A) | reference | — / 11.2 min | *(none declared)* |
+| [School Committee, November 6, 2013](/meeting-minutes/school-committee/2013-11-06-8VA9I3au1eg) | reference | — / 10.9 min | *(none declared)* |
+| [School Committee, November 20, 2013](/meeting-minutes/school-committee/2013-11-20-oz_jCg6Fqs0) | reference | — / 12.3 min | *(none declared)* |
+| [School Committee, December 4, 2013](/meeting-minutes/school-committee/2013-12-04--7xcfNQxy9I) | reference | — / 10.1 min | *(none declared)* |
+| [School Committee, January 8, 2014](/meeting-minutes/school-committee/2014-01-08-ydZcZ_4vJLI) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, January 22, 2014](/meeting-minutes/school-committee/2014-01-22-pdSG187QDaU) | reference | — / 9.6 min | *(none declared)* |
+| [School Committee, February 26, 2014](/meeting-minutes/school-committee/2014-02-26-1QwnGTfkx0M) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, March 5, 2014](/meeting-minutes/school-committee/2014-03-05-jDjlYydotdg) | reference | — / 10.9 min | *(none declared)* |
+| [School Committee, March 19, 2014](/meeting-minutes/school-committee/2014-03-19-Sa8ElBGelRY) | reference | — / 11.3 min | *(none declared)* |
+| [School Committee, April 2, 2014](/meeting-minutes/school-committee/2014-04-02-2kehYmsdn_o) | reference | — / 9.5 min | *(none declared)* |
+| [School Committee, April 2, 2014](/meeting-minutes/school-committee/2014-04-02-kdi4HPLjbvc) | reference | — / 10.7 min | *(none declared)* |
+| [School Committee, May 7, 2014](/meeting-minutes/school-committee/2014-05-07-ed_JnimQF8c) | reference | — / 10.1 min | *(none declared)* |
+| [School Committee, June 4, 2014](/meeting-minutes/school-committee/2014-06-04-21hxVMB8WtI) | reference | — / 9.6 min | *(none declared)* |
+| [School Committee, June 18, 2014](/meeting-minutes/school-committee/2014-06-18-zBEj069s9WA) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, September 3, 2014](/meeting-minutes/school-committee/2014-09-03-tV_tNF147Is) | reference | — / 10.1 min | *(none declared)* |
+| [School Committee, October 1, 2014](/meeting-minutes/school-committee/2014-10-01-tVRRnuh-rOo) | reference | — / 11.0 min | *(none declared)* |
+| [School Committee, November 5, 2014](/meeting-minutes/school-committee/2014-11-05-LfHzC2nheYo) | reference | — / 10.5 min | *(none declared)* |
+| [School Committee, December 3, 2014](/meeting-minutes/school-committee/2014-12-03-0x44owqvTxI) | reference | — / 11.4 min | *(none declared)* |
+| [School Committee, January 7, 2015](/meeting-minutes/school-committee/2015-01-07-wqTwGaTN3B0) | reference | — / 10.6 min | *(none declared)* |
+| [School Committee, March 3, 2015](/meeting-minutes/school-committee/2015-03-03-zUsokwBBH6U) | reference | — / 10.7 min | *(none declared)* |
+| [School Committee, April 1, 2015](/meeting-minutes/school-committee/2015-04-01-cX9AW4Lantc) | reference | — / 12.2 min | *(none declared)* |
+| [School Committee, May 6, 2015](/meeting-minutes/school-committee/2015-05-06-vOlYcpI7Vw0) | reference | — / 9.9 min | *(none declared)* |
+| [School Committee, July 1, 2015](/meeting-minutes/school-committee/2015-07-01-83nN64xjN7w) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, November 4, 2015](/meeting-minutes/school-committee/2015-11-04-EagIPwzBGxw) | reference | — / 10.0 min | *(none declared)* |
+| [School Committee, July 6, 2016](/meeting-minutes/school-committee/2016-07-06-5XORuQxPVCg) | reference | — / 9.7 min | *(none declared)* |
+| [School Committee, April 26, 2017](/meeting-minutes/school-committee/2017-04-26-6Ob6vcOBw2Q) | reference | — / 10.4 min | *(none declared)* |
+| [School Committee, May 3, 2017](/meeting-minutes/school-committee/2017-05-03-xlFlsjUbQFg) | reference | — / 13.4 min | *(none declared)* |
+| [School Committee, May 24, 2017](/meeting-minutes/school-committee/2017-05-24-_rkaQ_3co0c) | reference | — / 10.9 min | *(none declared)* |
+| [School Committee, June 7, 2017](/meeting-minutes/school-committee/2017-06-07-SOPHUC9IheA) | reference | — / 10.1 min | *(none declared)* |
 | [School Committee, June 21, 2017](/meeting-minutes/school-committee/2017-06-21-ZSDt3b-urnI) | reference | — / 9.3 min | *(none declared)* |
 | [School Committee, July 19, 2017](/meeting-minutes/school-committee/2017-07-19-UcQa3CavIxs) | reference | — / 10.0 min | *(none declared)* |
 | [School Committee, August 16, 2017](/meeting-minutes/school-committee/2017-08-16-D7Mh7UkRfE8) | reference | — / 10.3 min | *(none declared)* |
@@ -2366,6 +2484,96 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee, October 7, 2026](/meeting-minutes/school-committee/2026-10-07-kPZcnFd5COw) | reference | — / 16.0 min | *(none declared)* |
 | [School Committee, October 21, 2026](/meeting-minutes/school-committee/2026-10-21-2-Ax9zkA1NA) | reference | — / 12.5 min | *(none declared)* |
 | [School Committee, November 4, 2026](/meeting-minutes/school-committee/2026-11-04-4G9q_g67RcA) | reference | — / 11.7 min | *(none declared)* |
+| [Select Board, July 23, 2012](/meeting-minutes/select-board/2012-07-23-0JpBvd3Btq4) | reference | — / 12.0 min | *(none declared)* |
+| [Select Board, July 9, 2013](/meeting-minutes/select-board/2013-07-09-4UYDwuHQaeg) | reference | — / 15.3 min | *(none declared)* |
+| [Select Board, July 16, 2013](/meeting-minutes/select-board/2013-07-16-rEas6xA-KrA) | reference | — / 14.2 min | *(none declared)* |
+| [Select Board, August 6, 2013](/meeting-minutes/select-board/2013-08-06-pZDpTNSJV38) | reference | — / 13.4 min | *(none declared)* |
+| [Select Board, August 13, 2013](/meeting-minutes/select-board/2013-08-13-sqO_Pf33uZo) | reference | — / 17.3 min | *(none declared)* |
+| [Select Board, August 20, 2013](/meeting-minutes/select-board/2013-08-20-Dq6U4bz6vOY) | reference | — / 11.5 min | *(none declared)* |
+| [Select Board, September 3, 2013](/meeting-minutes/select-board/2013-09-03-3hAkMX9UYgA) | reference | — / 11.8 min | *(none declared)* |
+| [Select Board, September 10, 2013](/meeting-minutes/select-board/2013-09-10-TYjk3juHLNo) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, September 17, 2013](/meeting-minutes/select-board/2013-09-17-mwIgT_TtYoQ) | reference | — / 13.4 min | *(none declared)* |
+| [Select Board, October 1, 2013](/meeting-minutes/select-board/2013-10-01-wL4wrJMOzZg) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, October 8, 2013](/meeting-minutes/select-board/2013-10-08-Jji_ylNJxX8) | reference | — / 11.7 min | *(none declared)* |
+| [Select Board, October 15, 2013](/meeting-minutes/select-board/2013-10-15-hSqD5TRbSTg) | reference | — / 14.0 min | *(none declared)* |
+| [Select Board, October 22, 2013](/meeting-minutes/select-board/2013-10-22-xlIt-8B5fn4) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, November 5, 2013](/meeting-minutes/select-board/2013-11-05-VoPyAF2af28) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, November 12, 2013](/meeting-minutes/select-board/2013-11-12-xWjB1-qEoYM) | reference | — / 14.8 min | *(none declared)* |
+| [Select Board, November 19, 2013](/meeting-minutes/select-board/2013-11-19-MKFc0wlYPKk) | reference | — / 15.3 min | *(none declared)* |
+| [Select Board, December 3, 2013](/meeting-minutes/select-board/2013-12-03-KM_pUaZejII) | reference | — / 13.1 min | *(none declared)* |
+| [Select Board, December 10, 2013](/meeting-minutes/select-board/2013-12-10-vr_lR695a1k) | reference | — / 12.4 min | *(none declared)* |
+| [Select Board, December 17, 2013](/meeting-minutes/select-board/2013-12-17-ykzWTlGUzUE) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, January 21, 2014](/meeting-minutes/select-board/2014-01-21-fSnMWpiGLps) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, February 4, 2014](/meeting-minutes/select-board/2014-02-04-32VVlCqgAHk) | reference | — / 14.1 min | *(none declared)* |
+| [Select Board, February 11, 2014](/meeting-minutes/select-board/2014-02-11-JGXAp0TbHrc) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, March 4, 2014](/meeting-minutes/select-board/2014-03-04-cz63-uw7ZoY) | reference | — / 13.4 min | *(none declared)* |
+| [Select Board, March 11, 2014](/meeting-minutes/select-board/2014-03-11-gDvOFQ1b2k0) | reference | — / 14.0 min | *(none declared)* |
+| [Select Board, March 18, 2014](/meeting-minutes/select-board/2014-03-18-2QKqEs0u0nw) | reference | — / 12.7 min | *(none declared)* |
+| [Select Board, April 1, 2014](/meeting-minutes/select-board/2014-04-01-h7BcNdvDAKs) | reference | — / 15.4 min | *(none declared)* |
+| [Select Board, April 8, 2014](/meeting-minutes/select-board/2014-04-08-0dlung0-kaM) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, April 15, 2014](/meeting-minutes/select-board/2014-04-15-BnZiNuPTIPI) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, April 22, 2014](/meeting-minutes/select-board/2014-04-22--cXmAu9jtDk) | reference | — / 15.2 min | *(none declared)* |
+| [Select Board, April 29, 2014](/meeting-minutes/select-board/2014-04-29-xwrjPSTZsIA) | reference | — / 13.3 min | *(none declared)* |
+| [Select Board, May 6, 2014](/meeting-minutes/select-board/2014-05-06-ZxRzGbGeYPQ) | reference | — / 12.8 min | *(none declared)* |
+| [Select Board, May 13, 2014](/meeting-minutes/select-board/2014-05-13-rjexY11ao78) | reference | — / 11.3 min | *(none declared)* |
+| [Select Board, May 20, 2014](/meeting-minutes/select-board/2014-05-20-LnODeu7yCSQ) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, June 3, 2014](/meeting-minutes/select-board/2014-06-03-lwRnAlRnGbY) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, June 10, 2014](/meeting-minutes/select-board/2014-06-10-Tfmk3I84Rg4) | reference | — / 9.7 min | *(none declared)* |
+| [Select Board, June 17, 2014](/meeting-minutes/select-board/2014-06-17-hQtKeqtmtWk) | reference | — / 14.1 min | *(none declared)* |
+| [Select Board, July 1, 2014](/meeting-minutes/select-board/2014-07-01-U8kw8wKLAIQ) | reference | — / 13.0 min | *(none declared)* |
+| [Select Board, July 8, 2014](/meeting-minutes/select-board/2014-07-08-jpAvblLP1Ew) | reference | — / 12.1 min | *(none declared)* |
+| [Select Board, July 22, 2014](/meeting-minutes/select-board/2014-07-22-36gJ1s-vie8) | reference | — / 11.2 min | *(none declared)* |
+| [Select Board, August 12, 2014](/meeting-minutes/select-board/2014-08-12-aaT7Mn2CuFo) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, September 2, 2014](/meeting-minutes/select-board/2014-09-02-AhTsAd9zgHM) | reference | — / 12.9 min | *(none declared)* |
+| [Select Board, September 9, 2014](/meeting-minutes/select-board/2014-09-09-83GgPDalE24) | reference | — / 15.4 min | *(none declared)* |
+| [Select Board, September 16, 2014](/meeting-minutes/select-board/2014-09-16-lLsGInczqbg) | reference | — / 14.5 min | *(none declared)* |
+| [Select Board, October 7, 2014](/meeting-minutes/select-board/2014-10-07-0y2eswoMnzI) | reference | — / 13.6 min | *(none declared)* |
+| [Select Board, October 14, 2014](/meeting-minutes/select-board/2014-10-14-8vLMAsQ6jCc) | reference | — / 14.9 min | *(none declared)* |
+| [Select Board, October 21, 2014](/meeting-minutes/select-board/2014-10-21-JTz_5-5pXYQ) | reference | — / 13.7 min | *(none declared)* |
+| [Select Board, November 4, 2014](/meeting-minutes/select-board/2014-11-04-TZqmLGVMHK4) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, November 18, 2014](/meeting-minutes/select-board/2014-11-18-JdTMM5DXffc) | reference | — / 10.4 min | *(none declared)* |
+| [Select Board, December 2, 2014](/meeting-minutes/select-board/2014-12-02-gZwwIySgz2A) | reference | — / 12.5 min | *(none declared)* |
+| [Select Board, December 9, 2014](/meeting-minutes/select-board/2014-12-09-NozpCd9fuuo) | reference | — / 11.8 min | *(none declared)* |
+| [Select Board, December 16, 2014](/meeting-minutes/select-board/2014-12-16-NyDVGVXI_FQ) | reference | — / 9.1 min | *(none declared)* |
+| [Select Board, January 6, 2015](/meeting-minutes/select-board/2015-01-06-oxIR_zVTuZw) | reference | — / 12.1 min | *(none declared)* |
+| [Select Board, January 13, 2015](/meeting-minutes/select-board/2015-01-13-xg2zZ9Cvdiw) | reference | — / 11.8 min | *(none declared)* |
+| [Select Board, January 20, 2015](/meeting-minutes/select-board/2015-01-20-4es5ahaHLHI) | reference | — / 12.1 min | *(none declared)* |
+| [Select Board, February 3, 2015](/meeting-minutes/select-board/2015-02-03--ZIgpcxLgX4) | reference | — / 10.8 min | *(none declared)* |
+| [Select Board, February 10, 2015](/meeting-minutes/select-board/2015-02-10-r4J_XUjKyPM) | reference | — / 10.9 min | *(none declared)* |
+| [Select Board, March 3, 2015](/meeting-minutes/select-board/2015-03-03-Tcwp7rob3tE) | reference | — / 13.1 min | *(none declared)* |
+| [Select Board, March 10, 2015](/meeting-minutes/select-board/2015-03-10-fRhq35eyryo) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, March 17, 2015](/meeting-minutes/select-board/2015-03-17-CsOMlcQ4M1g) | reference | — / 14.7 min | *(none declared)* |
+| [Select Board, March 24, 2015](/meeting-minutes/select-board/2015-03-24-MGf2SUy2lRU) | reference | — / 12.1 min | *(none declared)* |
+| [Select Board, April 14, 2015](/meeting-minutes/select-board/2015-04-14-DX6lA6iS7aU) | reference | — / 14.0 min | *(none declared)* |
+| [Select Board, April 21, 2015](/meeting-minutes/select-board/2015-04-21-qyhwgZHEDLQ) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, May 5, 2015](/meeting-minutes/select-board/2015-05-05-60JNKA4Q5xA) | reference | — / 10.6 min | *(none declared)* |
+| [Select Board, May 12, 2015](/meeting-minutes/select-board/2015-05-12-Lh99MXf9aSU) | reference | — / 11.6 min | *(none declared)* |
+| [Select Board, May 19, 2015](/meeting-minutes/select-board/2015-05-19-hGWCuDoly0c) | reference | — / 12.6 min | *(none declared)* |
+| [Select Board, July 7, 2015](/meeting-minutes/select-board/2015-07-07-VfQSf7ZxTK4) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, August 11, 2015](/meeting-minutes/select-board/2015-08-11-emWpNgnAeBU) | reference | — / 15.1 min | *(none declared)* |
+| [Select Board, September 1, 2015](/meeting-minutes/select-board/2015-09-01-SWCjsc7A2us) | reference | — / 14.7 min | *(none declared)* |
+| [Select Board, December 1, 2015](/meeting-minutes/select-board/2015-12-01-lvGupxmEWCM) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, December 15, 2015](/meeting-minutes/select-board/2015-12-15-Zsy4jo8dDnc) | reference | — / 14.3 min | *(none declared)* |
+| [Select Board, January 5, 2016](/meeting-minutes/select-board/2016-01-05-TurTH9hYAZA) | reference | — / 13.9 min | *(none declared)* |
+| [Select Board, January 12, 2016](/meeting-minutes/select-board/2016-01-12-FwJY2tKD3P0) | reference | — / 12.6 min | *(none declared)* |
+| [Select Board, February 9, 2016](/meeting-minutes/select-board/2016-02-09-_nTRPTPXN0I) | reference | — / 13.0 min | *(none declared)* |
+| [Select Board, February 16, 2016](/meeting-minutes/select-board/2016-02-16-mdsVm39fCQE) | reference | — / 12.1 min | *(none declared)* |
+| [Select Board, March 1, 2016](/meeting-minutes/select-board/2016-03-01-4SbmpbG0VYk) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, March 15, 2016](/meeting-minutes/select-board/2016-03-15-vKFlrWseC_A) | reference | — / 13.0 min | *(none declared)* |
+| [Select Board, April 5, 2016](/meeting-minutes/select-board/2016-04-05-CEssWALaZ30) | reference | — / 14.7 min | *(none declared)* |
+| [Select Board, May 3, 2016](/meeting-minutes/select-board/2016-05-03-Lj-VhDQJaDM) | reference | — / 14.8 min | *(none declared)* |
+| [Select Board, May 17, 2016](/meeting-minutes/select-board/2016-05-17-bmipF6xuuvM) | reference | — / 13.5 min | *(none declared)* |
+| [Select Board, June 14, 2016](/meeting-minutes/select-board/2016-06-14-jpmN87kMxko) | reference | — / 13.2 min | *(none declared)* |
+| [Select Board, June 21, 2016](/meeting-minutes/select-board/2016-06-21-9MMrXMccais) | reference | — / 14.4 min | *(none declared)* |
+| [Select Board, August 23, 2016](/meeting-minutes/select-board/2016-08-23-Xq1X5DeCS0M) | reference | — / 16.6 min | *(none declared)* |
+| [Select Board, September 20, 2016](/meeting-minutes/select-board/2016-09-20-RRJT2UcTy1U) | reference | — / 12.3 min | *(none declared)* |
+| [Select Board, October 18, 2016](/meeting-minutes/select-board/2016-10-18-cnggZkXLfLg) | reference | — / 14.2 min | *(none declared)* |
+| [Select Board, December 27, 2016](/meeting-minutes/select-board/2016-12-27-RQ_Bai_7RlM) | reference | — / 10.7 min | *(none declared)* |
+| [Select Board, February 28, 2017](/meeting-minutes/select-board/2017-02-28-LPc6G40cY6k) | reference | — / 11.1 min | *(none declared)* |
+| [Select Board, March 21, 2017](/meeting-minutes/select-board/2017-03-21-yPBdCtxsYw8) | reference | — / 12.4 min | *(none declared)* |
+| [Select Board, May 2, 2017](/meeting-minutes/select-board/2017-05-02-tgZ8gh6x_RM) | reference | — / 16.5 min | *(none declared)* |
+| [Select Board, May 16, 2017](/meeting-minutes/select-board/2017-05-16-wBCcuSam_gc) | reference | — / 14.6 min | *(none declared)* |
+| [Select Board, June 6, 2017](/meeting-minutes/select-board/2017-06-06-ByP5ZBhUepA) | reference | — / 15.3 min | *(none declared)* |
 | [Select Board, June 13, 2017](/meeting-minutes/select-board/2017-06-13-GhClThOYDtQ) | reference | — / 12.8 min | *(none declared)* |
 | [Select Board, July 18, 2017](/meeting-minutes/select-board/2017-07-18-3PhZLRgfloQ) | reference | — / 14.8 min | *(none declared)* |
 | [Select Board, August 1, 2017](/meeting-minutes/select-board/2017-08-01-7E-5KR1CC3A) | reference | — / 16.1 min | *(none declared)* |
@@ -2736,6 +2944,24 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Select Board, October 27, 2026](/meeting-minutes/select-board/2026-10-27-EEjHeG_q7gY) | reference | — / 13.0 min | *(none declared)* |
 | [Select Board, November 10, 2026](/meeting-minutes/select-board/2026-11-10-8Ybcshw2voM) | reference | — / 11.3 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee, January 12, 2021](/meeting-minutes/senior-citizens-tax-work-off-committee/2021-01-12-kdGNGJEsL34) | reference | — / 9.2 min | *(none declared)* |
+| [Sewer Commission, May 28, 2013](/meeting-minutes/sewer-commission/2013-05-28-KckY_wGQbiA) | reference | — / 13.6 min | *(none declared)* |
+| [Sewer Commission, July 30, 2013](/meeting-minutes/sewer-commission/2013-07-30-z2b-elH7y1g) | reference | — / 11.3 min | *(none declared)* |
+| [Sewer Commission, August 27, 2013](/meeting-minutes/sewer-commission/2013-08-27-pPqhGIQgfrg) | reference | — / 11.0 min | *(none declared)* |
+| [Sewer Commission, September 24, 2013](/meeting-minutes/sewer-commission/2013-09-24-ZeK2k5QtF90) | reference | — / 11.3 min | *(none declared)* |
+| [Sewer Commission, October 29, 2013](/meeting-minutes/sewer-commission/2013-10-29-ayXN6JKmFXw) | reference | — / 10.9 min | *(none declared)* |
+| [Sewer Commission, January 28, 2014](/meeting-minutes/sewer-commission/2014-01-28-F0FzAtvs-sw) | reference | — / 10.9 min | *(none declared)* |
+| [Sewer Commission, February 25, 2014](/meeting-minutes/sewer-commission/2014-02-25-em16UPTO3Rc) | reference | — / 13.3 min | *(none declared)* |
+| [Sewer Commission, March 25, 2014](/meeting-minutes/sewer-commission/2014-03-25--BvhqDkbIRA) | reference | — / 13.1 min | *(none declared)* |
+| [Sewer Commission, May 27, 2014](/meeting-minutes/sewer-commission/2014-05-27-CS72qfiLeV0) | reference | — / 14.4 min | *(none declared)* |
+| [Sewer Commission, June 24, 2014](/meeting-minutes/sewer-commission/2014-06-24-PwFADMa7F14) | reference | — / 11.1 min | *(none declared)* |
+| [Sewer Commission, July 29, 2014](/meeting-minutes/sewer-commission/2014-07-29-DNgVLXmOaAw) | reference | — / 11.3 min | *(none declared)* |
+| [Sewer Commission, September 30, 2014](/meeting-minutes/sewer-commission/2014-09-30-yXWAQ2D5Ozw) | reference | — / 15.3 min | *(none declared)* |
+| [Sewer Commission, March 31, 2015](/meeting-minutes/sewer-commission/2015-03-31-HF7XI_qSQcs) | reference | — / 13.4 min | *(none declared)* |
+| [Sewer Commission, April 28, 2015](/meeting-minutes/sewer-commission/2015-04-28-lkEUeD9gpzQ) | reference | — / 10.6 min | *(none declared)* |
+| [Sewer Commission, May 26, 2015](/meeting-minutes/sewer-commission/2015-05-26-LwMKdP4TVws) | reference | — / 11.1 min | *(none declared)* |
+| [Sewer Commission, February 23, 2016](/meeting-minutes/sewer-commission/2016-02-23-RyDdMEa-xBI) | reference | — / 13.6 min | *(none declared)* |
+| [Sewer Commission, April 26, 2016](/meeting-minutes/sewer-commission/2016-04-26-A2i3Pc2z5B8) | reference | — / 14.7 min | *(none declared)* |
+| [Sewer Commission, May 30, 2017](/meeting-minutes/sewer-commission/2017-05-30-CVl-gBpzijg) | reference | — / 11.8 min | *(none declared)* |
 | [Sewer Commission, June 27, 2017](/meeting-minutes/sewer-commission/2017-06-27-ytolJFliZYo) | reference | — / 14.6 min | *(none declared)* |
 | [Sewer Commission, August 29, 2017](/meeting-minutes/sewer-commission/2017-08-29-1WqtL_KOyEU) | reference | — / 10.1 min | *(none declared)* |
 | [Sewer Commission, October 31, 2017](/meeting-minutes/sewer-commission/2017-10-31-qhtAlxFMExs) | reference | — / 14.6 min | *(none declared)* |
@@ -2899,6 +3125,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sewer Commission, September 29, 2026](/meeting-minutes/sewer-commission/2026-09-29-nEOkAfYljPY) | reference | — / 12.5 min | *(none declared)* |
 | [Sewer Commission, October 13, 2026](/meeting-minutes/sewer-commission/2026-10-13-jguSFLHz5-8) | reference | — / 11.4 min | *(none declared)* |
 | [Sewer Commission, October 27, 2026](/meeting-minutes/sewer-commission/2026-10-27-krvx-IuSkdE) | reference | — / 11.2 min | *(none declared)* |
+| [Sewer Commission, November 12, 2026](/meeting-minutes/sewer-commission/2026-11-12-zKiyLkPJbjM) | reference | — / 10.3 min | *(none declared)* |
 | [Stormwater Task Force, March 23, 2021](/meeting-minutes/stormwater-task-force/2021-03-23-Jxfyx82u3ks) | reference | — / 14.8 min | *(none declared)* |
 | [Stormwater Task Force, January 20, 2022](/meeting-minutes/stormwater-task-force/2022-01-20-aGZ72XhfcOc) | reference | — / 14.1 min | *(none declared)* |
 | [Stormwater Task Force, January 20, 2022](/meeting-minutes/stormwater-task-force/2022-01-20-vOe_gqFEgwk) | reference | — / 16.1 min | *(none declared)* |
@@ -2991,6 +3218,18 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Town Manager Screening Committee, August 19, 2024](/meeting-minutes/town-manager-screening-committee/2024-08-19-UdIXf-s6Iac) | reference | — / 11.1 min | *(none declared)* |
 | [Town Manager Screening Committee, September 11, 2024](/meeting-minutes/town-manager-screening-committee/2024-09-11-XkSHiKyyU2o) | reference | — / 12.6 min | *(none declared)* |
 | [Town Manager Screening Committee, October 7, 2024](/meeting-minutes/town-manager-screening-committee/2024-10-07-G1tvIj3Mm38) | reference | — / 12.1 min | *(none declared)* |
+| [Town Meeting, January 7, 2014](/meeting-minutes/town-meeting/2014-01-07-fVIV9a43yd4) | reference | — / 13.0 min | *(none declared)* |
+| [Town Meeting, May 3, 2014](/meeting-minutes/town-meeting/2014-05-03-GoYTL-oNOas) | reference | — / 12.9 min | *(none declared)* |
+| [Town Meeting, May 2, 2015](/meeting-minutes/town-meeting/2015-05-02-2ln7kT6dklQ) | reference | — / 12.5 min | *(none declared)* |
+| [Town Meeting, May 2, 2015](/meeting-minutes/town-meeting/2015-05-02-jyrsGLmh_gk) | reference | — / 11.3 min | *(none declared)* |
+| [Town Meeting, May 2, 2015](/meeting-minutes/town-meeting/2015-05-02-sb7Q1Jr3WFo) | reference | — / 9.7 min | *(none declared)* |
+| [Town Meeting, May 7, 2016](/meeting-minutes/town-meeting/2016-05-07-3e32DKaEsMo) | reference | — / 12.4 min | *(none declared)* |
+| [Town Meeting, May 7, 2016](/meeting-minutes/town-meeting/2016-05-07-u8HHLQKOfug) | reference | — / 12.9 min | *(none declared)* |
+| [Town Meeting, August 22, 2016](/meeting-minutes/town-meeting/2016-08-22-wtknPQvfmj8) | reference | — / 12.8 min | *(none declared)* |
+| [Town Meeting, May 6, 2017](/meeting-minutes/town-meeting/2017-05-06-9QhVIdF0LkM) | reference | — / 10.8 min | *(none declared)* |
+| [Town Meeting, May 6, 2017](/meeting-minutes/town-meeting/2017-05-06-FZfDW0cKd_o) | reference | — / 11.4 min | *(none declared)* |
+| [Town Meeting, May 6, 2017](/meeting-minutes/town-meeting/2017-05-06-mrOqo_QlmYY) | reference | — / 11.2 min | *(none declared)* |
+| [Town Meeting, May 6, 2017](/meeting-minutes/town-meeting/2017-05-06-sMWqLAycZaY) | reference | — / 11.1 min | *(none declared)* |
 | [Town Meeting, November 28, 2017](/meeting-minutes/town-meeting/2017-11-28-4yC72brnKjM) | reference | — / 14.1 min | *(none declared)* |
 | [Town Meeting, November 13, 2018](/meeting-minutes/town-meeting/2018-11-13-W4gYlbuGGDk) | reference | — / 12.2 min | *(none declared)* |
 | [Town Meeting, May 4, 2019](/meeting-minutes/town-meeting/2019-05-04-7Qv8mFdfej8) | reference | — / 14.8 min | *(none declared)* |
@@ -3038,6 +3277,41 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Trust Fund Commission, September 24, 2026](/meeting-minutes/trust-fund-commission/2026-09-24-kNEMWtxiZOM) | reference | — / 12.9 min | *(none declared)* |
 | [Trust Fund Commission, October 15, 2026](/meeting-minutes/trust-fund-commission/2026-10-15-EXq5fjrHOhU) | reference | — / 11.3 min | *(none declared)* |
 | [Trust Fund Commission, October 21, 2026](/meeting-minutes/trust-fund-commission/2026-10-21-YXZu1VzWZTc) | reference | — / 12.3 min | *(none declared)* |
+| [Zoning Board of Appeals, June 26, 2013](/meeting-minutes/zoning-board-of-appeals/2013-06-26-RM5tpVcmPzU) | reference | — / 9.3 min | *(none declared)* |
+| [Zoning Board of Appeals, July 10, 2013](/meeting-minutes/zoning-board-of-appeals/2013-07-10-SoJ3-kowuqk) | reference | — / 10.7 min | *(none declared)* |
+| [Zoning Board of Appeals, August 14, 2013](/meeting-minutes/zoning-board-of-appeals/2013-08-14-eYAa-WLhmZU) | reference | — / 9.8 min | *(none declared)* |
+| [Zoning Board of Appeals, September 11, 2013](/meeting-minutes/zoning-board-of-appeals/2013-09-11-bco0B2RbJyE) | reference | — / 9.0 min | *(none declared)* |
+| [Zoning Board of Appeals, October 23, 2013](/meeting-minutes/zoning-board-of-appeals/2013-10-23-M9vkSVqZDHs) | reference | — / 11.9 min | *(none declared)* |
+| [Zoning Board of Appeals, November 13, 2013](/meeting-minutes/zoning-board-of-appeals/2013-11-13-oPNSZLH9ENA) | reference | — / 9.4 min | *(none declared)* |
+| [Zoning Board of Appeals, January 8, 2014](/meeting-minutes/zoning-board-of-appeals/2014-01-08-yka-y65vrQc) | reference | — / 9.7 min | *(none declared)* |
+| [Zoning Board of Appeals, February 12, 2014](/meeting-minutes/zoning-board-of-appeals/2014-02-12-ohnkZ2DrN4I) | reference | — / 10.3 min | *(none declared)* |
+| [Zoning Board of Appeals, March 26, 2014](/meeting-minutes/zoning-board-of-appeals/2014-03-26-SnI1aIE1JBI) | reference | — / 12.9 min | *(none declared)* |
+| [Zoning Board of Appeals, April 9, 2014](/meeting-minutes/zoning-board-of-appeals/2014-04-09-rfFjY9ueOs8) | reference | — / 11.7 min | *(none declared)* |
+| [Zoning Board of Appeals, April 23, 2014](/meeting-minutes/zoning-board-of-appeals/2014-04-23-MnBwb5qbqzU) | reference | — / 9.8 min | *(none declared)* |
+| [Zoning Board of Appeals, May 28, 2014](/meeting-minutes/zoning-board-of-appeals/2014-05-28-pQqvxrnWPJo) | reference | — / 10.2 min | *(none declared)* |
+| [Zoning Board of Appeals, June 11, 2014](/meeting-minutes/zoning-board-of-appeals/2014-06-11-eNTNxybRV2Q) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, June 25, 2014](/meeting-minutes/zoning-board-of-appeals/2014-06-25-7H-GSmW-V4w) | reference | — / 10.6 min | *(none declared)* |
+| [Zoning Board of Appeals, July 9, 2014](/meeting-minutes/zoning-board-of-appeals/2014-07-09-LhVftUKPHMs) | reference | — / 8.9 min | *(none declared)* |
+| [Zoning Board of Appeals, August 13, 2014](/meeting-minutes/zoning-board-of-appeals/2014-08-13-1aqdkTZO770) | reference | — / 9.7 min | *(none declared)* |
+| [Zoning Board of Appeals, September 10, 2014](/meeting-minutes/zoning-board-of-appeals/2014-09-10-di9rK7QTuJo) | reference | — / 15.2 min | *(none declared)* |
+| [Zoning Board of Appeals, September 24, 2014](/meeting-minutes/zoning-board-of-appeals/2014-09-24-WBfqlRabEDU) | reference | — / 10.8 min | *(none declared)* |
+| [Zoning Board of Appeals, October 8, 2014](/meeting-minutes/zoning-board-of-appeals/2014-10-08-J68gGSJ5Bv0) | reference | — / 9.9 min | *(none declared)* |
+| [Zoning Board of Appeals, October 22, 2014](/meeting-minutes/zoning-board-of-appeals/2014-10-22-ASaxsXc0c48) | reference | — / 10.6 min | *(none declared)* |
+| [Zoning Board of Appeals, February 25, 2015](/meeting-minutes/zoning-board-of-appeals/2015-02-25-oKWDLuUYXRs) | reference | — / 9.2 min | *(none declared)* |
+| [Zoning Board of Appeals, March 11, 2015](/meeting-minutes/zoning-board-of-appeals/2015-03-11-UFhLKfaa8Uk) | reference | — / 9.4 min | *(none declared)* |
+| [Zoning Board of Appeals, May 13, 2015](/meeting-minutes/zoning-board-of-appeals/2015-05-13-U3n-4FVePY0) | reference | — / 11.0 min | *(none declared)* |
+| [Zoning Board of Appeals, May 27, 2015](/meeting-minutes/zoning-board-of-appeals/2015-05-27-FESgxEmikS8) | reference | — / 13.0 min | *(none declared)* |
+| [Zoning Board of Appeals, June 10, 2015](/meeting-minutes/zoning-board-of-appeals/2015-06-10-AEpIJ-Nrmw0) | reference | — / 11.3 min | *(none declared)* |
+| [Zoning Board of Appeals, June 24, 2015](/meeting-minutes/zoning-board-of-appeals/2015-06-24-lyvUb_SvAq8) | reference | — / 11.2 min | *(none declared)* |
+| [Zoning Board of Appeals, September 9, 2015](/meeting-minutes/zoning-board-of-appeals/2015-09-09-4qqq7f4IV5c) | reference | — / 9.2 min | *(none declared)* |
+| [Zoning Board of Appeals, March 23, 2016](/meeting-minutes/zoning-board-of-appeals/2016-03-23-p670gNfJg2Q) | reference | — / 10.0 min | *(none declared)* |
+| [Zoning Board of Appeals, April 13, 2016](/meeting-minutes/zoning-board-of-appeals/2016-04-13-qiX11MYfaww) | reference | — / 9.4 min | *(none declared)* |
+| [Zoning Board of Appeals, May 25, 2016](/meeting-minutes/zoning-board-of-appeals/2016-05-25-HPmmacnyGSc) | reference | — / 9.4 min | *(none declared)* |
+| [Zoning Board of Appeals, June 8, 2016](/meeting-minutes/zoning-board-of-appeals/2016-06-08-_SwU8p73DGw) | reference | — / 8.9 min | *(none declared)* |
+| [Zoning Board of Appeals, September 14, 2016](/meeting-minutes/zoning-board-of-appeals/2016-09-14-D7Q-TTlk4-A) | reference | — / 9.3 min | *(none declared)* |
+| [Zoning Board of Appeals, March 22, 2017](/meeting-minutes/zoning-board-of-appeals/2017-03-22-YEFA-4m4YwA) | reference | — / 8.3 min | *(none declared)* |
+| [Zoning Board of Appeals, April 26, 2017](/meeting-minutes/zoning-board-of-appeals/2017-04-26-HrOQVf8Dh_w) | reference | — / 9.6 min | *(none declared)* |
+| [Zoning Board of Appeals, May 24, 2017](/meeting-minutes/zoning-board-of-appeals/2017-05-24-uJ-DUppATXk) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, June 14, 2017](/meeting-minutes/zoning-board-of-appeals/2017-06-14-KeByFOku6MY) | reference | — / 10.0 min | *(none declared)* |
 | [Zoning Board of Appeals, August 9, 2017](/meeting-minutes/zoning-board-of-appeals/2017-08-09-WJw83jamvTw) | reference | — / 9.7 min | *(none declared)* |
 | [Zoning Board of Appeals, September 13, 2017](/meeting-minutes/zoning-board-of-appeals/2017-09-13-8vZ38DQXubQ) | reference | — / 9.6 min | *(none declared)* |
@@ -3162,10 +3436,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Andrea Schnepf](/people/andrea-schnepf) | reference | — / 7.3 min | *(none declared)* |
 | [Anita Scheipers](/people/anita-scheipers) | reference | — / 8.3 min | *(none declared)* |
 | [Anthony Nicastro](/people/anthony-nicastro) | reference | — / 9.4 min | *(none declared)* |
-| [Anthony Sculimbrene](/people/anthony-sculimbrene) | reference | — / 9.9 min | *(none declared)* |
+| [Anthony Sculimbrene](/people/anthony-sculimbrene) | reference | — / 10.0 min | *(none declared)* |
 | [Anthony Senesi](/people/anthony-senesi) | reference | — / 7.3 min | *(none declared)* |
 | [Arthur Katis](/people/arthur-katis) | reference | — / 9.4 min | *(none declared)* |
-| [Arthur Snow](/people/arthur-snow) | reference | — / 8.9 min | *(none declared)* |
+| [Arthur Snow](/people/arthur-snow) | reference | — / 9.0 min | *(none declared)* |
 | [Ashley York-Aronovich](/people/ashley-york-aronovich) | reference | — / 7.5 min | *(none declared)* |
 | [Ashly Faherty](/people/ashly-faherty) | reference | — / 7.2 min | *(none declared)* |
 | [atthew Allison](/people/atthew-allison) | reference | — / 6.8 min | *(none declared)* |
@@ -3173,14 +3447,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Barbara Brown](/people/barbara-brown) | reference | — / 9.1 min | *(none declared)* |
 | [Barbara Reynolds](/people/barbara-reynolds) | reference | — / 8.3 min | *(none declared)* |
 | [Bill Lakso](/people/bill-lakso) | reference | — / 7.3 min | *(none declared)* |
-| [Bob Pease](/people/bob-pease) | reference | — / 11.3 min | *(none declared)* |
+| [Bob Pease](/people/bob-pease) | reference | — / 11.2 min | *(none declared)* |
 | [Brandie O&#x27;Toole](/people/brandie-o-toole) | reference | — / 7.0 min | *(none declared)* |
 | [Brandon Kibbe](/people/brandon-kibbe) | reference | — / 8.2 min | *(none declared)* |
 | [Brandon Kibbe-Open Space](/people/brandon-kibbe-open-space) | reference | — / 7.3 min | *(none declared)* |
 | [Brent Benson](/people/brent-benson) | reference | — / 7.8 min | *(none declared)* |
 | [Brett Kamsden](/people/brett-kamsden) | reference | — / 6.8 min | *(none declared)* |
 | [Brett Ramsden](/people/brett-ramsden) | reference | — / 10.1 min | *(none declared)* |
-| [Brian Corcoran](/people/brian-corcoran) | reference | — / 9.5 min | *(none declared)* |
+| [Brian Corcoran](/people/brian-corcoran) | reference | — / 9.6 min | *(none declared)* |
 | [Brian Fernandes](/people/brian-fernandes) | reference | — / 7.0 min | *(none declared)* |
 | [Brian Frank](/people/brian-frank) | reference | — / 7.5 min | *(none declared)* |
 | [Brian Gingras](/people/brian-gingras) | reference | — / 8.1 min | *(none declared)* |
@@ -3207,7 +3481,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cathy Hennessy](/people/cathy-hennessy) | reference | — / 7.5 min | *(none declared)* |
 | [Catie Childs](/people/catie-childs) | reference | — / 10.2 min | *(none declared)* |
 | [Cheryl Moisan](/people/cheryl-moisan) | reference | — / 8.8 min | *(none declared)* |
-| [Cheryl Valera](/people/cheryl-valera) | reference | — / 8.0 min | *(none declared)* |
+| [Cheryl Valera](/people/cheryl-valera) | reference | — / 8.1 min | *(none declared)* |
 | [Chris Holden](/people/chris-holden) | reference | — / 7.5 min | *(none declared)* |
 | [Chris Menard](/people/chris-menard) | reference | — / 9.0 min | *(none declared)* |
 | [Chris Ruth](/people/chris-ruth) | reference | — / 7.7 min | *(none declared)* |
@@ -3223,7 +3497,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Citizens&#x27; Representative](/people/citizens-representative) | reference | — / 7.1 min | *(none declared)* |
 | [Colleen Shapiro](/people/colleen-shapiro) | reference | — / 10.7 min | *(none declared)* |
 | [Corrine C. Scouten](/people/corrine-c-scouten) | reference | — / 7.0 min | *(none declared)* |
-| [Cullen Dwyer](/people/cullen-dwyer) | reference | — / 9.8 min | *(none declared)* |
+| [Cullen Dwyer](/people/cullen-dwyer) | reference | — / 9.9 min | *(none declared)* |
 | [Dale Proulx](/people/dale-proulx) | reference | — / 8.0 min | *(none declared)* |
 | [Damon J. McQuaid](/people/damon-j-mcquaid) | reference | — / 11.3 min | *(none declared)* |
 | [Dan Proctor](/people/dan-proctor) | reference | — / 9.3 min | *(none declared)* |
@@ -3235,29 +3509,29 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Dave Passes](/people/dave-passes) | reference | — / 6.9 min | *(none declared)* |
 | [Dave Passions](/people/dave-passions) | reference | — / 7.0 min | *(none declared)* |
 | [Dave Passios](/people/dave-passios) | reference | — / 9.1 min | *(none declared)* |
-| [David Blatt](/people/david-blatt) | reference | — / 11.6 min | *(none declared)* |
+| [David Blatt](/people/david-blatt) | reference | — / 11.7 min | *(none declared)* |
 | [David Dorren](/people/david-dorren) | reference | — / 9.9 min | *(none declared)* |
 | [David M. Passios](/people/david-m-passios) | reference | — / 11.3 min | *(none declared)* |
 | [David Niose](/people/david-niose) | reference | — / 7.5 min | *(none declared)* |
 | [David Prokowiew](/people/david-prokowiew) | reference | — / 10.2 min | *(none declared)* |
 | [David Reif](/people/david-reif) | reference | — / 7.3 min | *(none declared)* |
-| [David V. MacDonald](/people/david-v-macdonald) | reference | — / 11.1 min | *(none declared)* |
+| [David V. MacDonald](/people/david-v-macdonald) | reference | — / 11.2 min | *(none declared)* |
 | [Dawn-Marie Ayles](/people/dawn-marie-ayles) | reference | — / 7.6 min | *(none declared)* |
 | [Deb Lincoln](/people/deb-lincoln) | reference | — / 7.7 min | *(none declared)* |
-| [Debbie Lincoln](/people/debbie-lincoln) | reference | — / 9.2 min | *(none declared)* |
+| [Debbie Lincoln](/people/debbie-lincoln) | reference | — / 8.7 min | *(none declared)* |
 | [Deborah A. H. Christen](/people/deborah-a-h-christen) | reference | — / 10.5 min | *(none declared)* |
 | [Deborah Lincoln](/people/deborah-lincoln) | reference | — / 9.5 min | *(none declared)* |
 | [Debra Goodsell](/people/debra-goodsell) | reference | — / 7.6 min | *(none declared)* |
 | [Dennis Mannone](/people/dennis-mannone) | reference | — / 10.0 min | *(none declared)* |
 | [Diane Beaudoin](/people/diane-beaudoin) | reference | — / 7.6 min | *(none declared)* |
 | [Diane Nowd](/people/diane-nowd) | reference | — / 9.8 min | *(none declared)* |
-| [Donald F. Bowen](/people/donald-f-bowen) | reference | — / 8.7 min | *(none declared)* |
+| [Donald F. Bowen](/people/donald-f-bowen) | reference | — / 9.0 min | *(none declared)* |
 | [Donald Gurney](/people/donald-gurney) | reference | — / 7.7 min | *(none declared)* |
 | [Donna Fortune](/people/donna-fortune) | reference | — / 10.0 min | *(none declared)* |
 | [Donna Landry](/people/donna-landry) | reference | — / 9.4 min | *(none declared)* |
 | [Donna Saiia](/people/donna-saiia) | reference | — / 8.8 min | *(none declared)* |
 | [Donna Saila](/people/donna-saila) | reference | — / 7.2 min | *(none declared)* |
-| [Douglas MacMillan](/people/douglas-macmillan) | reference | — / 7.9 min | *(none declared)* |
+| [Douglas MacMillan](/people/douglas-macmillan) | reference | — / 8.0 min | *(none declared)* |
 | [Dr. Robin Chandler](/people/dr-robin-chandler) | reference | — / 7.2 min | *(none declared)* |
 | [Ean Laundree](/people/ean-laundree) | reference | — / 7.1 min | *(none declared)* |
 | [Elaina Corcoran](/people/elaina-corcoran) | reference | — / 7.0 min | *(none declared)* |
@@ -3266,7 +3540,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Elizabeth (Betty) DiGiacomo](/people/elizabeth-betty-digiacomo) | reference | — / 9.4 min | *(none declared)* |
 | [Elizabeth Murphy](/people/elizabeth-murphy) | reference | — / 8.1 min | *(none declared)* |
 | [Elizabeth Simeone](/people/elizabeth-simeone) | reference | — / 7.3 min | *(none declared)* |
-| [Emerick R. Bakaysa](/people/emerick-r-bakaysa) | reference | — / 8.7 min | *(none declared)* |
+| [Emerick R. Bakaysa](/people/emerick-r-bakaysa) | reference | — / 8.8 min | *(none declared)* |
 | [Emily Young](/people/emily-young) | reference | — / 9.3 min | *(none declared)* |
 | [Eric Hinds](/people/eric-hinds) | reference | — / 7.4 min | *(none declared)* |
 | [Erik Arnold](/people/erik-arnold) | reference | — / 10.9 min | *(none declared)* |
@@ -3280,14 +3554,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Garrett Stillman](/people/garrett-stillman) | reference | — / 6.9 min | *(none declared)* |
 | [George Emond Ji:](/people/george-emond-ji) | reference | — / 7.0 min | *(none declared)* |
 | [George Emond Jr](/people/george-emond-jr) | reference | — / 10.7 min | *(none declared)* |
-| [George Martin](/people/george-martin) | reference | — / 9.2 min | *(none declared)* |
+| [George Martin](/people/george-martin) | reference | — / 9.1 min | *(none declared)* |
 | [Glenn McLeod](/people/glenn-mcleod) | reference | — / 10.7 min | *(none declared)* |
 | [Governor Appointee](/people/governor-appointee) | reference | — / 6.8 min | *(none declared)* |
 | [Greg Bittner](/people/greg-bittner) | reference | — / 8.3 min | *(none declared)* |
 | [Greg Burns](/people/greg-burns) | reference | — / 9.2 min | *(none declared)* |
 | [Greg Roy](/people/greg-roy) | reference | — / 9.3 min | *(none declared)* |
 | [Gregory Berthiaume](/people/gregory-berthiaume) | reference | — / 7.9 min | *(none declared)* |
-| [Gregory P. Bittner](/people/gregory-p-bittner) | reference | — / 10.0 min | *(none declared)* |
+| [Gregory P. Bittner](/people/gregory-p-bittner) | reference | — / 10.1 min | *(none declared)* |
 | [Gregory Roy](/people/gregory-roy) | reference | — / 7.5 min | *(none declared)* |
 | [Hannah Anderson](/people/hannah-anderson) | reference | — / 8.8 min | *(none declared)* |
 | [Hans Wentrup](/people/hans-wentrup) | reference | — / 7.9 min | *(none declared)* |
@@ -3310,16 +3584,16 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Jacquelyn Dwyer](/people/jacquelyn-dwyer) | reference | — / 10.1 min | *(none declared)* |
 | [James Besarkarski](/people/james-besarkarski) | reference | — / 10.3 min | *(none declared)* |
 | [James Breault](/people/james-breault) | reference | — / 7.6 min | *(none declared)* |
-| [James E. Toale](/people/james-e-toale) | reference | — / 10.0 min | *(none declared)* |
-| [James J. Auge](/people/james-j-auge) | reference | — / 8.1 min | *(none declared)* |
+| [James E. Toale](/people/james-e-toale) | reference | — / 10.2 min | *(none declared)* |
+| [James J. Auge](/people/james-j-auge) | reference | — / 8.3 min | *(none declared)* |
 | [James LaVeck II](/people/james-laveck-ii) | reference | — / 7.0 min | *(none declared)* |
 | [James McGuigan](/people/james-mcguigan) | reference | — / 7.9 min | *(none declared)* |
 | [James P. Marino](/people/james-p-marino) | reference | — / 11.1 min | *(none declared)* |
 | [James Versoi](/people/james-versoi) | reference | — / 7.0 min | *(none declared)* |
 | [Jamie Merrill Blood](/people/jamie-merrill-blood) | reference | — / 7.1 min | *(none declared)* |
-| [Jamie Toale](/people/jamie-toale) | reference | — / 9.3 min | *(none declared)* |
+| [Jamie Toale](/people/jamie-toale) | reference | — / 9.0 min | *(none declared)* |
 | [Janalee Germaine Balish](/people/janalee-germaine-balish) | reference | — / 6.9 min | *(none declared)* |
-| [Jane Paszko](/people/jane-paszko) | reference | — / 7.0 min | *(none declared)* |
+| [Jane Paszko](/people/jane-paszko) | reference | — / 7.1 min | *(none declared)* |
 | [Jane Rabbitt](/people/jane-rabbitt) | reference | — / 8.8 min | *(none declared)* |
 | [Janet Robbins](/people/janet-robbins) | reference | — / 7.0 min | *(none declared)* |
 | [Jay Simeone](/people/jay-simeone) | reference | — / 9.8 min | *(none declared)* |
@@ -3337,7 +3611,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Jenny Pewtherer](/people/jenny-pewtherer) | reference | — / 10.1 min | *(none declared)* |
 | [Jetfrey Viviano](/people/jetfrey-viviano) | reference | — / 7.0 min | *(none declared)* |
 | [Jim Auge](/people/jim-auge) | reference | — / 7.6 min | *(none declared)* |
-| [Jim LaVeck](/people/jim-laveck) | reference | — / 9.9 min | *(none declared)* |
+| [Jim LaVeck](/people/jim-laveck) | reference | — / 10.0 min | *(none declared)* |
 | [Jo Toale](/people/jo-toale) | reference | — / 7.5 min | *(none declared)* |
 | [Joan Pease](/people/joan-pease) | reference | — / 10.5 min | *(none declared)* |
 | [Joanna Bilotta-Simeone](/people/joanna-bilotta-simeone) | reference | — / 7.7 min | *(none declared)* |
@@ -3363,7 +3637,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Joseph Hurley](/people/joseph-hurley) | reference | — / 7.3 min | *(none declared)* |
 | [Judit Ernst](/people/judit-ernst) | reference | — / 7.6 min | *(none declared)* |
 | [Judith Tarbell](/people/judith-tarbell) | reference | — / 8.4 min | *(none declared)* |
-| [Judy Dragoslis](/people/judy-dragoslis) | reference | — / 7.5 min | *(none declared)* |
+| [Judy Dragoslis](/people/judy-dragoslis) | reference | — / 7.6 min | *(none declared)* |
 | [Julie Belliveau](/people/julie-belliveau) | reference | — / 8.3 min | *(none declared)* |
 | [Karen Kemp](/people/karen-kemp) | reference | — / 9.1 min | *(none declared)* |
 | [Karen Ullo](/people/karen-ullo) | reference | — / 7.1 min | *(none declared)* |
@@ -3380,12 +3654,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Ken Jones](/people/ken-jones) | reference | — / 8.8 min | *(none declared)* |
 | [Kenee Emkey](/people/kenee-emkey) | reference | — / 6.8 min | *(none declared)* |
 | [Kenneth Chenis](/people/kenneth-chenis) | reference | — / 10.1 min | *(none declared)* |
-| [Kenneth Jones](/people/kenneth-jones) | reference | — / 11.5 min | *(none declared)* |
+| [Kenneth Jones](/people/kenneth-jones) | reference | — / 11.6 min | *(none declared)* |
 | [Kerry A. Lafleur](/people/kerry-a-lafleur) | reference | — / 7.6 min | *(none declared)* |
 | [Kerry Ann Kimball](/people/kerry-ann-kimball) | reference | — / 7.2 min | *(none declared)* |
 | [Kevin Boussom](/people/kevin-boussom) | reference | — / 7.5 min | *(none declared)* |
 | [Kevin Fish](/people/kevin-fish) | reference | — / 9.8 min | *(none declared)* |
-| [Kevin McNally](/people/kevin-mcnally) | reference | — / 8.5 min | *(none declared)* |
+| [Kevin McNally](/people/kevin-mcnally) | reference | — / 8.4 min | *(none declared)* |
 | [Kiirja Paananen](/people/kiirja-paananen) | reference | — / 7.6 min | *(none declared)* |
 | [Kim Duffy](/people/kim-duffy) | reference | — / 7.9 min | *(none declared)* |
 | [Kimberly Moore](/people/kimberly-moore) | reference | — / 7.3 min | *(none declared)* |
@@ -3393,7 +3667,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Kirsten Snape](/people/kirsten-snape) | reference | — / 8.4 min | *(none declared)* |
 | [Krista Deveau](/people/krista-deveau) | reference | — / 7.2 min | *(none declared)* |
 | [Kristina Masaitis](/people/kristina-masaitis) | reference | — / 8.3 min | *(none declared)* |
-| [Lance D. May](/people/lance-d-may) | reference | — / 9.8 min | *(none declared)* |
+| [Lance D. May](/people/lance-d-may) | reference | — / 9.9 min | *(none declared)* |
 | [Lars H. Widstrand](/people/lars-h-widstrand) | reference | — / 7.1 min | *(none declared)* |
 | [Latey Adams](/people/latey-adams) | reference | — / 6.8 min | *(none declared)* |
 | [Laura Boussom](/people/laura-boussom) | reference | — / 7.9 min | *(none declared)* |
@@ -3405,7 +3679,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Leigh Bain](/people/leigh-bain) | reference | — / 7.7 min | *(none declared)* |
 | [lichard McGrath](/people/lichard-mcgrath) | reference | — / 6.8 min | *(none declared)* |
 | [Linda M. McDonald](/people/linda-m-mcdonald) | reference | — / 10.0 min | *(none declared)* |
-| [Linda Vickery](/people/linda-vickery) | reference | — / 7.7 min | *(none declared)* |
+| [Linda Vickery](/people/linda-vickery) | reference | — / 8.1 min | *(none declared)* |
 | [Lisa Normandin](/people/lisa-normandin) | reference | — / 11.6 min | *(none declared)* |
 | [Lois Leis](/people/lois-leis) | reference | — / 6.7 min | *(none declared)* |
 | [LoriAnn Tessier](/people/loriann-tessier) | reference | — / 6.8 min | *(none declared)* |
@@ -3420,7 +3694,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Marc Luescher](/people/marc-luescher) | reference | — / 8.0 min | *(none declared)* |
 | [Marianne Mascari](/people/marianne-mascari) | reference | — / 7.9 min | *(none declared)* |
 | [Marissa Thompson](/people/marissa-thompson) | reference | — / 8.4 min | *(none declared)* |
-| [Mark Erickson](/people/mark-erickson) | reference | — / 10.7 min | *(none declared)* |
+| [Mark Erickson](/people/mark-erickson) | reference | — / 10.8 min | *(none declared)* |
 | [Mark Muzzi](/people/mark-muzzi) | reference | — / 6.9 min | *(none declared)* |
 | [Mark Riccardi](/people/mark-riccardi) | reference | — / 7.0 min | *(none declared)* |
 | [Mary Ellen Letarte](/people/mary-ellen-letarte) | reference | — / 7.1 min | *(none declared)* |
@@ -3464,12 +3738,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Minna Scholten](/people/minna-scholten) | reference | — / 7.6 min | *(none declared)* |
 | [MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION-Subregion](/people/montachusett-metropolitan-planning-organization-subregion) | reference | — / 7.0 min | *(none declared)* |
 | [Myleen Mallari](/people/myleen-mallari) | reference | — / 8.5 min | *(none declared)* |
-| [Nancy Forest](/people/nancy-forest) | reference | — / 9.2 min | *(none declared)* |
+| [Nancy Forest](/people/nancy-forest) | reference | — / 9.1 min | *(none declared)* |
 | [Nancy Foss Yasko](/people/nancy-foss-yasko) | reference | — / 9.8 min | *(none declared)* |
 | [Nancy Gray](/people/nancy-gray) | reference | — / 8.3 min | *(none declared)* |
 | [Nancy Heald](/people/nancy-heald) | reference | — / 7.1 min | *(none declared)* |
 | [Nancy Peterson](/people/nancy-peterson) | reference | — / 7.0 min | *(none declared)* |
-| [Nathan J. Lockwood](/people/nathan-j-lockwood) | reference | — / 9.9 min | *(none declared)* |
+| [Nathan J. Lockwood](/people/nathan-j-lockwood) | reference | — / 10.1 min | *(none declared)* |
 | [Nathan Lockwood](/people/nathan-lockwood) | reference | — / 10.2 min | *(none declared)* |
 | [Neal Sullivan](/people/neal-sullivan) | reference | — / 7.8 min | *(none declared)* |
 | [Nicholas Coronella](/people/nicholas-coronella) | reference | — / 7.1 min | *(none declared)* |
@@ -3491,13 +3765,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Perry R. Jewell](/people/perry-r-jewell) | reference | — / 10.4 min | *(none declared)* |
 | [Pete Lincoln](/people/pete-lincoln) | reference | — / 9.0 min | *(none declared)* |
 | [Pete McCarron](/people/pete-mccarron) | reference | — / 7.3 min | *(none declared)* |
-| [Pete McCauliff](/people/pete-mccauliff) | reference | — / 9.8 min | *(none declared)* |
+| [Pete McCauliff](/people/pete-mccauliff) | reference | — / 10.0 min | *(none declared)* |
 | [Peter B. Lincoln](/people/peter-b-lincoln) | reference | — / 9.4 min | *(none declared)* |
 | [Peter Beardmore](/people/peter-beardmore) | reference | — / 11.0 min | *(none declared)* |
 | [Peter Schmidt](/people/peter-schmidt) | reference | — / 6.9 min | *(none declared)* |
 | [Peter Stella](/people/peter-stella) | reference | — / 7.5 min | *(none declared)* |
 | [Phyllis M. Luck](/people/phyllis-m-luck) | reference | — / 11.5 min | *(none declared)* |
-| [Raymond E. Beal](/people/raymond-e-beal) | reference | — / 9.0 min | *(none declared)* |
+| [Raymond E. Beal](/people/raymond-e-beal) | reference | — / 9.2 min | *(none declared)* |
 | [Rebecca Lantry](/people/rebecca-lantry) | reference | — / 9.0 min | *(none declared)* |
 | [Rena Swezey](/people/rena-swezey) | reference | — / 8.6 min | *(none declared)* |
 | [Renee Emkey](/people/renee-emkey) | reference | — / 10.8 min | *(none declared)* |
@@ -3521,7 +3795,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Robert Verge](/people/robert-verge) | reference | — / 7.2 min | *(none declared)* |
 | [Robin Nano](/people/robin-nano) | reference | — / 7.3 min | *(none declared)* |
 | [Robin Venezia](/people/robin-venezia) | reference | — / 7.5 min | *(none declared)* |
-| [Ronald Albert](/people/ronald-albert) | reference | — / 7.8 min | *(none declared)* |
+| [Ronald Albert](/people/ronald-albert) | reference | — / 7.9 min | *(none declared)* |
 | [Ruth Anderson](/people/ruth-anderson) | reference | — / 7.9 min | *(none declared)* |
 | [Ryan Stober](/people/ryan-stober) | reference | — / 10.1 min | *(none declared)* |
 | [Sarah Camme](/people/sarah-camme) | reference | — / 6.9 min | *(none declared)* |
@@ -3541,7 +3815,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Stephanie Karlson](/people/stephanie-karlson) | reference | — / 7.1 min | *(none declared)* |
 | [Stephanie Scofield](/people/stephanie-scofield) | reference | — / 7.1 min | *(none declared)* |
 | [Stephanie Trudel](/people/stephanie-trudel) | reference | — / 7.5 min | *(none declared)* |
-| [Stephen Schaff](/people/stephen-schaff) | reference | — / 9.3 min | *(none declared)* |
+| [Stephen Schaff](/people/stephen-schaff) | reference | — / 8.8 min | *(none declared)* |
 | [Stephen Walker](/people/stephen-walker) | reference | — / 7.2 min | *(none declared)* |
 | [Stephen Wallace](/people/stephen-wallace) | reference | — / 7.4 min | *(none declared)* |
 | [Steve Archambault](/people/steve-archambault) | reference | — / 8.9 min | *(none declared)* |
@@ -3561,7 +3835,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Tanya Dall](/people/tanya-dall) | reference | — / 9.6 min | *(none declared)* |
 | [Teddy Doucet](/people/teddy-doucet) | reference | — / 6.9 min | *(none declared)* |
 | [Terese Burchfield](/people/terese-burchfield) | reference | — / 8.6 min | *(none declared)* |
-| [Terri Burchfield](/people/terri-burchfield) | reference | — / 9.6 min | *(none declared)* |
+| [Terri Burchfield](/people/terri-burchfield) | reference | — / 10.0 min | *(none declared)* |
 | [Thia St. Martin](/people/thia-st-martin) | reference | — / 7.2 min | *(none declared)* |
 | [Thomas A. Alonzo](/people/thomas-a-alonzo) | reference | — / 10.7 min | *(none declared)* |
 | [Thomas Balish](/people/thomas-balish) | reference | — / 8.9 min | *(none declared)* |
@@ -3576,7 +3850,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Todd Dwyer](/people/todd-dwyer) | reference | — / 11.2 min | *(none declared)* |
 | [Todd Holman](/people/todd-holman) | reference | — / 7.2 min | *(none declared)* |
 | [Tom Alonzo](/people/tom-alonzo) | reference | — / 10.4 min | *(none declared)* |
-| [Tom Bertram](/people/tom-bertram) | reference | — / 10.4 min | *(none declared)* |
+| [Tom Bertram](/people/tom-bertram) | reference | — / 10.8 min | *(none declared)* |
 | [Tom Gray](/people/tom-gray) | reference | — / 8.5 min | *(none declared)* |
 | [Tont Reynolds](/people/tont-reynolds) | reference | — / 6.8 min | *(none declared)* |
 | [Troy Daniels](/people/troy-daniels) | reference | — / 10.5 min | *(none declared)* |
@@ -3595,9 +3869,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
 | [Analysis: Town and Schools](/reports) | reference | — / 51.7 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
-| [Sources](/sources) | reference | — / 20.3 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.9 min | *(none declared)* |
-| [What the town is deciding now](/threads) | reference | — / 16.0 min | *(none declared)* |
-| [Every Town Meeting vote](/town-meeting-votes) | reference | — / 492.0 min | *(none declared)* |
+| [Sources](/sources) | reference | — / 20.2 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.0 min | *(none declared)* |
+| [What the town is deciding now](/threads) | reference | — / 15.9 min | *(none declared)* |
+| [Every Town Meeting vote](/town-meeting-votes) | reference | — / 497.9 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
 | [What we cannot answer](/what-we-cannot-answer) | reference | — / 377.4 min | *(none declared)* |
