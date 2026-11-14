@@ -365,7 +365,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 47.8 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Registrars — about](/boards/board-of-registrars/about) | reference | — / 5.8 min | *(none declared)* |
-| [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.4 min | *(none declared)* |
 | [Board of Registrars — missing records](/boards/board-of-registrars/records) | reference | — / 8.7 min | *(none declared)* |
 | [Budget Task Force](/boards/budget-task-force) | reference | — / 7.1 min | *(none declared)* |
 | [Budget Task Force — about](/boards/budget-task-force/about) | reference | — / 8.2 min | *(none declared)* |
@@ -3870,7 +3870,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Analysis: Town and Schools](/reports) | reference | — / 51.7 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 20.2 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.0 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.6 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 15.9 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 497.9 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |

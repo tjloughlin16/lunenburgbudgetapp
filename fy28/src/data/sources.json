@@ -9960,9 +9960,9 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2613530,
+     "bytes": 2613966,
      "url": "/docs/data/searchable-pdfs.csv",
-     "count": 16328,
+     "count": 16330,
      "unit": "rows",
      "textUrl": "/docs/data/searchable-pdfs.csv"
     },
@@ -10116,9 +10116,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 203722,
+     "bytes": 207181,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 62,
+     "count": 63,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -69975,7 +69975,7 @@
  "totals": {
   "documents": 6236,
   "groups": 33,
-  "bytes": 7424984070,
+  "bytes": 7424987965,
   "loadBearing": 221
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1015 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
