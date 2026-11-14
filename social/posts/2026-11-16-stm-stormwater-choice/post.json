@@ -1,0 +1,49 @@
+{
+  "posted": null,
+  "about": "Wallet hook for the Special Town Meeting: the stormwater advisory vote, fee versus property taxes, with the per-home figures as the Stormwater Task Force presented them. One of the articles; the link sends readers to the whole warrant page. Figures from the warrant and the task force presentation as recorded on the meeting page.",
+  "data": {
+    "m": "app-metrics.json",
+    "tm": "threads.json#threads[id=stm-2026-11-17].warrant",
+    "sw": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=8]"
+  },
+  "literal": ["Proposition 2 1/2"],
+  "flare": {},
+  "image": {
+    "layout": "split",
+    "size": "square",
+    "headline": "Stormwater: {sw.heard[2].figure} or {sw.heard[1].figure} a year for a home",
+    "emphasis": "{sw.heard[2].figure} or {sw.heard[1].figure}",
+    "headline_size": 54,
+    "sub": "An advisory vote at Special Town Meeting · {tm.date|day} · {tm.time}",
+    "tiles": [
+      {
+        "eyebrow": "A NEW STORMWATER FEE",
+        "value": "{sw.heard[2].figure}",
+        "label": "a year, a single-family home",
+        "text": "Capped at {sw.heard[3].figure} for the first three years, as presented.",
+        "path": "/threads/stormwater-fee"
+      },
+      {
+        "eyebrow": "PROPERTY TAXES",
+        "value": "{sw.heard[1].figure}",
+        "label": "a year, a single-family home",
+        "text": "The warrant says this route will likely need a Proposition 2 1/2 override later.",
+        "path": "/threads/stormwater-fee"
+      }
+    ],
+    "path": "/threads/stm-2026-11-17",
+    "as_of": "As of {m.as_of|short} · as presented by the Stormwater Task Force · advisory: nothing is billed by this vote",
+    "conclusion": "The program costs about {sw.heard[0].figure} a year either way",
+    "conclusion_em": "either way",
+    "conclusion_size": 40
+  },
+  "text": [
+    "{sw.heard[2].figure} or {sw.heard[1].figure} a year: that's what the stormwater program would cost a typical single-family home in Lunenburg under the two options, as presented. On {tm.date|day}, Town Meeting gets an advisory vote on which way to go: a new stormwater fee, or the regular budget paid through property taxes.",
+    "",
+    "The program costs about {sw.heard[0].figure} a year either way. The warrant itself says the tax route \"will likely require a Proposition 2 1/2 override in the future.\" Select Board: {sw.select_board}.",
+    "",
+    "It's one of {tm.counts.on_warrant} articles on {tm.date|day}, {tm.time}, at the {tm.place}.",
+    "",
+    "👉 See every article on one page: lburg.org/threads/stm-2026-11-17"
+  ]
+}

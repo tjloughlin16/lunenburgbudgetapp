@@ -1,36 +1,49 @@
 # Post queue
 
-What is waiting to go out, and the candidates for the next post. Written 12 November 2026.
+What is waiting to go out, and the candidates for the next post. Written 12 November 2026;
+Town Meeting posts updated 13 November.
 Edit this file as posts go out or the options change; the live to-do is also on the
 `social-posts` goal in genlock.
 
 ## Queued
 
-### Special Town Meeting, 17 November: on the big questions, the room decides
+### Special Town Meeting, 17 November: three posts, in order
 
-`posts/2026-11-12-stm-where-boards-stand/` -- built, **not posted**. Waiting on the Finance
-Committee, which takes up the articles tonight (12 November, 7:00 PM, Zoom).
+All three link to `lburg.org/threads/stm-2026-11-17`, the one page covering every article.
+Built 13 November, **none posted**. They replace `posts/2026-11-12-stm-where-boards-stand/`,
+which is superseded: its "Finance Committee meets Thursday" line is past, and it does not know
+about the School Committee's 16 November vote on the track. Do not post it.
 
-The hook: on the four articles that cost money or change what people pay, the Select Board
-has backed none. Article 4, the special education reserve, is recommended against. Articles 7
-and 8 (TC Passios, stormwater) have no position. Article 9, the track, is deferred. And the
-School Committee, which sponsored the reserve article, voted on 4 November to pass it over.
+1. `posts/2026-11-14-stm-school-articles/` -- **this weekend.** The hook: both articles the
+   School Committee put on the warrant may not reach a vote. It voted 4 November to pass over
+   the special education reserve, and meets Monday 16 November to consider passing over the
+   track engineering article. TC Passios and stormwater stay as the advisory questions.
+2. `posts/2026-11-16-stm-stormwater-choice/` -- **Monday or the day before.** The wallet hook:
+   fee or property taxes, per single-family home, as the Stormwater Task Force presented it.
+3. `posts/2026-11-17-stm-tonight/` -- **morning of the 17th.** When, where, how many articles,
+   the link.
 
-Before it goes out (due 13 November):
+Before any of them goes out:
 
-- [ ] Add the Finance Committee's recommendations from tonight's recording.
-- [ ] Drop the "Finance Committee positions not yet posted" caveat on the image and the
-      "tonight" line in the text.
-- [ ] Re-check the Select Board's deferred articles. It votes on them at 6:30 PM on the 17th,
-      in a session that will not be recorded.
-- [ ] Rebuild with `python3 scripts/build_social_post.py social/posts/2026-11-12-stm-where-boards-stand`,
-      post it, then set `"posted"` in `post.json`.
+- [ ] **Finance Committee positions.** It took up the articles 12 November (Zoom); its column
+      is blank on the warrant and the recording is not in the data yet. Once read, add them to
+      post 1 and drop "Finance Committee positions not yet posted" from its image.
+- [ ] **Re-check post 1's track line after Monday's School Committee vote (16 November).** If it
+      passes over Article 9, rewrite the headline from "may never reach a vote" to what
+      happened; if it does not, the hook changes and post 1 needs a new one.
+- [ ] Re-check the Select Board's deferred Articles 2, 3 and 9. It votes on them at 6:30 PM on
+      the 17th, in a session that will not be recorded.
+- [ ] Confirm the live page shows the 16 November School Committee meeting before posting 1.
+- [ ] Rebuild with `python3 scripts/build_social_post.py social/posts/<folder>`, post, then set
+      `"posted"` in that folder's `post.json`.
 
 Sources: board positions are printed in the signed warrant
 (`town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf`, signed 27 October).
 The School Committee's pass-over (4 November), the Select Board's deferral (10 November) and
 Capital Planning's "no recommendation" (10 November) come from the recordings, read in the
-captions at the cited seconds.
+captions at the cited seconds. The 16 November item is on the School Committee's agenda
+(`meetings/school-committee/2026-11-16-agenda-8136.pdf`). Stormwater figures are the task
+force's, as presented, quoted on the warrant.
 
 ## Next post: pick one
 

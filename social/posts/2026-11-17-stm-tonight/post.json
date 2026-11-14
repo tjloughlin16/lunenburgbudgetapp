@@ -1,0 +1,31 @@
+{
+  "posted": null,
+  "about": "Day-of reminder for the Special Town Meeting: when, where, how many articles, and the page that explains them. Logistics and the article count from the warrant as recorded on the meeting page.",
+  "data": {
+    "m": "app-metrics.json",
+    "tm": "threads.json#threads[id=stm-2026-11-17].warrant"
+  },
+  "literal": [],
+  "flare": {},
+  "image": {
+    "layout": "hero",
+    "size": "square",
+    "headline": "Tonight, registered voters decide in the room",
+    "emphasis": "in the room",
+    "headline_size": 54,
+    "sub": "Special Town Meeting · {tm.date|day} · {tm.time} · {tm.place}",
+    "hero": {
+      "value": "{tm.counts.on_warrant}",
+      "label": "articles on the warrant",
+      "text": "Two are advisory questions: tearing down TC Passios, and paying for stormwater by a fee or by taxes."
+    },
+    "path": "/threads/stm-2026-11-17",
+    "as_of": "As of {m.as_of|short}"
+  },
+  "text": [
+    "Tonight, {tm.time}, {tm.place}: Special Town Meeting. {tm.counts.on_warrant} articles, two of them advisory questions on TC Passios and stormwater. If you're a registered voter, you decide in the room.",
+    "",
+    "Know what's on it before you go:",
+    "👉 lburg.org/threads/stm-2026-11-17"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "posted": null,
+  "about": "Main Special Town Meeting post, replacing the 12 Nov draft. The new fact: both articles the School Committee put on the warrant may not reach a vote -- it voted 4 Nov to pass over its special education reserve request, and meets 16 Nov to consider passing over the track engineering article. Board positions from the signed warrant (27 Oct); the 4 Nov pass-over and 10 Nov Capital Planning stance from the recordings; the 16 Nov item from the School Committee agenda. Re-check the track line after the 16 Nov vote, and add Finance Committee positions once its 12 Nov recording is read.",
+  "data": {
+    "m": "app-metrics.json",
+    "tm": "threads.json#threads[id=stm-2026-11-17].warrant",
+    "pass": "threads.json#threads[id=stm-2026-11-17].stands.vote",
+    "nxt": "threads.json#threads[id=stm-2026-11-17].warrant.next[0]",
+    "sped": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=4]",
+    "tcp": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=7]",
+    "sw": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=8]",
+    "trk": "threads.json#threads[id=stm-2026-11-17].warrant.articles[article=9]"
+  },
+  "literal": [],
+  "flare": {},
+  "image": {
+    "layout": "split",
+    "size": "square",
+    "headline": "Both school articles may never reach a vote",
+    "emphasis": "may never reach a vote",
+    "headline_size": 54,
+    "sub": "Special Town Meeting · {tm.date|day} · {tm.time}",
+    "tiles": [
+      {
+        "eyebrow": "SPECIAL ED RESERVE",
+        "value": "{sped.heard[0].figure}",
+        "label": "from free cash",
+        "text": "The School Committee voted {pass.date|short} to pass over its own request.",
+        "path": "/threads/stm-2026-11-17"
+      },
+      {
+        "eyebrow": "TRACK AND FIELD",
+        "value": "{trk.amount}",
+        "label": "to engineer it · {trk.heard[1].figure} to rebuild",
+        "text": "The School Committee meets {nxt.date|short} to consider passing it over.",
+        "path": "/threads/turf-field-study"
+      }
+    ],
+    "path": "/threads/stm-2026-11-17",
+    "as_of": "As of {m.as_of|short} · Finance Committee positions not yet posted · figures as presented, not voted",
+    "conclusion": "TC Passios and stormwater are still the room's call",
+    "conclusion_em": "the room's call",
+    "conclusion_size": 40
+  },
+  "text": [
+    "Special Town Meeting is {tm.date|day}, {tm.time}, at the {tm.place}. Both articles the School Committee put on the warrant may not reach a vote.",
+    "",
+    "🎒 {sped.heard[0].figure} for the special education reserve: the School Committee voted on {pass.date|day} to pass over its own request. Select Board: {sped.select_board}.",
+    "",
+    "🏟️ {trk.amount} to engineer the Middle/High School track and field, toward a project estimated at {trk.heard[1].figure}: the School Committee meets {nxt.date|day} to consider passing it over too. The Select Board deferred it, and the Capital Planning Committee will make no recommendation.",
+    "",
+    "Two advisory questions are still live:",
+    "🏚️ Tear down TC Passios? No money is voted. A building committee member put demolition at {tcp.heard[0].figure}.",
+    "💧 Stormwater: a new fee or property taxes? As presented, about {sw.heard[2].figure} a year for a typical home under a fee, or about {sw.heard[1].figure} through taxes.",
+    "",
+    "👉 LEARN MORE: every article, every board's position, and the recordings where they said it:",
+    "👉 lburg.org/threads/stm-2026-11-17",
+    "",
+    "Which one are you going for?"
+  ]
+}
