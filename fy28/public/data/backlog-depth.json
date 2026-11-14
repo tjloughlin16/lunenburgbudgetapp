@@ -1,5 +1,14 @@
 {
- "by_board": [],
+ "by_board": [
+  {
+   "board": "select-board",
+   "minutes": 0,
+   "official": 4,
+   "official-v1": 0,
+   "reconcile": 0,
+   "total": 4
+  }
+ ],
  "by_board_fiscal_year": {
   "all": [
    {
@@ -979,7 +988,7 @@
     "captions_disabled": 4,
     "fy": "FY2025",
     "meetings": 447,
-    "meetings_open": 0,
+    "meetings_open": 4,
     "minutes": 0,
     "missing_boards": {
      "missing_minutes": {
@@ -1046,12 +1055,16 @@
     "needs_review": 0,
     "needs_review_boards": {},
     "needs_review_meetings": [],
-    "official": 0,
+    "official": 4,
     "official-v1": 0,
-    "pct_open": 0.0,
+    "pct_open": 0.9,
     "reconcile": 0,
-    "stream_boards": {},
-    "total": 0
+    "stream_boards": {
+     "official": {
+      "select-board": 4
+     }
+    },
+    "total": 4
    },
    {
     "captions_disabled": 2,
@@ -1142,7 +1155,7 @@
       "agricultural-commission": 1,
       "board-of-assessors": 1,
       "board-of-health": 1,
-      "board-of-registrars": 4,
+      "board-of-registrars": 5,
       "conservation-commission": 5,
       "council-on-aging": 2,
       "finance-committee": 4,
@@ -1176,7 +1189,7 @@
       "trust-fund-commission": 1
      }
     },
-    "missing_minutes": 46,
+    "missing_minutes": 47,
     "missing_transcript": 0,
     "missing_video": 26,
     "needs_review": 0,
@@ -2467,7 +2480,7 @@
     "captions_disabled": 1,
     "fy": "FY2025",
     "meetings": 47,
-    "meetings_open": 0,
+    "meetings_open": 4,
     "minutes": 0,
     "missing_boards": {
      "missing_minutes": {
@@ -2486,12 +2499,16 @@
     "needs_review": 0,
     "needs_review_boards": {},
     "needs_review_meetings": [],
-    "official": 0,
+    "official": 4,
     "official-v1": 0,
-    "pct_open": 0.0,
+    "pct_open": 8.5,
     "reconcile": 0,
-    "stream_boards": {},
-    "total": 0
+    "stream_boards": {
+     "official": {
+      "select-board": 4
+     }
+    },
+    "total": 4
    },
    {
     "captions_disabled": 1,
@@ -3480,10 +3497,10 @@
    "missing_minutes": 158,
    "missing_transcript": 5,
    "missing_video": 101,
-   "official": 0,
+   "official": 4,
    "official-v1": 0,
    "reconcile": 0,
-   "total": 0
+   "total": 4
   },
   {
    "captions_disabled": 2,
@@ -3565,7 +3582,7 @@
      "agricultural-commission": 1,
      "board-of-assessors": 1,
      "board-of-health": 1,
-     "board-of-registrars": 4,
+     "board-of-registrars": 5,
      "conservation-commission": 5,
      "council-on-aging": 2,
      "finance-committee": 4,
@@ -3599,7 +3616,7 @@
      "trust-fund-commission": 1
     }
    },
-   "missing_minutes": 46,
+   "missing_minutes": 47,
    "missing_transcript": 0,
    "missing_video": 26,
    "official": 0,
@@ -3608,9 +3625,43 @@
    "total": 0
   }
  ],
- "by_month": [],
- "by_year": [],
- "estimated_usd": 0.0,
+ "by_month": [
+  {
+   "minutes": 0,
+   "month": "2024-08",
+   "official": 1,
+   "official-v1": 0,
+   "reconcile": 0,
+   "total": 1
+  },
+  {
+   "minutes": 0,
+   "month": "2024-10",
+   "official": 1,
+   "official-v1": 0,
+   "reconcile": 0,
+   "total": 1
+  },
+  {
+   "minutes": 0,
+   "month": "2024-11",
+   "official": 2,
+   "official-v1": 0,
+   "reconcile": 0,
+   "total": 2
+  }
+ ],
+ "by_year": [
+  {
+   "minutes": 0,
+   "official": 4,
+   "official-v1": 0,
+   "reconcile": 0,
+   "total": 4,
+   "year": "2024"
+  }
+ ],
+ "estimated_usd": 0.07,
  "estimated_weeks": 0.0,
  "filter_boards": [
   {
@@ -3629,11 +3680,11 @@
  "grain": "One row per MEETING still to process (a board on a date), placed by the meeting’s own date — never the things inside it: one set of minutes may hold eight votes or none. Streams are counted separately and must not be added, being different pieces of work at different prices; the two official streams are one structured read of the town’s minutes, split by whether the minutes were ever read before (votes only) or never.",
  "id": "backlog-depth",
  "missing_captions_disabled": 186,
- "missing_meetings": 3441,
+ "missing_meetings": 3442,
  "missing_streams": [
   {
    "label": "no town minutes",
-   "meetings": 2390,
+   "meetings": 2391,
    "name": "missing_minutes"
   },
   {
@@ -3654,8 +3705,8 @@
  ],
  "streams": [
   {
-   "estimated_usd": 0.0,
-   "jobs": 0,
+   "estimated_usd": 0.07,
+   "jobs": 4,
    "name": "official",
    "unit_cost": 0.018
   },
@@ -3679,5 +3730,5 @@
   }
  ],
  "title": "How deep the backlog is",
- "total_jobs": 0
+ "total_jobs": 4
 }
