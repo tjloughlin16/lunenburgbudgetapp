@@ -5053,6 +5053,10 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # source, and deliberately not published at /docs -- the hidden page reads its
              # own copy under fy28/public/data/oml/.
              'data/oml-reviews',
+             # One JSON per Attorney General Open Meeting Law determination: a digest of the
+             # letter written by a model (scripts/digest_oml_determinations.py). A reading of letters
+             # catalogued under state-law/, never a source -- the same kind as oml-reviews.
+             'data/oml-determinations',
              # The votes read out of the TOWN'S minutes by extract_official_votes.py, one
              # JSON per set of minutes, each vote with its verbatim quote. A reading of a
              # document the archive already catalogues, not a document; the minutes are.
@@ -5084,6 +5088,10 @@ SKIP_FILES = {'supplemental.csv',
               # is documented in CLAUDE.md, which is where it belongs.
               'analyses/UNLISTED',
               'data/archive-manifest.csv', 'data/archive-push-state.csv',
+              # Leading OML rulings per issue, ranked by how many later determinations cite
+              # each (scripts/build_oml_leading_rulings.py). Ours, computed from the letters
+              # catalogued under state-law/ -- an analysis output, not a document.
+              'data/oml-leading-rulings.json',
               # WHAT A PAGE OF INGEST COST, one row per attempt: model, boxes, rows
               # returned, dollars and seconds. Bookkeeping about the reading rather than
               # anything read for a figure, in the same family as the manifest above -- and
