@@ -447,7 +447,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 10.6 min | *(none declared)* |
 | [Economic Development Committee](/boards/economic-development-committee) | reference | — / 7.6 min | *(none declared)* |
 | [Economic Development Committee — about](/boards/economic-development-committee/about) | reference | — / 8.5 min | *(none declared)* |
-| [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 8.8 min | *(none declared)* |
+| [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 8.7 min | *(none declared)* |
 | [Economic Development Committee — missing records](/boards/economic-development-committee/records) | reference | — / 8.5 min | *(none declared)* |
 | [Economic Development Committee — where the time goes](/boards/economic-development-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Economic Development Committee — votes](/boards/economic-development-committee/votes) | reference | — / 9.2 min | *(none declared)* |
@@ -3867,9 +3867,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.6 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 51.7 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 51.6 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
-| [Sources](/sources) | reference | — / 20.2 min | *(none declared)* |
+| [Sources](/sources) | reference | — / 20.3 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.6 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 15.9 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 497.9 min | *(none declared)* |

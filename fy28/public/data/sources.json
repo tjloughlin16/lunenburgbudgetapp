@@ -8940,7 +8940,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 135532544,
+     "bytes": 135536640,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -10056,9 +10056,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 617364,
+     "bytes": 617708,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4375,
+     "count": 4377,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -10116,9 +10116,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 208196,
+     "bytes": 211560,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 63,
+     "count": 64,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -69975,7 +69975,7 @@
  "totals": {
   "documents": 6236,
   "groups": 33,
-  "bytes": 7425056322,
+  "bytes": 7425064126,
   "loadBearing": 221
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1015 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
