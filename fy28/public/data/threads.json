@@ -9,11 +9,11 @@
   "meetings_with_our_minutes": 2650,
   "meetings_with_town_minutes_read": 4480,
   "boards_readable": 52,
-  "agendas_as_of": "2026-11-14",
+  "agendas_as_of": "2026-11-15",
   "agendas_matched": {
-   "agendas": 35,
+   "agendas": 34,
    "agendas_upcoming": 11,
-   "agendas_unreadable": 3,
+   "agendas_unreadable": 2,
    "items": 305,
    "business_items": 176,
    "matched_items": 14,
@@ -41,17 +41,17 @@
   ]
  },
  "hottest": {
-  "as_of": "2026-11-14",
+  "as_of": "2026-11-15",
   "window_days": 30,
   "threads": [
    {
     "id": "stormwater-fee",
     "label": "The stormwater fee",
     "short": "The stormwater fee",
-    "hook": "$85 estimated stormwater fee",
-    "meetings": 10,
+    "hook": "$85 per ERU proposed yearly stormwater fee",
+    "meetings": 9,
     "boards": 5,
-    "days_since_last": 5
+    "days_since_last": 6
    },
    {
     "id": "turf-field-study",
@@ -60,7 +60,7 @@
     "hook": "$195,830 requested for engineering study",
     "meetings": 5,
     "boards": 4,
-    "days_since_last": 4
+    "days_since_last": 5
    },
    {
     "id": "town-offices",
@@ -69,7 +69,7 @@
     "hook": "$21.4M–$22.3M plan voters rejected",
     "meetings": 4,
     "boards": 3,
-    "days_since_last": 5
+    "days_since_last": 6
    },
    {
     "id": "veterans-exemption",
@@ -78,7 +78,7 @@
     "hook": "",
     "meetings": 3,
     "boards": 3,
-    "days_since_last": 10
+    "days_since_last": 11
    }
   ]
  },
@@ -2697,7 +2697,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 4,
+    "days_since_last": 5,
     "span_days": 293,
     "meetings_last_90": 11,
     "board_meetings_since": 0
@@ -4565,7 +4565,7 @@
     "meetings": 23,
     "boards": 13,
     "votes": 36,
-    "days_since_last": 4,
+    "days_since_last": 5,
     "span_days": 84,
     "meetings_last_90": 23,
     "board_meetings_since": 1
@@ -4716,8 +4716,8 @@
       ]
      },
      {
-      "summary": "",
-      "summary_from": "",
+      "summary": "This is a non-binding question that asks voters which way they prefer to pay for meeting the federal stormwater permit rules, as put forward by the Stormwater Task Force. One choice is a separate stormwater fee, about $85 a year for a single-family home (capped at $100 for three years); the other is property taxes, about $109 a year. The program costs about $480,000 a year, as presented and not voted.",
+      "summary_from": "the warrant",
       "article": 8,
       "title": "Advisory vote on funding mechanism for stormwater maintenance and MS4 permit compliance",
       "title_from": "the warrant",
@@ -6149,7 +6149,7 @@
     "meetings": 14,
     "boards": 4,
     "votes": 4,
-    "days_since_last": 4,
+    "days_since_last": 5,
     "span_days": 112,
     "meetings_last_90": 8,
     "board_meetings_since": 0
@@ -15904,7 +15904,7 @@
     "meetings": 139,
     "boards": 20,
     "votes": 16,
-    "days_since_last": 5,
+    "days_since_last": 6,
     "span_days": 777,
     "meetings_last_90": 15,
     "board_meetings_since": 4
@@ -15930,9 +15930,9 @@
     {
      "order": 1,
      "kind": "fee",
-     "value": "$85",
-     "label": "current estimate of the yearly stormwater fee for a single-family home; not final",
-     "hook": "estimated stormwater fee",
+     "value": "$85 per ERU",
+     "label": "current estimate of the yearly stormwater fee, capped at $100 for the first three years",
+     "hook": "proposed yearly stormwater fee",
      "sources": [
       {
        "basis": "printed",
@@ -15945,16 +15945,16 @@
     },
     {
      "order": 2,
-     "kind": "warrant",
-     "value": "Nov 17",
-     "label": "Special Town Meeting takes up the stormwater fee bylaw article",
+     "kind": "money",
+     "value": "$480,000",
+     "label": "estimated yearly cost of stormwater compliance, versus about $100,000 spent now",
      "hook": "",
      "sources": [
       {
-       "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=kig-BTakGjQ&t=4336s",
-       "where": "Select Board, 15 Sep 2026",
-       "checked_against": "the captions"
+       "basis": "printed",
+       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
+       "where": "Select Board minutes, 20 Oct 2026",
+       "checked_against": "the document"
       }
      ],
      "auto": true
@@ -15962,15 +15962,15 @@
     {
      "order": 3,
      "kind": "fee",
-     "value": "Separate bill",
-     "label": "proposed: stormwater fee billed apart from the tax bill, with a pay-quarterly option",
+     "value": "$109 vs $85",
+     "label": "yearly cost for an average home if funded through taxes versus the utility fee",
      "hook": "",
      "sources": [
       {
-       "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=N5dSxGy3zZs&t=1580s",
-       "where": "Stormwater Task Force, 31 Aug 2026",
-       "checked_against": "the captions"
+       "basis": "printed",
+       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
+       "where": "Select Board minutes, 20 Oct 2026",
+       "checked_against": "the document"
       }
      ],
      "auto": true
@@ -21622,12 +21622,12 @@
    "tangled": true,
    "hot": true,
    "momentum": {
-    "meetings_last_30": 10,
+    "meetings_last_30": 9,
     "boards_last_30": 5,
     "meetings": 63,
     "boards": 9,
     "votes": 7,
-    "days_since_last": 5,
+    "days_since_last": 6,
     "span_days": 300,
     "meetings_last_90": 23,
     "board_meetings_since": 2
@@ -22605,7 +22605,7 @@
     "meetings": 9,
     "boards": 6,
     "votes": 8,
-    "days_since_last": 10,
+    "days_since_last": 11,
     "span_days": 56,
     "meetings_last_90": 9,
     "board_meetings_since": 1
@@ -26594,7 +26594,7 @@
     "meetings": 27,
     "boards": 7,
     "votes": 7,
-    "days_since_last": 12,
+    "days_since_last": 13,
     "span_days": 272,
     "meetings_last_90": 10,
     "board_meetings_since": 2
@@ -27193,7 +27193,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 24,
+    "days_since_last": 25,
     "span_days": 70,
     "meetings_last_90": 4,
     "board_meetings_since": 0
@@ -29604,7 +29604,7 @@
     "meetings": 12,
     "boards": 5,
     "votes": 4,
-    "days_since_last": 25,
+    "days_since_last": 26,
     "span_days": 98,
     "meetings_last_90": 6,
     "board_meetings_since": 5
@@ -30034,12 +30034,12 @@
    "tangled": false,
    "hot": false,
    "momentum": {
-    "meetings_last_30": 2,
-    "boards_last_30": 2,
+    "meetings_last_30": 1,
+    "boards_last_30": 1,
     "meetings": 6,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 25,
+    "days_since_last": 26,
     "span_days": 40,
     "meetings_last_90": 6,
     "board_meetings_since": 4
@@ -32504,7 +32504,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 32,
+    "days_since_last": 33,
     "span_days": 35,
     "meetings_last_90": 2,
     "board_meetings_since": 2
@@ -33251,7 +33251,7 @@
     "meetings": 5,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 38,
+    "days_since_last": 39,
     "span_days": 92,
     "meetings_last_90": 4,
     "board_meetings_since": 7
@@ -33799,7 +33799,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 2,
-    "days_since_last": 38,
+    "days_since_last": 39,
     "span_days": 21,
     "meetings_last_90": 2,
     "board_meetings_since": 2
@@ -35373,7 +35373,7 @@
     "meetings": 3,
     "boards": 3,
     "votes": 0,
-    "days_since_last": 39,
+    "days_since_last": 40,
     "span_days": 36,
     "meetings_last_90": 3,
     "board_meetings_since": 7
@@ -37912,7 +37912,7 @@
     "meetings": 30,
     "boards": 8,
     "votes": 0,
-    "days_since_last": 59,
+    "days_since_last": 60,
     "span_days": 336,
     "meetings_last_90": 3,
     "board_meetings_since": 19
@@ -38418,7 +38418,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 60,
+    "days_since_last": 61,
     "span_days": 119,
     "meetings_last_90": 2,
     "board_meetings_since": 9
@@ -39584,7 +39584,7 @@
     "meetings": 21,
     "boards": 11,
     "votes": 20,
-    "days_since_last": 72,
+    "days_since_last": 73,
     "span_days": 52,
     "meetings_last_90": 7,
     "board_meetings_since": 40
@@ -41371,7 +41371,7 @@
     "meetings": 12,
     "boards": 4,
     "votes": 4,
-    "days_since_last": 86,
+    "days_since_last": 87,
     "span_days": 220,
     "meetings_last_90": 1,
     "board_meetings_since": 18
@@ -41855,7 +41855,7 @@
     "meetings": 3,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 88,
+    "days_since_last": 89,
     "span_days": 42,
     "meetings_last_90": 1,
     "board_meetings_since": 7
@@ -42642,7 +42642,7 @@
     "meetings": 11,
     "boards": 5,
     "votes": 1,
-    "days_since_last": 108,
+    "days_since_last": 109,
     "span_days": 238,
     "meetings_last_90": 0,
     "board_meetings_since": 29
@@ -43209,7 +43209,7 @@
     "meetings": 9,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 130,
+    "days_since_last": 131,
     "span_days": 230,
     "meetings_last_90": 0,
     "board_meetings_since": 33
@@ -43969,7 +43969,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 143,
+    "days_since_last": 144,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 9
@@ -45132,7 +45132,7 @@
     "meetings": 21,
     "boards": 5,
     "votes": 10,
-    "days_since_last": 186,
+    "days_since_last": 187,
     "span_days": 461,
     "meetings_last_90": 0,
     "board_meetings_since": 48
@@ -49023,7 +49023,7 @@
     "meetings": 35,
     "boards": 11,
     "votes": 163,
-    "days_since_last": 196,
+    "days_since_last": 197,
     "span_days": 116,
     "meetings_last_90": 0,
     "board_meetings_since": 105
@@ -50844,7 +50844,7 @@
     "meetings": 10,
     "boards": 5,
     "votes": 0,
-    "days_since_last": 196,
+    "days_since_last": 197,
     "span_days": 114,
     "meetings_last_90": 0,
     "board_meetings_since": 57
@@ -51513,7 +51513,7 @@
     "meetings": 14,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 196,
+    "days_since_last": 197,
     "span_days": 214,
     "meetings_last_90": 0,
     "board_meetings_since": 45
@@ -51842,7 +51842,7 @@
     "meetings": 5,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 196,
+    "days_since_last": 197,
     "span_days": 60,
     "meetings_last_90": 0,
     "board_meetings_since": 32
@@ -52218,7 +52218,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 3,
-    "days_since_last": 196,
+    "days_since_last": 197,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 23
@@ -52497,7 +52497,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 226,
+    "days_since_last": 227,
     "span_days": 135,
     "meetings_last_90": 0,
     "board_meetings_since": 11
@@ -55821,7 +55821,7 @@
     "meetings": 25,
     "boards": 14,
     "votes": 97,
-    "days_since_last": 361,
+    "days_since_last": 362,
     "span_days": 98,
     "meetings_last_90": 0,
     "board_meetings_since": 242
@@ -56827,7 +56827,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 361,
+    "days_since_last": 362,
     "span_days": 91,
     "meetings_last_90": 0,
     "board_meetings_since": 102
@@ -57163,7 +57163,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 361,
+    "days_since_last": 362,
     "span_days": 42,
     "meetings_last_90": 0,
     "board_meetings_since": 50
@@ -61357,7 +61357,7 @@
     "meetings": 44,
     "boards": 14,
     "votes": 164,
-    "days_since_last": 560,
+    "days_since_last": 561,
     "span_days": 165,
     "meetings_last_90": 0,
     "board_meetings_since": 380
@@ -62532,7 +62532,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 560,
+    "days_since_last": 561,
     "span_days": 30,
     "meetings_last_90": 0,
     "board_meetings_since": 36
@@ -64227,7 +64227,7 @@
     "meetings": 27,
     "boards": 12,
     "votes": 63,
-    "days_since_last": 732,
+    "days_since_last": 733,
     "span_days": 104,
     "meetings_last_90": 0,
     "board_meetings_since": 433
@@ -65047,7 +65047,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 732,
+    "days_since_last": 733,
     "span_days": 85,
     "meetings_last_90": 0,
     "board_meetings_since": 212
@@ -68390,7 +68390,7 @@
     "meetings": 36,
     "boards": 13,
     "votes": 116,
-    "days_since_last": 924,
+    "days_since_last": 925,
     "span_days": 116,
     "meetings_last_90": 0,
     "board_meetings_since": 563
@@ -69385,7 +69385,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 924,
+    "days_since_last": 925,
     "span_days": 37,
     "meetings_last_90": 0,
     "board_meetings_since": 12
@@ -71794,7 +71794,7 @@
     "meetings": 29,
     "boards": 11,
     "votes": 87,
-    "days_since_last": 1096,
+    "days_since_last": 1097,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 547
@@ -72695,7 +72695,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 1096,
+    "days_since_last": 1097,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 251
@@ -73213,7 +73213,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 2,
-    "days_since_last": 1096,
+    "days_since_last": 1097,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 204
@@ -75658,7 +75658,7 @@
     "meetings": 28,
     "boards": 9,
     "votes": 74,
-    "days_since_last": 1288,
+    "days_since_last": 1289,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 591
@@ -76589,7 +76589,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 1288,
+    "days_since_last": 1289,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 246
@@ -76677,7 +76677,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 1288,
+    "days_since_last": 1289,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 7
@@ -78677,7 +78677,7 @@
     "meetings": 38,
     "boards": 12,
     "votes": 59,
-    "days_since_last": 1460,
+    "days_since_last": 1461,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 892
@@ -79596,7 +79596,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 1,
-    "days_since_last": 1460,
+    "days_since_last": 1461,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 239
@@ -82801,7 +82801,7 @@
     "meetings": 35,
     "boards": 10,
     "votes": 113,
-    "days_since_last": 1652,
+    "days_since_last": 1653,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 822
@@ -86316,7 +86316,7 @@
     "meetings": 37,
     "boards": 12,
     "votes": 67,
-    "days_since_last": 1824,
+    "days_since_last": 1825,
     "span_days": 196,
     "meetings_last_90": 0,
     "board_meetings_since": 1022
@@ -89264,7 +89264,7 @@
     "meetings": 36,
     "boards": 14,
     "votes": 71,
-    "days_since_last": 2025,
+    "days_since_last": 2026,
     "span_days": 114,
     "meetings_last_90": 0,
     "board_meetings_since": 1274
@@ -90321,7 +90321,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 2076,
+    "days_since_last": 2077,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 243
@@ -92375,7 +92375,7 @@
     "meetings": 34,
     "boards": 13,
     "votes": 59,
-    "days_since_last": 2188,
+    "days_since_last": 2189,
     "span_days": 154,
     "meetings_last_90": 0,
     "board_meetings_since": 1170
@@ -95220,7 +95220,7 @@
     "meetings": 36,
     "boards": 9,
     "votes": 54,
-    "days_since_last": 2345,
+    "days_since_last": 2346,
     "span_days": 158,
     "meetings_last_90": 0,
     "board_meetings_since": 934
@@ -97589,7 +97589,7 @@
     "meetings": 21,
     "boards": 6,
     "votes": 59,
-    "days_since_last": 2559,
+    "days_since_last": 2560,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 949
@@ -100218,7 +100218,7 @@
     "meetings": 26,
     "boards": 6,
     "votes": 110,
-    "days_since_last": 2751,
+    "days_since_last": 2752,
     "span_days": 137,
     "meetings_last_90": 0,
     "board_meetings_since": 842
@@ -101681,7 +101681,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2751,
+    "days_since_last": 2752,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -101808,7 +101808,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2751,
+    "days_since_last": 2752,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -101935,7 +101935,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2751,
+    "days_since_last": 2752,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -103034,7 +103034,7 @@
     "meetings": 21,
     "boards": 8,
     "votes": 35,
-    "days_since_last": 2923,
+    "days_since_last": 2924,
     "span_days": 183,
     "meetings_last_90": 0,
     "board_meetings_since": 1052
@@ -103833,7 +103833,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 1,
-    "days_since_last": 2923,
+    "days_since_last": 2924,
     "span_days": 98,
     "meetings_last_90": 0,
     "board_meetings_since": 410
@@ -104128,7 +104128,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 5,
-    "days_since_last": 3119,
+    "days_since_last": 3120,
     "span_days": 105,
     "meetings_last_90": 0,
     "board_meetings_since": 565
@@ -106395,7 +106395,7 @@
     "meetings": 15,
     "boards": 9,
     "votes": 53,
-    "days_since_last": 3273,
+    "days_since_last": 3274,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 1456
@@ -107646,7 +107646,7 @@
     "meetings": 8,
     "boards": 6,
     "votes": 40,
-    "days_since_last": 3479,
+    "days_since_last": 3480,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 1048
@@ -109421,7 +109421,7 @@
     "meetings": 9,
     "boards": 3,
     "votes": 12,
-    "days_since_last": 3644,
+    "days_since_last": 3645,
     "span_days": 49,
     "meetings_last_90": 0,
     "board_meetings_since": 623
@@ -110334,7 +110334,7 @@
     "meetings": 6,
     "boards": 4,
     "votes": 27,
-    "days_since_last": 3736,
+    "days_since_last": 3737,
     "span_days": 41,
     "meetings_last_90": 0,
     "board_meetings_since": 914
@@ -111257,7 +111257,7 @@
     "meetings": 8,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 3747,
+    "days_since_last": 3748,
     "span_days": 93,
     "meetings_last_90": 0,
     "board_meetings_since": 899
@@ -113833,7 +113833,7 @@
     "meetings": 20,
     "boards": 8,
     "votes": 122,
-    "days_since_last": 3843,
+    "days_since_last": 3844,
     "span_days": 166,
     "meetings_last_90": 0,
     "board_meetings_since": 1390
@@ -115653,7 +115653,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 3843,
+    "days_since_last": 3844,
     "span_days": 74,
     "meetings_last_90": 0,
     "board_meetings_since": 939
@@ -116395,7 +116395,7 @@
     "meetings": 16,
     "boards": 2,
     "votes": 11,
-    "days_since_last": 4016,
+    "days_since_last": 4017,
     "span_days": 195,
     "meetings_last_90": 0,
     "board_meetings_since": 726
@@ -118721,7 +118721,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 88,
-    "days_since_last": 4214,
+    "days_since_last": 4215,
     "span_days": 207,
     "meetings_last_90": 0,
     "board_meetings_since": 1405
@@ -120589,7 +120589,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 2,
-    "days_since_last": 4214,
+    "days_since_last": 4215,
     "span_days": 159,
     "meetings_last_90": 0,
     "board_meetings_since": 1144
@@ -122351,7 +122351,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 49,
-    "days_since_last": 4578,
+    "days_since_last": 4579,
     "span_days": 102,
     "meetings_last_90": 0,
     "board_meetings_since": 1668
@@ -123722,7 +123722,7 @@
     "meetings": 9,
     "boards": 2,
     "votes": 2,
-    "days_since_last": 4582,
+    "days_since_last": 4583,
     "span_days": 161,
     "meetings_last_90": 0,
     "board_meetings_since": 812
@@ -124403,7 +124403,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 9,
-    "days_since_last": 4694,
+    "days_since_last": 4695,
     "span_days": 120,
     "meetings_last_90": 0,
     "board_meetings_since": 1157
@@ -126224,7 +126224,7 @@
     "meetings": 30,
     "boards": 9,
     "votes": 52,
-    "days_since_last": 5306,
+    "days_since_last": 5307,
     "span_days": 207,
     "meetings_last_90": 0,
     "board_meetings_since": 2166
@@ -126956,7 +126956,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 5602,
+    "days_since_last": 5603,
     "span_days": 66,
     "meetings_last_90": 0,
     "board_meetings_since": 1632
@@ -127662,7 +127662,7 @@
     "meetings": 13,
     "boards": 4,
     "votes": 12,
-    "days_since_last": 5670,
+    "days_since_last": 5671,
     "span_days": 117,
     "meetings_last_90": 0,
     "board_meetings_since": 1524
@@ -128281,7 +128281,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 5670,
+    "days_since_last": 5671,
     "span_days": 9,
     "meetings_last_90": 0,
     "board_meetings_since": 359

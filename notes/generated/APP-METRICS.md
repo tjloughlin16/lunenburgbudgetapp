@@ -1,6 +1,6 @@
 # The Lunenburg Budget Project, by the numbers
 
-*As of 2026-11-14. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
+*As of 2026-11-15. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
 
 ## What the town and the state published — and we hold
 
