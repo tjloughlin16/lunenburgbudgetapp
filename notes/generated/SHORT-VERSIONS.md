@@ -445,7 +445,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Devens Regional Oversight Committee — missing records](/boards/devens-regional-oversight-committee/records) | reference | — / 7.6 min | *(none declared)* |
 | [Devens Regional Oversight Committee — budget schedule](/boards/devens-regional-oversight-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 10.6 min | *(none declared)* |
-| [Economic Development Committee](/boards/economic-development-committee) | reference | — / 7.6 min | *(none declared)* |
+| [Economic Development Committee](/boards/economic-development-committee) | reference | — / 7.7 min | *(none declared)* |
 | [Economic Development Committee — about](/boards/economic-development-committee/about) | reference | — / 8.5 min | *(none declared)* |
 | [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 8.7 min | *(none declared)* |
 | [Economic Development Committee — missing records](/boards/economic-development-committee/records) | reference | — / 8.5 min | *(none declared)* |
@@ -625,7 +625,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.4 min | *(none declared)* |
 | [Select Board — about](/boards/select-board/about) | reference | — / 6.1 min | *(none declared)* |
 | [Select Board — finances](/boards/select-board/finance) | reference | — / 17.8 min | *(none declared)* |
-| [Select Board — meetings](/boards/select-board/meetings) | reference | — / 11.2 min | *(none declared)* |
+| [Select Board — meetings](/boards/select-board/meetings) | reference | — / 11.1 min | *(none declared)* |
 | [Select Board — missing records](/boards/select-board/records) | reference | — / 16.6 min | *(none declared)* |
 | [Select Board — budget schedule](/boards/select-board/schedule) | reference | — / 7.8 min | *(none declared)* |
 | [Select Board — where the time goes](/boards/select-board/time) | reference | — / 5.9 min | *(none declared)* |
@@ -3870,8 +3870,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Analysis: Town and Schools](/reports) | reference | — / 51.6 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 20.3 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.6 min | *(none declared)* |
-| [What the town is deciding now](/threads) | reference | — / 15.9 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.3 min | *(none declared)* |
+| [What the town is deciding now](/threads) | reference | — / 15.8 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 497.9 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
 | [What we cannot answer](/what-we-cannot-answer) | reference | — / 377.4 min | *(none declared)* |

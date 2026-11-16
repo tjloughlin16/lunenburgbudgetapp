@@ -8940,7 +8940,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 135536640,
+     "bytes": 135540736,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -10099,6 +10099,18 @@
      "textUrl": "/docs/data/fund-balances-fincom.csv"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 215768,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 65,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "data/department-budgets-fincom-fy27.csv",
      "title": "FY2027 department budgets as presented to the Finance Committee",
      "stars": 2,
@@ -10109,18 +10121,6 @@
      "count": 1035,
      "unit": "rows",
      "textUrl": "/docs/data/department-budgets-fincom-fy27.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 212394,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 64,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/fy20-q4-reports.csv",
@@ -69977,7 +69977,7 @@
  "totals": {
   "documents": 6236,
   "groups": 33,
-  "bytes": 7425149452,
+  "bytes": 7425156922,
   "loadBearing": 221
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1017 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
