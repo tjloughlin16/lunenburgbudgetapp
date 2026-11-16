@@ -244,9 +244,28 @@ type Changes = { items: Record<string, { d: string; id: string }[]> }
 function readSeen(): Record<string, string> {
   try { return JSON.parse(window.localStorage.getItem(SEEN_KEY) || '{}') } catch { return {} }
 }
+/*  NOT IN THE PRERENDER, AND THAT IS ALSO A BUILD-TIME RULE. These counts depend on today
+ *  and on what THIS reader has seen, so no static copy of them is right for anybody. And
+ *  this hook is in the menu on every page: reading the clock here flagged all 3,865 routes
+ *  as date-dependent, and fetching site-changes.json (rewritten by most refreshes) made it a
+ *  dependency of all of them, so from 14 November 2026 every refresh re-rendered the whole
+ *  site -- 48 minutes, every day. Under the prerenderer (navigator.webdriver, as track.ts)
+ *  neither happens; a reader's browser computes both after load, exactly as before. */
+const PRERENDER = typeof navigator !== 'undefined' && navigator.webdriver
 export function useChanges(tab: Tab) {
-  const { d } = useReport<Changes>('site-changes.json')
+  const [d, setD] = useState<Changes | null>(null)
   const [seen, setSeen] = useState<Record<string, string>>({})
+  const [since, setSince] = useState<string | null>(null)
+  useEffect(() => {
+    if (PRERENDER) return
+    let live = true
+    fetch('/data/site-changes.json')
+      .then(r => (r.ok ? r.json() : null))
+      .then(j => { if (live && j) setD(j as Changes) })
+      .catch(() => {})
+    setSince(new Date(Date.parse(todayIso()) - CHANGE_DAYS * 864e5).toISOString().slice(0, 10))
+    return () => { live = false }
+  }, [])
   useEffect(() => {
     const s = readSeen()
     const latest = d?.items[tab]?.[0]?.d
@@ -256,8 +275,8 @@ export function useChanges(tab: Tab) {
     }
     setSeen(s)
   }, [d, tab])
-  const since = new Date(Date.parse(todayIso()) - CHANGE_DAYS * 864e5).toISOString().slice(0, 10)
   const count = (key: string) => {
+    if (!since) return 0
     const all = d?.items[key] ?? []
     const n = all.filter(c => c.d >= since && (!seen[key] || c.d > seen[key])).length
     // The file keeps at most KEEP per item (build_site_changes.py); a count at it is a floor.

@@ -77,11 +77,18 @@ function enhance(a: HTMLAnchorElement, keys: Set<string>, prefix: string) {
   rawFor.set(a, wrap)
 }
 
+/*  THE LIST IS FETCHED ONLY ONCE A PDF LINK EXISTS. The prerenderer records every file a
+ *  page fetches as an input of that page, and this component is on every page: fetching
+ *  unconditionally made searchable-pdfs.json an input of all 3,865 routes, so each new
+ *  searchable copy re-rendered the whole site. Waiting for the first PDF link keeps it an
+ *  input of exactly the pages it can change. */
+const PDF_LINK = 'a[href*=".pdf" i]'
 export function SearchableLinks() {
   useEffect(() => {
     let stop = false
     let observer: MutationObserver | null = null
-    fetch('/data/searchable-pdfs.json')
+    let waiting: MutationObserver | null = null
+    const start = () => fetch('/data/searchable-pdfs.json')
       .then(r => (r.ok ? r.json() : null))
       .then((list: List | null) => {
         if (stop || !list || !list.keys.length) return
@@ -108,7 +115,16 @@ export function SearchableLinks() {
         observer.observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['href'] })
       })
       .catch(() => {})
-    return () => { stop = true; observer?.disconnect() }
+    if (document.querySelector(PDF_LINK)) start()
+    else {
+      waiting = new MutationObserver(() => {
+        if (!document.querySelector(PDF_LINK)) return
+        waiting?.disconnect(); waiting = null
+        start()
+      })
+      waiting.observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['href'] })
+    }
+    return () => { stop = true; observer?.disconnect(); waiting?.disconnect() }
   }, [])
   return null
 }

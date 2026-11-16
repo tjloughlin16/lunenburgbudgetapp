@@ -62,6 +62,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRIPTS = os.path.join(ROOT, 'scripts')
@@ -1140,8 +1141,21 @@ def ship(a, notes, ctx):
     try:
         print('\n  building %s from an export, not from this tree' % sha[:8])
         tree = Ship.export_commit(ROOT, sha)
+        built_from = time.time()
         r = sh(['npm', 'run', 'build:site:unlocked'], check=False,
                cwd=os.path.join(tree, 'fy28'), extra_env={'SITE_BUILD_LOCK_HELD': '1'})
+        gated = os.path.join(ROOT, 'fy28', '.prerender-cache', 'gate-blocked.json')
+        if r.returncode and os.path.exists(gated) and os.path.getmtime(gated) >= built_from:
+            # THE PRERENDER GATE: the build wanted to render more than 100 pages. Have an agent
+            # say why before anybody is asked to approve it (scripts/prerender_gate.py).
+            rv = subprocess.run([sys.executable, os.path.join(SCRIPTS, 'prerender_gate.py'), 'review'],
+                                capture_output=True, text=True, timeout=1200)
+            print(rv.stdout[-3000:] + rv.stderr[-1000:])
+            found = next((ln.strip() for ln in rv.stdout.splitlines() if ln.strip().startswith('cause:')), '')
+            return ship_failed(notes, ctx, 'the prerender gate stopped the build: it wanted to re-render '
+                               'more than 100 pages. %s Review: python3 scripts/prerender_gate.py status; '
+                               'approve with prerender_gate.py approve, then refresh.py --ship-only.'
+                               % (found[:300] or 'The review did not run; see the log.'))
         if r.returncode:
             return ship_failed(notes, ctx, 'the site build failed (exit %d); fy28/dist and '
                                'production were not touched. Log: %s'

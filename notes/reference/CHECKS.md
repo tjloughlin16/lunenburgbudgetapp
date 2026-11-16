@@ -8,6 +8,8 @@ load limit; `CLAUDE.md` keeps a pointer here and the handful every session needs
     python3 scripts/build_sitemap.py        # the sitemap, generated — pages AND endpoints
     python3 scripts/check_prerender.py      # is dist/ WHOLLY prerendered, or wholly not — a mixture is a killed
                                             #   build, and it looks exactly like a finished one
+    python3 scripts/prerender_gate.py status  # THE BUILD GATE: a prerender past 100 routes stops (exit 4) and says why;
+                                            #   `review` has an agent find the cause, `approve --by --reason` lets ONE build through
     bash scripts/check_phone_width.sh       # every route at a TRUE 400px viewport; fails if any page scrolls sideways
     (cd fy28 && npm run check:crumbs)       # every Menu page's breadcrumb sits where the Menu files it; runs in npm run build
     bash scripts/deploy_site.sh             # THE way to deploy (rule 10: only when asked): waits for any build, refuses a

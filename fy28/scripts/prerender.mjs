@@ -397,16 +397,90 @@ async function hashOf(path) {
   return hashes.get(path)
 }
 
-async function canReuse(entry, route, global) {
-  if (!entry || entry.global !== global || entry.external) return false
-  if (entry.clock && entry.date !== today()) return false
+/** null when the cached page can be reused; otherwise WHY NOT, as a short stable key. The
+ *  key is what the build gate below counts, so it names a cause, never a route. */
+async function whyNot(entry, route, global) {
+  if (!entry) return 'never rendered before'
+  if (entry.global !== global) return 'shell, probe or prerender script changed'
+  if (entry.external) return 'reads another host'
+  if (entry.clock && entry.date !== today()) return 'reads the clock (rendered on an earlier day)'
   // The page itself, against the hash recorded beside it: a run killed after writing a page
   // and before writing the map leaves a newer page under an older entry.
-  if (!existsSync(cachedFile(route)) || sha256(await readFile(cachedFile(route))) !== entry.html) return false
-  for (const [path, h] of Object.entries(entry.deps)) {
-    if (await hashOf(path) !== h) return false
+  if (!existsSync(cachedFile(route)) || sha256(await readFile(cachedFile(route))) !== entry.html) {
+    return 'cached page missing or altered'
   }
-  return true
+  for (const [path, h] of Object.entries(entry.deps)) {
+    if (await hashOf(path) !== h) return `input changed: ${path}`
+  }
+  return null
+}
+
+/** THE BUILD GATE: A BUILD THAT WOULD RENDER MORE THAN GATE PAGES STOPS AND SAYS WHY.
+ *
+ *  TJ, 16 November 2026, after three days of refreshes re-rendering all 3,865 routes --
+ *  48 minutes each -- because one menu hook on every page read the clock: *"lets also build a
+ *  build gate that blocks a build when it tries to render more than 100 pages. it has to be
+ *  explicitly approved, but needs agentic review to see what caused it. this is silly to
+ *  accidently do this for a month."*
+ *
+ *  The reuse decision already knows why every route is being rendered; nothing ever said so,
+ *  which is how a full rebuild ran daily and read as normal. So past GATE routes this writes
+ *  the causes to `.prerender-cache/gate-blocked.json` (the cache directory is symlinked into
+ *  the refresh's export, so the file lands in the repo either way) and exits GATE_EXIT.
+ *  `scripts/prerender_gate.py review` reads it with an agent and writes what caused it;
+ *  `scripts/prerender_gate.py approve` records the owner's approval of THAT cause, and the
+ *  next build with the same causes renders once and spends the approval.
+ *
+ *  ONLY= never trips it: naming routes is already an explicit request. */
+const GATE = Number(process.env.PRERENDER_GATE) || 100
+const GATE_EXIT = 4
+const GATE_BLOCKED = join(CACHE, 'gate-blocked.json')
+const GATE_APPROVED = join(CACHE, 'gate-approved.json')
+const APPROVAL_TTL_MS = 48 * 3600e3
+
+/** The causes, grouped. An `input changed` key is kept per path, because the path IS the
+ *  finding: one file every page fetches is the usual shape of an accidental full rebuild. */
+function summarise(reasons) {
+  const counts = {}
+  for (const r of Object.values(reasons)) counts[r] = (counts[r] || 0) + 1
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([cause, routes]) => ({ cause, routes }))
+}
+/** Approval is of a CAUSE, not of a route count: the same causes on a later run (a retry
+ *  after more commits landed) carry the approval; a new cause does not. Minor causes -- under
+ *  5% of the routes rendered -- are left out so ordinary daily churn does not void it. */
+function fingerprint(causes, total) {
+  const major = causes.filter(c => c.routes >= Math.max(1, total * 0.05)).map(c => c.cause).sort()
+  return sha256(JSON.stringify(major)).slice(0, 12)
+}
+
+async function gate(render, reasons, routes, global) {
+  if (render.length <= GATE) return false
+  const causes = summarise(reasons)
+  const token = fingerprint(causes, render.length)
+  let approval = null
+  try { approval = JSON.parse(await readFile(GATE_APPROVED, 'utf8')) } catch { /* none */ }
+  const fresh = approval && Date.now() - Date.parse(approval.at) < APPROVAL_TTL_MS
+  if (approval && approval.token === token && fresh) {
+    console.log(`BUILD GATE: ${render.length} routes to render, over ${GATE} -- APPROVED by ` +
+      `${approval.by} (${approval.reason}); it is spent when this run succeeds.`)
+    return true
+  }
+  const blocked = {
+    at: new Date().toISOString(), token, gate: GATE, to_render: render.length, of: routes.length,
+    global, causes, sample: Object.fromEntries(render.slice(0, 25).map(r => [r, reasons[r]])),
+    approval_seen: approval ? { token: approval.token, at: approval.at, matched: approval.token === token, fresh } : null,
+  }
+  await mkdir(CACHE, { recursive: true })
+  await writeFile(`${GATE_BLOCKED}.tmp`, JSON.stringify(blocked, null, 1))
+  await rename(`${GATE_BLOCKED}.tmp`, GATE_BLOCKED)
+  console.error(`\nBUILD GATE: ${render.length} of ${routes.length} routes would render, over the ` +
+    `limit of ${GATE}. Nothing was rendered. (dist/ holds the unrendered build: rerun once approved,\n` +
+    `or rebuild after the cause is fixed.)\nWhy they could not be reused:`)
+  for (const c of causes.slice(0, 12)) console.error(`  ${String(c.routes).padStart(6)}  ${c.cause}`)
+  console.error(`\nReview:  python3 scripts/prerender_gate.py review\n` +
+    `Approve: python3 scripts/prerender_gate.py approve --by NAME --reason "WHY" ` +
+    `(cause ${token}, once, within 48h)\nWritten to ${GATE_BLOCKED}`)
+  process.exit(GATE_EXIT)
 }
 
 async function main() {
@@ -485,13 +559,17 @@ async function main() {
   let deps = {}
   try { deps = JSON.parse(await readFile(CACHE_DEPS, 'utf8')) } catch { /* first run */ }
   const full = !!process.env.FULL || only.length > 0
-  const reuse = [], render = []
+  const reuse = [], render = [], reasons = {}
   for (const route of routes) {
-    if (!full && await canReuse(deps[route], route, global)) reuse.push(route)
-    else render.push(route)
+    const why = full ? (process.env.FULL ? 'FULL=1 asked for every route' : 'named in ONLY')
+      : await whyNot(deps[route], route, global)
+    if (why === null) reuse.push(route)
+    else { render.push(route); reasons[route] = why }
   }
   console.log(`${render.length} to render, ${reuse.length} reused (every input unchanged)` +
     (process.env.FULL ? ' — FULL=1' : '') + `, ${JOBS} at a time, engine ${ENGINE}`)
+  for (const c of summarise(reasons).slice(0, 8)) console.log(`  ${String(c.routes).padStart(6)}  ${c.cause}`)
+  const approved = !only.length && await gate(render, reasons, routes, global)
 
   const servers = Array.from({ length: Math.min(JOBS, Math.max(render.length, 1)) }, () => serve(shell))
   for (const s of servers) await new Promise(r => s.listen(0, r))
@@ -725,6 +803,11 @@ async function main() {
     console.error(`\n${failures.length} problem(s):`)
     for (const f of failures) console.error(`  - ${f}`)
     process.exit(1)
+  }
+  if (approved) {
+    await rm(GATE_APPROVED, { force: true })
+    await rm(GATE_BLOCKED, { force: true })
+    console.log('build gate: the approval is spent.')
   }
   console.log('every route renders real HTML, keeps its script, and is in the sitemap.')
 }
