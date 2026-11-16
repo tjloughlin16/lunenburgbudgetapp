@@ -1,12 +1,12 @@
 # The Lunenburg Budget Project, by the numbers
 
-*As of 2026-11-15. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
+*As of 2026-11-16. Every figure below is computed from the archive itself by `scripts/build_app_metrics.py`; none is typed.*
 
 ## What the town and the state published — and we hold
 
 - **16,880 documents** — PDFs, spreadsheets, Word files and slide decks — 53,215 files and 11.36 GB in all, each with its address, its publisher’s filename and a checksum.
 - **16 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, federal-bls, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
-- **12,314 meeting documents** from **51 town boards**: 4,787 sets of minutes and 7,527 agendas, 2009-01-05 to 2026-11-13 — **18 years**.
+- **12,314 meeting documents** from **51 town boards**: 4,787 sets of minutes and 7,527 agendas, 2009-01-05 to 2026-11-16 — **18 years**.
 - **27,799 annual town report appropriation lines**, FY1959–FY2025, read page by page.
 - **12,278 names** on the town’s printed staff rosters, FY1959–FY2025.
 - **9,503 school budget line-years**, FY2014–FY2027, and **983 ledger lines** from the town’s own accounting system.

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15",
+ "generated": "2026-11-16",
  "origins": [
   {
    "id": "school",
@@ -9082,9 +9082,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 1305700,
+     "bytes": 1305854,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 18601,
+     "count": 18603,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -10020,9 +10020,9 @@
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 1027849,
+     "bytes": 1095603,
      "url": "/docs/data/link-status.csv",
-     "count": 4136,
+     "count": 4336,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -10032,9 +10032,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 725432,
+     "bytes": 741655,
      "url": "/docs/data/copy-status.csv",
-     "count": 2067,
+     "count": 2107,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -10464,9 +10464,9 @@
      "stars": 2,
      "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
      "kind": "Data",
-     "bytes": 8475,
+     "bytes": 8805,
      "url": "/docs/data/source-checks.csv",
-     "count": 284,
+     "count": 296,
      "unit": "rows",
      "textUrl": "/docs/data/source-checks.csv"
     },
@@ -10629,6 +10629,18 @@
      "textUrl": "/docs/data/ambulance-receipts.csv"
     },
     {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 2040,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 63,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
      "path": "data/feed-watch-events.csv",
      "title": "What appeared in those feeds",
      "stars": 2,
@@ -10639,18 +10651,6 @@
      "count": 12,
      "unit": "rows",
      "textUrl": "/docs/data/feed-watch-events.csv"
-    },
-    {
-     "path": "data/meeting-watch-runs.csv",
-     "title": "When we looked, how much answered, and what was new",
-     "stars": 2,
-     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 2009,
-     "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 62,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "data/athletics-roster-counts.csv",
@@ -59430,7 +59430,8 @@
      "bytes": 2047710,
      "url": "/docs/state-law/2026-10-09/determinations/determination-3-23-2022-oml-2022-55-dedham-parks-and-recreation-commission.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2022-55.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaXU6gS2j7YTSKyyJ4AFVmCrohSlsxMRi6QDPKHrqjdUofxSFqquq9SPdviMejBXRR6zV%C3%89gph87bzzaW1RjbcSM%3D/"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/AaXU6gS2j7YTSKyyJ4AFVmCrohSlsxMRi6QDPKHrqjdUofxSFqquq9SPdviMejBXRR6zV%C3%89gph87bzzaW1RjbcSM%3D/",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-3-23-2022-oml-2022-56-salem-city-council-committee-on-ordinances-licenses-legal-affairs.pdf",
@@ -59650,7 +59651,8 @@
      "bytes": 1233493,
      "url": "/docs/state-law/2026-10-09/determinations/determination-4-7-2022-oml-2022-73-malden-city-council.pdf",
      "textUrl": "https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/state-law/text/oml-det-2022-73.txt",
-     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATvnSN0GkeRWyh1Wa9i9evC80ekmjLJ0FqSvGsfRiz%C3%894fZkuKCAEFXdcPepmjaevALF86vYK%C3%89JBRYrUiZ3Cc3%C3%81k%3D/?ViewerMode=PDF&ForceDownload=true"
+     "upstream": "https://massago.hylandcloud.com/231publicaccess2/api/Document/ATvnSN0GkeRWyh1Wa9i9evC80ekmjLJ0FqSvGsfRiz%C3%894fZkuKCAEFXdcPepmjaevALF86vYK%C3%89JBRYrUiZ3Cc3%C3%81k%3D/?ViewerMode=PDF&ForceDownload=true",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-09/determinations/determination-4-8-2022-oml-2022-74-boxborough-finance-committee.pdf",
@@ -69975,8 +69977,8 @@
  "totals": {
   "documents": 6236,
   "groups": 33,
-  "bytes": 7425064960,
+  "bytes": 7425149452,
   "loadBearing": 221
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1015 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1017 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
