@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-11-15T12:24:03Z",
+ "picked_at": "2026-11-17T12:26:02Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.161,
- "input_sha256": "1bcd4e51f72eafb59bcdc685facb629a684944890da00edc54e02308ea8473d1",
+ "cost_usd": 0.1627,
+ "input_sha256": "6c83816e33fd171f3ee1de07ec4bce887867c857cd7a245652915a9514fc37e8",
  "callouts": [
   {
    "kind": "fee",
-   "value": "$85 per ERU",
-   "label": "current estimate of the yearly stormwater fee, capped at $100 for the first three years",
-   "hook": "proposed yearly stormwater fee",
-   "quote": "current estimate is $85 per eru, not to exceed $100 for the first three years, with a flat rate for single- and two-family homes.",
+   "value": "$85 a year",
+   "label": "estimated stormwater fee for a typical home, capped at $100 at first; not yet set",
+   "hook": "estimated yearly stormwater fee",
+   "quote": "current estimate is $85 per eru, not to exceed $100 for the first three years",
    "heard": [],
    "item_date": "2026-10-20",
    "item_board": "select-board",
@@ -22,13 +22,31 @@
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "Minutes state a current estimate of $85 per ERU, not to exceed $100 for three years, and that the rate is not finalized. The label and hook call it an estimate and a proposal. Nothing later changes it."
+    "why": "$85 per ERU estimate, $100 cap for first three years, and not finalized are all in the minutes. Flat rate for 1-2 family homes supports 'typical home'. Later items show the fee still unset."
+   }
+  },
+  {
+   "kind": "warrant",
+   "value": "Article 10",
+   "label": "non-binding Town Meeting question: pay for stormwater by a new fee or the operating budget",
+   "hook": "",
+   "quote": "motion to include article 10 on the warrant",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "printed",
+   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
+   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
+   "where": "Select Board minutes, 20 Oct 2026",
+   "verdict": {
+    "keep": false,
+    "why": "Article numbers have shifted since 20 Oct. Track and field was Article 5, then Article 9, and later stormwater items cite Articles 6 and 8. 'Article 10' is not shown to be current. The evidence also only shows a motion made and seconded, not a vote."
    }
   },
   {
    "kind": "money",
    "value": "$480,000",
-   "label": "estimated yearly cost of stormwater compliance, versus about $100,000 spent now",
+   "label": "estimated yearly cost of meeting the stormwater permit; the town spends about $100,000",
    "hook": "",
    "quote": "annual stormwater spending has been roughly $100,000, against an estimated $480,000 per year needed for compliance.",
    "heard": [],
@@ -40,25 +58,7 @@
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "The DPW Director reported about $100,000 in spending against an estimated $480,000 a year needed for compliance. The label calls it an estimate. Nothing later contradicts it."
-   }
-  },
-  {
-   "kind": "fee",
-   "value": "$109 vs $85",
-   "label": "yearly cost for an average home if funded through taxes versus the utility fee",
-   "hook": "",
-   "quote": "an average single-family property would contribute approximately $109 annually towards stormwater maintenance/ms4 compliance, versus $85 under the utility.",
-   "heard": [],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
-   "basis": "printed",
-   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
-   "where": "Select Board minutes, 20 Oct 2026",
-   "verdict": {
-    "keep": true,
-    "why": "The minutes give about $109 a year for an average single-family property under the operating budget, against $85 under the utility. The label matches this. Nothing later changes it."
+    "why": "The $480,000 need and the roughly $100,000 spent are stated by the DPW Director in the minutes. Later items only show a dispute, not a change."
    }
   }
  ]

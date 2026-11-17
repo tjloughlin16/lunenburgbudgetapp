@@ -13,7 +13,7 @@ Every outstanding machine-reading job, placed by the **meeting’s own date** �
 
 **The streams are not interchangeable and must not be added into one bar.** `reconcile` can only exist where a recording exists, so its zero before 2025 is the channel’s start date, not neglect.
 
-**3,443 meeting(s) are missing a record outright and are not counted above: 2,392 no town minutes, 1,490 no recording, 221 no transcript.** Not backlog -- there is no command that produces a transcript the town never recorded. Of the missing transcripts, 186 have captions disabled rather than unfetched.
+**3,447 meeting(s) are missing a record outright and are not counted above: 2,396 no town minutes, 1,491 no recording, 221 no transcript.** Not backlog -- there is no command that produces a transcript the town never recorded. Of the missing transcripts, 186 have captions disabled rather than unfetched.
 
 ## By calendar year of the meeting
 
@@ -68,8 +68,8 @@ The town never published minutes, never recorded the meeting, or the recording h
 | FY2023 | 187 | 135 | 1 | **323** |
 | FY2024 | 139 | 114 | 0 | **253** |
 | FY2025 | 158 | 101 | 5 | **264** |
-| FY2026 | 142 | 98 | 17 | **257** |
-| FY2027 | 48 | 26 | 0 | **74** |
+| FY2026 | 143 | 98 | 17 | **258** |
+| FY2027 | 51 | 27 | 0 | **78** |
 
 ## Select Board, by fiscal year
 
@@ -137,7 +137,7 @@ Open = meetings with anything still to process, of the meetings with a record to
 | FY2024 | 27 | 0 | 0% | 0 | 0 | 0 | 0 |
 | FY2025 | 35 | 0 | 0% | 0 | 0 | 0 | 0 |
 | FY2026 | 30 | 0 | 0% | 0 | 0 | 0 | 0 |
-| FY2027 | 9 | 0 | 0% | 0 | 0 | 0 | 0 |
+| FY2027 | 10 | 0 | 0% | 0 | 0 | 0 | 0 |
 
 **Missing records (not backlog):**
 
@@ -157,7 +157,7 @@ Open = meetings with anything still to process, of the meetings with a record to
 | FY2024 | 9 | 4 | 0 | **13** |
 | FY2025 | 14 | 2 | 1 | **17** |
 | FY2026 | 12 | 2 | 0 | **14** |
-| FY2027 | 3 | 1 | 0 | **4** |
+| FY2027 | 4 | 1 | 0 | **5** |
 
 ## Finance Committee, by fiscal year
 

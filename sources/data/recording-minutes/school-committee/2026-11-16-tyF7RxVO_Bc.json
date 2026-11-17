@@ -1,0 +1,306 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee Special Meeting",
+ "meeting_date": "2026-11-16",
+ "video_id": "tyF7RxVO_Bc",
+ "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2026-11-16-tyF7RxVO_Bc.json",
+  "sha256": "c246711b793a4de478e8eee5750ed11e0b426001a877a148cca1f52583578790",
+  "caption_lines": 72,
+  "segments": 615
+ },
+ "recording": {
+  "duration_s": 1518,
+  "duration": "0:25",
+  "spoken_chars": 20135,
+  "words_approx": 3355
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11162026-8136",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-11-16-agenda-8136.txt",
+   "path": "sources/meetings/school-committee/2026-11-16-agenda-8136.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-17T12:19:17Z",
+  "cost_usd": 0.2090873
+ },
+ "minutes": {
+  "headline": "School Committee voted 4-0 to back Article 9 track and field engineering, funded from general stabilization.",
+  "summary": "A special remote meeting was held because FY26 free cash is not closed out or certified, leaving no funding source for Article 9 at the next night's special town meeting. After public comment, the committee voted to keep the article and name the general stabilization fund as the source, intending to replenish it from free cash later. It adjourned after a brief second public comment.",
+  "attendees": [
+   {
+    "name_as_heard": "Laura Broski",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Anthony School and Brainy (Mr. Spenrainy)",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda Gilman",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jean Russell",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 149,
+    "speaker_as_heard": "Peter Beardmore",
+    "stated_role": "resident, finance committee member speaking on own behalf",
+    "topic": "Urged the committee to move forward with Article 9 and name a transfer from the general purpose stabilization account as the funding source, with free cash to repay it later."
+   },
+   {
+    "t": 1338,
+    "speaker_as_heard": "Chris Sullivan",
+    "stated_role": "resident, 108 Highland Street",
+    "topic": "Supported the vote and urged that the track and field project be well thought through for the long term, not a rushed repair."
+   },
+   {
+    "t": 1419,
+    "topic": "Peter asked people to urge friends and neighbors to attend town meeting the next night."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "capital",
+   "facilities",
+   "free-cash",
+   "public-comment",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 865,
+    "motion": "Keep Article 9 as in the warrant, with the stipulation that the funding come from the general stabilization fund, to be replaced once free cash is available.",
+    "moved_by": "Mandy",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 1480,
+    "motion": "Adjourn.",
+    "outcome": "passed 4-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 657,
+    "topic": "Article 9 track and field engineering",
+    "what_was_said": "The article asks town meeting for a sum for engineering and related services for reconstruction of the track and field.",
+    "figures_as_heard": [
+     "$195,830"
+    ]
+   },
+   {
+    "t": 170,
+    "topic": "General purpose stabilization account",
+    "what_was_said": "A speaker said it exceeds the state guideline range and could fund the article, with free cash to repay it later; a two-thirds vote is needed.",
+    "figures_as_heard": [
+     "7%",
+     "5 to 7%"
+    ]
+   },
+   {
+    "t": 379,
+    "topic": "Other stabilization accounts and total reserves",
+    "what_was_said": "A speaker said other stabilization accounts hold further funds, putting total reserves around a tenth of the omnibus budget.",
+    "figures_as_heard": [
+     "$2.2 plus million",
+     "about 10%"
+    ]
+   },
+   {
+    "t": 105,
+    "topic": "FY26 free cash",
+    "what_was_said": "The chair said free cash is not closed out or certified, so none is available at the special town meeting.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 865,
+    "description": "Transfer from general stabilization fund to fund Article 9, to be replaced from free cash later",
+    "amount_as_heard": "$195,830",
+    "outcome": "voted (as the committee's stipulated funding source for town meeting)"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 994,
+    "decision": "Committee agreed to affirm its intent to put a warrant article in the spring to replace stabilization money with free cash, noting it cannot bind town meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 105,
+    "topic": "Call to order and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 105,
+    "t_end": 531,
+    "topic": "Free cash update and public comment on Article 9",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "public-comment",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 531,
+    "t_end": 657,
+    "topic": "Order of public comment and chair report on free cash",
+    "resolution": "informational",
+    "tags": [
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 657,
+    "t_end": 1318,
+    "topic": "Article 9 track and field engineering funding source",
+    "resolution": "voted 4-0",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "athletics"
+    ]
+   },
+   {
+    "t_start": 1318,
+    "t_end": 1480,
+    "topic": "Second public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1480,
+    "t_end": 1520,
+    "topic": "Adjournment",
+    "resolution": "voted 4-0",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Which member made the motion is rendered as Mandy; Emily Young was absent."
+  ],
+  "confidence": "high",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 274,
+    "kind": "safety",
+    "about": "Programming and safety at risk if mitigation is not put in place at the track and field.",
+    "who": "a resident (finance committee member speaking for himself)",
+    "words_as_heard": "Programming is at risk um as well as safety if mitigation measures are not put in place."
+   },
+   {
+    "t": 1210,
+    "kind": "condition",
+    "about": "Member uncomfortable using stabilization but accepts it if refilled with free cash.",
+    "who": "a member",
+    "words_as_heard": "I can get past that because we would refill it with the free cash"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 170,
+    "name_as_heard": "Article 9",
+    "kind": "warrant article",
+    "words_as_heard": "move forward with article 9",
+    "shown": true
+   },
+   {
+    "t": 1080,
+    "name_as_heard": "structural engineering assessment",
+    "kind": "report",
+    "words_as_heard": "the structural engineering assessment came back and told us that things were worse than we had imagined"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "track-field-capital-plan",
+    "title": "Track and field costs",
+    "question": "What has the track and field project cost and how will the engineering phase be funded?",
+    "t": 657,
+    "words_as_heard": "professional engineering and related services for a proposed reconstruction improvement of the Lunberg Middle School track and field facility",
+    "data_in_play": [
+     "$195,830",
+     "$2 million"
+    ],
+    "existing": "thread:turf-field-study"
+   },
+   {
+    "slug": "stabilization-reserve-levels",
+    "title": "Stabilization reserve levels",
+    "question": "How large are the town's stabilization reserves against the guideline and fiscal policy limit?",
+    "t": 358,
+    "words_as_heard": "funds currently in that account that exceeds 7% of our current annual omnibus budget",
+    "data_in_play": [
+     "7%",
+     "5 to 7%",
+     "$2.2 plus million",
+     "10%"
+    ],
+    "existing": "topic:stabilization-balances"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee voted 4-0 to keep Article 9, track and field engineering, in the warrant and to name the general stabilization fund as its funding source.",
+    "t": 865
+   },
+   {
+    "line": "The vote came at a special remote meeting because FY26 free cash is not closed out or certified, so none is available for the special town meeting.",
+    "t": 105
+   },
+   {
+    "line": "The vote says the stabilization money is to be replaced once free cash is available.",
+    "t": 865
+   },
+   {
+    "line": "The committee agreed to affirm its intent to bring a spring warrant article replacing the stabilization money with free cash, noting it cannot bind town meeting.",
+    "t": 994
+   },
+   {
+    "line": "Two public comments followed: one urged naming stabilization as the source, and one urged a well-planned long-term track and field project.",
+    "t": 1338
+   }
+  ],
+  "why_it_matters": [
+   "Article 9 would draw on reserve savings, not free cash, so residents at town meeting are asked to approve a transfer that needs a two-thirds vote and leaves the reserve lower until it is replaced.",
+   "Whether the reserve is refilled depends on a separate spring town meeting vote, which the committee cannot guarantee."
+  ],
+  "watch_next": [
+   "The special town meeting the night after this meeting, where Article 9 needs a two-thirds vote.",
+   "The spring warrant article to replace the stabilization money with free cash, once FY26 free cash is certified."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-17T12:19:24Z",
+   "cost_usd": 0.02691
+  }
+ }
+}

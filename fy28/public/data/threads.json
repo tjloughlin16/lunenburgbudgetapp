@@ -5,20 +5,20 @@
   "rank_note": "newest first — by the date each thread last came up",
   "dated_in_the_future_and_excluded": [],
   "rank_basis": "when each last came up, newest first",
-  "meetings_readable": 5433,
-  "meetings_with_our_minutes": 2650,
+  "meetings_readable": 5435,
+  "meetings_with_our_minutes": 2652,
   "meetings_with_town_minutes_read": 4480,
   "boards_readable": 52,
-  "agendas_as_of": "2026-11-16",
+  "agendas_as_of": "2026-11-17",
   "agendas_matched": {
-   "agendas": 34,
-   "agendas_upcoming": 11,
-   "agendas_unreadable": 2,
-   "items": 305,
-   "business_items": 176,
+   "agendas": 41,
+   "agendas_upcoming": 18,
+   "agendas_unreadable": 3,
+   "items": 405,
+   "business_items": 226,
    "matched_items": 14,
-   "upcoming_business_items": 32,
-   "upcoming_matched_items": 3,
+   "upcoming_business_items": 74,
+   "upcoming_matched_items": 4,
    "threads_on_an_upcoming_agenda": 2
   },
   "town_meeting_readable": 23,
@@ -41,26 +41,26 @@
   ]
  },
  "hottest": {
-  "as_of": "2026-11-16",
+  "as_of": "2026-11-17",
   "window_days": 30,
   "threads": [
    {
     "id": "stormwater-fee",
     "label": "The stormwater fee",
     "short": "The stormwater fee",
-    "hook": "$85 per ERU proposed yearly stormwater fee",
+    "hook": "$85 a year estimated yearly stormwater fee",
     "meetings": 9,
     "boards": 5,
-    "days_since_last": 7
+    "days_since_last": 8
    },
    {
     "id": "turf-field-study",
     "label": "The track and turf field",
     "short": "The track and turf field",
-    "hook": "$195,830 requested for engineering study",
-    "meetings": 5,
+    "hook": "$195,830 requested for the field study",
+    "meetings": 6,
     "boards": 4,
-    "days_since_last": 6
+    "days_since_last": 1
    },
    {
     "id": "town-offices",
@@ -69,7 +69,7 @@
     "hook": "$21.4M–$22.3M plan voters rejected",
     "meetings": 4,
     "boards": 3,
-    "days_since_last": 7
+    "days_since_last": 8
    },
    {
     "id": "veterans-exemption",
@@ -78,7 +78,7 @@
     "hook": "",
     "meetings": 3,
     "boards": 3,
-    "days_since_last": 12
+    "days_since_last": 13
    }
   ]
  },
@@ -104,12 +104,12 @@
      "kind": "money",
      "value": "$195,830",
      "label": "requested for engineering and design of the track and field, not construction",
-     "hook": "requested for engineering study",
+     "hook": "requested for the field study",
      "sources": [
       {
        "basis": "printed",
-       "href": "/docs/meetings/select-board/2026-10-27-minutes-8097.pdf",
-       "where": "Select Board minutes, 27 Oct 2026",
+       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
+       "where": "Select Board minutes, 20 Oct 2026",
        "checked_against": "the document"
       }
      ],
@@ -117,15 +117,15 @@
     },
     {
      "order": 2,
-     "kind": "money",
-     "value": "~$3 million",
-     "label": "earlier estimate to replace the turf and track, listed in the school capital plan",
+     "kind": "warrant",
+     "value": "Two-thirds",
+     "label": "vote Town Meeting needs to pass the study money",
      "hook": "",
      "sources": [
       {
        "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=2-Ax9zkA1NA&t=4459s",
-       "where": "School Committee, 21 Oct 2026",
+       "href": "https://www.youtube.com/watch?v=tyF7RxVO_Bc&t=1338s",
+       "where": "School Committee, 16 Nov 2026",
        "checked_against": "the captions"
       }
      ],
@@ -133,15 +133,15 @@
     },
     {
      "order": 3,
-     "kind": "impact",
-     "value": "Lanes 7 and 8",
-     "label": "of the track closed off after the lower retaining wall was found failing",
+     "kind": "money",
+     "value": "~$2 million",
+     "label": "estimated cost of the construction project the study would lead to",
      "hook": "",
      "sources": [
       {
        "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=wQWhIwYOc9o&t=7747s",
-       "where": "Finance Committee, 22 Oct 2026",
+       "href": "https://www.youtube.com/watch?v=pa1BCL9YAJk&t=516s",
+       "where": "Capital Planning Committee, 10 Nov 2026",
        "checked_against": "the captions"
       }
      ],
@@ -1519,9 +1519,18 @@
      "slug": "track-field-capital-plan",
      "status": "new",
      "url": "",
-     "question": "What does the track and field engineering request cost and which fund should pay for it?",
+     "question": "What has the track and field project cost and how will the engineering phase be funded?",
      "how": "named+words",
      "meetings": [
+      {
+       "date": "2026-11-16",
+       "board": "School Committee",
+       "fiscal_year": "FY2027",
+       "question_then": "What has the track and field project cost and how will the engineering phase be funded?",
+       "watch_at": "https://www.youtube.com/watch?v=tyF7RxVO_Bc&t=657s",
+       "at": "0:10:57",
+       "our_minutes": "/meeting-minutes/school-committee/2026-11-16-tyF7RxVO_Bc"
+      },
       {
        "date": "2026-10-27",
        "board": "Select Board",
@@ -1754,7 +1763,7 @@
      "board_slug": "school-committee",
      "date": "2026-11-16",
      "body_as_printed": "",
-     "upcoming": true,
+     "upcoming": false,
      "line": "In Consideration of Passing Over Article 9 of the Special Town Meeting Warrant ARTICLE 9. MIDDLE/HIGH SCHOOL TRACK AND FIELD ENGINEERING AND RELATED SERVICES (Submitted by School Committee) To see if the Town will vote to raise and appropriate, transfer from available funds, or otherwise provide the sum of $195,830 to fund the professional engineering and related services for a proposed reconstruction and improvement of the Lunenburg Middle/High School track and field facility; or take any other action relative thereto.",
      "parent": "New Business Action",
      "by": "words",
@@ -2634,12 +2643,67 @@
      "records": [
       "ours"
      ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-11-16",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Article 9 track and field engineering funding source",
+       "outcome": "",
+       "t": 657,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Article 9 track and field engineering. The article asks town meeting for a sum for engineering and related services for reconstruction of the track and field.",
+       "outcome": "",
+       "t": 657,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "safety",
+       "text": "Programming and safety at risk if mitigation is not put in place at the track and field. (a resident (finance committee member speaking for himself)): \"Programming is at risk um as well as safety if mitigation measures are not put in place.\"",
+       "outcome": "",
+       "t": 274,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "condition",
+       "text": "Member uncomfortable using stabilization but accepts it if refilled with free cash. (a member): \"I can get past that because we would refill it with the free cash\"",
+       "outcome": "",
+       "t": 1210,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "comment",
+       "text": "Supported the vote and urged that the track and field project be well thought through for the long term, not a rushed repair.",
+       "outcome": "",
+       "t": 1338,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
     }
    ],
-   "meetings": 15,
+   "meetings": 16,
    "boards_touched": 4,
    "first_seen": "2026-01-21",
-   "last_moved": "2026-11-10",
+   "last_moved": "2026-11-16",
    "claims_before_started": 90,
    "stands": {
     "vote": {
@@ -2674,15 +2738,15 @@
     },
     "any": {
      "kind": "topic",
-     "text": "Article 9 track and field engineering and capital process",
+     "text": "Article 9 track and field engineering funding source",
      "outcome": "",
-     "t": 300,
-     "video_url": "https://www.youtube.com/watch?v=pa1BCL9YAJk",
+     "t": 657,
+     "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
      "source": "ours",
      "recording_note": "",
-     "board": "Capital Planning Committee",
-     "board_slug": "capital-planning-committee",
-     "date": "2026-11-10"
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-11-16"
     }
    },
    "is_new": false,
@@ -2692,17 +2756,17 @@
    "tangled": true,
    "hot": true,
    "momentum": {
-    "meetings_last_30": 5,
+    "meetings_last_30": 6,
     "boards_last_30": 4,
-    "meetings": 15,
+    "meetings": 16,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 6,
-    "span_days": 293,
-    "meetings_last_90": 11,
+    "days_since_last": 1,
+    "span_days": 299,
+    "meetings_last_90": 12,
     "board_meetings_since": 0
    },
-   "weight": 441,
+   "weight": 442,
    "briefing": [
     {
      "heading": "Round 1 · money for FY2026 · the spring 2025 warrant article",
@@ -3015,9 +3079,9 @@
    "registered_on": "2026-08-18",
    "started": "2026-05-21",
    "closes": "Town Meeting votes the last article on the warrant",
-   "status": "open",
+   "status": "held",
    "resolved_on": "",
-   "caveat": "",
+   "caveat": "We hold no record of how Town Meeting voted.",
    "closure": null,
    "callouts": [],
    "history": [],
@@ -3025,18 +3089,6 @@
    "reports": [],
    "reports_needed": [],
    "on_agenda": [
-    {
-     "board": "Lunenburg Municipal Building Design Committee",
-     "board_slug": "lunenburg-municipal-building-design-committee",
-     "date": "2026-11-02",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Vote on Article 7 for Town Meeting Recommendation (Yes or No) ARTICLE 7: ADVISORY VOTE ON PURSUING DEMOLITION OF THE T.C. PASSIOS BUILDING",
-     "parent": "",
-     "by": "words",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11022026-8108",
-     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-11-02-agenda-8108.pdf"
-    },
     {
      "board": "Capital Planning Committee",
      "board_slug": "capital-planning-committee",
@@ -3102,7 +3154,7 @@
      "board_slug": "school-committee",
      "date": "2026-11-16",
      "body_as_printed": "",
-     "upcoming": true,
+     "upcoming": false,
      "line": "In Consideration of Passing Over Article 9 of the Special Town Meeting Warrant ARTICLE 9. MIDDLE/HIGH SCHOOL TRACK AND FIELD ENGINEERING AND RELATED SERVICES (Submitted by School Committee) To see if the Town will vote to raise and appropriate, transfer from available funds, or otherwise provide the sum of $195,830 to fund the professional engineering and related services for a proposed reconstruction and improvement of the Lunenburg Middle/High School track and field facility; or take any other action relative thereto.",
      "parent": "New Business Action",
      "by": "words",
@@ -4511,46 +4563,72 @@
      "records": [
       "ours"
      ]
+    },
+    {
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-11-16",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Keep Article 9 as in the warrant, with the stipulation that the funding come from the general stabilization fund, to be replaced once free cash is available.",
+       "outcome": "passed 4-0",
+       "t": 865,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours"
+      },
+      {
+       "kind": "decision",
+       "text": "Committee agreed to affirm its intent to put a warrant article in the spring to replace stabilization money with free cash, noting it cannot bind town meeting.",
+       "t": 994,
+       "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
+       "source": "ours",
+       "outcome": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
     }
    ],
-   "meetings": 30,
+   "meetings": 31,
    "boards_touched": 13,
    "first_seen": "2026-08-18",
-   "last_moved": "2026-11-10",
+   "last_moved": "2026-11-16",
    "claims_before_started": 0,
    "stands": {
     "vote": {
      "kind": "vote",
-     "text": "Pass over the special education reserve fund article at Town Meeting",
-     "outcome": "passed (roll call; all yes in captions)",
-     "t": 6479,
-     "video_url": "https://www.youtube.com/watch?v=4G9q_g67RcA",
+     "text": "Keep Article 9 as in the warrant, with the stipulation that the funding come from the general stabilization fund, to be replaced once free cash is available.",
+     "outcome": "passed 4-0",
+     "t": 865,
+     "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
      "source": "ours",
      "board": "School Committee",
      "board_slug": "school-committee",
-     "date": "2026-11-04"
+     "date": "2026-11-16"
     },
     "decision": {
      "kind": "decision",
-     "text": "Article 9 stays deferred until the school committee acts; Articles 2 and 3 to be voted just before town meeting.",
-     "t": 3057,
-     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM",
+     "text": "Committee agreed to affirm its intent to put a warrant article in the spring to replace stabilization money with free cash, noting it cannot bind town meeting.",
+     "t": 994,
+     "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
      "source": "ours",
      "outcome": "",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-11-10"
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-11-16"
     },
     "any": {
-     "kind": "topic",
-     "text": "Special Town Meeting motions",
-     "t": 2609,
-     "video_url": "https://www.youtube.com/watch?v=8Ybcshw2voM",
+     "kind": "decision",
+     "text": "Committee agreed to affirm its intent to put a warrant article in the spring to replace stabilization money with free cash, noting it cannot bind town meeting.",
+     "t": 994,
+     "video_url": "https://www.youtube.com/watch?v=tyF7RxVO_Bc",
      "source": "ours",
      "outcome": "",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-11-10"
+     "board": "School Committee",
+     "board_slug": "school-committee",
+     "date": "2026-11-16"
     }
    },
    "is_new": false,
@@ -4558,25 +4636,25 @@
    "heat": "moving",
    "stage": "voted on, not decided",
    "tangled": false,
-   "hot": true,
+   "hot": false,
    "momentum": {
-    "meetings_last_30": 8,
+    "meetings_last_30": 9,
     "boards_last_30": 6,
-    "meetings": 23,
+    "meetings": 24,
     "boards": 13,
-    "votes": 36,
-    "days_since_last": 6,
-    "span_days": 84,
+    "votes": 37,
+    "days_since_last": 1,
+    "span_days": 90,
     "meetings_last_90": 23,
-    "board_meetings_since": 1
+    "board_meetings_since": 0
    },
-   "weight": 1356,
+   "weight": 1357,
    "generated": "town-meetings",
    "warrant": {
     "meeting": "stm-2026-11-17",
     "date": "2026-11-17",
     "kind": "special",
-    "status": "upcoming",
+    "status": "held",
     "called_on": "2026-08-18",
     "warrant_opens": "2026-08-19",
     "warrant_closes": "2026-09-17",
@@ -4587,17 +4665,7 @@
     "notice_town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-7975",
     "time": "7:00 PM",
     "place": "Lunenburg Middle/High School Auditorium",
-    "next": [
-     {
-      "date": "2026-11-16",
-      "board": "School Committee",
-      "time": "7:00PM",
-      "hearing": false,
-      "item": "In Consideration of Passing Over Article 9 of the Special Town Meeting Warrant",
-      "doc": "/docs/meetings/school-committee/2026-11-16-agenda-8136.pdf",
-      "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11162026-8136"
-     }
-    ],
+    "next": [],
     "counts": {
      "on_warrant": 9,
      "kept_off": 0,
@@ -4661,7 +4729,7 @@
       ]
      },
      {
-      "summary": "This would pay $195,830 for professional engineering and related services for a proposed rebuild of the Middle/High School track and field. The superintendent asked for design and bid documents only, not construction, which the checked figures put at about $2 million for the whole project. The Select Board has deferred the article until the School Committee acts, and the Capital Planning Committee is making no recommendation.",
+      "summary": "This would pay $195,830 for engineering and related services to plan a rebuild of the Middle/High School track and field. The School Committee asked for it, and the whole project is estimated at about $2 million. The Select Board has kept it deferred, and the School Committee later said to keep it but pay from the general stabilization fund.",
       "summary_from": "the warrant",
       "article": 9,
       "title": "Middle/high school track and field engineering and related services",
@@ -4683,9 +4751,9 @@
       "amended": false,
       "divided": false,
       "put_off": false,
-      "promoted": false,
-      "promoted_why": "",
-      "thread": "turf-field-study",
+      "promoted": true,
+      "promoted_why": "came up at 3 meetings of 3 boards beyond the routine stops; residents spoke about it, or a dispute was recorded, at 1 meeting; its title is too general to follow by its words, so its record is in this meeting's timeline",
+      "thread": "",
       "numbered_by": "",
       "money": 2000000.0,
       "heard": [
@@ -4716,8 +4784,8 @@
       ]
      },
      {
-      "summary": "This is a non-binding question that asks voters which way they prefer to pay for meeting the federal stormwater permit rules, as put forward by the Stormwater Task Force. One choice is a separate stormwater fee, about $85 a year for a single-family home (capped at $100 for three years); the other is property taxes, about $109 a year. The program costs about $480,000 a year, as presented and not voted.",
-      "summary_from": "the warrant",
+      "summary": "",
+      "summary_from": "",
       "article": 8,
       "title": "Advisory vote on funding mechanism for stormwater maintenance and MS4 permit compliance",
       "title_from": "the warrant",
@@ -4740,7 +4808,7 @@
       "put_off": false,
       "promoted": false,
       "promoted_why": "",
-      "thread": "stormwater-fee",
+      "thread": "",
       "numbered_by": "",
       "money": 480000.0,
       "heard": [
@@ -6149,10 +6217,10 @@
     "meetings": 14,
     "boards": 4,
     "votes": 4,
-    "days_since_last": 6,
+    "days_since_last": 7,
     "span_days": 112,
-    "meetings_last_90": 8,
-    "board_meetings_since": 0
+    "meetings_last_90": 7,
+    "board_meetings_since": 1
    },
    "weight": 440,
    "parent": "stm-2026-09-03"
@@ -9391,30 +9459,6 @@
     }
    ],
    "on_agenda": [
-    {
-     "board": "Lunenburg Municipal Building Design Committee",
-     "board_slug": "lunenburg-municipal-building-design-committee",
-     "date": "2026-11-02",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Comments Board and Public Next Meeting Schedule Adjourn",
-     "parent": "",
-     "by": "board",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11022026-8104",
-     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-11-02-agenda-8104.pdf"
-    },
-    {
-     "board": "Lunenburg Municipal Building Design Committee",
-     "board_slug": "lunenburg-municipal-building-design-committee",
-     "date": "2026-11-02",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Vote on Article 7 for Town Meeting Recommendation (Yes or No) ARTICLE 7: ADVISORY VOTE ON PURSUING DEMOLITION OF THE T.C. PASSIOS BUILDING",
-     "parent": "",
-     "by": "board",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11022026-8108",
-     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-11-02-agenda-8108.pdf"
-    },
     {
      "board": "Select Board",
      "board_slug": "select-board",
@@ -15904,10 +15948,10 @@
     "meetings": 139,
     "boards": 20,
     "votes": 16,
-    "days_since_last": 7,
+    "days_since_last": 8,
     "span_days": 777,
-    "meetings_last_90": 14,
-    "board_meetings_since": 4
+    "meetings_last_90": 13,
+    "board_meetings_since": 5
    },
    "weight": 2066
   },
@@ -15930,25 +15974,9 @@
     {
      "order": 1,
      "kind": "fee",
-     "value": "$85 per ERU",
-     "label": "current estimate of the yearly stormwater fee, capped at $100 for the first three years",
-     "hook": "proposed yearly stormwater fee",
-     "sources": [
-      {
-       "basis": "printed",
-       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
-       "where": "Select Board minutes, 20 Oct 2026",
-       "checked_against": "the document"
-      }
-     ],
-     "auto": true
-    },
-    {
-     "order": 2,
-     "kind": "money",
-     "value": "$480,000",
-     "label": "estimated yearly cost of stormwater compliance, versus about $100,000 spent now",
-     "hook": "",
+     "value": "$85 a year",
+     "label": "estimated stormwater fee for a typical home, capped at $100 at first; not yet set",
+     "hook": "estimated yearly stormwater fee",
      "sources": [
       {
        "basis": "printed",
@@ -15961,9 +15989,9 @@
     },
     {
      "order": 3,
-     "kind": "fee",
-     "value": "$109 vs $85",
-     "label": "yearly cost for an average home if funded through taxes versus the utility fee",
+     "kind": "money",
+     "value": "$480,000",
+     "label": "estimated yearly cost of meeting the stormwater permit; the town spends about $100,000",
      "hook": "",
      "sources": [
       {
@@ -21627,10 +21655,10 @@
     "meetings": 63,
     "boards": 9,
     "votes": 7,
-    "days_since_last": 7,
+    "days_since_last": 8,
     "span_days": 300,
-    "meetings_last_90": 23,
-    "board_meetings_since": 2
+    "meetings_last_90": 22,
+    "board_meetings_since": 3
    },
    "weight": 966
   },
@@ -22127,6 +22155,30 @@
      "by": "words",
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11042026-8114",
      "agenda_doc": "/docs/meetings/board-of-assessors/2026-11-04-agenda-8114.pdf"
+    },
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-11-18",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "Discuss adding COLA reimbursement to Veterans Exemptions.",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11182026-8141",
+     "agenda_doc": "/docs/meetings/board-of-assessors/2026-11-18-agenda-8141.pdf"
+    },
+    {
+     "board": "School Advisory Councils & Committees",
+     "board_slug": "school-advisory-councils-committees",
+     "date": "2026-11-23",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "Veterans Day",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11232026-8142",
+     "agenda_doc": "/docs/meetings/school-advisory-councils-committees/2026-11-23-agenda-8142.pdf"
     }
    ],
    "chronology": [
@@ -22605,7 +22657,7 @@
     "meetings": 9,
     "boards": 6,
     "votes": 8,
-    "days_since_last": 12,
+    "days_since_last": 13,
     "span_days": 56,
     "meetings_last_90": 9,
     "board_meetings_since": 1
@@ -25234,32 +25286,7 @@
      ]
     }
    ],
-   "on_agenda": [
-    {
-     "board": "Lunenburg Municipal Building Design Committee",
-     "board_slug": "lunenburg-municipal-building-design-committee",
-     "date": "2026-11-02",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Comments Board and Public Next Meeting Schedule Adjourn",
-     "parent": "",
-     "by": "board",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11022026-8104",
-     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-11-02-agenda-8104.pdf"
-    },
-    {
-     "board": "Lunenburg Municipal Building Design Committee",
-     "board_slug": "lunenburg-municipal-building-design-committee",
-     "date": "2026-11-02",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Vote on Article 7 for Town Meeting Recommendation (Yes or No) ARTICLE 7: ADVISORY VOTE ON PURSUING DEMOLITION OF THE T.C. PASSIOS BUILDING",
-     "parent": "",
-     "by": "board",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11022026-8108",
-     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-11-02-agenda-8108.pdf"
-    }
-   ],
+   "on_agenda": [],
    "chronology": [
     {
      "board": "Select Board",
@@ -26594,10 +26621,10 @@
     "meetings": 27,
     "boards": 7,
     "votes": 7,
-    "days_since_last": 14,
+    "days_since_last": 15,
     "span_days": 272,
-    "meetings_last_90": 9,
-    "board_meetings_since": 2
+    "meetings_last_90": 8,
+    "board_meetings_since": 3
    },
    "weight": 755
   },
@@ -27193,7 +27220,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 26,
+    "days_since_last": 27,
     "span_days": 70,
     "meetings_last_90": 4,
     "board_meetings_since": 0
@@ -29604,10 +29631,10 @@
     "meetings": 12,
     "boards": 5,
     "votes": 4,
-    "days_since_last": 27,
+    "days_since_last": 28,
     "span_days": 98,
-    "meetings_last_90": 6,
-    "board_meetings_since": 5
+    "meetings_last_90": 5,
+    "board_meetings_since": 6
    },
    "weight": 539
   },
@@ -30039,7 +30066,7 @@
     "meetings": 6,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 27,
+    "days_since_last": 28,
     "span_days": 40,
     "meetings_last_90": 6,
     "board_meetings_since": 4
@@ -32504,7 +32531,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 34,
+    "days_since_last": 35,
     "span_days": 35,
     "meetings_last_90": 2,
     "board_meetings_since": 2
@@ -33251,10 +33278,10 @@
     "meetings": 5,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 40,
+    "days_since_last": 41,
     "span_days": 92,
     "meetings_last_90": 4,
-    "board_meetings_since": 7
+    "board_meetings_since": 8
    },
    "weight": 431
   },
@@ -33799,10 +33826,10 @@
     "meetings": 2,
     "boards": 1,
     "votes": 2,
-    "days_since_last": 40,
+    "days_since_last": 41,
     "span_days": 21,
     "meetings_last_90": 2,
-    "board_meetings_since": 2
+    "board_meetings_since": 3
    },
    "weight": 128
   },
@@ -35373,10 +35400,10 @@
     "meetings": 3,
     "boards": 3,
     "votes": 0,
-    "days_since_last": 41,
+    "days_since_last": 42,
     "span_days": 36,
     "meetings_last_90": 3,
-    "board_meetings_since": 7
+    "board_meetings_since": 9
    },
    "weight": 329
   },
@@ -37912,10 +37939,10 @@
     "meetings": 30,
     "boards": 8,
     "votes": 0,
-    "days_since_last": 61,
+    "days_since_last": 62,
     "span_days": 336,
     "meetings_last_90": 3,
-    "board_meetings_since": 19
+    "board_meetings_since": 20
    },
    "weight": 858
   },
@@ -38401,7 +38428,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 62,
+    "days_since_last": 63,
     "span_days": 119,
     "meetings_last_90": 2,
     "board_meetings_since": 9
@@ -39567,10 +39594,10 @@
     "meetings": 21,
     "boards": 11,
     "votes": 20,
-    "days_since_last": 74,
+    "days_since_last": 75,
     "span_days": 52,
-    "meetings_last_90": 6,
-    "board_meetings_since": 40
+    "meetings_last_90": 5,
+    "board_meetings_since": 42
    },
    "weight": 1150,
    "generated": "town-meetings",
@@ -41354,10 +41381,10 @@
     "meetings": 12,
     "boards": 4,
     "votes": 4,
-    "days_since_last": 88,
+    "days_since_last": 89,
     "span_days": 220,
     "meetings_last_90": 1,
-    "board_meetings_since": 18
+    "board_meetings_since": 19
    },
    "weight": 440
   },
@@ -41838,9 +41865,9 @@
     "meetings": 3,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 90,
+    "days_since_last": 91,
     "span_days": 42,
-    "meetings_last_90": 1,
+    "meetings_last_90": 0,
     "board_meetings_since": 7
    },
    "weight": 129
@@ -42625,10 +42652,10 @@
     "meetings": 11,
     "boards": 5,
     "votes": 1,
-    "days_since_last": 110,
+    "days_since_last": 111,
     "span_days": 238,
     "meetings_last_90": 0,
-    "board_meetings_since": 29
+    "board_meetings_since": 30
    },
    "weight": 537
   },
@@ -43192,10 +43219,10 @@
     "meetings": 9,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 132,
+    "days_since_last": 133,
     "span_days": 230,
     "meetings_last_90": 0,
-    "board_meetings_since": 33
+    "board_meetings_since": 34
    },
    "weight": 435
   },
@@ -43952,10 +43979,10 @@
     "meetings": 2,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 145,
+    "days_since_last": 146,
     "span_days": 70,
     "meetings_last_90": 0,
-    "board_meetings_since": 9
+    "board_meetings_since": 10
    },
    "weight": 128
   },
@@ -45115,10 +45142,10 @@
     "meetings": 21,
     "boards": 5,
     "votes": 10,
-    "days_since_last": 188,
+    "days_since_last": 189,
     "span_days": 461,
     "meetings_last_90": 0,
-    "board_meetings_since": 48
+    "board_meetings_since": 49
    },
    "weight": 547,
    "parent": "atm-2026-05-02"
@@ -49006,10 +49033,10 @@
     "meetings": 35,
     "boards": 11,
     "votes": 163,
-    "days_since_last": 198,
+    "days_since_last": 199,
     "span_days": 116,
     "meetings_last_90": 0,
-    "board_meetings_since": 105
+    "board_meetings_since": 106
    },
    "weight": 1166,
    "generated": "town-meetings",
@@ -50827,10 +50854,10 @@
     "meetings": 10,
     "boards": 5,
     "votes": 0,
-    "days_since_last": 198,
+    "days_since_last": 199,
     "span_days": 114,
     "meetings_last_90": 0,
-    "board_meetings_since": 57
+    "board_meetings_since": 58
    },
    "weight": 538
   },
@@ -51496,10 +51523,10 @@
     "meetings": 14,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 198,
+    "days_since_last": 199,
     "span_days": 214,
     "meetings_last_90": 0,
-    "board_meetings_since": 45
+    "board_meetings_since": 46
    },
    "weight": 442,
    "parent": "atm-2026-05-02"
@@ -51825,7 +51852,7 @@
     "meetings": 5,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 198,
+    "days_since_last": 199,
     "span_days": 60,
     "meetings_last_90": 0,
     "board_meetings_since": 32
@@ -52201,7 +52228,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 3,
-    "days_since_last": 198,
+    "days_since_last": 199,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 23
@@ -52480,7 +52507,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 228,
+    "days_since_last": 229,
     "span_days": 135,
     "meetings_last_90": 0,
     "board_meetings_since": 11
@@ -55804,10 +55831,10 @@
     "meetings": 25,
     "boards": 14,
     "votes": 97,
-    "days_since_last": 363,
+    "days_since_last": 364,
     "span_days": 98,
     "meetings_last_90": 0,
-    "board_meetings_since": 242
+    "board_meetings_since": 243
    },
    "weight": 1460,
    "generated": "town-meetings",
@@ -56810,10 +56837,10 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 363,
+    "days_since_last": 364,
     "span_days": 91,
     "meetings_last_90": 0,
-    "board_meetings_since": 102
+    "board_meetings_since": 103
    },
    "weight": 432,
    "generated": "town-meetings",
@@ -57146,7 +57173,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 363,
+    "days_since_last": 364,
     "span_days": 42,
     "meetings_last_90": 0,
     "board_meetings_since": 50
@@ -61340,10 +61367,10 @@
     "meetings": 44,
     "boards": 14,
     "votes": 164,
-    "days_since_last": 562,
+    "days_since_last": 563,
     "span_days": 165,
     "meetings_last_90": 0,
-    "board_meetings_since": 380
+    "board_meetings_since": 381
    },
    "weight": 1465,
    "generated": "town-meetings",
@@ -62515,7 +62542,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 562,
+    "days_since_last": 563,
     "span_days": 30,
     "meetings_last_90": 0,
     "board_meetings_since": 36
@@ -64210,10 +64237,10 @@
     "meetings": 27,
     "boards": 12,
     "votes": 63,
-    "days_since_last": 734,
+    "days_since_last": 735,
     "span_days": 104,
     "meetings_last_90": 0,
-    "board_meetings_since": 433
+    "board_meetings_since": 434
    },
    "weight": 1256,
    "generated": "town-meetings",
@@ -65030,10 +65057,10 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 734,
+    "days_since_last": 735,
     "span_days": 85,
     "meetings_last_90": 0,
-    "board_meetings_since": 212
+    "board_meetings_since": 213
    },
    "weight": 531,
    "generated": "town-meetings",
@@ -68373,10 +68400,10 @@
     "meetings": 36,
     "boards": 13,
     "votes": 116,
-    "days_since_last": 926,
+    "days_since_last": 927,
     "span_days": 116,
     "meetings_last_90": 0,
-    "board_meetings_since": 563
+    "board_meetings_since": 565
    },
    "weight": 1364,
    "generated": "town-meetings",
@@ -69368,10 +69395,10 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 926,
+    "days_since_last": 927,
     "span_days": 37,
     "meetings_last_90": 0,
-    "board_meetings_since": 12
+    "board_meetings_since": 13
    },
    "weight": 226,
    "generated": "town-meetings",
@@ -71777,10 +71804,10 @@
     "meetings": 29,
     "boards": 11,
     "votes": 87,
-    "days_since_last": 1098,
+    "days_since_last": 1099,
     "span_days": 189,
     "meetings_last_90": 0,
-    "board_meetings_since": 547
+    "board_meetings_since": 549
    },
    "weight": 1158,
    "generated": "town-meetings",
@@ -72678,7 +72705,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 1098,
+    "days_since_last": 1099,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 251
@@ -73196,7 +73223,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 2,
-    "days_since_last": 1098,
+    "days_since_last": 1099,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 204
@@ -75641,10 +75668,10 @@
     "meetings": 28,
     "boards": 9,
     "votes": 74,
-    "days_since_last": 1290,
+    "days_since_last": 1291,
     "span_days": 123,
     "meetings_last_90": 0,
-    "board_meetings_since": 591
+    "board_meetings_since": 592
    },
    "weight": 954,
    "generated": "town-meetings",
@@ -76572,7 +76599,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 1290,
+    "days_since_last": 1291,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 246
@@ -76660,7 +76687,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 1290,
+    "days_since_last": 1291,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 7
@@ -78660,10 +78687,10 @@
     "meetings": 38,
     "boards": 12,
     "votes": 59,
-    "days_since_last": 1462,
+    "days_since_last": 1463,
     "span_days": 189,
     "meetings_last_90": 0,
-    "board_meetings_since": 892
+    "board_meetings_since": 894
    },
    "weight": 1262,
    "generated": "town-meetings",
@@ -79579,7 +79606,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 1,
-    "days_since_last": 1462,
+    "days_since_last": 1463,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 239
@@ -82784,10 +82811,10 @@
     "meetings": 35,
     "boards": 10,
     "votes": 113,
-    "days_since_last": 1654,
+    "days_since_last": 1655,
     "span_days": 123,
     "meetings_last_90": 0,
-    "board_meetings_since": 822
+    "board_meetings_since": 823
    },
    "weight": 1059,
    "generated": "town-meetings",
@@ -86299,10 +86326,10 @@
     "meetings": 37,
     "boards": 12,
     "votes": 67,
-    "days_since_last": 1826,
+    "days_since_last": 1827,
     "span_days": 196,
     "meetings_last_90": 0,
-    "board_meetings_since": 1022
+    "board_meetings_since": 1023
    },
    "weight": 1261,
    "generated": "town-meetings",
@@ -89247,10 +89274,10 @@
     "meetings": 36,
     "boards": 14,
     "votes": 71,
-    "days_since_last": 2027,
+    "days_since_last": 2028,
     "span_days": 114,
     "meetings_last_90": 0,
-    "board_meetings_since": 1274
+    "board_meetings_since": 1275
    },
    "weight": 1461,
    "generated": "town-meetings",
@@ -90304,7 +90331,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 2078,
+    "days_since_last": 2079,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 243
@@ -92358,10 +92385,10 @@
     "meetings": 34,
     "boards": 13,
     "votes": 59,
-    "days_since_last": 2190,
+    "days_since_last": 2191,
     "span_days": 154,
     "meetings_last_90": 0,
-    "board_meetings_since": 1170
+    "board_meetings_since": 1171
    },
    "weight": 1360,
    "generated": "town-meetings",
@@ -95203,7 +95230,7 @@
     "meetings": 36,
     "boards": 9,
     "votes": 54,
-    "days_since_last": 2347,
+    "days_since_last": 2348,
     "span_days": 158,
     "meetings_last_90": 0,
     "board_meetings_since": 934
@@ -97572,7 +97599,7 @@
     "meetings": 21,
     "boards": 6,
     "votes": 59,
-    "days_since_last": 2561,
+    "days_since_last": 2562,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 949
@@ -100201,7 +100228,7 @@
     "meetings": 26,
     "boards": 6,
     "votes": 110,
-    "days_since_last": 2753,
+    "days_since_last": 2754,
     "span_days": 137,
     "meetings_last_90": 0,
     "board_meetings_since": 842
@@ -101664,7 +101691,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2753,
+    "days_since_last": 2754,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -101791,7 +101818,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2753,
+    "days_since_last": 2754,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -101918,7 +101945,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2753,
+    "days_since_last": 2754,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -103017,7 +103044,7 @@
     "meetings": 21,
     "boards": 8,
     "votes": 35,
-    "days_since_last": 2925,
+    "days_since_last": 2926,
     "span_days": 183,
     "meetings_last_90": 0,
     "board_meetings_since": 1052
@@ -103816,7 +103843,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 1,
-    "days_since_last": 2925,
+    "days_since_last": 2926,
     "span_days": 98,
     "meetings_last_90": 0,
     "board_meetings_since": 410
@@ -104111,7 +104138,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 5,
-    "days_since_last": 3121,
+    "days_since_last": 3122,
     "span_days": 105,
     "meetings_last_90": 0,
     "board_meetings_since": 565
@@ -106378,10 +106405,10 @@
     "meetings": 15,
     "boards": 9,
     "votes": 53,
-    "days_since_last": 3275,
+    "days_since_last": 3276,
     "span_days": 70,
     "meetings_last_90": 0,
-    "board_meetings_since": 1456
+    "board_meetings_since": 1457
    },
    "weight": 936,
    "generated": "town-meetings",
@@ -107629,10 +107656,10 @@
     "meetings": 8,
     "boards": 6,
     "votes": 40,
-    "days_since_last": 3481,
+    "days_since_last": 3482,
     "span_days": 109,
     "meetings_last_90": 0,
-    "board_meetings_since": 1048
+    "board_meetings_since": 1049
    },
    "weight": 627,
    "generated": "town-meetings",
@@ -109404,10 +109431,10 @@
     "meetings": 9,
     "boards": 3,
     "votes": 12,
-    "days_since_last": 3646,
+    "days_since_last": 3647,
     "span_days": 49,
     "meetings_last_90": 0,
-    "board_meetings_since": 623
+    "board_meetings_since": 624
    },
    "weight": 325,
    "generated": "town-meetings",
@@ -110317,7 +110344,7 @@
     "meetings": 6,
     "boards": 4,
     "votes": 27,
-    "days_since_last": 3738,
+    "days_since_last": 3739,
     "span_days": 41,
     "meetings_last_90": 0,
     "board_meetings_since": 914
@@ -111240,7 +111267,7 @@
     "meetings": 8,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 3749,
+    "days_since_last": 3750,
     "span_days": 93,
     "meetings_last_90": 0,
     "board_meetings_since": 899
@@ -113816,10 +113843,10 @@
     "meetings": 20,
     "boards": 8,
     "votes": 122,
-    "days_since_last": 3845,
+    "days_since_last": 3846,
     "span_days": 166,
     "meetings_last_90": 0,
-    "board_meetings_since": 1390
+    "board_meetings_since": 1391
    },
    "weight": 840,
    "generated": "town-meetings",
@@ -115636,7 +115663,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 3845,
+    "days_since_last": 3846,
     "span_days": 74,
     "meetings_last_90": 0,
     "board_meetings_since": 939
@@ -116378,7 +116405,7 @@
     "meetings": 16,
     "boards": 2,
     "votes": 11,
-    "days_since_last": 4018,
+    "days_since_last": 4019,
     "span_days": 195,
     "meetings_last_90": 0,
     "board_meetings_since": 726
@@ -118704,7 +118731,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 88,
-    "days_since_last": 4216,
+    "days_since_last": 4217,
     "span_days": 207,
     "meetings_last_90": 0,
     "board_meetings_since": 1405
@@ -120572,7 +120599,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 2,
-    "days_since_last": 4216,
+    "days_since_last": 4217,
     "span_days": 159,
     "meetings_last_90": 0,
     "board_meetings_since": 1144
@@ -122334,10 +122361,10 @@
     "meetings": 20,
     "boards": 7,
     "votes": 49,
-    "days_since_last": 4580,
+    "days_since_last": 4581,
     "span_days": 102,
     "meetings_last_90": 0,
-    "board_meetings_since": 1668
+    "board_meetings_since": 1669
    },
    "weight": 736,
    "generated": "town-meetings",
@@ -123705,7 +123732,7 @@
     "meetings": 9,
     "boards": 2,
     "votes": 2,
-    "days_since_last": 4584,
+    "days_since_last": 4585,
     "span_days": 161,
     "meetings_last_90": 0,
     "board_meetings_since": 812
@@ -124386,7 +124413,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 9,
-    "days_since_last": 4696,
+    "days_since_last": 4697,
     "span_days": 120,
     "meetings_last_90": 0,
     "board_meetings_since": 1157
@@ -126207,10 +126234,10 @@
     "meetings": 30,
     "boards": 9,
     "votes": 52,
-    "days_since_last": 5308,
+    "days_since_last": 5309,
     "span_days": 207,
     "meetings_last_90": 0,
-    "board_meetings_since": 2166
+    "board_meetings_since": 2167
    },
    "weight": 946,
    "generated": "town-meetings",
@@ -126939,10 +126966,10 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 5604,
+    "days_since_last": 5605,
     "span_days": 66,
     "meetings_last_90": 0,
-    "board_meetings_since": 1632
+    "board_meetings_since": 1633
    },
    "weight": 518,
    "generated": "town-meetings",
@@ -127645,7 +127672,7 @@
     "meetings": 13,
     "boards": 4,
     "votes": 12,
-    "days_since_last": 5672,
+    "days_since_last": 5673,
     "span_days": 117,
     "meetings_last_90": 0,
     "board_meetings_since": 1524
@@ -128264,7 +128291,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 5672,
+    "days_since_last": 5673,
     "span_days": 9,
     "meetings_last_90": 0,
     "board_meetings_since": 359

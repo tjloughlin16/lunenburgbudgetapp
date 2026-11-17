@@ -1,57 +1,13 @@
 {
  "about": "How the boards post: for every board the town posts for, the share of its meetings that got minutes, by fiscal year, and how many were recorded.",
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "boards": [
-  {
-   "captions_disabled": 0,
-   "complete": 56.3,
-   "meetings": 36,
-   "name": "Library Board of Trustees",
-   "rank": 1,
-   "ranked": true,
-   "recorded": 0,
-   "recorded_share": 0.0,
-   "share": 97.2,
-   "slug": "library-board-of-trustees",
-   "the_three": false,
-   "with_minutes": 35,
-   "years": [
-    {
-     "complete": 4.0,
-     "fy": 2024,
-     "meetings": 11,
-     "recorded": 0,
-     "with_minutes": 11
-    },
-    {
-     "complete": 4.0,
-     "fy": 2025,
-     "meetings": 12,
-     "recorded": 0,
-     "with_minutes": 12
-    },
-    {
-     "complete": 3.82,
-     "fy": 2026,
-     "meetings": 11,
-     "recorded": 0,
-     "with_minutes": 10
-    },
-    {
-     "complete": 4.0,
-     "fy": 2027,
-     "meetings": 2,
-     "recorded": 0,
-     "with_minutes": 2
-    }
-   ]
-  },
   {
    "captions_disabled": 0,
    "complete": 56.0,
    "meetings": 25,
    "name": "Lunenburg Housing Authority",
-   "rank": 2,
+   "rank": 1,
    "ranked": true,
    "recorded": 0,
    "recorded_share": 0.0,
@@ -95,7 +51,7 @@
    "complete": 93.0,
    "meetings": 71,
    "name": "Board of Assessors",
-   "rank": 3,
+   "rank": 2,
    "ranked": true,
    "recorded": 62,
    "recorded_share": 87.3,
@@ -131,6 +87,50 @@
      "meetings": 4,
      "recorded": 3,
      "with_minutes": 4
+    }
+   ]
+  },
+  {
+   "captions_disabled": 0,
+   "complete": 55.6,
+   "meetings": 37,
+   "name": "Library Board of Trustees",
+   "rank": 3,
+   "ranked": true,
+   "recorded": 0,
+   "recorded_share": 0.0,
+   "share": 94.6,
+   "slug": "library-board-of-trustees",
+   "the_three": false,
+   "with_minutes": 35,
+   "years": [
+    {
+     "complete": 4.0,
+     "fy": 2024,
+     "meetings": 11,
+     "recorded": 0,
+     "with_minutes": 11
+    },
+    {
+     "complete": 4.0,
+     "fy": 2025,
+     "meetings": 12,
+     "recorded": 0,
+     "with_minutes": 12
+    },
+    {
+     "complete": 3.82,
+     "fy": 2026,
+     "meetings": 11,
+     "recorded": 0,
+     "with_minutes": 10
+    },
+    {
+     "complete": 3.33,
+     "fy": 2027,
+     "meetings": 3,
+     "recorded": 0,
+     "with_minutes": 2
     }
    ]
   },
@@ -1582,7 +1582,7 @@
   {
    "captions_disabled": 0,
    "complete": 28.6,
-   "meetings": 18,
+   "meetings": 19,
    "name": "Board of Registrars",
    "ranked": false,
    "recorded": 0,
@@ -1616,7 +1616,7 @@
     {
      "complete": 2.0,
      "fy": 2027,
-     "meetings": 3,
+     "meetings": 4,
      "recorded": 0,
      "with_minutes": 0
     }
@@ -1713,8 +1713,8 @@
   {
    "basis": "The town\u2019s Agenda Center, every agenda and every set of minutes it lists per board (sources/meetings/index.csv). A meeting is a date with a posted agenda; it has minutes if minutes are listed for the same board and date. Meetings in the last 60 days are left out, because minutes are approved at the next meeting and posted after.",
    "bearing": "sizes",
-   "claim": "The Library Board of Trustees: minutes posted for 35 of 36 meetings, the best of any board.",
-   "detail": "Across all 39 boards with a posted meeting, FY2024 to FY2027, 1,073 of 1,570 meetings have minutes posted, 68%. The Library Board of Trustees posted minutes for 35 of 36 of its own \u2014 97.2% \u2014 over the same four years.",
+   "claim": "The Lunenburg Housing Authority: minutes posted for 24 of 25 meetings, the best of any board.",
+   "detail": "Across all 39 boards with a posted meeting, FY2024 to FY2027, 1,073 of 1,572 meetings have minutes posted, 68%. The Lunenburg Housing Authority posted minutes for 24 of 25 of its own \u2014 96.0% \u2014 over the same four years.",
    "figure": "share",
    "figures": {
     "all_k": {
@@ -1723,14 +1723,14 @@
      "value": 1073
     },
     "all_n": {
-     "text": "1,570",
+     "text": "1,572",
      "unit": "",
-     "value": 1570
+     "value": 1572
     },
     "all_share": {
      "text": "68%",
      "unit": "",
-     "value": 68.34394904458598
+     "value": 68.25699745547074
     },
     "boards": {
      "text": "39",
@@ -1748,19 +1748,19 @@
      "value": 2027
     },
     "k": {
-     "text": "35",
+     "text": "24",
      "unit": "",
-     "value": 35
+     "value": 24
     },
     "n": {
-     "text": "36",
+     "text": "25",
      "unit": "",
-     "value": 36
+     "value": 25
     },
     "share": {
-     "text": "97.2%",
-     "unit": "of the Library Board of Trustees\u2019s meetings have posted minutes",
-     "value": 97.2
+     "text": "96.0%",
+     "unit": "of the Lunenburg Housing Authority\u2019s meetings have posted minutes",
+     "value": 96.0
     }
    },
    "id": "the-standard",
@@ -1783,9 +1783,9 @@
    "figure": "last_share",
    "figures": {
     "best_share": {
-     "text": "97%",
+     "text": "96%",
      "unit": "",
-     "value": 97.2
+     "value": 96.0
     },
     "boards": {
      "text": "29",
@@ -1918,7 +1918,7 @@
      "slug": "/boards/school-committee"
     }
    ],
-   "so_what": "Its four-year figure, 70%, is mostly one blank year; since then it runs 70%. The standard above is 97%."
+   "so_what": "Its four-year figure, 70%, is mostly one blank year; since then it runs 70%. The standard above is 96%."
   },
   {
    "basis": "The same count, first and last fiscal year in the window, boards with ten or more meetings in both.",
@@ -2023,7 +2023,7 @@
  "totals": {
   "boards": 39,
   "boards_ranked": 29,
-  "meetings": 1570,
+  "meetings": 1572,
   "share": 68.3,
   "with_minutes": 1073
  },
