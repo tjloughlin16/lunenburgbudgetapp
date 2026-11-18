@@ -476,7 +476,7 @@ def build():
                  note='By the year the journal posts them. Names are what its descriptions print, cut off at '
                       'about thirty characters. An indoor soccer receipt was followed days later by a refund '
                       'of the same amount. ASLYFC, Ayer-Shirley-Lunenburg Youth Football & Cheerleading, is the Bengals. '
-                      'Little League appears nowhere in this journal.'),
+                      'Little League appears nowhere in this journal; its receipts are in the parks fee fund’s.'),
             dict(key='othergroups', label='Other groups', total_col=4, kinds=['ledger'] * 5,
                  columns=fys + ['All years'], rows=grow([g for g, _ in OTHER_GROUPS]),
                  note='Groups renting school buildings or fields that are not sports leagues.'),

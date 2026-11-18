@@ -101,39 +101,42 @@
   },
   {
    "figures": {
-    "a": {
-     "text": "$516",
-     "unit": "",
-     "value": 516.0
-    },
     "b": {
      "text": "$752",
      "unit": "",
      "value": 752.0
+    },
+    "d": {
+     "text": "11 September 2025",
+     "unit": "",
+     "value": "2025-09-11"
     }
    },
    "literals": [
     "FY2016",
-    "FY2025",
-    "FY2026"
+    "FY2025"
    ],
    "notes": [
     {
-     "closes": "the receipt detail for fund 1523",
+     "closes": "the Parks Commission’s vote accepting the gift",
      "figures": {},
      "kind": "gap",
-     "literals": [
-      "1523"
-     ],
-     "text": "Who gave, and for what, is not in the fund reports."
+     "literals": [],
+     "text": "The receipt names the giver and not what the gift is for."
     }
    ],
    "rests_on": [
     "gflat",
     "g26in",
-    "g26"
+    "g26",
+    "gj"
    ],
-   "text": "It ended every year from FY2016 to FY2025 at $752, then took in $516 in FY2026."
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Nothing else reached the gift fund in four years of its journal."
+   },
+   "text": "It ended every year from FY2016 to FY2025 at $752; its journal shows one gift since, on 11 September 2025."
   },
   {
    "figures": {
@@ -234,6 +237,23 @@
     "text": "$1,268",
     "unit": "",
     "value": 1268.0
+   }
+  },
+  {
+   "id": "gj",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2023",
+     "FY2026"
+    ],
+    "text": "postings to the gift fund, FY2023 to the FY2026 close"
+   },
+   "value": {
+    "text": "1",
+    "unit": "postings",
+    "value": 1
    }
   },
   {
@@ -339,6 +359,10 @@
   {
    "href": "/docs/data/special-revenue-read.csv",
    "label": "Lunenburg Budget Project — special-revenue-read.csv (the annual reports’ fund schedules, tied)"
+  },
+  {
+   "href": "/docs/data/munis-parks-journal.csv",
+   "label": "Lunenburg Budget Project — munis-parks-journal.csv (funds 1500 and 1523, every posting FY2023–FY2026, our redacted reading)"
   }
  ],
  "table": null,

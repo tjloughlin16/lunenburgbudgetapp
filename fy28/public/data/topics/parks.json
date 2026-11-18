@@ -7,17 +7,15 @@
     "value": 134433.6
    },
    "b": {
-    "text": "$84,818",
+    "text": "$96,033",
     "unit": "",
-    "value": 84817.56
+    "value": 96033.18
    }
   },
   "literals": [
-   "FY2026",
-   "31",
-   "2026"
+   "FY2026"
   ],
-  "text": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $84,818 at 31 March 2026, outside the vote."
+  "text": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $96,033 at the close, outside the vote."
  },
  "category": "parks",
  "chains": [],
@@ -228,30 +226,43 @@
    {
     "figures": {
      "a": {
-      "text": "$84,818",
+      "text": "$96,033",
       "unit": "",
-      "value": 84817.56
+      "value": 96033.18
      }
     },
     "literals": [
-     "31",
-     "2026"
+     "FY2026"
     ],
     "rests_on": [
      "h-park",
      "h-myrec"
     ],
-    "text": "The parks’ own fee fund held $84,818 at 31 March 2026, outside the vote."
+    "text": "The parks’ own fee fund held $96,033 at the FY2026 close, outside the vote."
    },
    {
-    "figures": {},
-    "literals": [],
+    "figures": {
+     "a": {
+      "text": "$52,300",
+      "unit": "",
+      "value": 52300.16
+     },
+     "b": {
+      "text": "$26,261",
+      "unit": "",
+      "value": 26261.17
+     }
+    },
+    "literals": [
+     "FY2025",
+     "FY2026"
+    ],
     "rests_on": [
-     "h-myrec",
-     "h-books",
+     "h-fees",
+     "h-why",
      "h-payers"
     ],
-    "text": "What the registration money became on the town’s books is not published."
+    "text": "Its fees fell from $52,300 in FY2025 to $26,261 in FY2026; nothing published says why."
    }
   ],
   "tiers": [
@@ -279,10 +290,9 @@
       "label": {
        "figures": {},
        "literals": [
-        "FY2026",
-        "12"
+        "FY2026"
        ],
-       "text": "paid by period 12, FY2026"
+       "text": "paid by the FY2026 close"
       },
       "value": {
        "text": "$113,350",
@@ -317,15 +327,37 @@
       "label": {
        "figures": {},
        "literals": [
-        "31",
-        "2026"
+        "FY2026"
        ],
-       "text": "in the parks fee fund, 31 March 2026"
+       "text": "in the parks fee fund at the FY2026 close"
       },
       "value": {
-       "text": "$84,818",
+       "text": "$96,033",
        "unit": "",
-       "value": 84817.56
+       "value": 96033.18
+      }
+     },
+     {
+      "id": "h-fees",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "b": {
+         "text": "$52,300",
+         "unit": "",
+         "value": 52300.16
+        }
+       },
+       "literals": [
+        "FY2026",
+        "FY2025"
+       ],
+       "text": "fees it took in, FY2026, against $52,300 in FY2025"
+      },
+      "value": {
+       "text": "$26,261",
+       "unit": "",
+       "value": 26261.17
       }
      },
      {
@@ -350,24 +382,26 @@
    {
     "facts": [
      {
-      "closes": "the FY2025 special-revenue report and fund 1500’s journal",
-      "id": "h-books",
+      "closes": "MyRec’s FY2026 sales report",
+      "id": "h-why",
       "kind": "gap",
       "label": {
        "figures": {},
-       "literals": [],
-       "text": "how much of the registration money reached the books"
+       "literals": [
+        "FY2026"
+       ],
+       "text": "why registration deposits halved in FY2026"
       },
       "value": null
      },
      {
-      "closes": "the receipt detail for fund 1500, by payer",
+      "closes": "the receipt detail behind each deposit",
       "id": "h-payers",
       "kind": "gap",
       "label": {
        "figures": {},
        "literals": [],
-       "text": "who pays to use the parks’ fields"
+       "text": "who paid, behind each monthly registration deposit"
       },
       "value": null
      }

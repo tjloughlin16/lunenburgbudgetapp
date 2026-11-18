@@ -1,23 +1,1091 @@
 {
+ "also": [
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "Net of refunds. Registration deposits for May and June FY2026 were posted to beach fees: this is the account used, not what was sold."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Program Fees",
+     "texts": [
+      "$13,636",
+      "$18,885",
+      "$34,496",
+      "$5,527"
+     ],
+     "values": [
+      13635.89,
+      18884.73,
+      34496.25,
+      5527.46
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Beach Fees",
+     "texts": [
+      "$16,894",
+      "$7,334",
+      "$5,351",
+      "$15,736"
+     ],
+     "values": [
+      16893.7,
+      7333.93,
+      5350.64,
+      15735.92
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Field Fees",
+     "texts": [
+      "$6,360",
+      "$13,353",
+      "$12,453",
+      "$4,998"
+     ],
+     "values": [
+      6360.0,
+      13353.06,
+      12453.27,
+      4997.79
+     ]
+    }
+   ],
+   "stacked": true,
+   "title": "Fees taken in by account",
+   "type": "series",
+   "unit": "$",
+   "x": [
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "alt": "The fund month by month",
+   "basis": {
+    "kind": "record",
+    "label": "The fund’s MUNIS journal, to the FY2026 close"
+   },
+   "block": "custom",
+   "component": "park-fund-months",
+   "data": {
+    "max": 31534.6,
+    "text": {
+     "close": "Balance at 30 June",
+     "in": "In",
+     "none": "No payments posted this month.",
+     "out": "Paid out",
+     "pick": "Tap a month to list its payments."
+    },
+    "years": [
+     {
+      "fy": "FY2023",
+      "months": [
+       {
+        "in": 4657.24,
+        "m": "Jul",
+        "out": 0,
+        "pays": [],
+        "t_in": "$4,657.24",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 2936.76,
+        "m": "Aug",
+        "out": 2995.0,
+        "pays": [
+         {
+          "amt": "$2,995.00",
+          "d": "2 August 2022",
+          "what": "2/1/22-1/31/23 ALL",
+          "who": "MYRECDEPT"
+         }
+        ],
+        "t_in": "$2,936.76",
+        "t_out": "$2,995.00"
+       },
+       {
+        "in": -110.86,
+        "m": "Sep",
+        "out": 0,
+        "pays": [],
+        "t_in": "-$110.86",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 0,
+        "m": "Oct",
+        "out": 0,
+        "pays": [],
+        "t_in": "$0.00",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 1782.38,
+        "m": "Nov",
+        "out": 0,
+        "pays": [],
+        "t_in": "$1,782.38",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 561.17,
+        "m": "Dec",
+        "out": 0,
+        "pays": [],
+        "t_in": "$561.17",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 25.49,
+        "m": "Jan",
+        "out": 0,
+        "pays": [],
+        "t_in": "$25.49",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 0.25,
+        "m": "Feb",
+        "out": 0,
+        "pays": [],
+        "t_in": "$0.25",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 2.78,
+        "m": "Mar",
+        "out": 31534.6,
+        "pays": [
+         {
+          "amt": "$31,534.60",
+          "d": "10 March 2023",
+          "what": "TOWN BEACH BUILDIN",
+          "who": "DIVERSIFIED CONSTRUC"
+         }
+        ],
+        "t_in": "$2.78",
+        "t_out": "$31,534.60"
+       },
+       {
+        "in": 2787.37,
+        "m": "Apr",
+        "out": 0,
+        "pays": [],
+        "t_in": "$2,787.37",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 12999.75,
+        "m": "May",
+        "out": 3968.88,
+        "pays": [
+         {
+          "amt": "$3,968.88",
+          "d": "4 May 2023",
+          "what": "MOVE BEACH OVERAGE TO REVOLVI",
+          "who": "Journal entry"
+         }
+        ],
+        "t_in": "$12,999.75",
+        "t_out": "$3,968.88"
+       },
+       {
+        "in": 11272.32,
+        "m": "Jun",
+        "out": 6635.51,
+        "pays": [
+         {
+          "amt": "$2,850.00",
+          "d": "7 June 2023",
+          "what": "MY REC ANNUAL SOFT",
+          "who": "MYRECDEPT"
+         },
+         {
+          "amt": "$197.84",
+          "d": "7 June 2023",
+          "what": "BEACH HOUSE SUPPLI",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$158.34",
+          "d": "7 June 2023",
+          "what": "SUPPLIES FOR BEACH",
+          "who": "ROCKY'S  HARDWARE IN"
+         },
+         {
+          "amt": "$92.86",
+          "d": "7 June 2023",
+          "what": "BEACH HOUSE SUPPLI",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$29.78",
+          "d": "7 June 2023",
+          "what": "SUPPLIES FOR BEACH",
+          "who": "ROCKY'S  HARDWARE IN"
+         },
+         {
+          "amt": "$27.57",
+          "d": "7 June 2023",
+          "what": "SUPPLIES FOR BEACH",
+          "who": "ROCKY'S  HARDWARE IN"
+         },
+         {
+          "amt": "$26.61",
+          "d": "7 June 2023",
+          "what": "BEACH HOUSE SUPPLI",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$3,252.51",
+          "d": "30 June 2023",
+          "what": "FY23 PORTION OF 1P24",
+          "who": "Journal entry"
+         }
+        ],
+        "t_in": "$11,272.32",
+        "t_out": "$6,635.51"
+       }
+      ],
+      "t_close": "$58,199.61",
+      "t_in": "$36,914.65",
+      "t_out": "$45,133.99"
+     },
+     {
+      "fy": "FY2024",
+      "months": [
+       {
+        "in": 3612.73,
+        "m": "Jul",
+        "out": 0,
+        "pays": [],
+        "t_in": "$3,612.73",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 878.7,
+        "m": "Aug",
+        "out": 11223.0,
+        "pays": [
+         {
+          "amt": "$9,600.00",
+          "d": "15 August 2023",
+          "what": "REPAIR NET AT MARS",
+          "who": "B&B FENCE COMPANY"
+         },
+         {
+          "amt": "$1,623.00",
+          "d": "15 August 2023",
+          "what": "REPAIR NET AT MARS",
+          "who": "B&B FENCE COMPANY"
+         }
+        ],
+        "t_in": "$878.70",
+        "t_out": "$11,223.00"
+       },
+       {
+        "in": 1031.18,
+        "m": "Sep",
+        "out": 8415.8,
+        "pays": [
+         {
+          "amt": "$8,415.80",
+          "d": "19 September 2023",
+          "what": "ADJ EXP TO PARK REVOLVING",
+          "who": "Journal entry"
+         }
+        ],
+        "t_in": "$1,031.18",
+        "t_out": "$8,415.80"
+       },
+       {
+        "in": 936.31,
+        "m": "Oct",
+        "out": 3520.0,
+        "pays": [
+         {
+          "amt": "$3,520.00",
+          "d": "17 October 2023",
+          "what": "SOCCER PROGRAMS",
+          "who": "3 STEP SPORTS LLC"
+         }
+        ],
+        "t_in": "$936.31",
+        "t_out": "$3,520.00"
+       },
+       {
+        "in": 754.7,
+        "m": "Nov",
+        "out": 6406.44,
+        "pays": [
+         {
+          "amt": "-$204.17",
+          "d": "2 November 2023",
+          "what": "MARSHALL PARK AND",
+          "who": "MONTACHUSETT LAWN SP"
+         },
+         {
+          "amt": "$3,470.84",
+          "d": "7 November 2023",
+          "what": "MARSHALL PARK AND",
+          "who": "MONTACHUSETT LAWN SP"
+         },
+         {
+          "amt": "$499.80",
+          "d": "14 November 2023",
+          "what": "JUNIOR ZOOKEEPERS",
+          "who": "WILDLIFE ENCOUNTERS"
+         },
+         {
+          "amt": "$399.00",
+          "d": "14 November 2023",
+          "what": "LIFEGUARD WSI CERT",
+          "who": "ELIZABETH SIMEONE"
+         },
+         {
+          "amt": "$350.00",
+          "d": "14 November 2023",
+          "what": "HALLOWEEN PAINT NI",
+          "who": "HEINZE KATELYN"
+         },
+         {
+          "amt": "$200.00",
+          "d": "14 November 2023",
+          "what": "LIFEGUARD CERTIFIC",
+          "who": "BOWSER MASON"
+         },
+         {
+          "amt": "$200.00",
+          "d": "14 November 2023",
+          "what": "LIFEGUARD CERTIFIC",
+          "who": "NICHOLAS CORONELLA"
+         },
+         {
+          "amt": "$200.00",
+          "d": "14 November 2023",
+          "what": "REC DIRECTOR PROGR",
+          "who": "ANGELA CLEMENT"
+         },
+         {
+          "amt": "$184.16",
+          "d": "14 November 2023",
+          "what": "BEACH AND PARK SUP",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$144.53",
+          "d": "14 November 2023",
+          "what": "BEACH AND PARK SUP",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$121.66",
+          "d": "14 November 2023",
+          "what": "BEACH AND PARK SUP",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$106.79",
+          "d": "14 November 2023",
+          "what": "BEACH AND PARK SUP",
+          "who": "HOME DEPOT CREDIT SE"
+         },
+         {
+          "amt": "$59.33",
+          "d": "14 November 2023",
+          "what": "REC DIRECTOR PROGR",
+          "who": "ANGELA CLEMENT"
+         },
+         {
+          "amt": "$49.50",
+          "d": "14 November 2023",
+          "what": "REC DIRECTOR PROGR",
+          "who": "ANGELA CLEMENT"
+         },
+         {
+          "amt": "$320.00",
+          "d": "28 November 2023",
+          "what": "GENTLE FLOW YOGA C",
+          "who": "TRIXI PADILLA"
+         },
+         {
+          "amt": "$305.00",
+          "d": "28 November 2023",
+          "what": "CHRISTMAS MOVIE LI",
+          "who": "SWANK MOTION PICTUR"
+         }
+        ],
+        "t_in": "$754.70",
+        "t_out": "$6,406.44"
+       },
+       {
+        "in": 3703.47,
+        "m": "Dec",
+        "out": 0,
+        "pays": [],
+        "t_in": "$3,703.47",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 597.58,
+        "m": "Jan",
+        "out": 1373.2,
+        "pays": [
+         {
+          "amt": "$1,080.00",
+          "d": "2 January 2024",
+          "what": "STEM PROGRAM",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$293.20",
+          "d": "2 January 2024",
+          "what": "MOVIE NIGHT RENTAL",
+          "who": "ALLSTAR PARTY RENTAL"
+         }
+        ],
+        "t_in": "$597.58",
+        "t_out": "$1,373.20"
+       },
+       {
+        "in": 1775.69,
+        "m": "Feb",
+        "out": 3170.0,
+        "pays": [
+         {
+          "amt": "$2,850.00",
+          "d": "13 February 2024",
+          "what": "MYREC ANNUAL FEE A",
+          "who": "MYRECDEPT"
+         },
+         {
+          "amt": "$320.00",
+          "d": "13 February 2024",
+          "what": "GENTLE FLOW YOGA C",
+          "who": "TRIXI PADILLA"
+         }
+        ],
+        "t_in": "$1,775.69",
+        "t_out": "$3,170.00"
+       },
+       {
+        "in": 3842.8,
+        "m": "Mar",
+        "out": 1592.0,
+        "pays": [
+         {
+          "amt": "$1,512.00",
+          "d": "5 March 2024",
+          "what": "STEM PROGRAM",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$80.00",
+          "d": "26 March 2024",
+          "what": "GENTLE FLOW YOGA C",
+          "who": "TRIXI PADILLA"
+         }
+        ],
+        "t_in": "$3,842.80",
+        "t_out": "$1,592.00"
+       },
+       {
+        "in": 5999.11,
+        "m": "Apr",
+        "out": 0,
+        "pays": [],
+        "t_in": "$5,999.11",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 7267.65,
+        "m": "May",
+        "out": 894.0,
+        "pays": [
+         {
+          "amt": "$894.00",
+          "d": "21 May 2024",
+          "what": "STEM PROGRAM",
+          "who": "CU EDUCATIONAL SERVI"
+         }
+        ],
+        "t_in": "$7,267.65",
+        "t_out": "$894.00"
+       },
+       {
+        "in": 9211.1,
+        "m": "Jun",
+        "out": -11348.15,
+        "pays": [
+         {
+          "amt": "$240.00",
+          "d": "18 June 2024",
+          "what": "GENTLE FLOW YOGA C",
+          "who": "TRIXI PADILLA"
+         },
+         {
+          "amt": "-$11,588.15",
+          "d": "30 June 2024",
+          "what": "ADJ EXP TO FAC DEPT 9/06 MEMO",
+          "who": "Journal entry"
+         }
+        ],
+        "t_in": "$9,211.10",
+        "t_out": "-$11,348.15"
+       }
+      ],
+      "t_close": "$72,564.34",
+      "t_in": "$39,611.02",
+      "t_out": "$25,246.29"
+     },
+     {
+      "fy": "FY2025",
+      "months": [
+       {
+        "in": 2386.41,
+        "m": "Jul",
+        "out": 0,
+        "pays": [],
+        "t_in": "$2,386.41",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 2734.25,
+        "m": "Aug",
+        "out": 0,
+        "pays": [],
+        "t_in": "$2,734.25",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 2176.57,
+        "m": "Sep",
+        "out": 12407.8,
+        "pays": [
+         {
+          "amt": "$4,375.00",
+          "d": "3 September 2024",
+          "what": "SOCCER PROGRAMS",
+          "who": "3 STEP SPORTS LLC"
+         },
+         {
+          "amt": "$2,152.80",
+          "d": "3 September 2024",
+          "what": "STEM PROGRAMS",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$160.00",
+          "d": "3 September 2024",
+          "what": "YOGA - 7/10/24 7/1",
+          "who": "TRIXI PADILLA"
+         },
+         {
+          "amt": "$3,060.00",
+          "d": "17 September 2024",
+          "what": "MULTISPORTS PROGRA",
+          "who": "JEFFREY ORNE"
+         },
+         {
+          "amt": "$2,210.00",
+          "d": "17 September 2024",
+          "what": "MULTISPORTS PROGRA",
+          "who": "JEFFREY ORNE"
+         },
+         {
+          "amt": "$450.00",
+          "d": "17 September 2024",
+          "what": "SCIENCE STEM PROGR",
+          "who": "TALEWISE LLC"
+         }
+        ],
+        "t_in": "$2,176.57",
+        "t_out": "$12,407.80"
+       },
+       {
+        "in": 1376.19,
+        "m": "Oct",
+        "out": 1350.0,
+        "pays": [
+         {
+          "amt": "$1,350.00",
+          "d": "15 October 2024",
+          "what": "FY25 ART PROGRAMS",
+          "who": "HEINZE KATELYN"
+         }
+        ],
+        "t_in": "$1,376.19",
+        "t_out": "$1,350.00"
+       },
+       {
+        "in": 1468.24,
+        "m": "Nov",
+        "out": 0,
+        "pays": [],
+        "t_in": "$1,468.24",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 4082.16,
+        "m": "Dec",
+        "out": 2622.0,
+        "pays": [
+         {
+          "amt": "$1,200.00",
+          "d": "10 December 2024",
+          "what": "VETERANS PARK RENO",
+          "who": "LAKEVIEW LANDSCAPING"
+         },
+         {
+          "amt": "$750.00",
+          "d": "10 December 2024",
+          "what": "FY25 ART PROGRAMS",
+          "who": "HEINZE KATELYN"
+         },
+         {
+          "amt": "$672.00",
+          "d": "10 December 2024",
+          "what": "FY25 STEM PROGRAMS",
+          "who": "CU EDUCATIONAL SERVI"
+         }
+        ],
+        "t_in": "$4,082.16",
+        "t_out": "$2,622.00"
+       },
+       {
+        "in": 5560.01,
+        "m": "Jan",
+        "out": 2225.8,
+        "pays": [
+         {
+          "amt": "$1,512.00",
+          "d": "7 January 2025",
+          "what": "STEM PROGRAMS",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$713.80",
+          "d": "14 January 2025",
+          "what": "SPRING FAIR RENTAL",
+          "who": "AMMIE OUELLETTE"
+         }
+        ],
+        "t_in": "$5,560.01",
+        "t_out": "$2,225.80"
+       },
+       {
+        "in": 2672.84,
+        "m": "Feb",
+        "out": 574.8,
+        "pays": [
+         {
+          "amt": "$574.80",
+          "d": "4 February 2025",
+          "what": "JUNIOR ZOOKEEPER P",
+          "who": "WILDLIFE ENCOUNTERS"
+         }
+        ],
+        "t_in": "$2,672.84",
+        "t_out": "$574.80"
+       },
+       {
+        "in": 7323.92,
+        "m": "Mar",
+        "out": 5529.6,
+        "pays": [
+         {
+          "amt": "$3,065.60",
+          "d": "19 March 2025",
+          "what": "FY25 STEM PROGRAMS",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$1,960.00",
+          "d": "19 March 2025",
+          "what": "MULTISPORTS PROGRA",
+          "who": "JEFFREY ORNE"
+         },
+         {
+          "amt": "$504.00",
+          "d": "19 March 2025",
+          "what": "STEM PROGRAMS - WI",
+          "who": "CU EDUCATIONAL SERVI"
+         }
+        ],
+        "t_in": "$7,323.92",
+        "t_out": "$5,529.60"
+       },
+       {
+        "in": 5063.42,
+        "m": "Apr",
+        "out": 6711.6,
+        "pays": [
+         {
+          "amt": "$1,750.00",
+          "d": "15 April 2025",
+          "what": "SPRING FAIR GAME R",
+          "who": "MIKE'S MUSIC, INC."
+         },
+         {
+          "amt": "$756.00",
+          "d": "15 April 2025",
+          "what": "STEM PROGRAMS",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$2,269.60",
+          "d": "29 April 2025",
+          "what": "STEM PROGRAMS",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$1,540.00",
+          "d": "29 April 2025",
+          "what": "MULTISPORTS PROGRA",
+          "who": "JEFFREY ORNE"
+         },
+         {
+          "amt": "$396.00",
+          "d": "29 April 2025",
+          "what": "SPRING FAIR PORTA",
+          "who": "THE THRONE DEPOT"
+         }
+        ],
+        "t_in": "$5,063.42",
+        "t_out": "$6,711.60"
+       },
+       {
+        "in": 8969.65,
+        "m": "May",
+        "out": 962.71,
+        "pays": [
+         {
+          "amt": "$470.92",
+          "d": "21 May 2025",
+          "what": "SPRING FAIR SUPPLI",
+          "who": "ANGELA CLEMENT"
+         },
+         {
+          "amt": "$391.01",
+          "d": "21 May 2025",
+          "what": "SPRING FAIR SUPPLI",
+          "who": "W B MASON"
+         },
+         {
+          "amt": "$93.90",
+          "d": "21 May 2025",
+          "what": "SPRING FAIR SUPPLI",
+          "who": "W B MASON"
+         },
+         {
+          "amt": "$6.88",
+          "d": "21 May 2025",
+          "what": "SPRING FAIR SUPPLI",
+          "who": "W B MASON"
+         }
+        ],
+        "t_in": "$8,969.65",
+        "t_out": "$962.71"
+       },
+       {
+        "in": 8530.61,
+        "m": "Jun",
+        "out": 5557.16,
+        "pays": [
+         {
+          "amt": "$399.00",
+          "d": "10 June 2025",
+          "what": "WSI CERTIFICATION",
+          "who": "U.S. BANK NATIONAL A"
+         },
+         {
+          "amt": "$399.00",
+          "d": "10 June 2025",
+          "what": "WSI CERTIFICATION",
+          "who": "U.S. BANK NATIONAL A"
+         },
+         {
+          "amt": "$3,210.80",
+          "d": "30 June 2025",
+          "what": "STEM PROGRAMS WEEK",
+          "who": "CU EDUCATIONAL SERVI"
+         },
+         {
+          "amt": "$1,548.36",
+          "d": "30 June 2025",
+          "what": "VETERANS PARK BENC",
+          "who": "LANSING BUILDING PRO"
+         }
+        ],
+        "t_in": "$8,530.61",
+        "t_out": "$5,557.16"
+       }
+      ],
+      "t_close": "$86,967.14",
+      "t_in": "$52,344.27",
+      "t_out": "$37,941.47"
+     },
+     {
+      "fy": "FY2026",
+      "months": [
+       {
+        "in": 948.66,
+        "m": "Jul",
+        "out": 200.0,
+        "pays": [
+         {
+          "amt": "$200.00",
+          "d": "22 July 2025",
+          "what": "RED CROSS SWIM LES",
+          "who": "U.S. BANK NATIONAL A"
+         }
+        ],
+        "t_in": "$948.66",
+        "t_out": "$200.00"
+       },
+       {
+        "in": 1033.87,
+        "m": "Aug",
+        "out": 9565.55,
+        "pays": [
+         {
+          "amt": "$4,680.00",
+          "d": "5 August 2025",
+          "what": "SOCCER CAMP",
+          "who": "3 STEP SPORTS LLC"
+         },
+         {
+          "amt": "$3,047.72",
+          "d": "5 August 2025",
+          "what": "PLAYGROUND RENOVAT",
+          "who": "SITE SPECIFICS LLC"
+         },
+         {
+          "amt": "$1,800.00",
+          "d": "19 August 2025",
+          "what": "MULTISPORTS PROGRA",
+          "who": "JEFFREY ORNE"
+         },
+         {
+          "amt": "$37.83",
+          "d": "19 August 2025",
+          "what": "REIMBURSE CARDBOAR",
+          "who": "ANGELA CLEMENT"
+         }
+        ],
+        "t_in": "$1,033.87",
+        "t_out": "$9,565.55"
+       },
+       {
+        "in": -27.51,
+        "m": "Sep",
+        "out": 0,
+        "pays": [],
+        "t_in": "-$27.51",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 3.79,
+        "m": "Oct",
+        "out": 0,
+        "pays": [],
+        "t_in": "$3.79",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 3.43,
+        "m": "Nov",
+        "out": 0,
+        "pays": [],
+        "t_in": "$3.43",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 1282.06,
+        "m": "Dec",
+        "out": 0,
+        "pays": [],
+        "t_in": "$1,282.06",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 3851.01,
+        "m": "Jan",
+        "out": 0,
+        "pays": [],
+        "t_in": "$3,851.01",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 303.63,
+        "m": "Feb",
+        "out": 0,
+        "pays": [],
+        "t_in": "$303.63",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 217.03,
+        "m": "Mar",
+        "out": 0,
+        "pays": [],
+        "t_in": "$217.03",
+        "t_out": "$0.00"
+       },
+       {
+        "in": 3.89,
+        "m": "Apr",
+        "out": 4396.69,
+        "pays": [
+         {
+          "amt": "$2,500.00",
+          "d": "16 April 2026",
+          "what": "MARSHALL PARK SKAT",
+          "who": "DUNETZ RAY LANDSCAPE"
+         },
+         {
+          "amt": "$1,896.69",
+          "d": "16 April 2026",
+          "what": "SIGN FOR PARL",
+          "who": "ADD-A-SIGN LLC"
+         }
+        ],
+        "t_in": "$3.89",
+        "t_out": "$4,396.69"
+       },
+       {
+        "in": 8618.8,
+        "m": "May",
+        "out": 2579.89,
+        "pays": [
+         {
+          "amt": "$2,064.89",
+          "d": "5 May 2026",
+          "what": "DOORS AT WALLIS PA",
+          "who": "DOORS UNLIMITED INC"
+         },
+         {
+          "amt": "$200.00",
+          "d": "5 May 2026",
+          "what": "ELECTRICITY WORK F",
+          "who": "MWD ELECTRIC INC"
+         },
+         {
+          "amt": "$315.00",
+          "d": "19 May 2026",
+          "what": "P-CARD - PARKS - Y",
+          "who": "U.S. BANK NATIONAL A"
+         }
+        ],
+        "t_in": "$8,618.80",
+        "t_out": "$2,579.89"
+       },
+       {
+        "in": 10068.79,
+        "m": "Jun",
+        "out": 499.28,
+        "pays": [
+         {
+          "amt": "$96.75",
+          "d": "18 June 2026",
+          "what": "FLAGS FOR MCNALLY",
+          "who": "CENTRAL FLAGPOLE AND"
+         },
+         {
+          "amt": "$200.00",
+          "d": "30 June 2026",
+          "what": "CLEANING OF THE BE",
+          "who": "ALL PRO CLEANING"
+         },
+         {
+          "amt": "$112.89",
+          "d": "30 June 2026",
+          "what": "SUPPLIES FOR PARK",
+          "who": "AMAZON.COM"
+         },
+         {
+          "amt": "$72.98",
+          "d": "30 June 2026",
+          "what": "FLAGS FOR THE PARK",
+          "who": "CENTRAL FLAGPOLE AND"
+         },
+         {
+          "amt": "$12.91",
+          "d": "30 June 2026",
+          "what": "OFFICE SUPPLIES FO",
+          "who": "W B MASON"
+         },
+         {
+          "amt": "$3.75",
+          "d": "30 June 2026",
+          "what": "OFFICE SUPPLIES FO",
+          "who": "W B MASON"
+         }
+        ],
+        "t_in": "$10,068.79",
+        "t_out": "$499.28"
+       }
+      ],
+      "t_close": "$96,033.18",
+      "t_in": "$26,307.45",
+      "t_out": "$17,241.41"
+     }
+    ]
+   },
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Spending comes in a few large payments; receipts peak with summer registrations."
+   },
+   "title": "The fund month by month"
+  }
+ ],
  "category": "parks",
  "chart": {
   "decimals": null,
   "from_zero": true,
   "kind": "bar",
   "note": {
-   "figures": {},
+   "figures": {
+    "g": {
+     "text": "$4,759",
+     "unit": "",
+     "value": 4759.16
+    }
+   },
    "literals": [
-    "FY2024",
-    "FY2025"
+    "FY2023",
+    "FY2025",
+    "30"
    ],
-   "text": "The annual town reports. FY2024 and FY2025 print a balance only."
+   "text": "Each 30 June. From FY2023 the balance is carried by the fund’s own journal; the FY2025 annual report prints $4,759 more."
   },
   "reference": null,
   "series": [
    {
     "basis": "published",
     "mark": "bar",
-    "name": "Balance at year end",
+    "name": "Annual town report",
     "texts": [
      "$10,019",
      "$10,654",
@@ -31,9 +1099,10 @@
      "$32,463",
      "$66,444",
      "$66,419",
-     "$58,200",
-     "$72,564",
-     "$91,726"
+     null,
+     null,
+     null,
+     null
     ],
     "values": [
      10019.25,
@@ -48,13 +1117,55 @@
      32462.51,
      66443.78,
      66418.95,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "The fund’s journal",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$58,200",
+     "$72,564",
+     "$86,967",
+     "$96,033"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
      58199.61,
      72564.34,
-     91726.3
+     86967.14,
+     96033.18
     ]
    }
   ],
-  "stacked": false,
+  "stacked": true,
   "title": "Park Revolving Fund balance",
   "type": "series",
   "unit": "$",
@@ -73,163 +1184,220 @@
    "FY2022",
    "FY2023",
    "FY2024",
-   "FY2025"
+   "FY2025",
+   "FY2026"
   ]
  },
  "conclusions": [
   {
    "figures": {
     "a": {
-     "text": "$91,726",
+     "text": "$52,300",
      "unit": "",
-     "value": 91726.3
-    }
-   },
-   "literals": [
-    "FY2015",
-    "FY2016",
-    "30",
-    "2025"
-   ],
-   "rests_on": [
-    "zero",
-    "close25",
-    "close11"
-   ],
-   "text": "The fund ended FY2015 and FY2016 at zero, and held $91,726 by 30 June 2025."
-  },
-  {
-   "figures": {
-    "a": {
-     "text": "$7,616",
-     "unit": "",
-     "value": 7615.97
+     "value": 52300.16
     },
     "b": {
-     "text": "$9,766",
+     "text": "$26,261",
      "unit": "",
-     "value": 9765.55
+     "value": 26261.17
+    },
+    "m": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    },
+    "n": {
+     "text": "7",
+     "unit": "",
+     "value": 7
     }
    },
    "literals": [
+    "FY2025",
     "FY2026"
    ],
    "notes": [
     {
-     "closes": "the department’s costs across the general fund and its own funds, in one statement",
-     "figures": {},
-     "kind": "gap",
-     "literals": [],
-     "text": "Receipts are what users paid, not what the parks cost to run."
-    }
-   ],
-   "rests_on": [
-    "in26",
-    "out26",
-    "held"
-   ],
-   "text": "From July to March FY2026 it took in $7,616 and spent $9,766."
-  },
-  {
-   "figures": {
-    "a": {
-     "text": "$4,759",
-     "unit": "",
-     "value": 4759.16
-    }
-   },
-   "literals": [
-    "30",
-    "2025",
-    "FY2026"
-   ],
-   "notes": [
-    {
-     "closes": "the FY2025 special-revenue report and fund 1500’s journal",
+     "closes": "MyRec’s FY2026 sales report, beside its deposit report",
      "figures": {},
      "kind": "gap",
      "literals": [
-      "FY2025",
-      "1500"
+      "FY2026"
      ],
-     "text": "An audit adjustment, an encumbrance or a misprint all fit; nothing here tests which."
+     "text": "Fewer sales, or deposits posted later or elsewhere, fit equally; nothing here tells them apart."
     }
    ],
    "rests_on": [
-    "close25",
-    "open26"
+    "fees25",
+    "fees26",
+    "dep25",
+    "dep26"
    ],
-   "text": "The annual report’s 30 June 2025 balance is $4,759 more than the ledger’s FY2026 opening."
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "A year’s fee income halved on the books, and nothing published says why."
+   },
+   "text": "Fees fell from $52,300 in FY2025 to $26,261 in FY2026; registration deposits posted in 7 months, not 12."
   },
   {
    "figures": {
     "a": {
-     "text": "$3,360",
+     "text": "$58,200",
      "unit": "",
-     "value": 3360.0
+     "value": 58199.61
+    },
+    "b": {
+     "text": "$96,033",
+     "unit": "",
+     "value": 96033.18
+    }
+   },
+   "literals": [
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ],
+   "rests_on": [
+    "close23",
+    "close26",
+    "out26",
+    "zero"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The balance is fees paid and not yet spent; what it is kept for is not stated."
+   },
+   "text": "It took in more than it paid out in FY2024, FY2025 and FY2026, growing from $58,200 to $96,033."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$91,726",
+     "unit": "",
+     "value": 91726.3
+    },
+    "b": {
+     "text": "$86,967",
+     "unit": "",
+     "value": 86967.14
+    }
+   },
+   "literals": [
+    "FY2025",
+    "30",
+    "2025"
+   ],
+   "notes": [
+    {
+     "closes": "the Town Accountant’s FY2025 special-revenue schedule",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2026",
+      "FY2025"
+     ],
+     "text": "The journal agrees with the FY2026 report’s opening; why the printed figure differs is not stated."
+    }
+   ],
+   "rests_on": [
+    "ar25",
+    "j25"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The town’s printed year-end figure for this fund is the outlier."
+   },
+   "text": "The FY2025 annual report prints $91,726 at 30 June 2025; the fund’s journal carries $86,967."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$12,910",
+     "unit": "",
+     "value": 12910.0
+    },
+    "m": {
+     "text": "109",
+     "unit": "",
+     "value": 109
     },
     "n": {
-     "text": "168",
+     "text": "7",
      "unit": "",
-     "value": 168
+     "value": 7
     }
    },
    "literals": [],
    "notes": [
     {
-     "closes": "the journal detail for fund 1500",
+     "closes": "the receipt detail behind each deposit",
      "figures": {},
      "kind": "gap",
-     "literals": [
-      "1500"
-     ],
-     "text": "The minutes do not say which account took it."
+     "literals": [],
+     "text": "The rest are monthly registration deposits, beach passes and cash, with no payer named."
     }
    ],
    "rests_on": [
-    "yb",
-    "payers"
+    "named"
    ],
    "so": {
     "figures": {},
     "literals": [],
-    "text": "League fees are real revenue that the fund totals on this page cannot show."
+    "text": "Most of the fund’s money arrives with no payer named."
    },
-   "text": "Minutes record youth baseball paying $3,360 for 168 players; no ledger we hold names a payer."
+   "text": "7 of 109 fee receipts name a payer, all leagues or teams, $12,910 in all."
   }
  ],
  "facts": [
   {
-   "id": "held",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [
-     "31",
-     "2026"
-    ],
-    "text": "in the Park Revolving Fund, 31 March 2026"
-   },
-   "value": {
-    "text": "$84,818",
-    "unit": "",
-    "value": 84817.56
-   }
-  },
-  {
-   "id": "in26",
+   "id": "close26",
    "kind": "published",
    "label": {
     "figures": {},
     "literals": [
      "FY2026"
     ],
-    "text": "taken in, July–March FY2026"
+    "text": "in the fund at the FY2026 close (journal)"
    },
    "value": {
-    "text": "$7,616",
+    "text": "$96,033.18",
     "unit": "",
-    "value": 7615.97
+    "value": 96033.18
+   }
+  },
+  {
+   "id": "fees26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "fees taken in, FY2026, net of refunds"
+   },
+   "value": {
+    "text": "$26,261.17",
+    "unit": "",
+    "value": 26261.17
+   }
+  },
+  {
+   "id": "fees25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "fees taken in, FY2025, net of refunds"
+   },
+   "value": {
+    "text": "$52,300.16",
+    "unit": "",
+    "value": 52300.16
    }
   },
   {
@@ -240,32 +1408,79 @@
     "literals": [
      "FY2026"
     ],
-    "text": "spent, July–March FY2026"
+    "text": "paid out, FY2026"
    },
    "value": {
-    "text": "$9,766",
+    "text": "$17,241.41",
     "unit": "",
-    "value": 9765.55
+    "value": 17241.41
    }
   },
   {
-   "id": "open26",
+   "id": "dep26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "7",
+      "unit": "",
+      "value": 7
+     }
+    },
+    "literals": [
+     "FY2026",
+     "12"
+    ],
+    "text": "registration-system deposits, FY2026, in 7 of 12 months"
+   },
+   "value": {
+    "text": "$24,811.74",
+    "unit": "",
+    "value": 24811.74
+   }
+  },
+  {
+   "id": "dep25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "12",
+      "unit": "",
+      "value": 12
+     }
+    },
+    "literals": [
+     "FY2025",
+     "12"
+    ],
+    "text": "registration-system deposits, FY2025, in 12 of 12 months"
+   },
+   "value": {
+    "text": "$50,639.51",
+    "unit": "",
+    "value": 50639.51
+   }
+  },
+  {
+   "id": "close23",
    "kind": "published",
    "label": {
     "figures": {},
     "literals": [
-     "FY2026"
+     "30",
+     "2023"
     ],
-    "text": "opening balance, FY2026 (ledger)"
+    "text": "in the fund at 30 June 2023"
    },
    "value": {
-    "text": "$86,967",
+    "text": "$58,199.61",
     "unit": "",
-    "value": 86967.14
+    "value": 58199.61
    }
   },
   {
-   "id": "close25",
+   "id": "ar25",
    "kind": "published",
    "label": {
     "figures": {},
@@ -273,28 +1488,26 @@
      "30",
      "2025"
     ],
-    "text": "balance at 30 June 2025, annual report"
+    "text": "balance at 30 June 2025, as the annual report prints it"
    },
    "value": {
-    "text": "$91,726",
+    "text": "$91,726.30",
     "unit": "",
     "value": 91726.3
    }
   },
   {
-   "id": "close11",
+   "id": "j25",
    "kind": "published",
    "label": {
     "figures": {},
-    "literals": [
-     "FY2011"
-    ],
-    "text": "balance at the end of FY2011"
+    "literals": [],
+    "text": "the same date, carried by the journal"
    },
    "value": {
-    "text": "$10,019",
+    "text": "$86,967.14",
     "unit": "",
-    "value": 10019.25
+    "value": 86967.14
    }
   },
   {
@@ -315,78 +1528,54 @@
    }
   },
   {
-   "id": "peak",
+   "id": "named",
    "kind": "published",
    "label": {
-    "figures": {},
-    "literals": [
-     "FY2021",
-     "FY2011",
-     "FY2023"
-    ],
-    "text": "taken in during FY2021, the most FY2011–FY2023"
+    "figures": {
+     "m": {
+      "text": "109",
+      "unit": "",
+      "value": 109
+     },
+     "n": {
+      "text": "7",
+      "unit": "",
+      "value": 7
+     }
+    },
+    "literals": [],
+    "text": "in 7 fee receipts that name a league or team, of 109"
    },
    "value": {
-    "text": "$48,797",
+    "text": "$12,910.00",
     "unit": "",
-    "value": 48797.27
+    "value": 12910.0
    }
-  },
-  {
-   "id": "yb",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "youth baseball’s user fees, as minuted (stated)"
-   },
-   "value": {
-    "text": "$3,360",
-    "unit": "",
-    "value": 3360.0
-   }
-  },
-  {
-   "closes": "the FY2024 and FY2025 special-revenue reports for fund 1500",
-   "id": "flows",
-   "kind": "gap",
-   "label": {
-    "figures": {},
-    "literals": [
-     "FY2024",
-     "FY2025"
-    ],
-    "text": "receipts and spending, FY2024 and FY2025"
-   },
-   "value": null
-  },
-  {
-   "closes": "the journal detail for fund 1500",
-   "id": "payers",
-   "kind": "gap",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "who pays into this fund, payer by payer"
-   },
-   "value": null
   }
  ],
  "finding": {
   "figures": {
    "a": {
-    "text": "$84,818",
+    "text": "$26,261",
     "unit": "",
-    "value": 84817.56
+    "value": 26261.17
+   },
+   "b": {
+    "text": "$52,300",
+    "unit": "",
+    "value": 52300.16
+   },
+   "c": {
+    "text": "$96,033",
+    "unit": "",
+    "value": 96033.18
    }
   },
   "literals": [
-   "31",
-   "2026",
-   "FY2015",
-   "FY2016"
+   "FY2026",
+   "FY2025"
   ],
-  "text": "The parks’ fee fund held $84,818 at 31 March 2026; it ended FY2015 and FY2016 at zero."
+  "text": "The parks’ fee fund took in $26,261 in FY2026, half of FY2025’s $52,300, and still grew to $96,033."
  },
  "flow": [
   {
@@ -395,6 +1584,14 @@
   {
    "i": 0,
    "part": "chart"
+  },
+  {
+   "i": 1,
+   "part": "chart"
+  },
+  {
+   "i": 0,
+   "part": "block"
   },
   {
    "part": "ladder"
@@ -426,6 +1623,10 @@
  ],
  "sources": [
   {
+   "href": "/docs/data/munis-parks-journal.csv",
+   "label": "Lunenburg Budget Project — munis-parks-journal.csv (funds 1500 and 1523, every posting FY2023–FY2026, our redacted reading)"
+  },
+  {
    "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
    "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
   },
@@ -452,10 +1653,6 @@
   {
    "href": "/docs/data/special-revenue-funds.csv",
    "label": "Lunenburg Budget Project — special-revenue-funds.csv (the same schedules, every edition)"
-  },
-  {
-   "href": "/docs/minutes/text/parks-commission/2024-11-06-minutes-6858.txt",
-   "label": "Town of Lunenburg — Parks Commission minutes, 6 November 2024"
   }
  ],
  "table": {
@@ -473,21 +1670,29 @@
      "ledger",
      "ledger"
     ],
-    "label": "Annual town reports",
-    "note": "FY2011–FY2023 printed as Park User Fees, each row tying forward + receipts − disbursements = carried. FY2024 and FY2025 print a balance only.",
+    "label": "Journal and annual reports",
+    "note": "FY2023 to FY2026 from the fund’s MUNIS journal, carried from the FY2023 annual report. FY2011–FY2022 printed as Park User Fees, each row tying forward + receipts − disbursements = carried.",
     "rows": [
      {
       "cells": [
-       null,
-       null,
-       "$91,726"
+       "$26,307",
+       "$17,241",
+       "$96,033"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$52,344",
+       "$37,941",
+       "$86,967"
       ],
       "label": "FY2025"
      },
      {
       "cells": [
-       null,
-       null,
+       "$39,611",
+       "$25,246",
        "$72,564"
       ],
       "label": "FY2024"

@@ -246,29 +246,43 @@
    "text": "FY2025 sales include passes and lessons for both summer 2024 and summer 2025."
   },
   {
-   "figures": {},
-   "literals": [],
+   "figures": {
+    "a": {
+     "text": "$50,640",
+     "unit": "",
+     "value": 50639.51
+    },
+    "b": {
+     "text": "$2,856",
+     "unit": "",
+     "value": 2856.010000000002
+    }
+   },
+   "literals": [
+    "FY2025"
+   ],
    "notes": [
     {
-     "closes": "the cost of each programme, from the department’s own accounts",
-     "figures": {
-      "n": {
-       "text": "2",
-       "unit": "",
-       "value": 2
-      }
-     },
+     "closes": "MyRec’s deposit report, each deposit with its sales",
+     "figures": {},
      "kind": "gap",
-     "literals": [],
-     "text": "2 programmes recorded net refunds; costs and waivers are not in a sales report."
+     "literals": [
+      "30"
+     ],
+     "text": "Deposits are monthly, not sale by sale, so the two cannot be matched; sales near 30 June fit either year."
     }
    ],
    "rests_on": [
     "tot",
-    "books",
+    "dep25",
     "nothing"
    ],
-   "text": "A sales report is what the system recorded, not what the town deposited."
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The registration money reached the town’s books, in the parks fee fund."
+   },
+   "text": "The fee fund booked $50,640 of registration deposits in FY2025, $2,856 more than MyRec recorded."
   }
  ],
  "facts": [
@@ -425,15 +439,20 @@
    }
   },
   {
-   "closes": "the FY2025 special-revenue report and fund 1500’s journal",
-   "id": "books",
-   "kind": "gap",
+   "id": "dep25",
+   "kind": "published",
    "label": {
     "figures": {},
-    "literals": [],
-    "text": "how much of it reached the town’s books"
+    "literals": [
+     "FY2025"
+    ],
+    "text": "registration deposits to the parks fee fund, FY2025"
    },
-   "value": null
+   "value": {
+    "text": "$50,640",
+    "unit": "",
+    "value": 50639.51
+   }
   }
  ],
  "finding": {
@@ -502,6 +521,10 @@
   {
    "href": "/docs/data/parks-myrec-sales-fy2025.csv",
    "label": "Lunenburg Budget Project — parks-myrec-sales-fy2025.csv (both MyRec reports, footed)"
+  },
+  {
+   "href": "/docs/data/munis-parks-journal.csv",
+   "label": "Lunenburg Budget Project — munis-parks-journal.csv (funds 1500 and 1523, every posting FY2023–FY2026, our redacted reading)"
   }
  ],
  "table": {

@@ -8,9 +8,11 @@
    "figures": {},
    "literals": [
     "650",
-    "FY2025"
+    "FY2024",
+    "FY2025",
+    "FY2026"
    ],
-   "text": "The Finance Committee workbook, department 650. FY2025 is left out: its actual is marked partial."
+   "text": "Department 650: the Finance Committee workbook to FY2024, the MUNIS report at the close for FY2025 and FY2026. Spent counts what was still owed."
   },
   "reference": null,
   "series": [
@@ -33,7 +35,9 @@
      "$95,690",
      "$95,706",
      "$99,826",
-     "$111,312"
+     "$111,312",
+     "$117,247",
+     "$134,434"
     ],
     "values": [
      64908.0,
@@ -50,7 +54,9 @@
      95689.56,
      95705.65,
      99826.04,
-     111312.3
+     111312.3,
+     117246.64,
+     134433.6
     ]
    },
    {
@@ -72,7 +78,9 @@
      "$108,722",
      "$96,164",
      "$99,898",
-     "$116,076"
+     "$116,076",
+     "$121,819",
+     "$140,759"
     ],
     "values": [
      66136.26,
@@ -89,7 +97,9 @@
      108721.56,
      96163.78,
      99897.87,
-     116075.69
+     116075.69,
+     121818.96,
+     140759.43
     ]
    },
    {
@@ -111,7 +121,9 @@
      "$82,656",
      "$80,849",
      "$82,334",
-     "$115,404"
+     "$115,404",
+     "$110,102",
+     "$117,619"
     ],
     "values": [
      66136.26,
@@ -128,7 +140,9 @@
      82656.37,
      80848.81,
      82333.79,
-     115404.43
+     115404.43,
+     110102.4,
+     117618.6
     ]
    }
   ],
@@ -151,7 +165,9 @@
    "FY2021",
    "FY2022",
    "FY2023",
-   "FY2024"
+   "FY2024",
+   "FY2025",
+   "FY2026"
   ]
  },
  "conclusions": [
@@ -181,25 +197,17 @@
    "literals": [
     "FY2026"
    ],
-   "notes": [
-    {
-     "closes": "the MUNIS period-13 report for the general fund, FY2026",
-     "figures": {},
-     "kind": "gap",
-     "literals": [
-      "FY2026",
-      "12",
-      "13"
-     ],
-     "text": "Period 12 is before the books close; the closed year may differ."
-    }
-   ],
    "rests_on": [
     "rev26",
     "exp26",
     "enc26",
     "avl26"
    ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "About a sixth of the year’s Parks budget went unused."
+   },
    "text": "In FY2026 Parks paid $113,350 and owed $4,268 of a $140,759 budget; $23,141 was left."
   },
   {
@@ -234,19 +242,19 @@
   {
    "figures": {
     "a": {
-     "text": "11",
+     "text": "13",
      "unit": "",
-     "value": 11
+     "value": 13
     },
     "b": {
-     "text": "15",
+     "text": "17",
      "unit": "",
-     "value": 15
+     "value": 17
     },
     "c": {
-     "text": "$140,450",
+     "text": "$175,307",
      "unit": "",
-     "value": 140449.9
+     "value": 175307.29
     }
    },
    "literals": [],
@@ -254,14 +262,14 @@
     "under",
     "leftsum"
    ],
-   "text": "In 11 of 15 years Parks ended under its final budget, $140,450 in all."
+   "text": "In 13 of 17 years Parks ended under its final budget, $175,307 in all."
   },
   {
    "figures": {
     "a": {
-     "text": "$9,766",
+     "text": "$17,241",
      "unit": "",
-     "value": 9765.55
+     "value": 17241.41
     }
    },
    "literals": [
@@ -270,7 +278,7 @@
    "rests_on": [
     "fund-out"
    ],
-   "text": "None of this counts what the parks fee fund spends, $9,766 from July to March FY2026."
+   "text": "None of this counts what the parks fee fund spent, $17,241 in FY2026."
   }
  ],
  "facts": [
@@ -280,10 +288,9 @@
    "label": {
     "figures": {},
     "literals": [
-     "FY2026",
-     "12"
+     "FY2026"
     ],
-    "text": "revised Parks budget, FY2026, at period 12"
+    "text": "final Parks budget, FY2026, at the close"
    },
    "value": {
     "text": "$140,759",
@@ -297,10 +304,9 @@
    "label": {
     "figures": {},
     "literals": [
-     "FY2026",
-     "12"
+     "FY2026"
     ],
-    "text": "paid, FY2026 (ledger, period 12, unaudited)"
+    "text": "paid, FY2026 (ledger at the close, unaudited)"
    },
    "value": {
     "text": "$113,350",
@@ -314,10 +320,9 @@
    "label": {
     "figures": {},
     "literals": [
-     "FY2026",
-     "12"
+     "FY2026"
     ],
-    "text": "still owed at period 12, FY2026 (ledger)"
+    "text": "still owed at the FY2026 close (ledger)"
    },
    "value": {
     "text": "$4,268",
@@ -331,15 +336,30 @@
    "label": {
     "figures": {},
     "literals": [
-     "FY2026",
-     "12"
+     "FY2026"
     ],
-    "text": "not yet used at period 12, FY2026 (ledger’s column)"
+    "text": "left at the FY2026 close (ledger’s column)"
    },
    "value": {
     "text": "$23,141",
     "unit": "",
     "value": 23140.83
+   }
+  },
+  {
+   "id": "avl25",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "left at the FY2025 close (ledger’s column)"
+   },
+   "value": {
+    "text": "$11,717",
+    "unit": "",
+    "value": 11716.56
    }
   },
   {
@@ -381,18 +401,18 @@
    "label": {
     "figures": {
      "n": {
-      "text": "15",
+      "text": "17",
       "unit": "",
-      "value": 15
+      "value": 17
      }
     },
     "literals": [],
-    "text": "years of 15 ending under the final budget"
+    "text": "years of 17 ending under the final budget"
    },
    "value": {
-    "text": "11",
+    "text": "13",
     "unit": "years",
-    "value": 11
+    "value": 13
    }
   },
   {
@@ -402,14 +422,14 @@
     "figures": {},
     "literals": [
      "FY2010",
-     "FY2024"
+     "FY2026"
     ],
-    "text": "left unspent, FY2010–FY2024 in all (our sum)"
+    "text": "left unspent, FY2010–FY2026 in all (our sum)"
    },
    "value": {
-    "text": "$140,450",
+    "text": "$175,307",
     "unit": "",
-    "value": 140449.9
+    "value": 175307.29
    }
   },
   {
@@ -420,21 +440,21 @@
     "literals": [
      "FY2026"
     ],
-    "text": "spent from the parks fee fund, July–March FY2026"
+    "text": "spent from the parks fee fund, FY2026 (journal)"
    },
    "value": {
-    "text": "$9,766",
+    "text": "$17,241",
     "unit": "",
-    "value": 9765.55
+    "value": 17241.41
    }
   }
  ],
  "finding": {
   "figures": {
    "a": {
-    "text": "$113,350",
+    "text": "$117,619",
     "unit": "",
-    "value": 113350.2
+    "value": 117618.6
    },
    "b": {
     "text": "$140,759",
@@ -445,12 +465,18 @@
     "text": "$23,141",
     "unit": "",
     "value": 23140.83
+   },
+   "d": {
+    "text": "$11,717",
+    "unit": "",
+    "value": 11716.56
    }
   },
   "literals": [
-   "FY2026"
+   "FY2026",
+   "FY2025"
   ],
-  "text": "By June, before the close, Parks had paid $113,350 of a $140,759 FY2026 budget; $23,141 was not yet used."
+  "text": "Parks closed FY2026 having spent $117,619 of a $140,759 budget, $23,141 left; FY2025 left $11,717."
  },
  "flow": [
   {
@@ -490,8 +516,8 @@
  ],
  "sources": [
   {
-   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p12-gf-all.xlsx"
+   "href": "/docs/data/munis-gf-p13-reading.csv",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading.csv (the general fund at the close, FY2025 and FY2026, our reading)"
   },
   {
    "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
@@ -502,8 +528,8 @@
    "label": "Lunenburg Budget Project — gl-history.csv (the Finance Committee workbook, one row an account)"
   },
   {
-   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
-   "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
+   "href": "/docs/data/munis-parks-journal.csv",
+   "label": "Lunenburg Budget Project — munis-parks-journal.csv (funds 1500 and 1523, every posting FY2023–FY2026, our redacted reading)"
   }
  ],
  "table": {
@@ -524,8 +550,26 @@
      "stated"
     ],
     "label": "Finance Committee workbook",
-    "note": "Department 650, summed over its accounts. Left is the final budget less the actual, our subtraction. FY2025’s actual is marked partial in the workbook and is left out.",
+    "note": "Department 650, summed over its accounts. To FY2024, the workbook: left is the final budget less the actual, our subtraction. FY2025 and FY2026, MUNIS at the close: spent is paid plus still owed, left is the ledger’s column.",
     "rows": [
+     {
+      "cells": [
+       "$134,434",
+       "$140,759",
+       "$117,619",
+       "$23,141"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "$117,247",
+       "$121,819",
+       "$110,102",
+       "$11,717"
+      ],
+      "label": "FY2025"
+     },
      {
       "cells": [
        "$111,312",

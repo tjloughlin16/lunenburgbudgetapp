@@ -38,6 +38,7 @@ import MeetingTrail from './meeting-trail'
 import SerfMoneyStack from './serf-money-stack'
 import SerfSaidLedger from './serf-said-ledger'
 import HomesAgainstInflation from './homes-against-inflation'
+import ParkFundMonths from './park-fund-months'
 
 export type CustomProps = { data: unknown; alt: string }
 
@@ -71,4 +72,5 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'serf-money-stack': SerfMoneyStack,
   'serf-said-ledger': SerfSaidLedger,
   'homes-against-inflation': HomesAgainstInflation,
+  'park-fund-months': ParkFundMonths,
 }
