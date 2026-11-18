@@ -1,16 +1,16 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "veterans-exemption",
- "picked_at": "2026-11-13T12:58:21Z",
+ "picked_at": "2026-11-18T12:37:06Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0372,
- "input_sha256": "988a75dfacc44f26fccd308c4fa8eedee99ae0e9aca4bd15ca620191d70f77ae",
+ "cost_usd": 0.0567,
+ "input_sha256": "36591e9ddab43239a1ec0477a4c77953658509d13006530470ba4b3b1b468368",
  "callouts": [
   {
    "kind": "money",
    "value": "$400 to $600-$800",
-   "label": "veterans exemption now, and the range assessors floated; nothing set",
+   "label": "veterans exemption now, and the range Assessors floated; no amount is set",
    "hook": "exemption increase floated",
    "quote": "from the current $400 to an as yet undetermined amount, but it will either be 600 or $800",
    "heard": [
@@ -27,14 +27,14 @@
    "t": 522,
    "where": "Finance Committee, 24 Sep 2026",
    "verdict": {
-    "keep": false,
-    "why": "The $600-or-$800 range was overtaken. On 30 Sep the assessors voted specific articles (22I CPI-tied, 22J doubling), so 'floated range, nothing set' is stale."
+    "keep": true,
+    "why": "The $400 current amount and the 600 or 800 range are stated, and the label says no amount is set. Later items show no amount adopted."
    }
   },
   {
    "kind": "warrant",
-   "value": "Held",
-   "label": "Select Board kept both veterans exemption articles off the warrant for now",
+   "value": "Held off warrant",
+   "label": "Select Board held both veterans exemption articles off the warrant for now",
    "hook": "",
    "quote": "the board agreed to hold both articles.",
    "heard": [],
@@ -46,27 +46,31 @@
    "where": "Select Board minutes, 6 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "6 Oct minutes show both articles held; nothing later reverses it."
+    "why": "The Oct 6 minutes say both articles were held. Nothing later reverses that."
    }
   },
   {
    "kind": "impact",
-   "value": "Doubling",
-   "label": "one assessors' proposal would roughly double veterans exemptions; not yet adopted",
+   "value": "Not reimbursed",
+   "label": "any increase comes out of town funds, so other taxpayers cover it",
    "hook": "",
-   "quote": "would virtually double all of our veterans exemptions",
-   "heard": [],
-   "item_date": "2026-09-30",
+   "quote": "it all comes out of town funds. It doesn't it doesn't get reimbursed",
+   "heard": [
+    "400",
+    "600",
+    "800"
+   ],
+   "item_date": "2026-09-09",
    "item_board": "board-of-assessors",
    "basis": "heard",
    "board": "board-of-assessors",
-   "date": "2026-09-30",
-   "video_id": "PGOQeBuvgog",
-   "t": 2293,
-   "where": "Board of Assessors, 30 Sep 2026",
+   "date": "2026-09-09",
+   "video_id": "Qimi3yNAudg",
+   "t": 2039,
+   "where": "Board of Assessors, 9 Sep 2026",
    "verdict": {
     "keep": true,
-    "why": "Assessors said 22J would virtually double the exemptions. It is not adopted, and the articles were held."
+    "why": "The assessor said the increase comes out of town funds and isn't reimbursed. 'Other taxpayers cover it' follows from that."
    }
   }
  ]

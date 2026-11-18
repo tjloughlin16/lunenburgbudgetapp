@@ -1,52 +1,62 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-11-17T12:26:02Z",
+ "picked_at": "2026-11-18T12:36:58Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1627,
- "input_sha256": "6c83816e33fd171f3ee1de07ec4bce887867c857cd7a245652915a9514fc37e8",
+ "cost_usd": 0.1573,
+ "input_sha256": "90292817c61bff8f06b3f1283f3841584a5930e65db2823b5a50730038f325d7",
  "callouts": [
   {
    "kind": "fee",
    "value": "$85 a year",
-   "label": "estimated stormwater fee for a typical home, capped at $100 at first; not yet set",
-   "hook": "estimated yearly stormwater fee",
-   "quote": "current estimate is $85 per eru, not to exceed $100 for the first three years",
-   "heard": [],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
-   "basis": "printed",
-   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
-   "where": "Select Board minutes, 20 Oct 2026",
+   "label": "projected stormwater fee for a single family home, not to exceed $100 for the first three years",
+   "hook": "projected home stormwater fee",
+   "quote": "we're projecting a single family home would have a a cost of $85 per year. and that cost would not exceed $100 for the first three years.",
+   "heard": [
+    "$85 per year",
+    "$100",
+    "$170",
+    "$3,500",
+    "5,288 bill payers"
+   ],
+   "item_date": "2026-11-17",
+   "item_board": "town-meeting",
+   "basis": "heard",
+   "board": "town-meeting",
+   "date": "2026-11-17",
+   "video_id": "_yr_TREvqpg",
+   "t": 6765,
+   "where": "Town Meeting, 17 Nov 2026",
    "verdict": {
     "keep": true,
-    "why": "$85 per ERU estimate, $100 cap for first three years, and not finalized are all in the minutes. Flat rate for 1-2 family homes supports 'typical home'. Later items show the fee still unset."
+    "why": "The $85 figure and the $100 cap for three years are stated and labelled as projected. Nothing later contradicts them."
    }
   },
   {
    "kind": "warrant",
-   "value": "Article 10",
-   "label": "non-binding Town Meeting question: pay for stormwater by a new fee or the operating budget",
+   "value": "56 vs 37",
+   "label": "Town Meeting advisory vote: stormwater utility fee over the operating budget (non-binding)",
    "hook": "",
-   "quote": "motion to include article 10 on the warrant",
+   "quote": "All those in favor of funding storm water maintenance and MS4 compliance through a storm water enterprise fund utility fee would select 1A on your voting device.",
    "heard": [],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
-   "basis": "printed",
-   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
-   "where": "Select Board minutes, 20 Oct 2026",
+   "item_date": "2026-11-17",
+   "item_board": "town-meeting",
+   "basis": "heard",
+   "board": "town-meeting",
+   "date": "2026-11-17",
+   "video_id": "_yr_TREvqpg",
+   "t": 5993,
+   "where": "Town Meeting, 17 Nov 2026",
    "verdict": {
     "keep": false,
-    "why": "Article numbers have shifted since 20 Oct. Track and field was Article 5, then Article 9, and later stormwater items cite Articles 6 and 8. 'Article 10' is not shown to be current. The evidence also only shows a motion made and seconded, not a vote."
+    "why": "The captions give no 56 vs 37 result. The only tally shown is 69 to 27, on a different question. The outcome of Article 8 isn't in the evidence."
    }
   },
   {
    "kind": "money",
-   "value": "$480,000",
-   "label": "estimated yearly cost of meeting the stormwater permit; the town spends about $100,000",
+   "value": "$100,000 vs $480,000",
+   "label": "roughly what the town spends a year on stormwater, against the estimated yearly need for compliance",
    "hook": "",
    "quote": "annual stormwater spending has been roughly $100,000, against an estimated $480,000 per year needed for compliance.",
    "heard": [],
@@ -58,7 +68,7 @@
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "The $480,000 need and the roughly $100,000 spent are stated by the DPW Director in the minutes. Later items only show a dispute, not a change."
+    "why": "The Select Board minutes state both figures, and later items don't change them."
    }
   }
  ]

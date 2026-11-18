@@ -24,7 +24,7 @@ Recordings without captions against recordings whose captions were fetched, by m
 | 2023 | 1 | 312 | 0% |
 | 2024 | 5 | 342 | 1% |
 | 2025 | 0 | 367 | 0% |
-| 2026 | 4 | 308 | 1% |
+| 2026 | 4 | 309 | 1% |
 
 ## Select Board — 55
 
@@ -278,7 +278,7 @@ Recordings without captions against recordings whose captions were fetched, by m
 
 | date | recording | reason | written record |
 |---|---|---|---|
-| 2026-10-14 | [Board of Assessors 10.14.26](https://www.youtube.com/watch?v=A3FKZzhE4cA) | NoTranscriptFound | [agenda](https://lunenburgbudgetproject.org/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf) |
+| 2026-10-14 | [Board of Assessors 10.14.26](https://www.youtube.com/watch?v=A3FKZzhE4cA) | NoTranscriptFound | [agenda](https://lunenburgbudgetproject.org/docs/meetings/board-of-assessors/2026-10-14-agenda-8070.pdf), [minutes](https://lunenburgbudgetproject.org/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf) |
 
 ## Budget Task Force — 1
 

@@ -3,8 +3,8 @@
  "grain": "A row is a transfer as the Sewer Commission’s minutes record it: sometimes one line to another, sometimes one total for a batch, sometimes only the vote. Totals add the amounts the minutes print; a transfer approved with no amount printed is counted and adds nothing. The fiscal year is the one the minutes state where they state one, otherwise the year the meeting fell in, marked as ours.",
  "has_forms": false,
  "minutes_from": "2010-01-13",
- "minutes_read": 288,
- "minutes_to": "2026-09-29",
+ "minutes_read": 290,
+ "minutes_to": "2026-10-27",
  "slug": "sewer-commission",
  "sources": [
   {
@@ -15,32 +15,7 @@
  "what": "transfers",
  "years": [
   {
-   "awaiting": [
-    {
-     "amount": "",
-     "amount_as_printed": "45,500",
-     "amount_basis": "as heard by a caption model -- not a figure",
-     "crosses": [],
-     "description": "From the capital plan to the sewer connection fees line item, to pay Leominster connection charges",
-     "evidence": {
-      "form": false,
-      "minutes": false,
-      "recording": true
-     },
-     "from_line": "",
-     "fy_basis": "the fiscal year the meeting fell in (ours)",
-     "fy_ours": true,
-     "kind": "line item",
-     "meeting_date": "2026-10-13",
-     "minutes_url": "",
-     "our_copy": "",
-     "outcome": "voted",
-     "quote": "",
-     "to_line": "",
-     "video_url": "https://www.youtube.com/watch?v=jguSFLHz5-8&t=214s",
-     "why_not": "awaiting the town’s minutes; heard in the recording only"
-    }
-   ],
+   "awaiting": [],
    "counted": [],
    "fy": 2027,
    "meetings": 0,
@@ -48,7 +23,32 @@
    "n_fy_ours": 0,
    "n_gold": 0,
    "n_no_amount": 0,
-   "not_counted": [],
+   "not_counted": [
+    {
+     "amount": "45500.00",
+     "amount_as_printed": "$45,500",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Transfer from the Capital Plan Line to the Sewer Connection Fee Line to pay Leominster connection charges.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "Capital Plan",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2026-10-13",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10132026-8064",
+     "our_copy": "/docs/meetings/sewer-commission/2026-10-13-minutes-8064.pdf",
+     "outcome": "passed 4-0",
+     "quote": "to transfer $45,500 from the capital plan line to the sewer connection fee line.",
+     "to_line": "Sewer Connection Fee",
+     "video_url": "",
+     "why_not": "a payment, refund or allocation, not a transfer between budget lines"
+    }
+   ],
    "sheets": [],
    "tentative": [],
    "tentative_total": "0.00",

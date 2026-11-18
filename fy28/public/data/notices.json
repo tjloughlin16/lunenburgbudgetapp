@@ -1,68 +1,13 @@
 {
  "category": "announcement",
  "what": "Notices composed from published agendas (upcoming) and our minutes of recordings (retro). Nothing here predicts a decision or quotes a caption figure. The facebook field is text a person pastes.",
- "as_of": "2026-11-17",
+ "as_of": "2026-11-18",
  "upcoming": [
-  {
-   "board": "Select Board",
-   "board_slug": "select-board",
-   "date": "2026-11-17",
-   "days_away": 0,
-   "when": "Tuesday, November 17, 2026",
-   "where": "Lunenburg Middle/High School Auditorium",
-   "time": "7:00 PM",
-   "attend": "in person",
-   "hook": "Notice of the Special Town Meeting itself — no warrant articles are listed in this document",
-   "how_to_attend": "In person; no Zoom or broadcast information is stated",
-   "one_line": "Special Town Meeting, Nov 17 2026, 7:00 PM, at the Lunenburg Middle/High School Auditorium — this notice lists no specific warrant articles.",
-   "items": [],
-   "important": 0,
-   "nothing_of_note": true,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-7975",
-   "facebook": "Select Board meets Tuesday November 17 at 7:00 PM.\n\nNotice of the Special Town Meeting itself — no warrant articles are listed in this document.\n\nIn person; no Zoom or broadcast information is stated\n\nAgenda: https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-7975",
-   "join": null,
-   "written": "2026-09-12"
-  },
-  {
-   "board": "Select Board",
-   "board_slug": "select-board",
-   "date": "2026-11-17",
-   "days_away": 0,
-   "when": "Tuesday, November 17, 2026, 6:30 PM",
-   "where": "Lunenburg Middle/High School Auditorium",
-   "time": "6:30 PM",
-   "attend": "in person",
-   "hook": "Special Town Meeting warrant articles and possible votes on deferred articles",
-   "how_to_attend": "In person at the Lunenburg Middle/High School Auditorium; the meeting will not be recorded or live-streamed.",
-   "one_line": "Select Board, Nov 17, 6:30 PM at the Middle/High School Auditorium: discussion of the Special Town Meeting warrant articles and possible votes on deferred articles. Not recorded.",
-   "items": [
-    {
-     "agenda_line": "Discussion on November 17, 2026 Special Town Meeting and Warrant Articles",
-     "why_it_matters": "The board may discuss the warrant articles for the Special Town Meeting held the same day.",
-     "kind": "other",
-     "important": true,
-     "vote_expected": false
-    },
-    {
-     "agenda_line": "o Potential Votes on Deferred Warrant Articles",
-     "why_it_matters": "The board may vote on warrant articles that were deferred, so residents can learn where the board stands on them.",
-     "kind": "vote",
-     "important": true,
-     "vote_expected": true
-    }
-   ],
-   "important": 2,
-   "nothing_of_note": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-8131",
-   "facebook": "Select Board meets Tuesday November 17 at 6:30 PM.\n\nSpecial Town Meeting warrant articles and possible votes on deferred articles.\n\nOn the agenda: o Potential Votes on Deferred Warrant Articles.\n\nIn person at the Lunenburg Middle/High School Auditorium; the meeting will not be recorded or live-streamed.\n\nAgenda: https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11172026-8131",
-   "join": null,
-   "written": "2026-11-11"
-  },
   {
    "board": "School Committee",
    "board_slug": "school-committee",
    "date": "2026-11-18",
-   "days_away": 1,
+   "days_away": 0,
    "when": "Wednesday, November 18, 2026, 7:00 pm",
    "where": "Lunenburg Middle School Collaborative Room #D132",
    "time": "7:00 PM",
@@ -131,6 +76,73 @@
   }
  ],
  "retro": [
+  {
+   "board": "Town Meeting",
+   "board_slug": "town-meeting",
+   "date": "2026-11-17",
+   "url": "/meeting-minutes/town-meeting/2026-11-17-_yr_TREvqpg",
+   "headline": "Town Meeting approved $195,830 from general stabilization for track and field engineering, 57-18, after striking the payback paragraph.",
+   "summary": "The special town meeting heard a Brooks House report and passed a budget amendment, an old-bill payment and two bylaw amendments. Voters gave advisory support for demolishing the TC Passios building and for a stormwater enterprise fund. The final article funded design engineering for the middle school track and field from stabilization.",
+   "digest": {
+    "what_happened": [
+     {
+      "line": "Town Meeting approved a transfer from the general stabilization fund to pay for professional engineering of the middle school track and fields, after striking the payback paragraph.",
+      "t": 9622
+     },
+     {
+      "line": "Voters struck the second paragraph of article 9, which stated an intent to repay the stabilization fund from free cash.",
+      "t": 10726
+     },
+     {
+      "line": "In non-binding votes, the meeting favored pursuing demolition of the TC Passios building and favored a stormwater utility fee over funding stormwater from the operating budget.",
+      "t": 5993
+     },
+     {
+      "line": "The meeting passed an omnibus budget amendment with a WRAP fund transfer, and a transfer from the FY2027 school line to pay a prior-year bill.",
+      "t": 1765
+     },
+     {
+      "line": "The meeting passed over the special education reserve article, with no certified free cash and no funding policy, and passed two bylaw amendments on zoning and stormwater fees.",
+      "t": 2361
+     }
+    ],
+    "why_it_matters": [
+     "Stabilization is the town's savings, so spending it on track engineering leaves less cushion, and a larger construction cost still has no stated funding source, which would likely mean borrowing paid from the operating budget and taxes.",
+     "The stormwater advisory vote points toward a flat annual utility fee on homes, with bills starting in July 2028 if adopted, and it would still need a binding vote."
+    ],
+    "watch_next": [
+     "School committee and finance committee agreed to revisit the special education reserve fund in spring.",
+     "Binding action on the TC Passios demolition and a stormwater utility, since both votes were advisory only."
+    ],
+    "written": {
+     "by": "scripts/write_recording_minutes.py --digest",
+     "model": "sonnet",
+     "at": "2026-11-18T12:29:05Z",
+     "cost_usd": 0.035268
+    }
+   },
+   "votes": 11,
+   "transfers": 3,
+   "tags": [
+    "athletics",
+    "budget",
+    "capital",
+    "facilities",
+    "fees",
+    "free-cash",
+    "legal",
+    "planning-and-zoning",
+    "public-comment",
+    "roads-and-dpw",
+    "town-meeting",
+    "transfers",
+    "warrant-article",
+    "water-sewer"
+   ],
+   "has_official_minutes": false,
+   "facebook": "Town Meeting, Tuesday November 17: Town Meeting approved $195,830 from general stabilization for track and field engineering, 57-18, after striking the payback paragraph.\n\n• Town Meeting approved a transfer from the general stabilization fund to pay for professional engineering of the middle school track and fields, after striking the payback paragraph.\n• Voters struck the second paragraph of article 9, which stated an intent to repay the stabilization fund from free cash.\n• In non-binding votes, the meeting favored pursuing demolition of the TC Passios building and favored a stormwater utility fee over funding stormwater from the operating budget.\n• The meeting passed an omnibus budget amendment with a WRAP fund transfer, and a transfer from the FY2027 school line to pay a prior-year bill.\n• The meeting passed over the special education reserve article, with no certified free cash and no funding policy, and passed two bylaw amendments on zoning and stormwater fees.\n\nWhy it matters: Stabilization is the town's savings, so spending it on track engineering leaves less cushion, and a larger construction cost still has no stated funding source, which would likely mean borrowing paid from the operating budget and taxes. The stormwater advisory vote points toward a flat annual utility fee on homes, with bills starting in July 2028 if adopted, and it would still need a binding vote.\n\nWatch next: School committee and finance committee agreed to revisit the special education reserve fund in spring.; Binding action on the TC Passios demolition and a stormwater utility, since both votes were advisory only..\n\nVotes taken (11): Hear and accept the regular reports of town officers and committees (article 1) — carried by show of hands to hear the Brooks House report; Article 2: raise and appropriate additional funds for library, town accountant and finance committee reserve lines, with a transfer from the WRAP fund — passed 101 to 14; Article 3: transfer from FY2027 school department line to pay a prior-year bill (Next amp) — passed 98 to 7; Article 4: pass over the special education reserve fund article — passed by show of hands, apparently unanimous; Article 5: corrective zoning bylaw amendments — passed 101 to 1; and more.\n\n3 budget transfers were voted; the amounts are on the page, as heard.\n\nEvery item links to the video at that moment: https://lunenburgbudgetproject.org/meeting-minutes/town-meeting/2026-11-17-_yr_TREvqpg\n\nThese are our minutes from the recording, not the town’s. Figures are as heard and may be wrong; the recording is the record.",
+   "written": "2026-11-18"
+  },
   {
    "board": "School Committee",
    "board_slug": "school-committee",
@@ -1147,136 +1159,12 @@
    "has_official_minutes": false,
    "facebook": "Board of Assessors, Wednesday October 28: Assessors signed the excise commitment and reviewed a draft tax classification slideshow that still had errors to fix\n\n• The Board of Assessors reviewed a draft tax classification presentation for the November 24 hearing and found new growth had been counted twice.\n• The split-rate savings table looked wrong and is still being reworked before the hearing.\n• The board signed the excise tax commitment, and signatures served as the vote.\n• Members will sign the state growth forms the next day, and the presentation goes to the town manager for the Select Board packet.\n• The board agreed to ask for separate website pages for the board and the assessing department, and set its next meetings.\n\nWhy it matters: The tax classification hearing decides whether residential and commercial property are taxed at one rate or split rates, which shapes the share of the levy on a household's tax bill. The draft figures were still being corrected, so the numbers in the Select Board packet are the ones to check before the hearing.\n\nWatch next: The November 24 tax classification hearing, and the corrected presentation in the Select Board packet.; Assessors meetings on November 4 and November 18, with December 2 set and December 16 tentative..\n\nEvery item links to the video at that moment: https://lunenburgbudgetproject.org/meeting-minutes/board-of-assessors/2026-10-28-nUUi0uOamJM\n\nThese are our minutes from the recording, not the town’s. Figures are as heard and may be wrong; the recording is the record.",
    "written": "2026-11-02"
-  },
-  {
-   "board": "Sewer Commission",
-   "board_slug": "sewer-commission",
-   "date": "2026-10-27",
-   "url": "/meeting-minutes/sewer-commission/2026-10-27-krvx-IuSkdE",
-   "headline": "Sewer Commission voted to send a delinquent Sunny Hill Road account to the tax collector with no payment plan.",
-   "summary": "The commission voted to refer a long-delinquent sewer account to the tax collector for tax lien and decline a payment plan. It also heard updates on a contract RFR and second-quarter billing, and began discussing raising the sewer demand fee and interest rate, held for a later meeting with a public hearing required. It voted to move the December 29 meeting to January 12.",
-   "digest": {
-    "what_happened": [
-     {
-      "line": "The Sewer Commission voted to send the balance on a delinquent Sunny Hill Road account to the tax collector for a tax lien and not to offer a payment plan.",
-      "t": 1766
-     },
-     {
-      "line": "The DPW director's suggested monthly payment plan, covering most of a year's bill with any remainder going on the tax lien, was rejected.",
-      "t": 1135
-     },
-     {
-      "line": "The commission began discussing a higher sewer demand fee and interest rate; counsel said the legal maximum rate is above the current one. It was held for a later meeting.",
-      "t": 2102
-     },
-     {
-      "line": "A request for responses for contractor services went out, with bids due in mid-November, to place a contractor before the current contract expires.",
-      "t": 1932
-     },
-     {
-      "line": "The commission voted to move the December 29 Zoom meeting to January 12.",
-      "t": 2505
-     }
-    ],
-    "why_it_matters": [
-     "Sewer fees are billed to property owners, and an account left unpaid can be added to the property's tax bill as a lien, so this vote shows how the town collects overdue sewer charges.",
-     "Any change to the demand fee or interest rate would change what sewer users are billed, and the commission said it needs a public hearing with newspaper notice first."
-    ],
-    "watch_next": [
-     "Demand fee and interest rate discussion returns at a meeting when Chip is present, after the business manager gathers comparable towns' fees; a public hearing is required to change the regulation.",
-     "Next meetings: Nov 10 (hybrid at DPW), Nov 24 (Zoom), Dec 8 (hybrid), then Jan 12, 2027."
-    ],
-    "written": {
-     "by": "scripts/write_recording_minutes.py --digest",
-     "model": "sonnet",
-     "at": "2026-10-28T11:11:42Z",
-     "cost_usd": 0.2043555
-    }
-   },
-   "votes": 2,
-   "transfers": 0,
-   "tags": [
-    "contracts-and-unions",
-    "fees",
-    "town-departments",
-    "water-sewer"
-   ],
-   "has_official_minutes": false,
-   "facebook": "Sewer Commission, Tuesday October 27: Sewer Commission voted to send a delinquent Sunny Hill Road account to the tax collector with no payment plan.\n\n• The Sewer Commission voted to send the balance on a delinquent Sunny Hill Road account to the tax collector for a tax lien and not to offer a payment plan.\n• The DPW director's suggested monthly payment plan, covering most of a year's bill with any remainder going on the tax lien, was rejected.\n• The commission began discussing a higher sewer demand fee and interest rate; counsel said the legal maximum rate is above the current one. It was held for a later meeting.\n• A request for responses for contractor services went out, with bids due in mid-November, to place a contractor before the current contract expires.\n• The commission voted to move the December 29 Zoom meeting to January 12.\n\nWhy it matters: Sewer fees are billed to property owners, and an account left unpaid can be added to the property's tax bill as a lien, so this vote shows how the town collects overdue sewer charges. Any change to the demand fee or interest rate would change what sewer users are billed, and the commission said it needs a public hearing with newspaper notice first.\n\nWatch next: Demand fee and interest rate discussion returns at a meeting when Chip is present, after the business manager gathers comparable towns' fees; a public hearing is required to change the regulation.; Next meetings: Nov 10 (hybrid at DPW), Nov 24 (Zoom), Dec 8 (hybrid), then Jan 12, 2027..\n\nVotes taken (2): Direct the sewer business manager to send the balance of fees for 424 Sunny Hill Road to the tax collector for tax lien and not offer a payment plan — passed (three aye votes called); Defer the December 29th Zoom meeting to January 12th — passed (three aye votes called).\n\nEvery item links to the video at that moment: https://lunenburgbudgetproject.org/meeting-minutes/sewer-commission/2026-10-27-krvx-IuSkdE\n\nThese are our minutes from the recording, not the town’s. Figures are as heard and may be wrong; the recording is the record.",
-   "written": "2026-10-28"
-  },
-  {
-   "board": "Select Board",
-   "board_slug": "select-board",
-   "date": "2026-10-27",
-   "url": "/meeting-minutes/select-board/2026-10-27-EEjHeG_q7gY",
-   "headline": "Select Board recommended disapproval of the special ed reserve transfer and deferred budget and track articles for the Nov 17 special town meeting.",
-   "summary": "The board reviewed the draft special town meeting warrant, voting on recommendations for several articles and deferring others pending certified free cash. It also discussed a draft flag policy, whether to draft a special education reserve fund policy (referred back to the school committee), and heard the town manager's report including a delay in free cash certification.",
-   "digest": {
-    "what_happened": [
-     {
-      "line": "The Select Board voted 4-1 to recommend disapproval of Article 4, a transfer from free cash to the special education reserve fund.",
-      "t": 4932
-     },
-     {
-      "line": "The board deferred Articles 2 and 3, and separately Article 9 (track and field engineering), to be voted on after the town knows its certified free cash.",
-      "t": 4760
-     },
-     {
-      "line": "The board recommended approval of Articles 1, 5 and 6, took no position 4-1 on the non-binding straw polls in Articles 7 and 8, and approved the warrant.",
-      "t": 5917
-     },
-     {
-      "line": "A motion to have the town manager draft a special education reserve fund policy was withdrawn; the matter goes to the school committee chair for their agenda first.",
-      "t": 4182
-     },
-     {
-      "line": "The town manager reported that year-end close is slow and free cash may not be certified in time for the special town meeting.",
-      "t": 587
-     }
-    ],
-    "why_it_matters": [
-     "Several warrant articles depend on free cash, and until it is certified the board cannot finalize recommendations on them, so voters at the special town meeting may be asked to act on items the board has not yet weighed in on.",
-     "Article 4 would move money from free cash into a special education reserve, a fund that cushions the town budget, which is mostly taxes, against unplanned placement costs, and the board's recommendation against it is advisory only; Town Meeting makes the decision."
-    ],
-    "watch_next": [
-     "Nov 17: the board meets at 6:30, before the special town meeting, to vote on the deferred articles, then Town Meeting votes on the warrant.",
-     "Nov 10: Select Board meeting, partly a workshop on the draft flag policy."
-    ],
-    "written": {
-     "by": "scripts/write_recording_minutes.py --digest",
-     "model": "sonnet",
-     "at": "2026-10-28T11:10:29Z",
-     "cost_usd": 0.20675949999999998
-    }
-   },
-   "votes": 11,
-   "transfers": 2,
-   "tags": [
-    "budget",
-    "budget-fy27",
-    "capital",
-    "free-cash",
-    "legal",
-    "personnel",
-    "planning-and-zoning",
-    "policy",
-    "public-comment",
-    "special-education",
-    "superintendent-report",
-    "town-departments",
-    "town-meeting",
-    "warrant-article"
-   ],
-   "has_official_minutes": false,
-   "facebook": "Select Board, Tuesday October 27: Select Board recommended disapproval of the special ed reserve transfer and deferred budget and track articles for the Nov 17 special town meeting.\n\n• The Select Board voted 4-1 to recommend disapproval of Article 4, a transfer from free cash to the special education reserve fund.\n• The board deferred Articles 2 and 3, and separately Article 9 (track and field engineering), to be voted on after the town knows its certified free cash.\n• The board recommended approval of Articles 1, 5 and 6, took no position 4-1 on the non-binding straw polls in Articles 7 and 8, and approved the warrant.\n• A motion to have the town manager draft a special education reserve fund policy was withdrawn; the matter goes to the school committee chair for their agenda first.\n• The town manager reported that year-end close is slow and free cash may not be certified in time for the special town meeting.\n\nWhy it matters: Several warrant articles depend on free cash, and until it is certified the board cannot finalize recommendations on them, so voters at the special town meeting may be asked to act on items the board has not yet weighed in on. Article 4 would move money from free cash into a special education reserve, a fund that cushions the town budget, which is mostly taxes, against unplanned placement costs, and the board's recommendation against it is advisory only; Town Meeting makes the decision.\n\nWatch next: Nov 17: the board meets at 6:30, before the special town meeting, to vote on the deferred articles, then Town Meeting votes on the warrant.; Nov 10: Select Board meeting, partly a workshop on the draft flag policy..\n\nVotes taken (11): Approve change of officers/directors for the Honey Farms liquor license (Global Montello Group Corp.) — passed unanimously; Ratify appointment of Alexander McLean as videographer — passed unanimously; Charge the town manager with creating the first draft of the special education reserve fund policy — withdrawn before a vote; Recommend approval of Article 1 — passed unanimously; Defer Articles 2 and 3 to the special town meeting — passed unanimously; and more.\n\n2 budget transfers were voted; the amounts are on the page, as heard.\n\nEvery item links to the video at that moment: https://lunenburgbudgetproject.org/meeting-minutes/select-board/2026-10-27-EEjHeG_q7gY\n\nThese are our minutes from the recording, not the town’s. Figures are as heard and may be wrong; the recording is the record.",
-   "written": "2026-10-28"
   }
  ],
  "grants": [],
  "counts": {
-  "upcoming": 3,
-  "retro": 19,
+  "upcoming": 1,
+  "retro": 18,
   "grants": 0
  }
 }

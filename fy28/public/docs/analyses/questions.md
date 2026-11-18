@@ -226,7 +226,7 @@ Returns `dept`, `name`, `fy`, `period`, `revised`, `expended`, `available` — f
 SELECT dept, name, fy, period, ROUND(year_elapsed,2) AS year_elapsed, ROUND(spent_share,2) AS spent_share, ROUND(pace_gap,2) AS pace_gap FROM v_burn WHERE pace_gap IS NOT NULL ORDER BY pace_gap DESC LIMIT 20
 ```
 
-Returns `dept`, `name`, `fy`, `period`, `year_elapsed`, `spent_share`, `pace_gap` — for example: dept=300, name=MILEAGE, fy=2026, period=12, year_elapsed=1.0, spent_share=5.95, pace_gap=4.95
+Returns `dept`, `name`, `fy`, `period`, `year_elapsed`, `spent_share`, `pace_gap` — for example: dept=300, name=MILEAGE REIMBURSEMENT, fy=2026, period=12, year_elapsed=1.0, spent_share=5.95, pace_gap=4.95
 
 **What funds does the town keep, and what restricts them?**
 
@@ -250,7 +250,7 @@ Returns `fund`, `fy`, `period`, `opening`, `revenue`, `spent`, `closing` — for
 SELECT level, account_type, COUNT(*) AS accounts FROM account GROUP BY level, account_type ORDER BY accounts DESC
 ```
 
-Returns `level`, `account_type`, `accounts` — for example: level=account, account_type=expense, accounts=692
+Returns `level`, `account_type`, `accounts` — for example: level=account, account_type=expense, accounts=1217
 
 **Which grants did the district receive, and who owns them?**
 
@@ -266,7 +266,7 @@ Returns `fy`, `kind`, `name`, `amount`, `owner` — for example: fy=FY21-24, kin
 SELECT fy, period, COUNT(*) AS rows, COUNT(DISTINCT account_id) AS accounts FROM ledger_snapshot GROUP BY fy, period ORDER BY fy, period
 ```
 
-Returns `fy`, `period`, `rows`, `accounts` — for example: fy=2026, period=9, rows=348, accounts=346
+Returns `fy`, `period`, `rows`, `accounts` — for example: fy=2025, period=13, rows=1160, accounts=1160
 
 > Period 13 is the year-end close, after purchase orders are cleared. Period 12 is not the end of the year.
 
@@ -302,7 +302,7 @@ Returns `fy`, `period`, `eff_date`, `src_meaning`, `entries` — for example: fy
 SELECT a.name, a.fund_name, l.fy, l.period, ROUND(l.available) AS available FROM ledger_snapshot l JOIN account a USING (account_id) ORDER BY l.fy DESC, l.period DESC, l.available DESC LIMIT 20
 ```
 
-Returns `name`, `fund_name`, `fy`, `period`, `available` — for example: name=SPED PRIVA, fund_name=GENERAL FUND, fy=2026, period=12, available=522629.0
+Returns `name`, `fund_name`, `fy`, `period`, `available` — for example: name=SPED TUITIONS-PRIVATE, fund_name=GENERAL FUND, fy=2026, period=13, available=522629.0
 
 **How much was transferred into or out of each account?**
 
@@ -310,7 +310,7 @@ Returns `name`, `fund_name`, `fy`, `period`, `available` — for example: name=S
 SELECT a.name, l.fy, l.period, ROUND(l.transfers) AS transfers FROM ledger_snapshot l JOIN account a USING (account_id) WHERE l.transfers <> 0 ORDER BY ABS(l.transfers) DESC LIMIT 20
 ```
 
-Returns `name`, `fy`, `period`, `transfers` — for example: name=TR CAP PRO, fy=2026, period=12, transfers=1240820.0
+Returns `name`, `fy`, `period`, `transfers` — for example: name=TRANSFER TO CAPITAL PROJECT, fy=2026, period=12, transfers=1240820.0
 
 > `transfers` is CUMULATIVE. Movement between two periods is the difference of the column, never the later value.
 
@@ -320,7 +320,7 @@ Returns `name`, `fy`, `period`, `transfers` — for example: name=TR CAP PRO, fy
 SELECT account_type, level, COUNT(*) AS accounts FROM account GROUP BY account_type, level ORDER BY accounts DESC
 ```
 
-Returns `account_type`, `level`, `accounts` — for example: account_type=expense, level=account, accounts=692
+Returns `account_type`, `level`, `accounts` — for example: account_type=expense, level=account, accounts=1217
 
 > Revenue rows are stored NEGATIVE, exactly as MUNIS prints them. Check `account_type` before doing arithmetic across types.
 
@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5465
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5467
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked,
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=5465
+Returns `source_type`, `documents` — for example: source_type=primary, documents=5467
 
 **What basis does each document have for the figures it prints?**
 

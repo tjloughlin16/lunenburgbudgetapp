@@ -68,8 +68,8 @@ The town never published minutes, never recorded the meeting, or the recording h
 | FY2023 | 187 | 135 | 1 | **323** |
 | FY2024 | 139 | 114 | 0 | **253** |
 | FY2025 | 158 | 101 | 5 | **264** |
-| FY2026 | 143 | 98 | 17 | **258** |
-| FY2027 | 51 | 27 | 0 | **78** |
+| FY2026 | 144 | 98 | 17 | **259** |
+| FY2027 | 50 | 27 | 0 | **77** |
 
 ## Select Board, by fiscal year
 

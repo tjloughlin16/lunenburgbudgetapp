@@ -1,71 +1,78 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "turf-field-study",
- "picked_at": "2026-11-17T12:25:50Z",
+ "picked_at": "2026-11-18T12:36:52Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1119,
- "input_sha256": "c764f26a55247e84d6960afd13ed8ef94f407aeb4678376562059466ce08043f",
+ "cost_usd": 0.128,
+ "input_sha256": "65a202009cb727d262b1de6f513ec6a51bde5a357868ea846edf1bd858f676e0",
  "callouts": [
   {
-   "kind": "money",
+   "kind": "warrant",
    "value": "$195,830",
-   "label": "requested for engineering and design of the track and field, not construction",
-   "hook": "requested for the field study",
-   "quote": "requested placement of a $195,830 article for professional engineering and related services",
-   "heard": [],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
-   "basis": "printed",
-   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
-   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
-   "where": "Select Board minutes, 20 Oct 2026",
+   "label": "Town Meeting approved taking it from savings (stabilization) to pay for track and field engineering",
+   "hook": "approved from savings for engineering",
+   "quote": "transfer the sum of $195,830 from the general stabilization fund",
+   "heard": [
+    "$195,830",
+    "$58,578",
+    "$61,275",
+    "$3 million",
+    "$49,9990"
+   ],
+   "item_date": "2026-11-17",
+   "item_board": "town-meeting",
+   "basis": "heard",
+   "board": "town-meeting",
+   "date": "2026-11-17",
+   "video_id": "_yr_TREvqpg",
+   "t": 9622,
+   "where": "Town Meeting, 17 Nov 2026",
    "verdict": {
-    "keep": true,
-    "why": "The $195,830 request for design and engineering, not construction, is in the minutes. Later items (deferral, School Committee support) don't change what was requested."
+    "keep": false,
+    "why": "The evidence is only the motion. No vote result is shown, so 'approved' isn't supported. The finance chair said they'd vote no."
    }
   },
   {
-   "kind": "warrant",
-   "value": "Two-thirds",
-   "label": "vote Town Meeting needs to pass the study money",
+   "kind": "money",
+   "value": "~$3 million",
+   "label": "earlier estimate to replace the turf field and track, likely paid by a debt exclusion",
    "hook": "",
-   "quote": "it is a twothirds vote which makes it a little more difficult",
-   "heard": [],
-   "item_date": "2026-11-16",
+   "quote": "was approximately $3 million",
+   "heard": [
+    "$3 million"
+   ],
+   "item_date": "2026-10-21",
    "item_board": "school-committee",
    "basis": "heard",
    "board": "school-committee",
-   "date": "2026-11-16",
-   "video_id": "tyF7RxVO_Bc",
-   "t": 1338,
-   "where": "School Committee, 16 Nov 2026",
+   "date": "2026-10-21",
+   "video_id": "2-Ax9zkA1NA",
+   "t": 4459,
+   "where": "School Committee, 21 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "The School Committee chair said on the captions that it is a two-thirds vote. Nothing later contradicts this."
+    "why": "The ~$3M figure is stated, framed as an earlier estimate, and likely to be paid by debt exclusion. The later 'much larger' remark is about the overall project, so it doesn't contradict this."
    }
   },
   {
-   "kind": "money",
-   "value": "~$2 million",
-   "label": "estimated cost of the construction project the study would lead to",
+   "kind": "impact",
+   "value": "150 ft",
+   "label": "of the lower retaining wall at the track was found failing by an engineer",
    "hook": "",
-   "quote": "$2 million construction project",
-   "heard": [
-    "195,000",
-    "$2 million"
-   ],
-   "item_date": "2026-11-10",
-   "item_board": "capital-planning-committee",
+   "quote": "the engineer identified 150 ft of the lower wall as failing",
+   "heard": [],
+   "item_date": "2026-11-17",
+   "item_board": "town-meeting",
    "basis": "heard",
-   "board": "capital-planning-committee",
-   "date": "2026-11-10",
-   "video_id": "pa1BCL9YAJk",
-   "t": 516,
-   "where": "Capital Planning Committee, 10 Nov 2026",
+   "board": "town-meeting",
+   "date": "2026-11-17",
+   "video_id": "_yr_TREvqpg",
+   "t": 9890,
+   "where": "Town Meeting, 17 Nov 2026",
    "verdict": {
     "keep": true,
-    "why": "A speaker on the 10 Nov captions refers to the '$2 million construction project' as the next step after the study. The label calls it an estimate and the value uses '~', so it reads as approximate."
+    "why": "The superintendent said it directly, and nothing later contradicts it."
    }
   }
  ]
