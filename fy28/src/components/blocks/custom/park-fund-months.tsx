@@ -1,16 +1,16 @@
 /** THE PARKS FEE FUND, MONTH BY MONTH (park-revolving-fund). Fund 1500's journal, FY2023 to the
  *  FY2026 close: what came in each month above the line, what was paid out below it, and every
- *  payment of the month a reader taps. A month is the journal's PERIOD (period 13, the close, is
+ *  receipt and payment of the month a reader taps. A month is the journal's PERIOD (period 13, the close, is
  *  drawn with June). Every figure and string is formatted by scripts/build_parks_topics.py; this
  *  scales bars by the numbers and prints the given text. */
 import { useState } from 'react'
 import type { CustomProps } from './index'
 
 type Pay = { d: string; who: string; what: string; amt: string }
-type Month = { m: string; in: number; out: number; t_in: string; t_out: string; pays: Pay[] }
+type Month = { m: string; in: number; out: number; t_in: string; t_out: string; pays: Pay[]; ins: Pay[] }
 type Year = { fy: string; t_in: string; t_out: string; t_close: string; months: Month[] }
 type Data = { years: Year[]; max: number
-  text: { in: string; out: string; close: string; pick: string; none: string } }
+  text: { in: string; out: string; close: string; pick: string; none: string; ins: string; pays: string } }
 
 const IN = 'var(--thread-1)', OUT = 'var(--thread-3)'
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
@@ -67,17 +67,22 @@ export default function ParkFundMonths({ data, alt }: CustomProps) {
         {sel && (<>
           <p className="font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
             {sel.m} {y.fy}: {d.text.in} {sel.t_in} · {d.text.out} {sel.t_out}</p>
-          {sel.pays.length === 0 && <p style={muted}>{d.text.none}</p>}
-          <ul className="divide-y" style={{ borderColor: 'var(--grid)' }}>
-            {sel.pays.map((p, j) => (
-              <li key={j} className="py-1.5 grid grid-cols-[1fr_auto] gap-x-3" style={{ borderColor: 'var(--grid)' }}>
-                <span className="min-w-0">
-                  <span style={{ color: 'var(--text-primary)' }}>{p.who}</span>
-                  <span className="block text-[12.5px] break-words" style={muted}>{p.d} · {p.what}</span>
-                </span>
-                <span className="tabular-nums" style={{ color: 'var(--text-primary)' }}>{p.amt}</span>
-              </li>))}
-          </ul>
+          {sel.pays.length + sel.ins.length === 0 && <p style={muted}>{d.text.none}</p>}
+          {([[d.text.ins, sel.ins, IN], [d.text.pays, sel.pays, OUT]] as [string, Pay[], string][])
+            .filter(([, xs]) => xs.length > 0).map(([head, xs, colour]) => (
+            <div key={head} className="mt-2">
+              <p className="text-[11.5px] uppercase tracking-wide" style={{ color: colour }}>{head}</p>
+              <ul className="divide-y" style={{ borderColor: 'var(--grid)' }}>
+                {xs.map((p, j) => (
+                  <li key={j} className="py-1.5 grid grid-cols-[1fr_auto] gap-x-3" style={{ borderColor: 'var(--grid)' }}>
+                    <span className="min-w-0">
+                      <span style={{ color: 'var(--text-primary)' }}>{p.who}</span>
+                      <span className="block text-[12.5px] break-words" style={muted}>{p.d} · {p.what}</span>
+                    </span>
+                    <span className="tabular-nums" style={{ color: 'var(--text-primary)' }}>{p.amt}</span>
+                  </li>))}
+              </ul>
+            </div>))}
         </>)}
       </div>
     </div>)

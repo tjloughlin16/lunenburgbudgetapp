@@ -1,4 +1,124 @@
 {
+ "blocks": [
+  {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Held, 31 March 2026",
+       "tone": null,
+       "value": "$1,268.00"
+      },
+      {
+       "label": "Taken in, July–March",
+       "tone": null,
+       "value": "$516.00"
+      },
+      {
+       "label": "Spent, July–March",
+       "tone": null,
+       "value": "$0.00"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [
+       "1523"
+      ],
+      "text": "fund 1523, gifts"
+     },
+     "title": "Park Gift Fund"
+    },
+    {
+     "rows": [
+      {
+       "label": "Held, 31 March 2026",
+       "tone": null,
+       "value": "$197.00"
+      },
+      {
+       "label": "Taken in, July–March",
+       "tone": null,
+       "value": "$0.00"
+      },
+      {
+       "label": "Spent, July–March",
+       "tone": null,
+       "value": "$0.00"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [
+       "1529"
+      ],
+      "text": "fund 1529"
+     },
+     "title": "Skate Park Fund"
+    },
+    {
+     "rows": [
+      {
+       "label": "Held, 31 March 2026",
+       "tone": null,
+       "value": "$125.00"
+      },
+      {
+       "label": "Taken in, July–March",
+       "tone": null,
+       "value": "$0.00"
+      },
+      {
+       "label": "Spent, July–March",
+       "tone": null,
+       "value": "$0.00"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [
+       "1532"
+      ],
+      "text": "fund 1532"
+     },
+     "title": "Marshall Park Restoration"
+    },
+    {
+     "rows": [
+      {
+       "label": "Held, 31 March 2026",
+       "tone": null,
+       "value": "$94.52"
+      },
+      {
+       "label": "Taken in, July–March",
+       "tone": null,
+       "value": "$2.74"
+      },
+      {
+       "label": "Spent, July–March",
+       "tone": null,
+       "value": "$0.00"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "a trust fund"
+     },
+     "title": "Playground Fund"
+    }
+   ],
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Only the gift fund moved this year, by one gift; the other three barely did."
+   },
+   "title": "The four small parks funds"
+  }
+ ],
  "category": "parks",
  "chart": {
   "decimals": null,
@@ -75,6 +195,7 @@
    "FY2025"
   ]
  },
+ "composed": true,
  "conclusions": [
   {
    "figures": {
@@ -312,17 +433,35 @@
    "part": "finding"
   },
   {
+   "cites": [
+    0,
+    1
+   ],
+   "i": 0,
+   "part": "block"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "part": "ladder"
+  },
+  {
+   "cites": [
+    2,
+    3,
+    4
+   ],
    "i": 0,
    "part": "chart"
   },
   {
-   "part": "ladder"
-  },
-  {
    "part": "related"
-  },
-  {
-   "part": "ledger"
   },
   {
    "part": "sources"

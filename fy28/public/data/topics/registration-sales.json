@@ -1,4 +1,63 @@
 {
+ "blocks": [
+  {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Sales, FY2025",
+       "tone": null,
+       "value": "$47,783.50"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "the registration system"
+     },
+     "title": "MyRec recorded"
+    },
+    {
+     "rows": [
+      {
+       "label": "Into fund 1500, FY2025",
+       "tone": null,
+       "value": "$50,639.51"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "the fund’s journal, monthly"
+     },
+     "title": "Deposited from MyRec"
+    },
+    {
+     "rows": [
+      {
+       "label": "Net of refunds, FY2025",
+       "tone": null,
+       "value": "$52,300.16"
+      }
+     ],
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "with beach cash and league fees"
+     },
+     "title": "All fees the fund booked"
+    }
+   ],
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The registration money reached the parks fee fund; it was not matched sale by sale."
+   },
+   "title": "From sale to the books"
+  }
+ ],
  "category": "parks",
  "chart": {
   "basis": "published",
@@ -184,6 +243,7 @@
   "type": "ranking",
   "unit": "$"
  },
+ "composed": true,
  "conclusions": [
   {
    "figures": {
@@ -478,21 +538,44 @@
    "part": "finding"
   },
   {
+   "cites": [
+    0,
+    1,
+    2
+   ],
    "i": 0,
    "part": "chart"
   },
   {
+   "cites": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "i": 0,
+   "part": "block"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2,
+    3
+   ],
    "part": "ladder"
   },
   {
-   "part": "related"
-  },
-  {
-   "part": "ledger"
-  },
-  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
    "i": 0,
    "part": "table"
+  },
+  {
+   "part": "related"
   },
   {
    "part": "sources"

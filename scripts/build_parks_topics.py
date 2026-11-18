@@ -283,6 +283,15 @@ def build():
             C.usd(voted[fy]) if fy < 2026 else None,
             C.usd(votes[fy]) if fy in votes else None,
             C.usd(v26) if fy == 2026 else None]))
+    vote_panels = TB.panels('Two records of one vote', [
+        TB.panel('Finance Committee workbook', [((C.fy(fy), None, (C.fy(fy),)),
+                                                 usd2(gl[fy]['original']), None)
+                                                for fy in (2023, 2024)],
+                 sub='assembled by hand from MUNIS exports'),
+        TB.panel('Annual town report', [((C.fy(fy), None, (C.fy(fy),)), usd2(votes[fy]), None)
+                                        for fy in (2023, 2024)],
+                 sub='the omnibus vote as printed')],
+        so='Two town documents give different Parks budgets for the same years; neither says why.')
     out['parks-budget'] = TP.page(
         'parks-budget',
         'The Parks budget voted for FY2026 was %s, against %s in FY2010.' % (C.usd(v26),
@@ -342,6 +351,9 @@ def build():
         chart=vote_chart,
         sources=[src['glwb'], src['d-gl'], src['ar22'], src['ar23'], src['ar24'],
                  src['d-approp'], src['d-p13']],
+        flow=['finding', TP.cite(('chart', 0), 0, 1, 6), TP.cite('ladder', 0, 1, 2, 3, 4, 5, 6),
+              TP.cite(vote_panels, 0, 1, 2, 3, 4, 5), TP.cite(('table', 0), 0, 1, 2, 3, 4, 5, 6),
+              'related', 'sources'],
         finding_figures={'a': U(v26), 'b': U(v10)}, finding_allow=('FY2026', 'FY2010'))
 
     # ================================================================ Parks spending
@@ -376,6 +388,13 @@ def build():
     spend_rows = [dict(label=C.fy(fy), cells=[
         C.usd(gl[fy]['original']), C.usd(gl[fy]['revised']), C.usd(gl[fy]['actual']),
         C.usd(left[fy])]) for fy in sorted(full, reverse=True)]
+    c26 = CL[2026]
+    close_bridge = TP.bridge(
+        'The Parks budget at the close', ('Voted', c26['original']),
+        [('Transfers in', c26['transfers']), ('Paid', -c26['expended']),
+         ('Still owed', -c26['encumbered'])], ('Left', c26['available']), '$',
+        note='%s, department 650, the MUNIS report at the close (period 13), unaudited.'
+             % C.fy(2026), note_allow=('650', '13', C.fy(2026)))
     out['parks-spending'] = TP.page(
         'parks-spending',
         # PERIOD 13, THE CLOSE: the Town's 5 November 2026 answer (our reading, published as
@@ -430,8 +449,11 @@ def build():
             note='Department 650, summed over its accounts. To FY2024, the workbook: left is '
                  'the final budget less the actual, our subtraction. FY2025 and FY2026, MUNIS '
                  'at the close: spent is paid plus still owed, left is the ledger’s column.')]),
-        chart=spend_chart,
+        chart=close_bridge, also=[spend_chart],
         sources=[src['d-p13'], src['glwb'], src['d-gl'], src['d-journal']],
+        flow=['finding', TP.cite(('chart', 0), 0), TP.cite('ladder', 0, 1, 2, 3),
+              TP.cite(('chart', 1), 0, 1, 2), TP.cite(('table', 0), 0, 1, 2), 'related',
+              'sources'],
         finding_figures={'a': U(spent26), 'b': U(a26['revised']),
                          'c': U(a26['available']), 'd': U(left[2025])},
         finding_allow=('FY2026', 'FY2025'))
@@ -505,8 +527,8 @@ def build():
         [TP.track(a.title().replace('Park ', ''), [J[y]['by_account'].get(a, 0) for y in jyrs],
                   'published', 'bar') for a in accts],
         '$', kind='bar', stacked=True,
-        note='Net of refunds. Registration deposits for May and June FY2026 were posted to beach '
-             'fees: this is the account used, not what was sold.', note_allow=('FY2026',))
+        note='Net of refunds. May and June FY2026 registration deposits were posted to beach '
+             'fees. Every receipt is listed by month below.', note_allow=('FY2026',))
     prow = []
     for fy in range(2026, 2010, -1):
         if fy in J:
@@ -534,8 +556,16 @@ def build():
                                  amt=usd2(r['amount'])))
                 figs.update([pays[-1]['d'], pays[-1]['amt']])
                 lits.update([who, r['description']])
+            ins = []
+            for r in sorted((r for r in ps if r['side'] == 'revenue'),
+                            key=lambda r: (r['effective_date'], float(r['amount']))):
+                acct = r['account_description'].title().replace('Park ', '')
+                ins.append(dict(d=day(r['effective_date']), who=acct, what=r['description'],
+                                amt=usd2(-float(r['amount']))))
+                figs.update([ins[-1]['d'], ins[-1]['amt']])
+                lits.update([acct, r['description']])
             months.append({'m': mname, 'in': vin, 'out': vout, 't_in': usd2(vin),
-                           't_out': usd2(vout), 'pays': pays})
+                           't_out': usd2(vout), 'pays': pays, 'ins': ins})
             figs.update([usd2(vin), usd2(vout)])
         tsum = round(sum(m['out'] for m in months), 2)
         if abs(tsum - J[fy]['spent']) > 0.005:
@@ -549,11 +579,29 @@ def build():
         'park-fund-months', 'The fund month by month', dict(
             years=years_, max=mx,
             text=dict(**{'in': 'In', 'out': 'Paid out', 'close': 'Balance at 30 June',
-                         'pick': 'Tap a month to list its payments.',
-                         'none': 'No payments posted this month.'})),
+                         'pick': 'Tap a month to list every receipt and payment in it.',
+                         'none': 'Nothing posted this month.', 'ins': 'Money in',
+                         'pays': 'Paid out'})),
         place='body', figures=sorted(figs), allow=sorted(lits | {'30'}),
         basis=('record', 'The fund’s MUNIS journal, to the FY2026 close'),
-        so='Spending comes in a few large payments; receipts peak with summer registrations.')
+        so='Every posting behind the totals above, as the journal prints it.')
+    steps = []
+    for fy in (2024, 2025, 2026):
+        steps += [('In, %s' % C.fy(fy), J[fy]['received']), ('Out, %s' % C.fy(fy), -J[fy]['spent'])]
+    grow_bridge = TP.bridge(
+        'How the fund’s balance grew', ('30 June 2023', J[2023]['closing']), steps,
+        ('FY2026 close', J[2026]['closing']), '$',
+        note='The fund’s own journal. Money in includes refunds netted and a little interest.')
+    def ycard(fy, tone):
+        return TB.panel((C.fy(fy), None, (C.fy(fy),)), [
+            ('Fees taken in', usd2(fees[fy]), tone),
+            ('Registration deposits', usd2(dep[fy]), tone),
+            ('Months with a deposit', '%s of 12' % C.num(dep_months[fy]), tone),
+            ('Paid out', usd2(J[fy]['spent']), None),
+            ('Balance at the close', usd2(J[fy]['closing']), None)])
+    yr_panels = TB.panels('Two years side by side', [ycard(2025, None), ycard(2026, 'bad')],
+                          so='Fees halved, but the fund paid out less than it took in, so its '
+                             'balance still rose.')
     out['park-revolving-fund'] = TP.page(
         'park-revolving-fund',
         'The parks’ fee fund took in %s in FY2026, half of FY2025’s %s, and still grew to %s.'
@@ -617,9 +665,14 @@ def build():
             note='FY2023 to FY2026 from the fund’s MUNIS journal, carried from the FY2023 '
                  'annual report. FY2011–FY2022 printed as Park User Fees, each row tying '
                  'forward + receipts − disbursements = carried.')]),
-        chart=fund_chart, also=[mix_chart], blocks=[months_block],
-        sources=[src['d-journal'], src['sr26'], src['ar11'], src['ar23'], src['ar24'],
-                 src['ar25'], src['d-read'], src['d-funds']],
+        chart=grow_bridge, also=[fund_chart, mix_chart],
+        sources=[src['d-journal'], src['ar11'], src['ar23'], src['ar24'], src['ar25'],
+                 src['d-read'], src['d-funds']],
+        flow=['finding', TP.cite(('chart', 0), 0), TP.cite(yr_panels, 0),
+              TP.cite(('chart', 2), 0), TP.cite(months_block, 0),
+              TP.cite('ladder', 0, 4, 5, 6), 'related',
+              TP.cite(('chart', 1), 0, 1, 2, 3, 5, 6),
+              TP.cite(('table', 0), 0, 5), 'sources'],
         finding_figures={'a': U(fees[2026]), 'b': U(fees[2025]), 'c': U(J[2026]['closing'])},
         finding_allow=('FY2026', 'FY2025'))
 
@@ -644,6 +697,18 @@ def build():
         [TP.track('Balance at year end', [ghist[y]['closing'] for y in gyrs], 'published',
                   'line')],
         '$', kind='line', note='The annual town reports, at each 30 June.', note_allow=('30',))
+    def fcard(name, cur, sub):
+        return TB.panel(name, [(('Held, 31 March 2026', None, ('31', '2026')),
+                                usd2(cur['closing']), None),
+                               ('Taken in, July–March', usd2(cur['revenue']), None),
+                               ('Spent, July–March', usd2(cur['spent']), None)], sub=sub)
+    fund_panels = TB.panels('The four small parks funds', [
+        fcard('Park Gift Fund', g26, ('fund 1523, gifts', None, ('1523',))),
+        fcard('Skate Park Fund', other['sr-1529']['current'], ('fund 1529', None, ('1529',))),
+        fcard('Marshall Park Restoration', other['sr-1532']['current'],
+              ('fund 1532', None, ('1532',))),
+        fcard('Playground Fund', other['tr-8126']['current'], 'a trust fund')],
+        so='Only the gift fund moved this year, by one gift; the other three barely did.')
     out['other-parks-funds'] = TP.page(
         'other-parks-funds',
         'The Park Gift Fund took in %s in FY2011 and stood at %s from FY2016 to FY2025.'
@@ -681,6 +746,8 @@ def build():
         chart=gift_chart,
         sources=[src['sr26'], src['trust26'], src['ar11'], src['ar23'], src['d-read'],
                  src['d-journal']],
+        flow=['finding', TP.cite(fund_panels, 0, 1), TP.cite('ladder', 0, 1, 2, 3, 4, 5),
+              TP.cite(('chart', 0), 2, 3, 4), 'related', 'sources'],
         finding_figures={'a': U(ghist[2011]['revenue']), 'b': U(flat_bal)},
         finding_allow=('FY2011', 'FY2016', 'FY2025'))
 
@@ -724,6 +791,15 @@ def build():
              % C.num(len(sales) - len(drawn)).capitalize(),
         note_figures={'n': N(len(sales) - len(drawn))},
         note_allow=('2024', '2025'))
+    fees25 = round(J0[2025]['received'] - J0[2025]['by_account'].get('INVESTMENT INCOME', 0), 2)
+    books_panels = TB.panels('From sale to the books', [
+        TB.panel('MyRec recorded', [(('Sales, FY2025', None, ('FY2025',)), usd2(tot), None)],
+                 sub='the registration system'),
+        TB.panel('Deposited from MyRec', [(('Into fund 1500, FY2025', None, ('1500', 'FY2025',)), usd2(dep25), None)],
+                 sub='the fund’s journal, monthly'),
+        TB.panel('All fees the fund booked', [(('Net of refunds, FY2025', None, ('FY2025',)), usd2(fees25), None)],
+                 sub='with beach cash and league fees')],
+        so='The registration money reached the parks fee fund; it was not matched sale by sale.')
     out['registration-sales'] = TP.page(
         'registration-sales',
         'The registration system recorded %s in FY2025, and non-residents paid %s of it.'
@@ -779,6 +855,9 @@ def build():
                  'are refunds.')]),
         chart=sales_chart,
         sources=[src['myprog'], src['mymem'], src['d-myrec'], src['d-journal']],
+        flow=['finding', TP.cite(('chart', 0), 0, 1, 2), TP.cite(books_panels, 0, 1, 2, 3),
+              TP.cite('ladder', 0, 1, 2, 3), TP.cite(('table', 0), 0, 1, 2), 'related',
+              'sources'],
         finding_figures={'a': U(tot), 'b': PC(100 * nonres / tot)}, finding_allow=('FY2025',))
 
     # ================================================================ Grounds bid
@@ -817,11 +896,13 @@ def build():
                   for r in bid_rows],
             note='The sheet’s own Location Total line, read from its text layer. A bid, not '
                  'a payment.')]),
-        chart=TP.ranking('Grounds bid by park', [(r['park'], r['year_one']) for r in bid_rows],
-                         '$', highlight=mar['park'], basis='stated',
-                         note='Year one, all work, as the bid sheet totals each location. A '
-                              'vendor’s offer, not a payment.'),
+        chart=TP.parts('What the year-one bid is made of',
+                       [(r['park'], r['year_one']) for r in bid_rows], '$', basis='stated',
+                       highlight=mar['park'],
+                       note='Each park as the bid sheet totals it. A vendor’s offer, not a payment.'),
         sources=[src['bid'], src['glwb'], src['d-gl']],
+        flow=['finding', TP.cite(('chart', 0), 0), TP.cite(('table', 0), 0),
+              TP.cite('ladder', 0, 1, 2), 'related', 'sources'],
         finding_figures={'a': U(bid_total)}, finding_allow=('1', '2024', 'six'))
 
     # ================================================================ the hub

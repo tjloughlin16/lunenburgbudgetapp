@@ -5,11 +5,138 @@
    "from_zero": true,
    "kind": "bar",
    "note": {
+    "figures": {
+     "g": {
+      "text": "$4,759",
+      "unit": "",
+      "value": 4759.16
+     }
+    },
+    "literals": [
+     "FY2023",
+     "FY2025",
+     "30"
+    ],
+    "text": "Each 30 June. From FY2023 the balance is carried by the fund’s own journal; the FY2025 annual report prints $4,759 more."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Annual town report",
+     "texts": [
+      "$10,019",
+      "$10,654",
+      "$5,573",
+      "$3,795",
+      "$0",
+      "$0",
+      "$4,058",
+      "$11,638",
+      "$30,818",
+      "$32,463",
+      "$66,444",
+      "$66,419",
+      null,
+      null,
+      null,
+      null
+     ],
+     "values": [
+      10019.25,
+      10653.69,
+      5572.81,
+      3795.26,
+      0.0,
+      0.0,
+      4057.82,
+      11638.28,
+      30818.28,
+      32462.51,
+      66443.78,
+      66418.95,
+      null,
+      null,
+      null,
+      null
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "The fund’s journal",
+     "texts": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "$58,200",
+      "$72,564",
+      "$86,967",
+      "$96,033"
+     ],
+     "values": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      58199.61,
+      72564.34,
+      86967.14,
+      96033.18
+     ]
+    }
+   ],
+   "stacked": true,
+   "title": "Park Revolving Fund balance",
+   "type": "series",
+   "unit": "$",
+   "x": [
+    "FY2011",
+    "FY2012",
+    "FY2013",
+    "FY2014",
+    "FY2015",
+    "FY2016",
+    "FY2017",
+    "FY2018",
+    "FY2019",
+    "FY2020",
+    "FY2021",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ]
+  },
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
     "figures": {},
     "literals": [
      "FY2026"
     ],
-    "text": "Net of refunds. Registration deposits for May and June FY2026 were posted to beach fees: this is the account used, not what was sold."
+    "text": "Net of refunds. May and June FY2026 registration deposits were posted to beach fees. Every receipt is listed by month below."
    },
    "reference": null,
    "series": [
@@ -79,6 +206,78 @@
  ],
  "blocks": [
   {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Fees taken in",
+       "tone": null,
+       "value": "$52,300.16"
+      },
+      {
+       "label": "Registration deposits",
+       "tone": null,
+       "value": "$50,639.51"
+      },
+      {
+       "label": "Months with a deposit",
+       "tone": null,
+       "value": "12 of 12"
+      },
+      {
+       "label": "Paid out",
+       "tone": null,
+       "value": "$37,941.47"
+      },
+      {
+       "label": "Balance at the close",
+       "tone": null,
+       "value": "$86,967.14"
+      }
+     ],
+     "title": "FY2025"
+    },
+    {
+     "rows": [
+      {
+       "label": "Fees taken in",
+       "tone": "bad",
+       "value": "$26,261.17"
+      },
+      {
+       "label": "Registration deposits",
+       "tone": "bad",
+       "value": "$24,811.74"
+      },
+      {
+       "label": "Months with a deposit",
+       "tone": "bad",
+       "value": "7 of 12"
+      },
+      {
+       "label": "Paid out",
+       "tone": null,
+       "value": "$17,241.41"
+      },
+      {
+       "label": "Balance at the close",
+       "tone": null,
+       "value": "$96,033.18"
+      }
+     ],
+     "title": "FY2026"
+    }
+   ],
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Fees halved, but the fund paid out less than it took in, so its balance still rose."
+   },
+   "title": "Two years side by side"
+  },
+  {
    "alt": "The fund month by month",
    "basis": {
     "kind": "record",
@@ -91,9 +290,11 @@
     "text": {
      "close": "Balance at 30 June",
      "in": "In",
-     "none": "No payments posted this month.",
+     "ins": "Money in",
+     "none": "Nothing posted this month.",
      "out": "Paid out",
-     "pick": "Tap a month to list its payments."
+     "pays": "Paid out",
+     "pick": "Tap a month to list every receipt and payment in it."
     },
     "years": [
      {
@@ -101,6 +302,50 @@
       "months": [
        {
         "in": 4657.24,
+        "ins": [
+         {
+          "amt": "$321.00",
+          "d": "19 July 2022",
+          "what": "BEACH FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$5,052.00",
+          "d": "28 July 2022",
+          "what": "BEACH FEES/JULY2022 MYREC PARK",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$140.00",
+          "d": "28 July 2022",
+          "what": "PROGRAM FEES/JULY2022 MYREC PA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$53.76",
+          "d": "28 July 2022",
+          "what": "PROGRAM/JUNE2022 MYREC FEES/PA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$175.00",
+          "d": "28 July 2022",
+          "what": "REFUND BEACH FEES/JULY2022 MYR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$287.00",
+          "d": "28 July 2022",
+          "what": "BEACH/JUNE2022 MYREC FEES/PARK",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$340.00",
+          "d": "28 July 2022",
+          "what": "REFUND PROG FEES/JULY2022 MYRE",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jul",
         "out": 0,
         "pays": [],
@@ -109,6 +354,62 @@
        },
        {
         "in": 2936.76,
+        "ins": [
+         {
+          "amt": "$627.00",
+          "d": "18 August 2022",
+          "what": "BEACH PASSES PER R THOMPSON",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$1,140.00",
+          "d": "23 August 2022",
+          "what": "PARK USER FEE/LUNENBURG LITTLE",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$1.21",
+          "d": "23 August 2022",
+          "what": "JUL 2022 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$527.00",
+          "d": "24 August 2022",
+          "what": "BEACH FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$3.92",
+          "d": "25 August 2022",
+          "what": "PROGRAM/JULY2022 MYREC FEES/PA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$151.53",
+          "d": "25 August 2022",
+          "what": "BEACH/JULY2022 MYREC FEES/PARK",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$35.00",
+          "d": "30 August 2022",
+          "what": "BEACH DAY PASSES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$440.00",
+          "d": "31 August 2022",
+          "what": "AUG2022 PARK MYREC PAYMENTS",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$322.00",
+          "d": "31 August 2022",
+          "what": "AUG2022 PARK MYREC PAYMENTS",
+          "who": "Beach Fees"
+         }
+        ],
         "m": "Aug",
         "out": 2995.0,
         "pays": [
@@ -124,6 +425,32 @@
        },
        {
         "in": -110.86,
+        "ins": [
+         {
+          "amt": "$1.46",
+          "d": "14 September 2022",
+          "what": "AUG 2022 INT/UNIBANK PARKS DE",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$10.00",
+          "d": "29 September 2022",
+          "what": "AUG2022 PARK MYREC CHARGES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$12.32",
+          "d": "29 September 2022",
+          "what": "AUG2022 PARK MYREC CHARGES",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$90.00",
+          "d": "29 September 2022",
+          "what": "SEP2022 REFUND/PARK MYREC CARD",
+          "who": "Beach Fees"
+         }
+        ],
         "m": "Sep",
         "out": 0,
         "pays": [],
@@ -132,6 +459,7 @@
        },
        {
         "in": 0,
+        "ins": [],
         "m": "Oct",
         "out": 0,
         "pays": [],
@@ -140,6 +468,32 @@
        },
        {
         "in": 1782.38,
+        "ins": [
+         {
+          "amt": "$1,300.00",
+          "d": "10 November 2022",
+          "what": "PARK FIELD FEES/LUNENBURG PHIL",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$480.00",
+          "d": "10 November 2022",
+          "what": "PARK FIELD FEES/LUNENBURG LITT",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$1.17",
+          "d": "16 November 2022",
+          "what": "SEP 2022 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$1.21",
+          "d": "28 November 2022",
+          "what": "OCT 2022 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Nov",
         "out": 0,
         "pays": [],
@@ -148,6 +502,20 @@
        },
        {
         "in": 561.17,
+        "ins": [
+         {
+          "amt": "$1.17",
+          "d": "13 December 2022",
+          "what": "NOV 2022 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$560.00",
+          "d": "29 December 2022",
+          "what": "DEC2022 PARK MYREC PAYMENTS",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Dec",
         "out": 0,
         "pays": [],
@@ -156,6 +524,26 @@
        },
        {
         "in": 25.49,
+        "ins": [
+         {
+          "amt": "-$15.68",
+          "d": "24 January 2023",
+          "what": "PARK PROG/DEC2022 MYREC FEES/P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1.17",
+          "d": "30 January 2023",
+          "what": "DEC 2022 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$40.00",
+          "d": "31 January 2023",
+          "what": "PROGRAM/JAN2023 PARK MYREC PAY",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jan",
         "out": 0,
         "pays": [],
@@ -164,6 +552,20 @@
        },
        {
         "in": 0.25,
+        "ins": [
+         {
+          "amt": "$1.37",
+          "d": "14 February 2023",
+          "what": "JAN23 INT/UNIBANK PARKS DEPT/G",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$1.12",
+          "d": "22 February 2023",
+          "what": "JAN2023 PARK MYREC FEES",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Feb",
         "out": 0,
         "pays": [],
@@ -172,6 +574,26 @@
        },
        {
         "in": 2.78,
+        "ins": [
+         {
+          "amt": "$2.78",
+          "d": "16 March 2023",
+          "what": "FEB 2023 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$1,134.00",
+          "d": "30 March 2023",
+          "what": "PROGFEES/MARCH2023 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$1,134.00",
+          "d": "31 March 2023",
+          "what": "ADJ TO TOWN FACILITIES USE",
+          "who": "Field Fees"
+         }
+        ],
         "m": "Mar",
         "out": 31534.6,
         "pays": [
@@ -187,6 +609,26 @@
        },
        {
         "in": 2787.37,
+        "ins": [
+         {
+          "amt": "$3.12",
+          "d": "11 April 2023",
+          "what": "MAR 2023 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$31.75",
+          "d": "20 April 2023",
+          "what": "PROG FEES/MARCH2023 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$2,816.00",
+          "d": "27 April 2023",
+          "what": "PARK PROG/APRIL2023 PARK MYREC",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Apr",
         "out": 0,
         "pays": [],
@@ -195,6 +637,38 @@
        },
        {
         "in": 12999.75,
+        "ins": [
+         {
+          "amt": "$2.88",
+          "d": "16 May 2023",
+          "what": "APR 2023 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$78.84",
+          "d": "24 May 2023",
+          "what": "APRIL2023 PARK MYREC CHARGES",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$6,883.00",
+          "d": "31 May 2023",
+          "what": "PARK PROG/MAY2023 PARK MYREC P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$6,189.00",
+          "d": "31 May 2023",
+          "what": "BEACH PASS/MAY2023 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.71",
+          "d": "31 May 2023",
+          "what": "MAY 2023 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         }
+        ],
         "m": "May",
         "out": 3968.88,
         "pays": [
@@ -210,6 +684,50 @@
        },
        {
         "in": 11272.32,
+        "ins": [
+         {
+          "amt": "$3,440.00",
+          "d": "21 June 2023",
+          "what": "PARK USER FEES/LUNENBURG LITTL",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$4,705.00",
+          "d": "29 June 2023",
+          "what": "BEACH FEES/JUNE2023 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3,677.00",
+          "d": "29 June 2023",
+          "what": "PARK PROG/JUNE2023 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.81",
+          "d": "29 June 2023",
+          "what": "JUN 2023 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$170.77",
+          "d": "29 June 2023",
+          "what": "BEACH PASS/MAY2023 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$190.00",
+          "d": "29 June 2023",
+          "what": "REF PARK PROG/JUNE2023 PARK MY",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$192.72",
+          "d": "29 June 2023",
+          "what": "PARK PROG/MAY2023 PARK MYREC C",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jun",
         "out": 6635.51,
         "pays": [
@@ -275,6 +793,50 @@
       "months": [
        {
         "in": 3612.73,
+        "ins": [
+         {
+          "amt": "-$102.95",
+          "d": "19 July 2023",
+          "what": "PARK PROG/JUNE2023 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$124.32",
+          "d": "19 July 2023",
+          "what": "BEACH FEES/JUNE2023 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$736.00",
+          "d": "20 July 2023",
+          "what": "BEACH FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$2,879.00",
+          "d": "31 July 2023",
+          "what": "JULY2023 PARK MYREC CARD PAYME",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$855.00",
+          "d": "31 July 2023",
+          "what": "PARKPROG/JULY2023 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$250.00",
+          "d": "31 July 2023",
+          "what": "BEACH REFUND/JULY2023 PARK MYR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$380.00",
+          "d": "31 July 2023",
+          "what": "PARKPROG REFUND/JULY2023 PARK",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jul",
         "out": 0,
         "pays": [],
@@ -283,6 +845,74 @@
        },
        {
         "in": 878.7,
+        "ins": [
+         {
+          "amt": "$307.00",
+          "d": "1 August 2023",
+          "what": "BEACH PASSES 7.17.23-7.23.23/A",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$204.00",
+          "d": "1 August 2023",
+          "what": "BEACH PASS SALES 7.10.23-7.16.",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$186.00",
+          "d": "1 August 2023",
+          "what": "BEACH PASSES 7.24.23-7.30.23/A",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$4.19",
+          "d": "8 August 2023",
+          "what": "JUL 2023 INT/UNIBANK PARKS DEP",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$210.00",
+          "d": "23 August 2023",
+          "what": "BEACH FEES/08.01.23-08.20.23",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$137.00",
+          "d": "30 August 2023",
+          "what": "BEACH FEES/8.21.23-8.30.23",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$290.00",
+          "d": "31 August 2023",
+          "what": "PARKPROG/AUG2023 PARK MYREC CA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$35.00",
+          "d": "31 August 2023",
+          "what": "BEACH PASS/AUG2023 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$23.94",
+          "d": "31 August 2023",
+          "what": "PARKPROG/JULY2023 PARK MYREC F",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$90.55",
+          "d": "31 August 2023",
+          "what": "BEACH/JULY2023 PARK MYREC FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$380.00",
+          "d": "31 August 2023",
+          "what": "PARKPROG REFUND/AUG2023 PARK M",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Aug",
         "out": 11223.0,
         "pays": [
@@ -304,6 +934,68 @@
        },
        {
         "in": 1031.18,
+        "ins": [
+         {
+          "amt": "-$2.80",
+          "d": "5 September 2023",
+          "what": "BEACH/AUG2023 PARK MYREC FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$15.26",
+          "d": "5 September 2023",
+          "what": "PARKPROG/AUG2023 PARK MYREC FE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4.24",
+          "d": "20 September 2023",
+          "what": "AUG2023 INTEREST/PARK UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$1,045.00",
+          "d": "28 September 2023",
+          "what": "PROG FEES/SEP2023 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,045.00",
+          "d": "28 September 2023",
+          "what": "PARK PROG/SEP2023 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$20.00",
+          "d": "28 September 2023",
+          "what": "FIELD FEES/SEP2023 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$20.00",
+          "d": "28 September 2023",
+          "what": "PARK FIELD/SEP2023 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$20.00",
+          "d": "28 September 2023",
+          "what": "PARK REVOLVING USER FEES",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$20.00",
+          "d": "28 September 2023",
+          "what": "REFUND PARK FIELD/SEP2023 PARK",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$1,045.00",
+          "d": "28 September 2023",
+          "what": "PARK REVOLVING USER FEES",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Sep",
         "out": 8415.8,
         "pays": [
@@ -319,6 +1011,44 @@
        },
        {
         "in": 936.31,
+        "ins": [
+         {
+          "amt": "-$0.56",
+          "d": "19 October 2023",
+          "what": "FIELD FEES/SEP2023 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$30.94",
+          "d": "19 October 2023",
+          "what": "PROG FEES/SEP2023 PARK MYREC F",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.81",
+          "d": "24 October 2023",
+          "what": "SEP2023 INTEREST UNIBANK PARK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$1,003.00",
+          "d": "31 October 2023",
+          "what": "PROG FEES/OC2023 PARK MYREC CA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$5.00",
+          "d": "31 October 2023",
+          "what": "FIELD FEES/OC2023 PARK MYREC C",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$44.00",
+          "d": "31 October 2023",
+          "what": "REFUND PROG FEES/OC2023 PARK M",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Oct",
         "out": 3520.0,
         "pays": [
@@ -334,6 +1064,62 @@
        },
        {
         "in": 754.7,
+        "ins": [
+         {
+          "amt": "-$0.14",
+          "d": "6 November 2023",
+          "what": "FIELD/OC2023 PARK MYREC FEES C",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$28.09",
+          "d": "6 November 2023",
+          "what": "PROG/OC2023 PARK MYREC FEES CA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$605.00",
+          "d": "30 November 2023",
+          "what": "PROG CORR/ADJ RCPT #937829 DTD",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$505.00",
+          "d": "30 November 2023",
+          "what": "PROG/NOV2023 PARK MYREC CARD P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$100.00",
+          "d": "30 November 2023",
+          "what": "BEACH CORR/ADJ RCPT #937828 DT",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$2.93",
+          "d": "30 November 2023",
+          "what": "PARK REVOLVING/OCT2023 INTERES",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$35.00",
+          "d": "30 November 2023",
+          "what": "BEACH ERR/ADJ RCPT #937828 DTD",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$105.00",
+          "d": "30 November 2023",
+          "what": "REFUND PROG/NOV2023 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$290.00",
+          "d": "30 November 2023",
+          "what": "PROG ERR/ADJ RCPT #937829 DTD",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Nov",
         "out": 6406.44,
         "pays": [
@@ -439,6 +1225,38 @@
        },
        {
         "in": 3703.47,
+        "ins": [
+         {
+          "amt": "-$14.14",
+          "d": "1 December 2023",
+          "what": "PROG FEES/NOV2023 PARK MYREC F",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3,257.00",
+          "d": "28 December 2023",
+          "what": "PARK PROG/DEC2023 PARK MYREC P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,008.00",
+          "d": "28 December 2023",
+          "what": "PARK FIELD/DEC2023 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$2.61",
+          "d": "28 December 2023",
+          "what": "DEC2023 INTEREST PARK FUND UNI",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$550.00",
+          "d": "28 December 2023",
+          "what": "REFUND PROG/DEC2023 PARK MYREC",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Dec",
         "out": 0,
         "pays": [],
@@ -447,6 +1265,62 @@
        },
        {
         "in": 597.58,
+        "ins": [
+         {
+          "amt": "-$28.22",
+          "d": "17 January 2024",
+          "what": "PARK FIELD/DEC2023 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$91.20",
+          "d": "17 January 2024",
+          "what": "PARK PROG/DEC2023 PARK MYREC F",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$70.00",
+          "d": "24 January 2024",
+          "what": "PARK PROGRAMS/[payer masked]",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,042.00",
+          "d": "31 January 2024",
+          "what": "PARK PROG/JAN2024 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,042.00",
+          "d": "31 January 2024",
+          "what": "JAN2024 PARK MYREC CARD PAYMEN",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$395.00",
+          "d": "31 January 2024",
+          "what": "PARK REVOLVING USER FEES",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$395.00",
+          "d": "31 January 2024",
+          "what": "REFUND PARK PROG/JAN2024 PARK",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$395.00",
+          "d": "31 January 2024",
+          "what": "REFUND JAN2024 PARK MYREC CARD",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$1,042.00",
+          "d": "31 January 2024",
+          "what": "PARK REVOLVING USER FEES",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jan",
         "out": 1373.2,
         "pays": [
@@ -468,6 +1342,38 @@
        },
        {
         "in": 1775.69,
+        "ins": [
+         {
+          "amt": "-$28.89",
+          "d": "28 February 2024",
+          "what": "JAN2024 PARK MYREC FEES",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,035.00",
+          "d": "29 February 2024",
+          "what": "FIELD FEES/FEB2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$839.00",
+          "d": "29 February 2024",
+          "what": "PROG FEES/FEB2024 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$2.58",
+          "d": "29 February 2024",
+          "what": "DEC2023 INTEREST PARK REVOLVIN",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$72.00",
+          "d": "29 February 2024",
+          "what": "REFUND FIELD FEES/FEB2024 PARK",
+          "who": "Field Fees"
+         }
+        ],
         "m": "Feb",
         "out": 3170.0,
         "pays": [
@@ -489,6 +1395,44 @@
        },
        {
         "in": 3842.8,
+        "ins": [
+         {
+          "amt": "$2,823.50",
+          "d": "28 March 2024",
+          "what": "PARK PROG/MARCH2024 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,065.00",
+          "d": "28 March 2024",
+          "what": "PARKFIELD/MARCH2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$3.04",
+          "d": "28 March 2024",
+          "what": "JAN2024 INTEREST UNIBANK PARK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$2.75",
+          "d": "28 March 2024",
+          "what": "FEB2024 INTEREST UNIBANK PARK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$23.77",
+          "d": "28 March 2024",
+          "what": "PARK PROG/FEB24 PARK MYREC FEE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$27.72",
+          "d": "28 March 2024",
+          "what": "PARK FIELD/FEB24 PARK MYREC FE",
+          "who": "Field Fees"
+         }
+        ],
         "m": "Mar",
         "out": 1592.0,
         "pays": [
@@ -510,6 +1454,56 @@
        },
        {
         "in": 5999.11,
+        "ins": [
+         {
+          "amt": "-$31.08",
+          "d": "25 April 2024",
+          "what": "PARKFIELD/MARCH2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$74.01",
+          "d": "25 April 2024",
+          "what": "PARK PROG/MARCH2024 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4,727.00",
+          "d": "30 April 2024",
+          "what": "PROGFEES/APRIL2024 MYREC PARK",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,170.00",
+          "d": "30 April 2024",
+          "what": "PARKFIELDFEES/APRIL2024 MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$720.00",
+          "d": "30 April 2024",
+          "what": "BEACH/APRIL2024 MYREC PARK CAR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.36",
+          "d": "30 April 2024",
+          "what": "PARK/APRIL2024 INTEREST UNIBAN",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$2.84",
+          "d": "30 April 2024",
+          "what": "PARK/MARCH2024 INTEREST UNIBAN",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$519.00",
+          "d": "30 April 2024",
+          "what": "REFUND PROGFEES/APRIL2024 MYRE",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Apr",
         "out": 0,
         "pays": [],
@@ -518,6 +1512,44 @@
        },
        {
         "in": 7267.65,
+        "ins": [
+         {
+          "amt": "-$20.16",
+          "d": "14 May 2024",
+          "what": "BEACH FEES/APRIL2024 PARK MYRE",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$32.76",
+          "d": "14 May 2024",
+          "what": "FIELD/APRIL2024 PARK MYREC FEE",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$121.43",
+          "d": "14 May 2024",
+          "what": "PROGRAM/APRIL2024 PARK MYREC F",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3,507.00",
+          "d": "30 May 2024",
+          "what": "PROG FEES/MAY2024 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$2,015.00",
+          "d": "30 May 2024",
+          "what": "FIELD FEES/MAY2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$1,920.00",
+          "d": "30 May 2024",
+          "what": "BEACH FEES/MAY2024 PARK MYREC",
+          "who": "Beach Fees"
+         }
+        ],
         "m": "May",
         "out": 894.0,
         "pays": [
@@ -533,6 +1565,68 @@
        },
        {
         "in": 9211.1,
+        "ins": [
+         {
+          "amt": "$4,060.00",
+          "d": "3 June 2024",
+          "what": "PARK FIELD FEES PER ANGELA C/P",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$3,235.00",
+          "d": "27 June 2024",
+          "what": "FIELD FEES/JUNE2024 MYREC PARK",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$1,688.00",
+          "d": "27 June 2024",
+          "what": "PROG FEES/JUNE2024 MYREC PARK",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$474.00",
+          "d": "27 June 2024",
+          "what": "BEACH FEES/JUNE2024 MYREC PARK",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.54",
+          "d": "27 June 2024",
+          "what": "PARK/MAY2024 INTEREST UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$3.41",
+          "d": "27 June 2024",
+          "what": "PARK/JUNE2024 INTEREST UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$40.00",
+          "d": "27 June 2024",
+          "what": "REFUND PROG FEES/JUNE2024 MYRE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$47.46",
+          "d": "27 June 2024",
+          "what": "FIELD FEES/MAY2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$51.24",
+          "d": "27 June 2024",
+          "what": "BEACH/MAY2024 PARK MYREC FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$114.15",
+          "d": "27 June 2024",
+          "what": "PROG FEES/MAY2024 PARK MYREC F",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jun",
         "out": -11348.15,
         "pays": [
@@ -562,6 +1656,68 @@
       "months": [
        {
         "in": 2386.41,
+        "ins": [
+         {
+          "amt": "$336.00",
+          "d": "1 July 2024",
+          "what": "BEACH PASE/USER CHARGES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$15.79",
+          "d": "8 July 2024",
+          "what": "BEACH/JUNE2024 PARK MYREC CARD",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$47.26",
+          "d": "8 July 2024",
+          "what": "PROG FEES/JUNE2024 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$99.54",
+          "d": "8 July 2024",
+          "what": "FIELD FEES/JUNE2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$462.00",
+          "d": "9 July 2024",
+          "what": "BEACH PASS FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$1,479.00",
+          "d": "31 July 2024",
+          "what": "PROGRAM/JULY2024 PARK MYREC PA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,085.00",
+          "d": "31 July 2024",
+          "what": "FIELD/JULY2024 PARK MYREC PAYM",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$506.00",
+          "d": "31 July 2024",
+          "what": "BEACH/JULY2024 PARK MYREC PAYM",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$90.00",
+          "d": "31 July 2024",
+          "what": "BEACH REFUND/JULY2024 PARK MYR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$1,229.00",
+          "d": "31 July 2024",
+          "what": "PROG REFUND/JULY2024 PARK MYRE",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jul",
         "out": 0,
         "pays": [],
@@ -570,6 +1726,62 @@
        },
        {
         "in": 2734.25,
+        "ins": [
+         {
+          "amt": "$340.00",
+          "d": "19 August 2024",
+          "what": "BEACH FEES/PARKS DEPT",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$4.21",
+          "d": "26 August 2024",
+          "what": "PARK/JUL2024 INTEREST UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$2,160.00",
+          "d": "29 August 2024",
+          "what": "PROG PMT/AUG2024 PARK MYREC CA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$230.00",
+          "d": "29 August 2024",
+          "what": "FIELD PMT/AUG2024 PARK MYREC C",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$78.00",
+          "d": "29 August 2024",
+          "what": "BEACH PMT/AUG2024 PARK MYREC C",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$7.95",
+          "d": "29 August 2024",
+          "what": "JULY2024 PARK MYREC SECURITY C",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$14.17",
+          "d": "29 August 2024",
+          "what": "BEACH FEES/JULY2024 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$25.45",
+          "d": "29 August 2024",
+          "what": "PROG FEES/JULY2024 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$30.39",
+          "d": "29 August 2024",
+          "what": "FIELD FEES/JULY2024 PARK MYREC",
+          "who": "Field Fees"
+         }
+        ],
         "m": "Aug",
         "out": 0,
         "pays": [],
@@ -578,6 +1790,56 @@
        },
        {
         "in": 2176.57,
+        "ins": [
+         {
+          "amt": "$204.00",
+          "d": "4 September 2024",
+          "what": "BEACH PASSES/08.13.24-08.26.24",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.91",
+          "d": "26 September 2024",
+          "what": "PARK/AUG2024 INTEREST UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "$2,055.00",
+          "d": "30 September 2024",
+          "what": "PROG/SEP2024 PARK MYREC CARD P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4.15",
+          "d": "30 September 2024",
+          "what": "PARK REV/SEP2024 INTEREST UNIB",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$2.18",
+          "d": "30 September 2024",
+          "what": "BEACH/AUG2024 PARK MYREC CARD",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$6.44",
+          "d": "30 September 2024",
+          "what": "FIELD/AUG2024 PARK MYREC CARD",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$7.95",
+          "d": "30 September 2024",
+          "what": "MYREC SECURITY FEES/AUG2024 PA",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$73.92",
+          "d": "30 September 2024",
+          "what": "PROG/AUG2024 PARK MYREC CARD C",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Sep",
         "out": 12407.8,
         "pays": [
@@ -623,6 +1885,32 @@
        },
        {
         "in": 1376.19,
+        "ins": [
+         {
+          "amt": "-$7.95",
+          "d": "24 October 2024",
+          "what": "SECURITY FEE/SEP2024 PARK MYRE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$60.06",
+          "d": "24 October 2024",
+          "what": "PROG/SEP2024 PARK MYREC CARD C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,440.00",
+          "d": "31 October 2024",
+          "what": "PROG/OCT2024 PARK MYREC CARD P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4.20",
+          "d": "31 October 2024",
+          "what": "PARK REVOLVING/OCT2024 INTERES",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Oct",
         "out": 1350.0,
         "pays": [
@@ -638,6 +1926,44 @@
        },
        {
         "in": 1468.24,
+        "ins": [
+         {
+          "amt": "-$7.95",
+          "d": "18 November 2024",
+          "what": "MERCHANT SEC CHARGES/OCT24 FEE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$40.32",
+          "d": "18 November 2024",
+          "what": "PARK PROG/OCT2024 FEES PARK MY",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$1,092.50",
+          "d": "27 November 2024",
+          "what": "PROG FEES/NOV2024 PARK MYREC C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$540.00",
+          "d": "27 November 2024",
+          "what": "FIELD FEES/NOV2024 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$4.01",
+          "d": "27 November 2024",
+          "what": "PARK REVOLVING/NOV2024 INTERES",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$120.00",
+          "d": "27 November 2024",
+          "what": "PROG REFUND/NOV2024 PARK MYREC",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Nov",
         "out": 0,
         "pays": [],
@@ -646,6 +1972,44 @@
        },
        {
         "in": 4082.16,
+        "ins": [
+         {
+          "amt": "-$7.95",
+          "d": "16 December 2024",
+          "what": "MERCHANT SECURITY FEES/NOV2024",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$15.12",
+          "d": "16 December 2024",
+          "what": "FIELD/NOV2024 PARK MYREC CARD",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$30.59",
+          "d": "16 December 2024",
+          "what": "PROG/NOV2024 PARK MYREC CARD C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4,492.00",
+          "d": "31 December 2024",
+          "what": "PROG/DEC2024 PARK MYREC CARD P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.82",
+          "d": "31 December 2024",
+          "what": "PARK REVOLVE/DEC2024 INTEREST",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$360.00",
+          "d": "31 December 2024",
+          "what": "PROG REFUND/DEC2024 PARK MYREC",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Dec",
         "out": 2622.0,
         "pays": [
@@ -673,6 +2037,38 @@
        },
        {
         "in": 5560.01,
+        "ins": [
+         {
+          "amt": "-$7.95",
+          "d": "16 January 2025",
+          "what": "SECURITY FEES/DEC2024 CHARGES",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$124.10",
+          "d": "16 January 2025",
+          "what": "PROG/DEC2024 CHARGES PARK MYRE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$5,095.00",
+          "d": "30 January 2025",
+          "what": "PROG/JAN2025 PARK MYREC CARD P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$594.00",
+          "d": "30 January 2025",
+          "what": "FIELD/JAN2025 PARK MYREC CARD",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$3.06",
+          "d": "30 January 2025",
+          "what": "PARK REVOLV/JAN2025 INTEREST U",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Jan",
         "out": 2225.8,
         "pays": [
@@ -694,6 +2090,50 @@
        },
        {
         "in": 2672.84,
+        "ins": [
+         {
+          "amt": "$2,502.00",
+          "d": "27 February 2025",
+          "what": "PROG FEES/FEB2025 PARK MYREC P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$486.00",
+          "d": "27 February 2025",
+          "what": "FIELD FEES/FEB2025 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$2.92",
+          "d": "27 February 2025",
+          "what": "PARK REVOLVING/FEB2025 INTERES",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$7.95",
+          "d": "27 February 2025",
+          "what": "SECURITY PACKAGE FEE/JAN2025 P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$16.63",
+          "d": "27 February 2025",
+          "what": "FIELD/JAN2025 PARK MYREC CARD",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$143.50",
+          "d": "27 February 2025",
+          "what": "PROG/JAN2025 PARK MYREC CARD C",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$150.00",
+          "d": "27 February 2025",
+          "what": "REFUND PROG FEES/FEB2025 PARK",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Feb",
         "out": 574.8,
         "pays": [
@@ -709,6 +2149,44 @@
        },
        {
         "in": 7323.92,
+        "ins": [
+         {
+          "amt": "$7,470.00",
+          "d": "31 March 2025",
+          "what": "PROG/MARCH2025 PARK MYREC CARD",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.43",
+          "d": "31 March 2025",
+          "what": "PARK REVOLVING/MARCH2025 INTER",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$7.95",
+          "d": "31 March 2025",
+          "what": "SEC PACKAGE/FEB2025 CHARGES PA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$13.61",
+          "d": "31 March 2025",
+          "what": "FIELD/FEB2025 CHARGES PARK MYR",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$60.00",
+          "d": "31 March 2025",
+          "what": "PROG REFUND/MARCH2025 PARK MYR",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$67.95",
+          "d": "31 March 2025",
+          "what": "PROG/FEB2025 CHARGES PARK MYRE",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Mar",
         "out": 5529.6,
         "pays": [
@@ -736,6 +2214,38 @@
        },
        {
         "in": 5063.42,
+        "ins": [
+         {
+          "amt": "$2,960.00",
+          "d": "9 April 2025",
+          "what": "YOUTH BASEBALL & SOFTBALL FEES",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$212.10",
+          "d": "17 April 2025",
+          "what": "PROG/MARCH2025 PARK MYREC CHAR",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$2,417.00",
+          "d": "30 April 2025",
+          "what": "PROGRAM/PRIL2025 PARK MYREC CA",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.52",
+          "d": "30 April 2025",
+          "what": "PARK REVOLV/APRIL2025 INTEREST",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$105.00",
+          "d": "30 April 2025",
+          "what": "REFUND PROGRAM/PRIL2025 PARK M",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Apr",
         "out": 6711.6,
         "pays": [
@@ -775,6 +2285,38 @@
        },
        {
         "in": 8969.65,
+        "ins": [
+         {
+          "amt": "$3,844.00",
+          "d": "29 May 2025",
+          "what": "PROG/MAY2025 PARK MYREC PAYMEN",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3,000.00",
+          "d": "29 May 2025",
+          "what": "FIELD/MAY2025 PARK MYREC PAYME",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$2,190.00",
+          "d": "29 May 2025",
+          "what": "BEACH/MAY2025 PARK MYREC PAYME",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.32",
+          "d": "29 May 2025",
+          "what": "PARK REV/MAY2025 INTEREST UNIB",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$67.67",
+          "d": "29 May 2025",
+          "what": "PARK PROG/APRIL2025 CHARGES PA",
+          "who": "Program Fees"
+         }
+        ],
         "m": "May",
         "out": 962.71,
         "pays": [
@@ -808,6 +2350,74 @@
        },
        {
         "in": 8530.61,
+        "ins": [
+         {
+          "amt": "$260.00",
+          "d": "4 June 2025",
+          "what": "PARK PROGRAMS/[payer masked]",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3,960.00",
+          "d": "30 June 2025",
+          "what": "PROG/JUNE2025 PARK MYREC CARD",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3,912.00",
+          "d": "30 June 2025",
+          "what": "FIELD/JUNE2025 PARK MYREC CARD",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$1,554.00",
+          "d": "30 June 2025",
+          "what": "BEACH/JUNE2025 PARK MYREC CARD",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.56",
+          "d": "30 June 2025",
+          "what": "PARK REVOLVE/JUNE2025 INTEREST",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$61.32",
+          "d": "30 June 2025",
+          "what": "BEACH/MAY2025 PARK MYREC CHARG",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$84.00",
+          "d": "30 June 2025",
+          "what": "FIELD/MAY2025 PARK MYREC CHARG",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$88.00",
+          "d": "30 June 2025",
+          "what": "REFUND FIELD/JUNE2025 PARK MYR",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$107.63",
+          "d": "30 June 2025",
+          "what": "PROG/MAY2025 PARK MYREC CHARGE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$120.00",
+          "d": "30 June 2025",
+          "what": "REFUND BEACH/JUNE2025 PARK MYR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$698.00",
+          "d": "30 June 2025",
+          "what": "REFUND PROG/JUNE2025 PARK MYRE",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jun",
         "out": 5557.16,
         "pays": [
@@ -849,6 +2459,86 @@
       "months": [
        {
         "in": 948.66,
+        "ins": [
+         {
+          "amt": "$544.00",
+          "d": "3 July 2025",
+          "what": "BEACH PASSES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$108.00",
+          "d": "16 July 2025",
+          "what": "BEACH PASS/PARK USER CHARGE",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$388.00",
+          "d": "28 July 2025",
+          "what": "BEACH PASSES/07.15.25-07.27.25",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$142.00",
+          "d": "28 July 2025",
+          "what": "BEACH PASSES/07.08.25-07.14.25",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$1,638.00",
+          "d": "31 July 2025",
+          "what": "FIELD FEES/JULY2025 PARK MYREC",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$973.00",
+          "d": "31 July 2025",
+          "what": "BEACH FEES/JULY2025 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$703.00",
+          "d": "31 July 2025",
+          "what": "PROG FEES/JULY2025 PARK MYREC",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.75",
+          "d": "31 July 2025",
+          "what": "PARK REV/JUL2025 INT UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$43.52",
+          "d": "31 July 2025",
+          "what": "BEACH/JUNE2025 CHARGES PARK MY",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$60.00",
+          "d": "31 July 2025",
+          "what": "BEACH REFUND/JULY2025 PARK MYR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$94.19",
+          "d": "31 July 2025",
+          "what": "FIELD/JUNE2025 CHARGES PARK MY",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$110.88",
+          "d": "31 July 2025",
+          "what": "PROG/JUNE2025 CHARGES PARK MYR",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$3,242.50",
+          "d": "31 July 2025",
+          "what": "RPOG REFUND/JULY2025 PARK MYRE",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Jul",
         "out": 200.0,
         "pays": [
@@ -864,6 +2554,68 @@
        },
        {
         "in": 1033.87,
+        "ins": [
+         {
+          "amt": "$80.00",
+          "d": "11 August 2025",
+          "what": "BEACH FEES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$342.00",
+          "d": "28 August 2025",
+          "what": "BEACH/AUG2025 PARK MYREC PMTS",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$260.00",
+          "d": "28 August 2025",
+          "what": "FIELD/AUG2025 PARK MYREC PMTS",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$199.00",
+          "d": "28 August 2025",
+          "what": "PROG/AUG2025 PARK MYREC CARD P",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$195.00",
+          "d": "28 August 2025",
+          "what": "BEACH PASSES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$60.00",
+          "d": "28 August 2025",
+          "what": "BEACH PASSES",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.54",
+          "d": "28 August 2025",
+          "what": "PARK REV/AUG2025 INT UNIBANK",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$19.69",
+          "d": "28 August 2025",
+          "what": "PROG/JULY2025 PARK MYREC CHARG",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$27.24",
+          "d": "28 August 2025",
+          "what": "BEACH/JULY2025 PARK MYREC CHAR",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "-$58.74",
+          "d": "28 August 2025",
+          "what": "FIELD/JULY2025 PARK MYREC CHAR",
+          "who": "Field Fees"
+         }
+        ],
         "m": "Aug",
         "out": 9565.55,
         "pays": [
@@ -897,6 +2649,38 @@
        },
        {
         "in": -27.51,
+        "ins": [
+         {
+          "amt": "-$5.57",
+          "d": "16 September 2025",
+          "what": "PROG/AUG2025 PARK MYREC CHARGE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "-$7.28",
+          "d": "16 September 2025",
+          "what": "FIELD/AUG2025 PARK MYREC CHARG",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "-$9.58",
+          "d": "16 September 2025",
+          "what": "BEACH/AUG2025 PARK MYREC CHARG",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.92",
+          "d": "30 September 2025",
+          "what": "PARK REVOLVING/SEP2025 INT UNI",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$9.00",
+          "d": "30 September 2025",
+          "what": "REFUND PROG/SEP2025 MYREC PARK",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Sep",
         "out": 0,
         "pays": [],
@@ -905,6 +2689,14 @@
        },
        {
         "in": 3.79,
+        "ins": [
+         {
+          "amt": "$3.79",
+          "d": "30 October 2025",
+          "what": "PARK REVOLV/OCT2025 INTEREST U",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Oct",
         "out": 0,
         "pays": [],
@@ -913,6 +2705,14 @@
        },
        {
         "in": 3.43,
+        "ins": [
+         {
+          "amt": "$3.43",
+          "d": "26 November 2025",
+          "what": "PARK REVOLV/NOV2025 INTEREST F",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Nov",
         "out": 0,
         "pays": [],
@@ -921,6 +2721,20 @@
        },
        {
         "in": 1282.06,
+        "ins": [
+         {
+          "amt": "$1,278.00",
+          "d": "31 December 2025",
+          "what": "DEC2025 PARK MYREC CARD PAYMEN",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4.06",
+          "d": "31 December 2025",
+          "what": "PARK REVOLV/DEC2025 INT UNIBAN",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Dec",
         "out": 0,
         "pays": [],
@@ -929,6 +2743,26 @@
        },
        {
         "in": 3851.01,
+        "ins": [
+         {
+          "amt": "-$35.78",
+          "d": "26 January 2026",
+          "what": "DEC2025 PARK MYREC CHARGES CAR",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3,883.00",
+          "d": "29 January 2026",
+          "what": "PROG/JAN2026 PARK MYREC PAYMEN",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.79",
+          "d": "29 January 2026",
+          "what": "PARK REVOLV/JAN 2026 INT UNIBA",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Jan",
         "out": 0,
         "pays": [],
@@ -937,6 +2771,20 @@
        },
        {
         "in": 303.63,
+        "ins": [
+         {
+          "amt": "$300.00",
+          "d": "26 February 2026",
+          "what": "PROG/FEB2026 PARK MYREC PAYMEN",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$3.63",
+          "d": "26 February 2026",
+          "what": "PARK REVOLV/FEB2026 INTEREST U",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Feb",
         "out": 0,
         "pays": [],
@@ -945,6 +2793,32 @@
        },
        {
         "in": 217.03,
+        "ins": [
+         {
+          "amt": "-$106.48",
+          "d": "26 March 2026",
+          "what": "PROG/JAN2026 CHARGES PARK MYRE",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$330.00",
+          "d": "31 March 2026",
+          "what": "PARK USER FEES/BRIGADE BASEBAL",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$4.15",
+          "d": "31 March 2026",
+          "what": "PARK REV/MARCH2026 INTEREST UN",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$10.64",
+          "d": "31 March 2026",
+          "what": "PROG/FEB2026 PARK MYREC CARD C",
+          "who": "Program Fees"
+         }
+        ],
         "m": "Mar",
         "out": 0,
         "pays": [],
@@ -953,6 +2827,14 @@
        },
        {
         "in": 3.89,
+        "ins": [
+         {
+          "amt": "$3.89",
+          "d": "30 April 2026",
+          "what": "PARK REV/APRIL2026 INTEREST UN",
+          "who": "Investment Income"
+         }
+        ],
         "m": "Apr",
         "out": 4396.69,
         "pays": [
@@ -974,6 +2856,26 @@
        },
        {
         "in": 8618.8,
+        "ins": [
+         {
+          "amt": "$3,260.00",
+          "d": "13 May 2026",
+          "what": "PARK FIELD FEES/LUNENBURG YOUT",
+          "who": "Field Fees"
+         },
+         {
+          "amt": "$5,355.00",
+          "d": "28 May 2026",
+          "what": "BEACH FEES/MAY2026 PARK MYREC",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$3.80",
+          "d": "28 May 2026",
+          "what": "PARK REVOLV/MAY2026 INTEREST",
+          "who": "Investment Income"
+         }
+        ],
         "m": "May",
         "out": 2579.89,
         "pays": [
@@ -1001,6 +2903,32 @@
        },
        {
         "in": 10068.79,
+        "ins": [
+         {
+          "amt": "$7,505.00",
+          "d": "30 June 2026",
+          "what": "BEACH/JUNE2026 PARK MYREC CARD",
+          "who": "Beach Fees"
+         },
+         {
+          "amt": "$2,705.00",
+          "d": "30 June 2026",
+          "what": "PROG/JUNE2026 PARK MYREC CARD",
+          "who": "Program Fees"
+         },
+         {
+          "amt": "$4.53",
+          "d": "30 June 2026",
+          "what": "PARK REVOLV/JUNE2026 INTEREST",
+          "who": "Investment Income"
+         },
+         {
+          "amt": "-$145.74",
+          "d": "30 June 2026",
+          "what": "BEACH/MAY2026 PARK MYREC CARD",
+          "who": "Beach Fees"
+         }
+        ],
         "m": "Jun",
         "out": 499.28,
         "pays": [
@@ -1055,139 +2983,73 @@
    "so": {
     "figures": {},
     "literals": [],
-    "text": "Spending comes in a few large payments; receipts peak with summer registrations."
+    "text": "Every posting behind the totals above, as the journal prints it."
    },
    "title": "The fund month by month"
   }
  ],
  "category": "parks",
  "chart": {
+  "basis": "published",
   "decimals": null,
-  "from_zero": true,
-  "kind": "bar",
-  "note": {
-   "figures": {
-    "g": {
-     "text": "$4,759",
-     "unit": "",
-     "value": 4759.16
-    }
-   },
-   "literals": [
-    "FY2023",
-    "FY2025",
-    "30"
-   ],
-   "text": "Each 30 June. From FY2023 the balance is carried by the fund’s own journal; the FY2025 annual report prints $4,759 more."
+  "end": {
+   "label": "FY2026 close",
+   "text": "$96,033",
+   "value": 96033.18
   },
-  "reference": null,
-  "series": [
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "The fund’s own journal. Money in includes refunds netted and a little interest."
+  },
+  "start": {
+   "label": "30 June 2023",
+   "text": "$58,200",
+   "value": 58199.61
+  },
+  "steps": [
    {
-    "basis": "published",
-    "mark": "bar",
-    "name": "Annual town report",
-    "texts": [
-     "$10,019",
-     "$10,654",
-     "$5,573",
-     "$3,795",
-     "$0",
-     "$0",
-     "$4,058",
-     "$11,638",
-     "$30,818",
-     "$32,463",
-     "$66,444",
-     "$66,419",
-     null,
-     null,
-     null,
-     null
-    ],
-    "values": [
-     10019.25,
-     10653.69,
-     5572.81,
-     3795.26,
-     0.0,
-     0.0,
-     4057.82,
-     11638.28,
-     30818.28,
-     32462.51,
-     66443.78,
-     66418.95,
-     null,
-     null,
-     null,
-     null
-    ]
+    "after": "$97,811",
+    "label": "In, FY2024",
+    "text": "+$39,611",
+    "value": 39611.02
    },
    {
-    "basis": "published",
-    "mark": "bar",
-    "name": "The fund’s journal",
-    "texts": [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     "$58,200",
-     "$72,564",
-     "$86,967",
-     "$96,033"
-    ],
-    "values": [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     58199.61,
-     72564.34,
-     86967.14,
-     96033.18
-    ]
+    "after": "$72,564",
+    "label": "Out, FY2024",
+    "text": "-$25,246",
+    "value": -25246.29
+   },
+   {
+    "after": "$124,909",
+    "label": "In, FY2025",
+    "text": "+$52,344",
+    "value": 52344.27
+   },
+   {
+    "after": "$86,967",
+    "label": "Out, FY2025",
+    "text": "-$37,941",
+    "value": -37941.47
+   },
+   {
+    "after": "$113,275",
+    "label": "In, FY2026",
+    "text": "+$26,307",
+    "value": 26307.45
+   },
+   {
+    "after": "$96,033",
+    "label": "Out, FY2026",
+    "text": "-$17,241",
+    "value": -17241.41
    }
   ],
-  "stacked": true,
-  "title": "Park Revolving Fund balance",
-  "type": "series",
-  "unit": "$",
-  "x": [
-   "FY2011",
-   "FY2012",
-   "FY2013",
-   "FY2014",
-   "FY2015",
-   "FY2016",
-   "FY2017",
-   "FY2018",
-   "FY2019",
-   "FY2020",
-   "FY2021",
-   "FY2022",
-   "FY2023",
-   "FY2024",
-   "FY2025",
-   "FY2026"
-  ]
+  "title": "How the fund’s balance grew",
+  "type": "bridge",
+  "unit": "$"
  },
+ "composed": true,
  "conclusions": [
   {
    "figures": {
@@ -1582,27 +3444,62 @@
    "part": "finding"
   },
   {
+   "cites": [
+    0
+   ],
    "i": 0,
    "part": "chart"
   },
   {
-   "i": 1,
-   "part": "chart"
-  },
-  {
+   "cites": [
+    0
+   ],
    "i": 0,
    "part": "block"
   },
   {
+   "cites": [
+    0
+   ],
+   "i": 2,
+   "part": "chart"
+  },
+  {
+   "cites": [
+    0
+   ],
+   "i": 1,
+   "part": "block"
+  },
+  {
+   "cites": [
+    0,
+    4,
+    5,
+    6
+   ],
    "part": "ladder"
   },
   {
    "part": "related"
   },
   {
-   "part": "ledger"
+   "cites": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6
+   ],
+   "i": 1,
+   "part": "chart"
   },
   {
+   "cites": [
+    0,
+    5
+   ],
    "i": 0,
    "part": "table"
   },
@@ -1625,10 +3522,6 @@
   {
    "href": "/docs/data/munis-parks-journal.csv",
    "label": "Lunenburg Budget Project — munis-parks-journal.csv (funds 1500 and 1523, every posting FY2023–FY2026, our redacted reading)"
-  },
-  {
-   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
-   "label": "Town of Lunenburg — Town Accountant (MUNIS) — special-revenue-fy2026-p09.xlsx"
   },
   {
    "href": "/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf",

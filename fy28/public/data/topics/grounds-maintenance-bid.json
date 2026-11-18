@@ -3,69 +3,56 @@
  "chart": {
   "basis": "stated",
   "decimals": null,
-  "highlight": [
-   "Marshall Park"
-  ],
+  "highlight": "Marshall Park",
   "note": {
    "figures": {},
    "literals": [],
-   "text": "Year one, all work, as the bid sheet totals each location. A vendor’s offer, not a payment."
+   "text": "Each park as the bid sheet totals it. A vendor’s offer, not a payment."
   },
-  "rows": [
-   {
-    "label": "Marshall Park",
-    "texts": [
-     "$20,975"
-    ],
-    "total": "$20,975",
-    "value": 20975
-   },
+  "parts": [
    {
     "label": "Fitzgerald Field",
-    "texts": [
-     "$9,875"
-    ],
-    "total": "$9,875",
+    "share": "22%",
+    "text": "$9,875",
     "value": 9875
    },
    {
     "label": "McNally Field",
-    "texts": [
-     "$7,500"
-    ],
-    "total": "$7,500",
+    "share": "17%",
+    "text": "$7,500",
     "value": 7500
    },
    {
+    "label": "Marshall Park",
+    "share": "47%",
+    "text": "$20,975",
+    "value": 20975
+   },
+   {
     "label": "Memorial Park",
-    "texts": [
-     "$2,640"
-    ],
-    "total": "$2,640",
+    "share": "6%",
+    "text": "$2,640",
     "value": 2640
    },
    {
     "label": "Town Beach",
-    "texts": [
-     "$2,300"
-    ],
-    "total": "$2,300",
+    "share": "5%",
+    "text": "$2,300",
     "value": 2300
    },
    {
     "label": "Wallis Park",
-    "texts": [
-     "$1,300"
-    ],
-    "total": "$1,300",
+    "share": "3%",
+    "text": "$1,300",
     "value": 1300
    }
   ],
-  "stack": null,
-  "title": "Grounds bid by park",
-  "type": "ranking",
+  "title": "What the year-one bid is made of",
+  "total": "$44,590",
+  "type": "parts",
   "unit": "$"
  },
+ "composed": true,
  "conclusions": [
   {
    "figures": {
@@ -228,21 +215,29 @@
    "part": "finding"
   },
   {
+   "cites": [
+    0
+   ],
    "i": 0,
    "part": "chart"
   },
   {
+   "cites": [
+    0
+   ],
+   "i": 0,
+   "part": "table"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
    "part": "ladder"
   },
   {
    "part": "related"
-  },
-  {
-   "part": "ledger"
-  },
-  {
-   "i": 0,
-   "part": "table"
   },
   {
    "part": "sources"
