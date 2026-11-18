@@ -69,6 +69,95 @@ def myrec():
     return rows
 
 
+JOURNAL = os.path.join(ROOT, 'sources', 'data', 'munis-parks-journal.csv')
+LEDGER = os.path.join(ROOT, 'sources', 'data', 'munis-ledger.csv')
+READ = os.path.join(ROOT, 'sources', 'data', 'special-revenue-read.csv')
+# Receipts whose description NAMES an organisation as the payer, in the Town's own words. A
+# receipt that names no payer is never assigned one (rule 7): `PER ANGELA C` names who recorded
+# it, not who paid, and is not here. Nor is any payer called a league unless its name says so.
+NAMED_PAYER = re.compile(r'/(LUNENBURG |BRIGADE )|^YOUTH BASEBALL')
+
+
+def money(x):
+    return round(float(x), 2)
+
+
+def journal(opening_fy26):
+    """Funds 1500 and 1523 from the journal (extract_munis_parks_journal.py: every account,
+    total and grand total tied). Signs turned to the reader's: money IN positive, money OUT
+    positive. A closing balance is OUR SUM -- the FY2023 annual report's closing carried by each
+    year's journal flows -- and it must reach the FY2026 report's opening, or nothing is written."""
+    rows = list(csv.DictReader(io.open(JOURNAL, encoding='utf-8')))
+    act = [r for r in rows if r['posts_to'] == 'actual']
+    read = [r for r in csv.DictReader(io.open(READ, encoding='utf-8'))
+            if r['fy'] == '2023' and r['fund'] == 'Park User Fees']
+    if len(read) != 1:
+        fail('the FY2023 Park User Fees row is not read exactly once')
+    years = {}
+    close = float(read[0]['forward'])
+    for fy in (2023, 2024, 2025, 2026):
+        ys = [r for r in act if r['fund'] == '1500' and r['fiscal_year'] == str(fy)]
+        by = {}
+        for r in ys:
+            if r['side'] == 'revenue':
+                by[r['account_description']] = by.get(r['account_description'], 0.0) - float(r['amount'])
+        rin = sum(-float(r['amount']) for r in ys if r['side'] == 'revenue')
+        out = sum(float(r['amount']) for r in ys if r['side'] == 'expense')
+        opening, close = close, close + rin - out
+        years[fy] = dict(fy=fy, opening=money(opening), received=money(rin), spent=money(out),
+                         closing=money(close), by_account={k: money(v) for k, v in sorted(by.items())},
+                         lines=len(ys))
+    if abs(years[2023]['closing'] - float(read[0]['carried'])) > 0.005:
+        fail('the journal does not carry FY2023 to the annual report’s closing balance')
+    if abs(years[2025]['closing'] - opening_fy26) > 0.005:
+        fail('the journal does not carry FY2025 to the FY2026 report’s opening balance')
+    pays = []
+    for r in act:
+        if r['fund'] == '1500' and r['side'] == 'expense':
+            pays.append(dict(date=r['effective_date'], fy=int(r['fiscal_year']),
+                             amount=money(r['amount']), payee=r['vendor'] or 'journal entry',
+                             what=r['description'], source=r['source']))
+    pays.sort(key=lambda p: (p['date'], -p['amount']))
+    named = [dict(date=r['effective_date'], fy=int(r['fiscal_year']),
+                    amount=money(-float(r['amount'])), account=r['account_description'],
+                    what=r['description'])
+               for r in act if r['fund'] == '1500' and r['side'] == 'revenue'
+               and NAMED_PAYER.search(r['description'])]
+    myrec25 = sum(-float(r['amount']) for r in act if r['fund'] == '1500'
+                  and r['side'] == 'revenue' and r['fiscal_year'] == '2025'
+                  and 'MYREC' in r['description'].replace(' ', ''))
+    gift = [dict(date=r['effective_date'], fy=int(r['fiscal_year']), side=r['side'],
+                 amount=money(-float(r['amount']) if r['side'] == 'revenue' else r['amount']),
+                 what=r['description'])
+            for r in act if r['fund'] == '1523']
+    return dict(years=[years[y] for y in sorted(years)], payments=pays, named_payers=named,
+                myrec_fy2025=money(myrec25), gift=gift, lines=len(rows),
+                masked=sum(1 for r in rows if r['masked']),
+                source='sources/data/munis-parks-journal.csv')
+
+
+def closed650():
+    """Department 650 in the general fund at the CLOSE (period 13), FY2025 and FY2026, summed
+    over its accounts in munis-ledger.csv (our tied reading of the Town's period-13 PDFs)."""
+    out = {}
+    cols = ('original', 'transfers', 'revised', 'expended', 'encumbered', 'available')
+    for r in csv.DictReader(io.open(LEDGER, encoding='utf-8')):
+        if (r['dept'] == '650' and r['level'] == 'account' and r['account_type'] == 'expense'
+                and r['period'] == '13' and r['fund'] == '0100'):
+            y = out.setdefault(int(r['fy']), dict({c: 0.0 for c in cols}, accounts=0, doc=r['doc_id']))
+            for c in cols:
+                y[c] += float(r[c] or 0)
+            y['accounts'] += 1
+    if sorted(out) != [2025, 2026]:
+        fail('department 650 at period 13 is not held for exactly FY2025 and FY2026: %s' % sorted(out))
+    for y in out.values():
+        for c in cols:
+            y[c] = money(y[c])
+        if abs(y['revised'] - y['expended'] - y['encumbered'] - y['available']) > 0.005:
+            fail('department 650 at the close does not foot')
+    return out
+
+
 def sources():
     want = {
         'town-ledgers/account-details/parks-program-financials-fy2025-myrec.pdf': ('MyRec Program Sales Report, FY2025', 'the department’s registration system, by emailed request'),
@@ -113,6 +202,18 @@ def build():
     bid_share = 100 * bid_total / a['revised']
     held_share = 100 * f['closing'] / a['revised']
     fy25 = [h for h in trans if h['fy'] == 2025][0]
+    jr = journal(f['opening'])
+    closed = closed650()
+    if abs(closed[2026]['revised'] - a['revised']) > 0.005:
+        fail('department 650: period 13 and period 12 no longer agree on the FY2026 revised budget')
+    jy = {y['fy']: y for y in jr['years']}
+    # THE CLOSED YEAR. The appropriation is read at period 13 now that it is held; FY2026's
+    # figures equal period 12's to the cent (checked above for the revised budget, and by the
+    # comparison below for every column), so nothing the page says moves -- only its basis.
+    for k in ('original', 'revised', 'expended', 'encumbered', 'available'):
+        if abs(closed[2026][k] - a[k]) > 0.005:
+            fail('department 650: period 13 %s differs from period 12; rewrite the parks pages' % k)
+    a = dict(a, **{k: closed[2026][k] for k in ('original', 'revised', 'expended', 'encumbered', 'available')}, period=13)
 
     # SPENT is paid plus still owed (journal.py, WHAT "SPENT" MEANS): expended + encumbered.
     # The fee fund's `spent` below is a revolving fund's money out -- cash -- and stays so.
@@ -128,13 +229,13 @@ def build():
                      'in': figure(f['revenue'], C.usd(f['revenue'])), 'out': figure(f['spent'], C.usd(f['spent'])),
                      'spent_appro': figure(spent_appro, C.usd(spent_appro))},
             figure='held', kind='measured', bearing='sizes',
-            detail='The general fund voted the department %s for FY2026 as revised and %s of it was spent through June, counting what was still owed (the FY26 budget report through June, period 12, department 650). '
+            detail='The general fund voted the department %s for FY2026 as revised and %s of it was spent by the close, counting what was still owed (the FY2026 budget report at the close, period 13, department 650). '
                    'Beside that, fund 1500 — programme and beach fees, kept in a revolving fund the department spends on the parks that raise them — carried %s at the end of March, '
                    'after %s in and %s out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.'
                    % (C.usd(a['revised']), C.usd(spent_appro), C.usd(f['closing']), C.usd(f['revenue']), C.usd(f['spent'])),
-            basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 expense report through June (period 12), department 650 summed from its accounts, expended plus encumbered.',
+            basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); sources/data/munis-gf-p13-reading.csv (the FY2026 general fund report at the close, period 13), department 650 summed from its accounts, expended plus encumbered; equal to period 12 to the cent.',
             not_shown='What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.',
-            allow=('1500', '650', 'FY26', '2026', '31', 'period 12'),
+            allow=('1500', '650', 'FY26', '2026', '31', 'period 13', 'FY2026', '12'),
         ),
         conclusion(
             id='the-fund-since-2011',
@@ -192,7 +293,7 @@ def build():
         generated_by='scripts/build_parks.py',
         about='Parks & Recreation: what the department is voted, what its own fee fund holds and has done since FY2011, what the registration system took in for FY2025, and what a contractor bid to keep the grounds.',
         grain='DOLLARS from four kinds of document kept apart: the FY26 accounting printouts (evidence), the annual reports’ fund schedule (read and tied; FY2024–FY2025 transcribed), the registration system’s sales (a printout, not the books), and a bid (stated). Not what the parks cost all in.',
-        as_of=dict(ledger='FY2026 through June (period 12), unaudited', fund=f['as_of'], myrec='1 July 2024 – 30 June 2025'),
+        as_of=dict(ledger='FY2026 at the close (period 13), unaudited', journal='July 2022 to the FY2026 close', fund=f['as_of'], myrec='1 July 2024 – 30 June 2025'),
         appropriation=dict(code='650', name=appro['name'], **{k: a[k] for k in ('original', 'revised', 'expended', 'encumbered', 'available', 'period')}),
         fund=dict(code='1500', name=fund['name'], current=f, history=fund['history']),
         gift=dict(code='1523', name=gift['name'], current=gift['current'], history=gift['history']),
@@ -200,11 +301,13 @@ def build():
         myrec=dict(program=prog, membership=mem, program_total=round(prog_total, 2), membership_total=round(mem_total, 2), total=round(all_total, 2),
                    nonres_total=round(nonres, 2), nonres_share=round(nonres_share, 1), program_n=prog_n, membership_n=mem_n),
         bid=dict(rows=bid_rows, total=bid_total),
+        journal=jr,
+        closed={str(k): v for k, v in sorted(closed.items())},
         sources=sources(),
         not_established=[
-            'What the registration system’s %s became on the town’s books — which fund it was deposited to, and when. The FY2025 special-revenue report and fund 1500’s journal would say.' % C.usd(all_total),
-            'Why the fund’s 30 June 2025 balance in the annual report (%s) is not the FY26 report’s opening balance (%s).' % (C.usd(fy25['closing']), C.usd(f['opening'])),
-            'What the parks cost to keep in any year: the FY2024 budget report with its journal detail is held as an image and not yet read; FY2025’s is not held.',
+            'Which registration-system sales make up each month’s deposit to fund 1500: the journal records the system’s deposits by month (%s of FY2025 receipts are so labelled), not sale by sale, so its %s and the fund’s %s in FY2025 fee receipts cannot be matched line for line.' % (C.usd(jr['myrec_fy2025']), C.usd(all_total), C.usd(sum(v for k, v in jy[2025]['by_account'].items() if k != 'INVESTMENT INCOME'))),
+            'Why the FY2025 annual report prints a 30 June 2025 balance of %s when the fund’s own journal carries it to %s, the FY2026 report’s opening.' % (C.usd(fy25['closing']), C.usd(jy[2025]['closing'])),
+            'What the parks cost to keep in FY2024 in the general fund: that year’s budget report is held as an image and not yet read.',
             'Whether the grounds bid was accepted.',
         ],
         conclusions=emit('parks', rows),

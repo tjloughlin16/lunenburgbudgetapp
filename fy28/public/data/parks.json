@@ -7,12 +7,13 @@
   "expended": 113350.2,
   "name": "PARKS & RECREATION",
   "original": 134433.6,
-  "period": 12,
+  "period": 13,
   "revised": 140759.43
  },
  "as_of": {
   "fund": "2026-03-31",
-  "ledger": "FY2026 through June (period 12), unaudited",
+  "journal": "July 2022 to the FY2026 close",
+  "ledger": "FY2026 at the close (period 13), unaudited",
   "myrec": "1 July 2024 – 30 June 2025"
  },
  "bid": {
@@ -50,12 +51,34 @@
   ],
   "total": 44590
  },
+ "closed": {
+  "2025": {
+   "accounts": 16,
+   "available": 11716.56,
+   "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-all.pdf",
+   "encumbered": 0.0,
+   "expended": 110102.4,
+   "original": 117246.64,
+   "revised": 121818.96,
+   "transfers": 4572.32
+  },
+  "2026": {
+   "accounts": 16,
+   "available": 23140.83,
+   "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+   "encumbered": 4268.4,
+   "expended": 113350.2,
+   "original": 134433.6,
+   "revised": 140759.43,
+   "transfers": 6325.83
+  }
+ },
  "conclusions": [
   {
-   "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 expense report through June (period 12), department 650 summed from its accounts, expended plus encumbered.",
+   "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); sources/data/munis-gf-p13-reading.csv (the FY2026 general fund report at the close, period 13), department 650 summed from its accounts, expended plus encumbered; equal to period 12 to the cent.",
    "bearing": "sizes",
    "claim": "The parks’ own fee fund held $84,818 at 31 March 2026 — 60% of the $140,759 voted for the year.",
-   "detail": "The general fund voted the department $140,759 for FY2026 as revised and $117,619 of it was spent through June, counting what was still owed (the FY26 budget report through June, period 12, department 650). Beside that, fund 1500 — programme and beach fees, kept in a revolving fund the department spends on the parks that raise them — carried $84,818 at the end of March, after $7,616 in and $9,766 out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.",
+   "detail": "The general fund voted the department $140,759 for FY2026 as revised and $117,619 of it was spent by the close, counting what was still owed (the FY2026 budget report at the close, period 13, department 650). Beside that, fund 1500 — programme and beach fees, kept in a revolving fund the department spends on the parks that raise them — carried $84,818 at the end of March, after $7,616 in and $9,766 out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.",
    "figure": "held",
    "figures": {
     "appro": {
@@ -97,7 +120,9 @@
     "FY26",
     "2026",
     "31",
-    "period 12"
+    "period 13",
+    "FY2026",
+    "12"
    ],
    "not_shown": "What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.",
    "see": [],
@@ -603,6 +628,812 @@
   "name": "PARK GIFT FUND"
  },
  "grain": "DOLLARS from four kinds of document kept apart: the FY26 accounting printouts (evidence), the annual reports’ fund schedule (read and tied; FY2024–FY2025 transcribed), the registration system’s sales (a printout, not the books), and a bid (stated). Not what the parks cost all in.",
+ "journal": {
+  "gift": [
+   {
+    "amount": 516.0,
+    "date": "2025-09-11",
+    "fy": 2026,
+    "side": "revenue",
+    "what": "PARK DEPT GIFT FUND/ST GERMAIN"
+   }
+  ],
+  "lines": 527,
+  "masked": 2,
+  "myrec_fy2025": 50639.51,
+  "named_payers": [
+   {
+    "account": "BEACH FEES",
+    "amount": 330.0,
+    "date": "2026-03-31",
+    "fy": 2026,
+    "what": "PARK USER FEES/BRIGADE BASEBAL"
+   },
+   {
+    "account": "PARK FIELD FEES",
+    "amount": 1140.0,
+    "date": "2022-08-23",
+    "fy": 2023,
+    "what": "PARK USER FEE/LUNENBURG LITTLE"
+   },
+   {
+    "account": "PARK FIELD FEES",
+    "amount": 480.0,
+    "date": "2022-11-10",
+    "fy": 2023,
+    "what": "PARK FIELD FEES/LUNENBURG LITT"
+   },
+   {
+    "account": "PARK FIELD FEES",
+    "amount": 1300.0,
+    "date": "2022-11-10",
+    "fy": 2023,
+    "what": "PARK FIELD FEES/LUNENBURG PHIL"
+   },
+   {
+    "account": "PARK FIELD FEES",
+    "amount": 3440.0,
+    "date": "2023-06-21",
+    "fy": 2023,
+    "what": "PARK USER FEES/LUNENBURG LITTL"
+   },
+   {
+    "account": "PARK FIELD FEES",
+    "amount": 2960.0,
+    "date": "2025-04-09",
+    "fy": 2025,
+    "what": "YOUTH BASEBALL & SOFTBALL FEES"
+   },
+   {
+    "account": "PARK FIELD FEES",
+    "amount": 3260.0,
+    "date": "2026-05-13",
+    "fy": 2026,
+    "what": "PARK FIELD FEES/LUNENBURG YOUT"
+   }
+  ],
+  "payments": [
+   {
+    "amount": 2995.0,
+    "date": "2022-08-02",
+    "fy": 2023,
+    "payee": "MYRECDEPT",
+    "source": "API",
+    "what": "2/1/22-1/31/23 ALL"
+   },
+   {
+    "amount": 31534.6,
+    "date": "2023-03-10",
+    "fy": 2023,
+    "payee": "DIVERSIFIED CONSTRUC",
+    "source": "API",
+    "what": "TOWN BEACH BUILDIN"
+   },
+   {
+    "amount": 3968.88,
+    "date": "2023-05-04",
+    "fy": 2023,
+    "payee": "journal entry",
+    "source": "GEN",
+    "what": "MOVE BEACH OVERAGE TO REVOLVI"
+   },
+   {
+    "amount": 2850.0,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "MYRECDEPT",
+    "source": "API",
+    "what": "MY REC ANNUAL SOFT"
+   },
+   {
+    "amount": 197.84,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH HOUSE SUPPLI"
+   },
+   {
+    "amount": 158.34,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "ROCKY'S  HARDWARE IN",
+    "source": "API",
+    "what": "SUPPLIES FOR BEACH"
+   },
+   {
+    "amount": 92.86,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH HOUSE SUPPLI"
+   },
+   {
+    "amount": 29.78,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "ROCKY'S  HARDWARE IN",
+    "source": "API",
+    "what": "SUPPLIES FOR BEACH"
+   },
+   {
+    "amount": 27.57,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "ROCKY'S  HARDWARE IN",
+    "source": "API",
+    "what": "SUPPLIES FOR BEACH"
+   },
+   {
+    "amount": 26.61,
+    "date": "2023-06-07",
+    "fy": 2023,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH HOUSE SUPPLI"
+   },
+   {
+    "amount": 3252.51,
+    "date": "2023-06-30",
+    "fy": 2023,
+    "payee": "journal entry",
+    "source": "GEN",
+    "what": "FY23 PORTION OF 1P24"
+   },
+   {
+    "amount": 9600.0,
+    "date": "2023-08-15",
+    "fy": 2024,
+    "payee": "B&B FENCE COMPANY",
+    "source": "API",
+    "what": "REPAIR NET AT MARS"
+   },
+   {
+    "amount": 1623.0,
+    "date": "2023-08-15",
+    "fy": 2024,
+    "payee": "B&B FENCE COMPANY",
+    "source": "API",
+    "what": "REPAIR NET AT MARS"
+   },
+   {
+    "amount": 8415.8,
+    "date": "2023-09-19",
+    "fy": 2024,
+    "payee": "journal entry",
+    "source": "GEN",
+    "what": "ADJ EXP TO PARK REVOLVING"
+   },
+   {
+    "amount": 3520.0,
+    "date": "2023-10-17",
+    "fy": 2024,
+    "payee": "3 STEP SPORTS LLC",
+    "source": "API",
+    "what": "SOCCER PROGRAMS"
+   },
+   {
+    "amount": -204.17,
+    "date": "2023-11-02",
+    "fy": 2024,
+    "payee": "MONTACHUSETT LAWN SP",
+    "source": "APM",
+    "what": "MARSHALL PARK AND"
+   },
+   {
+    "amount": 3470.84,
+    "date": "2023-11-07",
+    "fy": 2024,
+    "payee": "MONTACHUSETT LAWN SP",
+    "source": "API",
+    "what": "MARSHALL PARK AND"
+   },
+   {
+    "amount": 499.8,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "WILDLIFE ENCOUNTERS",
+    "source": "API",
+    "what": "JUNIOR ZOOKEEPERS"
+   },
+   {
+    "amount": 399.0,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "ELIZABETH SIMEONE",
+    "source": "API",
+    "what": "LIFEGUARD WSI CERT"
+   },
+   {
+    "amount": 350.0,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "HEINZE KATELYN",
+    "source": "API",
+    "what": "HALLOWEEN PAINT NI"
+   },
+   {
+    "amount": 200.0,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "BOWSER MASON",
+    "source": "API",
+    "what": "LIFEGUARD CERTIFIC"
+   },
+   {
+    "amount": 200.0,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "NICHOLAS CORONELLA",
+    "source": "API",
+    "what": "LIFEGUARD CERTIFIC"
+   },
+   {
+    "amount": 200.0,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "ANGELA CLEMENT",
+    "source": "API",
+    "what": "REC DIRECTOR PROGR"
+   },
+   {
+    "amount": 184.16,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH AND PARK SUP"
+   },
+   {
+    "amount": 144.53,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH AND PARK SUP"
+   },
+   {
+    "amount": 121.66,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH AND PARK SUP"
+   },
+   {
+    "amount": 106.79,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "HOME DEPOT CREDIT SE",
+    "source": "API",
+    "what": "BEACH AND PARK SUP"
+   },
+   {
+    "amount": 59.33,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "ANGELA CLEMENT",
+    "source": "API",
+    "what": "REC DIRECTOR PROGR"
+   },
+   {
+    "amount": 49.5,
+    "date": "2023-11-14",
+    "fy": 2024,
+    "payee": "ANGELA CLEMENT",
+    "source": "API",
+    "what": "REC DIRECTOR PROGR"
+   },
+   {
+    "amount": 320.0,
+    "date": "2023-11-28",
+    "fy": 2024,
+    "payee": "TRIXI PADILLA",
+    "source": "API",
+    "what": "GENTLE FLOW YOGA C"
+   },
+   {
+    "amount": 305.0,
+    "date": "2023-11-28",
+    "fy": 2024,
+    "payee": "SWANK MOTION PICTUR",
+    "source": "API",
+    "what": "CHRISTMAS MOVIE LI"
+   },
+   {
+    "amount": 1080.0,
+    "date": "2024-01-02",
+    "fy": 2024,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAM"
+   },
+   {
+    "amount": 293.2,
+    "date": "2024-01-02",
+    "fy": 2024,
+    "payee": "ALLSTAR PARTY RENTAL",
+    "source": "API",
+    "what": "MOVIE NIGHT RENTAL"
+   },
+   {
+    "amount": 2850.0,
+    "date": "2024-02-13",
+    "fy": 2024,
+    "payee": "MYRECDEPT",
+    "source": "API",
+    "what": "MYREC ANNUAL FEE A"
+   },
+   {
+    "amount": 320.0,
+    "date": "2024-02-13",
+    "fy": 2024,
+    "payee": "TRIXI PADILLA",
+    "source": "API",
+    "what": "GENTLE FLOW YOGA C"
+   },
+   {
+    "amount": 1512.0,
+    "date": "2024-03-05",
+    "fy": 2024,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAM"
+   },
+   {
+    "amount": 80.0,
+    "date": "2024-03-26",
+    "fy": 2024,
+    "payee": "TRIXI PADILLA",
+    "source": "API",
+    "what": "GENTLE FLOW YOGA C"
+   },
+   {
+    "amount": 894.0,
+    "date": "2024-05-21",
+    "fy": 2024,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAM"
+   },
+   {
+    "amount": 240.0,
+    "date": "2024-06-18",
+    "fy": 2024,
+    "payee": "TRIXI PADILLA",
+    "source": "API",
+    "what": "GENTLE FLOW YOGA C"
+   },
+   {
+    "amount": -11588.15,
+    "date": "2024-06-30",
+    "fy": 2024,
+    "payee": "journal entry",
+    "source": "GEN",
+    "what": "ADJ EXP TO FAC DEPT 9/06 MEMO"
+   },
+   {
+    "amount": 4375.0,
+    "date": "2024-09-03",
+    "fy": 2025,
+    "payee": "3 STEP SPORTS LLC",
+    "source": "API",
+    "what": "SOCCER PROGRAMS"
+   },
+   {
+    "amount": 2152.8,
+    "date": "2024-09-03",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAMS"
+   },
+   {
+    "amount": 160.0,
+    "date": "2024-09-03",
+    "fy": 2025,
+    "payee": "TRIXI PADILLA",
+    "source": "API",
+    "what": "YOGA - 7/10/24 7/1"
+   },
+   {
+    "amount": 3060.0,
+    "date": "2024-09-17",
+    "fy": 2025,
+    "payee": "JEFFREY ORNE",
+    "source": "API",
+    "what": "MULTISPORTS PROGRA"
+   },
+   {
+    "amount": 2210.0,
+    "date": "2024-09-17",
+    "fy": 2025,
+    "payee": "JEFFREY ORNE",
+    "source": "API",
+    "what": "MULTISPORTS PROGRA"
+   },
+   {
+    "amount": 450.0,
+    "date": "2024-09-17",
+    "fy": 2025,
+    "payee": "TALEWISE LLC",
+    "source": "API",
+    "what": "SCIENCE STEM PROGR"
+   },
+   {
+    "amount": 1350.0,
+    "date": "2024-10-15",
+    "fy": 2025,
+    "payee": "HEINZE KATELYN",
+    "source": "API",
+    "what": "FY25 ART PROGRAMS"
+   },
+   {
+    "amount": 1200.0,
+    "date": "2024-12-10",
+    "fy": 2025,
+    "payee": "LAKEVIEW LANDSCAPING",
+    "source": "API",
+    "what": "VETERANS PARK RENO"
+   },
+   {
+    "amount": 750.0,
+    "date": "2024-12-10",
+    "fy": 2025,
+    "payee": "HEINZE KATELYN",
+    "source": "API",
+    "what": "FY25 ART PROGRAMS"
+   },
+   {
+    "amount": 672.0,
+    "date": "2024-12-10",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "FY25 STEM PROGRAMS"
+   },
+   {
+    "amount": 1512.0,
+    "date": "2025-01-07",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAMS"
+   },
+   {
+    "amount": 713.8,
+    "date": "2025-01-14",
+    "fy": 2025,
+    "payee": "AMMIE OUELLETTE",
+    "source": "API",
+    "what": "SPRING FAIR RENTAL"
+   },
+   {
+    "amount": 574.8,
+    "date": "2025-02-04",
+    "fy": 2025,
+    "payee": "WILDLIFE ENCOUNTERS",
+    "source": "API",
+    "what": "JUNIOR ZOOKEEPER P"
+   },
+   {
+    "amount": 3065.6,
+    "date": "2025-03-19",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "FY25 STEM PROGRAMS"
+   },
+   {
+    "amount": 1960.0,
+    "date": "2025-03-19",
+    "fy": 2025,
+    "payee": "JEFFREY ORNE",
+    "source": "API",
+    "what": "MULTISPORTS PROGRA"
+   },
+   {
+    "amount": 504.0,
+    "date": "2025-03-19",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAMS - WI"
+   },
+   {
+    "amount": 1750.0,
+    "date": "2025-04-15",
+    "fy": 2025,
+    "payee": "MIKE'S MUSIC, INC.",
+    "source": "API",
+    "what": "SPRING FAIR GAME R"
+   },
+   {
+    "amount": 756.0,
+    "date": "2025-04-15",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAMS"
+   },
+   {
+    "amount": 2269.6,
+    "date": "2025-04-29",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAMS"
+   },
+   {
+    "amount": 1540.0,
+    "date": "2025-04-29",
+    "fy": 2025,
+    "payee": "JEFFREY ORNE",
+    "source": "API",
+    "what": "MULTISPORTS PROGRA"
+   },
+   {
+    "amount": 396.0,
+    "date": "2025-04-29",
+    "fy": 2025,
+    "payee": "THE THRONE DEPOT",
+    "source": "API",
+    "what": "SPRING FAIR PORTA"
+   },
+   {
+    "amount": 470.92,
+    "date": "2025-05-21",
+    "fy": 2025,
+    "payee": "ANGELA CLEMENT",
+    "source": "API",
+    "what": "SPRING FAIR SUPPLI"
+   },
+   {
+    "amount": 391.01,
+    "date": "2025-05-21",
+    "fy": 2025,
+    "payee": "W B MASON",
+    "source": "API",
+    "what": "SPRING FAIR SUPPLI"
+   },
+   {
+    "amount": 93.9,
+    "date": "2025-05-21",
+    "fy": 2025,
+    "payee": "W B MASON",
+    "source": "API",
+    "what": "SPRING FAIR SUPPLI"
+   },
+   {
+    "amount": 6.88,
+    "date": "2025-05-21",
+    "fy": 2025,
+    "payee": "W B MASON",
+    "source": "API",
+    "what": "SPRING FAIR SUPPLI"
+   },
+   {
+    "amount": 399.0,
+    "date": "2025-06-10",
+    "fy": 2025,
+    "payee": "U.S. BANK NATIONAL A",
+    "source": "API",
+    "what": "WSI CERTIFICATION"
+   },
+   {
+    "amount": 399.0,
+    "date": "2025-06-10",
+    "fy": 2025,
+    "payee": "U.S. BANK NATIONAL A",
+    "source": "API",
+    "what": "WSI CERTIFICATION"
+   },
+   {
+    "amount": 3210.8,
+    "date": "2025-06-30",
+    "fy": 2025,
+    "payee": "CU EDUCATIONAL SERVI",
+    "source": "API",
+    "what": "STEM PROGRAMS WEEK"
+   },
+   {
+    "amount": 1548.36,
+    "date": "2025-06-30",
+    "fy": 2025,
+    "payee": "LANSING BUILDING PRO",
+    "source": "API",
+    "what": "VETERANS PARK BENC"
+   },
+   {
+    "amount": 200.0,
+    "date": "2025-07-22",
+    "fy": 2026,
+    "payee": "U.S. BANK NATIONAL A",
+    "source": "API",
+    "what": "RED CROSS SWIM LES"
+   },
+   {
+    "amount": 4680.0,
+    "date": "2025-08-05",
+    "fy": 2026,
+    "payee": "3 STEP SPORTS LLC",
+    "source": "API",
+    "what": "SOCCER CAMP"
+   },
+   {
+    "amount": 3047.72,
+    "date": "2025-08-05",
+    "fy": 2026,
+    "payee": "SITE SPECIFICS LLC",
+    "source": "API",
+    "what": "PLAYGROUND RENOVAT"
+   },
+   {
+    "amount": 1800.0,
+    "date": "2025-08-19",
+    "fy": 2026,
+    "payee": "JEFFREY ORNE",
+    "source": "API",
+    "what": "MULTISPORTS PROGRA"
+   },
+   {
+    "amount": 37.83,
+    "date": "2025-08-19",
+    "fy": 2026,
+    "payee": "ANGELA CLEMENT",
+    "source": "API",
+    "what": "REIMBURSE CARDBOAR"
+   },
+   {
+    "amount": 2500.0,
+    "date": "2026-04-16",
+    "fy": 2026,
+    "payee": "DUNETZ RAY LANDSCAPE",
+    "source": "API",
+    "what": "MARSHALL PARK SKAT"
+   },
+   {
+    "amount": 1896.69,
+    "date": "2026-04-16",
+    "fy": 2026,
+    "payee": "ADD-A-SIGN LLC",
+    "source": "API",
+    "what": "SIGN FOR PARL"
+   },
+   {
+    "amount": 2064.89,
+    "date": "2026-05-05",
+    "fy": 2026,
+    "payee": "DOORS UNLIMITED INC",
+    "source": "API",
+    "what": "DOORS AT WALLIS PA"
+   },
+   {
+    "amount": 200.0,
+    "date": "2026-05-05",
+    "fy": 2026,
+    "payee": "MWD ELECTRIC INC",
+    "source": "API",
+    "what": "ELECTRICITY WORK F"
+   },
+   {
+    "amount": 315.0,
+    "date": "2026-05-19",
+    "fy": 2026,
+    "payee": "U.S. BANK NATIONAL A",
+    "source": "API",
+    "what": "P-CARD - PARKS - Y"
+   },
+   {
+    "amount": 96.75,
+    "date": "2026-06-18",
+    "fy": 2026,
+    "payee": "CENTRAL FLAGPOLE AND",
+    "source": "API",
+    "what": "FLAGS FOR MCNALLY"
+   },
+   {
+    "amount": 200.0,
+    "date": "2026-06-30",
+    "fy": 2026,
+    "payee": "ALL PRO CLEANING",
+    "source": "API",
+    "what": "CLEANING OF THE BE"
+   },
+   {
+    "amount": 112.89,
+    "date": "2026-06-30",
+    "fy": 2026,
+    "payee": "AMAZON.COM",
+    "source": "API",
+    "what": "SUPPLIES FOR PARK"
+   },
+   {
+    "amount": 72.98,
+    "date": "2026-06-30",
+    "fy": 2026,
+    "payee": "CENTRAL FLAGPOLE AND",
+    "source": "API",
+    "what": "FLAGS FOR THE PARK"
+   },
+   {
+    "amount": 12.91,
+    "date": "2026-06-30",
+    "fy": 2026,
+    "payee": "W B MASON",
+    "source": "API",
+    "what": "OFFICE SUPPLIES FO"
+   },
+   {
+    "amount": 3.75,
+    "date": "2026-06-30",
+    "fy": 2026,
+    "payee": "W B MASON",
+    "source": "API",
+    "what": "OFFICE SUPPLIES FO"
+   }
+  ],
+  "source": "sources/data/munis-parks-journal.csv",
+  "years": [
+   {
+    "by_account": {
+     "BEACH FEES": 16893.7,
+     "INVESTMENT INCOME": 25.06,
+     "PARK FIELD FEES": 6360.0,
+     "PARK PROGRAM FEES": 13635.89
+    },
+    "closing": 58199.61,
+    "fy": 2023,
+    "lines": 60,
+    "opening": 66418.95,
+    "received": 36914.65,
+    "spent": 45133.99
+   },
+   {
+    "by_account": {
+     "BEACH FEES": 7333.93,
+     "INVESTMENT INCOME": 39.3,
+     "PARK FIELD FEES": 13353.06,
+     "PARK PROGRAM FEES": 18884.73
+    },
+    "closing": 72564.34,
+    "fy": 2024,
+    "lines": 121,
+    "opening": 58199.61,
+    "received": 39611.02,
+    "spent": 25246.29
+   },
+   {
+    "by_account": {
+     "BEACH FEES": 5350.64,
+     "INVESTMENT INCOME": 44.11,
+     "PARK FIELD FEES": 12453.27,
+     "PARK PROGRAM FEES": 34496.25
+    },
+    "closing": 86967.14,
+    "fy": 2025,
+    "lines": 111,
+    "opening": 72564.34,
+    "received": 52344.27,
+    "spent": 37941.47
+   },
+   {
+    "by_account": {
+     "BEACH FEES": 15735.92,
+     "INVESTMENT INCOME": 46.28,
+     "PARK FIELD FEES": 4997.79,
+     "PARK PROGRAM FEES": 5527.46
+    },
+    "closing": 96033.18,
+    "fy": 2026,
+    "lines": 65,
+    "opening": 86967.14,
+    "received": 26307.45,
+    "spent": 17241.41
+   }
+  ]
+ },
  "myrec": {
   "membership": [
    {
@@ -869,9 +1700,9 @@
   "total": 47783.5
  },
  "not_established": [
-  "What the registration system’s $47,784 became on the town’s books — which fund it was deposited to, and when. The FY2025 special-revenue report and fund 1500’s journal would say.",
-  "Why the fund’s 30 June 2025 balance in the annual report ($91,726) is not the FY26 report’s opening balance ($86,967).",
-  "What the parks cost to keep in any year: the FY2024 budget report with its journal detail is held as an image and not yet read; FY2025’s is not held.",
+  "Which registration-system sales make up each month’s deposit to fund 1500: the journal records the system’s deposits by month ($50,640 of FY2025 receipts are so labelled), not sale by sale, so its $47,784 and the fund’s $52,300 in FY2025 fee receipts cannot be matched line for line.",
+  "Why the FY2025 annual report prints a 30 June 2025 balance of $91,726 when the fund’s own journal carries it to $86,967, the FY2026 report’s opening.",
+  "What the parks cost to keep in FY2024 in the general fund: that year’s budget report is held as an image and not yet read.",
   "Whether the grounds bid was accepted."
  ],
  "other_funds": [
