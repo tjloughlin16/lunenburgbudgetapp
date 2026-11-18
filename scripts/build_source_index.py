@@ -1368,6 +1368,14 @@ GROUPS = [
              'the Finance Committee’s files and is kept there, with that delivery. This '
              'note says where, quotes the report’s own header, and says it is not yet '
              'read.'),
+            ('town-ledgers/expenses/PROVENANCE-fy2025-fy2026-p13-gf-all.md',
+             'Where the town general fund year-end reports for FY2025 and FY2026 came from', 2,
+             'Written by us. The Town’s answer to items 1 and 2 of the 5 November 2026 '
+             'records request: the whole general fund at period 13 for FY2025 and FY2026, '
+             'and the journal of the parks revolving and gift funds. All three PDFs are held '
+             'privately until our review clears them. Says what each report prints about '
+             'itself, the filenames as delivered with a sha256 for each, and that the two '
+             'general fund printouts have no readable text layer and need OCR.'),
             ('town-ledgers/expenses/PROVENANCE-fy2026-p12.md',
              'Where the FY26 period 12 report came from', 2,
              'The email, the sender, the date, both filenames as sent, and the sha256 of '

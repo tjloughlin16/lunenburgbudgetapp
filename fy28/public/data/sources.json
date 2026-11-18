@@ -60,7 +60,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 131 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 52 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 131 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -2677,9 +2677,9 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 79693,
+     "bytes": 80967,
      "url": "/docs/data/redactions.csv",
-     "count": 110,
+     "count": 113,
      "unit": "rows",
      "textUrl": "/docs/data/redactions.csv"
     },
@@ -3237,6 +3237,19 @@
      "count": 65,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-parks-2025.md"
+    },
+    {
+     "path": "town-ledgers/expenses/PROVENANCE-fy2025-fy2026-p13-gf-all.md",
+     "title": "Where the town general fund year-end reports for FY2025 and FY2026 came from",
+     "stars": 2,
+     "what": "Written by us. The Town’s answer to items 1 and 2 of the 5 November 2026 records request: the whole general fund at period 13 for FY2025 and FY2026, and the journal of the parks revolving and gift funds. All three PDFs are held privately until our review clears them. Says what each report prints about itself, the filenames as delivered with a sha256 for each, and that the two general fund printouts have no readable text layer and need OCR.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 4066,
+     "url": "/docs/town-ledgers/expenses/PROVENANCE-fy2025-fy2026-p13-gf-all.md",
+     "count": 62,
+     "unit": "lines",
+     "textUrl": "/docs/town-ledgers/expenses/PROVENANCE-fy2025-fy2026-p13-gf-all.md"
     },
     {
      "path": "town-ledgers/expenses/PROVENANCE-fy2024-p13-school.md",
@@ -9082,9 +9095,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 1306268,
+     "bytes": 1306313,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 18608,
+     "count": 18609,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -69975,10 +69988,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 6236,
+  "documents": 6237,
   "groups": 33,
-  "bytes": 7425263362,
+  "bytes": 7425268747,
   "loadBearing": 221
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1017 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1017 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }
