@@ -31,6 +31,7 @@ Over-masking hides exactly the spending this project exists to show.
 | what | including |
 |---|---|
 | **Recipients of school services**: a child, or a parent or family acting for their child | refunds, mileage for their own child, fees, NSF checks, tuition reimbursements |
+| **A private person paying a town programme fee** (parks and recreation, 18 November 2026) | a receipt description naming the payer, and its receipt number. Leagues and organisations paying field fees, and donors to a gift fund, are shown |
 | **Anything that points back to them** | initials, name fragments, check or invoice numbers the Town's warrant would resolve to a payee, a purchase-order sibling row |
 | **Quasi-identifiers that single someone out** | a job title plus hire date in a department of four names that person; if the rows cannot be made anonymous, the document is withheld |
 | **Student names from scraped athletics schedules** | stripped at fetch time, so they never land on disk; publish the extracted schedule facts, never the pages |

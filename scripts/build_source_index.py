@@ -4234,6 +4234,22 @@ GROUPS = [
              'scripts/extract_munis_textract_private.py, which refuses to write unless every '
              'row’s own arithmetic holds and each year sums to its printed GRAND TOTAL to '
              'the cent; flows into munis-ledger.csv.'),
+            ('data/munis-parks-journal.csv',
+             'The parks funds, every posting, FY2023 to FY2026', 2,
+             'Every journal line in fund 1500 (Park Revolving: beach, field and programme fees '
+             'in, programme and park costs out) and fund 1500’s neighbour 1523 (Park Gift), '
+             'from July 2022 to the FY2026 close: date, journal, source, amount, vendor, '
+             'purchase order or receipt, and description. Our redacted reading of the Town’s '
+             '17-page MUNIS journal report, which stays private: two receipts name a private '
+             'person paying a programme fee and read [payer masked]. Built by '
+             'scripts/extract_munis_parks_journal.py, which refuses to write unless every '
+             'account, every printed total and the grand total close to the cent, and fund '
+             '1500’s FY2023 equals the annual town report.'),
+            ('data/munis-parks-journal-accounts.csv',
+             'The parks funds’ 18 accounts, FY2026 as the journal report prints them', 1,
+             'One row per account in the same report: fund, section, the FY2026 original '
+             'appropriation, transfers, revised budget, actual, encumbrances and available it '
+             'prints, and how many journal lines sit under it.'),
             ('data/munis-gf-p13-reading-totals.csv',
              'The GRAND TOTAL line of each of those two reports, as printed', 1,
              'One row per report: the six figures its last page prints. munis-ledger.csv is '
