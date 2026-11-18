@@ -4224,6 +4224,20 @@ GROUPS = [
              'pictures; this is our reading of their 141 journal lines, with every child and '
              'private person already masked. The extractor proves it: the three accounts those '
              'pages fall in close to the cent only with these lines.'),
+            ('data/munis-gf-p13-reading.csv',
+             'The town general fund at the FY2025 and FY2026 close, 1,160 accounts each', 2,
+             'Written by us. Every account of the Town’s period-13 general fund budget '
+             'reports for FY2025 and FY2026: original appropriation, transfers, revised budget, '
+             'expended, encumbered and available. The Town sent only PDFs whose text cannot be '
+             'copied out, so this is our reading of the printed pages (Amazon Textract), and '
+             'the PDFs stay private because every page prints a MUNIS login. Built by '
+             'scripts/extract_munis_textract_private.py, which refuses to write unless every '
+             'row’s own arithmetic holds and each year sums to its printed GRAND TOTAL to '
+             'the cent; flows into munis-ledger.csv.'),
+            ('data/munis-gf-p13-reading-totals.csv',
+             'The GRAND TOTAL line of each of those two reports, as printed', 1,
+             'One row per report: the six figures its last page prints. munis-ledger.csv is '
+             'refused if the reading above stops summing to them.'),
             ('data/munis-ledger.csv',
              'Every MUNIS budget report we hold, one table', 3,
              'The Town Accountant\u2019s year-to-date budget reports \u2014 expenditures '

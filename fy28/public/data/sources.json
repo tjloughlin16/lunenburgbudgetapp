@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17",
+ "generated": "2026-11-18",
  "origins": [
   {
    "id": "school",
@@ -2677,7 +2677,7 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 80967,
+     "bytes": 82219,
      "url": "/docs/data/redactions.csv",
      "count": 113,
      "unit": "rows",
@@ -8953,7 +8953,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 135540736,
+     "bytes": 136970240,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -9174,6 +9174,18 @@
      "textUrl": "/docs/data/munis-school-ytd.csv"
     },
     {
+     "path": "data/munis-ledger.csv",
+     "title": "Every MUNIS budget report we hold, one table",
+     "stars": 3,
+     "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
+     "kind": "Data",
+     "bytes": 781639,
+     "url": "/docs/data/munis-ledger.csv",
+     "count": 3303,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-ledger.csv"
+    },
+    {
      "path": "data/dese-radar.csv",
      "title": "DESE’s own figures, every district, FY2009–FY2025",
      "stars": 3,
@@ -9328,18 +9340,6 @@
      "count": 1194,
      "unit": "rows",
      "textUrl": "/docs/data/dese-enrollment.csv"
-    },
-    {
-     "path": "data/munis-ledger.csv",
-     "title": "Every MUNIS budget report we hold, one table",
-     "stars": 3,
-     "what": "The Town Accountant’s year-to-date budget reports — expenditures and revenues, general fund and enterprise funds — parsed into one normalised table by scripts/extract_munis_report.py, which reads the format rather than one file, so reports for other years load with no new code. Each report reconciles to its own printed GRAND TOTAL before it is written. Revenue is kept NEGATIVE exactly as MUNIS prints it. Two things this found: ef-solid-waste-expenditures-fy26-q3.txt is not an expenditure report — it declares Account type Revenue and duplicates the file named -revenue-, so no solid waste expenditure report is held at all; and the sewer report covers four funds whose headers our text extraction runs together, so a fund is positional rather than per-row.",
-     "kind": "Data",
-     "bytes": 230432,
-     "url": "/docs/data/munis-ledger.csv",
-     "count": 983,
-     "unit": "rows",
-     "textUrl": "/docs/data/munis-ledger.csv"
     },
     {
      "path": "data/line-history-disagreements.csv",
@@ -9997,9 +9997,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1799109,
+     "bytes": 1799865,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12319,
+     "count": 12324,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -10074,6 +10074,18 @@
      "count": 4377,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
+    },
+    {
+     "path": "data/munis-gf-p13-reading.csv",
+     "title": "The town general fund at the FY2025 and FY2026 close, 1,160 accounts each",
+     "stars": 2,
+     "what": "Written by us. Every account of the Town’s period-13 general fund budget reports for FY2025 and FY2026: original appropriation, transfers, revised budget, expended, encumbered and available. The Town sent only PDFs whose text cannot be copied out, so this is our reading of the printed pages (Amazon Textract), and the PDFs stay private because every page prints a MUNIS login. Built by scripts/extract_munis_textract_private.py, which refuses to write unless every row’s own arithmetic holds and each year sums to its printed GRAND TOTAL to the cent; flows into munis-ledger.csv.",
+     "kind": "Data",
+     "bytes": 551419,
+     "url": "/docs/data/munis-gf-p13-reading.csv",
+     "count": 2320,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-gf-p13-reading.csv"
     },
     {
      "path": "data/school-target-fy26.csv",
@@ -10261,9 +10273,9 @@
      "stars": 2,
      "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 41643,
+     "bytes": 42452,
      "url": "/docs/data/meeting-watch-events.csv",
-     "count": 254,
+     "count": 259,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-events.csv"
     },
@@ -10477,9 +10489,9 @@
      "stars": 2,
      "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
      "kind": "Data",
-     "bytes": 9135,
+     "bytes": 9158,
      "url": "/docs/data/source-checks.csv",
-     "count": 308,
+     "count": 309,
      "unit": "rows",
      "textUrl": "/docs/data/source-checks.csv"
     },
@@ -10647,9 +10659,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 2072,
+     "bytes": 2103,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 64,
+     "count": 65,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -11182,6 +11194,18 @@
      "count": 2,
      "unit": "rows",
      "textUrl": "/docs/data/prior-year-bills-fincom.csv"
+    },
+    {
+     "path": "data/munis-gf-p13-reading-totals.csv",
+     "title": "The GRAND TOTAL line of each of those two reports, as printed",
+     "stars": 1,
+     "what": "One row per report: the six figures its last page prints. munis-ledger.csv is refused if the reading above stops summing to them.",
+     "kind": "Data",
+     "bytes": 374,
+     "url": "/docs/data/munis-gf-p13-reading-totals.csv",
+     "count": 2,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-gf-p13-reading-totals.csv"
     },
     {
      "path": "data/school-enrollment-lps-staff.csv",
@@ -69776,7 +69800,7 @@
    },
    {
     "name": "Planning Board",
-    "documents": 1358
+    "documents": 1360
    },
    {
     "name": "Finance Committee",
@@ -69784,7 +69808,7 @@
    },
    {
     "name": "Sewer Commission",
-    "documents": 750
+    "documents": 752
    },
    {
     "name": "Conservation Commission",
@@ -69796,7 +69820,7 @@
    },
    {
     "name": "Board Of Assessors",
-    "documents": 500
+    "documents": 501
    },
    {
     "name": "Library Board Of Trustees",
@@ -69976,10 +70000,10 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12325,
-  "fetched": 12275,
+  "listed": 12330,
+  "fetched": 12280,
   "agendas": 7538,
-  "minutes": 4787,
+  "minutes": 4792,
   "from": "2009-01-05",
   "to": "2026-12-09",
   "textFiles": 12277,
@@ -69988,9 +70012,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 6237,
+  "documents": 6239,
   "groups": 33,
-  "bytes": 7425268747,
+  "bytes": 7427804122,
   "loadBearing": 221
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1017 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

@@ -304,9 +304,86 @@ def check(accounts, totals):
     return fails
 
 
+# Corrections read off the RENDERED page, each with where. Never inferred.
+DESCRIPTION_OVERRIDES = {
+    # Textract returned Hebrew letters; the page prints CCLT AND CCL (FY2026 p248, FY2025 p247).
+    '0100-3-300-2110-99-6-10-1-511033': 'CCLT AND CCL',
+}
+
+# Which archive document each PDF is. The PDFs stay private (every page prints the report
+# user's MUNIS login); what is published is OUR reading, below.
+DOCS = {
+    'f4bb0303980bba712282a3d3fe71e7330cc7f7ef75db10f2053a7e050634c340':
+        'sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf',
+    '313b0e2e43d3d5cb89561a54ecc3c89f6b346bb5209ac3473ea18cee3e5b32f6':
+        'sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-all.pdf',
+}
+READING = os.path.join(ROOT, 'sources', 'data', 'munis-gf-p13-reading.csv')
+READING_TOTALS = os.path.join(ROOT, 'sources', 'data', 'munis-gf-p13-reading-totals.csv')
+REDACTIONS = os.path.join(ROOT, 'sources', 'data', 'redactions.csv')
+LEDGER_FIELDS = ['doc_id', 'fy', 'period', 'fund', 'fund_name', 'funds_covered', 'account_type',
+                 'level', 'dept', 'org', 'object', 'account', 'function', 'name',
+                 'original', 'transfers', 'revised', 'expended', 'encumbered', 'available',
+                 'pct_used', 'totals_only', 'suppress_zero', 'rounded_columns']
+
+
+def cleaned(a):
+    """The two corrections every published row gets: org codes in MUNIS's own upper case
+    (Textract read `S2044312` as `s2044312` on 8 accounts; the p12 workbook prints them upper),
+    and the declared description overrides."""
+    org = (a['org'] or ('', ''))[0].upper()
+    desc = DESCRIPTION_OVERRIDES.get(a['account'], a['description'])
+    if any(ord(ch) > 127 for ch in desc):
+        sys.exit('non-ASCII description with no override: %s %r' % (a['account'], desc))
+    return org, desc
+
+
+def publishable(sha):
+    """The gate: redactions.csv must name our reading as the public copy of this raw."""
+    for r in csv.DictReader(open(REDACTIONS, newline='', encoding='utf-8')):
+        if r['raw_sha256'] == sha:
+            return r['public_key'] == 'data/munis-gf-p13-reading.csv'
+    return False
+
+
+def publish(results):
+    rows, tots = [], []
+    for sha, accounts, grand, meta in results:
+        if not publishable(sha):
+            sys.exit('redactions.csv does not name data/munis-gf-p13-reading.csv as the public '
+                     'copy of %s; nothing published (CLAUDE.md 13e)' % sha[:12])
+        fy, period = meta['for']
+        doc = DOCS[sha]
+        for a in accounts:
+            org, desc = cleaned(a)
+            seg = a['account'].split('-')
+            pct = a['pct'].rstrip('%')
+            rows.append({'doc_id': doc, 'fy': fy, 'period': period, 'fund': seg[0],
+                         'fund_name': 'GENERAL FUND', 'funds_covered': '', 'account_type': 'expense',
+                         'level': 'account', 'dept': seg[2], 'org': org, 'object': seg[-1],
+                         'account': a['account'], 'function': seg[3], 'name': desc,
+                         **{c: str(a[c]) for c in COLS}, 'pct_used': pct, 'totals_only': 0,
+                         'suppress_zero': 0, 'rounded_columns': ''})
+        tots.append({'doc_id': doc, 'fy': fy, 'period': period, 'page': grand['page'],
+                     **{c: str(grand[c]) for c in COLS}})
+    with open(READING, 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=LEDGER_FIELDS)
+        w.writeheader()
+        w.writerows(rows)
+    with open(READING_TOTALS, 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=['doc_id', 'fy', 'period', 'page'] + COLS)
+        w.writeheader()
+        w.writerows(tots)
+    print('published %s (%d rows) and %s' % (os.path.relpath(READING, ROOT), len(rows),
+                                             os.path.relpath(READING_TOTALS, ROOT)))
+
+
 def main():
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    do_publish = '--publish' in sys.argv
     os.makedirs(OUT, exist_ok=True)
-    for pdf in sys.argv[1:]:
+    results, refused = [], False
+    for pdf in args:
         sha, edges, accounts, totals, residue, meta, low = parse(pdf)
         stem = os.path.splitext(os.path.basename(pdf))[0]
         print('== %s  sha256 %s  FOR %s' % (pdf, sha[:12], meta.get('for')))
@@ -322,9 +399,15 @@ def main():
         fails = check(accounts, totals)
         for f in fails[:20]:
             print('   FAIL p%s %s: %s' % f)
+        refused = refused or bool(fails) or bool(residue)
         sums = {c: sum((a[c] or 0) for a in accounts) for c in COLS}
         print('   sum of accounts: ' + '  '.join('%s %s' % (c, f'{sums[c]:,}') for c in COLS))
         last_fund = [t for t in totals if t['name'] in ('GENERAL FUND', 'GRAND TOTAL')]
+        grands = [t for t in totals if t['name'] == 'GRAND TOTAL']
+        if len(grands) != 1 or not all(grands[0][c] == sums[c] for c in COLS):
+            refused = True
+        else:
+            results.append((sha, accounts, grands[0], meta))
         for t in last_fund[-3:]:
             ok = all(t[c] == sums[c] for c in COLS)
             print('   printed TOTAL %-13s p%-3d %s  -> %s' % (
@@ -350,6 +433,10 @@ def main():
                 f.write('p%s\t%s\n' % r)
             for r in low:
                 f.write('p%s\tlow confidence\t%s\t%s\n' % r)
+    if do_publish:
+        if refused:
+            sys.exit('a report failed a check; nothing published')
+        publish(results)
 
 
 if __name__ == '__main__':

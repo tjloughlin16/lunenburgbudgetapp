@@ -315,6 +315,29 @@ def main():
         print('       grain: %s' % grain)
         out.extend(rep['rows'])
 
+    # The general fund at period 13, FY2025 and FY2026: the Town sent only PDFs whose text layer
+    # is glyph ids, so there is no .txt here to parse. What is published is OUR reading of them
+    # (Textract, rebuilt by scripts/extract_munis_textract_private.py --publish; redactions.csv
+    # names it as their public copy). It is trusted only if it still ties, column by column, to
+    # the GRAND TOTAL the printed report states, carried beside it.
+    reading = os.path.join(ROOT, 'sources', 'data', 'munis-gf-p13-reading.csv')
+    totals = os.path.join(ROOT, 'sources', 'data', 'munis-gf-p13-reading-totals.csv')
+    if os.path.exists(reading):
+        from decimal import Decimal
+        rrows = list(csv.DictReader(open(reading, newline='', encoding='utf-8')))
+        for t in csv.DictReader(open(totals, newline='', encoding='utf-8')):
+            mine = [r for r in rrows if r['doc_id'] == t['doc_id']]
+            cols = ('original', 'transfers', 'revised', 'expended', 'encumbered', 'available')
+            off = [c for c in cols if sum(Decimal(r[c]) for r in mine) != Decimal(t[c])]
+            note = ('ties GRAND TOTAL p%s, all six columns' % t['page'] if not off
+                    else 'off in ' + ', '.join(off))
+            print('  %-4s %-46s %s %4d rows  %s' % ('expe', os.path.basename(t['doc_id']),
+                  f"FY{t['fy']} P{t['period']}", len(mine), note if not off else 'MISMATCH ' + note))
+            print('       grain: ACCOUNT (our Textract reading; the PDF is private)')
+            if off:
+                bad.append((t['doc_id'], note))
+            out.extend(mine)
+
     if bad and args.check:
         print('\n%d report(s) do not reconcile; nothing written' % len(bad))
         return 1
