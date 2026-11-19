@@ -43,6 +43,20 @@ or table to an old page means composing it; a composed page leaves the list
 (`python3 scripts/freeze_legacy_flow.py --prune`). The list only shrinks. A data refresh moves
 values, not shape, so it never trips this.
 
+## Every fund and every account has its own page
+
+TJ, 19 November 2026, finding the Parks funds had nowhere to drop into: *"i thought we have a rule
+that every fund/account gets its detailed page for navigation?"* ... *"this needs to be a pattern
+for ALL funds"*. The school side already works this way (`/school-funds/<slug>`,
+`/school-lines/<slug>`, one renderer `pages/FyItem.tsx`, payloads from `build_fy_breakdown.py`).
+
+- **Any fund or account a page names gets a detail page**, town or school: what it is, its money
+  in and out by year, and its postings where a journal is held. A page that mentions fund 1500
+  links to fund 1500's page.
+- **One renderer, many payloads** (rule 7d). A new fund is a new payload, never a new component.
+- **Where no journal is held, the page says so** and registers the gap (rule 7c), rather than
+  the fund having no page at all.
+
 ## The split: what binds and what is yours
 
 | integrity: fixed, every page, every block, enforced | shape: the author's call |
