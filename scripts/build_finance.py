@@ -59,8 +59,18 @@ _CODE_PATTERNS = (re.compile(r'#\s*(\d{3})\b'),
                   re.compile(r'^FY\s?\d{2}\s+(\d{3})\b', re.I))
 
 
-MEASURE_PAGE = {'gf-650': 'parks-budget', 'sr-1500': 'park-revolving-fund',
-                'sr-1306': 'school-facilities-fund', 'sr-1545': 'artificial-turf-fund'}
+MEASURE_PAGE = {'sr-1306': 'school-facilities-fund', 'sr-1545': 'artificial-turf-fund'}
+# EVERY FUND AND ACCOUNT HAS ITS OWN PAGE (TJ, 19 November 2026: "i thought we have a rule that
+# every fund/account gets its detailed page for navigation?"). A measure with a town fund page
+# (pages/TownFund.tsx) links to it, read off the index its generator writes, so a new fund page
+# links itself here the day it is built. The index wins over MEASURE_PAGE.
+TOWN_FUND_INDEX = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-funds', 'index.json')
+
+
+def town_fund_pages():
+    if not os.path.exists(TOWN_FUND_INDEX):
+        return {}
+    return {x['measure']: x['path'] for x in json.load(io.open(TOWN_FUND_INDEX, encoding='utf-8'))['items']}
 
 
 def dese_names():
@@ -299,6 +309,7 @@ def build():
 
     dcodes, dyears = dese_names()
     measures = {}
+    FUND_PAGES = town_fund_pages()
     for r in reg:
         m = {k: r[k] for k in r}
         if r['kind'] == 'special-revenue':
@@ -351,7 +362,9 @@ def build():
         m['notes'] = notes
         # The report page for this measure, where one exists. TJ, 5 November 2026: the finance page
         # and the reports must point at each other.
-        if r['id'] in MEASURE_PAGE:
+        if r['id'] in FUND_PAGES:
+            m['page'] = FUND_PAGES[r['id']]
+        elif r['id'] in MEASURE_PAGE:
             m['page'] = TOPIC_REG.path(MEASURE_PAGE[r['id']])
         measures[r['id']] = m
 

@@ -1302,10 +1302,22 @@
    "title": "Boards and committees"
   },
   {
-   "answer": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $84,818 at 31 March 2026, outside the vote.",
+   "answer": "Town Meeting voted the Parks department $134,434 for FY2026. Beside it, a fee fund held $96,033 at the close, outside the vote.",
    "area": "town",
    "board": "parks-commission",
    "elsewhere": [
+    {
+     "href": "/town-funds/park-revolving-1500",
+     "title": "Fund 1500, every posting"
+    },
+    {
+     "href": "/town-funds/park-gift-1523",
+     "title": "Fund 1523, every posting"
+    },
+    {
+     "href": "/town-lines/parks-recreation-650",
+     "title": "Department 650, every account"
+    },
     {
      "href": "/athletics",
      "title": "Athletics costs"
@@ -1316,6 +1328,7 @@
      "section": null,
      "title": "The department",
      "topics": [
+      "parks-year-changes",
       "parks-budget",
       "parks-spending",
       "park-revolving-fund",
@@ -1326,6 +1339,7 @@
      "section": null,
      "title": "Programs and grounds",
      "topics": [
+      "parks-programmes",
       "registration-sales",
       "grounds-maintenance-bid"
      ]
@@ -4157,11 +4171,11 @@
    "title": "Paraprofessionals over time"
   },
   "park-revolving-fund": {
-   "finding": "The parks’ fee fund held $84,818 at 31 March 2026; it ended FY2015 and FY2016 at zero.",
+   "finding": "The parks’ fee fund took in $26,261 in FY2026, half of FY2025’s $52,300, and still grew to $96,033.",
    "generator": "scripts/build_parks_topics.py",
    "home": "parks",
    "id": "park-revolving-fund",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/boards/parks-commission/reports/park-revolving-fund",
    "ready": true,
    "related": [],
@@ -4184,8 +4198,22 @@
    ],
    "title": "Parks budget"
   },
+  "parks-programmes": {
+   "finding": "The fee fund paid $30,573 for programmes in FY2025 and $6,480 in FY2026.",
+   "generator": "scripts/build_parks_ledger.py",
+   "home": "parks",
+   "id": "parks-programmes",
+   "minutes": 1,
+   "path": "/boards/parks-commission/reports/parks-programmes",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "parks"
+   ],
+   "title": "Programme payments"
+  },
   "parks-spending": {
-   "finding": "By June, before the close, Parks had paid $113,350 of a $140,759 FY2026 budget; $23,141 was not yet used.",
+   "finding": "Parks closed FY2026 having spent $117,619 of a $140,759 budget, $23,141 left; FY2025 left $11,717.",
    "generator": "scripts/build_parks_topics.py",
    "home": "parks",
    "id": "parks-spending",
@@ -4197,6 +4225,20 @@
     "parks"
    ],
    "title": "Parks spending"
+  },
+  "parks-year-changes": {
+   "finding": "Parks fees fell $26,039 in FY2026, all of it in registration income, which fell $26,584.",
+   "generator": "scripts/build_parks_ledger.py",
+   "home": "parks",
+   "id": "parks-year-changes",
+   "minutes": 2,
+   "path": "/boards/parks-commission/reports/parks-year-changes",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "parks"
+   ],
+   "title": "Money in and out"
   },
   "participation": {
    "finding": "The district counted 649 sport participations in FY2026, against 675 in FY2024.",
@@ -4429,7 +4471,7 @@
    "generator": "scripts/build_parks_topics.py",
    "home": "parks",
    "id": "registration-sales",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/boards/parks-commission/reports/registration-sales",
    "ready": true,
    "related": [],

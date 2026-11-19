@@ -136,7 +136,7 @@ def _legend(items, name):
     return out
 
 
-def explain(title, paragraphs, place='lead', tone='define', figures_note=None):
+def explain(title, paragraphs, place='lead', tone='define', figures_note=None, links=()):
     """Plain paragraphs under a title. `tone`: 'define' (a tinted box: what a thing IS, for a
     page whose words a reader may misread), 'plain' (no box: what the figures above mean), or
     'callout' (a ruled box: the one answer a reader came to find -- TJ, on the highest-impact
@@ -148,8 +148,16 @@ def explain(title, paragraphs, place='lead', tone='define', figures_note=None):
     ps = [_u(p, TEXT_MAX, '%s paragraph %d' % (name, i + 1)) for i, p in enumerate(paragraphs)]
     if not ps:
         raise ConclusionError('%s: no paragraphs' % name)
-    return dict(block='explain', place=_place(place, name), title=_label(title, name, TITLE_MAX),
-                tone=tone, paragraphs=ps)
+    out = dict(block='explain', place=_place(place, name), title=_label(title, name, TITLE_MAX),
+               tone=tone, paragraphs=ps)
+    # `links`: [(label, site address)] drawn under the paragraphs -- where a reader goes to see the
+    # thing explained (TJ, 19 November 2026: a ledger's how-to-read beside the ledger itself).
+    # Written only when set, so no other block's payload changes.
+    if links:
+        if any(not h.startswith('/') or not l for l, h in links):
+            raise ConclusionError('%s: a link is a label and a site address' % name)
+        out['links'] = [dict(label=l, href=h) for l, h in links]
+    return out
 
 
 SOLIDITY = ('published', 'estimate', 'gap')

@@ -123,9 +123,10 @@ def journal(opening_fy26):
                     what=r['description'])
                for r in act if r['fund'] == '1500' and r['side'] == 'revenue'
                and NAMED_PAYER.search(r['description'])]
-    myrec25 = sum(-float(r['amount']) for r in act if r['fund'] == '1500'
-                  and r['side'] == 'revenue' and r['fiscal_year'] == '2025'
-                  and 'MYREC' in r['description'].replace(' ', ''))
+    # parks_ledger.is_myrec: the memo is cut at thirty characters, so a test for `MYREC` alone
+    # misses truncated refunds and card charges (19 November 2026).
+    import parks_ledger as PL
+    myrec25 = sum(-float(r['amount']) for r in act if PL.is_myrec(r) and r['fiscal_year'] == '2025')
     gift = [dict(date=r['effective_date'], fy=int(r['fiscal_year']), side=r['side'],
                  amount=money(-float(r['amount']) if r['side'] == 'revenue' else r['amount']),
                  what=r['description'])

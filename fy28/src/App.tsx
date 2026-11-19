@@ -18,6 +18,7 @@ import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
 import { Topic } from './pages/Topic'
 import { FyItem } from './pages/FyItem'
+import { TownFund, townFundFromPath } from './pages/TownFund'
 import { itemFromPath } from './components/blocks/custom/fy-items'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
@@ -528,6 +529,7 @@ export default function App() {
       {/* /athletics is now the athletics HUB (scripts/topics.py); the both-sides page it
           showed became the `town-budget-and-fee-fund` topic. */}
       {(tab === 'athletics' || tab === 'topic') && (itemFromPath(window.location.pathname) ? <FyItem />
+        : townFundFromPath(window.location.pathname) ? <TownFund />
         : <Topic fallback={tab === 'athletics' ? 'athletics' : 'transportation'} />)}
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
@@ -721,6 +723,11 @@ function useTopicCrumbs(tab: Tab) {
   }, [on])
   // A school line's or a fund's own page (pages/FyItem.tsx) sits under the FY breakdown page,
   // which is on no shelf, so its trail is Home > Reports > FY breakdown, not a category's
+  // A town fund's or line's own page (pages/TownFund.tsx) sits under every account, /accounts.
+  if (on && townFundFromPath(window.location.pathname)) return {
+    crumbs: [{ href: pathFor(ROOT), label: LABEL[ROOT], tab: ROOT as Tab | null },
+             { href: '/accounts', label: 'Every account', tab: null as Tab | null }],
+    current: '' }
   if (on && itemFromPath(window.location.pathname)) return {
     crumbs: [{ href: pathFor(ROOT), label: LABEL[ROOT], tab: ROOT as Tab | null },
              { href: pathFor('reports'), label: crumbLabel('reports'), tab: 'reports' as Tab | null },

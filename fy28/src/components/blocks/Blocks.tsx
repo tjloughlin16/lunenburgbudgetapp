@@ -17,7 +17,7 @@ type Tone = 'bad' | 'good' | 'neutral' | 'muted' | 'other'
 type Legend = { key: string; label: string; tone: Tone; pattern?: string }[]
 
 export type Block =
-  | { block: 'explain'; place: Place; title: string; tone: 'define' | 'plain' | 'callout'; paragraphs: Unit[] }
+  | { block: 'explain'; place: Place; title: string; tone: 'define' | 'plain' | 'callout'; paragraphs: Unit[]; links?: { label: string; href: string }[] }
   | { block: 'matrix'; place: Place; title: string; rows: string[]; columns: string[]; row_label: string
       col_label: string; legend: Legend; note?: Unit
       row_measures?: Measure[][]; col_measures?: Measure[][]; gaps?: Unit[]
@@ -142,6 +142,8 @@ function Explain({ b }: { b: Extract<Block, { block: 'explain' }> }) {
             borderLeft: '5px solid var(--status-bad)' } : undefined}>
       <Head title={b.title} />
       {b.paragraphs.map((p, i) => <p key={i} className="text-[15px] leading-relaxed mt-2">{rich(p.text)}</p>)}
+      {b.links?.length ? <p className="text-[14px] mt-2 flex flex-wrap gap-x-4 gap-y-1">{b.links.map(l => (
+        <a key={l.href} href={l.href} className="underline font-semibold" style={{ color: 'var(--link, var(--thread-2))' }}>{l.label} &rarr;</a>))}</p> : null}
     </section>
   )
 }

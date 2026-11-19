@@ -1,0 +1,372 @@
+{
+ "about": "Gifts given to the parks. One gift in four years of the journal.",
+ "accounts": {
+  "columns": [
+   {
+    "id": "in",
+    "label": "Taken in",
+    "means": "receipts, net of refunds"
+   },
+   {
+    "id": "out",
+    "label": "Paid out",
+    "means": "invoices paid and journal entries"
+   },
+   {
+    "id": "limit",
+    "label": "Spending limit",
+    "means": "the budget posted to the fund"
+   },
+   {
+    "id": "rows",
+    "label": "Postings",
+    "means": "lines in the journal, every kind"
+   }
+  ],
+  "years": {
+   "FY2023": {
+    "rows": [
+     {
+      "code": "480600",
+      "key": "1523-6-650-0000-00-0-00-4-480600",
+      "n": {
+       "in": 0.0,
+       "limit": 0.0,
+       "out": 0.0,
+       "rows": 0
+      },
+      "name": "Contributions and Donations",
+      "side": "in",
+      "t": {
+       "in": "$0.00",
+       "limit": "—",
+       "out": "—",
+       "rows": "0"
+      }
+     }
+    ],
+    "total": {
+     "name": "All accounts",
+     "t": {
+      "in": "$0.00",
+      "limit": "—",
+      "out": "$0.00",
+      "rows": "0"
+     }
+    }
+   },
+   "FY2024": {
+    "rows": [
+     {
+      "code": "480600",
+      "key": "1523-6-650-0000-00-0-00-4-480600",
+      "n": {
+       "in": 0.0,
+       "limit": 0.0,
+       "out": 0.0,
+       "rows": 0
+      },
+      "name": "Contributions and Donations",
+      "side": "in",
+      "t": {
+       "in": "$0.00",
+       "limit": "—",
+       "out": "—",
+       "rows": "0"
+      }
+     }
+    ],
+    "total": {
+     "name": "All accounts",
+     "t": {
+      "in": "$0.00",
+      "limit": "—",
+      "out": "$0.00",
+      "rows": "0"
+     }
+    }
+   },
+   "FY2025": {
+    "rows": [
+     {
+      "code": "480600",
+      "key": "1523-6-650-0000-00-0-00-4-480600",
+      "n": {
+       "in": 0.0,
+       "limit": 0.0,
+       "out": 0.0,
+       "rows": 0
+      },
+      "name": "Contributions and Donations",
+      "side": "in",
+      "t": {
+       "in": "$0.00",
+       "limit": "—",
+       "out": "—",
+       "rows": "0"
+      }
+     }
+    ],
+    "total": {
+     "name": "All accounts",
+     "t": {
+      "in": "$0.00",
+      "limit": "—",
+      "out": "$0.00",
+      "rows": "0"
+     }
+    }
+   },
+   "FY2026": {
+    "rows": [
+     {
+      "code": "480600",
+      "key": "1523-6-650-0000-00-0-00-4-480600",
+      "n": {
+       "in": 516.0,
+       "limit": 0.0,
+       "out": 0.0,
+       "rows": 1
+      },
+      "name": "Contributions and Donations",
+      "side": "in",
+      "t": {
+       "in": "$516.00",
+       "limit": "—",
+       "out": "—",
+       "rows": "1"
+      }
+     }
+    ],
+    "total": {
+     "name": "All accounts",
+     "t": {
+      "in": "$516.00",
+      "limit": "—",
+      "out": "$0.00",
+      "rows": "1"
+     }
+    }
+   }
+  }
+ },
+ "across": {
+  "columns": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ],
+  "label": "Every year, account by account",
+  "note": "Money in for an income account, money out for a spending account.",
+  "rows": [
+   {
+    "cells": [
+     "$0.00",
+     "$0.00",
+     "$0.00",
+     "$516.00"
+    ],
+    "name": "Contributions and Donations",
+    "side": "in"
+   }
+  ]
+ },
+ "as_of": "The Town’s MUNIS journal for this fund, July 2022 onward, to the FY2026 close.",
+ "code": "1523",
+ "generated_by": "scripts/build_parks_ledger.py",
+ "kicker": "Fund 1523 · special revenue · gift",
+ "name": "Park Gift Fund",
+ "owner": {
+  "href": "/boards/parks-commission/finance#accounts",
+  "name": "Parks Commission"
+ },
+ "path": "/town-funds/park-gift-1523",
+ "postings": {
+  "kinds": [
+   {
+    "id": "in",
+    "label": "Money in",
+    "means": "a receipt deposited to the fund, net of any refund on the same line"
+   },
+   {
+    "id": "out",
+    "label": "Money out",
+    "means": "a payment to a vendor, or a journal entry moving cost in or out"
+   },
+   {
+    "id": "order",
+    "label": "Purchase orders",
+    "means": "money set aside for an order, and released as it is paid; not spending in itself"
+   },
+   {
+    "id": "limit",
+    "label": "Spending limit",
+    "means": "the amount the fund was authorised to spend that year"
+   }
+  ],
+  "masked": "A payer who is a private person paying a fee is masked.",
+  "shown": [
+   "in",
+   "out"
+  ],
+  "years": {
+   "FY2023": [],
+   "FY2024": [],
+   "FY2025": [],
+   "FY2026": [
+    {
+     "acct": "1523-6-650-0000-00-0-00-4-480600",
+     "amt": "$516.00",
+     "d": "11 Sep 2025",
+     "how": "Receipt",
+     "iso": "2025-09-11",
+     "kind": "in",
+     "masked": false,
+     "n": 516.0,
+     "ref": "2026/03/001260",
+     "what": "PARK DEPT GIFT FUND/ST GERMAIN",
+     "who": "Other deposit"
+    }
+   ]
+  }
+ },
+ "postings_none": null,
+ "read": [
+  {
+   "h": "One row is one posting",
+   "p": "Each row is a line the Town Accountant’s system (MUNIS) printed for this fund: the date it posted, who was paid or what was deposited, the memo typed with it, and the amount."
+  },
+  {
+   "h": "Money in",
+   "p": "Mostly monthly deposits from MyRec, the department’s registration system. The memo names the month the sales were made in, as PROG/SEP2024 PARK MYREC. Refunds and card charges post against them, so a month can net below its deposit. A few receipts name a league."
+  },
+  {
+   "h": "Money out",
+   "p": "Invoices paid to instructors, contractors and suppliers, and journal entries that move a cost between this fund and the general fund. Only these and money in change the balance."
+  },
+  {
+   "h": "Purchase orders",
+   "p": "When an order is placed the system sets money aside (order opened) and releases it as the invoice is paid (order paid down). They show what was committed. They are not spending."
+  },
+  {
+   "h": "Spending limit",
+   "p": "Each July a budget is posted to the fund, the amount it may spend that year. It is a limit, not money; the memo names who asked for it."
+  },
+  {
+   "h": "The account name is the clerk’s choice",
+   "p": "Which fee account a deposit lands in (programme, beach, field) is typed with it. In May and June 2026 registration deposits were posted to beach fees, so the split between the three is not reliable. The total is."
+  }
+ ],
+ "related": [
+  {
+   "href": "/boards/parks-commission/reports/other-parks-funds",
+   "label": "Smaller parks funds"
+  },
+  {
+   "href": "/town-funds/park-revolving-1500",
+   "label": "Park Revolving Fund"
+  },
+  {
+   "href": "/town-lines/parks-recreation-650",
+   "label": "Parks and Recreation"
+  }
+ ],
+ "slug": "park-gift-1523",
+ "sources": [
+  {
+   "href": "/docs/data/munis-parks-journal.csv",
+   "label": "Lunenburg Budget Project — munis-parks-journal.csv (funds 1500 and 1523, every posting FY2023 to the FY2026 close, our redacted reading of the Town’s MUNIS journal)"
+  },
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS), FY26 special-revenue report, 31 March 2026"
+  }
+ ],
+ "spans": {
+  "FY2023": "1 July 2022 to 30 June 2023",
+  "FY2024": "1 July 2023 to 30 June 2024",
+  "FY2025": "1 July 2024 to 30 June 2025",
+  "FY2026": "1 July 2025 to 30 June 2026"
+ },
+ "stats": {
+  "FY2023": [
+   {
+    "label": "taken in",
+    "value": "$0.00"
+   },
+   {
+    "label": "paid out",
+    "value": "$0.00"
+   },
+   {
+    "label": "postings in the journal",
+    "value": "0"
+   },
+   {
+    "label": "balance at 30 June, annual town report",
+    "value": "$752.00"
+   }
+  ],
+  "FY2024": [
+   {
+    "label": "taken in",
+    "value": "$0.00"
+   },
+   {
+    "label": "paid out",
+    "value": "$0.00"
+   },
+   {
+    "label": "postings in the journal",
+    "value": "0"
+   },
+   {
+    "label": "balance at 30 June, annual town report",
+    "value": "$752.00"
+   }
+  ],
+  "FY2025": [
+   {
+    "label": "taken in",
+    "value": "$0.00"
+   },
+   {
+    "label": "paid out",
+    "value": "$0.00"
+   },
+   {
+    "label": "postings in the journal",
+    "value": "0"
+   },
+   {
+    "label": "balance at 30 June, annual town report",
+    "value": "$752.00"
+   }
+  ],
+  "FY2026": [
+   {
+    "label": "taken in",
+    "value": "$516.00"
+   },
+   {
+    "label": "paid out",
+    "value": "$0.00"
+   },
+   {
+    "label": "postings in the journal",
+    "value": "1"
+   },
+   {
+    "label": "balance at 31 March 2026, special-revenue report",
+    "value": "$1,268.00"
+   }
+  ]
+ },
+ "years": [
+  "FY2023",
+  "FY2024",
+  "FY2025",
+  "FY2026"
+ ]
+}

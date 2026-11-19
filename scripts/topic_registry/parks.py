@@ -16,13 +16,24 @@ CATEGORY = dict(
     board='parks-commission', under_board=True,
     order=56,
     groups=[
-        ('The department', ['parks-budget', 'parks-spending', 'park-revolving-fund',
-                            'other-parks-funds']),
-        ('Programs and grounds', ['registration-sales', 'grounds-maintenance-bid']),
+        ('The department', ['parks-year-changes', 'parks-budget', 'parks-spending',
+                            'park-revolving-fund', 'other-parks-funds']),
+        ('Programs and grounds', ['parks-programmes', 'registration-sales',
+                                  'grounds-maintenance-bid']),
         ('Related pages', ['town-facilities-grounds']),
     ],
-    elsewhere=[('/athletics', 'Athletics costs')])
+    # Every fund and account the Parks Commission owns has its own page, posting by posting
+    # (pages/TownFund.tsx, from build_parks_ledger.py). TJ, 19 November 2026: "i cant find the
+    # details page for the parks revolving account".
+    elsewhere=[('/town-funds/park-revolving-1500', 'Fund 1500, every posting'),
+               ('/town-funds/park-gift-1523', 'Fund 1523, every posting'),
+               ('/town-lines/parks-recreation-650', 'Department 650, every account'),
+               ('/athletics', 'Athletics costs')])
 GENERATOR = 'build_parks_topics.py'
+# TJ, 19 November 2026: "a page that compared year over year to identify what changed in either
+# revenue or spending" and "where did they spend? On what? for which program".
+TOPIC_GENERATORS = {'parks-year-changes': 'build_parks_ledger.py',
+                    'parks-programmes': 'build_parks_ledger.py'}
 TOPICS = {
     'parks-budget': 'Parks budget',
     'parks-spending': 'Parks spending',
@@ -30,4 +41,6 @@ TOPICS = {
     'other-parks-funds': 'Smaller parks funds',
     'registration-sales': 'Registration sales',
     'grounds-maintenance-bid': 'Grounds maintenance bid',
+    'parks-year-changes': 'Money in and out',
+    'parks-programmes': 'Programme payments',
 }

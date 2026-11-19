@@ -1022,6 +1022,10 @@ function resolvePath(pathname: string): Tab | null {
   // (pages/FyItem.tsx). They ride the topic tab, as /people/<slug> rides the org charts', so they
   // are no SLUG of their own: unlisted like the FY breakdown page they belong to.
   if (/^school-(lines|funds|groups|functions)\/[a-z0-9-]+$/.test(seg)) return 'topic'
+  // ONE PAGE PER TOWN FUND AND PER TOWN LINE, /town-funds/<slug> and /town-lines/<slug>
+  // (pages/TownFund.tsx), the same pattern for the town's books. The slug ends in the fund's or
+  // department's number, so the older alias /town-funds/general-fund is untouched.
+  if (/^town-(funds|lines)\/[a-z0-9-]+-\d+$/.test(seg)) return 'topic'
   // A TOPIC PAGE AT AN ADDRESS OUTSIDE ITS SHELF (TOPIC_PATHS below).
   if (TOPIC_PATHS[seg]) return 'topic'
   if (TOPIC_ALIASES[seg]) return 'topic'

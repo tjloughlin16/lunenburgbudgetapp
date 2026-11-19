@@ -55,6 +55,7 @@ import topic_blocks as TB  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
 import build_parks as BP  # noqa: E402  (read-only: bid(), myrec())
+import parks_ledger as L  # noqa: E402  (is_myrec: one definition of a registration line)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, 'sources', 'data')
@@ -497,12 +498,12 @@ def build():
     jrows = journal_rows()
     dep = {fy: round(sum(-float(r['amount']) for r in jrows if r['fund'] == '1500'
                          and r['side'] == 'revenue' and int(r['fiscal_year']) == fy
-                         and 'MYREC' in r['description'].replace(' ', '')), 2) for fy in J}
+                         and L.is_myrec(r)), 2) for fy in J}
     if abs(dep[2025] - JR['myrec_fy2025']) > 0.005:
         fail('the MyRec deposits read here and in parks.json disagree for FY2025')
     dep_months = {fy: len({r['period'] for r in jrows if r['fund'] == '1500'
                            and r['side'] == 'revenue' and int(r['fiscal_year']) == fy
-                           and 'MYREC' in r['description'].replace(' ', '')
+                           and L.is_myrec(r)
                            and -float(r['amount']) > 0}) for fy in J}
     named = JR['named_payers']
     named_sum = round(sum(x['amount'] for x in named), 2)
@@ -585,6 +586,22 @@ def build():
         place='body', figures=sorted(figs), allow=sorted(lits | {'30'}),
         basis=('record', 'The fund’s MUNIS journal, to the FY2026 close'),
         so='Every posting behind the totals above, as the journal prints it.')
+    # HOW TO READ THIS LEDGER (TJ, 19 November 2026: "we probably need a description of the parks
+    # ledger in the revolving fund page"). The same words head the fund's own page
+    # (build_parks_ledger.py READ_FUND), where every posting is listed.
+    ledger_how = TB.explain('How to read this ledger', [
+        ('Each line is one posting in the Town Accountant’s journal for fund 1500. **Money in** is '
+         'mostly a monthly deposit from MyRec, the registration system; its memo names the month '
+         'the sales were made in, as PROG/SEP2024. Refunds and card charges post against it.',
+         None, ('1500', 'PROG/SEP2024')),
+        '**Money out** is an invoice paid to an instructor, contractor or supplier, or a journal '
+        'entry moving a cost between this fund and the general fund. Purchase orders and the '
+        'yearly spending limit are posted too; they commit money but do not move the balance.',
+        ('Which fee account a deposit lands in is typed by the clerk: in May and June 2026 '
+         'registration deposits went to beach fees. Read the total, not the split.', None, ('2026',))],
+        place='body', tone='define',
+        links=[('Fund 1500, every posting', '/town-funds/park-revolving-1500'),
+               ('Money in and out, year by year', REG.path('parks-year-changes'))])
     steps = []
     for fy in (2024, 2025, 2026):
         steps += [('In, %s' % C.fy(fy), J[fy]['received']), ('Out, %s' % C.fy(fy), -J[fy]['spent'])]
@@ -669,7 +686,7 @@ def build():
         sources=[src['d-journal'], src['ar11'], src['ar23'], src['ar24'], src['ar25'],
                  src['d-read'], src['d-funds']],
         flow=['finding', TP.cite(('chart', 0), 0), TP.cite(yr_panels, 0),
-              TP.cite(('chart', 2), 0), TP.cite(months_block, 0),
+              TP.cite(('chart', 2), 0), TP.cite(months_block, 0), TP.cite(ledger_how, 0),
               TP.cite('ladder', 0, 4, 5, 6), 'related',
               TP.cite(('chart', 1), 0, 1, 2, 3, 5, 6),
               TP.cite(('table', 0), 0, 5), 'sources'],
@@ -760,6 +777,12 @@ def build():
     tot = sum(r['total'] for r in sales)
     if abs(tot - m['total']) > 0.005:
         fail('the MyRec CSV and parks.json disagree on the FY2025 total')
+    # With truncated refunds and charges counted (parks_ledger.is_myrec), the books come within
+    # $45.34 of MyRec's own sales reports for the year (0.1%). PINNED, not a tolerance: if the gap
+    # moves, a line is being read differently and the conclusion below must be re-read.
+    if abs((tot - dep25) - 45.34) > 0.005:
+        fail('FY2025: MyRec sales less registration income booked is %.2f, not 45.34; re-read the '
+             'registration-sales conclusion' % (tot - dep25))
     nonres = sum(r['nonres_total'] for r in sales)
     nonres_n = sum(r['nonres_count'] for r in sales)
     all_n = sum(r['total_count'] for r in sales)
@@ -795,8 +818,8 @@ def build():
     books_panels = TB.panels('From sale to the books', [
         TB.panel('MyRec recorded', [(('Sales, FY2025', None, ('FY2025',)), usd2(tot), None)],
                  sub='the registration system'),
-        TB.panel('Deposited from MyRec', [(('Into fund 1500, FY2025', None, ('1500', 'FY2025',)), usd2(dep25), None)],
-                 sub='the fund’s journal, monthly'),
+        TB.panel('Booked from MyRec', [(('Into fund 1500, FY2025', None, ('1500', 'FY2025',)), usd2(dep25), None)],
+                 sub='deposits less refunds and card charges'),
         TB.panel('All fees the fund booked', [(('Net of refunds, FY2025', None, ('FY2025',)), usd2(fees25), None)],
                  sub='with beach cash and league fees')],
         so='The registration money reached the parks fee fund; it was not matched sale by sale.')
@@ -836,13 +859,14 @@ def build():
              notes=[step('The report dates no sale, so neither summer here can be read as whole.',
                          'gap', closes='a MyRec sales report listing each transaction with '
                                        'its date')]),
-         con('The fee fund booked %s of registration deposits in FY2025, %s more than MyRec '
-             'recorded.' % (C.usd(dep25), C.usd(dep25 - tot)), ['tot', 'dep25', 'nothing'],
-             {'a': U(dep25), 'b': U(dep25 - tot)}, allow=('FY2025',),
+         con('The fee fund booked %s of registration income in FY2025; MyRec recorded %s.'
+             % (usd2(dep25), usd2(tot)), ['tot', 'dep25', 'nothing'],
+             {'a': U2(dep25), 'b': U2(tot)}, allow=('FY2025',),
              notes=[step('Deposits are monthly, not sale by sale, so the two cannot be matched; '
                          'sales near 30 June fit either year.', 'gap', allow=('30',),
                          closes='MyRec’s deposit report, each deposit with its sales')],
-             so='The registration money reached the town’s books, in the parks fee fund.')],
+             so='Two separate records of the same year’s registrations differ by %s.' % usd2(tot - dep25),
+             so_figures={'d': U2(tot - dep25)})],
         table=dict(caption='What MyRec recorded, FY2025', views=[dict(
             key='sales', label='MyRec sales reports', total_col=2, kinds=['ledger'] * 3,
             columns=['Residents', 'Non-residents', 'Total'],
