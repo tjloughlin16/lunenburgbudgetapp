@@ -29,7 +29,7 @@
     {
      "basis": "estimate",
      "mark": "bar",
-     "name": "Without the 30 June payment (our sum)",
+     "name": "Without the 30 June charge (our sum)",
      "texts": [
       null,
       "$671,395"
@@ -62,9 +62,10 @@
     {
      "figures": {},
      "literals": [
-      "30 June"
+      "30 June",
+      "16 July"
      ],
-     "text": "The 30 June entry is a payment. It was charged to a line that had already spent past its budget, and was covered, inside the school total, by other lines’ leftovers."
+     "text": "The 30 June entry is a payment, charged that day and paid by check on 16 July. It went to a line that had already spent past its budget, and was covered, inside the school total, by other lines’ leftovers."
     }
    ],
    "place": "lead",
@@ -327,7 +328,7 @@
      },
      {
       "board": "School Committee",
-      "expected": "Warrants for 18 to 30 June, $362,767.40: the period of the 30 June payment.",
+      "expected": "Warrants for 18 to 30 June, $362,767.40. The district says nine batches, to 30 June; batch 5853 is not one of them.",
       "links": [
        {
         "href": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07152026-7901",
@@ -366,7 +367,7 @@
        }
       ],
       "missing": [],
-      "shows": "Transfers “just to cover overages”; FY2026 to close “well below” the year before. No tuition payment mentioned.",
+      "shows": "Transfers “just to cover overages”; FY2026 to close “well below” the year before. No tuition payment mentioned. The whole warrant, 6 to 20 July, is $100,507.91, less than the batch.",
       "when": "29 July 2026"
      },
      {
@@ -435,9 +436,11 @@
    "so": {
     "figures": {},
     "literals": [
-     "15 July"
+     "5853",
+     "15 July",
+     "29 July"
     ],
-    "text": "The warrant that would carry the payment was listed on 15 July with no vote taken, and is approved at no later meeting on record."
+    "text": "No School Committee warrant on record carries batch 5853: it is not among the 15 July batches, and the 29 July warrant is smaller."
    },
    "title": "Where the approval would be on the record"
   },
@@ -477,12 +480,26 @@
       "30",
       "2026",
       "2027",
-      "218995",
+      "2026",
+      "5853",
       "2026",
       "12",
       "001152"
      ],
-     "text": "**30 June 2026, Journal.** Nine FLLAC invoices numbered for FY2027 paid from the general fund, check 218995. (journal 2026/12/001152)"
+     "text": "**30 June 2026, Journal.** Nine FLLAC invoices numbered for FY2027 charged to the FY2026 general fund, the effective date, as batch 5853. (journal 2026/12/001152)"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "16",
+      "2026",
+      "218995",
+      "199,364",
+      "25,",
+      "19",
+      "2026"
+     ],
+     "text": "**16 July 2026, Check register.** Check 218995 cut, $199,364.25, for these nine and three other FLLAC invoices. (Munis check register line, sent 19 November 2026)"
     },
     {
      "figures": {},
@@ -491,10 +508,11 @@
       "2026",
       "18",
       "30",
+      "5853",
       "27",
       "29"
      ],
-     "text": "**15 July 2026, School Committee.** Warrants for 18 to 30 June, the period of the payment, on the agenda and in the minutes with no motion or vote; the Chair, 27 October: no vote was taken. (agenda, minutes posted 29 October, recording, email)"
+     "text": "**15 July 2026, School Committee.** Warrants for 18 to 30 June, on the agenda and in the minutes with no motion or vote; batch 5853 is not among its batches; the Chair, 27 October: no vote was taken. (agenda, minutes posted 29 October, recording, email)"
     },
     {
      "figures": {},
@@ -541,8 +559,24 @@
     },
     {
      "figures": {},
-     "literals": [],
-     "text": "**Not yet held.** The signed warrant, FLLAC’s invoices with their service dates, and the School Committee’s September year-end budget reviews. Each is a registered gap, listed on What we cannot answer."
+     "literals": [
+      "5853",
+      "15 July",
+      "30 June",
+      "29 July",
+      "6 to 20 July",
+      "$100,507.91",
+      "218995",
+      "19 November 2026"
+     ],
+     "text": "**Not presented, on any record we hold.** The payment is batch 5853. The district says the 15 July warrant was its batches to 30 June; the nine delivered do not include 5853. The 29 July warrant, 6 to 20 July, is $100,507.91 in all, less than the batch. No agenda, minutes or recording names the batch, check 218995 or the invoices. The copy the district supplied on 19 November 2026 has blank signature lines, and the district says the signed originals “were immediately sent to Town Hall for processing and signature by the SelectBoard.”"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "5853"
+     ],
+     "text": "**Not yet held.** The signed original of batch 5853, and the School Committee’s September year-end budget reviews. Each is a registered gap, listed on What we cannot answer."
     }
    ],
    "place": "end",
@@ -625,10 +659,16 @@
      "text": "FY2027",
      "unit": "fiscal year",
      "value": 2027
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
     }
    },
    "literals": [
-    "30 June"
+    "30 June",
+    "16 July"
    ],
    "notes": [
     {
@@ -677,7 +717,7 @@
     "literals": [],
     "text": "If they pay for FY2027, FY2026’s surplus reads $189,277 smaller than what FY2026 needed for itself."
    },
-   "text": "On 30 June the general fund paid $189,277 on 9 FLLAC invoices numbered, and priced, for FY2027."
+   "text": "$189,277 on 9 FLLAC invoices priced for FY2027: charged to FY2026 on 30 June, paid 16 July."
   },
   {
    "figures": {
@@ -759,27 +799,17 @@
    "text": "The day before, $333,495 of FY2026 tuition was charged to the circuit breaker instead of the general fund."
   },
   {
-   "figures": {
-    "w": {
-     "text": "$362,767.40",
-     "unit": "",
-     "value": 362767.4
-    }
-   },
-   "literals": [
-    "18",
-    "30 June",
-    "15 July"
-   ],
+   "figures": {},
+   "literals": [],
    "notes": [
     {
-     "closes": "the signed warrant for check 218995",
+     "closes": "the signed original of batch 5853",
      "figures": {},
      "kind": "gap",
      "literals": [
-      "218995"
+      "5853"
      ],
-     "text": "Approval may exist off the minutes: year-end warrants are often signed between meetings."
+     "text": "Approval may exist off the record: year-end warrants are often signed between meetings."
     }
    ],
    "rests_on": [
@@ -790,9 +820,9 @@
    "so": {
     "figures": {},
     "literals": [],
-    "text": "The payment was about half that warrant. Whether it was approved some other way, only the signed warrant can show."
+    "text": "The copy of the batch supplied has blank signature lines; the district says the originals went to Town Hall."
    },
-   "text": "The 18 to 30 June warrant, $362,767.40, is in the 15 July minutes; the Chair says no vote was taken."
+   "text": "No School Committee agenda, minutes or warrant we hold shows this payment presented or approved."
   }
  ],
  "facts": [
@@ -800,11 +830,19 @@
    "id": "paid",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
     "literals": [
-     "30 June 2026"
+     "30 June",
+     "218995",
+     "16 July"
     ],
-    "text": "paid to FLLAC from the general fund, 30 June 2026"
+    "text": "charged to FY2026 30 June; check 218995 cut 16 July"
    },
    "value": {
     "text": "$189,276.75",
@@ -994,13 +1032,13 @@
    "value": null
   },
   {
-   "closes": "the signed warrant that paid check 218995, with the School Committee’s approval of it",
+   "closes": "the signed original of batch 5853, which the district says went to Town Hall for the Select Board’s signature",
    "id": "approval",
    "kind": "gap",
    "label": {
     "figures": {},
     "literals": [
-     "218995"
+     "5853"
     ],
     "text": "who approved the payment"
    },
@@ -1018,12 +1056,18 @@
     "text": "FY2027",
     "unit": "fiscal year",
     "value": 2027
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
    }
   },
   "literals": [
-   "30 June 2026"
+   "30 June",
+   "16 July"
   ],
-  "text": "On 30 June 2026 the school general fund paid $189,277 on FLLAC invoices numbered for FY2027."
+  "text": "$189,277 on FY2027-numbered FLLAC invoices was charged to FY2026 on 30 June and paid 16 July."
  },
  "flow": [
   {
@@ -1102,7 +1146,7 @@
  "not_established": [
   "What service period the invoices bill: the journal records no dates of service.",
   "Who approved the payment, and whether the School Committee voted advance tuition.",
-  "Whether the 29 June reclass and the 30 June payment were made together on purpose.",
+  "Whether the 29 June reclass and the 30 June charge were made together on purpose.",
   "Whether this happened before FY2023: the journal begins there."
  ],
  "path": "/fy2026-closeout/fy2026-tuition-paid-early",

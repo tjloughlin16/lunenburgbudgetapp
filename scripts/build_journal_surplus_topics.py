@@ -60,6 +60,13 @@ ADJ_FY25 = 'ADJ FY25 BUDGET'   # the one July 2024 line that cut FY2025's budget
 # Tuitions, "Circuit Breaker (70% = $422,408) (75% = 452,580)", -452,580 in the FY2025 column.
 # Checked on every build (`book_line`). A match of amount and account, not a stated link: the
 # journal entry does not name the circuit breaker.
+# Check 218995 as the Munis check register prints it, in the line the district sent on
+# 19 November 2026 (sources/correspondence/2026-11-19-check-218995-register-line.png). The
+# journal carries only the effective date; this is the date the check was cut. Tied to the
+# journal on every build (the twelve lines on the check must sum to `amount`).
+BATCH = '5853'   # the school batch holding the nine invoices (same delivery)
+CHECK = {'no': '218995', 'date': '2026-07-16', 'amount': Decimal('199364.25'),
+         'href': '/docs/correspondence/2026-11-19-check-218995-register-line.png'}
 BOOK = '/docs/district-budget/docs/3-12-25-town-manager-39-s-budget.pdf'
 BOOK_TEXT = os.path.join(ROOT, 'sources', 'district-budget', 'text',
                          '3-12-25-town-manager-39-s-budget.txt')
@@ -1221,6 +1228,18 @@ def prepaid_page(d):
     if len({(r['journal'], r['check_no']) for r in early}) != 1:
         fail('the 30 June invoices are no longer one journal and one check')
     jnl, check = early[0]['journal'], early[0]['check_no']
+    # THE CHECK DATE IS NOT IN THE JOURNAL, which carries only the effective date (30 June, the
+    # day the expense was charged to FY2026). It is the Munis check register line the district
+    # sent on 19 November 2026 (sources/correspondence/2026-11-19-check-218995-register-line.png):
+    # check 218995, 07/16/2026, $199,364.25. Held here because no dataset carries it, and tied:
+    # every journal line on this check must sum to that line's amount, or the date is not this
+    # check's.
+    if check != CHECK['no'] or sum((r['amt'] for r in J.lines() if r['check_no'] == check), D0) \
+            != CHECK['amount']:
+        fail('the journal lines on check %s no longer sum to the register line\'s %s'
+             % (check, CHECK['amount']))
+    check_day = datetime.date.fromisoformat(CHECK['date'])
+    check_when = '%d %s' % (check_day.day, check_day.strftime('%B'))
     if by_prefix[Y1 + 1] != {Y1}:
         fail('FY2027-numbered invoices were paid in a year other than FY%d' % Y1)
     # The day before: the reclass onto the circuit breaker fund.
@@ -1303,11 +1322,19 @@ def prepaid_page(d):
     w_late, w_june = Decimal(mw.group(1).replace(',', '')), Decimal(m24.group(1).replace(',', ''))
     if Decimal(m15.group(1).replace(',', '')) != w_late:
         fail('the 15 July minutes and agenda no longer give the same 6/18 to 6/30 warrant total')
-    if not (paid < w_late and 0.45 < fl(paid / w_late) < 0.6):
-        fail('the page says the payment was about half of the 18 to 30 June warrant')
+    # The 29 July warrant, read off its agenda: the whole of it is smaller than this one batch,
+    # so the batch cannot be on it as presented. The page says so; this keeps it true.
+    m29 = re.search(r'Warrants 7/6 to 7/20/26 \$([\d,]+\.\d\d)', agenda('2026-07-29'))
+    if not m29:
+        fail('the 29 July agenda no longer gives the 7/6 to 7/20 warrant total')
+    w_july = Decimal(m29.group(1).replace(',', ''))
+    if not w_july < paid:
+        fail('the page says the 29 July warrant is smaller than the batch')
     later = [os.path.basename(x) for x in glob.glob(os.path.join(ROOT, SC_MINUTES, '2026-*.txt'))
              if os.path.basename(x)[:10] > '2026-07-15'
-             and re.search(r'6/18', open(x, encoding='utf-8').read())]
+             # The warrant's own wording, not a bare date: the 4 November 2026 agenda lists
+             # MINUTES of 6/18/25, which a bare `6/18` took for this warrant.
+             and re.search(r'6/18(?:/26)?\s*(?:to|-|–)\s*6/30', open(x, encoding='utf-8').read())]
     if later:
         fail('a later School Committee document now lists the 18 to 30 June warrant: %s' % later)
     if not reg['2026-07-15']['minutes_url']:
@@ -1335,14 +1362,15 @@ def prepaid_page(d):
             ('2026-06-24', 'Warrants for 2 to 17 June, %s; line-item transfers; carry-forward orders.'
              % usd2(w_june), 'Four transfers and the carry-forward orders voted; no tuition payment among '
              'them. The warrants end before 30 June.', 2100),
-            ('2026-07-15', 'Warrants for 18 to 30 June, %s: the period of the 30 June payment.'
-             % usd2(w_late), 'The minutes list the warrant with no motion and no vote; the Chair, '
+            ('2026-07-15', 'Warrants for 18 to 30 June, %s. The district says nine batches, to '
+             '30 June; batch %s is not one of them.' % (usd2(w_late), BATCH), 'The minutes list the warrant with no motion and no vote; the Chair, '
              'asked on 27 October 2026: “%s” On the recording it is raised, the talk turns to '
              'transfers (“%s”), and the meeting moves on. No later agenda or minutes lists this '
              'warrant.' % (CHAIR_QUOTE, QUOTES['2026-07-15']), 95),
             ('2026-07-29', 'Year-end line-item transfers; warrants for July.',
              'Transfers “just to cover overages”; FY2026 to close “well below” the year before. No '
-             'tuition payment mentioned.', 1330),
+             'tuition payment mentioned. The whole warrant, 6 to 20 July, is %s, less than the '
+             'batch.' % usd2(w_july), 1330),
             ('2026-09-02', 'FY26 Year End Budget review.', 'Neither recorded nor minuted.', None),
             ('2026-09-09', 'FY26 Year End Budget review.', 'Passed over: “%s.”' % QUOTES['2026-09-09'],
              7555),
@@ -1357,11 +1385,13 @@ def prepaid_page(d):
         fail('the 16 September grants remark is no longer in the captions')
     trail_allow = tuple(sorted({x['when'] for x in trail} | {l_['href'] for x in trail for l_ in x['links']}
                                | {'2 to 17 June', '18 to 30 June', '30 June', 'FY26', 'FY2026',
-                                  '26 October 2026', '27 October 2026'}))
+                                  '26 October 2026', '27 October 2026', BATCH, '6 to 20 July',
+                                  usd2(w_july)}))
 
     fx = {}
-    fx['paid'] = f('paid', U2(paid), 'paid to FLLAC from the general fund, 30 June 2026',
-                   'published', allow=('30 June 2026',))
+    fx['paid'] = f('paid', U2(paid), 'charged to %s 30 June; check %s cut %s'
+                   % (C.fy(Y1), check, check_when), 'published',
+                   {'y': F(Y1)}, allow=('30 June', check, check_when))
     fx['n'] = f('n', N(len(early), 'invoices'), 'invoices, all numbered for %s' % C.fy(Y1 + 1),
                 'published', {'y': F(Y1 + 1)})
     fx['r27'] = f('r27', U2(std[Y1 + 1]), 'the quarterly rate on those invoices', 'published')
@@ -1383,13 +1413,14 @@ def prepaid_page(d):
                      closes='FLLAC’s invoices 27L2KEY11 to 27L2KEY19, with their service dates',
                      allow=('27', '11', '19'))
     fx['approval'] = f('approval', None, 'who approved the payment', 'gap',
-                       closes='the signed warrant that paid check %s, with the School '
-                              'Committee’s approval of it' % check, allow=(check,))
+                       closes='the signed original of batch %s, which the district says went to '
+                              'Town Hall for the Select Board’s signature' % BATCH, allow=(BATCH,))
     conclusions = [
-        con('On 30 June the general fund paid %s on %s FLLAC invoices numbered, and priced, '
-            'for %s.' % (C.usd(fl(paid)), C.num(len(early)), C.fy(Y1 + 1)),
+        con('%s on %s FLLAC invoices priced for %s: charged to %s on 30 June, paid %s.'
+            % (C.usd(fl(paid)), C.num(len(early)), C.fy(Y1 + 1), C.fy(Y1), check_when),
             ['paid', 'n', 'r27', 'r26', 'period'],
-            {'a': U(paid), 'n': N(len(early)), 'y': F(Y1 + 1)}, allow=('30 June',),
+            {'a': U(paid), 'n': N(len(early)), 'y': F(Y1 + 1), 'z': F(Y1)},
+            allow=('30 June', check_when),
             so='If they pay for %s, %s’s surplus reads %s smaller than what %s needed for itself.'
                % (C.fy(Y1 + 1), C.fy(Y1), C.usd(fl(paid)), C.fy(Y1)),
             so_figures={'y': F(Y1 + 1), 'z': F(Y1), 'a': U(paid)},
@@ -1412,14 +1443,13 @@ def prepaid_page(d):
             notes=[step('That the two entries were made together, for that purpose, is a '
                         'hypothesis; moving tuition onto the circuit breaker at year end is '
                         'routine, and no document links them.', 'hypothesis')]),
-        con('The 18 to 30 June warrant, %s, is in the 15 July minutes; the Chair says no vote '
-            'was taken.' % usd2(w_late), ['approval', 'before', 'budget'],
-            {'w': U2(w_late)}, allow=('18', '30 June', '15 July'),
-            so='The payment was about half that warrant. Whether it was approved some other way, '
-               'only the signed warrant can show.',
-            notes=[step('Approval may exist off the minutes: year-end warrants are often signed '
+        con('No School Committee agenda, minutes or warrant we hold shows this payment presented '
+            'or approved.', ['approval', 'before', 'budget'], {},
+            so='The copy of the batch supplied has blank signature lines; the district says the '
+               'originals went to Town Hall.',
+            notes=[step('Approval may exist off the record: year-end warrants are often signed '
                         'between meetings.', 'gap',
-                        closes='the signed warrant for check %s' % check, allow=(check,))])]
+                        closes='the signed original of batch %s' % BATCH, allow=(BATCH,))])]
 
     # The circuit breaker fund itself: what came in (CRP receipts) and what it paid, by year.
     cb = [r for r in J.lines() if r['fund'] == '2640']
@@ -1485,10 +1515,14 @@ def prepaid_page(d):
          'orders voted; no tuition payment among them', 'minutes, recording'),
         ('29 June 2026', 'Journal', 'Collaborative tuition the general fund had paid charged to '
          'the circuit breaker instead', 'journal %s' % recl[0]['journal']),
-        ('30 June 2026', 'Journal', 'Nine FLLAC invoices numbered for %s paid from the general '
-         'fund, check %s' % (C.fy(Y1 + 1), check), 'journal %s' % jnl),
-        ('15 July 2026', 'School Committee', 'Warrants for 18 to 30 June, the period of the '
-         'payment, on the agenda and in the minutes with no motion or vote; the Chair, '
+        ('30 June 2026', 'Journal', 'Nine FLLAC invoices numbered for %s charged to the %s '
+         'general fund, the effective date, as batch %s' % (C.fy(Y1 + 1), C.fy(Y1), BATCH),
+         'journal %s' % jnl),
+        ('%s %d' % (check_when, check_day.year), 'Check register', 'Check %s cut, %s, for these '
+         'nine and three other FLLAC invoices' % (check, usd2(CHECK['amount'])),
+         'Munis check register line, sent 19 November 2026'),
+        ('15 July 2026', 'School Committee', 'Warrants for 18 to 30 June, on the agenda and in '
+         'the minutes with no motion or vote; batch %s is not among its batches;' % BATCH + ' the Chair, '
          '27 October: no vote was taken', 'agenda, minutes posted 29 October, recording, email'),
         ('29 July 2026', 'School Committee', 'Told %s would close well below the year before'
          % C.fy(Y1), 'minutes'),
@@ -1497,8 +1531,8 @@ def prepaid_page(d):
     ]
     page = TP.page(
         PREPAID,
-        'On 30 June 2026 the school general fund paid %s on FLLAC invoices numbered for %s.'
-        % (C.usd(fl(paid)), C.fy(Y1 + 1)),
+        '%s on %s-numbered FLLAC invoices was charged to %s on 30 June and paid %s.'
+        % (C.usd(fl(paid)), C.fy(Y1 + 1), C.fy(Y1), check_when),
         list(fx.values()), conclusions,
         chart=TP.series(
             'FLLAC tuition paid, by year it was paid', [C.fy(y) for y in yrs],
@@ -1511,7 +1545,7 @@ def prepaid_page(d):
             'What was left, with and without the payment', [C.fy(Y0), C.fy(Y1)],
             [TP.track('Left, counting orders still owed', [fl(owed[Y0]), fl(owed[Y1])],
                       'published', 'bar'),
-             TP.track('Without the 30 June payment (our sum)', [None, fl(without)], 'estimate',
+             TP.track('Without the 30 June charge (our sum)', [None, fl(without)], 'estimate',
                       'bar')],
             '$', kind='bar',
             note='School general fund, department 300. Counting orders owed is the footing on '
@@ -1520,9 +1554,10 @@ def prepaid_page(d):
             'A **transfer** moves budget from one line to another; no money leaves, and the '
             'School Committee votes each one. A **reclass** moves a cost already paid from one '
             'fund to another. A **payment** sends money to a vendor, on a warrant.',
-            ('The 30 June entry is a payment. It was charged to a line that had already spent past '
-             'its budget, and was covered, inside the school total, by other lines’ leftovers.',
-             None, ('30 June',))],
+            ('The 30 June entry is a payment, charged that day and paid by check on %s. It went '
+             'to a line that had already spent past its budget, and was covered, inside the school '
+             'total, by other lines’ leftovers.' % check_when,
+             None, ('30 June', check_when))],
             place='lead', tone='define'),
             TB.chart(TP.series(
                 'The circuit breaker fund, in and out', [C.fy(y) for y in J.YEARS],
@@ -1575,9 +1610,9 @@ def prepaid_page(d):
                       figures=(usd2(w_june), usd2(w_late)), allow=trail_allow,
                       alt='School Committee meetings from 24 June to 16 September 2026: what each '
                           'agenda held, what the record shows, and links to every record that exists',
-                      so=('The warrant that would carry the payment was listed on 15 July with no vote '
-                          'taken, and is approved at no later meeting on record.',
-                          None, ('15 July',))),
+                      so=('No School Committee warrant on record carries batch %s: it is not among '
+                          'the 15 July batches, and the 29 July warrant is smaller.' % BATCH,
+                          None, (BATCH, '15 July', '29 July'))),
             TB.explain('The record, in order', [
                 ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
                  tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))
@@ -1595,9 +1630,19 @@ def prepaid_page(d):
                  'motion or vote; the Chair wrote on 27 October that no vote was taken. No later '
                  'agenda or minutes lists it.',
                  None, ('2026', '15 July', '27 October')),
-                ('**Not yet held.** The signed warrant, FLLAC’s invoices with their service '
-                 'dates, and the School Committee’s September year-end budget reviews. Each is a '
-                 'registered gap, listed on What we cannot answer.', None, ())],
+                ('**Not presented, on any record we hold.** The payment is batch %s. The '
+                 'district says the 15 July warrant was its batches to 30 June; the nine delivered '
+                 'do not include %s. The 29 July warrant, 6 to 20 July, is %s in all, less than the '
+                 'batch. No agenda, minutes or recording names the batch, check %s or the '
+                 'invoices. The copy the district supplied on 19 November 2026 has blank signature '
+                 'lines, and the district says the signed originals “were immediately sent to Town '
+                 'Hall for processing and signature by the SelectBoard.”'
+                 % (BATCH, BATCH, usd2(w_july), check),
+                 None, (BATCH, '15 July', '30 June', '29 July', '6 to 20 July', usd2(w_july),
+                        check, '19 November 2026')),
+                ('**Not yet held.** The signed original of batch %s, and the School Committee’s '
+                 'September year-end budget reviews. Each is a '
+                 'registered gap, listed on What we cannot answer.' % BATCH, None, (BATCH,))],
                 place='end', tone='plain')],
         lead_quote=TP.lead_quote(
             FEB4_QUOTE, 'Christopher McNamara, Business Administrator', 'School Committee',
@@ -1631,11 +1676,12 @@ def prepaid_page(d):
                  href=DESE_CB_FAQ),
             dict(label='Division of Local Services — prepayment from prior fiscal year funds',
                  href='https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds')],
-        finding_figures={'a': U(paid), 'y': F(Y1 + 1)}, finding_allow=('30 June 2026',))
+        finding_figures={'a': U(paid), 'y': F(Y1 + 1), 'z': F(Y1)},
+         finding_allow=('30 June', check_when))
     page['not_established'] = [
         'What service period the invoices bill: the journal records no dates of service.',
         'Who approved the payment, and whether the School Committee voted advance tuition.',
-        'Whether the 29 June reclass and the 30 June payment were made together on purpose.',
+        'Whether the 29 June reclass and the 30 June charge were made together on purpose.',
         'Whether this happened before FY2023: the journal begins there.',
     ]
     return page
