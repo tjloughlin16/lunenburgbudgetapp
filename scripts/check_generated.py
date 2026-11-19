@@ -66,6 +66,9 @@ CHECKS = [
     # `open` goes untouched past STALE_DAYS, and no tracked file points at a handoff path that
     # retirement moved. Offline, under a second. CLAUDE.md, "Picking up mid-stream".
     ('check_handoffs.py', ['--check']),
+    # The old topic order only shrinks: a listed page that is composed must leave the list
+    # (topic.py refuses an unlisted page with no flow, and a listed page whose shape changed).
+    ('freeze_legacy_flow.py', ['--check']),
     ('build_readme.py', ['--check']),
     # SEARCH'S CURATED LAYER: every hub, topic, report, profile, board, budget line, fund and
     # contract by name, which /api/search matches ahead of the full text. Fails when a page,

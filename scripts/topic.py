@@ -144,6 +144,66 @@ CONCLUSIONS = (0, 4)
 # with figures and no citation is refused, and so is a source no section cites: a list of documents
 # nothing points to is a bibliography, not provenance. Pages still on default_flow are exempt only
 # because nothing has composed them yet; scripts/page_review_progress.py counts them.
+# THE OLD ORDER IS CLOSED TO NEW WORK. TJ, 18 November 2026, looking at six parks pages that
+# had been rebuilt from new ledgers and all came out the same shape: *"are the pages still being
+# constrained by the template?! these all look nearly identical in formatting which i thought we
+# removed"* ... *"can you figure out how to make new pages dont hit this same problem again?"*
+#
+# They were, because nothing stopped them. A page with no `flow` still built, silently, in the
+# old order -- so the template was "removed" for anyone who remembered to compose, and fully in
+# force for anyone who did not. The fix is to make forgetting impossible:
+#
+#   - topic_legacy_flow.json freezes the pages that were on the old order on that day, each with
+#     its SHAPE: which facts, how many conclusions, which charts, blocks and tables. A data
+#     refresh moves values, never shape, so the daily run is unaffected.
+#   - A page NOT on that list must pass flow=. A new page cannot be built in the old order.
+#   - A listed page whose shape CHANGES must be composed too: adding a fact, a chart or a block
+#     to an old page is exactly how the parks pages got new content in old slots.
+#   - A listed page that is now composed must leave the list, so the list only ever shrinks.
+#     `python3 scripts/freeze_legacy_flow.py --prune` removes those lines.
+LEGACY_FLOW_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'topic_legacy_flow.json')
+_LEGACY = None
+
+
+def legacy_flow():
+    global _LEGACY
+    if _LEGACY is None:
+        _LEGACY = json.load(open(LEGACY_FLOW_FILE, encoding='utf-8'))['pages']
+    return _LEGACY
+
+
+def page_shape(p):
+    """The SHAPE of a built topic page: what it is made of, not the values in it. Read off the
+    page dict page() returns, so a frozen payload and a fresh build compute it the same way."""
+    import hashlib
+    t = lambda c: (c or {}).get('title')
+    tabs = ([p['table']] if p.get('table') else []) + list(p.get('tables', []))
+    shape = dict(facts=sorted(f['id'] for f in p.get('facts', [])),
+                 conclusions=len(p.get('conclusions', [])),
+                 chart=t(p.get('chart')), also=[t(c) for c in p.get('also', [])],
+                 blocks=[[b.get('block'), b.get('component'), b.get('title')]
+                         for b in p.get('blocks', [])],
+                 tables=[x.get('caption') for x in tabs])
+    return hashlib.sha1(json.dumps(shape, sort_keys=True).encode()).hexdigest()[:12]
+
+
+def _legacy_bad(out, composed):
+    pid, leg = out['id'], legacy_flow()
+    if composed:
+        if pid in leg:
+            return ['%s is composed now: remove it from topic_legacy_flow.json '
+                    '(python3 scripts/freeze_legacy_flow.py --prune)' % pid]
+        return []
+    if pid not in leg:
+        return ['%s: a new page must pass flow= -- compose it for its subject (the '
+                'building-a-page skill); the old order is closed to new pages' % pid]
+    if page_shape(out) != leg[pid]:
+        return ['%s: its shape changed while it is on the old order -- compose it with flow= '
+                'instead of adding to the old slots, then prune it from '
+                'topic_legacy_flow.json' % pid]
+    return []
+
+
 FLOW_PARTS = ('finding', 'lead_quote', 'how', 'ladder', 'related', 'ledger', 'said', 'sources')
 CITED = ('chart', 'table', 'block', 'ladder')   # the parts that show figures
 
@@ -373,12 +433,16 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
         extra['blocks'] = list(blocks)
     if lead_quote:                                   # likewise written only when set
         extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS + (('caption',) if lead_quote.get('caption') else ())}
-    return dict(
+    out = dict(
         extra, id=id, kind='topic', title=title, category=home,
         path=('/%s/%s' % (home, id)) if draft else REG.path(id),
         shelves=[home] if draft else REG.shelves_of(id), finding=f, chart=chart, facts=list(facts),
         conclusions=list(conclusions), table=table, said=list(said), sources=list(sources),
         full_report=_full(home))
+    bad = _legacy_bad(out, composed)
+    if bad:
+        raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
+    return out
 
 
 def _tables_bad(tables, id, uniform=()):

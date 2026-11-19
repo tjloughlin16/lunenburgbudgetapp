@@ -35,8 +35,13 @@ ladder) is wrapped in `TP.cite(part, *sources)`, by index or by a source's `key`
 numbered at the foot and each section prints [n] linked to them. The build refuses a section with
 no citation, and a source no section cites. TJ: *"this is a good model to keep strict."*
 
-A page with no `flow` gets `default_flow()`, the old order: a migration aid, and the mark of a
-page the review in `notes/PLAN-PAGE-REVIEW.md` has not reached.
+**A page with no `flow` is refused, unless it is one of the pages frozen in
+`scripts/topic_legacy_flow.json` (18 November 2026) AND its shape is unchanged.** TJ, that day,
+after six parks pages were rebuilt from new ledgers into the old slots: *"are the pages still
+being constrained by the template?!"* So: a new page must be composed; adding a fact, chart, block
+or table to an old page means composing it; a composed page leaves the list
+(`python3 scripts/freeze_legacy_flow.py --prune`). The list only shrinks. A data refresh moves
+values, not shape, so it never trips this.
 
 ## The split: what binds and what is yours
 
