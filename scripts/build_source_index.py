@@ -1062,6 +1062,32 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'school-warrant-batch-5853', 'origin': 'request',
+        'title': 'School warrant batch 5853 and check 218995',
+        'blurb': 'The batch of nine Keystone Educational Collaborative tuition invoices '
+                 '($189,276.75) and the check register line that paid them, sent to this '
+                 'project by the Superintendent on 19 November 2026 in answer to a records '
+                 'request, redacted by the district.',
+        'items': [
+            ('correspondence/2026-11-19-school-warrant-batch-5853-2026-06-30.pdf',
+             'Warrant batch 5853, dated 30 June 2026', 2,
+             'Coversheet, the MUNIS invoice entry proof list, and the nine Keystone invoices '
+             'behind it, which bill for 31 August to 4 November 2026. Redacted by the district.'),
+            ('correspondence/2026-11-19-check-218995-register-line.png',
+             'Check 218995, the register line', 2,
+             'A screenshot of one check register line: check 218995, dated 16 July 2026, '
+             '$199,364.25.'),
+            ('correspondence/2026-11-19-records-requests-superintendent.txt',
+             'The Superintendent’s reply, 19 November 2026', 2,
+             'Answers three records requests: the 21 October documents, the June warrant '
+             'total, and check 218995.'),
+            ('correspondence/2026-11-19-batch-5853-and-check-218995.md',
+             'How these reached us', 3,
+             'The email, the filenames and sha256s, the check of the redaction, what the '
+             'batch and the check line print and how they tie.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'business', 'origin': 'town',
         'title': 'Business registrations',
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '
