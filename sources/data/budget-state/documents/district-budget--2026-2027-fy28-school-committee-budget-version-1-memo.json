@@ -1,0 +1,121 @@
+{
+ "board": "Lunenburg Public Schools \u2014 a budget document",
+ "board_slug": "documents",
+ "document": true,
+ "first_seen": "2026-11-19",
+ "label": "FY28 School Committee Budget Version 1 Memo",
+ "meeting_date": "2026-11-19",
+ "source": {
+  "document": "sources/district-budget/docs/sc-meetings/2026-2027-fy28-school-committee-budget-version-1-memo.pdf",
+  "sha256": "2640cc32cdbdcb2f1a4fe49496492171d155431b9fb1ac2c8bace1b1583a554f",
+  "text": "sources/district-budget/text/sc-meetings/2026-2027-fy28-school-committee-budget-version-1-memo.txt"
+ },
+ "state": {
+  "cuts": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2028,
+    "fte_as_heard": "four positions",
+    "item": "Restoration of four previously eliminated elementary teaching positions (two at the Primary School, two at Turkey Hill Elementary)",
+    "scope": "school",
+    "status": "proposed",
+    "t": 2,
+    "who": "the superintendent's memo"
+   }
+  ],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$27,213,380.50",
+    "fiscal_year": 2027,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "FY2027 comparison budget printed as $27,213,380.50.",
+    "status": "announced",
+    "t": 1,
+    "who": "the superintendent's memo"
+   },
+   {
+    "amount_as_heard": "$30,145,083.11",
+    "fiscal_year": 2028,
+    "kind": "budget_total",
+    "scope": "school",
+    "statement": "FY2028 preliminary budget (Version 1) printed as $30,145,083.11; a preliminary budget, not the recommended budget.",
+    "status": "proposed",
+    "t": 1,
+    "who": "the superintendent's memo"
+   },
+   {
+    "amount_as_heard": "$2,931,702.61",
+    "fiscal_year": 2028,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Proposed increase over FY2027 comparison budget, printed as $2,931,702.61 (10.77%).",
+    "status": "proposed",
+    "t": 1,
+    "who": "the superintendent's memo"
+   },
+   {
+    "amount_as_heard": "$650,000",
+    "fiscal_year": 2028,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Special education: approximately $650,000 in combined increases across transportation, tuition and related-service accounts.",
+    "status": "announced",
+    "t": 1,
+    "who": "the superintendent's memo"
+   },
+   {
+    "amount_as_heard": "$537,000",
+    "fiscal_year": 2028,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Health insurance: preliminary 12% increase, approximately $537,000; better rate information expected January or February.",
+    "status": "announced",
+    "t": 2,
+    "who": "the superintendent's memo"
+   },
+   {
+    "amount_as_heard": "$101,000",
+    "fiscal_year": 2028,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Utilities: approximately $101,000 increase in systemwide electricity costs.",
+    "status": "announced",
+    "t": 2,
+    "who": "the superintendent's memo"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "final FY28 appropriation request",
+    "condition": "until these items are resolved",
+    "fiscal_year": 2028,
+    "prediction": "Outstanding variables (health insurance, staffing and salary assumptions, special ed offsets, Circuit Breaker, School Choice, Net School Spending, town contribution) may materially change the amount ultimately requested in appropriations.",
+    "scope": "school",
+    "t": 3,
+    "who": "the superintendent's memo"
+   },
+   {
+    "about": "requests and proposed investments",
+    "condition": "financial resources are limited",
+    "fiscal_year": 2028,
+    "prediction": "Not every request can be funded; the district will identify the impact if particular investments cannot be funded.",
+    "scope": "school",
+    "t": 3,
+    "who": "the superintendent's memo"
+   }
+  ]
+ },
+ "upstream": "https://drive.google.com/file/d/1kY_mQxS03QCc0KN3kHNJWER7rcLmXAar/view?usp=drive_link",
+ "video_id": "2026-2027-fy28-school-committee-budget-version-1-memo",
+ "video_url": "/docs/district-budget/docs/sc-meetings/2026-2027-fy28-school-committee-budget-version-1-memo.pdf",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM A DOCUMENT'S TEXT. Every figure is as printed and every line carries the page it was read from, which is the record.",
+ "written": {
+  "at": "2026-11-19T12:08:11Z",
+  "by": "scripts/write_document_budget_state.py",
+  "cost_usd": 0.0472403,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

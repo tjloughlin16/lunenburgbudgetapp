@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "monty-tech-assessment",
- "picked_at": "2026-10-19T15:22:48Z",
+ "picked_at": "2026-11-19T12:20:34Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0862,
- "input_sha256": "f8c8e674ef662fcbeb0e5f179ad49cedac5126063def52d1a57b84e3fed53569",
+ "cost_usd": 0.0502,
+ "input_sha256": "522349ba5a991ea10a808f3857c6255c0d7bc44fd3449ed7a04c4730803eb513",
  "callouts": [
   {
    "kind": "money",
    "value": "8.85%",
-   "label": "rise in Lunenburg's Monty Tech assessment for FY27",
-   "hook": "rise in assessment",
-   "quote": "That's an 8.85% increase",
+   "label": "increase in Lunenburg's Monty Tech assessment, to $1,452,426",
+   "hook": "rise in Monty Tech bill",
+   "quote": "it is 1 million452,426 to Monty Tech. That's an 8.85% increase",
    "heard": [
     "1,452,426",
     "8.85%"
@@ -27,13 +27,13 @@
    "where": "Town Meeting, 2 May 2026",
    "verdict": {
     "keep": true,
-    "why": "Town Meeting 2 May figure of 8.85% increase stated; nothing later."
+    "why": "8.85% and $1,452,426 are stated at Town Meeting; nothing later contradicts them."
    }
   },
   {
    "kind": "money",
    "value": "2.53%",
-   "label": "rise in Monty Tech's own proposed FY27 budget",
+   "label": "increase in Monty Tech's own total budget, far below Lunenburg's assessment rise",
    "hook": "",
    "quote": "which is a 2.53% budget",
    "heard": [
@@ -51,30 +51,31 @@
    "where": "Finance Committee, 5 Feb 2026",
    "verdict": {
     "keep": true,
-    "why": "Business manager presented 2.53% total proposed increase; labelled as Monty Tech's own proposal."
+    "why": "2.53% is stated, and the comparison with the 8.85% rise follows. Nothing later contradicts it."
    }
   },
   {
    "kind": "money",
-   "value": "$1,452,426",
-   "label": "Lunenburg's FY27 assessment to Monty Tech",
+   "value": "$117,858",
+   "label": "added cost to Lunenburg from Monty Tech's proposed assessment",
    "hook": "",
-   "quote": "it is 1 million452,426 to Monty Tech",
+   "quote": "an increase of 117,858",
    "heard": [
-    "1,452,426",
-    "8.85%"
+    "1,452,379",
+    "117,858",
+    "5.69%"
    ],
-   "item_date": "2026-05-02",
-   "item_board": "town-meeting",
+   "item_date": "2026-02-05",
+   "item_board": "finance-committee",
    "basis": "heard",
-   "board": "town-meeting",
-   "date": "2026-05-02",
-   "video_id": "XPu6b2OxSAE",
-   "t": 6582,
-   "where": "Town Meeting, 2 May 2026",
+   "board": "finance-committee",
+   "date": "2026-02-05",
+   "video_id": "6csHPPkKg7c",
+   "t": 3216,
+   "where": "Finance Committee, 5 Feb 2026",
    "verdict": {
-    "keep": true,
-    "why": "Captions give '1 million 452,426' to Monty Tech."
+    "keep": false,
+    "why": "The $117,858 comes from the Feb proposed figure ($1,452,379). The later Town Meeting figure, $1,452,426, implies about $117,905, so it is not current."
    }
   }
  ]

@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**713 of 6243 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**716 of 6253 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5530 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5537 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -49,7 +49,7 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY25 | 121 |
 | FY26 | 163 |
 | FY27 | 295 |
-| FY28 | 12 |
+| FY28 | 15 |
 | FY29 | 3 |
 | FY30 | 1 |
 | FY32 | 1 |
@@ -422,6 +422,8 @@ Listed so this view cannot look more complete than it is.
 - `data/munis-gf-p13-reading-totals.csv` — The GRAND TOTAL line of each of those two reports, as printed
 - `data/munis-gf-p13-reading.csv` — The town general fund at the FY2025 and FY2026 close, 1,160 accounts each
 - `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
+- `data/munis-parks-journal-accounts.csv` — The parks funds’ 18 accounts, FY2026 as the journal report prints them
+- `data/munis-parks-journal.csv` — The parks funds, every posting, FY2023 to FY2026
 - `data/munis-school-journal-accounts.csv` — The school department’s 3,356 accounts, FY2026 as the journal report prints them
 - `data/munis-school-journal-image-pages.csv` — Three pages of the school journal report, read by eye
 - `data/munis-school-journal.csv` — The school department, every posting, FY2023 to FY2026
@@ -459,5 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/receivables.csv` — What the town was still owed on 30 June, levy by levy
 - `data/recording-minutes-policy.csv` — Which boards TJ has approved minutes for, from when, in what order
 - `data/redactions.csv` — What was redacted or withheld, and why
-- `data/refresh-runs.csv` — Every daily refresh, timed
-- `data/report-agency-funds.csv` — Annual-report extract: agency funds
