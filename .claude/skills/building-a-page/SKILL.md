@@ -30,6 +30,26 @@ exactly that. Nothing but sources is mandatory. Worked example:
 conclusions; metrics with units; short; hub and spoke for every detail. If your page looks like
 the last page you built, it is not showing its data the best way.
 
+**THE LADDER IS CLOSED TOO (20 November 2026).** TJ, on capital pages that were composed and
+still ended in a grid of facts and a list of conclusions: *"you followed the base template agai
+:("* ... *"cut the usage of templates anyhere"*. Every composed page that day drew `'ladder'`,
+because it was the only part that held conclusions, so composing still ended in the template's
+back half. Now:
+
+- **A conclusion sits under the visual it explains.** On a topic page, `('conclusion', i)` in the
+  flow, directly after its chart, table or block (or another conclusion about the same visual).
+  It draws the claim, what it means, and the facts it rests on as its figures. The build refuses a
+  conclusion placed anywhere else, and one left out.
+- **On a hub, or on any block**, `TB.claims(block, conclusions, facts)` attaches them to that
+  block. A hub may then pass `ladder=None` and no `chart`, if a block placed `lead`/`top` is its
+  signature.
+- **A fact is drawn only under a conclusion that rests on it.** A fact nothing rests on is refused
+  (it would be drawn nowhere). There is no free-standing grid of tiles any more.
+- `'ladder'` in a composed flow is refused except on the pages in `topic.LADDER_FROZEN`, which used
+  it that day; the list only shrinks. Worked example: `scripts/build_capital_rankings.py` (a path
+  diagram, the ranked list with its funding line, a slope chart of two orders, share bands, and on
+  the hub a grid of projects across years), each with its conclusions under it.
+
 **Citations are strict.** In a composed flow every part with figures (chart, table, block,
 ladder) is wrapped in `TP.cite(part, *sources)`, by index or by a source's `key`. Sources are
 numbered at the foot and each section prints [n] linked to them. The build refuses a section with

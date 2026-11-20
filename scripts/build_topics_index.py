@@ -47,6 +47,9 @@ def words(p):
         parts.append(c['text'])
         parts += [n['text'] for n in c.get('notes', [])]
     parts += [s['quote'] for s in p.get('said', [])]
+    for b in p.get('blocks', []):        # conclusions placed under a block (topic_blocks.claims)
+        for c in b.get('claims', []):
+            parts += [c['text']] + [f['label']['text'] for f in c['facts']]
     for t in (p.get('ladder') or {}).get('tiers', []):
         parts += [f['label']['text'] for f in t['facts']]
     for t in [p.get('table')] + p.get('tables', []):

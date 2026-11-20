@@ -10,6 +10,7 @@
 import { Fragment, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { CUSTOM_BLOCKS } from './custom'
 import { InlineTopicChart, type InlineChart } from '../TopicCharts'
+import { MatrixFact, type LadderFact } from '../report'
 
 type Unit = { text: string }
 type Basis = { kind: 'law' | 'record' | 'budget' | 'reading'; label: string }
@@ -411,7 +412,33 @@ function Terms({ b }: { b: Extract<Block, { block: 'terms' }> }) {
 }
 
 /** One block. A topic page draws its blocks one at a time, in its `flow` (scripts/topic.py). */
+/** Conclusions placed under the block they explain (scripts/topic_blocks.py claims()): the claim,
+ *  what it means, and the facts it rests on as its figures. */
+export type Claim = { text: string; so?: Unit; facts: LadderFact[] }
+export function ClaimCard({ c }: { c: Claim }) {
+  return (
+    <div className="mt-4 max-w-3xl pl-4 border-l-[3px]" style={{ borderColor: 'var(--series-cost)' }}>
+      <p className="text-[16px] leading-snug font-semibold" style={{ color: 'var(--text-primary)' }}>{c.text}</p>
+      {c.so ? (
+        <p className="text-[14.5px] leading-snug mt-1" style={secondary}>
+          <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>What it means: </span>
+          {c.so.text}</p>
+      ) : null}
+      {c.facts.length ? (
+        <div className="mt-1.5 flex flex-wrap gap-x-6 gap-y-1">
+          {c.facts.map(f => <div key={f.id} className="min-w-[8rem] max-w-[16rem]"><MatrixFact f={f} lit={null} /></div>)}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 export function OneBlock({ b }: { b: Block }) {
+  const cl = (b as { claims?: Claim[] }).claims
+  return cl?.length ? <>{<BlockBody b={b} />}{cl.map((c, i) => <ClaimCard key={i} c={c} />)}</> : <BlockBody b={b} />
+}
+
+function BlockBody({ b }: { b: Block }) {
   switch (b.block) {
     case 'explain': return <Explain b={b} />
     case 'matrix': return <Matrix b={b} />

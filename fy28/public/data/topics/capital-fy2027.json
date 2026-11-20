@@ -1,0 +1,1160 @@
+{
+ "blocks": [
+  {
+   "alt": "FY2027: requests ranked, then in the first plan, then funded, each as a count and dollars.",
+   "block": "custom",
+   "component": "capital-path",
+   "data": {
+    "moves": [
+     "16 requests ranked here were not in it",
+     "6 requests it left out were added"
+    ],
+    "note": "Each bar is that stage’s dollars against the ranked total. Stage names are the year’s own documents’.",
+    "stages": [
+     {
+      "amount": 3267208.0,
+      "amount_text": "$3,267,208",
+      "count_text": "22 requests",
+      "doc": "FY2027 capital plan workbook, CPC rank and average",
+      "label": "Ranked by the Capital Planning Committee"
+     },
+     {
+      "amount": 1532127.0,
+      "amount_text": "$1,532,127",
+      "count_text": "6 requests",
+      "doc": "Town Manager — preliminary FY2027 capital program, 1 February 2026",
+      "label": "In the Town Manager’s preliminary program"
+     },
+     {
+      "amount": 1830203.0,
+      "amount_text": "$1,830,203",
+      "count_text": "12 requests",
+      "doc": "Annual Town Meeting warrant, May 2026, Article 13",
+      "final": true,
+      "label": "In Article 13, which Town Meeting passed (known from the recording)"
+     }
+    ]
+   },
+   "place": "lead",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The final plan was larger than the Town Manager’s first one; the first draft was not the ceiling."
+   },
+   "title": "From ranked to funded"
+  },
+  {
+   "alt": "FY2027 capital requests in the Capital Planning Committee’s order, each bar sized by its cost and marked funded or not.",
+   "block": "custom",
+   "component": "capital-ladder",
+   "data": {
+    "depts": [
+     {
+      "label": "Public Works"
+     },
+     {
+      "label": "Facilities"
+     },
+     {
+      "label": "Schools"
+     },
+     {
+      "label": "Fire"
+     },
+     {
+      "label": "Police"
+     },
+     {
+      "label": "IT"
+     }
+    ],
+    "note": "One bar a request, as long as its cost; solid bars were funded. Department is our grouping of the project numbers the documents print.",
+    "rows": [
+     {
+      "amount": 350000.0,
+      "amount_text": "$350,000",
+      "dept": 0,
+      "funded": true,
+      "project": "Flat Hill Rd Bridge Completion (Engineering and Construction)",
+      "rank_text": {
+       "avg": "2",
+       "cpc": "1"
+      },
+      "ranks": {
+       "avg": 2.0,
+       "cpc": 1.0
+      }
+     },
+     {
+      "amount": 68627.0,
+      "amount_text": "$68,627",
+      "dept": 4,
+      "funded": true,
+      "project": "Patrol Cruiser (replacement)",
+      "rank_text": {
+       "avg": "3.2",
+       "cpc": "2"
+      },
+      "ranks": {
+       "avg": 3.2,
+       "cpc": 2.0
+      }
+     },
+     {
+      "amount": 335000.0,
+      "amount_text": "$335,000",
+      "dept": 3,
+      "funded": true,
+      "project": "Engine 2 - 4x4 Brush Truck (replacement)",
+      "rank_text": {
+       "avg": "3.8",
+       "cpc": "3"
+      },
+      "ranks": {
+       "avg": 3.8,
+       "cpc": 3.0
+      }
+     },
+     {
+      "amount": 25000.0,
+      "amount_text": "$25,000",
+      "dept": 2,
+      "funded": true,
+      "project": "Primary School Entry and Driveway Expansion (Design)",
+      "rank_text": {
+       "avg": "5.4",
+       "cpc": "4"
+      },
+      "ranks": {
+       "avg": 5.4,
+       "cpc": 4.0
+      }
+     },
+     {
+      "amount": 30000.0,
+      "amount_text": "$30,000",
+      "dept": 2,
+      "funded": true,
+      "project": "Primary School Playground (Design)",
+      "rank_text": {
+       "avg": "6",
+       "cpc": "5"
+      },
+      "ranks": {
+       "avg": 6.0,
+       "cpc": 5.0
+      }
+     },
+     {
+      "amount": 68627.0,
+      "amount_text": "$68,627",
+      "dept": 4,
+      "funded": true,
+      "project": "Supervisor Cruiser (replacement)",
+      "rank_text": {
+       "avg": "6.8",
+       "cpc": "6"
+      },
+      "ranks": {
+       "avg": 6.8,
+       "cpc": 6.0
+      }
+     },
+     {
+      "amount": 494500.0,
+      "amount_text": "$494,500",
+      "dept": 1,
+      "funded": true,
+      "project": "Public Safety Building Roof Repair",
+      "rank_text": {
+       "avg": "6.8",
+       "cpc": "7"
+      },
+      "ranks": {
+       "avg": 6.8,
+       "cpc": 7.0
+      }
+     },
+     {
+      "amount": 115000.0,
+      "amount_text": "$115,000",
+      "dept": 1,
+      "funded": true,
+      "project": "Public Safety Building Boiler Upgrades",
+      "rank_text": {
+       "avg": "8",
+       "cpc": "8"
+      },
+      "ranks": {
+       "avg": 8.0,
+       "cpc": 8.0
+      }
+     },
+     {
+      "amount": 29044.0,
+      "amount_text": "$29,044",
+      "dept": 2,
+      "funded": true,
+      "project": "School Door Security Intercoms at Turkey Hill and Primary (replacement)",
+      "rank_text": {
+       "avg": "9.2",
+       "cpc": "9"
+      },
+      "ranks": {
+       "avg": 9.2,
+       "cpc": 9.0
+      }
+     },
+     {
+      "amount": 35000.0,
+      "amount_text": "$35,000",
+      "dept": 1,
+      "funded": true,
+      "project": "Public Safety Controls Upgrade",
+      "rank_text": {
+       "avg": "11.6",
+       "cpc": "10"
+      },
+      "ranks": {
+       "avg": 11.6,
+       "cpc": 10.0
+      }
+     },
+     {
+      "amount": 259000.0,
+      "amount_text": "$259,000",
+      "dept": 0,
+      "funded": true,
+      "project": "Front End Loader with Snow Plow (replacement, retain spare)",
+      "rank_text": {
+       "avg": "12.6",
+       "cpc": "11"
+      },
+      "ranks": {
+       "avg": 12.6,
+       "cpc": 11.0
+      }
+     },
+     {
+      "amount": 20405.0,
+      "amount_text": "$20,405",
+      "dept": 5,
+      "funded": true,
+      "project": "Adult Activity Center Network Upgrade",
+      "rank_text": {
+       "avg": "14",
+       "cpc": "12"
+      },
+      "ranks": {
+       "avg": 14.0,
+       "cpc": 12.0
+      }
+     },
+     {
+      "amount": 401000.0,
+      "amount_text": "$401,000",
+      "dept": 0,
+      "funded": false,
+      "project": "6 Wheel Dump/Spreader/Plow (replacement)",
+      "rank_text": {
+       "avg": "14",
+       "cpc": "13"
+      },
+      "ranks": {
+       "avg": 14.0,
+       "cpc": 13.0
+      }
+     },
+     {
+      "amount": 29005.0,
+      "amount_text": "$29,005",
+      "dept": 2,
+      "funded": false,
+      "project": "Primary School Window Safety Film",
+      "rank_text": {
+       "avg": "14.6",
+       "cpc": "14"
+      },
+      "ranks": {
+       "avg": 14.6,
+       "cpc": 14.0
+      }
+     },
+     {
+      "amount": 49800.0,
+      "amount_text": "$49,800",
+      "dept": 2,
+      "funded": false,
+      "project": "Mower (replacement)",
+      "rank_text": {
+       "avg": "15",
+       "cpc": "15"
+      },
+      "ranks": {
+       "avg": 15.0,
+       "cpc": 15.0
+      }
+     },
+     {
+      "amount": 93000.0,
+      "amount_text": "$93,000",
+      "dept": 0,
+      "funded": false,
+      "project": "One Ton Dump / Plow Truck (replacement)",
+      "rank_text": {
+       "avg": "15.4",
+       "cpc": "16"
+      },
+      "ranks": {
+       "avg": 15.4,
+       "cpc": 16.0
+      }
+     },
+     {
+      "amount": 200000.0,
+      "amount_text": "$200,000",
+      "dept": 0,
+      "funded": false,
+      "project": "Fabric Salt Shed & Anti-Icing Chemicals Equipment (Design & Permit)",
+      "rank_text": {
+       "avg": "16.4",
+       "cpc": "17"
+      },
+      "ranks": {
+       "avg": 16.4,
+       "cpc": 17.0
+      }
+     },
+     {
+      "amount": 55600.0,
+      "amount_text": "$55,600",
+      "dept": 1,
+      "funded": false,
+      "project": "Fitzgerald Field Field Improvements",
+      "rank_text": {
+       "avg": "16.6",
+       "cpc": "18"
+      },
+      "ranks": {
+       "avg": 16.6,
+       "cpc": 18.0
+      }
+     },
+     {
+      "amount": 60000.0,
+      "amount_text": "$60,000",
+      "dept": 2,
+      "funded": false,
+      "project": "Heat for THES Maintenance Garage",
+      "rank_text": {
+       "avg": "16.6",
+       "cpc": "19"
+      },
+      "ranks": {
+       "avg": 16.6,
+       "cpc": 19.0
+      }
+     },
+     {
+      "amount": 38600.0,
+      "amount_text": "$38,600",
+      "dept": 1,
+      "funded": false,
+      "project": "Public Safety VCT Flooring Replacement",
+      "rank_text": {
+       "avg": "17.4",
+       "cpc": "20"
+      },
+      "ranks": {
+       "avg": 17.4,
+       "cpc": 20.0
+      }
+     },
+     {
+      "amount": 125000.0,
+      "amount_text": "$125,000",
+      "dept": 0,
+      "funded": false,
+      "project": "New West Townsend Rd. Drainage Improvements (Design)",
+      "rank_text": {
+       "avg": "17.8",
+       "cpc": "21"
+      },
+      "ranks": {
+       "avg": 17.8,
+       "cpc": 21.0
+      }
+     },
+     {
+      "amount": 385000.0,
+      "amount_text": "$385,000",
+      "dept": 1,
+      "funded": false,
+      "project": "TC Passios Hazmat Abatement",
+      "rank_text": {
+       "avg": "17.8",
+       "cpc": "22"
+      },
+      "ranks": {
+       "avg": 17.8,
+       "cpc": 22.0
+      }
+     }
+    ],
+    "schemes": [
+     {
+      "high_first": false,
+      "key": "cpc",
+      "label": "Capital Planning Committee"
+     },
+     {
+      "high_first": false,
+      "key": "avg",
+      "label": "Members’ average rank"
+     }
+    ],
+    "text": {
+     "funded": "Funded",
+     "line": "The highest-ranked request left unfunded",
+     "order": "In the order of",
+     "rank": "rank",
+     "score": "score",
+     "unfunded": "Not funded",
+     "unranked": "not ranked"
+    }
+   },
+   "place": "lead",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Read down the list: where the solid bars stop is where the money ran out, and any solid bar below that point was funded out of order."
+   },
+   "title": "Every request, in rank order"
+  },
+  {
+   "alt": "FY2027: each department’s share of the dollars requested, joined to its share of the dollars funded.",
+   "block": "custom",
+   "component": "capital-share-bands",
+   "data": {
+    "depts": [
+     {
+      "fun": 33.27499736368042,
+      "fun_text": "33.3%",
+      "label": "Public Works",
+      "req": 43.707042832901976,
+      "req_text": "43.7%"
+     },
+     {
+      "fun": 35.21467290786869,
+      "fun_text": "35.2%",
+      "label": "Facilities",
+      "req": 34.39328013398596,
+      "req_text": "34.4%"
+     },
+     {
+      "fun": 18.303980487410414,
+      "fun_text": "18.3%",
+      "label": "Fire",
+      "req": 10.253402905477705,
+      "req_text": "10.3%"
+     },
+     {
+      "fun": 4.592058913683346,
+      "fun_text": "4.6%",
+      "label": "Schools",
+      "req": 6.820777862933734,
+      "req_text": "6.8%"
+     },
+     {
+      "fun": 7.499386680056802,
+      "fun_text": "7.5%",
+      "label": "Police",
+      "req": 4.200956902652051,
+      "req_text": "4.2%"
+     },
+     {
+      "fun": 1.1149036473003269,
+      "fun_text": "1.1%",
+      "label": "IT",
+      "req": 0.6245393620485749,
+      "req_text": "0.6%"
+     }
+    ],
+    "highlight": "Public Works",
+    "note": "Shares of dollars. Department is our grouping of the printed project numbers; it matches every department total the year’s documents print.",
+    "text": {
+     "fun": "Funded",
+     "req": "Requested"
+    }
+   },
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "A band that narrows was a smaller share of what was funded than of what was requested."
+   },
+   "title": "Who asked, who got"
+  },
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [
+      "FY2027",
+      "20 November 2026"
+     ],
+     "text": "Each department’s own order of its requests. Closes: each department’s FY2027 priority list, requested by records request on 20 November 2026."
+    },
+    {
+     "figures": {},
+     "literals": [
+      "Article 13"
+     ],
+     "text": "The Town Clerk’s written record of the Article 13 vote. The vote is known from the meeting recording only."
+    }
+   ],
+   "place": "end",
+   "title": "What the documents do not show",
+   "tone": "plain"
+  }
+ ],
+ "category": "capital-rankings",
+ "chart": null,
+ "composed": true,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "12",
+     "unit": "projects",
+     "value": 12
+    },
+    "b": {
+     "text": "22",
+     "unit": "requests",
+     "value": 22
+    },
+    "c": {
+     "text": "56.0%",
+     "unit": "percent",
+     "value": 56.017339575564215
+    },
+    "d": {
+     "text": "6",
+     "unit": "requests",
+     "value": 6
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "fn",
+    "req",
+    "share",
+    "pre"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The rest was not cancelled by this vote; the road-back grid on the hub shows which requests came back."
+   },
+   "text": "12 of 22 requests were funded, 56.0% of the dollars; the first plan held 6."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "rests_on": [
+    "fn"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Here the funding line is one clean cut across the committee’s list."
+   },
+   "text": "Every funded project ranked above every unfunded one in the committee’s order."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "43.7%",
+     "unit": "percent",
+     "value": 43.707042832901976
+    },
+    "b": {
+     "text": "33.3%",
+     "unit": "percent",
+     "value": 33.27499736368042
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "lagreq",
+    "lagfun"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "A share of dollars, not of projects: one large request moves it more than several small ones."
+   },
+   "text": "Public Works requested 43.7% of the dollars and received 33.3% of what was funded."
+  }
+ ],
+ "facts": [
+  {
+   "id": "req",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "ranked requests"
+   },
+   "value": {
+    "text": "22",
+    "unit": "requests",
+    "value": 22
+   }
+  },
+  {
+   "id": "fn",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "funded"
+   },
+   "value": {
+    "text": "12",
+    "unit": "projects",
+    "value": 12
+   }
+  },
+  {
+   "id": "pre",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "in the first plan"
+   },
+   "value": {
+    "text": "6",
+    "unit": "requests",
+    "value": 6
+   }
+  },
+  {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the requested dollars funded"
+   },
+   "value": {
+    "text": "56.0%",
+    "unit": "percent",
+    "value": 56.017339575564215
+   }
+  },
+  {
+   "id": "lagreq",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Public Works’ share of the dollars requested"
+   },
+   "value": {
+    "text": "43.7%",
+    "unit": "percent",
+    "value": 43.707042832901976
+   }
+  },
+  {
+   "id": "lagfun",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Public Works’ share of the dollars funded"
+   },
+   "value": {
+    "text": "33.3%",
+    "unit": "percent",
+    "value": 33.27499736368042
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "12",
+    "unit": "projects",
+    "value": 12
+   },
+   "b": {
+    "text": "22",
+    "unit": "requests",
+    "value": 22
+   },
+   "c": {
+    "text": "56.0%",
+    "unit": "percent",
+    "value": 56.017339575564215
+   }
+  },
+  "literals": [],
+  "text": "12 of 22 capital requests were funded, 56.0% of the dollars requested."
+ },
+ "flow": [
+  {
+   "part": "finding"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 0,
+   "part": "block"
+  },
+  {
+   "i": 0,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 1,
+   "part": "block"
+  },
+  {
+   "i": 1,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    2,
+    3
+   ],
+   "i": 2,
+   "part": "block"
+  },
+  {
+   "i": 2,
+   "part": "conclusion"
+  },
+  {
+   "part": "related"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "i": 0,
+   "part": "table"
+  },
+  {
+   "cites": [
+    2,
+    3
+   ],
+   "i": 1,
+   "part": "table"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 3,
+   "part": "block"
+  },
+  {
+   "part": "sources"
+  }
+ ],
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "capital-fy2027",
+ "kind": "topic",
+ "path": "/capital-rankings/capital-fy2027",
+ "said": [],
+ "shelves": [
+  "capital-rankings"
+ ],
+ "sources": [
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/capital-planning/fy27-capital-plan.xlsx",
+   "key": "plan27",
+   "label": "FY2027 capital plan workbook, CPC rank and average"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/capital-planning/preliminary-capital-program-2.1.26.pdf",
+   "key": "pre27",
+   "label": "Town Manager — preliminary FY2027 capital program, 1 February 2026"
+  },
+  {
+   "href": "/docs/town-budget/docs/3765-town-meeting-booklet-including-warrant.pdf",
+   "key": "w26",
+   "label": "Annual Town Meeting warrant, May 2026, Article 13"
+  },
+  {
+   "href": "/data/capital-rankings.csv",
+   "key": "data",
+   "label": "Lunenburg Budget Project — capital-rankings.csv, every row and its page or cell"
+  }
+ ],
+ "table": {
+  "caption": "Every request and every rank",
+  "views": [
+   {
+    "columns": [
+     "Department",
+     "Cost",
+     "Capital Planning Committee",
+     "Members’ average rank",
+     "Funded"
+    ],
+    "key": "all",
+    "kinds": [
+     "published",
+     "published",
+     "published",
+     "published",
+     "published"
+    ],
+    "label": "Every request",
+    "rows": [
+     {
+      "cells": [
+       "Public Works",
+       "$350,000",
+       "1",
+       "2",
+       "yes"
+      ],
+      "label": "Flat Hill Rd Bridge Completion (Engineering and Construction)"
+     },
+     {
+      "cells": [
+       "Police",
+       "$68,627",
+       "2",
+       "3.2",
+       "yes"
+      ],
+      "label": "Patrol Cruiser (replacement)"
+     },
+     {
+      "cells": [
+       "Fire",
+       "$335,000",
+       "3",
+       "3.8",
+       "yes"
+      ],
+      "label": "Engine 2 - 4x4 Brush Truck (replacement)"
+     },
+     {
+      "cells": [
+       "Schools",
+       "$25,000",
+       "4",
+       "5.4",
+       "yes"
+      ],
+      "label": "Primary School Entry and Driveway Expansion (Design)"
+     },
+     {
+      "cells": [
+       "Schools",
+       "$30,000",
+       "5",
+       "6",
+       "yes"
+      ],
+      "label": "Primary School Playground (Design)"
+     },
+     {
+      "cells": [
+       "Police",
+       "$68,627",
+       "6",
+       "6.8",
+       "yes"
+      ],
+      "label": "Supervisor Cruiser (replacement)"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$494,500",
+       "7",
+       "6.8",
+       "yes"
+      ],
+      "label": "Public Safety Building Roof Repair"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$115,000",
+       "8",
+       "8",
+       "yes"
+      ],
+      "label": "Public Safety Building Boiler Upgrades"
+     },
+     {
+      "cells": [
+       "Schools",
+       "$29,044",
+       "9",
+       "9.2",
+       "yes"
+      ],
+      "label": "School Door Security Intercoms at Turkey Hill and Primary (replacement)"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$35,000",
+       "10",
+       "11.6",
+       "yes"
+      ],
+      "label": "Public Safety Controls Upgrade"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$259,000",
+       "11",
+       "12.6",
+       "yes"
+      ],
+      "label": "Front End Loader with Snow Plow (replacement, retain spare)"
+     },
+     {
+      "cells": [
+       "IT",
+       "$20,405",
+       "12",
+       "14",
+       "yes"
+      ],
+      "label": "Adult Activity Center Network Upgrade"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$401,000",
+       "13",
+       "14",
+       "no"
+      ],
+      "label": "6 Wheel Dump/Spreader/Plow (replacement)"
+     },
+     {
+      "cells": [
+       "Schools",
+       "$29,005",
+       "14",
+       "14.6",
+       "no"
+      ],
+      "label": "Primary School Window Safety Film"
+     },
+     {
+      "cells": [
+       "Schools",
+       "$49,800",
+       "15",
+       "15",
+       "no"
+      ],
+      "label": "Mower (replacement)"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$93,000",
+       "16",
+       "15.4",
+       "no"
+      ],
+      "label": "One Ton Dump / Plow Truck (replacement)"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$200,000",
+       "17",
+       "16.4",
+       "no"
+      ],
+      "label": "Fabric Salt Shed & Anti-Icing Chemicals Equipment (Design & Permit)"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$55,600",
+       "18",
+       "16.6",
+       "no"
+      ],
+      "label": "Fitzgerald Field Field Improvements"
+     },
+     {
+      "cells": [
+       "Schools",
+       "$60,000",
+       "19",
+       "16.6",
+       "no"
+      ],
+      "label": "Heat for THES Maintenance Garage"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$38,600",
+       "20",
+       "17.4",
+       "no"
+      ],
+      "label": "Public Safety VCT Flooring Replacement"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$125,000",
+       "21",
+       "17.8",
+       "no"
+      ],
+      "label": "New West Townsend Rd. Drainage Improvements (Design)"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$385,000",
+       "22",
+       "17.8",
+       "no"
+      ],
+      "label": "TC Passios Hazmat Abatement"
+     }
+    ]
+   }
+  ]
+ },
+ "tables": [
+  {
+   "caption": "Each department’s share",
+   "views": [
+    {
+     "columns": [
+      "Funded of requested",
+      "Requested",
+      "Share of requests",
+      "Funded",
+      "Share of funded",
+      "Its own dollars funded"
+     ],
+     "key": "shares",
+     "kinds": [
+      "published",
+      "published",
+      "published",
+      "published",
+      "published",
+      "published"
+     ],
+     "label": "By department",
+     "note": "Shares of dollars. Requested means every ranked request.",
+     "rows": [
+      {
+       "cells": [
+        "2 of 6",
+        "$1,428,000",
+        "43.7%",
+        "$609,000",
+        "33.3%",
+        "42.6%"
+       ],
+       "label": "Public Works"
+      },
+      {
+       "cells": [
+        "3 of 6",
+        "$1,123,700",
+        "34.4%",
+        "$644,500",
+        "35.2%",
+        "57.4%"
+       ],
+       "label": "Facilities"
+      },
+      {
+       "cells": [
+        "1 of 1",
+        "$335,000",
+        "10.3%",
+        "$335,000",
+        "18.3%",
+        "100.0%"
+       ],
+       "label": "Fire"
+      },
+      {
+       "cells": [
+        "3 of 6",
+        "$222,849",
+        "6.8%",
+        "$84,044",
+        "4.6%",
+        "37.7%"
+       ],
+       "label": "Schools"
+      },
+      {
+       "cells": [
+        "2 of 2",
+        "$137,254",
+        "4.2%",
+        "$137,254",
+        "7.5%",
+        "100.0%"
+       ],
+       "label": "Police"
+      },
+      {
+       "cells": [
+        "1 of 1",
+        "$20,405",
+        "0.6%",
+        "$20,405",
+        "1.1%",
+        "100.0%"
+       ],
+       "label": "IT"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "title": "FY2027 capital plan"
+}

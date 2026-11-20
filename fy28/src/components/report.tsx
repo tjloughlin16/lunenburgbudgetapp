@@ -902,7 +902,7 @@ function LadderTile({ f, lit }: { f: LadderFact; lit: boolean | null }) {
 
 /** One fact inside a matrix cell: the tile without its box, so a cell can hold two or
  *  three and still read as one cell. */
-function MatrixFact({ f, lit }: { f: LadderFact; lit: boolean | null }) {
+export function MatrixFact({ f, lit }: { f: LadderFact; lit: boolean | null }) {
   const est = f.kind === 'estimate'
   return (
     <div className="py-1 px-1.5 -mx-1.5 rounded transition-opacity"

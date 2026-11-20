@@ -213,7 +213,26 @@ def cite(part, *sources):
     if not sources:
         raise ConclusionError('cite(%r): name at least one source' % (part,))
     return dict(cite=part, sources=list(sources))
-FLOW_INDEXED = ('chart', 'table', 'block')
+FLOW_INDEXED = ('chart', 'table', 'block', 'conclusion')
+
+# THE LADDER IS CLOSED TO NEW COMPOSITION. TJ, 20 November 2026, on the capital rankings pages,
+# which were composed and still came out as finding, chart, a grid of facts and a list of
+# conclusions: *"you followed the base template agai :("* ... *"cut the usage of templates
+# anyhere"*. All 21 composed pages that day drew 'ladder', because it was the one part that held
+# conclusions, so composing a page still ended in the template's back half.
+#
+# So a conclusion is now placed on its own, ('conclusion', i), DIRECTLY AFTER the visual it
+# explains -- a chart, a table, a block, or another conclusion about the same visual. It draws its
+# claim, what it means, and the facts it rests on as its figures, so a fact appears beside the
+# claim it supports and nowhere else. 'ladder' is refused in a composed flow except on the pages
+# below, which used it on that day. The list only shrinks: a page recomposed leaves it.
+LADDER_FROZEN = ('grounds-maintenance-bid', 'growth-and-tax-rate', 'monty-tech-history',
+                 'other-parks-funds', 'park-revolving-fund', 'parks-budget', 'parks-programmes',
+                 'parks-spending', 'parks-year-changes', 'registration-sales',
+                 'salaries-from-grants-and-fees', 'school-facilities-fund',
+                 'school-receipts-to-town', 'school-scholarships', 'town-general-fund',
+                 'town-payroll')
+PLACED_AFTER = ('chart', 'table', 'block', 'conclusion')   # what a placed conclusion may follow
 SAID_MAX = 4
 # EVERY CONCLUSION SAYS WHAT IT MEANS -- a RATCHET, one shelf at a time. TJ, 25 October 2026:
 # "put the conclusions as insights, following the 'what it means' pattern so we dont put
@@ -367,7 +386,8 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     bad += _tables_bad(([table] if table else []) + list(tables), id, uniform=tables)
     bad += TB.blocks_bad(blocks, id)
     have = dict(chart=([chart] if chart else []) + list(also),
-                table=([table] if table else []) + list(tables), block=blocks)
+                table=([table] if table else []) + list(tables), block=blocks,
+                conclusion=list(conclusions))
     present = dict(lead_quote=bool(lead_quote), how=bool(how_it_works), ladder=bool(facts or conclusions),
                    # a ledger is attached after page() (TP.ledger); drawn where named, if present
                    ledger=True, said=bool(said), sources=True, finding=True, related=True,
@@ -385,12 +405,20 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
                 bad.append('%s: flow names %r and the page has none' % (id, x))
             key = x
             out_flow.append(dict(part=x))
+            if x == 'ladder' and composed and id not in LADDER_FROZEN:
+                bad.append('%s: the ladder (a grid of facts and a list of conclusions) is the old '
+                           'template -- place each conclusion beside the visual it explains, '
+                           "('conclusion', i) after its chart, table or block" % id)
         else:
             k, i = x
             if k not in FLOW_INDEXED or not 0 <= i < len(have[k]):
                 bad.append('%s: flow names %r, which the page does not have' % (id, x))
             key = '%s%d' % (k, i)
             out_flow.append(dict(part=k, i=i))
+            if k == 'conclusion' and (len(out_flow) < 2 or out_flow[-2]['part'] not in PLACED_AFTER):
+                bad.append('%s: conclusion %d is placed after %r -- a conclusion sits directly '
+                           'after the chart, table or block it explains'
+                           % (id, i + 1, out_flow[-2]['part'] if len(out_flow) > 1 else 'nothing'))
         if key in seen:
             bad.append('%s: flow names %r twice' % (id, x))
         seen.add(key)
@@ -409,11 +437,24 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
             bad.append('%s: %r shows figures and cites no source: wrap it in cite()' % (id, x))
     # Everything a page holds is drawn: a part built and left out of the flow is a figure
     # nobody can see, checked and published anyway.
+    # The ladder draws every fact and conclusion; without it each conclusion is placed, and a fact
+    # is drawn under the conclusions that rest on it -- so a fact no conclusion rests on is unseen.
+    laddered = 'ladder' in seen
     for k, xs in have.items():
+        if k == 'conclusion' and laddered:
+            if any('conclusion%d' % i in seen for i in range(len(xs))):
+                bad.append('%s: conclusions are both in the ladder and placed' % id)
+            continue
         bad += ['%s: %s %d is built and not in the flow' % (id, k, i) for i in range(len(xs))
                 if '%s%d' % (k, i) not in seen]
-    bad += ['%s: %r is built and not in the flow' % (id, k) for k in ('lead_quote', 'how', 'ladder', 'said')
+    if not laddered and facts:
+        rested = {r for c in conclusions for r in c['rests_on']}
+        bad += ['%s: fact %r is drawn nowhere -- no placed conclusion rests on it' % (id, x['id'])
+                for x in facts if x['id'] not in rested]
+    bad += ['%s: %r is built and not in the flow' % (id, k) for k in ('lead_quote', 'how', 'said')
             if present[k] and k not in seen]
+    if present['ladder'] and not laddered and not conclusions:
+        bad.append('%s: facts with no conclusions are drawn nowhere' % id)
     if 'sources' not in seen:
         bad.append('%s: the flow does not draw the sources -- rule 12' % id)
     if composed:
@@ -1293,8 +1334,14 @@ def how(title, steps):
 
 
 def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=None,
-        answer_allow=(), terms=(), how_it_works=None, blocks=(), lead_quote=None):
-    """A category's hub: the answer, the signature chart, the matrix and conclusions, and --
+        answer_allow=(), terms=(), how_it_works=None, blocks=(), lead_quote=None, tabs=None):
+    """`tabs`: (title, [topic ids]) -- some of the hub's own topics drawn IN the hub, one at a time,
+    picked from a row of tabs (a dropdown on a phone), each rendered whole from its own payload by
+    the same renderer as its own page. TJ, 20 November 2026, on the capital rankings: *"i expected
+    1 page with FY tabs or a dropdown"* -- and *"make sure we dont lose the power of the
+    individualized pages"*. So nothing is copied: the tab IS the page, which keeps its address.
+
+    A category's hub: the answer, the signature chart, the matrix and conclusions, and --
     added by build_topics_index.py from the registry -- a card per topic. `terms`: up to
     TERMS_MAX entries built by term(), drawn under the chart -- what each thing it draws is."""
     cat = REG.category(cid)
@@ -1302,7 +1349,17 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
     bad = check_unit(a, '%s answer' % cid)
     if len(terms) > TERMS_MAX:
         bad.append('hub %s: %d terms; at most %d' % (cid, len(terms), TERMS_MAX))
-    bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED)
+    # A COMPOSED HUB (TJ, 20 November 2026: "cut the usage of templates anyhere"): no ladder, and
+    # the signature is a block placed at the top -- its conclusions ride on the blocks they
+    # explain (topic_blocks.claims). Then the chart slot and the conclusion list are not drawn.
+    signed = any(b.get('place') in ('top', 'lead') for b in blocks)
+    if ladder is None:
+        if not signed:
+            bad.append('hub %s: no ladder and no block at the top to stand as its signature' % cid)
+        if not any(b.get('claims') for b in blocks):
+            bad.append('hub %s: no ladder and no block carries conclusions (topic_blocks.claims)' % cid)
+        ladder = dict(tiers=[], conclusions=[], _none=True)
+    bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED and not signed)
     if cid in MEANINGS_REQUIRED:
         bad += ['hub %s conclusion %d says nothing about what it means (MEANINGS_REQUIRED)'
                 % (cid, i + 1) for i, c in enumerate(ladder['conclusions']) if not c.get('so')]
@@ -1316,13 +1373,23 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
     bad += ['hub %s: block %r is placed %r, which a hub does not draw' % (cid, b.get('title'), b['place'])
             for b in blocks if b.get('place') in ('also1', 'also2')]
     n = _words([a] + [f['label'] for t in ladder['tiers'] for f in t['facts']]
-               + ladder['conclusions'] + [x[k] for x in terms for k in ('means', 'surprises')])
+               + ladder['conclusions'] + [x[k] for x in terms for k in ('means', 'surprises')]
+               + [c for b in blocks for c in b.get('claims', [])]
+               + [f['label'] for b in blocks for c in b.get('claims', []) for f in c['facts']])
     if n > HUB_WORDS_MAX:
         bad.append('hub %s: %d words, the limit is %d -- move detail down to a topic'
                    % (cid, n, HUB_WORDS_MAX))
+    if tabs is not None:
+        listed = [t for _, ids in cat['groups'] for t in ids]
+        tt, ids = tabs
+        if not ids or any(t not in listed for t in ids) or len(set(ids)) != len(ids):
+            bad.append('hub %s: tabs must name topics listed on this shelf, once each' % cid)
+        bad += _title_bad(tt, 'hub %s tabs' % cid)
     if bad:
         raise ConclusionError('hub %s did not pass:\n  %s' % (cid, '\n  '.join(bad)))
     extra = dict(terms=list(terms)) if terms else {}   # absent, not empty: no other hub moves
+    if tabs is not None:                                # likewise
+        extra['tabs'] = dict(title=' '.join(tabs[0].split()), topics=list(tabs[1]))
     if how_it_works:                                    # likewise
         extra['how'] = how_it_works
     if blocks:                                          # likewise
@@ -1330,7 +1397,8 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
     if lead_quote:                                      # likewise
         extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS + (('caption',) if lead_quote.get('caption') else ())}
     return dict(extra, id=cid, kind='hub', title=cat['title'], category=cid, path=REG.path(cid),
-                shelves=[cid], answer=a, chart=chart, ladder=ladder, chains=list(chains),
+                shelves=[cid], answer=a, chart=chart, ladder=None if ladder.get('_none') else ladder,
+                chains=list(chains),
                 table=table, full_report=_full(cid))
 
 

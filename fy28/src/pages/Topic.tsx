@@ -27,7 +27,7 @@ import { InlineTopicChart, isInline, type InlineChart } from '../components/Topi
 import { AccountLedger, type LedgerData } from '../components/AccountLedger'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
 import { TopicLink, shelfEntry } from '../components/TopicLink'
-import { Blocks, OneBlock, type Block } from '../components/blocks/Blocks'
+import { Blocks, ClaimCard, OneBlock, type Block } from '../components/blocks/Blocks'
 
 /** A page declared related to this one (scripts/topic_registry/related.py): a topic, a hub,
  *  or another page on the site, with the one-line reason a reader would go there. */
@@ -57,7 +57,7 @@ type ChartRef = { id: string; source: string } | InlineChart | null
 type TopicPayload = {
   kind: 'topic'; id: string; title: string; category: string; path: string; shelves: string[]
   finding: LadderUnit; chart: ChartRef; facts: LadderFact[]
-  conclusions: (LadderUnit & { rests_on: string[]; notes?: Step[] })[]
+  conclusions: (LadderUnit & { rests_on: string[]; notes?: Step[]; so?: LadderUnit })[]
   table: FigureTableData | null; said: Said[]; sources: { label: string; href: string }[]
   full_report: { href: string; label: string }
   /** More tables after `table`, each a DIFFERENT table; a table's tabs are the same table
@@ -79,17 +79,19 @@ type TopicPayload = {
   composed?: boolean
 }
 type FlowPart = ({ part: 'finding' | 'lead_quote' | 'how' | 'ladder' | 'related' | 'ledger' | 'said' | 'sources' }
-  | { part: 'chart' | 'table' | 'block'; i: number }) & { cites?: number[] }
+  | { part: 'chart' | 'table' | 'block' | 'conclusion'; i: number }) & { cites?: number[] }
 type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string
   caption?: boolean }
 type HubPayload = {
-  kind: 'hub'; lead_quote?: LeadQuote; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
-  ladder: LadderData; chains: Chain[]; table: FigureTableData | null
+  kind: 'hub'; lead_quote?: LeadQuote; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef | null
+  ladder: LadderData | null; chains: Chain[]; table: FigureTableData | null
   full_report: { href: string; label: string }
   /** What each thing the chart draws IS, and why it surprises (scripts/topic.py term()). */
   terms?: { term: string; means: LadderUnit; surprises: LadderUnit }[]
   how?: HowData
   blocks?: Block[]
+  /** Topics drawn IN the hub, one at a time (scripts/topic.py hub(tabs=)). */
+  tabs?: { title: string; topics: string[] }
 }
 
 /** HOW IT WORKS: a mechanism as numbered steps (scripts/topic.py how()). */
@@ -397,7 +399,75 @@ function FlowBody({ f, p, ix }: { f: FlowPart; p: TopicPayload; ix: Index }) {
       return t ? <section className="mt-10 max-w-3xl"><FigureTable t={t} /></section> : null
     }
     case 'block': return p.blocks?.[f.i] ? <OneBlock b={p.blocks[f.i]} /> : null
+    case 'conclusion': return p.conclusions[f.i] ? <Placed c={p.conclusions[f.i]} p={p} /> : null
   }
+}
+
+/** ONE CONCLUSION, PLACED under the visual it explains (scripts/topic.py LADDER_FROZEN). The claim,
+ *  what it means, and the facts it rests on as its figures, drawn by the same card as a block's
+ *  claims (components/blocks/Blocks.tsx ClaimCard). Its notes, if any, fold under it. */
+function Placed({ c, p }: { c: TopicPayload['conclusions'][number]; p: TopicPayload }) {
+  const facts = c.rests_on.map(r => p.facts.find(x => x.id === r)).filter((x): x is LadderFact => !!x)
+  return (<>
+    <ClaimCard c={{ text: c.text, so: c.so, facts }} />
+    {c.notes?.length ? <div className="mt-1 ml-4 max-w-3xl"><Brief steps={c.notes} base={p.full_report.href} /></div> : null}
+  </>)
+}
+
+/** TABS: some of a hub's topics drawn inside the hub, one at a time, each rendered WHOLE from its
+ *  own payload by FlowItem -- the renderer of its own page -- so nothing is copied and nothing is
+ *  lost (TJ, 20 November 2026: "1 page with FY tabs or a dropdown" ... "make sure we dont lose the
+ *  power of the individualized pages"). The pick is kept in ?tab= so a tab can be linked, and the
+ *  topic keeps its own address, linked from the tab. A row of tabs on a wide screen; a dropdown on
+ *  a phone, where five tabs would not fit. */
+function HubTabs({ tabs, ix }: { tabs: { title: string; topics: string[] }; ix: Index }) {
+  const first = () => {
+    const q = new URLSearchParams(window.location.search).get('tab')
+    return q && tabs.topics.includes(q) ? q : tabs.topics[0]
+  }
+  const [id, setId] = useState<string>(first)
+  const [p, setP] = useState<TopicPayload | null>(null)
+  const [err, setErr] = useState<string | null>(null)
+  useEffect(() => {
+    setP(null); setErr(null)
+    fetch(`/data/topics/${id}.json`)
+      .then(r => { if (!r.ok) throw new Error(`No page called ${id} yet.`); return r.json() })
+      .then(setP).catch(e => setErr(String(e.message ?? e)))
+  }, [id])
+  const pick = (t: string) => {
+    setId(t)
+    const u = new URL(window.location.href)
+    u.searchParams.set('tab', t)
+    window.history.replaceState(null, '', u.pathname + u.search + u.hash)
+  }
+  const name = (t: string) => ix.topics[t]?.title ?? t
+  return (
+    <section className="mt-10" id="tabs">
+      <h2 className="text-[13px] font-semibold uppercase tracking-wide mb-2" style={{ color: 'var(--text-muted)' }}>
+        {tabs.title}</h2>
+      <div role="tablist" className="hidden sm:flex flex-wrap gap-1.5 border-b pb-2" style={{ borderColor: 'var(--grid)' }}>
+        {tabs.topics.map(t => (
+          <button key={t} role="tab" type="button" aria-selected={t === id} onClick={() => pick(t)}
+            className="px-3 py-1.5 rounded-full border text-[14px] leading-tight"
+            style={{ borderColor: t === id ? 'var(--text-secondary)' : 'var(--grid)',
+              color: t === id ? 'var(--text-primary)' : 'var(--text-muted)',
+              background: t === id ? 'var(--surface-2)' : 'transparent', fontWeight: t === id ? 600 : 400 }}>
+            {name(t)}</button>))}
+      </div>
+      <select className="sm:hidden w-full rounded border px-2 py-2 text-[15px]" value={id}
+        onChange={e => pick(e.target.value)}
+        style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }}>
+        {tabs.topics.map(t => <option key={t} value={t}>{name(t)}</option>)}
+      </select>
+      {err ? <p className="mt-4 text-[14px]">{err}</p> : !p ? <p className="mt-4 text-[14px]"
+        style={{ color: 'var(--text-muted)' }}>Loading…</p> : (
+        <div role="tabpanel">
+          <p className="mt-3 text-[13px]"><a href={abs(p.path)} className="underline" style={link}>
+            Open {p.title} as its own page &rarr;</a></p>
+          {p.flow.map((f, k) => <FlowItem key={`${id}-${k}`} f={f} p={p} ix={ix} />)}
+        </div>)}
+    </section>
+  )
 }
 
 export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
@@ -447,15 +517,16 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           <p className="text-[13px] mt-2"><a href="#topics" className="underline" style={link}>
             Go straight to the topics &darr;</a></p>
           <Blocks blocks={p.blocks} place="lead" />
-          <TopicChart chart={p.chart} alt={title} />
+          {p.chart ? <TopicChart chart={p.chart} alt={title} /> : null}
           <Blocks blocks={p.blocks} place="chart" />
           {p.terms?.length ? <Terms terms={p.terms} /> : null}
           {p.how ? <How h={p.how} /> : null}
           <Blocks blocks={p.blocks} place="body" />
-          <Ladder l={p.ladder} evidence={Object.fromEntries(p.chains.map(c => [c.id, {
+          {p.ladder ? <Ladder l={p.ladder} evidence={Object.fromEntries(p.chains.map(c => [c.id, {
             tag: <Tag v={c.verdict} label={c.label} />, question: c.question,
             body: <Brief steps={c.steps} base={p.full_report.href} />,
-          } satisfies LadderEvidence]))} />
+          } satisfies LadderEvidence]))} /> : null}
+          {p.tabs ? <HubTabs tabs={p.tabs} ix={ix} /> : null}
           <RelatedPages ix={ix} rs={ix.categories.find(c => c.id === p.id)?.related} />
           {ix.categories.find(c => c.id === p.id)
             ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}

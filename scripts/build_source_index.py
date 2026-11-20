@@ -1765,6 +1765,13 @@ GROUPS = [
              'quote it rests on and its page or second. Rows heard through machine captions say '
              'so. build_track_field_capital.py re-finds every quote and builds '
              '/analysis/track-field-capital from it.'),
+            ('data/capital-rankings.csv',
+             'Every ranked capital request, FY2023 to FY2027, with its ranks and outcome', 2,
+             'Extracted by us: one row per request the Capital Planning Committee ranked in a '
+             'year, with every ranking the year\u2019s documents print (the committee, the Town '
+             'Manager, the Collins score, members\u2019 ranks), the amount, whether it was funded, '
+             'and the document and page each value came from. extract_capital_rankings.py builds '
+             'it; build_capital_rankings.py builds /capital-rankings from it.'),
             ('data/thread-callouts.csv',
              'What someone says next about a thread, chosen by a person', 2,
              'Written by us: one row per callout on a thread -- a sum of money, a warrant '

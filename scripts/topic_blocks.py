@@ -429,6 +429,31 @@ def chart(spec, place='body', so=None):
                 so=_so(so, 'chart block %r' % spec.get('title')))
 
 
+def claims(block, conclusions, facts):
+    """CONCLUSIONS UNDER THE VISUAL THEY EXPLAIN, on any block (TJ, 20 November 2026: "we need to
+    cut that template"). `conclusions` are built by ladder.conclusion / topic.conclusion, so every
+    digit is already a registered figure; `facts` are ladder.fact tiles, and each conclusion draws
+    the ones it rests on as its figures -- the metric beside the sentence that says what it shows.
+    A fact no conclusion rests on is refused: it would be drawn nowhere."""
+    by = {f['id']: f for f in facts}
+    name = 'claims on %r' % block.get('title')
+    if not conclusions:
+        raise ConclusionError('%s: no conclusions' % name)
+    out = []
+    for c in conclusions:
+        if PRESCRIPTIVE.search(c['text']):
+            raise ConclusionError('%s: %r tells the reader what to do' % (name, c['text']))
+        miss = [r for r in c['rests_on'] if r not in by]
+        if miss:
+            raise ConclusionError('%s: %r rests on %s, not among its facts' % (name, c['text'], miss))
+        out.append(dict({k: v for k, v in c.items() if k != 'rests_on'},
+                        facts=[by[r] for r in c['rests_on']]))
+    used = {r for c in conclusions for r in c['rests_on']}
+    if set(by) - used:
+        raise ConclusionError('%s: facts %s rest under no conclusion' % (name, sorted(set(by) - used)))
+    return dict(block, claims=out)
+
+
 def terms(title, items, place='end'):
     """Definitions: what each thing IS and why it surprises, built by topic.term(). TJ, 25
     October 2026: definitions belong on a deeper page "to learn more", the hub keeps the big

@@ -1405,6 +1405,12 @@ REFERENCE = [
     # finding aid and not a record. Quotes re-checked by scripts/build_track_field_capital.py.
     'track-field-capital-history',
 
+    # Every capital request the Capital Planning Committee ranked, FY2023-FY2027: one row per
+    # request per year, with each ranking scheme the year's documents print (committee, Town
+    # Manager, Collins score, members), the amount and whether it was funded, and the page each
+    # came from. Built by scripts/extract_capital_rankings.py; pages by build_capital_rankings.py.
+    'capital-rankings',
+
 ]
 
 # YEAR-BY-YEAR SERIES READ OUT OF THE ANNUAL REPORTS, one family a file: quotes checked against

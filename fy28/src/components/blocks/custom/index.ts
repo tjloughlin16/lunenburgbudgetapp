@@ -11,6 +11,11 @@
 import type { ComponentType } from 'react'
 import BvaAcross from './bva-across'
 import BvaGrid from './bva-grid'
+import CapitalLadder from './capital-ladder'
+import CapitalPath from './capital-path'
+import CapitalThreadTable from './capital-thread-table'
+import CapitalShareBands from './capital-share-bands'
+import CapitalTwoOrders from './capital-two-orders'
 import FyFlags from './fy-flags'
 import FyLineTable from './fy-line-table'
 import FyYearFacts from './fy-year-facts'
@@ -46,6 +51,11 @@ export type CustomProps = { data: unknown; alt: string }
 export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'bva-across': BvaAcross,
   'bva-grid': BvaGrid,
+  'capital-ladder': CapitalLadder,
+  'capital-path': CapitalPath,
+  'capital-thread-table': CapitalThreadTable,
+  'capital-share-bands': CapitalShareBands,
+  'capital-two-orders': CapitalTwoOrders,
   'fy-flags': FyFlags,
   'fy-line-table': FyLineTable,
   'fy-year-facts': FyYearFacts,
