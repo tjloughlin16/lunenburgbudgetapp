@@ -555,7 +555,13 @@ async function main() {
   const sitemap = await readFile(SITEMAP, 'utf8')
 
   // DECIDE WHAT TO REUSE before any Chrome starts, and say so.
-  const global = sha256(shell + PROBE + await readFile(fileURLToPath(import.meta.url), 'utf8'))
+  //
+  // THE PREAMBLE IS NOT PART OF THE KEY. It holds the agent manifest, which the daily
+  // refresh rewrites (archive counts, newest reports), and a key that changes every day
+  // reuses nothing: 17-20 November 2026 each wanted all 3,872 routes and stopped at the
+  // gate. The preamble is not rendered -- it is spliced on afterwards -- so a reused page
+  // gets TODAY's preamble below instead of the one it was cached with.
+  const global = sha256(shell.slice(shell.indexOf('<html')) + PROBE + await readFile(fileURLToPath(import.meta.url), 'utf8'))
   let deps = {}
   try { deps = JSON.parse(await readFile(CACHE_DEPS, 'utf8')) } catch { /* first run */ }
   const full = !!process.env.FULL || only.length > 0
@@ -639,7 +645,10 @@ async function main() {
   // THE REUSED PAGES go through every check a rendered one does. A cached file is not
   // trusted for being cached.
   for (const route of reuse) {
-    const html = await readFile(cachedFile(route), 'utf8')
+    const cached = await readFile(cachedFile(route), 'utf8')
+    const at = cached.indexOf('<html')
+    // Today's preamble, not the cached one: see THE PREAMBLE IS NOT PART OF THE KEY.
+    const html = at < 0 ? cached : preamble + cached.slice(at)
     const text = visibleText(html)
     const bad = check(route, html, text) || (html.includes(`<link rel="canonical" href="${SITE}${route}">`)
       ? null : `${route}: cached page has no canonical link`)
