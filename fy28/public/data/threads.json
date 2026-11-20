@@ -5,21 +5,21 @@
   "rank_note": "newest first — by the date each thread last came up",
   "dated_in_the_future_and_excluded": [],
   "rank_basis": "when each last came up, newest first",
-  "meetings_readable": 5439,
-  "meetings_with_our_minutes": 2655,
-  "meetings_with_town_minutes_read": 4485,
+  "meetings_readable": 5443,
+  "meetings_with_our_minutes": 2658,
+  "meetings_with_town_minutes_read": 4487,
   "boards_readable": 52,
-  "agendas_as_of": "2026-11-19",
+  "agendas_as_of": "2026-11-20",
   "agendas_matched": {
-   "agendas": 39,
-   "agendas_upcoming": 14,
+   "agendas": 41,
+   "agendas_upcoming": 13,
    "agendas_unreadable": 3,
-   "items": 348,
-   "business_items": 188,
-   "matched_items": 6,
-   "upcoming_business_items": 34,
-   "upcoming_matched_items": 1,
-   "threads_on_an_upcoming_agenda": 1
+   "items": 377,
+   "business_items": 211,
+   "matched_items": 8,
+   "upcoming_business_items": 46,
+   "upcoming_matched_items": 3,
+   "threads_on_an_upcoming_agenda": 3
   },
   "town_meeting_readable": 24,
   "official_town_meeting_years": [
@@ -41,7 +41,7 @@
   ]
  },
  "hottest": {
-  "as_of": "2026-11-19",
+  "as_of": "2026-11-20",
   "window_days": 30,
   "threads": [
    {
@@ -49,27 +49,27 @@
     "label": "The stormwater fee",
     "short": "The stormwater fee",
     "hook": "$85 per year projected yearly fee, not set",
-    "meetings": 10,
+    "meetings": 9,
     "boards": 6,
-    "days_since_last": 1
+    "days_since_last": 2
    },
    {
     "id": "turf-field-study",
     "label": "The track and turf field",
     "short": "The track and turf field",
     "hook": "$195,830 approved for engineering design",
-    "meetings": 8,
+    "meetings": 7,
     "boards": 5,
-    "days_since_last": 1
+    "days_since_last": 2
    },
    {
-    "id": "town-offices",
-    "label": "Town offices: the municipal building plan",
-    "short": "Town offices",
-    "hook": "$21.4M–$22.3M plan voters rejected",
+    "id": "veterans-exemption",
+    "label": "The veterans property tax exemption",
+    "short": "The veterans property tax exemption",
+    "hook": "",
     "meetings": 4,
     "boards": 3,
-    "days_since_last": 10
+    "days_since_last": 2
    },
    {
     "id": "tc-passios-site",
@@ -78,7 +78,16 @@
     "hook": "$1M–$4M to demolish",
     "meetings": 3,
     "boards": 3,
-    "days_since_last": 2
+    "days_since_last": 3
+   },
+   {
+    "id": "town-offices",
+    "label": "Town offices: the municipal building plan",
+    "short": "Town offices",
+    "hook": "$21.4M–$22.3M plan voters rejected",
+    "meetings": 3,
+    "boards": 3,
+    "days_since_last": 11
    }
   ]
  },
@@ -2914,15 +2923,15 @@
    "tangled": true,
    "hot": true,
    "momentum": {
-    "meetings_last_30": 8,
+    "meetings_last_30": 7,
     "boards_last_30": 5,
     "meetings": 18,
     "boards": 5,
     "votes": 4,
-    "days_since_last": 1,
+    "days_since_last": 2,
     "span_days": 301,
     "meetings_last_90": 14,
-    "board_meetings_since": 0
+    "board_meetings_since": 1
    },
    "weight": 544,
    "briefing": [
@@ -9147,17 +9156,1134 @@
    "tangled": true,
    "hot": true,
    "momentum": {
-    "meetings_last_30": 10,
+    "meetings_last_30": 9,
     "boards_last_30": 6,
     "meetings": 65,
     "boards": 9,
     "votes": 9,
-    "days_since_last": 1,
+    "days_since_last": 2,
     "span_days": 309,
     "meetings_last_90": 24,
     "board_meetings_since": 0
    },
    "weight": 966
+  },
+  {
+   "id": "veterans-exemption",
+   "label": "The veterans property tax exemption",
+   "question": "Does the veterans property tax exemption increase, and what does it shift onto other taxpayers?",
+   "kind": "money;rule",
+   "groups": "what-i-pay",
+   "tags": "tax-rate",
+   "boards": "",
+   "registered_on": "2026-09-19",
+   "started": "2026-09-09",
+   "closes": "the November Special Town Meeting votes",
+   "status": "open",
+   "resolved_on": "",
+   "caveat": "An increase was discussed against the November warrant deadline. Neither the amount nor what it shifts onto other taxpayers has been set.",
+   "closure": null,
+   "callouts": [
+    {
+     "order": 3,
+     "kind": "impact",
+     "value": "2028",
+     "label": "earliest year an increase in the veterans exemption could take effect",
+     "hook": "",
+     "sources": [
+      {
+       "basis": "heard",
+       "href": "https://www.youtube.com/watch?v=vbe4RyZhKBE&t=441s",
+       "where": "Board of Assessors, 18 Nov 2026",
+       "checked_against": "the captions"
+      }
+     ],
+     "auto": true
+    }
+   ],
+   "history": [],
+   "votes": [
+    {
+     "date": "2012-02-07",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2012,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Grant two applications for Tax Exemption totaling $1,750.00 (41C / Elderly / Veterans).",
+     "outcome": "passed",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2012-02-07-minutes-618.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02072012-618",
+     "quote": "boa reviewed and voted to grant two applications for tax exemption totally $1,750.00."
+    },
+    {
+     "date": "2012-05-10",
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "source": "town",
+     "fy": 2012,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Recommend approval of a Reserve Fund transfer submitted by the Town Manager of $12,147.50 to Veteran's Benefits.",
+     "outcome": "passed 6-0",
+     "moved_by": "Brian L.",
+     "seconded_by": "Barbara R.",
+     "doc_url": "/docs/meetings/finance-committee/2012-05-10-minutes-2350.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05102012-2350",
+     "quote": "motion made by brian l. / seconded by barbara r. accepted unanimously: 6-0."
+    },
+    {
+     "date": "2013-10-01",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2014,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve the Clause 22 (22D) veteran exemption application for the surviving spouse, giving full tax exemption for five years.",
+     "outcome": "passed",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2013-10-01-minutes-642.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012013-642",
+     "quote": "board voted to approve the clause 22 veteran application."
+    },
+    {
+     "date": "2015-10-20",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "town",
+     "fy": 2016,
+     "fy_meeting": "Special Town Meeting, 2015-11-16",
+     "fy_basis": "town-meeting",
+     "text": "Recommend transferring $50,000 to the Veteran's Benefits Account and the remainder to the Reserve Fund (budget adjustment article)",
+     "outcome": "passed",
+     "moved_by": "R. Ebersole",
+     "seconded_by": "T. Alonzo",
+     "doc_url": "/docs/meetings/select-board/2015-10-20-minutes-4947.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10202015-4947",
+     "quote": "to recommend transferring $50,000 to the veteran's benefits account and the remainder to the reserve"
+    },
+    {
+     "date": "2015-11-03",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2016,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Deny the Veteran 22D statutory exemption application (applicant no longer domiciled in Lunenburg).",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2015-11-03-minutes-698.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11032015-698",
+     "quote": "after much discussion the boa voted to deny this application and will send notification of the denial."
+    },
+    {
+     "date": "2021-08-24",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "ours",
+     "text": "Ratify the town manager's appointment of David Lauzon Jr. as temporary veterans agent",
+     "outcome": "passed",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 3310,
+     "video_url": "https://www.youtube.com/watch?v=1TdZen534xs",
+     "quote": "",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2021-08-24",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "town",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Ratify the Town Manager appointment of David Lauzon Jr as Temporary Veterans Agent.",
+     "outcome": "passed",
+     "moved_by": "M. Jeffreys",
+     "seconded_by": "T. Dwyer",
+     "doc_url": "/docs/meetings/select-board/2021-08-24-minutes-5265.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242021-5265",
+     "quote": "to ratify the town manager appointment of david lauzon jr as temporary veterans agent"
+    },
+    {
+     "date": "2022-05-18",
+     "board": "Parks Commission",
+     "board_slug": "parks-commission",
+     "source": "ours",
+     "text": "Approve geocache placement at Veterans Memorial Park and at the town pound, provided it is not part of the historic wall or gate",
+     "outcome": "passed (roll call, ayes heard from members)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 5265,
+     "video_url": "https://www.youtube.com/watch?v=8xO9QFWU2XI",
+     "quote": "",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2022-05-18",
+     "board": "Parks Commission",
+     "board_slug": "parks-commission",
+     "source": "town",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Allow the Geocache placement at Veteran's Memorial Park and Town Pound, not on the Historical feature of the Park.",
+     "outcome": "passed",
+     "moved_by": "A.Lockwood",
+     "seconded_by": "C. Sullivan",
+     "doc_url": "/docs/meetings/parks-commission/2022-05-18-minutes-3355.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05182022-3355",
+     "quote": "a.lockwood made a motion to allow the geocache placement at the veteran's memorial park and town pound, not on the historical feature of the park."
+    },
+    {
+     "date": "2023-07-18",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "ours",
+     "text": "Ratify town manager's appointment of Michelle durkey as veterans services agent",
+     "outcome": "passed",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 852,
+     "video_url": "https://www.youtube.com/watch?v=-hPdZR7d9L8",
+     "quote": "",
+     "fy": 2024,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2023-07-18",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "town",
+     "fy": 2024,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "To ratify the appointment of Michelle Durkee as Veterans Service Agent.",
+     "outcome": "passed",
+     "moved_by": "L. Franco",
+     "seconded_by": "C. Nuzzolo",
+     "doc_url": "/docs/meetings/select-board/2023-07-18-minutes-395.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07182023-395",
+     "quote": "to ratify the appointment of michelle durkee as veterans service agent vote: all in favor"
+    },
+    {
+     "date": "2025-04-09",
+     "board": "Parks Commission",
+     "board_slug": "parks-commission",
+     "source": "town",
+     "fy": 2025,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve a donation of money to buy new park benches or the materials to repair the existing benches at Veterans Memorial Park.",
+     "outcome": "passed 5-0",
+     "moved_by": "C. Shapiro",
+     "seconded_by": "T. Lawless",
+     "doc_url": "/docs/meetings/parks-commission/2025-04-09-minutes-7145.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04092025-7145",
+     "quote": "c. shapiro motioned to approve the donation of money to buy new park benches or the materials to repair the existing benches at veterans memorial park. t. lawless seconded. passed 5-0"
+    },
+    {
+     "date": "2026-02-12",
+     "board": "Trust Fund Commission",
+     "board_slug": "trust-fund-commission",
+     "source": "ours",
+     "text": "Adopt the trust fund dispersement eligibility instruction manual (disqualification policy) for veterans/military trust funds, including the two American Legion funds",
+     "outcome": "passed (voice vote, 'I' 'I')",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 1851,
+     "video_url": "https://www.youtube.com/watch?v=oBW_GZJln3g",
+     "quote": "",
+     "fy": 2026,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2026-02-12",
+     "board": "Trust Fund Commission",
+     "board_slug": "trust-fund-commission",
+     "source": "town",
+     "fy": 2026,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve the Trust Fund disbursement eligibility instruction manual for Veteran's Trust Funds",
+     "outcome": "passed 2-0",
+     "moved_by": "Chairman Bowen",
+     "seconded_by": "Mr Howard",
+     "doc_url": "/docs/meetings/trust-fund-commission/2026-02-12-minutes-7649.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122026-7649",
+     "quote": "chairman bowen made a motion to approve the trust fund disbursement eligibility instruction manual for veteran's trust funds that the town may come in control, that if the fund does not specifically state that these circumstances are not a disqualifier then they shall be applied to all veteran trust funds given or bequeathed in the beneﬁt of the town and its residents. mr howard seconded the motion as worded. motion was passed with chairman bowen voting 'aye' and mr howard voting 'aye'"
+    },
+    {
+     "date": "2026-07-30",
+     "board": "Cemetery Commission",
+     "board_slug": "cemetery-commission",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Return the Yasko fees ($800 from sale of lots, $400 from Perpetual Care) because they are choosing burial in the Veterans Cemetery in Winchendon.",
+     "outcome": "passed",
+     "moved_by": "David Dorren",
+     "seconded_by": "Donna Landry",
+     "doc_url": "/docs/meetings/cemetery-commission/2026-07-30-minutes-7928.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07302026-7928",
+     "quote": "david dorren made a motion to return their fees as they are choosing to be buried in the veterans cemetery in winchendon, donna landry seconded, aif"
+    },
+    {
+     "date": "2026-09-09",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 7 Clause 22/Veterans exemption applications (1 returned with questions).",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
+     "quote": "board reviewed and motioned to approve 7 clause 22/veterans exemption applications."
+    },
+    {
+     "date": "2026-09-09",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 1 Clause 22D/Veterans exemption application (1 returned with questions).",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
+     "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application."
+    },
+    {
+     "date": "2026-09-09",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 8 Clause 22E/Veterans exemption applications.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
+     "quote": "board reviewed and motioned to approve 8 clause 22e/veterans exemption applications."
+    },
+    {
+     "date": "2026-09-23",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "ours",
+     "text": "Table discussion of the veterans exemption warrant article/clause language until the board can meet with the chair (Brian Lafond)",
+     "outcome": "passed",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 3106,
+     "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "Special Town Meeting, 2026-11-17",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2026-09-23",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 6 Clause 22/Veterans exemption applications.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+     "quote": "board reviewed and motioned to approve 6 clause 22/veterans exemption applications."
+    },
+    {
+     "date": "2026-09-23",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 1 Clause 22D/Veterans exemption application.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+     "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application."
+    },
+    {
+     "date": "2026-09-23",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 2 Clause 22E/Veterans exemption applications.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+     "quote": "board reviewed and motioned to approve 2 clause 22e/veterans exemption applications."
+    },
+    {
+     "date": "2026-09-30",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "ours",
+     "text": "Put the warrant article for clause 22I (CPI-tied veterans exemption increase) on the town warrant as written.",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 2143,
+     "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "Special Town Meeting, 2026-11-17",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2026-09-30",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "ours",
+     "text": "Put the warrant article for clause 22J (doubling veterans exemptions) on the town warrant.",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 2293,
+     "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "Special Town Meeting, 2026-11-17",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2026-10-14",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 1 Clause 22D/Veterans exemption application.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+     "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application."
+    },
+    {
+     "date": "2026-10-14",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 1 Clause 22E/Veterans exemption application.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+     "quote": "board reviewed and motioned to approve 1 clause 22e/veterans exemption application."
+    },
+    {
+     "date": "2026-10-14",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "source": "town",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Approve 5 Clause 22/Veterans exemption applications, with 1 application returned with questions.",
+     "outcome": "not stated",
+     "moved_by": "",
+     "seconded_by": "",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+     "quote": "board reviewed and motioned to approve 5 clause 22/veterans exemption applications."
+    }
+   ],
+   "reports": [
+    {
+     "title": "Homes, taxes, growth",
+     "url": "/homes-and-taxes"
+    }
+   ],
+   "reports_needed": [
+    {
+     "title": "Elderly exemption increase",
+     "slug": "elderly-exemption-increase",
+     "status": "new",
+     "url": "",
+     "question": "What does raising the elderly exemption cost, and are income and asset limits tied to state law?",
+     "how": "named",
+     "meetings": [
+      {
+       "date": "2021-10-14",
+       "board": "Finance Committee",
+       "fiscal_year": "FY2022",
+       "question_then": "What does raising the elderly exemption cost, and are income and asset limits tied to state law?",
+       "watch_at": "https://www.youtube.com/watch?v=ueog2Zsqgtw&t=1244s",
+       "at": "0:20:44",
+       "our_minutes": "/meeting-minutes/finance-committee/2021-10-14-ueog2Zsqgtw"
+      },
+      {
+       "date": "2021-09-14",
+       "board": "Select Board",
+       "fiscal_year": "FY2022",
+       "question_then": "What would raising the clause 41C exemption cost the town after reimbursement?",
+       "watch_at": "https://www.youtube.com/watch?v=r1xcigjMEnI&t=1133s",
+       "at": "0:18:53",
+       "our_minutes": "/meeting-minutes/select-board/2021-09-14-r1xcigjMEnI"
+      },
+      {
+       "date": "2021-09-07",
+       "board": "Select Board",
+       "fiscal_year": "FY2022",
+       "question_then": "What would raising the elderly exemption from 750 to 1,000 dollars cost the town?",
+       "watch_at": "https://www.youtube.com/watch?v=2PYQdw_bg-E&t=5793s",
+       "at": "1:36:33",
+       "our_minutes": "/meeting-minutes/select-board/2021-09-07-2PYQdw_bg-E"
+      }
+     ]
+    }
+   ],
+   "on_agenda": [
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-11-18",
+     "body_as_printed": "",
+     "upcoming": false,
+     "line": "Discuss adding COLA reimbursement to Veterans Exemptions.",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11182026-8141",
+     "agenda_doc": "/docs/meetings/board-of-assessors/2026-11-18-agenda-8141.pdf"
+    },
+    {
+     "board": "School Advisory Councils & Committees",
+     "board_slug": "school-advisory-councils-committees",
+     "date": "2026-11-23",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "Veterans Day",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11232026-8142",
+     "agenda_doc": "/docs/meetings/school-advisory-councils-committees/2026-11-23-agenda-8142.pdf"
+    }
+   ],
+   "chronology": [
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-09-09",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "A placeholder will be requested for a veterans' exemption increase warrant article for the November 17th special town meeting, with research to be discussed at the September 23rd meeting.",
+       "outcome": "",
+       "t": 2039,
+       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Veterans property tax exemption increase and November special town meeting warrant article deadline",
+       "outcome": "",
+       "t": 1978,
+       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Veterans property tax exemption amount. The board discussed that the veterans exemption has been at a minimum amount for a long time and considered proposing an increase, noting any increase is funded entirely by the town with no reimbursement.",
+       "outcome": "",
+       "t": 2039,
+       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
+       "kind": "vote",
+       "text": "Approve 7 Clause 22/Veterans exemption applications (1 returned with questions).",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 7 clause 22/veterans exemption applications.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
+       "kind": "vote",
+       "text": "Approve 1 Clause 22D/Veterans exemption application (1 returned with questions).",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
+       "kind": "vote",
+       "text": "Approve 8 Clause 22E/Veterans exemption applications.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 8 clause 22e/veterans exemption applications.",
+       "t": null,
+       "video_url": ""
+      }
+     ],
+     "records": [
+      "ours",
+      "town"
+     ]
+    },
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-09-23",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Table discussion of the veterans exemption warrant article/clause language until the board can meet with the chair (Brian Lafond)",
+       "outcome": "passed",
+       "t": 3106,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "decision",
+       "text": "The board agreed to compile and bring a list of previously granted veterans exemptions to future reviews to speed up processing applications.",
+       "outcome": "",
+       "t": 2009,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "decision",
+       "text": "The board scheduled a special meeting for September 30th, 6-7 p.m., limited to discussing and intending to vote on the veterans exemption clause language with the chair present.",
+       "outcome": "",
+       "t": 3567,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Veterans exemption application verbiage (proof-of-disability requirement)",
+       "outcome": "",
+       "t": 1930,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Draft warrant articles to expand and CPI-index veterans property tax exemptions (Hero Act, clauses 22A-22H)",
+       "outcome": "",
+       "t": 2081,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Veterans exemption (clause 22) current amount. The board noted Lunenburg's veterans exemption amount has been fixed for nearly two decades and compared it to amounts offered by neighboring towns as it considered whether to raise it.",
+       "outcome": "",
+       "t": 2216,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Clause 22C exemption amount. The proposed clause 22C exemption amount, for totally disabled veterans with specially adapted housing, was read from the draft.",
+       "outcome": "",
+       "t": 2385,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Veterans exemption amounts in other municipalities. A survey compiled by staff of neighboring and larger municipalities' veterans exemption amounts was reviewed to gauge where Lunenburg's figure stands.",
+       "outcome": "",
+       "t": 2455,
+       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+       "kind": "vote",
+       "text": "Approve 6 Clause 22/Veterans exemption applications.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 6 clause 22/veterans exemption applications.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+       "kind": "vote",
+       "text": "Approve 1 Clause 22D/Veterans exemption application.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+       "kind": "vote",
+       "text": "Approve 2 Clause 22E/Veterans exemption applications.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 2 clause 22e/veterans exemption applications.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
+       "kind": "topic",
+       "text": "Senior and veterans exemption applications. motioned to approve, result not stated",
+       "outcome": "",
+       "quote": "board reviewed and motioned to approve 1 clause 17e/senior exemption applications.",
+       "t": null,
+       "video_url": ""
+      }
+     ],
+     "records": [
+      "ours",
+      "town"
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-09-24",
+     "items": [
+      {
+       "kind": "budget",
+       "text": "Veterans exemption (Clause 22) increase. The Board of Assessors intends to propose raising the veterans exemption from its current amount to either 600 or $800, with research still underway.",
+       "outcome": "",
+       "t": 522,
+       "video_url": "https://www.youtube.com/watch?v=euQG57Zrac0",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Trust Fund Commission",
+     "board_slug": "trust-fund-commission",
+     "date": "2026-09-24",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Outreach ideas: senior center, coffee shop event, food pantry, veterans events",
+       "outcome": "",
+       "t": 1212,
+       "video_url": "https://www.youtube.com/watch?v=kNEMWtxiZOM",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-09-29",
+     "items": [
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/select-board/2026-09-29-minutes-8040.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09292026-8040",
+       "kind": "topic",
+       "text": "Committee reports. informational; no action",
+       "outcome": "",
+       "quote": "board of assessors (member alonzo): the assessors discussed the two veterans' exemption articles",
+       "t": null,
+       "video_url": ""
+      }
+     ],
+     "records": [
+      "town"
+     ]
+    },
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-09-30",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Put the warrant article for clause 22I (CPI-tied veterans exemption increase) on the town warrant as written.",
+       "outcome": "not audible",
+       "t": 2143,
+       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "vote",
+       "text": "Put the warrant article for clause 22J (doubling veterans exemptions) on the town warrant.",
+       "outcome": "not audible",
+       "t": 2293,
+       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Veterans exemption warrant articles 22I and 22J",
+       "outcome": "",
+       "t": 1240,
+       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Clause 22 veterans exemption amount. The current clause 22 exemption was stated as a figure, and doubling was discussed. Clause 22B was noted as higher.",
+       "outcome": "",
+       "t": 1540,
+       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-10-06",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Veterans exemption articles, PEG access fund amendment, track and field engineering, stormwater advisory article, trust funds article and SAP amendment held off the warrant for now.",
+       "outcome": "",
+       "t": 6773,
+       "video_url": "https://www.youtube.com/watch?v=PaRmbzsOMks",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/select-board/2026-10-06-minutes-8052.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10062026-8052",
+       "kind": "decision",
+       "text": "Hold both Veterans Property Tax Exemption articles from the Board of Assessors pending resolution of effective-date questions.",
+       "outcome": "",
+       "quote": "the board agreed to hold both articles.",
+       "t": null,
+       "video_url": ""
+      }
+     ],
+     "records": [
+      "ours",
+      "town"
+     ]
+    },
+    {
+     "board": "Finance Committee",
+     "board_slug": "finance-committee",
+     "date": "2026-10-08",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Salary plan titles, veterans exemptions, PEG access budget",
+       "outcome": "",
+       "t": 7300,
+       "video_url": "https://www.youtube.com/watch?v=1Md_UYOImC0",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-10-14",
+     "items": [
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+       "kind": "vote",
+       "text": "Approve 1 Clause 22D/Veterans exemption application.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+       "kind": "vote",
+       "text": "Approve 1 Clause 22E/Veterans exemption application.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 1 clause 22e/veterans exemption application.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+       "kind": "vote",
+       "text": "Approve 5 Clause 22/Veterans exemption applications, with 1 application returned with questions.",
+       "outcome": "not stated",
+       "quote": "board reviewed and motioned to approve 5 clause 22/veterans exemption applications.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+       "kind": "decision",
+       "text": "One Clause 22 Veterans exemption application was returned to the applicant with questions rather than approved.",
+       "outcome": "",
+       "quote": "1 exemption application returned with questions.",
+       "t": null,
+       "video_url": ""
+      },
+      {
+       "source": "town",
+       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+       "kind": "topic",
+       "text": "Executive session: exemption applications. motioned to approve 11 applications across Clauses 22D, 22E, 22, 41D and 37; 1 returned with questions; no result recorded",
+       "outcome": "",
+       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
+       "t": null,
+       "video_url": ""
+      }
+     ],
+     "records": [
+      "town"
+     ]
+    },
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-10-21",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "November meetings moved to the 4th and 18th to avoid Veterans Day.",
+       "outcome": "",
+       "t": 7746,
+       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Parks Commission",
+     "board_slug": "parks-commission",
+     "date": "2026-10-21",
+     "items": [
+      {
+       "kind": "budget",
+       "text": "FY26 landscaping invoices, all fields. A member totalled the FY26 invoices and found them close to the landscape contract, though individual field lines differed. About two thousand of the total was Memorial Veterans Park.",
+       "outcome": "",
+       "t": 1177,
+       "video_url": "https://www.youtube.com/watch?v=8SoFrgR-9EY",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-11-04",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "Motion to adjourn to executive session for senior and veterans exemptions",
+       "outcome": "",
+       "t": 562,
+       "video_url": "https://www.youtube.com/watch?v=4K1dJIblfEc",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Senior and veterans real estate tax exemptions. The board went to executive session to review and decide on exemption applications.",
+       "outcome": "",
+       "t": 584,
+       "video_url": "https://www.youtube.com/watch?v=4K1dJIblfEc",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-11-18",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Veterans exemption COLA and doubling article postponed to May town meeting, for implementation in 2028; impact statements to be prepared.",
+       "outcome": "",
+       "t": 441,
+       "video_url": "https://www.youtube.com/watch?v=vbe4RyZhKBE",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Veterans exemption COLA",
+       "outcome": "",
+       "t": 441,
+       "video_url": "https://www.youtube.com/watch?v=vbe4RyZhKBE",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    }
+   ],
+   "meetings": 13,
+   "boards_touched": 6,
+   "first_seen": "2026-09-09",
+   "last_moved": "2026-11-18",
+   "claims_before_started": 162,
+   "stands": {
+    "vote": {
+     "source": "town",
+     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
+     "kind": "vote",
+     "text": "Approve 5 Clause 22/Veterans exemption applications, with 1 application returned with questions.",
+     "outcome": "not stated",
+     "quote": "board reviewed and motioned to approve 5 clause 22/veterans exemption applications.",
+     "t": null,
+     "video_url": "",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-10-14"
+    },
+    "decision": {
+     "kind": "decision",
+     "text": "Veterans exemption COLA and doubling article postponed to May town meeting, for implementation in 2028; impact statements to be prepared.",
+     "outcome": "",
+     "t": 441,
+     "video_url": "https://www.youtube.com/watch?v=vbe4RyZhKBE",
+     "source": "ours",
+     "recording_note": "",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-11-18"
+    },
+    "any": {
+     "kind": "topic",
+     "text": "Veterans exemption COLA",
+     "outcome": "",
+     "t": 441,
+     "video_url": "https://www.youtube.com/watch?v=vbe4RyZhKBE",
+     "source": "ours",
+     "recording_note": "",
+     "board": "Board of Assessors",
+     "board_slug": "board-of-assessors",
+     "date": "2026-11-18"
+    }
+   },
+   "is_new": false,
+   "pin": null,
+   "heat": "moving",
+   "stage": "voted on, not decided",
+   "tangled": false,
+   "hot": true,
+   "momentum": {
+    "meetings_last_30": 4,
+    "boards_last_30": 3,
+    "meetings": 11,
+    "boards": 6,
+    "votes": 11,
+    "days_since_last": 2,
+    "span_days": 70,
+    "meetings_last_90": 11,
+    "board_meetings_since": 0
+   },
+   "weight": 639
   },
   {
    "id": "monty-tech-assessment",
@@ -9947,7 +11073,7 @@
     "meetings": 11,
     "boards": 5,
     "votes": 0,
-    "days_since_last": 1,
+    "days_since_last": 2,
     "span_days": 314,
     "meetings_last_90": 1,
     "board_meetings_since": 0
@@ -10514,7 +11640,7 @@
     "meetings": 3,
     "boards": 1,
     "votes": 2,
-    "days_since_last": 1,
+    "days_since_last": 2,
     "span_days": 63,
     "meetings_last_90": 3,
     "board_meetings_since": 0
@@ -12119,15 +13245,15 @@
    "tangled": false,
    "hot": false,
    "momentum": {
-    "meetings_last_30": 10,
+    "meetings_last_30": 9,
     "boards_last_30": 7,
     "meetings": 25,
     "boards": 14,
     "votes": 48,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 91,
     "meetings_last_90": 24,
-    "board_meetings_since": 2
+    "board_meetings_since": 4
    },
    "weight": 1458,
    "generated": "town-meetings",
@@ -15214,7 +16340,20 @@
      ]
     }
    ],
-   "on_agenda": [],
+   "on_agenda": [
+    {
+     "board": "Lunenburg Municipal Building Design Committee",
+     "board_slug": "lunenburg-municipal-building-design-committee",
+     "date": "2026-12-07",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Other Municipal Building Projects",
+     "parent": "",
+     "by": "board",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12072026-8150",
+     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-12-07-agenda-8150.pdf"
+    }
+   ],
    "chronology": [
     {
      "board": "Select Board",
@@ -16627,7 +17766,7 @@
     "meetings": 28,
     "boards": 7,
     "votes": 9,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 287,
     "meetings_last_90": 9,
     "board_meetings_since": 1
@@ -19028,20 +20167,20 @@
    },
    "is_new": false,
    "pin": null,
-   "heat": "moving",
+   "heat": "slowing",
    "stage": "voted on, not decided",
    "tangled": false,
    "hot": false,
    "momentum": {
-    "meetings_last_30": 2,
-    "boards_last_30": 2,
+    "meetings_last_30": 1,
+    "boards_last_30": 1,
     "meetings": 13,
     "boards": 6,
     "votes": 4,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 126,
     "meetings_last_90": 6,
-    "board_meetings_since": 1
+    "board_meetings_since": 2
    },
    "weight": 640
   },
@@ -20248,7 +21387,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 5,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 119,
     "meetings_last_90": 8,
     "board_meetings_since": 1
@@ -23501,6 +24640,30 @@
      "by": "words",
      "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11102026-8119",
      "agenda_doc": "/docs/meetings/select-board/2026-11-10-agenda-8119.pdf"
+    },
+    {
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "date": "2026-11-24",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "Discussion on Lunenburg Municipal Buildings",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11242026-8152",
+     "agenda_doc": "/docs/meetings/select-board/2026-11-24-agenda-8152.pdf"
+    },
+    {
+     "board": "Lunenburg Municipal Building Design Committee",
+     "board_slug": "lunenburg-municipal-building-design-committee",
+     "date": "2026-12-07",
+     "body_as_printed": "",
+     "upcoming": true,
+     "line": "- Call to Order Approve Minutes Comments from Board and Public Continued Discussion on RFP Other Municipal Building Projects",
+     "parent": "",
+     "by": "words",
+     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_12072026-8150",
+     "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-12-07-agenda-8150.pdf"
     }
    ],
    "chronology": [
@@ -29974,1138 +31137,17 @@
    "tangled": true,
    "hot": true,
    "momentum": {
-    "meetings_last_30": 4,
+    "meetings_last_30": 3,
     "boards_last_30": 3,
     "meetings": 139,
     "boards": 20,
     "votes": 16,
-    "days_since_last": 10,
+    "days_since_last": 11,
     "span_days": 777,
     "meetings_last_90": 13,
-    "board_meetings_since": 7
+    "board_meetings_since": 9
    },
    "weight": 2066
-  },
-  {
-   "id": "veterans-exemption",
-   "label": "The veterans property tax exemption",
-   "question": "Does the veterans property tax exemption increase, and what does it shift onto other taxpayers?",
-   "kind": "money;rule",
-   "groups": "what-i-pay",
-   "tags": "tax-rate",
-   "boards": "",
-   "registered_on": "2026-09-19",
-   "started": "2026-09-09",
-   "closes": "the November Special Town Meeting votes",
-   "status": "open",
-   "resolved_on": "",
-   "caveat": "An increase was discussed against the November warrant deadline. Neither the amount nor what it shifts onto other taxpayers has been set.",
-   "closure": null,
-   "callouts": [
-    {
-     "order": 1,
-     "kind": "money",
-     "value": "$400 to $600-$800",
-     "label": "veterans exemption now, and the range Assessors floated; no amount is set",
-     "hook": "exemption increase floated",
-     "sources": [
-      {
-       "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=euQG57Zrac0&t=522s",
-       "where": "Finance Committee, 24 Sep 2026",
-       "checked_against": "the captions"
-      }
-     ],
-     "auto": true
-    },
-    {
-     "order": 2,
-     "kind": "warrant",
-     "value": "Held off warrant",
-     "label": "Select Board held both veterans exemption articles off the warrant for now",
-     "hook": "",
-     "sources": [
-      {
-       "basis": "printed",
-       "href": "/docs/meetings/select-board/2026-10-06-minutes-8052.pdf",
-       "where": "Select Board minutes, 6 Oct 2026",
-       "checked_against": "the document"
-      }
-     ],
-     "auto": true
-    },
-    {
-     "order": 3,
-     "kind": "impact",
-     "value": "Not reimbursed",
-     "label": "any increase comes out of town funds, so other taxpayers cover it",
-     "hook": "",
-     "sources": [
-      {
-       "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=Qimi3yNAudg&t=2039s",
-       "where": "Board of Assessors, 9 Sep 2026",
-       "checked_against": "the captions"
-      }
-     ],
-     "auto": true
-    }
-   ],
-   "history": [],
-   "votes": [
-    {
-     "date": "2012-02-07",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2012,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Grant two applications for Tax Exemption totaling $1,750.00 (41C / Elderly / Veterans).",
-     "outcome": "passed",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2012-02-07-minutes-618.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02072012-618",
-     "quote": "boa reviewed and voted to grant two applications for tax exemption totally $1,750.00."
-    },
-    {
-     "date": "2012-05-10",
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "source": "town",
-     "fy": 2012,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Recommend approval of a Reserve Fund transfer submitted by the Town Manager of $12,147.50 to Veteran's Benefits.",
-     "outcome": "passed 6-0",
-     "moved_by": "Brian L.",
-     "seconded_by": "Barbara R.",
-     "doc_url": "/docs/meetings/finance-committee/2012-05-10-minutes-2350.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05102012-2350",
-     "quote": "motion made by brian l. / seconded by barbara r. accepted unanimously: 6-0."
-    },
-    {
-     "date": "2013-10-01",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2014,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve the Clause 22 (22D) veteran exemption application for the surviving spouse, giving full tax exemption for five years.",
-     "outcome": "passed",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2013-10-01-minutes-642.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10012013-642",
-     "quote": "board voted to approve the clause 22 veteran application."
-    },
-    {
-     "date": "2015-10-20",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "town",
-     "fy": 2016,
-     "fy_meeting": "Special Town Meeting, 2015-11-16",
-     "fy_basis": "town-meeting",
-     "text": "Recommend transferring $50,000 to the Veteran's Benefits Account and the remainder to the Reserve Fund (budget adjustment article)",
-     "outcome": "passed",
-     "moved_by": "R. Ebersole",
-     "seconded_by": "T. Alonzo",
-     "doc_url": "/docs/meetings/select-board/2015-10-20-minutes-4947.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10202015-4947",
-     "quote": "to recommend transferring $50,000 to the veteran's benefits account and the remainder to the reserve"
-    },
-    {
-     "date": "2015-11-03",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2016,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Deny the Veteran 22D statutory exemption application (applicant no longer domiciled in Lunenburg).",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2015-11-03-minutes-698.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11032015-698",
-     "quote": "after much discussion the boa voted to deny this application and will send notification of the denial."
-    },
-    {
-     "date": "2021-08-24",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "ours",
-     "text": "Ratify the town manager's appointment of David Lauzon Jr. as temporary veterans agent",
-     "outcome": "passed",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 3310,
-     "video_url": "https://www.youtube.com/watch?v=1TdZen534xs",
-     "quote": "",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2021-08-24",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "town",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Ratify the Town Manager appointment of David Lauzon Jr as Temporary Veterans Agent.",
-     "outcome": "passed",
-     "moved_by": "M. Jeffreys",
-     "seconded_by": "T. Dwyer",
-     "doc_url": "/docs/meetings/select-board/2021-08-24-minutes-5265.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242021-5265",
-     "quote": "to ratify the town manager appointment of david lauzon jr as temporary veterans agent"
-    },
-    {
-     "date": "2022-05-18",
-     "board": "Parks Commission",
-     "board_slug": "parks-commission",
-     "source": "ours",
-     "text": "Approve geocache placement at Veterans Memorial Park and at the town pound, provided it is not part of the historic wall or gate",
-     "outcome": "passed (roll call, ayes heard from members)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 5265,
-     "video_url": "https://www.youtube.com/watch?v=8xO9QFWU2XI",
-     "quote": "",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2022-05-18",
-     "board": "Parks Commission",
-     "board_slug": "parks-commission",
-     "source": "town",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Allow the Geocache placement at Veteran's Memorial Park and Town Pound, not on the Historical feature of the Park.",
-     "outcome": "passed",
-     "moved_by": "A.Lockwood",
-     "seconded_by": "C. Sullivan",
-     "doc_url": "/docs/meetings/parks-commission/2022-05-18-minutes-3355.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05182022-3355",
-     "quote": "a.lockwood made a motion to allow the geocache placement at the veteran's memorial park and town pound, not on the historical feature of the park."
-    },
-    {
-     "date": "2023-07-18",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "ours",
-     "text": "Ratify town manager's appointment of Michelle durkey as veterans services agent",
-     "outcome": "passed",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 852,
-     "video_url": "https://www.youtube.com/watch?v=-hPdZR7d9L8",
-     "quote": "",
-     "fy": 2024,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2023-07-18",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "town",
-     "fy": 2024,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "To ratify the appointment of Michelle Durkee as Veterans Service Agent.",
-     "outcome": "passed",
-     "moved_by": "L. Franco",
-     "seconded_by": "C. Nuzzolo",
-     "doc_url": "/docs/meetings/select-board/2023-07-18-minutes-395.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07182023-395",
-     "quote": "to ratify the appointment of michelle durkee as veterans service agent vote: all in favor"
-    },
-    {
-     "date": "2025-04-09",
-     "board": "Parks Commission",
-     "board_slug": "parks-commission",
-     "source": "town",
-     "fy": 2025,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve a donation of money to buy new park benches or the materials to repair the existing benches at Veterans Memorial Park.",
-     "outcome": "passed 5-0",
-     "moved_by": "C. Shapiro",
-     "seconded_by": "T. Lawless",
-     "doc_url": "/docs/meetings/parks-commission/2025-04-09-minutes-7145.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04092025-7145",
-     "quote": "c. shapiro motioned to approve the donation of money to buy new park benches or the materials to repair the existing benches at veterans memorial park. t. lawless seconded. passed 5-0"
-    },
-    {
-     "date": "2026-02-12",
-     "board": "Trust Fund Commission",
-     "board_slug": "trust-fund-commission",
-     "source": "ours",
-     "text": "Adopt the trust fund dispersement eligibility instruction manual (disqualification policy) for veterans/military trust funds, including the two American Legion funds",
-     "outcome": "passed (voice vote, 'I' 'I')",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 1851,
-     "video_url": "https://www.youtube.com/watch?v=oBW_GZJln3g",
-     "quote": "",
-     "fy": 2026,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2026-02-12",
-     "board": "Trust Fund Commission",
-     "board_slug": "trust-fund-commission",
-     "source": "town",
-     "fy": 2026,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve the Trust Fund disbursement eligibility instruction manual for Veteran's Trust Funds",
-     "outcome": "passed 2-0",
-     "moved_by": "Chairman Bowen",
-     "seconded_by": "Mr Howard",
-     "doc_url": "/docs/meetings/trust-fund-commission/2026-02-12-minutes-7649.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02122026-7649",
-     "quote": "chairman bowen made a motion to approve the trust fund disbursement eligibility instruction manual for veteran's trust funds that the town may come in control, that if the fund does not specifically state that these circumstances are not a disqualifier then they shall be applied to all veteran trust funds given or bequeathed in the beneﬁt of the town and its residents. mr howard seconded the motion as worded. motion was passed with chairman bowen voting 'aye' and mr howard voting 'aye'"
-    },
-    {
-     "date": "2026-07-30",
-     "board": "Cemetery Commission",
-     "board_slug": "cemetery-commission",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Return the Yasko fees ($800 from sale of lots, $400 from Perpetual Care) because they are choosing burial in the Veterans Cemetery in Winchendon.",
-     "outcome": "passed",
-     "moved_by": "David Dorren",
-     "seconded_by": "Donna Landry",
-     "doc_url": "/docs/meetings/cemetery-commission/2026-07-30-minutes-7928.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07302026-7928",
-     "quote": "david dorren made a motion to return their fees as they are choosing to be buried in the veterans cemetery in winchendon, donna landry seconded, aif"
-    },
-    {
-     "date": "2026-09-09",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 7 Clause 22/Veterans exemption applications (1 returned with questions).",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
-     "quote": "board reviewed and motioned to approve 7 clause 22/veterans exemption applications."
-    },
-    {
-     "date": "2026-09-09",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 1 Clause 22D/Veterans exemption application (1 returned with questions).",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
-     "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application."
-    },
-    {
-     "date": "2026-09-09",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 8 Clause 22E/Veterans exemption applications.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
-     "quote": "board reviewed and motioned to approve 8 clause 22e/veterans exemption applications."
-    },
-    {
-     "date": "2026-09-23",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "ours",
-     "text": "Table discussion of the veterans exemption warrant article/clause language until the board can meet with the chair (Brian Lafond)",
-     "outcome": "passed",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 3106,
-     "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-     "quote": "",
-     "fy": 2027,
-     "fy_meeting": "Special Town Meeting, 2026-11-17",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2026-09-23",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 6 Clause 22/Veterans exemption applications.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-     "quote": "board reviewed and motioned to approve 6 clause 22/veterans exemption applications."
-    },
-    {
-     "date": "2026-09-23",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 1 Clause 22D/Veterans exemption application.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-     "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application."
-    },
-    {
-     "date": "2026-09-23",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 2 Clause 22E/Veterans exemption applications.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-     "quote": "board reviewed and motioned to approve 2 clause 22e/veterans exemption applications."
-    },
-    {
-     "date": "2026-09-30",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "ours",
-     "text": "Put the warrant article for clause 22I (CPI-tied veterans exemption increase) on the town warrant as written.",
-     "outcome": "not audible",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 2143,
-     "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
-     "quote": "",
-     "fy": 2027,
-     "fy_meeting": "Special Town Meeting, 2026-11-17",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2026-09-30",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "ours",
-     "text": "Put the warrant article for clause 22J (doubling veterans exemptions) on the town warrant.",
-     "outcome": "not audible",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 2293,
-     "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
-     "quote": "",
-     "fy": 2027,
-     "fy_meeting": "Special Town Meeting, 2026-11-17",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2026-10-14",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 1 Clause 22D/Veterans exemption application.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-     "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application."
-    },
-    {
-     "date": "2026-10-14",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 1 Clause 22E/Veterans exemption application.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-     "quote": "board reviewed and motioned to approve 1 clause 22e/veterans exemption application."
-    },
-    {
-     "date": "2026-10-14",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "source": "town",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Approve 5 Clause 22/Veterans exemption applications, with 1 application returned with questions.",
-     "outcome": "not stated",
-     "moved_by": "",
-     "seconded_by": "",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-     "quote": "board reviewed and motioned to approve 5 clause 22/veterans exemption applications."
-    }
-   ],
-   "reports": [
-    {
-     "title": "Homes, taxes, growth",
-     "url": "/homes-and-taxes"
-    }
-   ],
-   "reports_needed": [
-    {
-     "title": "Elderly exemption increase",
-     "slug": "elderly-exemption-increase",
-     "status": "new",
-     "url": "",
-     "question": "What does raising the elderly exemption cost, and are income and asset limits tied to state law?",
-     "how": "named",
-     "meetings": [
-      {
-       "date": "2021-10-14",
-       "board": "Finance Committee",
-       "fiscal_year": "FY2022",
-       "question_then": "What does raising the elderly exemption cost, and are income and asset limits tied to state law?",
-       "watch_at": "https://www.youtube.com/watch?v=ueog2Zsqgtw&t=1244s",
-       "at": "0:20:44",
-       "our_minutes": "/meeting-minutes/finance-committee/2021-10-14-ueog2Zsqgtw"
-      },
-      {
-       "date": "2021-09-14",
-       "board": "Select Board",
-       "fiscal_year": "FY2022",
-       "question_then": "What would raising the clause 41C exemption cost the town after reimbursement?",
-       "watch_at": "https://www.youtube.com/watch?v=r1xcigjMEnI&t=1133s",
-       "at": "0:18:53",
-       "our_minutes": "/meeting-minutes/select-board/2021-09-14-r1xcigjMEnI"
-      },
-      {
-       "date": "2021-09-07",
-       "board": "Select Board",
-       "fiscal_year": "FY2022",
-       "question_then": "What would raising the elderly exemption from 750 to 1,000 dollars cost the town?",
-       "watch_at": "https://www.youtube.com/watch?v=2PYQdw_bg-E&t=5793s",
-       "at": "1:36:33",
-       "our_minutes": "/meeting-minutes/select-board/2021-09-07-2PYQdw_bg-E"
-      }
-     ]
-    }
-   ],
-   "on_agenda": [
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-11-18",
-     "body_as_printed": "",
-     "upcoming": false,
-     "line": "Discuss adding COLA reimbursement to Veterans Exemptions.",
-     "parent": "",
-     "by": "words",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11182026-8141",
-     "agenda_doc": "/docs/meetings/board-of-assessors/2026-11-18-agenda-8141.pdf"
-    },
-    {
-     "board": "School Advisory Councils & Committees",
-     "board_slug": "school-advisory-councils-committees",
-     "date": "2026-11-23",
-     "body_as_printed": "",
-     "upcoming": true,
-     "line": "Veterans Day",
-     "parent": "",
-     "by": "words",
-     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11232026-8142",
-     "agenda_doc": "/docs/meetings/school-advisory-councils-committees/2026-11-23-agenda-8142.pdf"
-    }
-   ],
-   "chronology": [
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-09-09",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "A placeholder will be requested for a veterans' exemption increase warrant article for the November 17th special town meeting, with research to be discussed at the September 23rd meeting.",
-       "outcome": "",
-       "t": 2039,
-       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Veterans property tax exemption increase and November special town meeting warrant article deadline",
-       "outcome": "",
-       "t": 1978,
-       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Veterans property tax exemption amount. The board discussed that the veterans exemption has been at a minimum amount for a long time and considered proposing an increase, noting any increase is funded entirely by the town with no reimbursement.",
-       "outcome": "",
-       "t": 2039,
-       "video_url": "https://www.youtube.com/watch?v=Qimi3yNAudg",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
-       "kind": "vote",
-       "text": "Approve 7 Clause 22/Veterans exemption applications (1 returned with questions).",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 7 clause 22/veterans exemption applications.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
-       "kind": "vote",
-       "text": "Approve 1 Clause 22D/Veterans exemption application (1 returned with questions).",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-09-minutes-7999.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09092026-7999",
-       "kind": "vote",
-       "text": "Approve 8 Clause 22E/Veterans exemption applications.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 8 clause 22e/veterans exemption applications.",
-       "t": null,
-       "video_url": ""
-      }
-     ],
-     "records": [
-      "ours",
-      "town"
-     ]
-    },
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-09-23",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Table discussion of the veterans exemption warrant article/clause language until the board can meet with the chair (Brian Lafond)",
-       "outcome": "passed",
-       "t": 3106,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "decision",
-       "text": "The board agreed to compile and bring a list of previously granted veterans exemptions to future reviews to speed up processing applications.",
-       "outcome": "",
-       "t": 2009,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "decision",
-       "text": "The board scheduled a special meeting for September 30th, 6-7 p.m., limited to discussing and intending to vote on the veterans exemption clause language with the chair present.",
-       "outcome": "",
-       "t": 3567,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Veterans exemption application verbiage (proof-of-disability requirement)",
-       "outcome": "",
-       "t": 1930,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Draft warrant articles to expand and CPI-index veterans property tax exemptions (Hero Act, clauses 22A-22H)",
-       "outcome": "",
-       "t": 2081,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Veterans exemption (clause 22) current amount. The board noted Lunenburg's veterans exemption amount has been fixed for nearly two decades and compared it to amounts offered by neighboring towns as it considered whether to raise it.",
-       "outcome": "",
-       "t": 2216,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Clause 22C exemption amount. The proposed clause 22C exemption amount, for totally disabled veterans with specially adapted housing, was read from the draft.",
-       "outcome": "",
-       "t": 2385,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Veterans exemption amounts in other municipalities. A survey compiled by staff of neighboring and larger municipalities' veterans exemption amounts was reviewed to gauge where Lunenburg's figure stands.",
-       "outcome": "",
-       "t": 2455,
-       "video_url": "https://www.youtube.com/watch?v=8JmJ1wh7HCY",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-       "kind": "vote",
-       "text": "Approve 6 Clause 22/Veterans exemption applications.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 6 clause 22/veterans exemption applications.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-       "kind": "vote",
-       "text": "Approve 1 Clause 22D/Veterans exemption application.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-       "kind": "vote",
-       "text": "Approve 2 Clause 22E/Veterans exemption applications.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 2 clause 22e/veterans exemption applications.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-09-23-minutes-8032.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232026-8032",
-       "kind": "topic",
-       "text": "Senior and veterans exemption applications. motioned to approve, result not stated",
-       "outcome": "",
-       "quote": "board reviewed and motioned to approve 1 clause 17e/senior exemption applications.",
-       "t": null,
-       "video_url": ""
-      }
-     ],
-     "records": [
-      "ours",
-      "town"
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-09-24",
-     "items": [
-      {
-       "kind": "budget",
-       "text": "Veterans exemption (Clause 22) increase. The Board of Assessors intends to propose raising the veterans exemption from its current amount to either 600 or $800, with research still underway.",
-       "outcome": "",
-       "t": 522,
-       "video_url": "https://www.youtube.com/watch?v=euQG57Zrac0",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Trust Fund Commission",
-     "board_slug": "trust-fund-commission",
-     "date": "2026-09-24",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Outreach ideas: senior center, coffee shop event, food pantry, veterans events",
-       "outcome": "",
-       "t": 1212,
-       "video_url": "https://www.youtube.com/watch?v=kNEMWtxiZOM",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-09-29",
-     "items": [
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/select-board/2026-09-29-minutes-8040.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09292026-8040",
-       "kind": "topic",
-       "text": "Committee reports. informational; no action",
-       "outcome": "",
-       "quote": "board of assessors (member alonzo): the assessors discussed the two veterans' exemption articles",
-       "t": null,
-       "video_url": ""
-      }
-     ],
-     "records": [
-      "town"
-     ]
-    },
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-09-30",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Put the warrant article for clause 22I (CPI-tied veterans exemption increase) on the town warrant as written.",
-       "outcome": "not audible",
-       "t": 2143,
-       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "vote",
-       "text": "Put the warrant article for clause 22J (doubling veterans exemptions) on the town warrant.",
-       "outcome": "not audible",
-       "t": 2293,
-       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Veterans exemption warrant articles 22I and 22J",
-       "outcome": "",
-       "t": 1240,
-       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Clause 22 veterans exemption amount. The current clause 22 exemption was stated as a figure, and doubling was discussed. Clause 22B was noted as higher.",
-       "outcome": "",
-       "t": 1540,
-       "video_url": "https://www.youtube.com/watch?v=PGOQeBuvgog",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "date": "2026-10-06",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Veterans exemption articles, PEG access fund amendment, track and field engineering, stormwater advisory article, trust funds article and SAP amendment held off the warrant for now.",
-       "outcome": "",
-       "t": 6773,
-       "video_url": "https://www.youtube.com/watch?v=PaRmbzsOMks",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/select-board/2026-10-06-minutes-8052.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10062026-8052",
-       "kind": "decision",
-       "text": "Hold both Veterans Property Tax Exemption articles from the Board of Assessors pending resolution of effective-date questions.",
-       "outcome": "",
-       "quote": "the board agreed to hold both articles.",
-       "t": null,
-       "video_url": ""
-      }
-     ],
-     "records": [
-      "ours",
-      "town"
-     ]
-    },
-    {
-     "board": "Finance Committee",
-     "board_slug": "finance-committee",
-     "date": "2026-10-08",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Salary plan titles, veterans exemptions, PEG access budget",
-       "outcome": "",
-       "t": 7300,
-       "video_url": "https://www.youtube.com/watch?v=1Md_UYOImC0",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-10-14",
-     "items": [
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-       "kind": "vote",
-       "text": "Approve 1 Clause 22D/Veterans exemption application.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-       "kind": "vote",
-       "text": "Approve 1 Clause 22E/Veterans exemption application.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 1 clause 22e/veterans exemption application.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-       "kind": "vote",
-       "text": "Approve 5 Clause 22/Veterans exemption applications, with 1 application returned with questions.",
-       "outcome": "not stated",
-       "quote": "board reviewed and motioned to approve 5 clause 22/veterans exemption applications.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-       "kind": "decision",
-       "text": "One Clause 22 Veterans exemption application was returned to the applicant with questions rather than approved.",
-       "outcome": "",
-       "quote": "1 exemption application returned with questions.",
-       "t": null,
-       "video_url": ""
-      },
-      {
-       "source": "town",
-       "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-       "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-       "kind": "topic",
-       "text": "Executive session: exemption applications. motioned to approve 11 applications across Clauses 22D, 22E, 22, 41D and 37; 1 returned with questions; no result recorded",
-       "outcome": "",
-       "quote": "board reviewed and motioned to approve 1 clause 22d/veterans exemption application.",
-       "t": null,
-       "video_url": ""
-      }
-     ],
-     "records": [
-      "town"
-     ]
-    },
-    {
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-10-21",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "November meetings moved to the 4th and 18th to avoid Veterans Day.",
-       "outcome": "",
-       "t": 7746,
-       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Parks Commission",
-     "board_slug": "parks-commission",
-     "date": "2026-10-21",
-     "items": [
-      {
-       "kind": "budget",
-       "text": "FY26 landscaping invoices, all fields. A member totalled the FY26 invoices and found them close to the landscape contract, though individual field lines differed. About two thousand of the total was Memorial Veterans Park.",
-       "outcome": "",
-       "t": 1177,
-       "video_url": "https://www.youtube.com/watch?v=8SoFrgR-9EY",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-11-04",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "Motion to adjourn to executive session for senior and veterans exemptions",
-       "outcome": "",
-       "t": 562,
-       "video_url": "https://www.youtube.com/watch?v=4K1dJIblfEc",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Senior and veterans real estate tax exemptions. The board went to executive session to review and decide on exemption applications.",
-       "outcome": "",
-       "t": 584,
-       "video_url": "https://www.youtube.com/watch?v=4K1dJIblfEc",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    }
-   ],
-   "meetings": 12,
-   "boards_touched": 6,
-   "first_seen": "2026-09-09",
-   "last_moved": "2026-11-04",
-   "claims_before_started": 162,
-   "stands": {
-    "vote": {
-     "source": "town",
-     "doc_url": "/docs/meetings/board-of-assessors/2026-10-14-minutes-8070.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10142026-8070",
-     "kind": "vote",
-     "text": "Approve 5 Clause 22/Veterans exemption applications, with 1 application returned with questions.",
-     "outcome": "not stated",
-     "quote": "board reviewed and motioned to approve 5 clause 22/veterans exemption applications.",
-     "t": null,
-     "video_url": "",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-10-14"
-    },
-    "decision": {
-     "kind": "decision",
-     "text": "November meetings moved to the 4th and 18th to avoid Veterans Day.",
-     "outcome": "",
-     "t": 7746,
-     "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-     "source": "ours",
-     "recording_note": "",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-10-21"
-    },
-    "any": {
-     "kind": "topic",
-     "text": "Motion to adjourn to executive session for senior and veterans exemptions",
-     "outcome": "",
-     "t": 562,
-     "video_url": "https://www.youtube.com/watch?v=4K1dJIblfEc",
-     "source": "ours",
-     "recording_note": "",
-     "board": "Board of Assessors",
-     "board_slug": "board-of-assessors",
-     "date": "2026-11-04"
-    }
-   },
-   "is_new": false,
-   "pin": null,
-   "heat": "moving",
-   "stage": "voted on, not decided",
-   "tangled": false,
-   "hot": false,
-   "momentum": {
-    "meetings_last_30": 3,
-    "boards_last_30": 3,
-    "meetings": 10,
-    "boards": 6,
-    "votes": 11,
-    "days_since_last": 15,
-    "span_days": 56,
-    "meetings_last_90": 10,
-    "board_meetings_since": 1
-   },
-   "weight": 638
   },
   {
    "id": "water-district-pfas-compliance",
@@ -31699,7 +31741,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 29,
+    "days_since_last": 30,
     "span_days": 70,
     "meetings_last_90": 4,
     "board_meetings_since": 0
@@ -32130,12 +32172,12 @@
    "tangled": false,
    "hot": false,
    "momentum": {
-    "meetings_last_30": 1,
-    "boards_last_30": 1,
+    "meetings_last_30": 0,
+    "boards_last_30": 0,
     "meetings": 6,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 30,
+    "days_since_last": 31,
     "span_days": 40,
     "meetings_last_90": 6,
     "board_meetings_since": 4
@@ -34600,7 +34642,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 37,
+    "days_since_last": 38,
     "span_days": 35,
     "meetings_last_90": 2,
     "board_meetings_since": 2
@@ -35347,7 +35389,7 @@
     "meetings": 5,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 43,
+    "days_since_last": 44,
     "span_days": 92,
     "meetings_last_90": 4,
     "board_meetings_since": 10
@@ -36921,7 +36963,7 @@
     "meetings": 3,
     "boards": 3,
     "votes": 0,
-    "days_since_last": 44,
+    "days_since_last": 45,
     "span_days": 36,
     "meetings_last_90": 3,
     "board_meetings_since": 10
@@ -38071,9 +38113,18 @@
      "slug": "ten-year-capital-plan",
      "status": "new",
      "url": "",
-     "question": "What does the school capital plan propose, and how much is Turkey Hill?",
+     "question": "What share of capital spending goes to schools versus other departments?",
      "how": "named+words",
      "meetings": [
+      {
+       "date": "2026-11-19",
+       "board": "Capital Planning Committee",
+       "fiscal_year": "FY2027",
+       "question_then": "What share of capital spending goes to schools versus other departments?",
+       "watch_at": "https://www.youtube.com/watch?v=Esqpe9QE_N4&t=159s",
+       "at": "0:02:39",
+       "our_minutes": "/meeting-minutes/capital-planning-committee/2026-11-19-Esqpe9QE_N4"
+      },
       {
        "date": "2022-09-21",
        "board": "School Committee",
@@ -39460,10 +39511,10 @@
     "meetings": 30,
     "boards": 8,
     "votes": 0,
-    "days_since_last": 64,
+    "days_since_last": 65,
     "span_days": 336,
     "meetings_last_90": 3,
-    "board_meetings_since": 21
+    "board_meetings_since": 22
    },
    "weight": 858
   },
@@ -39949,7 +40000,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 65,
+    "days_since_last": 66,
     "span_days": 119,
     "meetings_last_90": 2,
     "board_meetings_since": 9
@@ -41115,10 +41166,10 @@
     "meetings": 21,
     "boards": 11,
     "votes": 20,
-    "days_since_last": 77,
+    "days_since_last": 78,
     "span_days": 52,
     "meetings_last_90": 5,
-    "board_meetings_since": 45
+    "board_meetings_since": 46
    },
    "weight": 1150,
    "generated": "town-meetings",
@@ -42902,7 +42953,7 @@
     "meetings": 12,
     "boards": 4,
     "votes": 4,
-    "days_since_last": 91,
+    "days_since_last": 92,
     "span_days": 220,
     "meetings_last_90": 0,
     "board_meetings_since": 20
@@ -43386,7 +43437,7 @@
     "meetings": 3,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 93,
+    "days_since_last": 94,
     "span_days": 42,
     "meetings_last_90": 0,
     "board_meetings_since": 7
@@ -44173,7 +44224,7 @@
     "meetings": 11,
     "boards": 5,
     "votes": 1,
-    "days_since_last": 113,
+    "days_since_last": 114,
     "span_days": 238,
     "meetings_last_90": 0,
     "board_meetings_since": 31
@@ -44740,7 +44791,7 @@
     "meetings": 9,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 135,
+    "days_since_last": 136,
     "span_days": 230,
     "meetings_last_90": 0,
     "board_meetings_since": 36
@@ -45500,7 +45551,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 148,
+    "days_since_last": 149,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 11
@@ -46663,7 +46714,7 @@
     "meetings": 21,
     "boards": 5,
     "votes": 10,
-    "days_since_last": 191,
+    "days_since_last": 192,
     "span_days": 461,
     "meetings_last_90": 0,
     "board_meetings_since": 51
@@ -50554,7 +50605,7 @@
     "meetings": 35,
     "boards": 11,
     "votes": 163,
-    "days_since_last": 201,
+    "days_since_last": 202,
     "span_days": 116,
     "meetings_last_90": 0,
     "board_meetings_since": 108
@@ -52319,7 +52370,7 @@
     "meetings": 14,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 201,
+    "days_since_last": 202,
     "span_days": 214,
     "meetings_last_90": 0,
     "board_meetings_since": 48
@@ -52648,7 +52699,7 @@
     "meetings": 5,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 201,
+    "days_since_last": 202,
     "span_days": 60,
     "meetings_last_90": 0,
     "board_meetings_since": 33
@@ -53024,7 +53075,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 3,
-    "days_since_last": 201,
+    "days_since_last": 202,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 23
@@ -53303,7 +53354,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 231,
+    "days_since_last": 232,
     "span_days": 135,
     "meetings_last_90": 0,
     "board_meetings_since": 12
@@ -56627,10 +56678,10 @@
     "meetings": 25,
     "boards": 14,
     "votes": 97,
-    "days_since_last": 366,
+    "days_since_last": 367,
     "span_days": 98,
     "meetings_last_90": 0,
-    "board_meetings_since": 246
+    "board_meetings_since": 247
    },
    "weight": 1460,
    "generated": "town-meetings",
@@ -57633,7 +57684,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 366,
+    "days_since_last": 367,
     "span_days": 91,
     "meetings_last_90": 0,
     "board_meetings_since": 105
@@ -57969,7 +58020,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 366,
+    "days_since_last": 367,
     "span_days": 42,
     "meetings_last_90": 0,
     "board_meetings_since": 51
@@ -62163,10 +62214,10 @@
     "meetings": 44,
     "boards": 14,
     "votes": 164,
-    "days_since_last": 565,
+    "days_since_last": 566,
     "span_days": 165,
     "meetings_last_90": 0,
-    "board_meetings_since": 384
+    "board_meetings_since": 386
    },
    "weight": 1465,
    "generated": "town-meetings",
@@ -63338,7 +63389,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 565,
+    "days_since_last": 566,
     "span_days": 30,
     "meetings_last_90": 0,
     "board_meetings_since": 37
@@ -65033,10 +65084,10 @@
     "meetings": 27,
     "boards": 12,
     "votes": 63,
-    "days_since_last": 737,
+    "days_since_last": 738,
     "span_days": 104,
     "meetings_last_90": 0,
-    "board_meetings_since": 437
+    "board_meetings_since": 438
    },
    "weight": 1256,
    "generated": "town-meetings",
@@ -65853,7 +65904,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 737,
+    "days_since_last": 738,
     "span_days": 85,
     "meetings_last_90": 0,
     "board_meetings_since": 215
@@ -69196,10 +69247,10 @@
     "meetings": 36,
     "boards": 13,
     "votes": 116,
-    "days_since_last": 929,
+    "days_since_last": 930,
     "span_days": 116,
     "meetings_last_90": 0,
-    "board_meetings_since": 568
+    "board_meetings_since": 569
    },
    "weight": 1364,
    "generated": "town-meetings",
@@ -70191,7 +70242,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 929,
+    "days_since_last": 930,
     "span_days": 37,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -72600,7 +72651,7 @@
     "meetings": 29,
     "boards": 11,
     "votes": 87,
-    "days_since_last": 1101,
+    "days_since_last": 1102,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 551
@@ -73501,7 +73552,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 1101,
+    "days_since_last": 1102,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 252
@@ -74019,7 +74070,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 2,
-    "days_since_last": 1101,
+    "days_since_last": 1102,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 205
@@ -76464,7 +76515,7 @@
     "meetings": 28,
     "boards": 9,
     "votes": 74,
-    "days_since_last": 1293,
+    "days_since_last": 1294,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 593
@@ -77395,7 +77446,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 1293,
+    "days_since_last": 1294,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 247
@@ -77483,7 +77534,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 1293,
+    "days_since_last": 1294,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 8
@@ -79483,7 +79534,7 @@
     "meetings": 38,
     "boards": 12,
     "votes": 59,
-    "days_since_last": 1465,
+    "days_since_last": 1466,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 896
@@ -80402,7 +80453,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 1,
-    "days_since_last": 1465,
+    "days_since_last": 1466,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 240
@@ -83607,7 +83658,7 @@
     "meetings": 35,
     "boards": 10,
     "votes": 113,
-    "days_since_last": 1657,
+    "days_since_last": 1658,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 824
@@ -87122,10 +87173,10 @@
     "meetings": 37,
     "boards": 12,
     "votes": 67,
-    "days_since_last": 1829,
+    "days_since_last": 1830,
     "span_days": 196,
     "meetings_last_90": 0,
-    "board_meetings_since": 1026
+    "board_meetings_since": 1027
    },
    "weight": 1261,
    "generated": "town-meetings",
@@ -90070,7 +90121,7 @@
     "meetings": 36,
     "boards": 14,
     "votes": 71,
-    "days_since_last": 2030,
+    "days_since_last": 2031,
     "span_days": 114,
     "meetings_last_90": 0,
     "board_meetings_since": 1276
@@ -91127,7 +91178,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 2081,
+    "days_since_last": 2082,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 243
@@ -93181,10 +93232,10 @@
     "meetings": 34,
     "boards": 13,
     "votes": 59,
-    "days_since_last": 2193,
+    "days_since_last": 2194,
     "span_days": 154,
     "meetings_last_90": 0,
-    "board_meetings_since": 1173
+    "board_meetings_since": 1174
    },
    "weight": 1360,
    "generated": "town-meetings",
@@ -96026,7 +96077,7 @@
     "meetings": 36,
     "boards": 9,
     "votes": 54,
-    "days_since_last": 2350,
+    "days_since_last": 2351,
     "span_days": 158,
     "meetings_last_90": 0,
     "board_meetings_since": 935
@@ -98395,7 +98446,7 @@
     "meetings": 21,
     "boards": 6,
     "votes": 59,
-    "days_since_last": 2564,
+    "days_since_last": 2565,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 951
@@ -101024,7 +101075,7 @@
     "meetings": 26,
     "boards": 6,
     "votes": 110,
-    "days_since_last": 2756,
+    "days_since_last": 2757,
     "span_days": 137,
     "meetings_last_90": 0,
     "board_meetings_since": 843
@@ -102487,7 +102538,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2756,
+    "days_since_last": 2757,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 15
@@ -102614,7 +102665,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2756,
+    "days_since_last": 2757,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 15
@@ -102741,7 +102792,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2756,
+    "days_since_last": 2757,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 15
@@ -103840,10 +103891,10 @@
     "meetings": 21,
     "boards": 8,
     "votes": 35,
-    "days_since_last": 2928,
+    "days_since_last": 2929,
     "span_days": 183,
     "meetings_last_90": 0,
-    "board_meetings_since": 1053
+    "board_meetings_since": 1054
    },
    "weight": 840,
    "generated": "town-meetings",
@@ -104639,7 +104690,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 1,
-    "days_since_last": 2928,
+    "days_since_last": 2929,
     "span_days": 98,
     "meetings_last_90": 0,
     "board_meetings_since": 411
@@ -104934,10 +104985,10 @@
     "meetings": 4,
     "boards": 3,
     "votes": 5,
-    "days_since_last": 3124,
+    "days_since_last": 3125,
     "span_days": 105,
     "meetings_last_90": 0,
-    "board_meetings_since": 566
+    "board_meetings_since": 567
    },
    "weight": 322,
    "generated": "town-meetings",
@@ -107201,7 +107252,7 @@
     "meetings": 15,
     "boards": 9,
     "votes": 53,
-    "days_since_last": 3278,
+    "days_since_last": 3279,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 1460
@@ -108452,7 +108503,7 @@
     "meetings": 8,
     "boards": 6,
     "votes": 40,
-    "days_since_last": 3484,
+    "days_since_last": 3485,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 1050
@@ -110227,7 +110278,7 @@
     "meetings": 9,
     "boards": 3,
     "votes": 12,
-    "days_since_last": 3649,
+    "days_since_last": 3650,
     "span_days": 49,
     "meetings_last_90": 0,
     "board_meetings_since": 624
@@ -111140,7 +111191,7 @@
     "meetings": 6,
     "boards": 4,
     "votes": 27,
-    "days_since_last": 3741,
+    "days_since_last": 3742,
     "span_days": 41,
     "meetings_last_90": 0,
     "board_meetings_since": 915
@@ -112063,7 +112114,7 @@
     "meetings": 8,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 3752,
+    "days_since_last": 3753,
     "span_days": 93,
     "meetings_last_90": 0,
     "board_meetings_since": 899
@@ -114639,7 +114690,7 @@
     "meetings": 20,
     "boards": 8,
     "votes": 122,
-    "days_since_last": 3848,
+    "days_since_last": 3849,
     "span_days": 166,
     "meetings_last_90": 0,
     "board_meetings_since": 1392
@@ -116459,7 +116510,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 3848,
+    "days_since_last": 3849,
     "span_days": 74,
     "meetings_last_90": 0,
     "board_meetings_since": 940
@@ -117201,7 +117252,7 @@
     "meetings": 16,
     "boards": 2,
     "votes": 11,
-    "days_since_last": 4021,
+    "days_since_last": 4022,
     "span_days": 195,
     "meetings_last_90": 0,
     "board_meetings_since": 726
@@ -119527,7 +119578,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 88,
-    "days_since_last": 4219,
+    "days_since_last": 4220,
     "span_days": 207,
     "meetings_last_90": 0,
     "board_meetings_since": 1406
@@ -121395,7 +121446,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 2,
-    "days_since_last": 4219,
+    "days_since_last": 4220,
     "span_days": 159,
     "meetings_last_90": 0,
     "board_meetings_since": 1145
@@ -123157,7 +123208,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 49,
-    "days_since_last": 4583,
+    "days_since_last": 4584,
     "span_days": 102,
     "meetings_last_90": 0,
     "board_meetings_since": 1671
@@ -124528,7 +124579,7 @@
     "meetings": 9,
     "boards": 2,
     "votes": 2,
-    "days_since_last": 4587,
+    "days_since_last": 4588,
     "span_days": 161,
     "meetings_last_90": 0,
     "board_meetings_since": 812
@@ -125209,7 +125260,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 9,
-    "days_since_last": 4699,
+    "days_since_last": 4700,
     "span_days": 120,
     "meetings_last_90": 0,
     "board_meetings_since": 1158
@@ -127030,10 +127081,10 @@
     "meetings": 30,
     "boards": 9,
     "votes": 52,
-    "days_since_last": 5311,
+    "days_since_last": 5312,
     "span_days": 207,
     "meetings_last_90": 0,
-    "board_meetings_since": 2168
+    "board_meetings_since": 2169
    },
    "weight": 946,
    "generated": "town-meetings",
@@ -127762,7 +127813,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 5607,
+    "days_since_last": 5608,
     "span_days": 66,
     "meetings_last_90": 0,
     "board_meetings_since": 1633
@@ -128468,7 +128519,7 @@
     "meetings": 13,
     "boards": 4,
     "votes": 12,
-    "days_since_last": 5675,
+    "days_since_last": 5676,
     "span_days": 117,
     "meetings_last_90": 0,
     "board_meetings_since": 1524
@@ -129087,7 +129138,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 5675,
+    "days_since_last": 5676,
     "span_days": 9,
     "meetings_last_90": 0,
     "board_meetings_since": 359

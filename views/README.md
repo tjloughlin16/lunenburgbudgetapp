@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**716 of 6253 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**716 of 6257 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5537 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5541 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -246,6 +246,10 @@ Listed so this view cannot look more complete than it is.
 - `correspondence/2026-11-03-school-warrant-batch-5818-2026-06-30.redacted.pdf` — Warrant batch 5818, 30 June 2026 (our redacted copy)
 - `correspondence/2026-11-03-school-warrant-batch-5823-2026-06-30.redacted.pdf` — Warrant batch 5823, 30 June 2026 (our redacted copy)
 - `correspondence/2026-11-03-school-warrants-2026-06-18-to-30.md` — How these reached us
+- `correspondence/2026-11-19-batch-5853-and-check-218995.md` — How these reached us
+- `correspondence/2026-11-19-check-218995-register-line.png` — Check 218995, the register line
+- `correspondence/2026-11-19-records-requests-superintendent.txt` — The Superintendent’s reply, 19 November 2026
+- `correspondence/2026-11-19-school-warrant-batch-5853-2026-06-30.pdf` — Warrant batch 5853, dated 30 June 2026
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -457,7 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/public-safety-staffing-plans.csv` — Police and fire staffing plans: positions PLANNED, not hired
 - `data/rate-register.csv` — Every rate, with the year it applies to and who set it
 - `data/receivables-reconciliation.csv` — Every year of that table, published or refused, with the reason
-- `data/receivables-refused.csv` — The receivables pages an extractor read and refused, and why
-- `data/receivables.csv` — What the town was still owed on 30 June, levy by levy
-- `data/recording-minutes-policy.csv` — Which boards TJ has approved minutes for, from when, in what order
-- `data/redactions.csv` — What was redacted or withheld, and why

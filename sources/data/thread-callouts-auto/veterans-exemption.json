@@ -1,16 +1,16 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "veterans-exemption",
- "picked_at": "2026-11-18T12:37:06Z",
+ "picked_at": "2026-11-20T12:44:00Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0567,
- "input_sha256": "36591e9ddab43239a1ec0477a4c77953658509d13006530470ba4b3b1b468368",
+ "cost_usd": 0.0655,
+ "input_sha256": "1d87e82cb6644a51cab2927166fe98b1a9f56f3debc4f91e4c1934aa1a3d93e9",
  "callouts": [
   {
    "kind": "money",
-   "value": "$400 to $600-$800",
-   "label": "veterans exemption now, and the range Assessors floated; no amount is set",
+   "value": "$400 to $600 or $800",
+   "label": "veterans exemption now, and the two increases floated; none is set",
    "hook": "exemption increase floated",
    "quote": "from the current $400 to an as yet undetermined amount, but it will either be 600 or $800",
    "heard": [
@@ -27,50 +27,48 @@
    "t": 522,
    "where": "Finance Committee, 24 Sep 2026",
    "verdict": {
-    "keep": true,
-    "why": "The $400 current amount and the 600 or 800 range are stated, and the label says no amount is set. Later items show no amount adopted."
+    "keep": false,
+    "why": "Overtaken: later the assessors put a CPI-tied (22I) and a doubling (22J) article forward, then held and postponed them to May. The $600/$800 options are no longer the live choices."
    }
   },
   {
    "kind": "warrant",
-   "value": "Held off warrant",
-   "label": "Select Board held both veterans exemption articles off the warrant for now",
+   "value": "May",
+   "label": "Town Meeting now to take up the veterans exemption increase, postponed from November",
    "hook": "",
-   "quote": "the board agreed to hold both articles.",
+   "quote": "we had decided to postpone that until the May town meeting",
    "heard": [],
-   "item_date": "2026-10-06",
-   "item_board": "select-board",
-   "basis": "printed",
-   "doc": "meetings/select-board/2026-10-06-minutes-8052.pdf",
-   "text": "meetings/text/select-board/2026-10-06-minutes-8052.txt",
-   "where": "Select Board minutes, 6 Oct 2026",
+   "item_date": "2026-11-18",
+   "item_board": "board-of-assessors",
+   "basis": "heard",
+   "board": "board-of-assessors",
+   "date": "2026-11-18",
+   "video_id": "vbe4RyZhKBE",
+   "t": 441,
+   "where": "Board of Assessors, 18 Nov 2026",
    "verdict": {
-    "keep": true,
-    "why": "The Oct 6 minutes say both articles were held. Nothing later reverses that."
+    "keep": false,
+    "why": "Evidence says only that the article was postponed to the May town meeting. It never says it was postponed from November."
    }
   },
   {
    "kind": "impact",
-   "value": "Not reimbursed",
-   "label": "any increase comes out of town funds, so other taxpayers cover it",
+   "value": "2028",
+   "label": "earliest year an increase in the veterans exemption could take effect",
    "hook": "",
-   "quote": "it all comes out of town funds. It doesn't it doesn't get reimbursed",
-   "heard": [
-    "400",
-    "600",
-    "800"
-   ],
-   "item_date": "2026-09-09",
+   "quote": "we can't implement till 2028",
+   "heard": [],
+   "item_date": "2026-11-18",
    "item_board": "board-of-assessors",
    "basis": "heard",
    "board": "board-of-assessors",
-   "date": "2026-09-09",
-   "video_id": "Qimi3yNAudg",
-   "t": 2039,
-   "where": "Board of Assessors, 9 Sep 2026",
+   "date": "2026-11-18",
+   "video_id": "vbe4RyZhKBE",
+   "t": 441,
+   "where": "Board of Assessors, 18 Nov 2026",
    "verdict": {
     "keep": true,
-    "why": "The assessor said the increase comes out of town funds and isn't reimbursed. 'Other taxpayers cover it' follows from that."
+    "why": "The assessors said they 'can't implement till 2028'. Nothing later contradicts that."
    }
   }
  ]
