@@ -399,74 +399,101 @@ export async function onRequest(context) {
   }
 
   try {
-    // EVERY KIND AT ONCE. This was a `for ... await` loop: two queries per kind, one kind
-    // after another, so eight kinds were sixteen round trips end to end, and starts-with
-    // matching (10 October 2026) made each of them heavier -- TJ: "search is SLOW". In
-    // parallel the wait is the slowest kind, not the sum. Rows READ are identical, which is
-    // what D1 bills; only the waiting changes.
-    await Promise.all(corpora.map(async c => {
-      // The outer ORDER BY, over rows the subselect has already read. A row whose date is
-      // missing, empty OR NOT AN ISO DATE goes LAST, and the test is the shape of the
-      // string rather than its emptiness. '' sorts before every real date, so a bare DESC
-      // would put undated rows on TOP of a newest-first list; and anything non-numeric --
-      // 'undated', 'n.d.' -- sorts AFTER '2026', so emptiness alone is not enough. Every
-      // dated row in the index today is ISO (checked: 0 of 290,720 are not), which is
-      // exactly why a guard is cheap now and would be archaeology later.
-      const byDate = sort === 'newest' && DATED.includes(c)
-      sortedBy[c] = byDate ? 'date' : 'rank'
-      // `together`: 2 = the exact words typed, 1 = together in a family or synonym form,
-      // 0 = somewhere in the row (nearExpression). It LEADS a relevance order and only breaks
-      // ties in a date order: newest first means newest. TJ, 26 October 2026: "the sort is
-      // 'newest first' so why would 7-29 EVER show up before 10-7?"
-      const order = byDate
-        ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, together DESC, rank"
-        : 'ORDER BY together DESC, ' + ((c === SPLIT_FROM_PAGE || c === SPLIT_FUND) && titleTerms.length
-          // A REPORT TITLED WITH YOUR WORDS COMES FIRST. "free cash" ranked /this-week and
-          // /meeting-minutes -- long pages that mention it in passing -- above the five
-          // pages named for it. Titles hit by more of the words first, then bm25.
-          ? `(${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')}) DESC, rank`
-          : 'rank')
-      // `report` and `page` both read the page rows; the address list decides which side.
-      const real = c === SPLIT_FROM_PAGE || c === SPLIT_FUND ? 'page' : c === SPLIT_FROM_SOURCE ? 'source' : c
-      // The prefix is a constant of ours with no quote in it, so it is written as a literal.
-      const split = c === SPLIT_FROM_PAGE ? ` AND cite_url IN (${sqlList(reports)})`
-        : c === SPLIT_FUND ? ` AND cite_url LIKE '${FUND_PREFIX}%'`
-        : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)}) AND cite_url NOT LIKE '${FUND_PREFIX}%'`
-        : c === SPLIT_FROM_SOURCE ? ` AND board_slug = '${ANNUAL_FOLDER}'`
-        : c === 'source' ? ` AND board_slug != '${ANNUAL_FOLDER}'` : ''
-      const sql = `
-        SELECT * FROM (
-          SELECT rowid AS id, corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
-                 start_s, chars, bm25(search) AS rank,
-                 ${near ? `((rowid IN (SELECT rowid FROM search WHERE search MATCH ?3 AND corpus = ?2))
-                   + (rowid IN (SELECT rowid FROM search WHERE search MATCH ?4 AND corpus = ?2)))` : '0'} AS together,
-                 snippet(search, 0, '‹', '›', '…', 20) AS snippet
-          FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where}
-          LIMIT ${CANDIDATES}
-        ) ${order} LIMIT ${per}`
+    // ONE STATEMENT FOR EVERY KIND. This was a query per kind (and a second to count it),
+    // first one after another -- TJ: "search is SLOW" -- then all at once. Neither suits D1:
+    // `corpus` is an UNINDEXED column, so every per-kind query walked the WHOLE match list of
+    // the expression and read each row to learn its kind -- eleven walks of the same rows --
+    // and a database runs its statements one at a time, so all-at-once only queued them. On
+    // 20 November 2026 an unfiltered `monty tech` came back "D1 DB is overloaded" while any
+    // subset of it passed. Here the match list is walked ONCE, each row is given its kind,
+    // and window functions do per kind what the separate queries did: the first CANDIDATES
+    // rows in match order (`seq`, the old inner LIMIT), the kind's order (`pos`, the old
+    // outer ORDER BY), its count (`n_all`) and, for reports, its count of ADDRESSES. Measured
+    // on the local index: `budget` 609 ms in one pass against ~3.5 s in eleven.
+    //
+    // NO SNIPPET IN HERE. snippet() reads a row's body and positions, and inside the old
+    // subselect it ran for every candidate row before the LIMIT kept `per` of them --
+    // `budget` in `source` took 2,346 ms with it and 108 ms without. Snippets are cut
+    // afterwards, for the returned rows only.
+    const reals = [...new Set(corpora.map(c =>
+      c === SPLIT_FROM_PAGE || c === SPLIT_FUND ? 'page' : c === SPLIT_FROM_SOURCE ? 'source' : c))]
+    // Which side of a split a row is on. The prefix and folder are constants of ours with no
+    // quote in them, so they are written as literals; report addresses go through sqlList.
+    const kindOf = `CASE WHEN corpus = 'page' AND cite_url LIKE '${FUND_PREFIX}%' THEN '${SPLIT_FUND}'
+      WHEN corpus = 'page' AND cite_url IN (${sqlList(reports)}) THEN '${SPLIT_FROM_PAGE}'
+      WHEN corpus = 'source' AND board_slug = '${ANNUAL_FOLDER}' THEN '${SPLIT_FROM_SOURCE}'
+      ELSE corpus END`
+    // THE ORDER, PER KIND. A row whose date is missing, empty OR NOT AN ISO DATE goes LAST in a
+    // date order, and the test is the shape of the string rather than its emptiness. '' sorts
+    // before every real date, so a bare DESC would put undated rows on TOP of a newest-first
+    // list; and anything non-numeric -- 'undated', 'n.d.' -- sorts AFTER '2026', so emptiness
+    // alone is not enough. Every dated row in the index today is ISO (checked: 0 of 290,720
+    // are not), which is exactly why a guard is cheap now and would be archaeology later.
+    // `together`: 2 = the exact words typed, 1 = together in a family or synonym form, 0 =
+    // somewhere in the row (nearExpression). It LEADS a relevance order and only breaks ties
+    // in a date order: newest first means newest. TJ, 26 October 2026: "the sort is 'newest
+    // first' so why would 7-29 EVER show up before 10-7?"
+    // A REPORT TITLED WITH YOUR WORDS COMES FIRST. "free cash" ranked /this-week and
+    // /meeting-minutes -- long pages that mention it in passing -- above the five pages named
+    // for it. In `report` and `fund`, titles hit by more of the words first, then bm25.
+    // An exact tie in all of that goes to the earlier row -- what the old per-kind query did
+    // by accident of feeding its sorter rows in rowid order, written down here.
+    const byDate = corpora.filter(c => sort === 'newest' && DATED.includes(c))
+    for (const c of corpora) sortedBy[c] = byDate.includes(c) ? 'date' : 'rank'
+    const dated = sqlList(byDate)
+    const titled = titleTerms.length ? `(${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')})` : '0'
+    const order = `CASE WHEN k IN (${dated}) THEN (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') ELSE together END DESC,
+      CASE WHEN k IN (${dated}) THEN date WHEN k IN ('${SPLIT_FROM_PAGE}', '${SPLIT_FUND}') THEN ${titled} ELSE 0 END DESC,
+      CASE WHEN k IN (${dated}) THEN together ELSE 0 END DESC, rank, id`
+    const sql = `
+      WITH m AS (
+        SELECT rowid AS id, corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
+               start_s, chars, bm25(search) AS rank,
+               ${near ? `((rowid IN (SELECT rowid FROM search WHERE search MATCH ?2))
+                 + (rowid IN (SELECT rowid FROM search WHERE search MATCH ?3)))` : '0'} AS together,
+               ${kindOf} AS k
+        FROM search WHERE search MATCH ?1 AND corpus IN (${sqlList(reals)})${where}
+      ),
+      c AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY k ORDER BY id) AS seq FROM m WHERE k IN (${sqlList(corpora)})),
+      d AS (SELECT *, ROW_NUMBER() OVER (PARTITION BY k ORDER BY ${order}) AS pos,
+                      COUNT(*) OVER (PARTITION BY k) AS n_all,
+                      ROW_NUMBER() OVER (PARTITION BY k, cite_url ORDER BY id) AS url_seq
+            FROM c WHERE seq <= ${CANDIDATES}),
+      e AS (SELECT *, SUM(url_seq = 1) OVER (PARTITION BY k) AS n_urls FROM d)
+      SELECT id, corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
+             start_s, chars, rank, together, k AS _k, n_all AS _n, n_urls AS _nu
+      FROM e WHERE pos <= ${per} ORDER BY k, pos`
+    const r = await db.prepare(sql).bind(expr, ...(near ? [near, phraseOf(q)] : []), ...binds).all()
+    rowsRead += (r.meta && r.meta.rows_read) || 0
+    const found = {}
+    const total = {}
+    for (const x of r.results || []) {
       // A report indexed in parts would count once per part; count ADDRESSES for reports.
-      const countSql = c === SPLIT_FROM_PAGE
-        ? `SELECT COUNT(DISTINCT cite_url) AS n FROM (SELECT cite_url FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where} LIMIT ${CANDIDATES})`
-        : `SELECT COUNT(*) AS n FROM (SELECT rowid FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where} LIMIT ${CANDIDATES})`
-      const [r, n] = await Promise.all([
-        db.prepare(sql).bind(expr, real, ...(near ? [near, phraseOf(q)] : []), ...binds).all(),
-        db.prepare(countSql).bind(expr, real, ...binds).all(),
-      ])
-      rowsRead += (r.meta && r.meta.rows_read || 0) + (n.meta && n.meta.rows_read || 0)
-      // THE PASSAGE WHERE THE WORDS MEET. snippet() picks its fragment against the whole
-      // expression, so a row that qualified on the words together still showed whichever
-      // fragment held the most single words -- the 29 July minutes opened on "Contracted
-      // Services" instead of the custodial agreement. Re-cut against the together tier, for
-      // the rows that matched it. A rowid lookup per returned row: cheap.
-      const close = (r.results || []).filter(x => x.together).map(x => Number(x.id)).filter(Number.isInteger)
-      if (near && close.length) {
-        const s = await db.prepare(`SELECT rowid AS id, snippet(search, 0, '‹', '›', '…', 20) AS snippet
-          FROM search WHERE search MATCH ?1 AND rowid IN (${close.join(',')})`).bind(near).all()
-        rowsRead += (s.meta && s.meta.rows_read) || 0
-        const cut = new Map((s.results || []).map(x => [Number(x.id), x.snippet]))
-        for (const x of r.results) if (cut.has(Number(x.id))) x.snippet = cut.get(Number(x.id))
-      }
-      const count = (n.results && n.results[0] && n.results[0].n) || 0
+      total[x._k] = Number(x._k === SPLIT_FROM_PAGE ? x._nu : x._n) || 0
+      ;(found[x._k] ||= []).push(x)
+      delete x._k; delete x._n; delete x._nu
+    }
+    // THE SNIPPETS, for the returned rows only, by rowid -- two statements for the whole
+    // search. THE PASSAGE WHERE THE WORDS MEET: snippet() picks its fragment against the
+    // expression it is given, so a row that qualified on the words together is cut against
+    // the together tier -- otherwise the 29 July minutes opened on "Contracted Services"
+    // instead of the custodial agreement. Every other row is cut against the whole expression.
+    const rows = r.results || []
+    const ids = x => x.map(y => Number(y.id)).filter(Number.isInteger)
+    const cutAgainst = async (match, list) => {
+      if (!list.length) return new Map()
+      const s = await db.prepare(`SELECT rowid AS id, snippet(search, 0, '‹', '›', '…', 20) AS snippet
+        FROM search WHERE search MATCH ?1 AND rowid IN (${list.join(',')})`).bind(match).all()
+      rowsRead += (s.meta && s.meta.rows_read) || 0
+      return new Map((s.results || []).map(x => [Number(x.id), x.snippet]))
+    }
+    const cutNear = await cutAgainst(near, near ? ids(rows.filter(x => x.together)) : [])
+    const cutAll = await cutAgainst(expr, ids(rows.filter(x => !cutNear.has(Number(x.id)))))
+    for (const x of rows) x.snippet = cutNear.get(Number(x.id)) ?? cutAll.get(Number(x.id)) ?? ''
+
+    for (const c of corpora) {
+      const kindRows = found[c] || []
+      const count = total[c] || 0
       counts[c] = { hits: count, capped: count >= CANDIDATES, holds: holds[c] }
       // A transcript hit is cited at its CHUNK's start -- within sixty seconds before the
       // words, since a chunk is ~60s of captions. The command-line tool resolves the
@@ -481,7 +508,7 @@ export async function onRequest(context) {
           .filter((w, i, a) => a.indexOf(w) === i),
       }))
       for (const row of byTopic) seen.add(row.cite_url)
-      results[c] = byTopic.concat((r.results || []).filter(row => {
+      results[c] = byTopic.concat(kindRows.filter(row => {
         if (seen.has(row.cite_url)) return false
         seen.add(row.cite_url)
         return true
@@ -491,8 +518,8 @@ export async function onRequest(context) {
         matched: [...row.snippet.matchAll(/‹([^›]+)›/g)].map(m => m[1].toLowerCase())
           .filter((w, i, a) => a.indexOf(w) === i),
       })))
-      if (byTopic.length) counts[c].hits += byTopic.filter(t => !(r.results || []).some(x => x.cite_url === t.cite_url)).length
-    }))
+      if (byTopic.length) counts[c].hits += byTopic.filter(t => !kindRows.some(x => x.cite_url === t.cite_url)).length
+    }
   } catch (e) {
     logSearch(context, { q, board, since, sort, ms: Date.now() - started, rowsRead,
       error: String(e && e.message ? e.message : e) })
@@ -506,6 +533,8 @@ export async function onRequest(context) {
     }, 503)
   }
 
+  // Kinds finish in whatever order D1 answers them; a response lists them in CORPORA order.
+  const inOrder = o => Object.fromEntries(corpora.filter(c => c in o).map(c => [c, o[c]]))
   const payload = {
     resource: 'search',
     q,
@@ -514,7 +543,7 @@ export async function onRequest(context) {
     board: board || null,
     since: since || null,
     sort,
-    sortedBy,
+    sortedBy: inOrder(sortedBy),
     dated: DATED,
     perCorpus: per,
     candidates: CANDIDATES,
@@ -523,8 +552,8 @@ export async function onRequest(context) {
     // The curated pages named for the query, best first -- see _entities.js. Each says
     // whether it matched on its own name or on a keyword of ours (`via`).
     best,
-    counts,
-    results,
+    counts: inOrder(counts),
+    results: inOrder(results),
     rowsRead,
     ms: Date.now() - started,
     cite: 'A transcript hit locates a moment in a recording. Cite the video at its timestamp, never as a document, and never quote a figure from a caption as the record.',
