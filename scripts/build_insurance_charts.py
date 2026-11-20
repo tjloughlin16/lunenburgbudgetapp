@@ -250,6 +250,25 @@ def annual_reports():
 # The ledger, and the district's own budget book
 # ---------------------------------------------------------------------------
 
+def printed_name(cx, account_id, fy, period):
+    """The name THIS period's printout gives an account.
+
+    `account.name` holds one name per account and the last load to touch it wins: when the
+    period-13 close was loaded (20 November 2026) `HEALTH INS` became `TOWN ACTIVE HEALTH
+    INSURANCE` there, while every figure this page reads is still period 12. The printout
+    is the source, so the name comes from the same printout as the figures.
+    """
+    fund, org, obj = account_id.split('-')
+    names = {r[0] for r in cx.execute(
+        "SELECT name FROM munis_ledger WHERE fy=? AND CAST(period AS INTEGER)=? AND fund=? "
+        "AND org=? AND object=? AND totals_only='0'", (fy, period, fund, org, obj))}
+    if len(names) != 1:
+        sys.exit(f'{account_id}: FY{fy} period {period} prints {len(names)} names for it '
+                 f'({sorted(names)}) — a name that resolves to none or to several is not '
+                 'a citation')
+    return names.pop()
+
+
 def ledger(cx):
     rows = cx.execute("""
         SELECT a.account_id, a.name, l.original, l.transfers, l.revised,
@@ -264,6 +283,8 @@ def ledger(cx):
                  '— the join matched nothing, which looks exactly like an empty department')
     out = []
     for r in rows:
+        r = dict(r)
+        r['name'] = printed_name(cx, r['account_id'], LEDGER_FY, LEDGER_PERIOD)
         if r['account_id'] not in ACCOUNT_MEANING:
             sys.exit(f'{r["account_id"]} ({r["name"]}) has no entry in ACCOUNT_MEANING. '
                      'A new insurance account must be described before it can be drawn.')
@@ -369,6 +390,8 @@ def build():
                         FROM ledger_snapshot l JOIN account a USING (account_id)
                         WHERE a.account_id=? AND l.fy=? AND l.period=?""",
                  (SCHOOL_ACTIVE, LEDGER_FY, LEDGER_PERIOD), 'the school active-health line')
+    active = dict(active)
+    active['name'] = printed_name(cx, SCHOOL_ACTIVE, LEDGER_FY, LEDGER_PERIOD)
 
     dl = district_line(cx)
     settled = series(dl, 'settled')

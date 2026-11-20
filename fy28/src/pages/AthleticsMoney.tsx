@@ -130,7 +130,7 @@ type Payload = {
   }[]
   memo_total: number
   counted: {
-    fy: number; function: string; period: string; doc: string
+    fy: number; function: string; period: string; closed: boolean; doc: string
     accounts: {
       account: string; name: string; program: string; book_line: string
       appropriated: number; transfers: number; revised: number; expended: number
@@ -1004,7 +1004,7 @@ export function AthleticsMoney() {
         style={{ color: 'var(--text-secondary)' }}>
         <Basis level="cross-checked" />{' '}
         <span className="ml-1">
-          The account names are the ten characters MUNIS prints, not ours. The ledger and
+          The account names are the ones MUNIS prints, not ours. The ledger and
           the budget book state the same total to the cent, and the build refuses to
           publish this block if they stop doing so &mdash; a printout from the books
           confirming a sheet somebody assembled. Period {d.counted.period} of{' '}
@@ -1212,8 +1212,8 @@ export function AthleticsMoney() {
           The report held both halves and had not put them together.
 
           AND WHAT IT MUST NOT SAY. That the money was there and was withheld. Three
-          things cut against it and all three are stated: the ledger stops at period 12
-          rather than a closed year, reconditioning is not buying, and nothing here
+          things cut against it and all three are stated: before period 13 the ledger is
+          not a closed year, reconditioning is not buying, and nothing here
           dates the request against the order window. */}
       <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--grid)' }}>
         <p className="text-[11px] font-semibold uppercase tracking-widest mb-2"
@@ -1245,8 +1245,12 @@ export function AthleticsMoney() {
           <a className="underline" style={{ color: 'var(--series-cost)' }}
             href={d.counted.equipment.said.town_url}>the town&rsquo;s</a>, checked on
           every build. <strong>These two facts are set side by side and nothing here
-          connects them.</strong> Period {d.counted.period} is not a closed year, so a
-          line that has not spent is not a line that will not; reconditioning helmets
+          connects them.</strong> {d.counted.closed
+            ? <>Period {d.counted.period} is the closed year, so what a line had not spent
+              lapsed &mdash; but a request made in spring can fall in the next year&rsquo;s
+              order;</>
+            : <>Period {d.counted.period} is not a closed year, so a line that has not spent
+              is not a line that will not;</>} reconditioning helmets
           and buying them are different accounts; and nothing published dates the
           request against the ordering window. What the minutes establish is that the
           request was made and that no answer had been given by that meeting.

@@ -257,14 +257,23 @@ FIELDS_QUOTES = [
 #
 # WHAT IT MUST NOT BECOME. "The money was there and they would not spend it." The persona
 # document is explicit about that: the request may have arrived after the order window,
-# reconditioning is not buying, and this ledger is period 12 rather than a closed year.
+# reconditioning is not buying, and a ledger before period 13 is not a closed year.
 # The honest sentence puts the two side by side and says what neither establishes.
 HELMETS_SPEAKER = 'Nikki Jeannotte'
 HELMETS_QUOTES = [
     ('Casey, the head coach put in a request to the athletic department to purchase five '
      'new helmets earlier this spring, we currently have more heads than we have helmets'),
 ]
-EQUIPMENT_ACCOUNTS = ('EQUIP RECO', 'NEW EQUIP')
+# BY ACCOUNT NUMBER, NEVER BY NAME. The period-12 workbook printed MUNIS's ten-character
+# abbreviations (`EQUIP RECO`, `NEW EQUIP`) and the period-13 printout spells the same
+# accounts out (`EQUIPMENT RECONDITIONING`, `NEW EQUIPMENT`). A name is how a report renders
+# an account; the number is the account.
+EQUIPMENT_ACCOUNTS = ('0100-3-300-3510-06-6-67-2-555048',   # equipment reconditioning
+                      '0100-3-300-3510-06-6-67-2-555050')   # new equipment
+AD_ACCOUNT = '0100-3-300-3510-06-6-67-1-511026'        # athletic director's salary
+TRAINER_ACCOUNT = '0100-3-300-3510-06-6-67-1-511029'   # athletic trainer
+# Period 13 is the year-end close, after the lapse period.
+CLOSE_PERIOD = 13
 
 # THE SEQUEL TO THE HELMETS, AND RULE 8 IS THE REASON IT IS HERE.
 #
@@ -607,9 +616,23 @@ def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
     them can be attributed. That makes every athletics total a floor, and this is the
     arithmetic that lets the page say so rather than hedge.
     """
+    # ONE PERIOD, THE LATEST HELD. munis_ledger carries every printout we hold for a year --
+    # FY2026 has the period-12 workbook and the period-13 close -- and the same account in
+    # both is the same money twice. Reading them together doubled the total (1,036,668
+    # against the book's 518,334, 20 November 2026). The latest period is the most complete
+    # statement of the year, and when it is 13 the year is closed.
+    latest = q(c, "SELECT MAX(CAST(period AS INTEGER)) AS p FROM munis_ledger WHERE fy = ? "
+                  "AND totals_only = '0' AND account LIKE ?",
+               LEDGER_FY, SCHOOL_ACCOUNT_PREFIX + '%')
+    period = latest[0]['p'] if latest else None
     rows = q(c, "SELECT account, name, original, transfers, revised, expended, doc_id, "
                 "period FROM munis_ledger WHERE fy = ? AND totals_only = '0' AND "
-                "account LIKE ?", LEDGER_FY, SCHOOL_ACCOUNT_PREFIX + '%')
+                "account LIKE ? AND CAST(period AS INTEGER) = ?",
+             LEDGER_FY, SCHOOL_ACCOUNT_PREFIX + '%', period)
+    if len({r['doc_id'] for r in rows}) > 1:
+        fail(f'FY{LEDGER_FY} period {period}: school accounts come from more than one '
+             f'document ({sorted({r["doc_id"] for r in rows})}). Summing them would count '
+             'the same account once per printout.')
     if not rows:
         fail(f'no FY{LEDGER_FY} school accounts in munis_ledger — the ledger join matched '
              'nothing, which reads exactly like a school department that spends nothing')
@@ -618,7 +641,14 @@ def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
         parts = acct.split('-')
         return parts[i] if len(parts) > i else ''
 
-    ath = [r for r in rows if seg(r['account'], SEG_FUNCTION) == ATH_FUNCTION]
+    # AN ACCOUNT WITH NOTHING IN ANY COLUMN IS DROPPED. The period-12 workbook omits
+    # them and the period-13 printout lists three (535021, 555047, 555049, all 0.00 in
+    # every column), so counting them would make the account count a fact about how a
+    # report was printed rather than about the books.
+    def carries_money(r):
+        return any(num(r[k]) for k in ('original', 'transfers', 'revised', 'expended'))
+    ath = [r for r in rows if seg(r['account'], SEG_FUNCTION) == ATH_FUNCTION
+           and carries_money(r)]
     if not ath:
         fail(f'no FY{LEDGER_FY} account carries function {ATH_FUNCTION} — either the '
              'account string changed shape or the town recoded athletics. Nothing is '
@@ -632,10 +662,10 @@ def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
               appropriated=round(num(r['original']) or 0.0, 2),
               transfers=round(num(r['transfers']) or 0.0, 2),
               revised=round(num(r['revised']) or 0.0, 2),
-              # THROUGH PERIOD 12, WHICH IS NOT A CLOSED YEAR. Period 13 is the year-end
-              # close after the lapse period and the town has not published one for
-              # FY2026. So a low figure here is a line that had not spent YET as much as
-              # a line that did not spend, and the page says which.
+              # BEFORE PERIOD 13 THIS IS NOT A CLOSED YEAR. Period 13 is the year-end
+              # close after the lapse period; earlier, a low figure is a line that had
+              # not spent YET as much as a line that did not spend, and the page says
+              # which by reading `closed`.
               expended=round(num(r['expended']) or 0.0, 2))
          for r in ath),
         key=lambda r: -r['appropriated'])
@@ -680,7 +710,8 @@ def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
     # hand-kept set: a function the town starts using has to be inside the check, and a
     # function omitted from a list is one the check never looked at.
     fac_rows = [r for r in rows
-                if seg(r['account'], SEG_FUNCTION) in FACILITY_FUNCTION_NAMES]
+                if seg(r['account'], SEG_FUNCTION) in FACILITY_FUNCTION_NAMES
+                and carries_money(r)]
     if not fac_rows:
         fail(f'no FY{LEDGER_FY} school account carries an operations-and-maintenance '
              'function. A school department with no custodians and no heat is an empty '
@@ -697,8 +728,10 @@ def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
     # THE ASSERTION THE WHOLE "we cannot say" REST ON. If a facility account ever DOES
     # carry the athletics program segment, then a share IS attributable and the page must
     # stop saying it is not.
-    attributed = [r['account'] for r in fac_rows
-                  if seg(r['account'], SEG_PROGRAM) in ath_programs]
+    # Over EVERY facility row, zero ones included: an empty account carrying the athletics
+    # programme code is still the town coding a building cost to athletics.
+    attributed = [r['account'] for r in rows
+                  if seg(r['account'], SEG_FUNCTION) in FACILITY_FUNCTION_NAMES and seg(r['account'], SEG_PROGRAM) in ath_programs]
     if attributed:
         fail('an operations-and-maintenance account now carries the athletics program '
              f'segment: {attributed}. The page states that no facility cost is attributed '
@@ -708,6 +741,7 @@ def counted(c, budget_book_general, budget_book_items, workbook_unmatched,
         fy=LEDGER_FY,
         function=ATH_FUNCTION,
         period=str(rows[0]['period']),
+        closed=int(rows[0]['period']) >= CLOSE_PERIOD,
         doc=rows[0]['doc_id'],
         accounts=accounts,
         appropriated=appropriated,
@@ -1290,10 +1324,10 @@ def build():
     # above is built from.
     count = counted(c, spend['general'], items['general'], compare['unmatched'],
                     compare['unmatched_total'])
-    equip = [r for r in count['accounts'] if r['name'] in EQUIPMENT_ACCOUNTS]
+    equip = [r for r in count['accounts'] if r['account'] in EQUIPMENT_ACCOUNTS]
     if len(equip) != len(EQUIPMENT_ACCOUNTS):
         fail(f'FY{LEDGER_FY}: expected the equipment accounts {EQUIPMENT_ACCOUNTS} under '
-             f'function {ATH_FUNCTION} and found {[r["name"] for r in equip]}. The page '
+             f'function {ATH_FUNCTION} and found {[r["account"] for r in equip]}. The page '
              'sets what they spent beside what a coach asked for, and it cannot do that '
              'against a line it did not find.')
     count['equipment'] = dict(
@@ -1351,16 +1385,16 @@ def build():
     # The two accounts a reader asks about by name. Looked up rather than indexed, and
     # the build stops if either stops being there: a conclusion naming the athletic
     # director is a conclusion that has to have found the athletic director.
-    def ledger_account(name):
-        hit = [r for r in count['accounts'] if r['name'] == name]
+    def ledger_account(number):
+        hit = [r for r in count['accounts'] if r['account'] == number]
         if len(hit) != 1:
-            fail(f'FY{LEDGER_FY}: {len(hit)} accounts named {name!r} under function '
+            fail(f'FY{LEDGER_FY}: {len(hit)} accounts numbered {number} under function '
                  f'{ATH_FUNCTION}. A conclusion names that line, and a name that resolves '
                  'to none or to several is not a citation.')
         return hit[0]
 
-    ad_line = ledger_account('ADSALARY')
-    trainer_line = ledger_account('ATHTRAINER')
+    ad_line = ledger_account(AD_ACCOUNT)
+    trainer_line = ledger_account(TRAINER_ACCOUNT)
 
     return dict(
         generated_by='scripts/build_athletics_charts.py',
@@ -1550,8 +1584,8 @@ def build():
                           'it, which is rule 11: net of the fee-funded fund, net of any '
                           'grant, and with no share of the buildings in it at all. Nor '
                           'does an account name a person or a post \u2014 a line called '
-                          'ATHTRAINER is dollars, not a trainer, and the town publishes no '
-                          'FTE against it.',
+                          '%s is dollars, not a trainer, and the town publishes no '
+                          'FTE against it.' % trainer_line['name'],
                 see=[('/what-we-cannot-answer', 'the grounds share nobody publishes'),
                      ('/connecting-the-budget', 'how a budget line reaches the ledger')],
             ),
