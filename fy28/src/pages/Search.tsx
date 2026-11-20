@@ -484,18 +484,32 @@ export default function Search() {
     // function is, and /api/search answers with the page's own HTML. TJ hit exactly that
     // (15 Sep: "Unexpected token '<', '<!doctype'"). Read the body as text, and if it is
     // not JSON, wait a few seconds and try once more before saying anything.
+    // A FAILED SEARCH IS AN ERROR, NEVER A PAYLOAD. The API answers a failure with a JSON
+    // body that has no `counts` or `results` (503, `query_failed`), and Cloudflare answers a
+    // thrown function with plain text (`error code: 1101`, 500). Storing either as `data`
+    // crashed the render on `data.counts[c]` and left a blank page (20 November 2026).
     const ask = (attempt: number): Promise<Payload> => fetch(`${API}?${params}`).then(async r => {
       const text = await r.text()
-      try { return JSON.parse(text) as Payload }
+      let j: Payload
+      try { j = JSON.parse(text) as Payload }
       catch {
-        if (attempt < 2) return new Promise(res => setTimeout(res, 4000)).then(() => ask(attempt + 1))
+        // Not JSON with a failure status: the function itself failed. Say so rather than
+        // blaming a deploy.
+        if (!r.ok) throw new Error(`The search service failed (HTTP ${r.status}). Try again in a moment.`)
+        if (attempt < 2) return new Promise<Payload>(res => setTimeout(res, 4000)).then(() => ask(attempt + 1))
         throw new Error('The site was just updated and the search is still coming back up — try again in a moment.')
       }
+      if (j.error || !r.ok || !j.counts || !j.results) {
+        const overloaded = /overloaded|too many resources/i.test(j.message || '')
+        throw new Error(overloaded
+          ? 'The search database is overloaded right now. Try again in a moment.'
+          : (j.message || j.error || `The search service failed (HTTP ${r.status}).`))
+      }
+      return j
     })
     ask(0)
       .then(j => {
         if (!alive) return
-        if (j.error) setErr(j.message || j.error)
         setData(j)
       })
       .catch(e => { if (alive) setErr(e instanceof Error ? e.message : String(e)) })

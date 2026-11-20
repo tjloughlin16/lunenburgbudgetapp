@@ -60,9 +60,12 @@ export function DynamicThread({ term }: { term: string }) {
     let live = true
     setP(null); setErr('')
     fetch(`/api/search?q=${encodeURIComponent(term)}&corpus=${KINDS.join(',')}&sort=newest&per=${PER}&match=together&via=thread`)
-      .then(r => r.json()).then((j: Payload) => {
+      // A failed search can answer in plain text (`error code: 1101`), not JSON: name the
+      // status rather than surfacing a JSON parse error.
+      .then(r => r.json().catch(() => { throw new Error(`The search service failed (HTTP ${r.status}).`) }))
+      .then((j: Payload) => {
         if (!live) return
-        if (j.error) setErr(j.message || j.error); else setP(j)
+        if (j.error || !j.results) setErr(j.message || j.error || 'The search returned no results object.'); else setP(j)
       }).catch(e => live && setErr(String(e)))
     return () => { live = false }
   }, [term])

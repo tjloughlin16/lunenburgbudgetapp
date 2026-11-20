@@ -309,7 +309,17 @@ export async function onRequest(context) {
 
   // The index's own statement of what it holds, written by the push. Read, never counted
   // here: a COUNT(*) per corpus would read every row on every call.
-  const metaRows = (await db.prepare('SELECT k, v FROM build_meta').all()).results || []
+  // Inside a try: an overloaded D1 fails HERE as often as in the corpus queries, and a throw
+  // from this line escaped the handler as Cloudflare's plain-text `error code: 1101` (500)
+  // instead of the JSON 503 every caller knows how to read (20 November 2026).
+  let metaRows
+  try {
+    metaRows = (await db.prepare('SELECT k, v FROM build_meta').all()).results || []
+  } catch (e) {
+    const message = String(e && e.message ? e.message : e)
+    logSearch(context, { q, board, since, sort, error: message })
+    return json({ error: 'query_failed', message, q }, 503)
+  }
   const meta = Object.fromEntries(metaRows.map(r => [r.k, r.v]))
   const reports = await loadReportUrls(env, request)
   const inReports = new Set(reports)
