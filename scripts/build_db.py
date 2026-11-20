@@ -1399,6 +1399,12 @@ REFERENCE = [
     # boards' minutes: every figure carries its citation and quote.
     'senior-tax-workoff',
 
+    # The track and field in the capital process, FY2014-FY2028: one row per document or
+    # recording that ranks, prices, plans or votes on it, or a plan read and found without it
+    # (`kind` = absence). `basis` = captions marks a row heard through machine captions, a
+    # finding aid and not a record. Quotes re-checked by scripts/build_track_field_capital.py.
+    'track-field-capital-history',
+
 ]
 
 # YEAR-BY-YEAR SERIES READ OUT OF THE ANNUAL REPORTS, one family a file: quotes checked against

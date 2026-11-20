@@ -83,7 +83,7 @@ Every row is in `track-field-capital-history.csv`, with its quote and where it i
 | 20 Nov 2023 | Capital Planning Committee | Four phases: Phase 1 initial assessment "being funded through ARPA funding: $50,000"; Phase 2 FY25 $200,000; Phase 3 FY26; Phase 4 later at $1.2 million. | 50,000 (ARPA) |  | document |
 | undated | Collins Center scoring method (column Collins Score) | MS/HS Turf Field Feasibility Study LPS23-06; Collins score (a score, not a rank; higher = more points): 22 of 29 | $50,000.00 |  | document |
 | not printed; catalogue gives none | Capital Planning Committee (five members; headers dpassios, gmartin, mbrenner, pbeardmore, talonzo) | MS/HS Turf Field Feasibility Study LPS23-06; CPC composite ranking (column headed Composite RANKING; value is the mean of the five member rankings): 18.6 of 29 | $50,000.00 (column FY2024 Capital Costs) |  | document |
-| undated | Capital Planning Committee composite ranking | MS/HS Turf Field Feasibility Study LPS23-06, $50,000: member scores 22, 17, 24, 22, 11, 19; average rank 18.6 (the printed columns, positional); Collins score 22. | 50,000 |  | document |
+| undated | Capital Planning Committee composite ranking | MS/HS Turf Field Feasibility Study LPS23-06, $50,000: Collins score 22; five member rankings 17, 24, 22, 11, 19; composite 18.6, their mean (printed columns, positional). | 50,000 |  | document |
 
 ### Round 3 · money for FY2025 · capital plan (survey and drainage)
 
@@ -165,7 +165,7 @@ Every row is in `track-field-capital-history.csv`, with its quote and where it i
 | 19 Nov 2026 | Capital Planning Committee | FY28 capital requests; none yet: none printed |  |  | document |
 | 20 Nov 2026 | Capital Planning Committee | No FY28 CPC ranking list is held (committee being reorganised: Town Manager 27 Oct said members sworn in, reorganisation meeting not yet scheduled; CPC agendas 2 Nov, 10 Nov, 19 Nov 2026 held, no minutes) |  |  | document |
 
-### Every other cycle, FY2014 to FY2028 · no field money requested
+### Every other cycle, FY2014 to FY2028 · no field money asked for that year
 
 | cycle | date | body | what happened | amount | vote | basis |
 |---|---|---|---|---|---|---|

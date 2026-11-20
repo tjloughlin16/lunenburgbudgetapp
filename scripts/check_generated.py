@@ -141,6 +141,7 @@ CHECKS = [
     # The annual report's own per-account listing, checked against that ledger.
     ('extract_trust_balance_detail.py', ['--check']),
     ('build_stabilization.py', ['--check']),
+    ('build_track_field_capital.py', ['--check']),   # quotes re-found in their sources
     ('extract_personnel.py', ['--check']),
     ('extract_department_staffing.py', ['--check']),
     ('extract_department_rosters.py', ['--check']),
