@@ -1076,7 +1076,7 @@
      "sources/district-budget/text/fy27-budget-projections-as-of-3-16-26-with-restorations.txt"
     ],
     "fy": 2025,
-    "ledger_backed": false,
+    "ledger_backed": true,
     "measured": true,
     "rows": 187,
     "source_types": {
@@ -1090,12 +1090,12 @@
   },
   "documents": 16,
   "ledger": {
-   "accounts": 983,
+   "accounts": 3303,
    "deepest": {
-    "accounts": 635,
-    "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "accounts": 1160,
+    "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "fy": 2026,
-    "period": 12
+    "period": 13
    },
    "documents": [
     {
@@ -1149,6 +1149,12 @@
     }
    ],
    "snapshots": [
+    {
+     "accounts": 1160,
+     "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-all.pdf",
+     "fy": 2025,
+     "period": 13
+    },
     {
      "accounts": 16,
      "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt",
@@ -1214,20 +1220,28 @@
      "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "fy": 2026,
      "period": 12
+    },
+    {
+     "accounts": 1160,
+     "doc": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "fy": 2026,
+     "period": 13
     }
    ],
    "years": [
+    2025,
     2026
    ]
   },
-  "measured_years_ledger_backed": [],
+  "measured_years_ledger_backed": [
+   2025
+  ],
   "measured_years_restated_only": [
    2018,
    2019,
    2020,
    2022,
-   2023,
-   2025
+   2023
   ],
   "stage": "restated"
  },

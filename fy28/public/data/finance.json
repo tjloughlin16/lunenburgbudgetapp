@@ -1,7 +1,7 @@
 {
  "about": "The School Committee’s finances, every line: the appropriation, its revolving funds, grants, gifts and trusts, with what each held at 31 March 2026 and what it has done since FY2011 — the first of a page per board and department, from a registry of every accounting measure the town prints.",
  "as_of": {
-  "ledger": "FY2026, period 12 (through June, unaudited) where an account-level report exists; period 9 (31 March 2026) otherwise",
+  "ledger": "FY2026, period 13 (at the year-end close) where an account-level report exists; period 9 (31 March 2026) otherwise",
   "special_revenue": "2026-03-31",
   "trusts": "2026-03-31"
  },
@@ -10,7 +10,7 @@
    "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report’s department 300 total.",
    "bearing": "sizes",
    "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
-   "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 budget report through June ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
+   "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 budget report at the year-end close ($26,332,564 revised, period 13, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
    "figure": "held",
    "figures": {
     "appropriation": {
@@ -40,7 +40,7 @@
     "300",
     "FY26",
     "2026",
-    "12"
+    "13"
    ],
    "not_shown": "What any balance is committed to. The report is balances, not obligations; the district’s own fund-by-fund plan would say what is spoken for.",
    "see": [],
@@ -215,7 +215,7 @@
     "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report’s department 300 total.",
     "bearing": "sizes",
     "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
-    "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 budget report through June ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
+    "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 budget report at the year-end close ($26,332,564 revised, period 13, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
     "figure": "held",
     "figures": {
      "appropriation": {
@@ -245,7 +245,7 @@
      "300",
      "FY26",
      "2026",
-     "12"
+     "13"
     ],
     "not_shown": "What any balance is committed to. The report is balances, not obligations; the district’s own fund-by-fund plan would say what is spoken for.",
     "see": [],
@@ -657,8 +657,8 @@
   },
   {
    "side": "money_in",
-   "what": "What Parks & Recreation’s programme fees and beach-pass sales became on the town’s books — how much of the $38,955.50 of programme fees and $8,828.00 of passes MyRec recorded for FY2025 reached fund 1500 (Park Revolving) or the general fund, and when",
-   "why": "MyRec is the registration system, not the ledger: its FY2025 sales reports foot to their own totals but say nothing about deposits, refunds or the fund each fee was posted to, and the FY2025 special-revenue report is not in the archive — closes: the FY2025 special-revenue report and the journal detail for fund 1500, the same report the archive holds for fund 1301."
+   "what": "Which Parks & Recreation registration sales make up each month’s deposit to fund 1500 (Park Revolving), so that what MyRec recorded for FY2025 can be matched to what the fund booked",
+   "why": "NARROWED 18 November 2026 by the fund’s MUNIS journal (the Town’s 5 November 2026 answer): the money did reach fund 1500, as monthly deposits labelled MyRec, and once refunds and card charges whose memos are cut short are counted, the fund booked $47,738.16 of registration income in FY2025 against $47,783.50 in MyRec’s sales reports, $45.34 apart (corrected 19 November 2026; an earlier reading counted only memos spelling out MYREC and showed the fund booking more). The journal records deposits by month, not sale by sale, so sales near 30 June can fall in either year and the two cannot be matched line for line — closes: MyRec’s deposit (settlement) report, each deposit with the sales in it."
   },
   {
    "side": "money_out",
@@ -1002,8 +1002,23 @@
   },
   {
    "side": "money_in",
-   "what": "Who pays into the Park Revolving fund (1500), and what it spends on",
-   "why": "The archive holds fund 1500 only as totals: revenue, spending and balance in the FY26 fund report, and year-end balances in the annual reports. The school journal does not cover town funds, so no receipt or payment can be read by payer. Parks Commission minutes of 17 November 2016 name a Little League per-player fee that no ledger we hold shows — closes: the MUNIS journal detail for fund 1500, FY2023–FY2026, the same report the archive holds for the school funds"
+   "what": "Who pays into the Park Revolving fund (1500), behind each monthly registration deposit",
+   "why": "NARROWED 18 November 2026: the fund’s MUNIS journal, FY2023–FY2026, is held and published as our redacted reading (munis-parks-journal.csv), so every payment out and every receipt can now be read. Only seven fee receipts name a payer, all leagues or teams (Little League among them; whether those are the per-player fee the 2016 minutes name is not stated); the rest are monthly registration deposits, beach passes and cash with no payer named — closes: the receipt detail behind each deposit, from MyRec or the Treasurer’s turnover sheets."
+  },
+  {
+   "side": "money_in",
+   "what": "How much of the Extended Day Revolving Fund is the Early Learning Center, in fees, in staff and in children?",
+   "why": "The ELC and Extended Day share fund 1312 and one payroll account. A deposit is labelled ELC only when whoever posts it types the word, so the ledger gives a floor for ELC fees and nothing at all for ELC spending, and no document we hold counts the children enrolled. See /analysis/early-learning-center. — closes: the district’s RevTrak payment report by item (Extended Day & ELC versus the other items) with enrolment by programme, or a programme-level budget for fund 1312."
+  },
+  {
+   "side": "money_in",
+   "what": "Why the Park Revolving fund (1500) took in about half as much in fees in FY2026 as in FY2025",
+   "why": "The fund’s MUNIS journal shows registration deposits smaller in FY2026 than FY2025, and each deposit’s memo names the month its sales were made in: no FY2026 deposit names September, October or November 2025 or March or April 2026, and none arrived later through the FY2026 close (FY2023 also lacked four months; FY2024 and FY2025 had all twelve). Fewer sales, deposits posted after 30 June 2026 or to another fund, and a change in how the department takes payment all fit the same postings; nothing held tells them apart — closes: MyRec’s FY2026 sales report beside its deposit report, or the fund’s FY2027 journal."
+  },
+  {
+   "side": "money_in",
+   "what": "Why the FY2025 annual town report prints a different 30 June 2025 balance for the Park Revolving fund (1500) than the fund’s own journal",
+   "why": "The journal, carried from the FY2023 annual report, reaches the FY2026 special-revenue report’s opening balance to the cent; the FY2025 annual report’s schedule prints a figure several thousand dollars higher. An audit adjustment, an encumbrance counted in the balance, or a misprint all fit — closes: the Town Accountant’s FY2025 special-revenue schedule and the workpaper behind it."
   },
   {
    "side": "extraction",
@@ -1013,27 +1028,37 @@
   {
    "side": "extraction",
    "what": "Can we trust what Town Meeting appropriated, article by article enough to chart what the town voted to spend, year over year?",
-   "why": "12,782 of 27,799 rows in `report_appropriations` are reconciled to a total the document itself prints — 5,845 failed that check and 9,172 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 30 years, 1 need real PDF geometry rather than text, 16 are messy and 13 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 30 of 30 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "12,781 of 27,799 rows in `report_appropriations` are reconciled to a total the document itself prints — 5,843 failed that check and 9,175 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 30 years, 1 need real PDF geometry rather than text, 16 are messy and 13 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 30 of 30 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
    "what": "Can we trust the capital projects and what they cost enough to chart what the town has built and what it paid?",
-   "why": "741 of 1,317 rows in `report_capital_projects` are reconciled to a total the document itself prints — 547 failed that check and 29 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 19 years, 2 need real PDF geometry rather than text, 9 are messy and 8 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 19 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "741 of 1,318 rows in `report_capital_projects` are reconciled to a total the document itself prints — 547 failed that check and 30 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 19 years, 2 need real PDF geometry rather than text, 9 are messy and 8 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 19 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
    "what": "Can we trust the debt schedule enough to chart what the town owes and when it falls due?",
-   "why": "2,876 of 3,533 rows in `report_debt` are reconciled to a total the document itself prints — 315 failed that check and 342 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 43 years, 11 need real PDF geometry rather than text, 13 are messy and 19 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 40 of 43 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "2,875 of 3,533 rows in `report_debt` are reconciled to a total the document itself prints — 316 failed that check and 342 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 43 years, 11 need real PDF geometry rather than text, 13 are messy and 19 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 40 of 43 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
    "what": "Can we trust gross wages, name by name enough to chart what the town pays its people in total?",
-   "why": "7,965 of 11,512 rows in `report_gross_wages` are reconciled to a total the document itself prints — 0 failed that check and 3,547 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 16 years, 6 need real PDF geometry rather than text, 9 are messy and 1 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. NO year of this family prints a grand total, so there is no arithmetic on the page to foot a row against and no extractor can supply one. — closes: nothing we can build. What stands in for a total here is the PAIRING and the order the list prints itself in, both of which prove the assignment and say nothing about the digits; a reconcilable figure needs a total from the Town. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "8,181 of 11,728 rows in `report_gross_wages` are reconciled to a total the document itself prints — 0 failed that check and 3,547 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 16 years, 6 need real PDF geometry rather than text, 9 are messy and 1 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. NO year of this family prints a grand total, so there is no arithmetic on the page to foot a row against and no extractor can supply one. — closes: nothing we can build. What stands in for a total here is the PAIRING and the order the list prints itself in, both of which prove the assignment and say nothing about the digits; a reconcilable figure needs a total from the Town. The per-year survey is in `sources/data/extraction-plan.csv`."
   },
   {
    "side": "extraction",
    "what": "Can we trust the stabilization and trust fund balances enough to chart how much the town holds in reserve, and how that has moved?",
-   "why": "3,434 of 5,508 rows in `report_trust_funds` are reconciled to a total the document itself prints — 546 failed that check and 1,528 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 17 years, 10 need real PDF geometry rather than text, 5 are messy and 2 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 17 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+   "why": "3,434 of 5,507 rows in `report_trust_funds` are reconciled to a total the document itself prints — 546 failed that check and 1,527 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 17 years, 10 need real PDF geometry rather than text, 5 are messy and 2 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 17 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+  },
+  {
+   "side": "money_out",
+   "what": "Which payments make up the Parks department’s general fund accounts (department 650) in FY2025 and FY2026",
+   "why": "The Town’s general fund budget reports at the close print each account’s totals and no payments, and the FY2024 Parks report that lists payments is held only as a scanned image, not yet read. In FY2026 general fund purchase of service rose while the Park Revolving fund’s fell by a similar amount, and without the payments the two cannot be compared item by item — closes: the MUNIS general ledger detail report for department 650, FY2025 and FY2026."
+  },
+  {
+   "side": "money_in",
+   "what": "What each Parks & Recreation programme took in, in years other than FY2025",
+   "why": "The Park Revolving fund’s journal records monthly registration deposits, not programmes; only FY2025 has the registration system’s sales report by programme, so programme income cannot be compared year over year or set beside each year’s programme payments — closes: MyRec’s programme sales reports for FY2023, FY2024 and FY2026."
   }
  ],
  "generated_by": "scripts/build_finance.py",
@@ -1646,16 +1671,16 @@
    "authority": "",
    "code": "122",
    "current": {
-    "available": 14314.26,
-    "encumbered": 0.04,
+    "available": 14314.3,
+    "encumbered": 0.0,
     "expended": 170969.37,
     "fy": 2026,
     "grade": "evidence",
     "original": 180280.32,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 185283.67,
-    "summed": 10
+    "summed": 16
    },
    "history": [],
    "id": "gf-122",
@@ -1688,6 +1713,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 185283.67,
      "summed": 10
+    },
+    {
+     "available": 14314.3,
+     "encumbered": 0.0,
+     "expended": 170969.37,
+     "fy": 2026,
+     "original": 180280.32,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 185283.67,
+     "summed": 16
     }
    ],
    "subkind": "",
@@ -1697,16 +1733,16 @@
    "authority": "",
    "code": "126",
    "current": {
-    "available": -16938.98,
+    "available": 1326.82,
     "encumbered": 15088.92,
     "expended": 304037.53,
     "fy": 2026,
     "grade": "evidence",
     "original": 305325.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 302187.47,
-    "summed": 6
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 320453.27,
+    "summed": 15
    },
    "history": [],
    "id": "gf-126",
@@ -1739,6 +1775,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 302187.47,
      "summed": 6
+    },
+    {
+     "available": 1326.82,
+     "encumbered": 15088.92,
+     "expended": 304037.53,
+     "fy": 2026,
+     "original": 305325.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 320453.27,
+     "summed": 15
     }
    ],
    "subkind": "",
@@ -1754,8 +1801,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1800.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1800.0,
     "summed": 3
    },
@@ -1790,6 +1837,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1800.0,
      "summed": 3
+    },
+    {
+     "available": 1494.0,
+     "encumbered": 0.0,
+     "expended": 306.0,
+     "fy": 2026,
+     "original": 1800.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1800.0,
+     "summed": 3
     }
    ],
    "subkind": "",
@@ -1805,8 +1863,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 185000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 185000.0,
     "summed": 1
    },
@@ -1841,6 +1899,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 185000.0,
      "summed": 1
+    },
+    {
+     "available": 185000.0,
+     "encumbered": 0.0,
+     "expended": 0.0,
+     "fy": 2026,
+     "original": 185000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 185000.0,
+     "summed": 1
     }
    ],
    "subkind": "reserve",
@@ -1856,8 +1925,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 210000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 81046.33,
     "summed": 2
    },
@@ -1892,6 +1961,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 81046.33,
      "summed": 2
+    },
+    {
+     "available": 30000.0,
+     "encumbered": 0.0,
+     "expended": 51046.33,
+     "fy": 2026,
+     "original": 210000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 81046.33,
+     "summed": 2
     }
    ],
    "subkind": "reserve",
@@ -1901,16 +1981,16 @@
    "authority": "",
    "code": "135",
    "current": {
-    "available": 67960.6,
-    "encumbered": 0.0,
+    "available": 30460.6,
+    "encumbered": 37500.0,
     "expended": 428007.96,
     "fy": 2026,
     "grade": "evidence",
     "original": 323244.2,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 495968.56,
-    "summed": 11
+    "summed": 16
    },
    "history": [],
    "id": "gf-135",
@@ -1943,6 +2023,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 495968.56,
      "summed": 11
+    },
+    {
+     "available": 30460.6,
+     "encumbered": 37500.0,
+     "expended": 428007.96,
+     "fy": 2026,
+     "original": 323244.2,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 495968.56,
+     "summed": 16
     }
    ],
    "subkind": "",
@@ -1958,10 +2049,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 0.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 12600.0,
-    "summed": 2
+    "summed": 3
    },
    "history": [],
    "id": "gf-136",
@@ -1994,6 +2085,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 12600.0,
      "summed": 2
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 12600.0,
+     "fy": 2026,
+     "original": 0.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 12600.0,
+     "summed": 3
     }
    ],
    "subkind": "",
@@ -2009,10 +2111,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 297308.23,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 327255.62,
-    "summed": 12
+    "summed": 24
    },
    "history": [],
    "id": "gf-141",
@@ -2045,6 +2147,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 327255.62,
      "summed": 12
+    },
+    {
+     "available": 38035.0,
+     "encumbered": 2200.0,
+     "expended": 287020.62,
+     "fy": 2026,
+     "original": 297308.23,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 327255.62,
+     "summed": 24
     }
    ],
    "subkind": "",
@@ -2060,10 +2173,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 118966.49,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 120775.43,
-    "summed": 10
+    "summed": 15
    },
    "history": [],
    "id": "gf-145",
@@ -2096,6 +2209,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 120775.43,
      "summed": 10
+    },
+    {
+     "available": 2985.61,
+     "encumbered": 653.22,
+     "expended": 117136.6,
+     "fy": 2026,
+     "original": 118966.49,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 120775.43,
+     "summed": 15
     }
    ],
    "subkind": "",
@@ -2105,16 +2229,16 @@
    "authority": "",
    "code": "146",
    "current": {
-    "available": 17147.34,
-    "encumbered": 6547.24,
+    "available": 14897.34,
+    "encumbered": 8797.24,
     "expended": 110910.93,
     "fy": 2026,
     "grade": "evidence",
     "original": 130717.99,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 134605.51,
-    "summed": 9
+    "summed": 16
    },
    "history": [],
    "id": "gf-146",
@@ -2147,6 +2271,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 134605.51,
      "summed": 9
+    },
+    {
+     "available": 14897.34,
+     "encumbered": 8797.24,
+     "expended": 110910.93,
+     "fy": 2026,
+     "original": 130717.99,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 134605.51,
+     "summed": 16
     }
    ],
    "subkind": "",
@@ -2162,10 +2297,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 491311.42,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 517287.56,
-    "summed": 6
+    "summed": 18
    },
    "history": [],
    "id": "gf-155",
@@ -2198,6 +2333,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 517287.56,
      "summed": 6
+    },
+    {
+     "available": 30416.72,
+     "encumbered": 16914.86,
+     "expended": 469955.98,
+     "fy": 2026,
+     "original": 491311.42,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 517287.56,
+     "summed": 18
     }
    ],
    "subkind": "",
@@ -2213,10 +2359,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 30500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 34960.87,
-    "summed": 3
+    "summed": 5
    },
    "history": [],
    "id": "gf-158",
@@ -2249,6 +2395,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 34960.87,
      "summed": 3
+    },
+    {
+     "available": 2915.0,
+     "encumbered": 12350.56,
+     "expended": 19695.31,
+     "fy": 2026,
+     "original": 30500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 34960.87,
+     "summed": 5
     }
    ],
    "subkind": "",
@@ -2264,10 +2421,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 143602.08,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 67510.64,
-    "summed": 10
+    "summed": 18
    },
    "history": [],
    "id": "gf-161",
@@ -2300,6 +2457,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 67510.64,
      "summed": 10
+    },
+    {
+     "available": 2496.69,
+     "encumbered": 996.4,
+     "expended": 64017.55,
+     "fy": 2026,
+     "original": 143602.08,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 67510.64,
+     "summed": 18
     }
    ],
    "subkind": "",
@@ -2315,10 +2483,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 11100.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 12528.4,
-    "summed": 6
+    "summed": 10
    },
    "history": [],
    "id": "gf-162",
@@ -2351,6 +2519,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 12528.4,
      "summed": 6
+    },
+    {
+     "available": 1006.22,
+     "encumbered": 180.0,
+     "expended": 11342.18,
+     "fy": 2026,
+     "original": 11100.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 12528.4,
+     "summed": 10
     }
    ],
    "subkind": "",
@@ -2366,10 +2545,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 20950.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 15884.04,
-    "summed": 6
+    "summed": 10
    },
    "history": [],
    "id": "gf-163",
@@ -2402,6 +2581,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 15884.04,
      "summed": 6
+    },
+    {
+     "available": 1652.79,
+     "encumbered": 400.0,
+     "expended": 13831.25,
+     "fy": 2026,
+     "original": 20950.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 15884.04,
+     "summed": 10
     }
    ],
    "subkind": "",
@@ -2411,16 +2601,16 @@
    "authority": "",
    "code": "170",
    "current": {
-    "available": 109323.81,
+    "available": 80518.01,
     "encumbered": 2021.53,
     "expended": 335323.72,
     "fy": 2026,
     "grade": "evidence",
     "original": 440157.41,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 446669.06,
-    "summed": 16
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 417863.26,
+    "summed": 20
    },
    "history": [],
    "id": "gf-170",
@@ -2453,6 +2643,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 446669.06,
      "summed": 16
+    },
+    {
+     "available": 80518.01,
+     "encumbered": 2021.53,
+     "expended": 335323.72,
+     "fy": 2026,
+     "original": 440157.41,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 417863.26,
+     "summed": 20
     }
    ],
    "subkind": "",
@@ -2468,10 +2669,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 0.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 0.0,
-    "summed": 2
+    "summed": 19
    },
    "history": [],
    "id": "gf-175",
@@ -2504,6 +2705,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 0.0,
      "summed": 2
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 0.0,
+     "fy": 2026,
+     "original": 0.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 0.0,
+     "summed": 19
     }
    ],
    "subkind": "",
@@ -2519,8 +2731,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 500.0,
     "summed": 1
    },
@@ -2555,6 +2767,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 500.0,
      "summed": 1
+    },
+    {
+     "available": 500.0,
+     "encumbered": 0.0,
+     "expended": 0.0,
+     "fy": 2026,
+     "original": 500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 500.0,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -2570,10 +2793,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 221357.1,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 245965.53,
-    "summed": 7
+    "summed": 15
    },
    "history": [],
    "id": "gf-192",
@@ -2606,6 +2829,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 245965.53,
      "summed": 7
+    },
+    {
+     "available": 40255.03,
+     "encumbered": 636.55,
+     "expended": 205073.95,
+     "fy": 2026,
+     "original": 221357.1,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 245965.53,
+     "summed": 15
     }
    ],
    "subkind": "",
@@ -2621,10 +2855,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 711605.7,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 708803.22,
-    "summed": 17
+    "summed": 36
    },
    "history": [],
    "id": "gf-193",
@@ -2657,6 +2891,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 708803.22,
      "summed": 17
+    },
+    {
+     "available": 17254.48,
+     "encumbered": 2962.17,
+     "expended": 688586.57,
+     "fy": 2026,
+     "original": 711605.7,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 708803.22,
+     "summed": 36
     }
    ],
    "subkind": "",
@@ -2666,16 +2911,16 @@
    "authority": "",
    "code": "195",
    "current": {
-    "available": -6900.17,
+    "available": 0.0,
     "encumbered": 7880.17,
     "expended": 8932.53,
     "fy": 2026,
     "grade": "evidence",
     "original": 7000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 9912.53,
-    "summed": 1
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 16812.7,
+    "summed": 3
    },
    "history": [],
    "id": "gf-195",
@@ -2708,6 +2953,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 9912.53,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 7880.17,
+     "expended": 8932.53,
+     "fy": 2026,
+     "original": 7000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 16812.7,
+     "summed": 3
     }
    ],
    "subkind": "",
@@ -2717,16 +2973,16 @@
    "authority": "",
    "code": "199",
    "current": {
-    "available": 14800.39,
-    "encumbered": 4566.16,
+    "available": 14979.75,
+    "encumbered": 4386.8,
     "expended": 69238.89,
     "fy": 2026,
     "grade": "evidence",
     "original": 91500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 88605.44,
-    "summed": 5
+    "summed": 12
    },
    "history": [],
    "id": "gf-199",
@@ -2759,6 +3015,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 88605.44,
      "summed": 5
+    },
+    {
+     "available": 14979.75,
+     "encumbered": 4386.8,
+     "expended": 69238.89,
+     "fy": 2026,
+     "original": 91500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 88605.44,
+     "summed": 12
     }
    ],
    "subkind": "",
@@ -2774,10 +3041,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 2406172.47,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 2471787.87,
-    "summed": 37
+    "summed": 62
    },
    "history": [],
    "id": "gf-210",
@@ -2810,6 +3077,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 2471787.87,
      "summed": 37
+    },
+    {
+     "available": 157895.32,
+     "encumbered": 0.0,
+     "expended": 2313892.55,
+     "fy": 2026,
+     "original": 2406172.47,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 2471787.87,
+     "summed": 62
     }
    ],
    "subkind": "",
@@ -2825,8 +3103,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 20600.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 26653.46,
     "summed": 3
    },
@@ -2861,6 +3139,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 26653.46,
      "summed": 3
+    },
+    {
+     "available": 2158.75,
+     "encumbered": 50.0,
+     "expended": 24444.71,
+     "fy": 2026,
+     "original": 20600.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 26653.46,
+     "summed": 3
     }
    ],
    "subkind": "",
@@ -2876,8 +3165,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 4000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 4000.0,
     "summed": 1
    },
@@ -2912,6 +3201,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 4000.0,
      "summed": 1
+    },
+    {
+     "available": 3714.01,
+     "encumbered": 0.0,
+     "expended": 285.99,
+     "fy": 2026,
+     "original": 4000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 4000.0,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -2921,16 +3221,16 @@
    "authority": "",
    "code": "220",
    "current": {
-    "available": 20626.62,
-    "encumbered": 11112.46,
-    "expended": 1681847.22,
+    "available": 30543.64,
+    "encumbered": 1324.84,
+    "expended": 1681717.82,
     "fy": 2026,
     "grade": "evidence",
     "original": 1717587.91,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1713586.3,
-    "summed": 35
+    "summed": 44
    },
    "history": [],
    "id": "gf-220",
@@ -2963,6 +3263,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1713586.3,
      "summed": 35
+    },
+    {
+     "available": 30543.64,
+     "encumbered": 1324.84,
+     "expended": 1681717.82,
+     "fy": 2026,
+     "original": 1717587.91,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1713586.3,
+     "summed": 44
     }
    ],
    "subkind": "",
@@ -2978,8 +3289,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 17000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 17000.0,
     "summed": 1
    },
@@ -3014,6 +3325,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 17000.0,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 17000.0,
+     "fy": 2026,
+     "original": 17000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 17000.0,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -3023,14 +3345,14 @@
    "authority": "",
    "code": "227",
    "current": {
-    "available": 59.13,
-    "encumbered": 1537.26,
+    "available": 595.35,
+    "encumbered": 1001.04,
     "expended": 10204.65,
     "fy": 2026,
     "grade": "evidence",
     "original": 10000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 11801.04,
     "summed": 1
    },
@@ -3065,6 +3387,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 11801.04,
      "summed": 1
+    },
+    {
+     "available": 595.35,
+     "encumbered": 1001.04,
+     "expended": 10204.65,
+     "fy": 2026,
+     "original": 10000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 11801.04,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -3080,10 +3413,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 310763.9,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 310763.9,
-    "summed": 3
+    "summed": 12
    },
    "history": [],
    "id": "gf-228",
@@ -3116,6 +3449,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 310763.9,
      "summed": 3
+    },
+    {
+     "available": 4874.37,
+     "encumbered": 0.0,
+     "expended": 305889.53,
+     "fy": 2026,
+     "original": 310763.9,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 310763.9,
+     "summed": 12
     }
    ],
    "subkind": "",
@@ -3125,15 +3469,16 @@
    "authority": "",
    "code": "241",
    "current": {
-    "available": -1149.12,
+    "available": 0.0,
     "encumbered": 0.0,
-    "expended": 1149.12,
+    "expended": 0.0,
     "fy": 2026,
     "grade": "evidence",
     "original": 0.0,
-    "period": 9,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt",
-    "revised": 0.0
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 0.0,
+    "summed": 18
    },
    "history": [],
    "id": "gf-241",
@@ -3155,6 +3500,17 @@
      "period": 9,
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-gf-all.txt",
      "revised": 0.0
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 0.0,
+     "fy": 2026,
+     "original": 0.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 0.0,
+     "summed": 18
     }
    ],
    "subkind": "",
@@ -3164,16 +3520,16 @@
    "authority": "",
    "code": "244",
    "current": {
-    "available": -1081.5,
+    "available": 1100.0,
     "encumbered": 0.0,
     "expended": 11363.0,
     "fy": 2026,
     "grade": "evidence",
     "original": 4600.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 10281.5,
-    "summed": 4
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 12463.0,
+    "summed": 6
    },
    "history": [],
    "id": "gf-244",
@@ -3206,6 +3562,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 10281.5,
      "summed": 4
+    },
+    {
+     "available": 1100.0,
+     "encumbered": 0.0,
+     "expended": 11363.0,
+     "fy": 2026,
+     "original": 4600.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 12463.0,
+     "summed": 6
     }
    ],
    "subkind": "",
@@ -3221,10 +3588,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 7000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 7000.07,
-    "summed": 3
+    "summed": 8
    },
    "history": [],
    "id": "gf-291",
@@ -3257,6 +3624,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 7000.07,
      "summed": 3
+    },
+    {
+     "available": 3.15,
+     "encumbered": 80.0,
+     "expended": 6916.92,
+     "fy": 2026,
+     "original": 7000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 7000.07,
+     "summed": 8
     }
    ],
    "subkind": "",
@@ -3266,16 +3644,16 @@
    "authority": "",
    "code": "292",
    "current": {
-    "available": -267.73,
+    "available": 1190.6,
     "encumbered": 0.0,
     "expended": 46392.73,
     "fy": 2026,
     "grade": "evidence",
     "original": 46125.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 46125.0,
-    "summed": 5
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 47583.33,
+    "summed": 8
    },
    "history": [],
    "id": "gf-292",
@@ -3308,6 +3686,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 46125.0,
      "summed": 5
+    },
+    {
+     "available": 1190.6,
+     "encumbered": 0.0,
+     "expended": 46392.73,
+     "fy": 2026,
+     "original": 46125.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 47583.33,
+     "summed": 8
     }
    ],
    "subkind": "",
@@ -3323,10 +3712,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 38500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 59000.0,
-    "summed": 3
+    "summed": 5
    },
    "history": [],
    "id": "gf-294",
@@ -3359,6 +3748,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 59000.0,
      "summed": 3
+    },
+    {
+     "available": 1656.12,
+     "encumbered": 0.0,
+     "expended": 57343.88,
+     "fy": 2026,
+     "original": 38500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 59000.0,
+     "summed": 5
     }
    ],
    "subkind": "",
@@ -3368,16 +3768,16 @@
    "authority": "",
    "code": "300",
    "current": {
-    "available": 482101.12,
-    "encumbered": 236783.89,
+    "available": 482118.07,
+    "encumbered": 236766.94,
     "expended": 25613679.23,
     "fy": 2026,
     "grade": "evidence",
     "original": 26247474.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 26332564.24,
-    "summed": 258
+    "summed": 415
    },
    "history": [],
    "id": "gf-300",
@@ -3410,6 +3810,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 26332564.24,
      "summed": 258
+    },
+    {
+     "available": 482118.07,
+     "encumbered": 236766.94,
+     "expended": 25613679.23,
+     "fy": 2026,
+     "original": 26247474.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 26332564.24,
+     "summed": 415
     }
    ],
    "subkind": "",
@@ -3425,10 +3836,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 40000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 35777.41,
-    "summed": 1
+    "summed": 2
    },
    "history": [],
    "id": "gf-301",
@@ -3461,6 +3872,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 35777.41,
      "summed": 1
+    },
+    {
+     "available": -17861.67,
+     "encumbered": 10000.0,
+     "expended": 43639.08,
+     "fy": 2026,
+     "original": 40000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 35777.41,
+     "summed": 2
     }
    ],
    "subkind": "",
@@ -3476,8 +3898,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1334521.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1334521.0,
     "summed": 1
    },
@@ -3512,6 +3934,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1334521.0,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 1334521.0,
+     "fy": 2026,
+     "original": 1334521.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1334521.0,
+     "summed": 1
     }
    ],
    "subkind": "assessment",
@@ -3521,16 +3954,16 @@
    "authority": "",
    "code": "411",
    "current": {
-    "available": 184.5,
-    "encumbered": 10957.93,
+    "available": 200.1,
+    "encumbered": 10942.33,
     "expended": 598027.08,
     "fy": 2026,
     "grade": "evidence",
     "original": 634850.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 609169.51,
-    "summed": 12
+    "summed": 16
    },
    "history": [],
    "id": "gf-411",
@@ -3563,6 +3996,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 609169.51,
      "summed": 12
+    },
+    {
+     "available": 200.1,
+     "encumbered": 10942.33,
+     "expended": 598027.08,
+     "fy": 2026,
+     "original": 634850.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 609169.51,
+     "summed": 16
     }
    ],
    "subkind": "",
@@ -3578,10 +4022,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 644443.01,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 639179.68,
-    "summed": 9
+    "summed": 12
    },
    "history": [],
    "id": "gf-421",
@@ -3614,6 +4058,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 639179.68,
      "summed": 9
+    },
+    {
+     "available": 17331.79,
+     "encumbered": 527.81,
+     "expended": 621320.08,
+     "fy": 2026,
+     "original": 644443.01,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 639179.68,
+     "summed": 12
     }
    ],
    "subkind": "",
@@ -3623,16 +4078,16 @@
    "authority": "",
    "code": "423",
    "current": {
-    "available": -162521.07,
+    "available": 0.0,
     "encumbered": 0.0,
-    "expended": 1038092.46,
+    "expended": 875571.39,
     "fy": 2026,
     "grade": "evidence",
     "original": 355571.39,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 875571.39,
-    "summed": 5
+    "summed": 6
    },
    "history": [],
    "id": "gf-423",
@@ -3665,6 +4120,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 875571.39,
      "summed": 5
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 875571.39,
+     "fy": 2026,
+     "original": 355571.39,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 875571.39,
+     "summed": 6
     }
    ],
    "subkind": "",
@@ -3680,8 +4146,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 28500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 17635.7,
     "summed": 4
    },
@@ -3716,6 +4182,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 17635.7,
      "summed": 4
+    },
+    {
+     "available": 238.2,
+     "encumbered": 562.44,
+     "expended": 16835.06,
+     "fy": 2026,
+     "original": 28500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 17635.7,
+     "summed": 4
     }
    ],
    "subkind": "",
@@ -3731,10 +4208,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 179750.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 216913.91,
-    "summed": 10
+    "summed": 15
    },
    "history": [],
    "id": "gf-429",
@@ -3767,6 +4244,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 216913.91,
      "summed": 10
+    },
+    {
+     "available": 20071.43,
+     "encumbered": 37971.0,
+     "expended": 158871.48,
+     "fy": 2026,
+     "original": 179750.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 216913.91,
+     "summed": 15
     }
    ],
    "subkind": "",
@@ -3782,10 +4270,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 470000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 470000.0,
-    "summed": 3
+    "summed": 4
    },
    "history": [],
    "id": "gf-433",
@@ -3818,6 +4306,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 470000.0,
      "summed": 3
+    },
+    {
+     "available": 1375.8,
+     "encumbered": 124077.83,
+     "expended": 344546.37,
+     "fy": 2026,
+     "original": 470000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 470000.0,
+     "summed": 4
     }
    ],
    "subkind": "",
@@ -3833,10 +4332,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 125338.89,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 127756.57,
-    "summed": 9
+    "summed": 11
    },
    "history": [],
    "id": "gf-491",
@@ -3869,6 +4368,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 127756.57,
      "summed": 9
+    },
+    {
+     "available": 4521.0,
+     "encumbered": 700.0,
+     "expended": 122535.57,
+     "fy": 2026,
+     "original": 125338.89,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 127756.57,
+     "summed": 11
     }
    ],
    "subkind": "",
@@ -3884,10 +4394,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 56630.56,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 56630.56,
-    "summed": 8
+    "summed": 14
    },
    "history": [],
    "id": "gf-512",
@@ -3920,6 +4430,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 56630.56,
      "summed": 8
+    },
+    {
+     "available": 2007.01,
+     "encumbered": 0.0,
+     "expended": 54623.55,
+     "fy": 2026,
+     "original": 56630.56,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 56630.56,
+     "summed": 14
     }
    ],
    "subkind": "",
@@ -3935,8 +4456,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 47815.37,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 47815.37,
     "summed": 1
    },
@@ -3971,6 +4492,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 47815.37,
      "summed": 1
+    },
+    {
+     "available": 0.01,
+     "encumbered": 0.0,
+     "expended": 47815.36,
+     "fy": 2026,
+     "original": 47815.37,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 47815.37,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -3986,8 +4518,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 21915.37,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 21915.37,
     "summed": 1
    },
@@ -4022,6 +4554,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 21915.37,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 21915.37,
+     "fy": 2026,
+     "original": 21915.37,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 21915.37,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -4037,8 +4580,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 4000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 4104.98,
     "summed": 1
    },
@@ -4073,6 +4616,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 4104.98,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 4104.98,
+     "fy": 2026,
+     "original": 4000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 4104.98,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -4088,8 +4642,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 3500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 3395.02,
     "summed": 1
    },
@@ -4124,6 +4678,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 3395.02,
      "summed": 1
+    },
+    {
+     "available": 2979.02,
+     "encumbered": 0.0,
+     "expended": 416.0,
+     "fy": 2026,
+     "original": 3500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 3395.02,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -4139,10 +4704,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 261182.46,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 267306.78,
-    "summed": 11
+    "summed": 25
    },
    "history": [],
    "id": "gf-541",
@@ -4175,6 +4740,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 267306.78,
      "summed": 11
+    },
+    {
+     "available": 55069.01,
+     "encumbered": 8009.65,
+     "expended": 204228.12,
+     "fy": 2026,
+     "original": 261182.46,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 267306.78,
+     "summed": 25
     }
    ],
    "subkind": "",
@@ -4190,10 +4766,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 90699.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 90699.0,
-    "summed": 5
+    "summed": 10
    },
    "history": [],
    "id": "gf-543",
@@ -4226,6 +4802,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 90699.0,
      "summed": 5
+    },
+    {
+     "available": 15035.83,
+     "encumbered": 0.0,
+     "expended": 75663.17,
+     "fy": 2026,
+     "original": 90699.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 90699.0,
+     "summed": 10
     }
    ],
    "subkind": "",
@@ -4241,10 +4828,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 632036.76,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 638951.79,
-    "summed": 17
+    "summed": 24
    },
    "history": [],
    "id": "gf-610",
@@ -4277,6 +4864,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 638951.79,
      "summed": 17
+    },
+    {
+     "available": 8219.0,
+     "encumbered": 9289.2,
+     "expended": 621443.59,
+     "fy": 2026,
+     "original": 632036.76,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 638951.79,
+     "summed": 24
     }
    ],
    "subkind": "",
@@ -4292,10 +4890,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 134433.6,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 140759.43,
-    "summed": 5
+    "summed": 16
    },
    "history": [],
    "id": "gf-650",
@@ -4329,6 +4927,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 140759.43,
      "summed": 5
+    },
+    {
+     "available": 23140.83,
+     "encumbered": 4268.4,
+     "expended": 113350.2,
+     "fy": 2026,
+     "original": 134433.6,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 140759.43,
+     "summed": 16
     }
    ],
    "subkind": "",
@@ -4344,10 +4953,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1000.0,
-    "summed": 2
+    "summed": 3
    },
    "history": [],
    "id": "gf-691",
@@ -4380,6 +4989,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1000.0,
      "summed": 2
+    },
+    {
+     "available": 1000.0,
+     "encumbered": 0.0,
+     "expended": 0.0,
+     "fy": 2026,
+     "original": 1000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1000.0,
+     "summed": 3
     }
    ],
    "subkind": "",
@@ -4395,8 +5015,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 6000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 6000.0,
     "summed": 1
    },
@@ -4431,6 +5051,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 6000.0,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 6000.0,
+     "fy": 2026,
+     "original": 6000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 6000.0,
+     "summed": 1
     }
    ],
    "subkind": "",
@@ -4446,8 +5077,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1506369.41,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1506369.41,
     "summed": 1
    },
@@ -4482,6 +5113,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1506369.41,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 1506369.41,
+     "fy": 2026,
+     "original": 1506369.41,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1506369.41,
+     "summed": 1
     }
    ],
    "subkind": "debt service",
@@ -4497,8 +5139,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1039840.48,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1039840.48,
     "summed": 1
    },
@@ -4533,6 +5175,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1039840.48,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 1039840.48,
+     "fy": 2026,
+     "original": 1039840.48,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1039840.48,
+     "summed": 1
     }
    ],
    "subkind": "debt service",
@@ -4548,8 +5201,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1230.47,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1230.47,
     "summed": 1
    },
@@ -4584,6 +5237,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 1230.47,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 1230.47,
+     "fy": 2026,
+     "original": 1230.47,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 1230.47,
+     "summed": 1
     }
    ],
    "subkind": "debt service",
@@ -4599,8 +5263,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 2392572.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 2392572.0,
     "summed": 1
    },
@@ -4635,6 +5299,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 2392572.0,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 2392572.0,
+     "fy": 2026,
+     "original": 2392572.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 2392572.0,
+     "summed": 1
     }
    ],
    "subkind": "assessment",
@@ -4650,10 +5325,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1028529.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 935843.0,
-    "summed": 7
+    "summed": 8
    },
    "history": [],
    "id": "gf-825",
@@ -4686,6 +5361,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 935843.0,
      "summed": 7
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 935843.0,
+     "fy": 2026,
+     "original": 1028529.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 935843.0,
+     "summed": 8
     }
    ],
    "subkind": "assessment",
@@ -4701,8 +5387,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 4477.98,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 4477.98,
     "summed": 1
    },
@@ -4737,6 +5423,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 4477.98,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 4477.98,
+     "fy": 2026,
+     "original": 4477.98,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 4477.98,
+     "summed": 1
     }
    ],
    "subkind": "assessment",
@@ -4752,8 +5449,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 145000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 143200.0,
     "summed": 1
    },
@@ -4788,6 +5485,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 143200.0,
      "summed": 1
+    },
+    {
+     "available": 19711.0,
+     "encumbered": 0.0,
+     "expended": 123489.0,
+     "fy": 2026,
+     "original": 145000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 143200.0,
+     "summed": 1
     }
    ],
    "subkind": "benefits and insurance",
@@ -4797,15 +5505,15 @@
    "authority": "",
    "code": "913",
    "current": {
-    "available": -10958.0,
+    "available": 0.0,
     "encumbered": 0.0,
     "expended": 22758.0,
     "fy": 2026,
     "grade": "evidence",
     "original": 10000.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 11800.0,
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 22758.0,
     "summed": 1
    },
    "history": [],
@@ -4839,6 +5547,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 11800.0,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 22758.0,
+     "fy": 2026,
+     "original": 10000.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 22758.0,
+     "summed": 1
     }
    ],
    "subkind": "benefits and insurance",
@@ -4848,15 +5567,15 @@
    "authority": "",
    "code": "914",
    "current": {
-    "available": 114734.88,
+    "available": 103776.88,
     "encumbered": 0.0,
     "expended": 3598785.44,
     "fy": 2026,
     "grade": "evidence",
     "original": 3713520.32,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
-    "revised": 3713520.32,
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+    "revised": 3702562.32,
     "summed": 7
    },
    "history": [],
@@ -4890,6 +5609,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 3713520.32,
      "summed": 7
+    },
+    {
+     "available": 103776.88,
+     "encumbered": 0.0,
+     "expended": 3598785.44,
+     "fy": 2026,
+     "original": 3713520.32,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 3702562.32,
+     "summed": 7
     }
    ],
    "subkind": "benefits and insurance",
@@ -4905,10 +5635,10 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 239188.81,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 239188.81,
-    "summed": 2
+    "summed": 3
    },
    "history": [],
    "id": "gf-945",
@@ -4941,6 +5671,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 239188.81,
      "summed": 2
+    },
+    {
+     "available": 801.7,
+     "encumbered": 0.0,
+     "expended": 238387.11,
+     "fy": 2026,
+     "original": 239188.81,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 239188.81,
+     "summed": 3
     }
    ],
    "subkind": "benefits and insurance",
@@ -4956,8 +5697,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 1052500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 2293320.32,
     "summed": 1
    },
@@ -4992,6 +5733,17 @@
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
      "revised": 2293320.32,
      "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 2293320.32,
+     "fy": 2026,
+     "original": 1052500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
+     "revised": 2293320.32,
+     "summed": 1
     }
    ],
    "subkind": "transfer",
@@ -5007,8 +5759,8 @@
     "fy": 2026,
     "grade": "evidence",
     "original": 232500.0,
-    "period": 12,
-    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+    "period": 13,
+    "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
     "revised": 1027937.0,
     "summed": 1
    },
@@ -5041,6 +5793,17 @@
      "original": 232500.0,
      "period": 12,
      "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx",
+     "revised": 1027937.0,
+     "summed": 1
+    },
+    {
+     "available": 0.0,
+     "encumbered": 0.0,
+     "expended": 1027937.0,
+     "fy": 2026,
+     "original": 232500.0,
+     "period": 13,
+     "report": "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-all.pdf",
      "revised": 1027937.0,
      "summed": 1
     }
@@ -22160,9 +22923,9 @@
    "slug": "accounting",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 508568.56,
-    "appropriation_spent": 440607.96,
+    "appropriation_spent": 478107.96,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22186,8 +22949,8 @@
    "slug": "animal-control",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
-    "appropriation_revised": 46125.0,
+    "appropriation_period": 13,
+    "appropriation_revised": 47583.33,
     "appropriation_spent": 46392.73,
     "revenue_estimate": 1000.0,
     "special_revenue_held": null,
@@ -22219,7 +22982,7 @@
    "slug": "architectural-preservation-district-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 500.0,
     "appropriation_spent": 0,
     "revenue_estimate": null,
@@ -22259,7 +23022,7 @@
    "slug": "board-of-assessors",
    "totals": {
     "agency_held": 30907.25,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 327255.62,
     "appropriation_spent": 289220.62,
     "revenue_estimate": 113794.0,
@@ -22307,7 +23070,7 @@
    "slug": "board-of-health",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 126361.3,
     "appropriation_spent": 124354.28,
     "revenue_estimate": 2200.0,
@@ -22353,9 +23116,9 @@
    "slug": "building-inspection",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
-    "appropriation_revised": 10281.5,
-    "appropriation_spent": 12512.12,
+    "appropriation_period": 13,
+    "appropriation_revised": 12463.0,
+    "appropriation_spent": 11363.0,
     "revenue_estimate": 284750.0,
     "special_revenue_held": 400.0,
     "special_revenue_in": 0,
@@ -22395,7 +23158,7 @@
    "slug": "capital-planning-committee",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 2293320.32,
     "appropriation_spent": 2293320.32,
     "revenue_estimate": null,
@@ -22441,7 +23204,7 @@
    "slug": "cemetery-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 127756.57,
     "appropriation_spent": 123235.57,
     "revenue_estimate": 5500.0,
@@ -22464,7 +23227,7 @@
    "slug": "commonwealth",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 935843.0,
     "appropriation_spent": 935843.0,
     "revenue_estimate": null,
@@ -22560,7 +23323,7 @@
    "slug": "council-on-aging",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 267306.78,
     "appropriation_spent": 212237.77,
     "revenue_estimate": null,
@@ -22618,7 +23381,7 @@
    "slug": "dispatch",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 310763.9,
     "appropriation_spent": 305889.53,
     "revenue_estimate": null,
@@ -22677,9 +23440,9 @@
    "slug": "dpw",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 2887470.19,
-    "appropriation_spent": 3009133.42,
+    "appropriation_spent": 2846596.75,
     "revenue_estimate": null,
     "special_revenue_held": -169333.71,
     "special_revenue_in": 41816.62,
@@ -22703,7 +23466,7 @@
    "slug": "emergency-management",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 7000.07,
     "appropriation_spent": 6996.92,
     "revenue_estimate": null,
@@ -22743,7 +23506,7 @@
    "slug": "facilities",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 954768.75,
     "appropriation_spent": 897259.24,
     "revenue_estimate": 149600.0,
@@ -22777,7 +23540,7 @@
    "slug": "finance-committee",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 186800.0,
     "appropriation_spent": 306.0,
     "revenue_estimate": null,
@@ -22829,9 +23592,9 @@
    "slug": "fire",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 1742387.34,
-    "appropriation_spent": 1721701.59,
+    "appropriation_spent": 1711248.35,
     "revenue_estimate": 292050.0,
     "special_revenue_held": 9297.1,
     "special_revenue_in": 3753.0,
@@ -22867,7 +23630,7 @@
    "slug": "historical-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 1000.0,
     "appropriation_spent": 0,
     "revenue_estimate": null,
@@ -22902,7 +23665,7 @@
    "slug": "information-technology",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 517287.56,
     "appropriation_spent": 486870.84,
     "revenue_estimate": null,
@@ -22925,8 +23688,8 @@
    "slug": "land-use",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
-    "appropriation_revised": 446669.06,
+    "appropriation_period": 13,
+    "appropriation_revised": 417863.26,
     "appropriation_spent": 337345.25,
     "revenue_estimate": null,
     "special_revenue_held": null,
@@ -22974,7 +23737,7 @@
    "slug": "library-board-of-trustees",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 638951.79,
     "appropriation_spent": 630732.79,
     "revenue_estimate": null,
@@ -23007,7 +23770,7 @@
    "slug": "montachusett-regional-planning",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 4477.98,
     "appropriation_spent": 4477.98,
     "revenue_estimate": null,
@@ -23030,7 +23793,7 @@
    "slug": "monty-tech",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 1334521.0,
     "appropriation_spent": 1334521.0,
     "revenue_estimate": null,
@@ -23075,7 +23838,7 @@
    "slug": "parks-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 140759.43,
     "appropriation_spent": 117618.6,
     "revenue_estimate": 0,
@@ -23122,7 +23885,7 @@
    "slug": "planning-board",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 0,
     "appropriation_spent": 0,
     "revenue_estimate": 12000.0,
@@ -23190,7 +23953,7 @@
    "slug": "police",
    "totals": {
     "agency_held": -6345.47,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 2502441.33,
     "appropriation_spent": 2338673.25,
     "revenue_estimate": 19474.0,
@@ -23318,9 +24081,9 @@
    "slug": "school-committee",
    "totals": {
     "agency_held": -25916.54,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 26368341.65,
-    "appropriation_spent": 25904102.2,
+    "appropriation_spent": 25904085.25,
     "revenue_estimate": null,
     "special_revenue_held": 1592572.29,
     "special_revenue_in": 1553150.87,
@@ -23398,9 +24161,9 @@
    "slug": "select-board",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 191283.67,
-    "appropriation_spent": 176969.41,
+    "appropriation_spent": 176969.37,
     "revenue_estimate": 109500.0,
     "special_revenue_held": 369493.48,
     "special_revenue_in": 99510.61,
@@ -23489,7 +24252,7 @@
    "slug": "town-clerk",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 95923.08,
     "appropriation_spent": 90767.38,
     "revenue_estimate": 18950.0,
@@ -23538,9 +24301,9 @@
    "slug": "town-manager",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
-    "appropriation_revised": 4596960.9,
-    "appropriation_spent": 4448731.06,
+    "appropriation_period": 13,
+    "appropriation_revised": 4622126.87,
+    "appropriation_spent": 4448551.7,
     "revenue_estimate": null,
     "special_revenue_held": -5572.23,
     "special_revenue_in": 0,
@@ -23563,7 +24326,7 @@
    "slug": "town-meeting",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 1027937.0,
     "appropriation_spent": 1027937.0,
     "revenue_estimate": null,
@@ -23732,9 +24495,9 @@
    "slug": "treasurer-collector",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 2837782.17,
-    "appropriation_spent": 2814734.22,
+    "appropriation_spent": 2816984.22,
     "revenue_estimate": 51199264.0,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -23810,7 +24573,7 @@
    "slug": "veterans-services",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 90699.0,
     "appropriation_spent": 75663.17,
     "revenue_estimate": null,
@@ -23833,7 +24596,7 @@
    "slug": "worcester-regional-retirement",
    "totals": {
     "agency_held": null,
-    "appropriation_period": 12,
+    "appropriation_period": 13,
     "appropriation_revised": 2392572.0,
     "appropriation_spent": 2392572.0,
     "revenue_estimate": null,

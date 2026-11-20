@@ -125,12 +125,33 @@ def r2(v):
 
 # --- the FY26 printouts ------------------------------------------------------------------
 
+LEDGER_FY = 2026
+
+
+def period_words(p):
+    """What a MUNIS period means, in words. 12 is June; 13 is the year-end close after the
+    lapse period, when encumbrances are settled."""
+    return {9: 'through March', 12: 'through June, unaudited', 13: 'at the year-end close'}.get(int(p), 'period %s' % p)
+
+
 def ledger():
     """General-fund departments (period 9 as printed; period 12 summed from its accounts),
     revenue accounts (period 9), enterprise funds (period 9, summed)."""
     rows = list(csv.DictReader(io.open(LEDGER, encoding='utf-8')))
+    # ONE FISCAL YEAR. munis-ledger.csv holds every printout we have, and since 18 November
+    # 2026 that includes the FY2025 close beside FY2026's. Snapshots were keyed by PERIOD
+    # alone, so FY2025 period 13 and FY2026 period 13 summed into one "period 13" and the
+    # school appropriation read $51,514,136 (FY2025's $25,181,572 plus FY2026's $26,332,564).
+    rows = [r for r in rows if int(r['fy']) == LEDGER_FY]
     depts, revenue, ent = {}, {}, {}
+    seen = {}
     for r in rows:
+        if r['fund'] == '0100' and r['level'] in ('department', 'account') and r['account_type'] in ('expense', ''):
+            k = (r['dept'], r['period'], r['level'])
+            if seen.setdefault(k, r['doc_id']) != r['doc_id']:
+                fail('dept %s FY%s period %s (%s): rows from two printouts (%s, %s). Summing them '
+                     'would count the same money once per printout.' % (r['dept'], LEDGER_FY, r['period'],
+                                                                        r['level'], seen[k], r['doc_id']))
         snap = dict(fy=int(r['fy']), period=int(r['period']), original=num(r['original']),
                     revised=num(r['revised']), expended=num(r['expended']),
                     encumbered=num(r['encumbered']), available=num(r['available']), report=r['doc_id'])
@@ -449,7 +470,8 @@ def build():
         generated_by='scripts/build_finance.py',
         about='The School Committee’s finances, every line: the appropriation, its revolving funds, grants, gifts and trusts, with what each held at 31 March 2026 and what it has done since FY2011 — the first of a page per board and department, from a registry of every accounting measure the town prints.',
         grain='DOLLARS as the accounting system printed them for FY2026 (evidence), beside the annual reports’ schedules for earlier years (read and tied, or transcribed) — kept apart. An appropriation is a net line, not a cost (rule 11).',
-        as_of=dict(ledger='FY2026, period 12 (through June, unaudited) where an account-level report exists; period 9 (31 March 2026) otherwise',
+        as_of=dict(ledger='FY%s, period %s (%s) where an account-level report exists; period 9 (31 March 2026) otherwise'
+                          % (LEDGER_FY, max(p for d in depts.values() for p in d), period_words(max(p for d in depts.values() for p in d))),
                    special_revenue=sr_asof, trusts=tr_asof),
         kinds=KINDS,
         measures=measures,
@@ -525,11 +547,11 @@ def school_conclusions(measures, asof):
                      'n': figure(len(srs), C.num(len(srs))), 'share': figure(share, C.pct(share, 1))},
             figure='held', kind='measured', bearing='sizes',
             detail='The town’s FY26 special-revenue report lists every fund with a department code; %s of them carry the schools’ code, 300. Their closing balances sum to %s. '
-                   'The general-fund appropriation is department 300 on the FY26 budget report through June (%s revised, period 12, summed from its accounts). A balance is not a spendable surplus: '
-                   'a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.' % (C.num(len(srs)), C.usd(held), C.usd(appro['revised'])),
+                   'The general-fund appropriation is department 300 on the FY26 budget report %s (%s revised, period %s, summed from its accounts). A balance is not a spendable surplus: '
+                   'a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.' % (C.num(len(srs)), C.usd(held), period_words(appro['period']), C.usd(appro['revised']), appro['period']),
             basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report’s department 300 total.',
             not_shown='What any balance is committed to. The report is balances, not obligations; the district’s own fund-by-fund plan would say what is spoken for.',
-            allow=('300', 'FY26', '2026', '12'),
+            allow=('300', 'FY26', '2026', str(appro['period'])),
         ),
         conclusion(
             id='the-revolving-funds',
