@@ -950,6 +950,133 @@ def coverage_block(R):
     return TB.claims(blk, cons, facts)
 
 
+def dept_years_block(st):
+    """THE DEPARTMENT TABLE AS A CHART (TJ, 20 November 2026: "another chart AND table that shows the
+    same info as 'Each department, year by year'"). Small multiples: a row per department, a cell
+    per year, a bar as long as the dollars requested with the funded part filled. One scale across
+    every cell, so a long bar is a big year for that department against all of them."""
+    rows, figs = [], set()
+    for k in DEPTS:
+        if not any(k in st[y]['d'] for y in YEARS):
+            continue
+        cells = []
+        for y in YEARS:
+            v = st[y]['d'].get(k)
+            if not v:
+                cells.append(None)
+                continue
+            t = '%s of %s' % (C.usd(v['famt']), C.usd(v['amt']))
+            figs |= {C.usd(v['famt']), C.usd(v['amt'])}
+            cells.append(dict(req=v['amt'], fun=v['famt'], text=t))
+        rows.append(dict(label=k, cells=cells))
+    years = [C.fy(y) for y in YEARS]
+    figs |= set(years)
+    data = dict(years=years, rows=rows, text=dict(funded='Funded', unfunded='Requested, not funded', none='no request'),
+                note='Each bar is one department’s requests in one year, on one scale for every cell; the filled '
+                     'part was funded. The table below gives the same figures.')
+    blk = TB.custom('capital-dept-years', 'Each department, each year', data, place='body', figures=sorted(figs),
+                    alt='For each department and each fiscal year, the dollars requested as a bar with the dollars funded filled in.',
+                    so='Where a bar is mostly unfilled, most of that department’s requested dollars that year went unfunded.')
+    # the department-year with the most dollars left unfunded, and the one with the most funded
+    cand = [(st[y]['d'][k]['amt'] - st[y]['d'][k]['famt'], k, y) for y in YEARS for k in st[y]['d']]
+    gap, gk, gy = max(cand)
+    top = max(((st[y]['d'][k]['famt'], k, y) for y in YEARS for k in st[y]['d']))
+    share = 100 * top[0] / sum(st[y]['d'][top[1]]['famt'] for y in YEARS if top[1] in st[y]['d'])
+    f = LD.fact
+    facts = [f('gap', U(gap), '%s %s, requested and not funded' % (gk, C.fy(gy)), 'published', {'y': F(gy)}),
+             f('top', U(top[0]), '%s %s, funded' % (top[1], C.fy(top[2])), 'published', {'y': F(top[2])})]
+    cons = [TP.conclusion('%s in %s left %s unfunded, the most of any department in one year.'
+                          % (gk, C.fy(gy), C.usd(gap)), ['gap'], {'a': U(gap), 'y': F(gy)},
+                          so='That year’s tab lists which of its requests those were.'),
+            TP.conclusion('The most funded in one year was %s in %s: %s.' % (top[1], C.fy(top[2]), C.usd(top[0])),
+                          ['top'], {'a': U(top[0]), 'y': F(top[2])},
+                          so='That one year is %s of %s’ five-year funded total.' % (C.pct(share), top[1]),
+                          so_figures={'s': P(share)})]
+    return TB.claims(blk, cons, facts)
+
+
+def sizes_block(R):
+    """WHO GOT THE MOST, AND HOW BIG THEY ASKED (TJ, 20 November 2026: "which dept got the most
+    funding ... esp including somehow based on their requests (do they not make a lot of big
+    requests?!)"). A row per department, most funded first: every ranked request a dot on one
+    dollar scale (log, so a $20,000 request and a $900,000 one both show), filled if funded; and
+    beside it the five-year totals as a table. Request sizes are what the documents print; nothing
+    here says why a request was or was not funded."""
+    import statistics
+    stats, figs = [], set()
+    for k in DEPTS:
+        x = [r for r in R if r['department'] == k]
+        if not x:
+            continue
+        a = [r['amt'] for r in x]
+        fu = sum(r['amt'] for r in x if r['ok'])
+        stats.append(dict(k=k, n=len(x), fn=sum(r['ok'] for r in x), req=sum(a), fun=fu,
+                          med=statistics.median(a), own=100 * fu / sum(a), x=x))
+    allfun = sum(s['fun'] for s in stats)
+    stats.sort(key=lambda s: -s['fun'])
+    rows = []
+    for s in stats:
+        cells = dict(n_text='%s of %s' % (C.num(s['fn']), C.num(s['n'])), med_text=C.usd(s['med']),
+                     req_text=C.usd(s['req']), fun_text=C.usd(s['fun']), own_text=C.pct(s['own'], 0),
+                     share_text=C.pct(100 * s['fun'] / allfun, 0))
+        figs |= set(cells.values()) | {C.num(s['fn']), C.num(s['n'])}
+        dots = []
+        for r in sorted(s['x'], key=lambda r: r['amt']):
+            figs |= {C.usd(r['amt']), C.fy(r['fy'])}
+            dots.append(dict(amt=r['amt'], ok=r['ok'], tip='%s, %s, %s' % (r['project'], C.fy(r['fy']), C.usd(r['amt']))))
+        rows.append(dict(label=s['k'], dots=dots, **cells))
+    ticks = [10000, 100000, 1000000]
+    figs |= {C.usd(t) for t in ticks}
+    data = dict(rows=rows, ticks=[dict(v=t, text=C.usd(t)) for t in ticks], text=dict(
+        funded='Funded', unfunded='Not funded', dept='Department', dots='Each request, by its cost',
+        n='Requests funded', med='Typical request (median)', req='Requested', fun='Funded',
+        own='Of its own dollars', share='Of all funded'),
+        note='%s to %s together, the requests on the committee’s ranked lists. The scale is logarithmic: each '
+             'step is ten times the one before. Most funded first.' % (C.fy(YEARS[0]), C.fy(YEARS[-1])))
+    figs |= {C.fy(YEARS[0]), C.fy(YEARS[-1])}
+    names = sorted({d['tip'] for r in rows for d in r['dots']})
+    blk = TB.custom('capital-request-sizes', 'Who got the most, and how big they asked', data, place='body',
+                    figures=sorted(figs), allow=names,
+                    alt='For each department, every capital request as a dot on a dollar scale, filled if funded, '
+                        'with the number funded, the median request, and the dollars requested and funded over five years.',
+                    so='A row of dots shows whether a department requested a few large things or many small ones.')
+    top, second = stats[0], stats[1]
+    big = max(stats, key=lambda s: s['med'])
+    most = max(stats, key=lambda s: s['n'])
+    two = 100 * (top['fun'] + second['fun']) / allfun
+    TOPN = 20                                 # "among the 20 largest": a cut of ours, stated in the line
+    cut = sorted((r['amt'] for r in R), reverse=True)[TOPN - 1]
+    inbig = sum(r['amt'] >= cut for r in big['x'])
+    f = LD.fact
+    facts = [f('top', U(top['fun']), '%s, funded in five years' % top['k'], 'published'),
+             f('second', U(second['fun']), '%s, funded in five years' % second['k'], 'published'),
+             f('bigmed', U(big['med']), '%s, median request' % big['k'], 'published'),
+             f('bigown', figure(big['fn'], '%d of %d' % (big['fn'], big['n']), 'requests'),
+               '%s requests funded' % big['k'], 'published'),
+             f('most', N(most['n'], 'requests'), '%s, ranked requests in five years' % most['k'], 'published'),
+             f('mostown', P(most['own']), '%s, share of its requested dollars funded' % most['k'], 'published'),
+             f('mostmed', U(most['med']), '%s, median request' % most['k'], 'published')]
+    cons = [TP.conclusion('%s received the most in five years, %s; %s next, %s.'
+                          % (top['k'], C.usd(top['fun']), second['k'], C.usd(second['fun'])), ['top', 'second'],
+                          {'a': U(top['fun']), 'b': U(second['fun'])},
+                          so='Together, %s of every funded dollar in five years; the share column gives each department’s part.'
+                             % C.pct(two), so_figures={'s': P(two)}),
+            TP.conclusion('%s’s requests were large and funded: a median of %s, and %s funded.'
+                          % (big['k'], C.usd(big['med']), '%d of %d' % (big['fn'], big['n'])), ['bigmed', 'bigown'],
+                          {'a': U(big['med']), 'b': figure(big['fn'], '%d of %d' % (big['fn'], big['n']), 'requests')},
+                          so='%s of its requests were among the %s largest of all %s on the lists.'
+                             % (C.num(inbig), C.num(TOPN), C.num(len(R))),
+                          so_figures={'a': N(inbig, 'requests'), 'b': N(TOPN, 'requests'), 'c': N(len(R), 'requests')}),
+            TP.conclusion('%s made the most requests, %s, median %s; %s of its dollars were funded.'
+                          % (most['k'], C.num(most['n']), C.usd(most['med']), C.pct(most['own'])),
+                          ['most', 'mostmed', 'mostown'],
+                          {'a': N(most['n'], 'requests'), 'b': U(most['med']), 'c': P(most['own'])},
+                          so='Many smaller requests, and the lowest funded share of its own dollars of any department.'
+                             if most['own'] == min(x['own'] for x in stats) else
+                             'Many smaller requests, typically below the median of every other department.')]
+    return TB.claims(blk, cons, facts)
+
+
 def unranked_dept(u):
     """A never-ranked request's department, on the ranked list's own grouping: the project number's
     prefix where one is printed (extract_capital_rankings.PREFIX), else the department its source names."""
@@ -1088,7 +1215,7 @@ def hub(R, UN):
         'Five years of capital requests, each ranked by the Capital Planning Committee: between %s and %s '
         'of the dollars requested were funded, and in %s years the money did not follow the committee’s order.'
         % (C.pct(st[lo]['share']), C.pct(st[hi]['share']), C.num(len(out_order))),
-        None, table=table, blocks=[thread_table_block(R, UN), yblk, bblk, coverage_block(R)],
+        None, table=table, blocks=[thread_table_block(R, UN), yblk, bblk, dept_years_block(st), sizes_block(R), coverage_block(R)],
         answer_figures={'a': P(st[lo]['share']), 'b': P(st[hi]['share']), 'n': N(len(out_order), 'years')})
 
 
