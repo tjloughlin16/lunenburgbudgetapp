@@ -429,7 +429,7 @@ def page(rows, unread):
     return TP.page(ID, finding, facts, cons, table=jobs_table, tables=[raw], sources=sources,
                    finding_figures={'n': N(len(paid_jobs), 'jobs'), 't': T, 'a': U(tot)}, flow=flow,
                    draft=None if ID in REG.TOPICS else dict(title='School upkeep and capital',
-                                                            home='capital-rankings'))
+                                                            home='buildings-and-grounds'))
 
 
 def render():

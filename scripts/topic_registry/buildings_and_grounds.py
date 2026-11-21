@@ -18,8 +18,13 @@ CATEGORY = dict(
         (None, ['upkeep-ledger', 'upkeep-spending', 'upkeep-budget-vs-spending',
                 'upkeep-surplus-every-dollar', 'upkeep-skipped']),
         ('Account by account', ['contracted-building-services']),
+        ('Beside the capital process', ['school-facility-jobs']),
     ])
 GENERATOR = 'build_buildings_topics.py'
+# Upkeep orders that met the Town's capital cost test (TJ, 21 November 2026). Its own generator,
+# rebuilt by the refresh whenever the school journal changes. Moved here from the capital-rankings
+# shelf the same day: "that page probably needs to go under the school hub".
+TOPIC_GENERATORS = {'school-facility-jobs': 'build_school_facility_jobs.py'}
 TOPICS = {
     'upkeep-spending': 'What upkeep buys',
     'upkeep-budget-vs-spending': 'Upkeep budget and spending',
@@ -27,4 +32,5 @@ TOPICS = {
     'upkeep-surplus-every-dollar': 'Upkeep surplus, every dollar',
     'upkeep-skipped': 'Usual purchases skipped',
     'upkeep-ledger': 'Upkeep leftover by account',
+    'school-facility-jobs': 'School upkeep and capital',
 }
