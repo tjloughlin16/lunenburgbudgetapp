@@ -156,7 +156,10 @@ function VersionCard({ v, p, open, color }: { v: Version; p: Prop25 | null | und
             <p className="text-xs"><CiteLink c={r.cite} /></p>
           </div>))}</div>}
 
-        {(cut.length > 0 || v.came_off.length > 0 || tier.length > 0 || v.warned.length > 0) && <div className="grid gap-4 lg:grid-cols-3 mt-3">
+        {/* THREE COLUMNS ONLY WHEN SOMETHING IS CUT. With no cuts (FY28 Version 1) the side lists
+            sat alone in the narrow third column beside two empty ones -- TJ, 20 Nov 2026: "why is
+            there a huge space on the side". The same fix as the old board's sideWide, 26 Oct. */}
+        {(cut.length > 0 || v.came_off.length > 0 || tier.length > 0 || v.warned.length > 0) && <div className={cut.length > 0 ? 'grid gap-4 lg:grid-cols-3 mt-3' : 'mt-3'}>
           {cut.length > 0 && <div className="lg:col-span-2">
             <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>{v.status === 'adopted' ? 'Stood' : 'Cut in this version'} — {cut.length}{fteOf(cut) ? `, ${fteOf(cut)} FTE where printed` : ''}</p>
             {byFam(cut).map(([f, rows]) => <div key={f} className="mt-1"><p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f}</p><ul>{rows.map((r, i) => <Item key={i} r={r} />)}</ul></div>)}
@@ -164,7 +167,7 @@ function VersionCard({ v, p, open, color }: { v: Version; p: Prop25 | null | und
           <div>
             {v.came_off.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>Came off — {v.came_off.length}</p><ul className="mt-1">{v.came_off.map((r, i) => <Item key={i} r={r} />)}</ul></>}
             {tier.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--text-muted)' }}>Only inside a tier — {tier.length}</p><ul className="mt-1">{tier.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
-            {v.warned.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--status-warning)' }}>Warned about — {v.warned.length}</p><p className="text-xs" style={{ color: 'var(--text-muted)' }}>A prediction on the record with no figure; nobody has confirmed it means a cut.</p><ul className="mt-1">{v.warned.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
+            {v.warned.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--status-warning)' }}>Warned about — {v.warned.length}</p><p className="text-xs" style={{ color: 'var(--text-muted)' }}>A prediction on the record with no figure; nobody has confirmed it means a cut.</p><ul className={cut.length > 0 ? 'mt-1' : 'mt-1 sm:grid sm:grid-cols-2 sm:gap-x-6'}>{v.warned.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
           </div>
         </div>}
         {v.notes.map((r, i) => <p key={i} className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>{r.item} — {r.why}<CiteLink c={r.cite} /></p>)}
