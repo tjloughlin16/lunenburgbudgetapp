@@ -598,9 +598,9 @@ def payload(rows, F, concl):
         about='The track and field in the town\u2019s capital process: every ranking, request, '
               'plan line and vote the archive holds, FY%d to FY%d.' % (FIRST, LAST),
         stats=[
-            dict(value='%s \u2192 %s' % (band(F['sc24']).split()[0], 'top'),
-                 label='where the schools put the field on their own list: %s in FY2024, %s in '
-                       'FY2025, %s in FY2027, first for FY2028 (the last two as heard)'
+            dict(value='%s \u2192 1st' % nth(F['sc24']).split(' of ')[0],
+                 label='the schools\u2019 priority for the field: near last at %s in FY2024 and '
+                       '%s in FY2025; %s in FY2027, and first for FY2028 (the last two as heard)'
                        % (nth(F['sc24']), nth(F['sc25']), nth(F['sc27']))),
             dict(value=of(F['cpc24']),
                  label='the capital committee\u2019s rank, FY2024: the %s. FY2025: %s, the %s'
