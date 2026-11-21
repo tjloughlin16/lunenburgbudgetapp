@@ -1408,7 +1408,7 @@ def run(a, notes, ctx):
     # process it right then and there." One read per document, page-cited, into the same
     # budget-state shape the feed and the season boards already draw from.
     if not a.dry_run:
-        metered('write_document_budget_state.py', '--new', '--as-of', a.as_of, '--limit', '3', notes=notes)
+        metered('write_document_budget_state.py', '--new', '--as-of', a.as_of, '--limit', '6', notes=notes)
 
     # 3e. THE TWO STAFF DIRECTORIES, WEEKLY. Who works for the town and who works for the
     # district, off the pages they publish themselves -- and the only sources here that

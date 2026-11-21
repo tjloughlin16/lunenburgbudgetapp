@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react'
+import { Fragment, useEffect, useState, type ReactNode } from 'react'
 import { useReport } from '../components/report'
 
 /** THE SEASON AS A STATUS BOARD. notes/process/BUDGET-SEASON-MODEL.md, from TJ's account of
@@ -9,7 +9,7 @@ import { useReport } from '../components/report'
  *  the row that cite it; this page reads only the season file. */
 
 type Cite = { kind: 'meeting' | 'document' | 'ballot'; href: string; label: string; page?: string; board?: string; date?: string; t?: number }
-type Row = { block: string; item: string; scope: string; status: string; figure: string; fte: number | null; date: string; who: string; why: string; evidence: string; note: string; cite: Cite | null }
+type Row = { block: string; item: string; scope: string; status: string; figure: string; fte: number | null; date: string; who: string; why: string; evidence: string; note: string; cite: Cite | null; also?: Cite[] }
 type Line = { side: string; document: string; category: string; line: string; level_service: number | null; balanced: number | null; tier1_core: number | null; tier2_restoration: number | null; cut: number | null; tier1_restores: number | null; tier2_restores: number | null }
 export type Season = { id: string; fy: number; source: string; rows: number; model: string; live?: boolean; as_of?: string | null; titles: Record<string, { title: string; sub: string }>; blocks: Record<'deficit' | 'proposals' | 'cuts' | 'override' | 'late' | 'final', Row[]>; lines: Line[] }
 
@@ -100,18 +100,28 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
     schoolDecided.length ? `${schoolDecided.length} cuts stood on the school side${fteOf(schoolDecided) ? ` (${fteOf(schoolDecided)} FTE where an FTE is printed)` : ''}` : '',
     townDecided.length ? `${townDecided.length} on the town side` : '',
   ].filter(Boolean).join('; ')
-  const nextUp = d.live ? [...b.deficit, ...b.proposals, ...b.cuts, ...b.override, ...b.final].filter(r => r.status === 'expected' && (!d.as_of || r.date >= d.as_of)).sort((a, c) => a.date.localeCompare(c.date))[0] : undefined
+  // WHILE THE SCHOOLS ARE STILL DRAFTING, THEIR NEXT DRAFT IS WHAT IS NEXT. TJ, 20 November
+  // 2026: "next up is the schools continued revisal draft, until its official proposal". The
+  // town's target is an input to that draft, not the next thing a parent is waiting to read.
+  const draftsLive = d.live && b.proposals.some(r => r.status !== 'expected' && r.scope === 'school')
+  const nextDraft = draftsLive ? b.proposals.filter(r => r.status === 'expected' && r.scope === 'school' && /^Version/.test(r.item))[0] : undefined
+  const nextUp = nextDraft || (d.live ? [...b.deficit, ...b.proposals, ...b.cuts, ...b.override, ...b.final].filter(r => r.status === 'expected' && (!d.as_of || r.date >= d.as_of)).sort((a, c) => a.date.localeCompare(c.date))[0] : undefined)
   const onRecord = d.live ? [...b.deficit, ...b.cuts, ...b.override, ...b.late].filter(r => r.status !== 'expected').length : 0
-  const liveLine = d.live ? `The ${'FY' + String(d.fy).slice(2)} budget is being built. No figure is on the record yet${onRecord ? `; ${onRecord} thing${onRecord === 1 ? '' : 's'} said so far ${onRecord === 1 ? 'is' : 'are'} below` : ''}. ${nextUp ? `Next up: ${nextUp.item.toLowerCase()} — ${nextUp.why.split(' — ')[0]}.` : ''}` : ''
+  // The schools' latest draft, once one is printed (FY28: Version 1, 18 Nov 2026). Until then
+  // this line said "No figure is on the record yet" beside a card carrying the figure.
+  const draft = d.live ? b.proposals.filter(r => r.status !== 'expected' && r.scope === 'school').sort((a, c) => c.date.localeCompare(a.date))[0] : undefined
+  const liveLine = d.live ? `The ${'FY' + String(d.fy).slice(2)} budget is being built. ${draft ? `The schools' latest draft, ${draft.item} (${mmdd(draft.date)}): ${draft.figure}, ${draft.why.split(';')[0]}` : 'No figure is on the record yet'}${onRecord ? `; ${onRecord} thing${onRecord === 1 ? '' : 's'} said so far ${onRecord === 1 ? 'is' : 'are'} below` : ''}. ${nextUp ? `Next up: ${nextUp.item.toLowerCase()} — ${nextUp.why.split(' — ')[0]}.` : ''}` : ''
   const oneLine = d.titles?.summary?.title || (d.live && !started ? liveLine : '')
   const lines = d.lines.filter(l => l.side === 'school' && (l.cut || 0) > 0).sort((a, c) => (c.cut || 0) - (a.cut || 0))
 
-  return (
-    <section className="mt-4">
-      {d.live && <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-good)' }}>Live — read from the record daily{d.as_of ? `, as of ${mmdd(d.as_of)}` : ''}</p>}
-      <p className="text-[15px] max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{oneLine || `FY${String(d.fy).slice(2)}: ${summary}.`}</p>
-
-      {/* 1. the deficit -- the moments a resident heard, not a spreadsheet difference */}
+  // NEWEST FIRST WHILE A SEASON IS LIVE. TJ, 20 November 2026: "this page should be NEWEST
+  // FIRST order... so draft 1 should be at the top, THEN the previously discussed things." A
+  // section moves up by the date of the latest thing on the record in it; a section with
+  // nothing yet keeps its place below. A closed season keeps the story order.
+  const latest = (rows: Row[]) => rows.filter(r => r.status !== 'expected').map(r => r.date).sort().pop() || ''
+  const sectionDate: Record<string, string> = { deficit: latest(b.deficit), cuts: latest(b.cuts), proposals: latest(b.proposals), moves: latest([...b.override, ...b.late]), final: latest(b.final) }
+  const sections: [string, ReactNode][] = [
+    ['deficit', <Fragment key="deficit">
       <Block title={T('deficit', 'The gap', '').title} color="var(--status-critical)" sub={T('deficit', '', 'The shortfall as staff put it on the record — the number people argued about, and every time it moved, with why.').sub}>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[['Schools — as announced', started], ['Schools — corrected', corrected], ['Schools — left to cut on the night of the vote', toCut], ['Town and schools together', both]].map(([label0, r]) => r && typeof r !== 'string' ? (
@@ -136,8 +146,8 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
             </div>) : null)}
         </details>}
       </Block>
-
-      {/* 2. the cuts */}
+    </Fragment>],
+    ['cuts', <Fragment key="cuts">
       <Block title={T('cuts', 'The cuts', '').title} color="var(--status-critical)" sub={T('cuts', '', 'What was cut, what came off the list, and what only an override tier would have cut — grouped the way a family looks for its own.').sub}>
         {/* TWO COLUMNS ONLY WHEN THE CUTS ARE THE LONGER SIDE. TJ, 26 October 2026: early in a
             season nothing is cut yet and 24 warnings filled the narrow side column, a strip the
@@ -181,8 +191,8 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
         {showLines && <div className="overflow-x-auto mt-2"><table className="text-xs" style={{ minWidth: 520 }}><thead><tr className="text-left" style={{ color: 'var(--text-muted)' }}><th className="pr-3 py-1">line</th><th className="pr-3 py-1 text-right">level service</th><th className="pr-3 py-1 text-right">balanced</th><th className="pr-3 py-1 text-right">cut</th><th className="pr-3 py-1 text-right">tier 1 restores</th><th className="py-1 text-right">tier 2 restores</th></tr></thead>
           <tbody>{lines.map((l, i) => <tr key={i} style={{ borderTop: '1px solid var(--grid)' }}><td className="pr-3 py-1">{l.line}</td><td className="pr-3 py-1 text-right tnum">{l.level_service != null ? usd(l.level_service) : ''}</td><td className="pr-3 py-1 text-right tnum">{l.balanced != null ? usd(l.balanced) : ''}</td><td className="pr-3 py-1 text-right tnum font-semibold">{usd(l.cut || 0)}</td><td className="pr-3 py-1 text-right tnum">{l.tier1_restores ? usd(l.tier1_restores) : '—'}</td><td className="py-1 text-right tnum">{l.tier2_restores ? usd(l.tier2_restores) : '—'}</td></tr>)}</tbody></table></div>}
       </Block>
-
-      {/* 3. the proposals */}
+    </Fragment>],
+    ['proposals', <Fragment key="proposals">
       <Block title={T('proposals', 'The proposals', '').title} color="var(--series-cost)" sub={T('proposals', '', 'The budgets put on the table, side by side — the names change every year.').sub}>
         <NotYet block="proposals" />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{b.proposals.filter(r => r.status !== 'expected').map((r, i) => (
@@ -192,11 +202,11 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
             <p className="tnum text-lg">{r.figure}{r.fte ? <span className="text-xs ml-1" style={{ color: 'var(--text-muted)' }}>{r.fte} FTE</span> : null}</p>
             <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}</p>
             {r.note && !r.note.startsWith('internal:') && <p className="text-xs italic" style={{ color: 'var(--text-muted)' }}>{r.note}</p>}
-            <p className="text-xs"><CiteLink c={r.cite} /></p>
+            <p className="text-xs"><CiteLink c={r.cite} />{(r.also || []).map((c, j) => <CiteLink key={j} c={c} />)}</p>
           </div>))}</div>
       </Block>
-
-      {/* 4 + 5. the override track and the late moves */}
+    </Fragment>],
+    ['moves', <Fragment key="moves">
       <div className="grid gap-4 lg:grid-cols-2">
         <Block title={T('override', 'The override track', '').title} color="var(--series-cost)" sub={T('override', '', 'Whether one is filed, for how much, and where each board stands — step by step.').sub}>
           <ul>{b.override.filter(r => r.status !== 'expected').map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: `2px solid ${r.cite?.kind === 'ballot' ? 'var(--status-critical)' : 'var(--series-cost)'}` }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span><span className="font-semibold">{r.item}</span>{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}{r.why ? <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} />{r.note && !r.note.startsWith('internal:') && <span className="text-xs italic ml-1.5" style={{ color: 'var(--text-muted)' }}>{r.note}</span>}</li>)}</ul>
@@ -208,8 +218,8 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
           <NotYet block="late" />
         </Block>
       </div>
-
-      {/* 6. final */}
+    </Fragment>],
+    ['final', <Fragment key="final">
       <Block title={T('final', 'Final — what Town Meeting and the ballot did, and what took effect', '').title} color="var(--status-good)" sub={T('final', '', '').sub || undefined}>
         <ul>{[...appropriated, ...finalBallot].map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--status-good)' }}>{r.figure ? <><span className="font-bold tnum">{r.figure}</span> — </> : null}<span className={r.figure ? '' : 'font-semibold'}>{r.item}</span>{r.why ? <span style={{ color: /failed/i.test(r.why) ? 'var(--status-critical)' : 'var(--text-secondary)' }}>, {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{r.who}, {mmdd(r.date)}</span><CiteLink c={r.cite} /></li>)}</ul>
         {took.map((r, i) => <div key={i} className="mt-3 pl-3" style={{ borderLeft: '2px solid var(--status-critical)' }}><p className="text-[13.5px] font-semibold">{r.item}{r.fte ? <span className="tnum"> · {r.fte} FTE</span> : ''}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}</p><p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{[r.why, r.note.startsWith('internal:') ? '' : r.note].filter(Boolean).join('. ')}<CiteLink c={r.cite} /></p></div>)}
@@ -217,6 +227,36 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
         <NotYet block="final" />
         {later.map((r, i) => <div key={i} className="mt-3 pl-3" style={{ borderLeft: '2px solid var(--status-good)' }}><p className="text-[13.5px] font-semibold">{r.item}{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}</p><p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{[r.why, r.note.startsWith('internal:') ? '' : r.note].filter(Boolean).join('. ')}<CiteLink c={r.cite} /></p></div>)}
       </Block>
+    </Fragment>],
+  ]
+  const ordered = d.live ? [...sections].sort((x, y) => (sectionDate[y[0]] || '').localeCompare(sectionDate[x[0]] || '')) : sections
+  return (
+    <section className="mt-4">
+      {d.live && <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-good)' }}>Live — read from the record daily{d.as_of ? `, as of ${mmdd(d.as_of)}` : ''}</p>}
+      {/* A LIVE SEASON OPENS WITH THREE FACTS, NOT A SENTENCE. TJ, 20 November 2026, reading
+          the one-line version ("The schools' latest draft, Version 1 ... ; 33 things said so far
+          are below. Next up: ...") -- "this is hard to read". Three facts were sharing one run-on
+          sentence, so each now gets a cell: the figure, what it is, where it came from. */}
+      {d.live && !started && !d.titles?.summary?.title ? (
+        <div className="grid gap-3 sm:grid-cols-2 max-w-3xl mt-1">
+          <div className="px-3 py-2 rounded-md" style={{ background: 'var(--surface-3)' }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>The schools’ latest draft</p>
+            {draft ? <>
+              <p className="text-xl font-bold tnum leading-tight">{draft.figure}</p>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{draft.why.split(';')[0].replace(/, against (\S+) for (FY\d+)$/, ', up from $1 in $2')}</p>
+              <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{draft.item}, {mmdd(draft.date)}</p>
+            </> : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>No figure on the record yet</p>}
+          </div>
+          {nextUp && <div className="px-3 py-2 rounded-md" style={{ border: '1px dashed var(--grid)' }}>
+            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Next up</p>
+            <p className="font-bold leading-tight">{nextUp.item}</p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{nextUp.why.split(' — ')[0]}</p>
+          </div>}
+        </div>
+      ) : <p className="text-[15px] max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{oneLine || `FY${String(d.fy).slice(2)}: ${summary}.`}</p>}
+
+      {ordered.map(([, el]) => el)}
+
       <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>Every row above is a line in <a className="underline" href={`/${d.source.replace('sources/', 'docs/')}`}>{d.source}</a>, written from the district’s and the town’s own scenario documents and from our record of the meetings; each cites where it comes from. Figures and FTEs as the documents state them.</p>
     </section>
   )

@@ -120,7 +120,12 @@ def live_rows(fy, opens, have):
         Written to <fy>.proposed.csv (never rendered) and counted by the refresh.
     A proposed row already in the file (same evidence) is not proposed again."""
     auto, proposed = [], []
-    seen = {r['evidence'] for r in have}
+    seen = {e.strip() for r in have for e in (r['evidence'] or '').split(' ; ')}
+    season = int(fy[2:4]) + 2000
+    # A statement ABOUT ANOTHER YEAR is not this season's, whatever day it was said: the
+    # November Special Town Meeting's FY27 adjustments were being proposed onto the FY28
+    # board. The extraction names the year (sometimes as 27); no year stated stays in.
+    other_year = lambda x: x.get('fiscal_year') not in (None, '') and (int(x['fiscal_year']) % 100) + 2000 != season
     # By the file's own date, not its name: a document's file is named for the document.
     loaded = [(f, json.load(open(f, encoding='utf-8'))) for f in sorted(glob.glob(os.path.join(STATE, '*', '*.json')))]
     for f, d in sorted((x for x in loaded if x[1]['meeting_date'] >= opens), key=lambda x: x[1]['meeting_date']):
@@ -130,19 +135,23 @@ def live_rows(fy, opens, have):
         # meeting's cite the board, date and second.
         evidence = (lambda t: 'doc:' + d['source']['document']) if d.get('document') else (lambda t: '%s/%s@%d' % (board, d['meeting_date'], t))
         for w in d['state'].get('warnings') or []:
+            if other_year(w):
+                continue
             ev = evidence(w['t'])
             auto.append(dict(base, block='cuts', item=w['about'], scope=w.get('scope') or 'school', status='warned', figure='', who=w['who'],
                              why=w['prediction'] + (' — ' + w['condition'] if w.get('condition') else ''), evidence=ev))
         for st in d['state'].get('statements') or []:
             ev = evidence(st['t'])
-            if ev in seen or rank(st.get('who')) < 2 or st['status'] == 'withdrawn':
+            if ev in seen or rank(st.get('who')) < 2 or st['status'] == 'withdrawn' or other_year(st):
                 continue
             if st['kind'] in ('deficit', 'override', 'budget_total') and st.get('amount_as_heard'):
-                proposed.append(dict(base, block='deficit' if st['kind'] == 'deficit' else 'override', item=st['statement'][:80], scope=st['scope'],
+                # A budget TOTAL is a proposal (Version 1, a tier), not an override: until 20 Nov
+                # 2026 every total went to 'override', so the FY28 Version 1 figure was proposed there.
+                proposed.append(dict(base, block={'deficit': 'deficit', 'budget_total': 'proposals'}.get(st['kind'], 'override'), item=st['statement'][:80], scope=st['scope'],
                                      status='path' if st['kind'] == 'deficit' else 'step', figure=st['amount_as_heard'], who=st['who'], why=st['statement'], evidence=ev))
         for c in d['state'].get('cuts') or []:
             ev = evidence(c['t'])
-            if ev in seen or rank(c.get('who')) < 2:
+            if ev in seen or rank(c.get('who')) < 2 or other_year(c):
                 continue
             proposed.append(dict(base, block='cuts', item=c['item'], scope=c['scope'], status='proposed' if c['status'] in ('proposed', 'announced') else c['status'],
                                  figure=c.get('amount_as_heard') or '', fte=c.get('fte_as_heard') or '', who=c['who'], why='', evidence=ev))
@@ -170,7 +179,12 @@ def build(fy):
             continue
         if r['block'] not in blocks:
             raise SystemExit('row %d: unknown block %r' % (i + 2, r['block']))
-        blocks[r['block']].append(dict(r, fte=float(r['fte']) if r['fte'] else None, cite=resolve(r['evidence'])))
+        # Evidence may name more than one source, ' ; ' between them: a card resting on the
+        # district's workbook for its figures and on the superintendent's memo for what the
+        # draft is. The first is `cite`; the rest are `also`, each resolved or the build fails.
+        evs = [e.strip() for e in (r['evidence'] or '').split(' ; ')]
+        blocks[r['block']].append(dict(r, fte=float(r['fte']) if r['fte'] else None, cite=resolve(evs[0]),
+                                       **({'also': [resolve(e) for e in evs[1:]]} if len(evs) > 1 else {})))
     for b in blocks:
         if b != 'proposals':                 # proposals stay in the order the publisher printed them
             blocks[b].sort(key=lambda r: r['date'])

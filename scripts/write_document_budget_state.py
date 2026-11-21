@@ -21,8 +21,9 @@ sha256, and the extract is invalidated if the document's bytes change.
 
 WHICH DOCUMENTS. Anything in the district's or the town's budget folders with a text
 extract -- `sources/district-budget`, `sources/town-budget`, `sources/town-supplementary`.
-The refresh (--new) reads only what watch_documents.py recorded as first seen on the
-day, at most --limit of them, so a document is read once, the morning it appears.
+The refresh (--new) reads what watch_documents.py recorded as first seen in the last
+WINDOW_DAYS that has no budget state yet, budget-sounding documents first, at most --limit
+a run -- so a document is read the morning it appears, or the next morning if the cap ran out.
 
 WHAT IS EXTRACTED, and what is not, is the same line write_budget_state.py draws for a
 meeting: the budget being BUILT and what goes to Town Meeting -- not a closeout, not a
@@ -56,6 +57,11 @@ EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
 FOLDERS = ('district-budget', 'town-budget', 'town-supplementary')
 SCHEMA_VERSION = BS.SCHEMA_VERSION
 MAX_CHARS = 180_000   # a budget book is long; the front of it is where the totals are
+WINDOW_DAYS = 30      # --new retries anything first seen this recently that has no budget state
+# What makes a document's label or filename read as budget material, so it is read before an
+# agenda or a policy when the day's cap cannot take everything.
+BUDGETY = re.compile(r'budget|fy\s?-?\d\d|deficit|override|warrant|appropriat|priorit|scenario|'
+                     r'projection|reduction|levy|free cash|transfer|capital|revenue|expense', re.I)
 
 SYSTEM = BS.SYSTEM.replace(
     'You read machine captions of a Massachusetts town board meeting',
@@ -68,7 +74,8 @@ SYSTEM = BS.SYSTEM.replace(
     'Figures are AS PRINTED. Copy the number the document prints; do not compute, sum or infer. A total the document prints is a statement; a line item is not.'
 ) + """
 - WHO is the document's author by role: "the superintendent's budget book", "the town manager's budget message", "the finance committee's report", "a School Committee presentation". Never a person's name.
-- A document is not a meeting: nothing here was 'voted' unless the document itself records a vote. Use 'announced' for a figure a document states, 'proposed' for a scenario it puts forward."""
+- A document is not a meeting: nothing here was 'voted' unless the document itself records a vote. Use 'announced' for a figure a document states, 'proposed' for a scenario it puts forward.
+- In a LINE-ITEM budget, a line printed lower than the year before is NOT a cut. It may be turnover, a step change, a recode, or the money moved to another line (one school's psychologist down while another's goes up from zero). Record a cut only where the document itself names a reduction, an elimination or a cut in words."""
 
 # The document schema is the meeting schema with `t` meaning a page.
 SCHEMA = json.loads(json.dumps(BS.SCHEMA))
@@ -191,6 +198,8 @@ def main():
     ap.add_argument('--new', action='store_true', help='documents watch_documents.py first saw on --as-of')
     ap.add_argument('--as-of', default=dt.date.today().isoformat())
     ap.add_argument('--limit', type=int)
+    ap.add_argument('--since', help='with --new: the window opens here (default: %d days before --as-of)' % WINDOW_DAYS)
+    ap.add_argument('--list', action='store_true', help='print what would be read, read nothing')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--status', action='store_true')
     a = ap.parse_args()
@@ -215,18 +224,41 @@ def main():
         if not todo:
             raise SystemExit('not a budget document with a text extract: %s' % rel)
     elif a.new:
-        fresh = {e['local'] for e in read_csv(EVENTS) if e['first_seen'] == a.as_of and e['folder'] in FOLDERS}
+        # EVERY DOCUMENT FIRST SEEN IN THE WINDOW THAT HAS NO BUDGET STATE, not only today's.
+        # Until 20 November 2026 this read `first_seen == as_of` under a cap of three, so a
+        # document past the cap was never read: on 5 Nov the three reads went to an agenda and
+        # two bullying-plan documents and both FY28 budget-priorities documents were dropped;
+        # on 19 Nov the FY28 Version 1 line-item budget was. A document left over today is
+        # read tomorrow, budget-sounding ones first (build/refresh-logs/2026-11-05.log, -19.log).
+        since = a.since or (dt.date.fromisoformat(a.as_of) - dt.timedelta(days=WINDOW_DAYS)).isoformat()
+        fresh = {e['local']: e['first_seen'] for e in read_csv(EVENTS)
+                 if since <= e['first_seen'] <= a.as_of and e['folder'] in FOLDERS}
         todo = [d for d in docs if d['local'] in fresh]
+        todo.sort(key=lambda d: fresh[d['local']], reverse=True)          # newest first ...
+        todo.sort(key=lambda d: not BUDGETY.search('%s %s' % (d.get('label') or '', d['local'])))  # ... budget documents before all others
     else:
         ap.error('name a document, or --new')
     todo = [d for d in todo if not current(d)]
+    left = len(todo) - a.limit if a.limit and len(todo) > a.limit else 0
     if a.limit:
         todo = todo[:a.limit]
+    if a.list:
+        for d in todo:
+            print('would read  %s  (first seen %s)' % (d['local'], seen_by_local.get(d['local'], '?')))
+        print('%d to read%s' % (len(todo), ', %d more left for the next run' % left if left else ''))
+        return 0
     if not todo:
         print('nothing to read'); return 0
+    failed = 0
     for d in todo:
-        print('%s  %s' % (d['local'], write_one(d, seen_by_local.get(d['local'], a.as_of))), flush=True)
-    return 0
+        try:                                  # one failed read must not drop the rest of the day's documents
+            print('%s  %s' % (d['local'], write_one(d, seen_by_local.get(d['local'], a.as_of))), flush=True)
+        except SystemExit as e:
+            failed += 1
+            print('FAILED  %s  %s' % (d['local'], str(e)[-500:]), flush=True)
+    if left:
+        print('%d more document(s) waiting; the next run reads them' % left)
+    return 1 if failed else 0
 
 
 if __name__ == '__main__':
