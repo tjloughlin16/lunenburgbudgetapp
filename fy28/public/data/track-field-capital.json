@@ -73,7 +73,7 @@
     "2027",
     "2028"
    ],
-   "not_shown": "Whether the voted FY2024 and FY2025 plans included it: their item lists were not readable in the text we hold. And a rank says where it stood against that year’s other requests, not why.",
+   "not_shown": "Whether the voted FY2024 and FY2025 plans included it: their item lists were not readable in the text we hold. For FY2024 the committee’s own sheet prints no rank number and ties the field on average with another request, sorting it one place higher; the rank is the Town Manager deck’s. And a rank says where it stood against that year’s other requests, not why.",
    "see": [],
    "so_what": "Both years the Town Manager’s preliminary plan listed it among requests not included."
   },
@@ -272,12 +272,11 @@
   }
  ],
  "generated_by": "scripts/build_track_field_capital.py",
- "grain": "DOCUMENTS AND RECORDINGS. Each of the 102 rows is one document or recording that ranks, prices, plans or votes on the field in a capital cycle, or a plan read and found without it. 87 rest on documents; 13 on machine captions of a recording, marked as heard.",
+ "grain": "DOCUMENTS AND RECORDINGS. Each of the 104 rows is one document or recording that ranks, prices, plans or votes on the field in a capital cycle, or a plan read and found without it. 89 rest on documents; 13 on machine captions of a recording, marked as heard.",
  "id": "track-field-capital",
  "not_established": [
   "The official result of Article 9 at the 17 November 2026 Special Town Meeting, and the Finance Committee’s and Select Board’s recommendations on it.",
   "Whether the voted FY2024 and FY2025 capital plans included any field money: their item lists are not in the text we hold.",
-  "Whether the field held one of the five FY2026 ranks the printed program omits (18, 21, 23, 24, 25 of 25): the committee’s full ranked sheet is not held.",
   "Which printed list the Select Board chair’s “ranked 5 of 7” of 20 October 2026 refers to: no list held ranks the field 5 of 7.",
   "Why any board ranked the field where it did."
  ],
@@ -1190,8 +1189,20 @@
      "kind": "ranking",
      "line": 68,
      "vote": "",
-     "what": "CPC met to 'approve final rankings for CPC FY26 capital plan priorities'; the ranking sheet itself is not among the held documents; minutes of that meeting not held (agenda only)",
+     "what": "CPC met to 'approve final rankings for CPC FY26 capital plan priorities'. The agenda is the record of the meeting; the list it approved is held since 20 November 2026 (next row)",
      "where": "line 22"
+    },
+    {
+     "amount": "",
+     "basis": "document",
+     "body": "Capital Planning Committee",
+     "date": "16 Dec 2024",
+     "doc": "correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx",
+     "kind": "absence",
+     "line": 104,
+     "vote": "",
+     "what": "The committee's approved FY2026 list, ranks 1-25, $2,915,877 cumulative: no field project at any rank. The ranks the printed Article 8 program omits are 14 Primary School generator, 18 DPW dump truck, 21 McNally Park survey, 23 catch basin truck, 24 North Cemetery roads, 25 Ritter Building",
+     "where": "transcription, FY2026 list rows 1-25"
     },
     {
      "amount": "",
@@ -1378,6 +1389,18 @@
      "vote": "none",
      "what": "CPC chair said the field 'is not able to be brought forth as part of this capital planning process', 'too complex and too slow'; separate proposal expected",
      "where": "rows 31, 44"
+    },
+    {
+     "amount": "",
+     "basis": "document",
+     "body": "Capital Planning Committee",
+     "date": "17 Dec 2025",
+     "doc": "correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx",
+     "kind": "absence",
+     "line": 105,
+     "vote": "",
+     "what": "The list the committee approved on 17 December 2025, 22 projects: no high school field project (the one field is Fitzgerald Field, rank 18). The Chair's forward the next day says an engineering and design proposal for the track and field had just arrived, to be funded some other way",
+     "where": "Chair's emails of 18 December 2025 (transcription)"
     },
     {
      "amount": "",
@@ -2356,6 +2379,26 @@
    "publisher": "",
    "sha256": "a9ee7b51154d94fd5551f934ce629a2929cc4e5efd8c48cd4bdb8224b8907158",
    "url": "https://www.lunenburgma.gov/DocumentCenter/View/4130 https://www.lunenburgma.gov/ArchiveCenter/ViewFile/Item/213"
+  },
+  {
+   "bytes": 11265,
+   "docs_url": "/docs/correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx",
+   "filename": "2026-11-20-cpc-fy26-final-rankings.xlsx",
+   "note": "Capital Planning Committee",
+   "path": "sources/correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx",
+   "publisher": "",
+   "sha256": "368abf39c0778bf17264a24e5996b3248a174f40c9fbbb339840dfe7fc00faa6",
+   "url": ""
+  },
+  {
+   "bytes": 21789,
+   "docs_url": "/docs/correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx",
+   "filename": "2026-11-20-cpc-fy27-priorities-list-working-final.xlsx",
+   "note": "Capital Planning Committee",
+   "path": "sources/correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx",
+   "publisher": "",
+   "sha256": "bf6427e724c31741b25d38c8890bdfbdbf4aa2551388e03a4d588963015553d4",
+   "url": ""
   }
  ],
  "stats": [

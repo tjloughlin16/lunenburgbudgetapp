@@ -23,7 +23,7 @@ Analysis, November 2026. Ranks are as each document prints them; anything marked
 
 FY2024: a $50,000 feasibility study, Capital Planning Committee priority 21 of 29, Town Manager priority 18 of 29. FY2025: $200,000 for survey and drainage, priority 19 of 35 and 15 of 35. Both appear on the page headed as requests not included in the preliminary recommendation.
 
-*Rests on:* The Town Manager’s preliminary FY2024 and FY2025 capital plan decks, which print the TM and CPC priority beside each request; for FY2025 the CPC’s own workbook agrees (sheet Ordered). *Does not show:* Whether the voted FY2024 and FY2025 plans included it: their item lists were not readable in the text we hold. And a rank says where it stood against that year’s other requests, not why.
+*Rests on:* The Town Manager’s preliminary FY2024 and FY2025 capital plan decks, which print the TM and CPC priority beside each request; for FY2025 the CPC’s own workbook agrees (sheet Ordered). *Does not show:* Whether the voted FY2024 and FY2025 plans included it: their item lists were not readable in the text we hold. For FY2024 the committee’s own sheet prints no rank number and ties the field on average with another request, sorting it one place higher; the rank is the Town Manager deck’s. And a rank says where it stood against that year’s other requests, not why.
 
 **The schools ranked the field 5 of 6 for FY2024 and 7 of 9 for FY2025; by FY2028 it was first.** The FY2027 order, 4 of 8, and the FY2028 one were heard on recordings; no printed list is held.
 
@@ -114,7 +114,8 @@ Every row is in `track-field-capital-history.csv`, with its quote and where it i
 | 4 Sep 2024 | School Committee | LMHS Turf Field, Site Survey & Drainage Improvements (LPS20-04-C, $1.43million in FY27); FY26 Capital Requests School Committee Priority Rankings: none printed of 8 | FY27 - $1.43million (not FY26 money) |  | document |
 | 21 Oct 2024 | Capital Planning Committee | Middle High School turf field and complex estimated at $920,000 (hardscape and drainage), "an additional $ 500,000" to replace turf and track; listed under "FY27 Capital Request s ( not in priority order )". (The Select Board Chair's compilation says no FY26 request was submitted; not independently checked.) | 920,000; 500,000 |  | document |
 | 21 Oct 2024 | Capital Planning Committee | Schools presented the field under 'FY27 Capital Requests (not in priority order)', item 6, in the FY26 cycle | $920,000 (hardscape/drainage) + $500,000 (turf and track) | none | document |
-| 16 Dec 2024 | Capital Planning Committee | CPC met to 'approve final rankings for CPC FY26 capital plan priorities'; the ranking sheet itself is not among the held documents; minutes of that meeting not held (agenda only) |  |  | document |
+| 16 Dec 2024 | Capital Planning Committee | CPC met to 'approve final rankings for CPC FY26 capital plan priorities'. The agenda is the record of the meeting; the list it approved is held since 20 November 2026 (next row) |  |  | document |
+| 16 Dec 2024 | Capital Planning Committee | The committee's approved FY2026 list, ranks 1-25, $2,915,877 cumulative: no field project at any rank. The ranks the printed Article 8 program omits are 14 Primary School generator, 18 DPW dump truck, 21 McNally Park survey, 23 catch basin truck, 24 North Cemetery roads, 25 Ritter Building |  |  | document |
 | 18 Dec 2024 | School Committee | Reporting the CPC's approved FY26 list of 25 items, Mr. Beardmore named six school items (numbers 2, 6, 7, 14, 15, 19); the field is not among those named. Not proof it was not on the 25; it is evidence only that it was not named |  |  | document |
 | 31 Jan 2025 | Town Manager | Preliminary FY26 capital program deck has no turf, track or LPS20 line (searched the deck's text for rank, priorit, turf, field: only an unrelated 'priority' for Public Safety space) |  |  | document |
 | 5 Feb 2025 | School Committee | School Committee approved the town-meeting warrant including an article for money "necessary to design and prepare a bid solicitation for rehabilitation repairs and upgrades of the track and field complex"; no amount printed in the minute. | not printed | all approve (warrant); Select Board removed the article 5-0 on 1 Apr 2025 (caption) | as heard (captions) |
@@ -135,6 +136,7 @@ Every row is in `track-field-capital-history.csv`, with its quote and where it i
 | 29 Oct 2025 | Capital Planning Committee | turf field; none (turf excluded before ranking): none printed |  |  | as heard (captions) |
 | 29 Oct 2025 | Capital Planning Committee | Schools' presentation to CPC; captions have a member saying the Town Manager called the field 'not really at presentation stage' and the superintendent keeping it in because of priority; a ~$2 million figure is in the captions | ~$2 million (captions; the whole project) | none | our record |
 | 19 Nov 2025 | Capital Planning Committee | CPC chair said the field 'is not able to be brought forth as part of this capital planning process', 'too complex and too slow'; separate proposal expected |  | none | as heard (captions) |
+| 17 Dec 2025 | Capital Planning Committee | The list the committee approved on 17 December 2025, 22 projects: no high school field project (the one field is Fitzgerald Field, rank 18). The Chair's forward the next day says an engineering and design proposal for the track and field had just arrived, to be funded some other way |  |  | document |
 | 1 Feb 2026 | Capital Planning Committee | CPC's FY27 ranked list: 22 projects, $3,267,208 total; the field is not one of them. Ranks printed 1-22; schools items ranked 4, 5, 9, 14, 15, 19 |  |  | document |
 | 1 Feb 2026 | Town Manager | Preliminary FY27 capital program has no field line; CPC agenda of 11 Feb 2026 had 'Discussion on potential Turf Field Capital Request' |  |  | document |
 
@@ -193,7 +195,6 @@ Every row is in `track-field-capital-history.csv`, with its quote and where it i
 
 - The official result of Article 9 at the 17 November 2026 Special Town Meeting, and the Finance Committee’s and Select Board’s recommendations on it.
 - Whether the voted FY2024 and FY2025 capital plans included any field money: their item lists are not in the text we hold.
-- Whether the field held one of the five FY2026 ranks the printed program omits (18, 21, 23, 24, 25 of 25): the committee’s full ranked sheet is not held.
 - Which printed list the Select Board chair’s “ranked 5 of 7” of 20 October 2026 refers to: no list held ranks the field 5 of 7.
 - Why any board ranked the field where it did.
 
@@ -273,5 +274,7 @@ Each is a row in `money-gaps.csv`, with the document that would settle it.
 - [2026-10-21-2-Ax9zkA1NA.json](/docs/data/youtube-transcripts/school-committee/2026-10-21-2-Ax9zkA1NA.json) — School Committee
 - [2026-11-19-agenda-8147.pdf](/docs/meetings/capital-planning-committee/2026-11-19-agenda-8147.pdf) — Capital Planning Committee
 - [4130-fy-2025-annual-town-report.pdf](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf) — Town Meeting (Article 8, printed program with CPC ranks)
+- [2026-11-20-cpc-fy26-final-rankings.xlsx](/docs/correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx) — Capital Planning Committee
+- [2026-11-20-cpc-fy27-priorities-list-working-final.xlsx](/docs/correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx) — Capital Planning Committee
 
 *Generated by `scripts/build_track_field_capital.py` from `sources/data/track-field-capital-history.csv`. Every quote in the dataset is re-found in its source on each run.*

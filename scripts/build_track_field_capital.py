@@ -332,8 +332,10 @@ def build_conclusions(F):
                   'which print the TM and CPC priority beside each request; for FY2025 the CPC\u2019s '
                   'own workbook agrees (sheet Ordered).',
             not_shown='Whether the voted FY2024 and FY2025 plans included it: their item lists '
-                      'were not readable in the text we hold. And a rank says where it stood '
-                      'against that year\u2019s other requests, not why.'),
+                      'were not readable in the text we hold. For FY2024 the committee\u2019s own '
+                      'sheet prints no rank number and ties the field on average with another '
+                      'request, sorting it one place higher; the rank is the Town Manager deck\u2019s. '
+                      'And a rank says where it stood against that year\u2019s other requests, not why.'),
         conclusion(
             id='the-schools-moved-it-up',
             claim='The schools ranked the field %s for FY2024 and %s for FY2025; by FY2028 it was first.'
@@ -450,8 +452,6 @@ NOT_ESTABLISHED = [
     'Finance Committee\u2019s and Select Board\u2019s recommendations on it.',
     'Whether the voted FY2024 and FY2025 capital plans included any field money: their item '
     'lists are not in the text we hold.',
-    'Whether the field held one of the five FY2026 ranks the printed program omits (18, 21, '
-    '23, 24, 25 of 25): the committee\u2019s full ranked sheet is not held.',
     'Which printed list the Select Board chair\u2019s \u201cranked 5 of 7\u201d of 20 October '
     '2026 refers to: no list held ranks the field 5 of 7.',
     'Why any board ranked the field where it did.',
