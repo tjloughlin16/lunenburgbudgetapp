@@ -68,9 +68,9 @@ def z(v):
 
 
 def key(r):
-    """A line's identity across drafts. The cost centre CODE, not its printed name, so a heading
+    """A line's identity across drafts. The cost center CODE, not its printed name, so a heading
     reworded between versions does not turn every line under it into a removal and an addition."""
-    return (r['section'], r['cost_centre'], r['line'], r['ordinal'])
+    return (r['section'], r['cost_center'], r['line'], r['ordinal'])
 
 
 def read():
@@ -163,7 +163,7 @@ def published(document):
 
 def label_of(r, dup):
     n = r['line']
-    return '%s (%s)' % (n, r['cost_centre_name']) if dup[n] > 1 else n
+    return '%s (%s)' % (n, r['cost_center_name']) if dup[n] > 1 else n
 
 
 def page(fy, v, rows, prev, foot):
@@ -208,14 +208,27 @@ def page(fy, v, rows, prev, foot):
     # ---- the signature: from last year's budget to this draft, by the lines that moved most
     up = sorted([r for r in rows if r['_d'] > 0], key=lambda r: -r['_d'])
     top = up[:TOP_STEPS]
-    rest = inc - sum(r['_d'] for r in top)
+    # THE REST, SPLIT BY WHAT IT IS. TJ, 21 November 2026: "a 1.2m 'Everything else' line is
+    # surprising and confusing". One step for 303 lines hid that 46 of them FELL; so the rest is
+    # three steps -- the other salary lines that rose, the other lines that rose, the lines that
+    # fell -- each with its count in the label. They still carry the bridge to the cent.
+    named = {id(r) for r in top}
+    others = [r for r in rows if id(r) not in named]
+    sal_up = [r for r in others if r['_d'] > 0 and r['section'] == 'salaries']
+    oth_up = [r for r in others if r['_d'] > 0 and r['section'] != 'salaries']
+    fell = [r for r in others if r['_d'] < 0]
+    rest_steps = [(lab, grp) for lab, grp in (
+        ('%s more salary lines, up' % C.num(len(sal_up)), sal_up),
+        ('%s more lines outside salaries, up' % C.num(len(oth_up)), oth_up),
+        ('%s lines that fell' % C.num(len(fell)), fell)) if grp]
+    steps = [(label_of(r, dup), round(r['_d'], 2)) for r in top] + \
+            [(lab, round(sum(r['_d'] for r in grp), 2)) for lab, grp in rest_steps]
+    if abs(sum(x[1] for x in steps) - inc) > 0.05:
+        fail('%s: the bridge steps do not carry the FY%d budget to the draft' % (pid, fy_prior))
     bridge = TP.bridge('From last year’s budget to this draft',
-                       ('%s budget' % C.fy(fy_prior), round(pri, 2)),
-                       [(label_of(r, dup), round(r['_d'], 2)) for r in top]
-                       + [('Every other line', round(rest, 2))],
+                       ('%s budget' % C.fy(fy_prior), round(pri, 2)), steps,
                        ('Version %d' % v, round(tot, 2)), '$',
-                       note='The six lines that rose most, then the other %s lines together.' % C.num(len(rows) - len(top)),
-                       note_figures={'a': N(len(rows) - len(top), 'lines')})
+                       note='The six lines that rose most, then every other line by whether it rose or fell.')
     top_sum = sum(r['_d'] for r in top)
     share = 100 * top_sum / inc
     facts += [fact('total', U(tot), 'version %d, %s' % (v, C.fy(fy)), 'published',
@@ -298,13 +311,13 @@ def page(fy, v, rows, prev, foot):
                         so='A lower line may be a cut, a move to another line or a re-estimate; the draft does not say.'))
         flow += [cite(('chart', len(also)), 'draft'), ('conclusion', len(cons) - 1)]
 
-    # ---- every line, by cost centre
+    # ---- every line, by cost center
     new = [r for r in rows if not z(r['fy27_budget']) and z(r['fy28_proposed'])]
     zero = [r for r in rows if z(r['fy27_budget']) and not z(r['fy28_proposed'])]
     figs, allow = set(), set()
     groups = OrderedDict()
     for r in rows:
-        g = groups.setdefault((r['section'], r['cost_centre'], r['cost_centre_name']), [])
+        g = groups.setdefault((r['section'], r['cost_center'], r['cost_center_name']), [])
         g.append(r)
 
     def money(x):
@@ -329,21 +342,29 @@ def page(fy, v, rows, prev, foot):
             tag = 'new' if r in new else ('zero' if r in zero else '')
             lines.append(dict(line=r['line'], actual=money(r['fy26_actual']), prior=money(r['fy27_budget']),
                               proposed=money(r['fy28_proposed']), change=signed(r['_d']), n=round(r['_d'], 2),
+                              # the values each column sorts on: numbers, not prose (rule 2 checks strings)
+                              v=[r['fy26_actual'], r['fy27_budget'], r['fy28_proposed'], round(r['_d'], 2)],
                               tag=tag, page=r['page']))
         gl.append(dict(section=SEC[sec], code=cc, name=name or SEC[sec], prior=money(sum(z(r['fy27_budget']) for r in ls)),
                        proposed=money(sum(z(r['fy28_proposed']) for r in ls)), change=signed(d), n=round(d, 2),
+                       v=[round(sum(z(r['fy26_actual']) for r in ls), 2), round(sum(z(r['fy27_budget']) for r in ls), 2),
+                          round(sum(z(r['fy28_proposed']) for r in ls), 2), round(d, 2)],
                        lines=lines))
     for g in gl:
         figs.update([g['prior'], g['proposed']])
     figs.discard('')
     text = dict(line='Line', actual='%s actual' % C.fy(fy - 2), prior='%s budget' % C.fy(fy_prior),
                 proposed='Version %d' % v, change='Change', all='All lines', up='Up', down='Down',
-                new='New this year', zero='To zero', expand='Show every cost centre', collapse='Fold them',
+                new='New this year', zero='To zero', expand='Show every cost center', collapse='Fold them',
+                grouped='Group by cost center', sort_hint='Click a column to sort; again to reverse.',
+                search='Find a line, e.g. health insurance', none='No line matches.',
+                show_all='Show every line', fewer='Show fewer',
+                cost_center='Cost center',
                 actual_note='The %s actual is what was spent, printed for reference; nothing on this page is '
                             'measured from it.' % C.fy(fy - 2),
                 page='page')
     allow.update([C.fy(fy - 2), C.fy(fy_prior), 'Version %d' % v, 'page'])
-    lines_block = TB.custom('school-draft-lines', 'Every line, by cost centre',
+    lines_block = TB.custom('school-draft-lines', 'Every line, largest change first',
                             dict(groups=gl, text=text, counts=dict(new=len(new), zero=len(zero))),
                             place='body', figures=sorted(figs), allow=sorted(allow),
                             so='Each line is what the town would appropriate for it, net of grants and fees, not its cost.')
@@ -371,7 +392,7 @@ def page(fy, v, rows, prev, foot):
     table = dict(caption='How this draft was checked', views=[dict(
         key='footing', label='Against its own printed totals', kinds=['published'] * 4,
         columns=['Lines add to', 'Printed', 'Difference', 'Result'], rows=rows_t,
-        note='The district prints no total per cost centre, so each section and the whole are checked. '
+        note='The district prints no total per cost center, so each section and the whole are checked. '
              'A printed defect is the district’s reprint of a past year disagreeing with itself.')])
     flow += [cite(('table', 0), 'footing', 'draft'), 'sources']
 

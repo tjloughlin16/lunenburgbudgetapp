@@ -2459,7 +2459,7 @@ def check_fy_types(db):
 
 def load_school_draft_lines(db):
     """The district's budget DRAFTS, line by line -- every version it prints, appended, keyed
-    fy + version + section + cost centre + line + ordinal -- from
+    fy + version + section + cost center + line + ordinal -- from
     scripts/extract_fy28_draft_lines.py, which writes a draft only if every column it proposes
     foots to the document's own printed totals. `school_draft_footing` is that check, one row
     per identity, including any `printed defect` in a prior-year column.
@@ -2470,10 +2470,10 @@ def load_school_draft_lines(db):
     seasons = os.path.join(DATA, 'budget-seasons')
     db.execute('''CREATE TABLE school_draft_lines (
         fy INTEGER NOT NULL, version INTEGER NOT NULL, section TEXT NOT NULL,
-        cost_centre TEXT, cost_centre_name TEXT, line TEXT NOT NULL, ordinal INTEGER NOT NULL,
+        cost_center TEXT, cost_center_name TEXT, line TEXT NOT NULL, ordinal INTEGER NOT NULL,
         fy26_original REAL, fy26_actual REAL, fy27_budget REAL, fy28_proposed REAL,
         diff REAL, pct_diff TEXT, document TEXT NOT NULL, sha256 TEXT, page INTEGER,
-        PRIMARY KEY (fy, version, section, cost_centre, line, ordinal))''')
+        PRIMARY KEY (fy, version, section, cost_center, line, ordinal))''')
     db.execute('''CREATE TABLE school_draft_footing (
         fy INTEGER, version INTEGER, "check" TEXT, "column" TEXT,
         lines_sum REAL, printed REAL, difference REAL, result TEXT)''')
@@ -2482,7 +2482,7 @@ def load_school_draft_lines(db):
         return 0
     data = list(csv.DictReader(open(_note(lines), encoding='utf-8')))
     db.executemany('INSERT INTO school_draft_lines VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
-                   [(int(r['fy']), int(r['version']), r['section'], r['cost_centre'], r['cost_centre_name'],
+                   [(int(r['fy']), int(r['version']), r['section'], r['cost_center'], r['cost_center_name'],
                      r['line'], int(r['ordinal']), num(r['fy26_original']), num(r['fy26_actual']),
                      num(r['fy27_budget']), num(r['fy28_proposed']), num(r['diff']), r['pct_diff'] or None,
                      r['document'], r['sha256'] or None, int(r['page'])) for r in data])

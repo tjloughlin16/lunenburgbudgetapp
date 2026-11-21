@@ -8,13 +8,13 @@ TJ, 20 November 2026: "we need to ingest it to put it in the DB", and "as the sc
 line budgets, we need to process them and do the same, automatically without me asking." So
 nothing here names a document. A draft is found in the district's own catalogue
 (`sources/district-budget/index.csv`) by its title -- `FY28 Budget Version 1` -- and every draft
-found is read, so Version 2 APPENDS rather than replaces. The key is fy + version + cost centre
+found is read, so Version 2 APPENDS rather than replaces. The key is fy + version + cost center
 + line (+ an ordinal where the district prints one label twice under one heading).
 
 Each draft prints, per line: FY26 Original Budget, FY26 Actual Exp, FY27 Budget, FY28 Proposed,
-$ Diff, % Diff -- under cost centre headings (`1110 - School Committee`), in two sections
+$ Diff, % Diff -- under cost center headings (`1110 - School Committee`), in two sections
 (expenses, then DISTRICT SALARIES), then TOTAL EXPENSES, TOTAL SALARIES, a Salary Reserve line
-and TOTAL ACTUALS & BUDGET. The district prints NO subtotal per cost centre, so what can be
+and TOTAL ACTUALS & BUDGET. The district prints NO subtotal per cost center, so what can be
 footed (rule 13) is:
 
   1. every line's own identity: FY28 Proposed - FY27 Budget = $ Diff, where a diff is printed;
@@ -56,7 +56,7 @@ TOLERANCE_PHRASE = 'within $1 rounding tolerance'
 MONEY = re.compile(r'-?\$-?[\d,]+(?:\.\d+)?')
 PCT = re.compile(r'-?[\d,]+(?:\.\d+)?%')
 HEADING = re.compile(r'^(\d{4})\s*-\s*(.+)$')
-COLS = ['fy', 'version', 'section', 'cost_centre', 'cost_centre_name', 'line', 'ordinal',
+COLS = ['fy', 'version', 'section', 'cost_center', 'cost_center_name', 'line', 'ordinal',
         'fy26_original', 'fy26_actual', 'fy27_budget', 'fy28_proposed', 'diff', 'pct_diff',
         'document', 'sha256', 'page']
 FIG = ('fy26_original', 'fy26_actual', 'fy27_budget', 'fy28_proposed', 'diff')
@@ -149,7 +149,7 @@ def parse(d):
                 cc, ccname = '', ''
             k = (sec, cc, label)
             seen[k] = seen.get(k, 0) + 1
-            r = dict(fy=d['fy'], version=d['version'], section=sec, cost_centre=cc, cost_centre_name=ccname,
+            r = dict(fy=d['fy'], version=d['version'], section=sec, cost_center=cc, cost_center_name=ccname,
                      line=label, ordinal=seen[k], document=d['path'], sha256=d['sha256'], page=pno,
                      pct_diff=pm.group(0) if pm else '')
             for i, c in enumerate(FIG):
@@ -194,7 +194,7 @@ def foot(d, rows, totals):
             got, want = r['fy28_proposed'] - r['fy27_budget'], r['diff']
             if round(got - want, 2) != 0:
                 bad += 1
-                close('line %r (%s, page %d): FY28 - FY27 = $ Diff' % (r['line'], r['cost_centre'], r['page']), 'diff', got, want, True)
+                close('line %r (%s, page %d): FY28 - FY27 = $ Diff' % (r['line'], r['cost_center'], r['page']), 'diff', got, want, True)
     checks.append(dict(fy=d['fy'], version=d['version'], check='%d lines printing a $ Diff: FY28 - FY27 = $ Diff' % n,
                        column='diff', lines_sum='', printed='', difference='', result='ties' if not bad else '%d do not' % bad))
     for sec, key in (('expenses', 'TOTAL EXPENSES'), ('salaries', 'TOTAL SALARIES')):
@@ -235,8 +235,8 @@ def build():
             continue
         tol = sum(1 for c in checks if c['result'] == TOLERANCE_PHRASE)
         defects = [c for c in checks if c['result'] == 'printed defect']
-        report.append('FY%d Version %d: %d lines, %d cost centres; every proposed column and every line identity ties%s%s'
-                      % (d['fy'] % 100, d['version'], len(rows), len({(r['section'], r['cost_centre']) for r in rows}),
+        report.append('FY%d Version %d: %d lines, %d cost centers; every proposed column and every line identity ties%s%s'
+                      % (d['fy'] % 100, d['version'], len(rows), len({(r['section'], r['cost_center']) for r in rows}),
                          ('; %d %s' % (tol, TOLERANCE_PHRASE)) if tol else '',
                          ''.join('; printed defect in %s: %s differs by $%.2f' % (c['column'], c['check'], abs(c['difference'])) for c in defects)))
         out.extend(rows)
