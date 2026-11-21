@@ -299,6 +299,12 @@ def nth(t):
     return '%d%s of %d' % (r, suf, t[1])
 
 
+def from_bottom(t):
+    """5 of 6 as '2nd-lowest': how far from the bottom, which is what a reader is asking."""
+    k = t[1] - t[0] + 1
+    return 'lowest' if k == 1 else '%s-lowest' % ({2: '2nd', 3: '3rd'}.get(k) or '%dth' % k)
+
+
 def band(t):
     """Where a rank sits in ITS OWN list, so 5 of 6 and 19 of 35 can be compared: the
     first place, or the top, middle or bottom third by rank over list length."""
@@ -598,10 +604,11 @@ def payload(rows, F, concl):
         about='The track and field in the town\u2019s capital process: every ranking, request, '
               'plan line and vote the archive holds, FY%d to FY%d.' % (FIRST, LAST),
         stats=[
-            dict(value='%s \u2192 1st' % nth(F['sc24']).split(' of ')[0],
-                 label='the schools\u2019 priority for the field: near last at %s in FY2024 and '
-                       '%s in FY2025; %s in FY2027, and first for FY2028 (the last two as heard)'
-                       % (nth(F['sc24']), nth(F['sc25']), nth(F['sc27']))),
+            dict(value='%s \u2192 first' % from_bottom(F['sc24']),
+                 label='the schools\u2019 own priority for the field: %s of %d in FY2024, %s of '
+                       '%d in FY2025; %s in FY2027, and first for FY2028 (the last two as heard)'
+                       % (from_bottom(F['sc24']), F['sc24'][1], from_bottom(F['sc25']),
+                          F['sc25'][1], nth(F['sc27']))),
             dict(value=of(F['cpc24']),
                  label='the capital committee\u2019s rank, FY2024: the %s. FY2025: %s, the %s'
                        % (band(F['cpc24']), of(F['cpc25']), band(F['cpc25']))),
