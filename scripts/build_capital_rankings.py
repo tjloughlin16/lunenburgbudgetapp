@@ -40,8 +40,11 @@ import build_capital_unranked as BU  # noqa: E402
 DATA = os.path.join(ROOT, 'sources', 'data', 'capital-rankings.csv')
 UDATA = BU.DATA   # requests made and never ranked: scripts/build_capital_unranked.py
 OUT_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
-HUB = 'capital-rankings'
+HUB = 'capital-planning'
 YEARS = (2023, 2024, 2025, 2026, 2027)
+# The Town's capital cost test (Article 13, FY2027 Capital Plan, page 2; FY2024 budget message). TJ, 21
+# November 2026: "20k it is, lets keep that as the threshold" -- drawn on the request-sizes chart.
+CAPITAL_LINE = 20000
 DEPTS = ['Public Works', 'Facilities', 'Schools', 'Fire', 'Police', 'IT', 'General government']
 
 DOC = {   # every document a page cites: label and the archive address
@@ -1031,9 +1034,10 @@ def sizes_block(R):
         funded='Funded', unfunded='Not funded', dept='Department', dots='Each request, by its cost',
         n='Requests funded', med='Typical request (median)', req='Requested', fun='Funded',
         own='Of its own dollars', share='Of all funded'),
+        line=dict(v=CAPITAL_LINE, text='The capital threshold, %s' % C.usd(CAPITAL_LINE)),
         note='%s to %s together, the requests on the committee’s ranked lists. The scale is logarithmic: each '
              'step is ten times the one before. Most funded first.' % (C.fy(YEARS[0]), C.fy(YEARS[-1])))
-    figs |= {C.fy(YEARS[0]), C.fy(YEARS[-1])}
+    figs |= {C.fy(YEARS[0]), C.fy(YEARS[-1]), C.usd(CAPITAL_LINE)}
     names = sorted({d['tip'] for r in rows for d in r['dots']})
     blk = TB.custom('capital-request-sizes', 'Who got the most, and how big they asked', data, place='body',
                     figures=sorted(figs), allow=names,

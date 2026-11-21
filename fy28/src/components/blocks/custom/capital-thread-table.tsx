@@ -1,4 +1,4 @@
-/** EVERY REQUEST, EVERY YEAR (the capital-rankings hub's signature).
+/** EVERY REQUEST, EVERY YEAR (the capital-planning hub's signature).
  *
  *  TJ, 20 November 2026: the table is FULL, no pruning -- "all items by FY in priority order. a LINE
  *  connects the FY items visually ... it should look like a table with the connected info drawn".

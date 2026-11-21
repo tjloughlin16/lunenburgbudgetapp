@@ -1,4 +1,4 @@
-/** WHO GOT THE MOST, AND HOW BIG THEY ASKED (the capital-rankings hub).
+/** WHO GOT THE MOST, AND HOW BIG THEY ASKED (the capital-planning hub).
  *
  *  TJ, 20 November 2026: "which dept got the most funding ... esp including somehow based on their
  *  requests (do they not make a lot of big requests?!)". A row per department, most funded first.
@@ -15,6 +15,7 @@ type Row = {
 }
 type Data = {
   rows: Row[]; ticks: { v: number; text: string }[]; note: string
+  line?: { v: number; text: string }
   text: { funded: string; unfunded: string; dept: string; dots: string; n: string; med: string; req: string; fun: string; own: string; share: string }
 }
 
@@ -34,6 +35,7 @@ export default function CapitalRequestSizes({ data, alt }: CustomProps) {
       <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
         <span className="inline-flex items-center gap-1.5"><svg width="10" height="10"><circle cx="5" cy="5" r="4" fill={FUNDED} /></svg>{d.text.funded}</span>
         <span className="inline-flex items-center gap-1.5"><svg width="10" height="10"><circle cx="5" cy="5" r="3.5" fill="none" stroke={UNFUNDED} strokeWidth="1.5" /></svg>{d.text.unfunded}</span>
+        {d.line && <span className="inline-flex items-center gap-1.5"><svg width="10" height="12"><line x1="5" x2="5" y1="0" y2="12" stroke="var(--text-primary)" strokeDasharray="3 2" /></svg>{d.line.text}</span>}
       </div>
       <div className="w-full max-w-full overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
         <table className="border-collapse text-[12.5px]" style={{ minWidth: 130 + W + 6 * 92 }}>
@@ -65,6 +67,7 @@ export default function CapitalRequestSizes({ data, alt }: CustomProps) {
                 <td className="px-2 py-1 align-middle">
                   <svg width={W} height={H} role="img" aria-label={`${r.label}: ${r.dots.length}`}>
                     {d.ticks.map(t => <line key={t.v} x1={x(t.v)} x2={x(t.v)} y1={2} y2={H - 2} stroke="var(--grid)" />)}
+                    {d.line && <line x1={x(d.line.v)} x2={x(d.line.v)} y1={0} y2={H} stroke="var(--text-primary)" strokeDasharray="3 2" />}
                     {r.dots.map((p, i) => (
                       <circle key={i} cx={x(p.amt)} cy={H / 2 + ((i % 3) - 1) * 6} r={4.5}
                         fill={p.ok ? FUNDED : 'var(--surface-1)'} fillOpacity={p.ok ? 0.85 : 1}

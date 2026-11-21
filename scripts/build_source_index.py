@@ -1842,7 +1842,7 @@ GROUPS = [
              'year, with every ranking the year\u2019s documents print (the committee, the Town '
              'Manager, the Collins score, members\u2019 ranks), the amount, whether it was funded, '
              'and the document and page each value came from. extract_capital_rankings.py builds '
-             'it; build_capital_rankings.py builds /capital-rankings from it.'),
+             'it; build_capital_rankings.py builds /capital-planning from it.'),
             ('data/thread-callouts.csv',
              'What someone says next about a thread, chosen by a person', 2,
              'Written by us: one row per callout on a thread -- a sum of money, a warrant '

@@ -12,7 +12,7 @@ Each year keeps its own address. Every figure is sources/data/capital-rankings.c
 written by scripts/extract_capital_rankings.py.
 """
 CATEGORY = dict(
-    id='capital-rankings', shelf='Capital planning', title='Capital planning rankings', area='town',
+    id='capital-planning', shelf='Capital planning', title='Capital planning rankings', area='town',
     order=55,
     # Capital-sized school work paid from the upkeep budget, not ranked here (TJ, 21 November 2026:
     # the page lives on the school buildings hub, "and capital ranking ... should have a link to it").

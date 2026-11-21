@@ -832,7 +832,7 @@ CHECKS = [
     # four minutes and not forty.
     ('extract_dese_staffing.py', ['--check']),
     # SCHOOL FACILITY JOBS: every order on the school upkeep lines (the dataset, the database table)
-    # and the capital-rankings companion page. Rebuilt by the refresh whenever the journal moves.
+    # and the capital-planning companion page. Rebuilt by the refresh whenever the journal moves.
     ('build_school_facility_jobs.py', ['--check']),
     ('build_db.py', ['--check']),
     ('check_archive_layout.py', []),

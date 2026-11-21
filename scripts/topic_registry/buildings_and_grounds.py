@@ -22,7 +22,7 @@ CATEGORY = dict(
     ])
 GENERATOR = 'build_buildings_topics.py'
 # Upkeep orders that met the Town's capital cost test (TJ, 21 November 2026). Its own generator,
-# rebuilt by the refresh whenever the school journal changes. Moved here from the capital-rankings
+# rebuilt by the refresh whenever the school journal changes. Moved here from the capital-planning
 # shelf the same day: "that page probably needs to go under the school hub".
 TOPIC_GENERATORS = {'school-facility-jobs': 'build_school_facility_jobs.py'}
 TOPICS = {

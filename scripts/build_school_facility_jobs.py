@@ -1,12 +1,12 @@
 #!/usr/bin/env python3.11
 """SCHOOL FACILITY JOBS: every purchase order on the school building-and-grounds lines, as a
-dataset and a database table, and the capital-rankings companion page that sets them against the
+dataset and a database table, and the capital-planning companion page that sets them against the
 Town's capital test.
 
     python3.11 scripts/build_school_facility_jobs.py           # write the CSV and the page
     python3.11 scripts/build_school_facility_jobs.py --check   # fail if either would change
 
-TJ, 21 November 2026: *"we probably need a companion report for the schools for /capital-rankings
+TJ, 21 November 2026: *"we probably need a companion report for the schools for /capital-planning
 that shows that the school has permanent, operational funding for projects that are WELL WITHIN
 the purview of capital planning"* -- and *"i want this to be an automated thing. anytime we get new
 data that can fill in the facility jobs table, that should be done automatically too"*. So this

@@ -1,4 +1,4 @@
-/** WHAT WE HOLD, YEAR BY YEAR (near the foot of the capital-rankings hub).
+/** WHAT WE HOLD, YEAR BY YEAR (near the foot of the capital-planning hub).
  *
  *  TJ, 20 November 2026: "put a table on the page, probably toward the bottom, that shows the
  *  information we have for every year." One row per fiscal year, newest first, as far back as any

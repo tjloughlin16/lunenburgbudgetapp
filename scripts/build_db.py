@@ -1196,7 +1196,7 @@ REFERENCE = [
     # comparing a co-op total with every other sport's one-town total.
     'ski-coop',
     'athletics-history', 'capital-funding-history', 'capital-plan-fy27',
-    # which planning documents are held for each capital cycle, FY1999-FY2028 (the /capital-rankings table)
+    # which planning documents are held for each capital cycle, FY1999-FY2028 (the /capital-planning table)
     'capital-coverage',
     'free-cash-proof', 'fund-1301-cash-journal', 'ood-tuition-history',
     'line-history-disagreements', 'rate-register', 'sped-para-history',

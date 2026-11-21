@@ -1,4 +1,4 @@
-/** EACH DEPARTMENT, EACH YEAR (the capital-rankings hub): the department-by-year table drawn.
+/** EACH DEPARTMENT, EACH YEAR (the capital-planning hub): the department-by-year table drawn.
  *
  *  TJ, 20 November 2026: "another chart AND table that shows the same info as 'Each department,
  *  year by year'". Small multiples: a row per department, a column per fiscal year, in each cell a
