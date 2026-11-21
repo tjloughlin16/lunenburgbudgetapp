@@ -51,19 +51,26 @@ PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', '%s.json' % RID)
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 FIRST, LAST = 2014, 2028
 
-# THE ROUNDS. One table per round, in the order a reader meets them. A round is a cycle, or
-# part of one: FY2027 holds two, the capital plan and then the Special Town Meeting article,
-# split at the School Committee's vote of 16 September 2026 that started the second.
+# THE ROUNDS. One table per round, NEWEST FIRST (TJ, 20 November 2026: "id expect: newest
+# first, in that order all the way down"). A round is a cycle, or part of one: FY2027 holds
+# two, the capital plan and then the Special Town Meeting article, split at the School
+# Committee's vote of 16 September 2026 that started the second. The key names the round's
+# outcome line in outcomes().
 ROUNDS = [
-    (2017, None, None, 'Round 1 · money for FY2017 · borrowing article, May 2016'),
-    (2024, None, None, 'Round 2 · money for FY2024 · capital plan (a feasibility study)'),
-    (2025, None, None, 'Round 3 · money for FY2025 · capital plan (survey and drainage)'),
-    (2026, None, None, 'Round 4 · money for FY2026 · capital plan, then a spring 2025 article'),
-    (2027, None, '2026-09-16', 'Round 5 · money for FY2027 · capital plan'),
-    (2027, '2026-09-16', None, 'Round 6 · money for FY2027 · Special Town Meeting, Article 9'),
-    (2028, None, None, 'Round 7 · money for FY2028 · capital plan (under way)'),
+    (2028, None, None, 'Round 7 · money for FY2028 · capital plan (under way)', 'r28'),
+    (2027, '2026-09-16', None, 'Round 6 · money for FY2027 · Special Town Meeting, Article 9', 'r27s'),
+    (2027, None, '2026-09-16', 'Round 5 · money for FY2027 · capital plan', 'r27'),
+    (2026, None, None, 'Round 4 · money for FY2026 · capital plan, then a spring 2025 article', 'r26'),
+    (2025, None, None, 'Round 3 · money for FY2025 · capital plan (survey and drainage)', 'r25'),
+    (2024, None, None, 'Round 2 · money for FY2024 · capital plan (a feasibility study)', 'r24'),
+    (2017, None, None, 'Round 1 · money for FY2017 · borrowing article, May 2016', 'r17'),
 ]
+# What a timeline row is ABOUT, in the words a reader would use. A row with no plain sentence
+# stays in the dataset and off the page: duplicate readings of one rank, undated score sheets.
+ABOUT = {'asked', 'priced', 'planned', 'ranked', 'not ranked', 'left out', 'withdrawn',
+         'recommended', 'voted', 'paid', 'work', 'talked about'}
 ROUND_CYCLES = {r[0] for r in ROUNDS}
+
 
 
 # ---------------------------------------------------------------------------- reading
@@ -144,6 +151,23 @@ def verify(rows):
             for part in re.split(r'\.\.\.|\u2026', seg):
                 if part.strip() and _norm(part) not in src:
                     bad.append('line %d: not found in %s: %r' % (r['_line'], rel, part[:80]))
+    return bad + check_plain(rows)
+
+
+def check_plain(rows):
+    """The plain sentence is ours, so it may not carry a figure its row does not (rule 2):
+    every dollar amount and every comma-grouped number in it must be in the row's amount,
+    vote, account of what happened, or quote."""
+    bad = []
+    for r in rows:
+        t = r.get('plain', '')
+        if bool(t) != bool(r.get('about')) or (r.get('about') and r['about'] not in ABOUT):
+            bad.append('line %d: about %r with plain %r' % (r['_line'], r.get('about'), t[:40]))
+        hay = re.sub(r'[^0-9.m]', '', ' '.join(
+            (r['amount'], r['vote'], r['what_happened'], r['quote'], r['rank'], r['rank_of'])).lower())
+        for fig in re.findall(r'\$[\d,.]+[mM]?|\b\d{1,3}(?:,\d{3})+', t):
+            if re.sub(r'[^0-9.m]', '', fig.lower()).rstrip('.') not in hay:
+                bad.append('line %d: plain sentence carries %s, which its row does not' % (r['_line'], fig))
     return bad
 
 
@@ -254,6 +278,8 @@ def figures(rows):
     F['turf25'] = dollars(p25, r'\$([\d.]+M) \(FY29\)')
     F['est25'] = F['hard25'] + F['turf25']
     # The rows themselves.
+    F['bond17'] = dollars(one(rows, cycle_fy='2017', date='2017-01-17', kind='debt'), r'^([\d,]+)$')
+    F['cpc26_n'] = int(one(rows, cycle_fy='2026', date='2024-12-16', kind='absence')['rank_of'])
     F['rows'] = len(rows)
     F['docs'] = sum(1 for r in rows if r['basis'] == 'document')
     F['heard'] = sum(1 for r in rows if heard(r))
@@ -419,27 +445,84 @@ def _what(r):
     return w
 
 
+def _who(body):
+    b = body.split(' (')[0].strip(' -') or 'document'
+    for long, short in (('Lunenburg Public Schools to Capital Planning Committee', 'Schools, to the capital committee'),
+                        ('Lunenburg Public Schools', 'Schools'),
+                        ('Capital Planning Committee', 'Capital committee'),
+                        ('Town Manager preliminary FY24 plan', 'Town Manager'),
+                        ('Town Manager preliminary FY25 plan', 'Town Manager'),
+                        ('Finance Committee (draft ATM warrant', 'Finance Committee')):
+        if b.startswith(long):
+            return short + b[len(long):]
+    for org in ('Town Manager', 'Select Board', 'School Committee', 'Finance Committee'):
+        if b.startswith(org):
+            return org
+    return b
+
+
 def row_out(r):
-    return dict(date=_short_date(r['date']), body=r['body'], kind=r['kind'], what=_what(r),
+    return dict(date=_short_date(r['date']), body=r['body'], who=_who(r['body']),
+                about=r['about'], plain=r['plain'] + (' (as heard)' if heard(r) and r['plain'] else ''),
+                kind=r['kind'], what=_what(r),
                 amount=r['amount'], vote=r['vote'],
                 basis='as heard (captions)' if heard(r) else (
                     'our record' if r['basis'].startswith('our record') else 'document'),
                 doc=r['doc'], where=r['where'], line=r['_line'])
 
 
-def rounds(rows):
+def _newest_first(rs):
+    # An undated row goes last, not first: '9999' is _sortkey's sentinel for no date.
+    return sorted(rs, key=lambda r: (_sortkey(r)[0] != '9999', _sortkey(r)), reverse=True)
+
+
+def outcomes(F):
+    """One plain line per round: asked, capital committee, Town Manager's plan, Town Meeting,
+    money. Every figure is F's; nothing here is typed."""
+    h = lambda b: ' (as heard)' if b else ''
+    return {
+        'r28': dict(asked='first on the schools\u2019 draft plan' + h(F['first28_heard']),
+                    committee='no list yet', plan='\u2014', meeting='\u2014', money='none yet'),
+        'r27s': dict(asked='%s for engineering, its own article' % C.usd(F['vote26']),
+                     committee='not ranked', plan='not in it',
+                     meeting='voted %d-%d%s' % (F['yes26'], F['no26'], h(F['vote26_heard'])),
+                     money='%s from the stabilization fund, engineering only' % C.usd(F['vote26'])),
+        'r27': dict(asked='schools\u2019 priority %s%s' % (of(F['sc27']), h(F['sc27_heard'])),
+                    committee='chair took it out as too complex; not on the list of %d' % F['cpc27_n'],
+                    plan='not in it', meeting='\u2014', money='none'),
+        'r26': dict(asked='shown as a future request, unranked; then a design article',
+                    committee='not on the list of %d' % F['cpc26_n'], plan='not in it',
+                    meeting='article taken off the warrant by the Select Board', money='none'),
+        'r25': dict(asked='%s, survey and drainage' % C.usd(F['req25']),
+                    committee='ranked %s' % of(F['cpc25']), plan='left out',
+                    meeting='plan passed; its item list is unreadable in our copy', money='none found'),
+        'r24': dict(asked='%s feasibility study' % C.usd(F['req24']),
+                    committee='ranked %s' % of(F['cpc24']), plan='left out',
+                    meeting='plan passed; its item list is unreadable in our copy',
+                    money='%s from ARPA (federal pandemic relief) instead' % C.usd(F['arpa24'])),
+        'r17': dict(asked='not through the capital plan', committee='listed it, unranked',
+                    plan='not in it', meeting='borrowed %s by its own article' % C.usd(F['vote16']),
+                    money='bonds of %s; turf replaced that autumn' % C.usd(F['bond17'])),
+    }
+
+
+def rounds(rows, F):
     out, used = [], set()
-    for cyc, since, until, title in ROUNDS:
+    oc = outcomes(F)
+    for cyc, since, until, title, key in ROUNDS:
         rs = [r for r in rows if int(r['cycle_fy']) == cyc
               and (since is None or _sortkey(r)[0] >= since)
               and (until is None or _sortkey(r)[0] < until)]
-        rs.sort(key=_sortkey)
         used.update(r['_line'] for r in rs)
-        out.append(dict(title=title, cycle=cyc, rows=[row_out(r) for r in rs]))
-    rest = sorted((r for r in rows if r['_line'] not in used), key=lambda r: (int(r['cycle_fy']),) + _sortkey(r))
+        shown = [r for r in _newest_first(rs) if r['plain']]
+        out.append(dict(title=title, cycle=cyc, outcome=oc[key],
+                        rows=[row_out(r) for r in shown], in_dataset=len(rs) - len(shown)))
+    rest = [r for r in rows if r['_line'] not in used]
+    rest = sorted(_newest_first(rest), key=lambda r: int(r['cycle_fy']), reverse=True)
     other = dict(title='Every other cycle, FY%d to FY%d · no field money asked for that year'
                        % (FIRST, LAST), cycle=None,
-                 rows=[dict(row_out(r), cycle='FY' + r['cycle_fy']) for r in rest])
+                 rows=[dict(row_out(r), cycle='FY' + r['cycle_fy']) for r in rest if r['plain']],
+                 in_dataset=sum(1 for r in rest if not r['plain']))
     if len(used) + len(rest) != len(rows):
         raise SystemExit('%s: rounds lost a row' % ME)
     return out, other
@@ -489,7 +572,7 @@ def sources(rows):
 
 
 def payload(rows, F, concl):
-    rs, other = rounds(rows)
+    rs, other = rounds(rows, F)
     return dict(
         id=RID, generated_by='scripts/' + ME,
         about='The track and field in the town\u2019s capital process: every ranking, request, '
@@ -534,18 +617,31 @@ def markdown(P, F):
         L += ['**%s** %s' % (c['claim'], c['so_what']), '', c['detail'], '',
               '*Rests on:* %s *Does not show:* %s' % (c['basis'], c['not_shown']), '']
     L += ['## Round by round', '',
-          'Every row is in `track-field-capital-history.csv`, with its quote and where it is '
-          'on the page or in the recording.', '']
+          'Newest first. Each time the field came up for money, what was asked and what each '
+          'step did with it.', '',
+          '| round | asked for | capital committee | Town Manager\u2019s plan | Town Meeting | money |',
+          '|---|---|---|---|---|---|']
+    for rd in P['rounds']:
+        o = rd['outcome']
+        L.append('| %s |' % ' | '.join(_cell(c) for c in (
+            rd['title'].split(' · ')[1].replace('money for ', ''), o['asked'], o['committee'],
+            o['plan'], o['meeting'], o['money'])))
+    L += ['', 'Below, each round as a timeline, newest event first. *About* says what the event '
+          'was: asked, ranked, left out, voted, paid. Every row, and the raw readings behind it, '
+          'is in `track-field-capital-history.csv` with its quote and page.', '']
     for rd in P['rounds'] + [P['other']]:
         L += ['### ' + rd['title'], '']
         multi = rd['cycle'] is None
-        head = (['cycle'] if multi else []) + ['date', 'body', 'what happened', 'amount',
-                                               'vote', 'basis']
+        head = (['cycle'] if multi else []) + ['date', 'about', 'who', 'what happened']
         L += ['| %s |' % ' | '.join(head), '|%s' % ('---|' * len(head))]
         for r in rd['rows']:
-            cells = ([r['cycle']] if multi else []) + [r['date'], r['body'], r['what'],
-                                                       r['amount'], r['vote'], r['basis']]
+            cells = ([r['cycle']] if multi else []) + [r['date'], r['about'], r['who'], r['plain']]
             L.append('| %s |' % ' | '.join(_cell(c) for c in cells))
+        if rd['in_dataset']:
+            L += ['', '*%d more reading%s for this round (the same rank in another copy, score '
+                  'sheets, plans read and found without the field) %s in the dataset.*'
+                  % (rd['in_dataset'], '' if rd['in_dataset'] == 1 else 's',
+                     'is' if rd['in_dataset'] == 1 else 'are')]
         L.append('')
     L += ['## What this does not establish', '']
     L += ['- ' + s for s in P['not_established']]

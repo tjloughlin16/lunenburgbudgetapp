@@ -45,151 +45,142 @@ The September 2025 draft splits it: $920,000 for hardscape and drainage, $1,500,
 
 ## Round by round
 
-Every row is in `track-field-capital-history.csv`, with its quote and where it is on the page or in the recording.
+Newest first. Each time the field came up for money, what was asked and what each step did with it.
 
-### Round 1 · money for FY2017 · borrowing article, May 2016
-
-| date | body | what happened | amount | vote | basis |
+| round | asked for | capital committee | Town Manager’s plan | Town Meeting | money |
 |---|---|---|---|---|---|
-| 27 Oct 2015 | Capital Planning Committee | Capital Planning Committee minutes list "Projects": Turf Field $800,000 (with Five Intersections, Townsend Harbor Bridge, Stormwater Update, Pavement Management Plan). Background: the town has not accrued funds; minute says "So this is an FY18 project at the earliest" in the same block. | 800,000 |  | document |
-| 12 Jan 2016 | Capital Planning Committee | Bond counsel: turf/track/field does not qualify for contingency fund spending. Track surface about one year from needing $150,000 repair; later cost "a multiple". Turf may last another year. Committee asked whether such large projects belong in the capital process. | 150,000 (track surface) |  | document |
-| 2 Feb 2016 | Select Board | Town Manager: working with the Parks Commission on a financing plan for replacing the existing turf field and track using non-budgetary funds. |  |  | document |
-| 15 Mar 2016 | Select Board | Warrant preview: borrowing to replace the turf field; funding source "would be the cell tower revenue and rental fees". Number printed there is Article 33; it became Article 28 at Town Meeting. |  |  | document |
-| 28 Apr 2016 | Finance Committee | Finance Committee took no position before Town Meeting on funding for renovation of the turf field and track; awaited the presentation. |  | no recommendation yet | document |
-| 3 May 2016 | Select Board | Select Board recommended Articles 27 (cell tower lease) and 28 (turf and track), 4-1. School/athletic contributions described: $25,000 school athletic budget, $15,000 youth soccer, $7,500 Bengals, $77,500 a year in total including cell tower revenue. | 77,500 a year (annual funding plan, as stated by speakers) | 4-1 (Select Board recommendation) | document |
-| 5 May 2016 | Annual Town Meeting | FY2017 Capital Plan list (12 requests, $780,975; items 1-10 funded, $619,475, cash, "There is no request to borrow funds") has no turf/track line. The turf and track went to a separate Article 28 borrowing. | 619,475 (plan) | Art. 14 passed | document |
-| 5 May 2016 | Annual Town Meeting | Art. 28 voted: appropriate $770,000 to replace the artificial turf field and track, by borrowing (Ch. 44 s. 7(25)). The warrant printed $600,000. | 770,000 | VOTED 2/3RDS DECLARED | document |
-| 7 May 2016 | Finance Committee (at ATM) | Finance Committee recommended Article 28 (borrowing to renovate/replace turf field and track) 4-0; one member recused for a conflict of interest. |  | 4-0 recommend (one recusal) | document |
-| 30 Jun 2016 | Debt table (FY2016 annual report) | Authorized unissued debt at 30 June 2016 includes 770,000.00 Artificial Turf Field & Track. | 770,000 |  | document |
-| 2 Aug 2016 | Select Board | Replacement under way: Parks Commission with Warner Larson Landscape Architects on specifications; bids planned by end of the month; field to be ready by end of October. |  |  | document |
-| 17 Nov 2016 | Parks Commission | Turf finished; track to be resurfaced in the spring; materials paid, track labour to be paid when done. |  |  | document |
-| 17 Jan 2017 | Select Board | Bond issuance approved: $2,580,000 in three items; artificial turf field $760,000 at 2.88%, twelve years (pavement management $1,675,000 at 2.92%, 15 years; rest sewer). | 760,000 | All in Favor (motion to approve the $2,580,000 bond as presented, all three items together) | document |
+| FY2028 | first on the schools’ draft plan (as heard) | no list yet | — | — | none yet |
+| FY2027 | $195,830 for engineering, its own article | not ranked | not in it | voted 57-18 (as heard) | $195,830 from the stabilization fund, engineering only |
+| FY2027 | schools’ priority 4 of 8 (as heard) | chair took it out as too complex; not on the list of 22 | not in it | — | none |
+| FY2026 | shown as a future request, unranked; then a design article | not on the list of 25 | not in it | article taken off the warrant by the Select Board | none |
+| FY2025 | $200,000, survey and drainage | ranked 19 of 35 | left out | plan passed; its item list is unreadable in our copy | none found |
+| FY2024 | $50,000 feasibility study | ranked 21 of 29 | left out | plan passed; its item list is unreadable in our copy | $50,000 from ARPA (federal pandemic relief) instead |
+| FY2017 | not through the capital plan | listed it, unranked | not in it | borrowed $770,000 by its own article | bonds of $760,000; turf replaced that autumn |
 
-### Round 2 · money for FY2024 · capital plan (a feasibility study)
-
-| date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|
-| 21 Sep 2022 | Lunenburg Public Schools administration (slide title: Administrative Priorities) | Athletic Complex Feasibility Study at LMHS (matched by us to LPS23-06 MS/HS Turf Field Feasibility Study: same $50,000; no project number printed in this deck); Administrative Priorities - Rank Order (numbered list): 5 of 6 | $50,000.00 (FY24, p13 slide headed FY24 Capital Plan Administrative Priorities) |  | document |
-| 26 Oct 2022 | Lunenburg Public Schools to Capital Planning Committee | Schools requested an Athletic Complex Feasibility Study (LPS23-06) at $50,000 for FY24; ranked 5 of 6 in the schools' FY24 priority order; ten-year outlook also carried $2,200,000 (walls, drainage, concession stand) across FY24-FY26. | 50,000 (study); 2,200,000 (ten-year outlook) |  | document |
-| 26 Oct 2022 | Capital Planning Committee (agenda summary) | Schools' written summary: current conditions show sunken pavers, leaning fencing, leaning walls and drainage issues on the track and turf field; study to determine whether fixing drainage is possible. | 50,000 (study); 2,200,000 |  | document |
-| 26 Oct 2022 | Lunenburg Public Schools (deck: Proposed Capital Projects FY24) | Athletic Complex Feasibility Study at LMHS (matched to LPS23-06 by us, same $50,000); FY24 Capital Plan Projects Priority Order (numbered list): 5 of 6 | $50,000.00 (p30 and pp24-29) |  | document |
-| 14 Dec 2022 | Capital Planning Committee (video captions, not a record) | Captions: a member, asked to review the changes in his own scoring, reads it out: "the turf field feasibility study I made that at 24". One member's score, not the committee's composite. | 50,000 |  | as heard (captions) |
-| 26 Jan 2023 | Town Manager preliminary FY24 plan | LPS23-06 study listed among "Capital Requests Not Included in Preliminary FY24 Capital Plan Recommendation": TM priority 18, CPC priority 21, Collins 22. Same deck ten-year page: LPS23-03 engineered drawings $150,000 (FY2025) and LPS20-04-A turf walls/drainage $2,000,000 (FY2026). | 50,000 (study not included); 150,000 FY25; 2,000,000 FY26 |  | document |
-| 26 Jan 2023 | Town Manager | LPS23-06 MS/HS Turf Field Feasibility Study; TM Priority #: 18 of 29 | $50,000.00 (FY2024 Capital Costs) |  | document |
-| 26 Jan 2023 | Capital Planning Committee | LPS23-06 MS/HS Turf Field Feasibility Study; CPC Priority # (as printed in the Town Manager deck): 21 of 29 | $50,000.00 |  | document |
-| 31 Jan 2023 | Select Board | Select Board minutes reproduce the FY2024 requests list, with School Department "MS/HS Turf Field Feasibility Study" $50,000 among seven school items totalling $909,500 (list of all requests, not the recommendation). | 50,000 |  | document |
-| 6 May 2023 | Annual Town Meeting | FY2024 Capital Plan, Art. 6: $1,039,010 in total. The item list is not in the extracted text, so whether the $50,000 study was inside it cannot be read here; the preliminary deck had it "not included". | 1,039,010 (whole plan) | VOTED (103 YES, 6 NO) | document |
-| 20 Sep 2023 | School Committee | School Committee told: for the turf field this year ARPA funds will be used (study); capital funds proposed for surveying. |  |  | document |
-| 20 Nov 2023 | Capital Planning Committee | Four phases: Phase 1 initial assessment "being funded through ARPA funding: $50,000"; Phase 2 FY25 $200,000; Phase 3 FY26; Phase 4 later at $1.2 million. | 50,000 (ARPA) |  | document |
-| undated | Collins Center scoring method (column Collins Score) | MS/HS Turf Field Feasibility Study LPS23-06; Collins score (a score, not a rank; higher = more points): 22 of 29 | $50,000.00 |  | document |
-| not printed; catalogue gives none | Capital Planning Committee (five members; headers dpassios, gmartin, mbrenner, pbeardmore, talonzo) | MS/HS Turf Field Feasibility Study LPS23-06; CPC composite ranking (column headed Composite RANKING; value is the mean of the five member rankings): 18.6 of 29 | $50,000.00 (column FY2024 Capital Costs) |  | document |
-| undated | Capital Planning Committee composite ranking | MS/HS Turf Field Feasibility Study LPS23-06, $50,000: Collins score 22; five member rankings 17, 24, 22, 11, 19; composite 18.6, their mean (printed columns, positional). | 50,000 |  | document |
-
-### Round 3 · money for FY2025 · capital plan (survey and drainage)
-
-| date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|
-| 18 Jan 2022 | Town Manager FY2023 capital plan deck (ten-year table) | LPS20-04 retaining wall repair now $98,000, in the FY2025 column (moved from FY27 and up from $90,000). | 98,000 |  | document |
-| 20 Nov 2023 | Lunenburg Public Schools to Capital Planning Committee | FY25 request: LMHS Turf Field, Site Survey & Drainage Improvements, Phase 2, $200,000 (LPS20-04-A); then $300,000 in FY26 and $1.2 million in FY27. School Committee priority ranking 7 of 9 (the pptx of the same deck says 9 on one slide). | 200,000 (FY25); 300,000 (FY26); 1,200,000 (FY27) | School Committee moved the item to #7, 4-1 roll call (SC minutes 2023-11-01) | document |
-| 20 Nov 2023 | School Committee | LMHS Turf Field, Site Survey & Drainage Improvements Phase 2 (LPS20-04-A); SC Priority Ranking (printed on the project slide): 7 of 9 | $200,000 (FY25) |  | document |
-| 20 Nov 2023 | School Committee | LMHS Turf Field Design / Drainage Improvements (LPS20-04A); School Committee Priority Rankings table (column Ranking): 7 of 9 | not on this page (FY25 $200,000 on p5) |  | document |
-| 20 Nov 2023 | School Committee | LMHS Turf Field Design / Drainage Improvements (LPS20-04A); School Committee Priority Rankings table: 7 of 9 |  |  | document |
-| 20 Nov 2023 | School Committee | LMHS Turf Field, Site Survey & Drainage Improvements Phase 2 (LPS20-04-A); SC Priority Ranking (printed on the project slide): 9 of 9 | $200,000 (FY25) |  | document |
-| 16 Jan 2024 | Town Manager preliminary FY25 plan | LPS20-04-A $200,000 in the "Not Included in Preliminary FY25 Capital Plan Recommendation" list: TM priority 15, CPC priority 19, Collins 44. The total of projects not funded is $2,157,648. | 200,000 |  | document |
-| 16 Jan 2024 | Town Manager | LPS20-04-A LMHS Turf Field, Site Survey & Drainage Improvements; TM Priority #: 15 of 35 | 200,000.00$ (column FY25 Capital Costs) |  | document |
-| 16 Jan 2024 | Capital Planning Committee | LPS20-04-A; CPC Priority # (as printed in the Town Manager deck): 19 of 35 | 200,000.00$ |  | document |
-| 4 May 2024 | Annual Town Meeting | FY2025 Capital Plan, Art. 6: $1,317,119.98 passed. The item list is not in the text layer; the preliminary deck had LPS20-04-A "not included". FY2024 report facilities page: the study found improvements estimated at $920,000. | 1,317,119.98 (whole plan) | VOTED (Yes-320, No-31, Abstain-1) | document |
-| undated | (requests list) | LPS20-04-A/B/C; none: none printed |  |  | document |
-| undated | Capital Planning Committee final ranking workbook | LPS20-04-A, $200,000: composite order 19, dept priority 7, Collins score 44, running total 1,955,529.98. | 200,000 |  | document |
-| undated workbook | Capital Planning Committee (workbook of the CPC; member columns TA, PB, MB, CM, GM) | LPS20-04-A LMHS Turf Field, Site Survey & Drainage Improvements; Composite order: unlabelled first column of sheet Ordered, rows sorted ascending by Column1 (the member average): 19 of 35 | 200000 (column FY2025, I20) |  | document |
-| undated workbook | Department (Schools), as carried in the CPC workbook | LPS20-04-A; Dept Priority (named column): 7 of 9 | 200000 |  | document |
-| undated workbook | Collins Center scoring method | LPS20-04-A; Collins score (a score, not a rank): 44 | 200000 |  | document |
-
-### Round 4 · money for FY2026 · capital plan, then a spring 2025 article
-
-| date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|
-| 4 Sep 2024 | School Committee | Approved FY26-FY35 capital plan listing the field for FY27 money: hillside hardscape/drainage plus track/turf replacement | $920,000 + $510,000 = $1.43M (FY27 money) | approved (per thread row 15; minutes record a motion to accept 'the priority ranking' for the FY26 list) | document |
-| 4 Sep 2024 | School Committee | School Committee's ranked list of FY26 requests (the list sent to CPC) has 8 items; the field is not among the FY26 items. Minutes print only item names, in rank order as listed |  | motion to accept priority ranking approved (Brzozoski/Sculimbrene, 'all approve') | document |
-| 4 Sep 2024 | School Committee | LMHS Turf Field, Site Survey & Drainage Improvements (LPS20-04-C, $1.43million in FY27); FY26 Capital Requests School Committee Priority Rankings: none printed of 8 | FY27 - $1.43million (not FY26 money) |  | document |
-| 21 Oct 2024 | Capital Planning Committee | Middle High School turf field and complex estimated at $920,000 (hardscape and drainage), "an additional $ 500,000" to replace turf and track; listed under "FY27 Capital Request s ( not in priority order )". (The Select Board Chair's compilation says no FY26 request was submitted; not independently checked.) | 920,000; 500,000 |  | document |
-| 21 Oct 2024 | Capital Planning Committee | Schools presented the field under 'FY27 Capital Requests (not in priority order)', item 6, in the FY26 cycle | $920,000 (hardscape/drainage) + $500,000 (turf and track) | none | document |
-| 16 Dec 2024 | Capital Planning Committee | CPC met to 'approve final rankings for CPC FY26 capital plan priorities'. The agenda is the record of the meeting; the list it approved is held since 20 November 2026 (next row) |  |  | document |
-| 16 Dec 2024 | Capital Planning Committee | The committee's approved FY2026 list, ranks 1-25, $2,915,877 cumulative: no field project at any rank. The ranks the printed Article 8 program omits are 14 Primary School generator, 18 DPW dump truck, 21 McNally Park survey, 23 catch basin truck, 24 North Cemetery roads, 25 Ritter Building |  |  | document |
-| 18 Dec 2024 | School Committee | Reporting the CPC's approved FY26 list of 25 items, Mr. Beardmore named six school items (numbers 2, 6, 7, 14, 15, 19); the field is not among those named. Not proof it was not on the 25; it is evidence only that it was not named |  |  | document |
-| 31 Jan 2025 | Town Manager | Preliminary FY26 capital program deck has no turf, track or LPS20 line (searched the deck's text for rank, priorit, turf, field: only an unrelated 'priority' for Public Safety space) |  |  | document |
-| 5 Feb 2025 | School Committee | School Committee approved the town-meeting warrant including an article for money "necessary to design and prepare a bid solicitation for rehabilitation repairs and upgrades of the track and field complex"; no amount printed in the minute. | not printed | all approve (warrant); Select Board removed the article 5-0 on 1 Apr 2025 (caption) | as heard (captions) |
-| 23 Feb 2025 | Finance Committee (draft ATM warrant) | Draft spring 2025 annual town meeting warrant carried Article I for track and field complex design and bid solicitation, no dollar figure printed | not stated ('a sum of money necessary') | none; recommendations blank | document |
-| 1 Apr 2025 | Select Board | Select Board removed the track and field article (Article 9) from the May 2025 warrant 5-0; a member said CPC never ranked it because the schools pulled it mid-process | not stated | 5-0 to remove (per thread row 22) | as heard (captions) |
-| 3 May 2025 | Town Meeting (Article 8, printed program with CPC ranks) | The FY2026 capital options printed with each project's CPC rank list ranks 1-22 except 14, 18 and 21; no field project among them. Rank 14 was the Primary School generator (SC minutes 2024-12-18), so the field could sit only at 18, 21 or 23-25 of the 25 |  |  | document |
-| undated | Capital Planning Committee | field project; CPC ranked list with cumulative cost: none printed |  |  | document |
-
-### Round 5 · money for FY2027 · capital plan
-
-| date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|
-| 19 Jan 2021 | Town Manager FY2022 capital plan deck (ten-year table) | LPS20-04 "Repairs to Turf Field Retaining Wall", $90,000 in the FY2027 column of the ten-year table. First dated appearance of the project. | 90,000 |  | document |
-| 17 Sep 2025 | School Committee | Revised draft FY27-FY35 plan splits the field: hardscape/drainage in FY27, track/turf replacement moved to FY29 | $920,000 (FY27) ; $1.5M (FY29) |  | our record |
-| 1 Oct 2025 | School Committee | FY27 draft capital plan; School Committee priority order (as voted/forwarded): none printed |  |  | as heard (captions) |
-| 1 Oct 2025 | School Committee (spoken in meeting) | turf field; SC priority order read aloud against slide 43 list: 4 of 8 |  |  | as heard (captions) |
-| 1 Oct 2025 | School Committee | School Committee ordered its FY27 list; a motion to change the order tied and the existing order stood; the list went to CPC with the field fourth of four named |  | motion to change order: tie vote; old plan kept | as heard (captions) |
-| 29 Oct 2025 | Capital Planning Committee | turf field; none (turf excluded before ranking): none printed |  |  | as heard (captions) |
-| 29 Oct 2025 | Capital Planning Committee | Schools' presentation to CPC; captions have a member saying the Town Manager called the field 'not really at presentation stage' and the superintendent keeping it in because of priority; a ~$2 million figure is in the captions | ~$2 million (captions; the whole project) | none | our record |
-| 19 Nov 2025 | Capital Planning Committee | CPC chair said the field 'is not able to be brought forth as part of this capital planning process', 'too complex and too slow'; separate proposal expected |  | none | as heard (captions) |
-| 17 Dec 2025 | Capital Planning Committee | The list the committee approved on 17 December 2025, 22 projects: no high school field project (the one field is Fitzgerald Field, rank 18). The Chair's forward the next day says an engineering and design proposal for the track and field had just arrived, to be funded some other way |  |  | document |
-| 1 Feb 2026 | Capital Planning Committee | CPC's FY27 ranked list: 22 projects, $3,267,208 total; the field is not one of them. Ranks printed 1-22; schools items ranked 4, 5, 9, 14, 15, 19 |  |  | document |
-| 1 Feb 2026 | Town Manager | Preliminary FY27 capital program has no field line; CPC agenda of 11 Feb 2026 had 'Discussion on potential Turf Field Capital Request' |  |  | document |
-
-### Round 6 · money for FY2027 · Special Town Meeting, Article 9
-
-| date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|
-| 16 Sep 2026 | School Committee | School Committee voted 5-0 to ask Town to raise and appropriate for a feasibility study and schematic plans (placeholder article) | not stated | 5-0 roll call | document |
-| 20 Oct 2026 | Select Board | Select Board minutes: Chair noted the project was 'ranked 5 of 7 in prior capital planning'. No ranking sheet in the archive shows the field at 5 (FY26 list not held; FY27 list has 22 projects without it). The 'prior' year and list are unidentified |  |  | as heard (captions) |
-| 20 Oct 2026 | Select Board | Select Board voted to place the article on the warrant under Old Business (vote tally not in the passage I read); warrant set at nine articles | $195,830 | placement vote; tally not read | document |
-| 27 Oct 2026 | Select Board | Select Board deferred its recommendation on Article 9 until 17 Nov 6:30 PM; school committee named certified free cash as likely source | $195,830 | 5-0 to defer | document |
-| 2026-11 | - | Middle/High School Track and Field Engineering and Related Services; none: none printed | $195,830 |  | document |
-| 10 Nov 2026 | Capital Planning Committee | CPC agenda listed Article 9 under new business; no CPC ranking of it. Minutes not held |  |  | document |
-| 16 Nov 2026 | School Committee | Special meeting: free cash for FY26 not certified, so committee moved to keep Article 9 and specify the general stabilization fund as source, to be replaced by free cash later; agenda item was 'passing over' | $195,830 | 4-0 roll call (4 present, per captions) | as heard (captions) |
-| 17 Nov 2026 | Special Town Meeting | Warrant article as printed: $195,830 for engineering and related services; funding source open; recommendations: Finance Committee blank, Select Board 'Deferred.'; summary says construction would need a separate decision | $195,830 | 2/3rds or majority depending on funding source | document |
-| 17 Nov 2026 | Special Town Meeting | Article 9 motion to TRANSFER $195,830 from the general stabilization fund; as read, with a non-binding intent to use certified free cash at the May 2027 annual town meeting to replenish. Electronic vote: 57 in favor, 18 opposed, 0 abstentions (75 voting). 2/3 of 75 is 50; 57 exceeds it. Moderator's spoken 'passes' not in captions | $195,830 (general stabilization fund) | 57-18-0 (caption) | as heard (captions) |
-| 18 Nov 2026 | School Committee | Superintendent's report next evening: 'special town meeting where voters approved article 9 authorizing ... 195,830'; vote did not authorize construction | $195,830 | approved (stated by superintendent) | as heard (captions) |
-| undated | Capital Planning Committee | turf / track / LPS20-04; CPC Rank: none printed of 22 |  |  | document |
-| not printed on the slides | School Committee | LMHS Turf Field: Hillside Hardscape & Drainage ($920,000 FY27); Track/Turf Replacement ($1.5 M FY29); FY27 Capital Requests School Committee Priority Rankings: none printed of 8 |  |  | document |
-| undated | School Department capital plan FY22-FY31 (draft) | Schools' own ten-year plan: "Repairs to Turf Field Wall 90,000" under Lunenburg Middle-High School. | 90,000 |  | document |
+Below, each round as a timeline, newest event first. *About* says what the event was: asked, ranked, left out, voted, paid. Every row, and the raw readings behind it, is in `track-field-capital-history.csv` with its quote and page.
 
 ### Round 7 · money for FY2028 · capital plan (under way)
 
-| date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|
-| 2026 | School Committee (budget priorities) | FY28 budget priorities say the track and field 'should advance through appropriate capital planning and funding channels' |  |  | document |
-| 21 Oct 2026 | School Committee | Superintendent's recommended FY28-FY33 capital plan puts 'turf and track' as the first priority; she said an earlier whole-project estimate was ~$3 million, likely debt exclusion, 'we were asked to include that on our capital plan' | ~$3 million (spoken, whole project) | none seen | as heard (captions) |
-| 27 Oct 2026 | Select Board | Vice-Chair reported School Committee discussed its capital plan including the turf field and track |  |  | document |
-| 19 Nov 2026 | Capital Planning Committee | FY28 capital requests; none yet: none printed |  |  | document |
-| 20 Nov 2026 | Capital Planning Committee | No FY28 CPC ranking list is held (committee being reorganised: Town Manager 27 Oct said members sworn in, reorganisation meeting not yet scheduled; CPC agendas 2 Nov, 10 Nov, 19 Nov 2026 held, no minutes) |  |  | document |
+| date | about | who | what happened |
+|---|---|---|---|
+| 20 Nov 2026 | not ranked | Capital committee | No FY2028 capital committee list yet: the committee is being reorganised. |
+| 27 Oct 2026 | talked about | Select Board | A Select Board member reports the School Committee discussed its capital plan, turf and track included. |
+| 21 Oct 2026 | planned | School Committee | The Superintendent’s draft FY2028-FY2033 capital plan puts turf and track first; she mentions an earlier whole-project estimate of about $3 million. (as heard) |
+| 2026 | planned | School Committee | The schools’ FY2028 budget priorities say the field should go through the capital process. |
+
+*1 more reading for this round (the same rank in another copy, score sheets, plans read and found without the field) is in the dataset.*
+
+### Round 6 · money for FY2027 · Special Town Meeting, Article 9
+
+| date | about | who | what happened |
+|---|---|---|---|
+| 18 Nov 2026 | talked about | School Committee | The Superintendent tells the School Committee voters approved the $195,830. It does not pay for construction. (as heard) |
+| 17 Nov 2026 | voted | Special Town Meeting | Special Town Meeting votes 57-18 to move $195,830 from the stabilization fund for engineering, meaning to refill it from free cash in May 2027. (as heard) |
+| 17 Nov 2026 | asked | Special Town Meeting | The printed article asks $195,830 for engineering. Finance Committee recommendation blank; Select Board “Deferred.” |
+| 16 Nov 2026 | voted | School Committee | With free cash not yet certified, the School Committee votes 4-0 to name the stabilization fund as the source. (as heard) |
+| 10 Nov 2026 | not ranked | Capital committee | The article is on the capital committee’s agenda; the committee does not rank it. |
+| 27 Oct 2026 | recommended | Select Board | The Select Board votes 5-0 to hold its recommendation until 17 November. |
+| 20 Oct 2026 | asked | Select Board | The Select Board puts a $195,830 article on the Special Town Meeting warrant. |
+| 20 Oct 2026 | talked about | Select Board | The Select Board chair says the field was “ranked 5 of 7 in prior capital planning”. No list we hold shows that. (as heard) |
+| 16 Sep 2026 | asked | School Committee | The School Committee votes 5-0 to ask the town for a feasibility study and schematic plans. |
+
+*4 more readings for this round (the same rank in another copy, score sheets, plans read and found without the field) are in the dataset.*
+
+### Round 5 · money for FY2027 · capital plan
+
+| date | about | who | what happened |
+|---|---|---|---|
+| 1 Feb 2026 | left out | Town Manager | The Town Manager’s preliminary FY2027 program has no field line. The committee’s next agenda lists a “potential Turf Field Capital Request”. |
+| 17 Dec 2025 | left out | Capital committee | The capital committee approves its FY2027 list of 22 projects; the field is not on it. Next day the chair writes that an engineering proposal has arrived and will need funding another way. |
+| 19 Nov 2025 | withdrawn | Capital committee | The capital committee chair says the field can’t go through this year’s process: “too complex and too slow”. (as heard) |
+| 29 Oct 2025 | asked | Capital committee | The schools present the field to the capital committee. On the recording, about $2 million is mentioned, and a member quotes the Town Manager: “not really at presentation stage”. |
+| 1 Oct 2025 | ranked | School Committee | The School Committee keeps its FY2027 order, field 4th of 4 named, after a motion to change it ties. (as heard) |
+| 17 Sep 2025 | planned | School Committee | The schools’ revised draft plan splits it: $920,000 for hardscape and drainage in FY2027; $1.5M for turf and track moved to FY2029. |
+| 19 Jan 2021 | planned | Town Manager | The field first appears in the Town Manager’s ten-year table: $90,000 to repair the retaining wall, pencilled for FY2027. |
+
+*4 more readings for this round (the same rank in another copy, score sheets, plans read and found without the field) are in the dataset.*
+
+### Round 4 · money for FY2026 · capital plan, then a spring 2025 article
+
+| date | about | who | what happened |
+|---|---|---|---|
+| 3 May 2025 | left out | Town Meeting | Town Meeting votes the FY2026 capital plan; the field is not in it. |
+| 1 Apr 2025 | withdrawn | Select Board | The Select Board votes 5-0 to take the article off the May warrant; a member says the schools pulled it before the capital committee ranked it. (as heard) |
+| 23 Feb 2025 | asked | Finance Committee | The draft May 2025 warrant carries the design-and-bid article, with no dollar figure. |
+| 5 Feb 2025 | asked | School Committee | The School Committee approves a Town Meeting article to design and bid the track and field repairs. No amount. (as heard) |
+| 31 Jan 2025 | left out | Town Manager | The Town Manager’s preliminary FY2026 program has no field line. |
+| 16 Dec 2024 | left out | Capital committee | The capital committee approves its FY2026 list of 25 projects. The field is not on it. |
+| 21 Oct 2024 | asked | Capital committee | The schools show the capital committee the field as a future request, “not in priority order”: $920,000 for hardscape and drainage plus $500,000 for turf and track. |
+| 4 Sep 2024 | ranked | School Committee | The School Committee’s ranked list of 8 requests for FY2026 does not include the field. |
+| 4 Sep 2024 | planned | School Committee | The School Committee’s ten-year plan puts the field in FY2027: hillside hardscape and drainage, plus new track and turf. |
+
+*5 more readings for this round (the same rank in another copy, score sheets, plans read and found without the field) are in the dataset.*
+
+### Round 3 · money for FY2025 · capital plan (survey and drainage)
+
+| date | about | who | what happened |
+|---|---|---|---|
+| 4 May 2024 | voted | Annual Town Meeting | Town Meeting passes the FY2025 capital plan. Its item list is an image in our copy; the preliminary plan had left the field out. |
+| 16 Jan 2024 | left out | Town Manager | The Town Manager’s preliminary FY2025 plan lists the $200,000 among requests not included. Capital committee rank 19 of 35; Town Manager 15. |
+| 20 Nov 2023 | asked | Schools, to the capital committee | The schools ask for $200,000 for FY2025 to survey the site and fix drainage, the phase after the study. School Committee priority 7 of 9. |
+| 18 Jan 2022 | planned | Town Manager | The Town Manager’s ten-year table moves the wall repair, now $98,000, up to FY2025. |
+
+*11 more readings for this round (the same rank in another copy, score sheets, plans read and found without the field) are in the dataset.*
+
+### Round 2 · money for FY2024 · capital plan (a feasibility study)
+
+| date | about | who | what happened |
+|---|---|---|---|
+| 20 Nov 2023 | paid | Capital committee | The capital committee is told the $50,000 study is being paid from ARPA money. Next phases: $200,000 in FY2025, then more. |
+| 20 Sep 2023 | paid | School Committee | The School Committee is told federal pandemic relief (ARPA) money will pay for the study this year. |
+| 6 May 2023 | voted | Annual Town Meeting | Town Meeting passes the FY2024 capital plan. Its item list is an image in our copy; the preliminary plan had left the study out. |
+| 26 Jan 2023 | left out | Town Manager | The Town Manager’s preliminary FY2024 plan lists the study among requests not included. Capital committee rank 21 of 29; Town Manager 18. |
+| 14 Dec 2022 | ranked | Capital committee | The capital committee scores the year’s requests; one member reads out his own rank for the study, 24. (as heard) |
+| 26 Oct 2022 | asked | Schools, to the capital committee | The schools ask the capital committee for $50,000 to study the field (sunken pavers, leaning walls, drainage). It is 5th of their 6 priorities. |
+
+*9 more readings for this round (the same rank in another copy, score sheets, plans read and found without the field) are in the dataset.*
+
+### Round 1 · money for FY2017 · borrowing article, May 2016
+
+| date | about | who | what happened |
+|---|---|---|---|
+| 17 Jan 2017 | paid | Select Board | The Select Board approves the bond sale: $760,000 for the turf field, over twelve years. |
+| 17 Nov 2016 | work | Parks Commission | Turf finished; the track is to be resurfaced in the spring. |
+| 2 Aug 2016 | work | Select Board | Replacement under way: specifications being written, bids by the end of August, field ready by the end of October. |
+| 7 May 2016 | recommended | Finance Committee | The Finance Committee recommends the borrowing, 4-0. |
+| 5 May 2016 | voted | Annual Town Meeting | Town Meeting votes to borrow $770,000 to replace the turf field and track. The warrant had printed $600,000. |
+| 5 May 2016 | left out | Annual Town Meeting | The FY2017 capital plan Town Meeting passes has no field line: the field goes by its own article instead. |
+| 3 May 2016 | recommended | Select Board | The Select Board recommends the borrowing, 4-1; speakers describe $77,500 a year in contributions toward repaying it. |
+| 28 Apr 2016 | talked about | Finance Committee | The Finance Committee waits for the presentation before taking a position. |
+| 15 Mar 2016 | talked about | Select Board | Warrant preview: borrow to replace the turf, repaid from cell tower revenue and rental fees. |
+| 2 Feb 2016 | talked about | Select Board | The Town Manager is working with the Parks Commission on a way to pay for it outside the budget. |
+| 12 Jan 2016 | talked about | Capital committee | Bond counsel says the field can’t use the contingency fund; the track surface is about a year from a $150,000 repair. |
+| 27 Oct 2015 | priced | Capital committee | The capital committee lists the turf field at $800,000 among coming projects; the town has set nothing aside for it. |
+
+*1 more reading for this round (the same rank in another copy, score sheets, plans read and found without the field) is in the dataset.*
 
 ### Every other cycle, FY2014 to FY2028 · no field money asked for that year
 
-| cycle | date | body | what happened | amount | vote | basis |
-|---|---|---|---|---|---|---|
-| FY2014 | 2013 | Annual Town Meeting | FY2014 Capital Plan voted (Art. 14, $652,483). The held report prints the vote but no item list; no field line can be shown or excluded from it. | 652,483 | VOTED UNANIMOUSLY | document |
-| FY2014 | 10 Sep 2013 | Select Board | A selectman asked how the turf and track replacement would be funded; the Town Manager said it is her intention to put the replacement into the Capital Plan. No request amount is stated. |  |  | document |
-| FY2015 | 3 May 2014 | Annual Town Meeting | FY2015 Capital Plan ($1,114,152; 19 project rows) read: no turf, track or field line. DPW report the same year: track complex "remains under the control of the Commissioners". | 1,114,152 | Art. 14 passed (town-meeting-votes.csv) | document |
-| FY2015 | 22 May 2014 | Finance Committee | Finance Committee opened discussion of future maintenance and renovation costs of the Turf Field and Track; reviewed a spreadsheet of construction funding and user fees. |  |  | document |
-| FY2015 | 3 Jun 2014 | Select Board | Select Board to meet with all involved with the turf field on ownership, fees and how the turf will be replaced three years out. No amount. |  |  | document |
-| FY2015 | 25 Sep 2014 | Finance Committee (joint with Parks Commission) | Parks Commission and Finance Committee: turf field and track likely to need major reconstruction at an estimated $600,000-$800,000 in the next few years; Town Manager said funds would have to accrue at about $100,000 a year. | 600,000-800,000 |  | document |
-| FY2016 | 2015 | Department of Public Works annual report (FY2015) | DPW Director reports the multi-use track complex "is in dire need of repair"; funding and organised effort between Commissioners and users "sadly lacking". No request amount. |  |  | document |
-| FY2016 | 2015-05 | Annual Town Meeting | FY2016 Capital Plan ($1,051,578; 13 project rows) read: no turf, track or field line. | 1,051,578 |  | document |
-| FY2018 | 4 Apr 2017 | Select Board | Premium article: $10,000 of turf field surplus applied to that project to reduce the borrowing; $6,350.40 remaining from the turf field to be placed in a special revenue fund for future capital. | 10,000; 6,350.40 | Recommended, All in Favor | document |
-| FY2018 | 6 May 2017 | Capital Planning Committee FY2018 plan (FY2017 annual report) | FY2018 plan (10 rows, $633,317) has no turf/track line; the turf was already being financed by the 2016 borrowing. | 633,317 | Art. 7 passed (town-meeting-votes.csv) | document |
-| FY2018 | 30 Jun 2018 | Debt table (FY2018 annual report) | Authorized unissued debt at 30 June 2018 shows "-" against Artificial Turf Field & Track: the authorization was fully used or cancelled. Article balance line for 28 5/16 ATM Replace Artificial Turf Field/Track shows $27,232.40 fwd. | 0 unissued; 27,232.40 article balance fwd |  | document |
-| FY2019 | undated | Capital Planning Committee FY2019 recommendation (deck) | I read all 9 pages of the extracted text and grepped turf, track, athletic, bleacher, press box, retaining, hardscape, stadium, field: no hit. School lines are LPS16-17 and LPS16-19 only. |  |  | document |
-| FY2020 | 24 Jan 2019 | Town Manager capital plan deck (FY20) | Whole 16-page deck read by grep: no turf/track/field line; no ten-year table in the text. School lines LPS16-19-B and LPS19-01 only. ATM 4 May 2019 Art. 6 FY2020 plan $1,684,100 passed; plan page FY2019 report p107/160 has no field line. | 1,684,100 (plan) | Art. 6 passed | document |
-| FY2021 | 7 May 2020 | Town Manager FY2021 public hearing deck | Deck read: only turf references are the Artificial Turf Revolving transfers (debt service on the existing field). One-year FY2021 revised capital plan has no field line. ATM 13 Jun 2020 Art. 6 $647,880 passed. | 647,880 (plan) | Art. 6 passed | document |
-| FY2022 | 19 Jan 2021 | Town Manager FY2022 capital plan deck | FY2022 one-year plan (ATM 1 May 2021 Art. 5, $1,597,825) has no field line; the first field item appears only in the ten-year table, for FY2027. | 1,597,825 (plan) | Art. 5 passed | document |
-| FY2022 | undated | Town Manager / CPC | LPS20-04 Repairs to Turf Field Retaining Wall; TM Priority # and CPC Priority # (FY2022 Capital Plan Recommendation table): none printed | 90,000 |  | document |
-| FY2023 | 7 May 2022 | Annual Town Meeting | FY2023 Capital Plan (Art. 6, $2,162,849; 23 rows) read: no field line. | 2,162,849 | Art. 6 passed | document |
-| FY2023 | undated | Town Manager / CPC | LPS20-04 Repairs to Turf Field Retaining Wall; TM Priority # and CPC Priority #: none printed | 98,000 |  | document |
+| cycle | date | about | who | what happened |
+|---|---|---|---|---|
+| FY2023 | 7 May 2022 | left out | Annual Town Meeting | FY2023 capital plan: no field line. |
+| FY2023 | undated | planned | Town Manager | Ten-year table: the wall repair, now $98,000, in a later year. |
+| FY2022 | 19 Jan 2021 | left out | Town Manager | FY2022 capital plan: no field line. The field first shows up in the ten-year table, pencilled for FY2027. |
+| FY2022 | undated | planned | Town Manager | Ten-year table: $90,000 to repair the turf field retaining wall, in a later year. |
+| FY2021 | 7 May 2020 | left out | Town Manager | FY2021 capital plan: no field line. |
+| FY2020 | 24 Jan 2019 | left out | Town Manager | FY2020 capital plan: no field line. |
+| FY2019 | undated | left out | Capital committee FY2019 recommendation | FY2019 capital requests: no field line. |
+| FY2018 | 30 Jun 2018 | paid | Debt table | The turf borrowing is fully used; $27,232.40 is carried forward on the article. |
+| FY2018 | 6 May 2017 | left out | Capital committee FY2018 plan | FY2018 capital plan: no field line. |
+| FY2018 | 4 Apr 2017 | paid | Select Board | $10,000 of leftover turf money reduces the borrowing; $6,350.40 is set aside for future capital. |
+| FY2016 | 2015-05 | left out | Annual Town Meeting | FY2016 capital plan: no field line. |
+| FY2016 | 2015 | talked about | Department of Public Works annual report | The DPW director's annual report says the track complex “is in dire need of repair”. |
+| FY2015 | 25 Sep 2014 | priced | Finance Committee | Parks Commission and Finance Committee: the field and track will need rebuilding in a few years, an estimated $600,000-$800,000. |
+| FY2015 | 3 Jun 2014 | talked about | Select Board | The Select Board plans a meeting on who owns the turf field, the fees, and replacing it in three years. |
+| FY2015 | 22 May 2014 | talked about | Finance Committee | The Finance Committee starts discussing what the turf field and track will cost to keep up and replace. |
+| FY2015 | 3 May 2014 | left out | Annual Town Meeting | FY2015 capital plan: no field line. |
+| FY2014 | 10 Sep 2013 | talked about | Select Board | Asked how the turf and track replacement would be paid for, the Town Manager says she means to put it in the capital plan. |
+| FY2014 | 2013 | left out | Annual Town Meeting | FY2014 capital plan voted; our copy prints the total but no item list. |
 
 ## What this does not establish
 
