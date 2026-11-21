@@ -17,6 +17,35 @@ Analysis, November 2026. Ranks are as each document prints them; anything marked
 | FY2027 | Hardscape and drainage | $920,000 | 4 of 8 (middle third) (as heard) | — | not among the 22 ranked | withdrawn from the cycle; then Article 9, $195,830 (as heard) |
 | FY2028 | Turf and track | about $3,000,000 (as heard) | first (as heard) | — | no list held yet | under way |
 
+Nobody on record gives a reason for any of these ranks. What exists is members and boards talking at the time, mostly heard on meeting recordings; open a year to read it.
+
+```said Why it ended there, FY2024: what was said (8)
+**5 Oct 2022, School Committee:** A School Committee member: the field study is fine, but without the Turkey Hill school settled it is “like planning a household budget” without knowing the mortgage. (as heard)
+**26 Oct 2022, Capital committee:** A capital committee member is “not against” the study, but recalls an old idea: wear the complex out, build a new school on the site, and a new athletic complex elsewhere. (as heard)
+**30 Nov 2022, Capital committee:** Going through the requests, a member says of the study: “I had no issue with that.” (as heard)
+**14 Dec 2022, Capital committee:** A member says he put a cemetery headstone project above the study because, as he understood it, the Town Manager had recommended it come first. (as heard)
+**14 Dec 2022, Capital committee:** Another member: the field’s problem “is getting progressively worse every year.” (as heard)
+**4 Jan 2023, School Committee:** The capital committee member reports to the School Committee: the study came out lowest of the school requests, “a little lower than I’d like”, below a McNally Park field project; he will ask the Town Manager to move it up. (as heard)
+**9 May 2023, Select Board:** Three days after Town Meeting passes the plan without it, the Select Board agrees to fund the study from ARPA. A member: “it’s just going to get more expensive if you don’t deal with it.” (as heard)
+**5 Sep 2023, Select Board:** The Select Board’s formal ARPA vote lists twelve projects; the study is not one of them. The School Committee was later told it was approved that night.
+```
+
+```said Why it ended there, FY2025: what was said (2)
+**20 Nov 2023, Capital committee:** A capital committee member says he had wondered whether that much money was worth it “for such a small slice of the student body”, and now hears it is not a small slice. (as heard)
+**21 Dec 2023, Capital committee:** A member on the final scores: from the turf field down, they bunched near 19 or 20, “the next five are like within a point of each other.” (as heard)
+```
+
+```said Why it ended there, FY2026: what was said (2)
+**21 Oct 2024, Capital committee:** The schools show the capital committee the field as a future request, “not in priority order”: $920,000 for hardscape and drainage plus $500,000 for turf and track.
+**1 Apr 2025, Select Board:** The Select Board votes 5-0 to take the article off the May warrant; a member says the schools pulled it before the capital committee ranked it. (as heard)
+```
+
+```said Why it ended there, FY2027: what was said (3)
+**29 Oct 2025, Capital committee:** The schools present the field to the capital committee. On the recording, about $2 million is mentioned, and a member quotes the Town Manager: “not really at presentation stage”.
+**19 Nov 2025, Capital committee:** The capital committee chair says the field can’t go through this year’s process: “too complex and too slow”. (as heard)
+**17 Dec 2025, Capital committee:** The capital committee approves its FY2027 list of 22 projects; the field is not on it. Next day the chair writes that an engineering proposal has arrived and will need funding another way.
+```
+
 ## What it shows
 
 **The two times the capital committee ranked the field, it put it 21 of 29, then 19 of 35.** Both years the Town Manager’s preliminary plan listed it among requests not included.
@@ -122,6 +151,8 @@ Below, each round as a timeline, newest event first. *About* says what the event
 |---|---|---|---|
 | 4 May 2024 | voted | Annual Town Meeting | Town Meeting passes the FY2025 capital plan. Its item list is an image in our copy; the preliminary plan had left the field out. |
 | 16 Jan 2024 | left out | Town Manager | The Town Manager’s preliminary FY2025 plan lists the $200,000 among requests not included. Capital committee rank 19 of 35; Town Manager 15. |
+| 21 Dec 2023 | talked about | Capital committee | A member on the final scores: from the turf field down, they bunched near 19 or 20, “the next five are like within a point of each other.” (as heard) |
+| 20 Nov 2023 | talked about | Capital committee | A capital committee member says he had wondered whether that much money was worth it “for such a small slice of the student body”, and now hears it is not a small slice. (as heard) |
 | 20 Nov 2023 | asked | Schools, to the capital committee | The schools ask for $200,000 for FY2025 to survey the site and fix drainage, the phase after the study. School Committee priority 7 of 9. |
 | 18 Jan 2022 | planned | Town Manager | The Town Manager’s ten-year table moves the wall repair, now $98,000, up to FY2025. |
 
@@ -133,10 +164,18 @@ Below, each round as a timeline, newest event first. *About* says what the event
 |---|---|---|---|
 | 20 Nov 2023 | paid | Capital committee | The capital committee is told the $50,000 study is being paid from ARPA money. Next phases: $200,000 in FY2025, then more. |
 | 20 Sep 2023 | paid | School Committee | The School Committee is told federal pandemic relief (ARPA) money will pay for the study this year. |
+| 5 Sep 2023 | left out | Select Board | The Select Board’s formal ARPA vote lists twelve projects; the study is not one of them. The School Committee was later told it was approved that night. |
+| 9 May 2023 | agreed | Select Board | Three days after Town Meeting passes the plan without it, the Select Board agrees to fund the study from ARPA. A member: “it’s just going to get more expensive if you don’t deal with it.” (as heard) |
 | 6 May 2023 | voted | Annual Town Meeting | Town Meeting passes the FY2024 capital plan. Its item list is an image in our copy; the preliminary plan had left the study out. |
 | 26 Jan 2023 | left out | Town Manager | The Town Manager’s preliminary FY2024 plan lists the study among requests not included. Capital committee rank 21 of 29; Town Manager 18. |
+| 4 Jan 2023 | talked about | School Committee | The capital committee member reports to the School Committee: the study came out lowest of the school requests, “a little lower than I’d like”, below a McNally Park field project; he will ask the Town Manager to move it up. (as heard) |
+| 14 Dec 2022 | talked about | Capital committee | Another member: the field’s problem “is getting progressively worse every year.” (as heard) |
+| 14 Dec 2022 | talked about | Capital committee | A member says he put a cemetery headstone project above the study because, as he understood it, the Town Manager had recommended it come first. (as heard) |
 | 14 Dec 2022 | ranked | Capital committee | The capital committee scores the year’s requests; one member reads out his own rank for the study, 24. (as heard) |
+| 30 Nov 2022 | talked about | Capital committee | Going through the requests, a member says of the study: “I had no issue with that.” (as heard) |
+| 26 Oct 2022 | talked about | Capital committee | A capital committee member is “not against” the study, but recalls an old idea: wear the complex out, build a new school on the site, and a new athletic complex elsewhere. (as heard) |
 | 26 Oct 2022 | asked | Schools, to the capital committee | The schools ask the capital committee for $50,000 to study the field (sunken pavers, leaning walls, drainage). It is 5th of their 6 priorities. |
+| 5 Oct 2022 | talked about | School Committee | A School Committee member: the field study is fine, but without the Turkey Hill school settled it is “like planning a household budget” without knowing the mortgage. (as heard) |
 
 *9 more readings for this round (the same rank in another copy, score sheets, plans read and found without the field) are in the dataset.*
 
@@ -267,5 +306,6 @@ Each is a row in `money-gaps.csv`, with the document that would settle it.
 - [4130-fy-2025-annual-town-report.pdf](/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf) — Town Meeting (Article 8, printed program with CPC ranks)
 - [2026-11-20-cpc-fy26-final-rankings.xlsx](/docs/correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx) — Capital Planning Committee
 - [2026-11-20-cpc-fy27-priorities-list-working-final.xlsx](/docs/correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx) — Capital Planning Committee
+- [2023-09-05-minutes-312.pdf](/docs/meetings/select-board/2023-09-05-minutes-312.pdf) — Select Board
 
 *Generated by `scripts/build_track_field_capital.py` from `sources/data/track-field-capital-history.csv`. Every quote in the dataset is re-found in its source on each run.*

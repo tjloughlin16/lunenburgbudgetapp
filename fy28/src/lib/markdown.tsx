@@ -186,6 +186,24 @@ export function renderMarkdown(src: string, base = '/docs/analyses/',
           </details>)
         continue
       }
+      // ```said <summary>  is the same closed disclosure for what people SAID at the time,
+      // one entry per line, each with inline markup (a bold date and speaker). TJ, on the
+      // track and field ranks: context for each rank "without overwhelming it". Unlike
+      // `quote` it is our account of a meeting, not a document's verbatim words, so it is
+      // not set as a blockquote.
+      if (/^said\b/.test(label)) {
+        const summary = label.replace(/^said\s*/, '') || 'what was said'
+        nodes.push(
+          <details key={key()} className="mt-3 max-w-3xl">
+            <summary className="cursor-pointer text-[13px]"
+              style={{ color: 'var(--series-cost)' }}>{summary}</summary>
+            <div className="mt-2 pl-4 border-l-4 text-[13.5px] leading-relaxed space-y-2"
+              style={{ borderColor: 'var(--surface-3)', color: 'var(--text-secondary)' }}>
+              {body.filter(b => b.trim()).map((b, n) => <p key={n}>{inline(b, `s${n}`)}</p>)}
+            </div>
+          </details>)
+        continue
+      }
       nodes.push(
         <pre key={key()} className="card p-4 mt-4 overflow-x-auto text-[12.5px] leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}><code>{body.join('\n')}</code></pre>)

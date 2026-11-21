@@ -67,7 +67,7 @@ ROUNDS = [
 ]
 # What a timeline row is ABOUT, in the words a reader would use. A row with no plain sentence
 # stays in the dataset and off the page: duplicate readings of one rank, undated score sheets.
-ABOUT = {'asked', 'priced', 'planned', 'ranked', 'not ranked', 'left out', 'withdrawn',
+ABOUT = {'agreed', 'asked', 'priced', 'planned', 'ranked', 'not ranked', 'left out', 'withdrawn',
          'recommended', 'voted', 'paid', 'work', 'talked about'}
 ROUND_CYCLES = {r[0] for r in ROUNDS}
 
@@ -313,6 +313,18 @@ def band(t):
         return 'first'
     f = r / n
     return 'top third' if f <= 1 / 3 else ('middle third' if f <= 2 / 3 else 'bottom third')
+
+
+def why(rows):
+    """What was said, at the time, about why the field ranked or ended where it did: the
+    rows tagged `explains`, oldest first so each reads as the conversation went. Keyed by
+    the rank table's cycle. These are people speaking, never a board's stated reason."""
+    out = {}
+    for r in sorted((r for r in rows if r.get('explains')), key=_sortkey):
+        out.setdefault('FY' + r['cycle_fy'], []).append(dict(
+            date=_short_date(r['date']), who=_who(r['body']), explains=r['explains'],
+            said=r['plain'] + (' (as heard)' if heard(r) else ''), doc=r['doc'], line=r['_line']))
+    return out
 
 
 def _ob(t):
@@ -620,7 +632,7 @@ def payload(rows, F, concl):
               'ranks, prices, plans or votes on the field in a capital cycle, or a plan read and '
               'found without it. %d rest on documents; %d on machine captions of a recording, '
               'marked as heard.' % (F['rows'], F['docs'], F['heard']),
-        rank_table=rank_table(F),
+        rank_table=rank_table(F), why=why(rows),
         rounds=rs, other=other,
         conclusions=concl,
         not_established=NOT_ESTABLISHED,
@@ -644,7 +656,16 @@ def markdown(P, F):
     for t in P['rank_table']:
         L.append('| %s |' % ' | '.join(_cell(t[k]) for k in (
             'cycle', 'requested', 'amount', 'schools', 'town_manager', 'cpc', 'outcome')))
-    L += ['', '## What it shows', '']
+    L += ['', 'Nobody on record gives a reason for any of these ranks. What exists is members '
+          'and boards talking at the time, mostly heard on meeting recordings; open a year to read it.', '']
+    for t in P['rank_table']:
+        said = P['why'].get(t['cycle'])
+        if not said:
+            continue
+        L += ['```said Why it ended there, %s: what was said (%d)' % (t['cycle'], len(said))]
+        L += ['**%s, %s:** %s' % (w['date'], w['who'], w['said']) for w in said]
+        L += ['```', '']
+    L += ['## What it shows', '']
     for c in P['conclusions']:
         L += ['**%s** %s' % (c['claim'], c['so_what']), '', c['detail'], '',
               '*Rests on:* %s *Does not show:* %s' % (c['basis'], c['not_shown']), '']
