@@ -278,7 +278,7 @@ def build_versions(fy, vrows, blocks):
             tm_target = dict(figure=t['figure'], why=t['why'], version=v['item'], date=v['date'], cite=t['cite']) if t else dict(figure=v['figure'], why=v['why'], version=v['item'], date=v['date'], cite=v['cite'])
         rise = money(v['figure'])
         out.append(dict(item=v['item'], scope=v['scope'], status=v['status'], figure=v['figure'], date=v['date'], who=v['who'], why=v['why'], note=v['note'],
-                        cite=v['cite'], also=v['also'], n=i + 1,
+                        cite=v['cite'], also=v['also'], n=i + 1, lines=v.get('lines'),
                         gap=gap, gap_moved=moved, deficit=stated, closed=closed, path=[r for r in deficit if r is not gap and r['status'] != 'now'],
                         proposals=by('proposals'), cuts_added=added, came_off=came_off, warned=[r for r in by('cuts') if r['status'] == 'warned'],
                         notes=[r for r in cuts if r['status'] not in ('decided', 'proposed', 'tier_only', 'came_off')],
@@ -293,6 +293,56 @@ def build_versions(fy, vrows, blocks):
     coming_out += [dict(item=r['item'], scope=r['scope'], status='expected', date=r['date'], who=r['who'], why=r['why'], cite=r['cite'], version=False) for r in upcoming]
     coming_out.sort(key=lambda r: r['date'])
     return out, dict(override=strand, before=before, coming=coming_out)
+
+
+# ---------------------------------------------------------------------------------------
+# THE DISTRICT'S LINE-BY-LINE DRAFTS. notes/process/BUDGET-SEASON-MODEL.md §7. TJ, 20 November
+# 2026: "as the schools give more line budgets, we need to process them and do the same,
+# automatically without me asking." Every draft scripts/build_school_drafts.py knows (one that
+# footed; extract_fy28_draft_lines.py holds any other) is tied to a version card, in this order:
+#   1. the version row whose evidence cites the draft's document -- a row somebody wrote;
+#   2. else the season's EXPECTED row for that version number on the school side, which the
+#      draft now fulfils: it takes the draft's date, figure and document;
+#   3. else a new version row, built from the draft's own totals and said to be built so.
+# The card then carries `lines`: the page, and what changed line by line against the version
+# before. A draft is never left without a card.
+
+def attach_drafts(fy, version_rows):
+    import build_school_drafts as BSD
+    out = []
+    for d in [x for x in BSD.drafts() if x['fy'] == fy]:
+        doc = 'doc:' + d['document']
+        lines = dict(path=d['path'], short=d['short'], version=d['version'], lines=d['lines'], diff=d['diff'])
+        # A card takes one draft: the first row citing the document that no earlier draft took.
+        v = next((r for r in version_rows if not r.get('lines')
+                  and doc in [e.strip() for e in (r['evidence'] or '').split(' ; ')]), None)
+        how = 'cited'
+        rise = '+$%s (%s%%)' % (format(d['change'], ',.2f'), '%.2f' % (100 * d['change'] / d['prior_total']))
+        why = ('to $%s, against $%s for FY%d; salaries up $%s, everything else up $%s -- read off the district\'s '
+               'line-by-line draft' % (format(d['total'], ',.2f'), format(d['prior_total'], ',.2f'), fy - 1,
+                                         format(d['salaries'][1] - d['salaries'][0], ',.2f'),
+                                         format(d['expenses'][1] - d['expenses'][0], ',.2f')))
+        if not v:
+            v = next((r for r in version_rows if not r.get('lines') and r['status'] == 'expected' and (r['scope'] or 'school') == 'school'
+                      and re.match(r'^Version %d\b' % d['version'], r['item'])), None)
+            if v:
+                how = 'fulfilled'
+                v.update(status='preliminary', figure=rise, date=d['date'] or v['date'], why=why,
+                         evidence=doc, cite=resolve(doc), also=[], total=str(d['total']), base=str(d['prior_total']),
+                         note='Filled in by the refresh from the district\'s draft when it arrived.')
+        if not v:
+            how = 'built'
+            if not d['date']:
+                raise SystemExit('FY%d version %d: no date in the catalogue or on a memo -- add the meeting date '
+                                 'to sources/district-budget/index.csv' % (fy % 100, d['version']))
+            v = dict(block='version', item='Version %d — line by line' % d['version'], scope='school',
+                     status='preliminary', figure=rise, fte='', date=d['date'], who='the superintendent', why=why,
+                     evidence=doc, note='Built by the refresh from the district\'s draft; no row was written for it.',
+                     total=str(d['total']), base=str(d['prior_total']), cite=resolve(doc), also=[])
+            version_rows.append(v)
+        v['lines'] = lines
+        out.append(dict(version=d['version'], page=d['path'], how=how))
+    return out
 
 
 LEVY = os.path.join(ROOT, 'sources', 'data', 'dls-levy-limits.csv')
@@ -362,9 +412,10 @@ def build(fy):
     for r in lines:
         for k in ('level_service', 'balanced', 'tier1_core', 'tier2_restoration', 'cut', 'tier1_restores', 'tier2_restores'):
             r[k] = float(r[k]) if r[k] else None
+    linked = attach_drafts(int(fy[2:4]) + 2000, version_rows)
     versions, strands = build_versions(fy, version_rows, blocks)
     return dict(id=fy, fy=int(fy[2:4]) + 2000, source='sources/data/budget-seasons/%s.csv' % fy, rows=len(rows) - len(titles), blocks=blocks, lines=lines,
-                versions=versions, strands=strands, prop25=prop25(int(fy[2:4]) + 2000) if versions else None,
+                versions=versions, strands=strands, drafts_linked=linked, prop25=prop25(int(fy[2:4]) + 2000) if versions else None,
                 titles=titles, live=bool(live), proposed=len(proposed) if live else 0, as_of=__import__('datetime').date.today().isoformat() if live else None,
                 model='notes/process/BUDGET-SEASON-MODEL.md')
 

@@ -16,7 +16,12 @@ type Moved = { by: number; approx: boolean; from_figure: string; from_version: s
 type Share = { figure: string; why: string; version: string; date: string; cite: Cite | null }
 type Version = { n: number; item: string; scope: string; status: string; figure: string; date: string; who: string; why: string; note: string; cite: Cite | null; also: Cite[]
   gap: Row | null; gap_moved: Moved | null; deficit: Deficit | null; closed: Row[]; path: Row[]; proposals: Row[]; cuts_added: Row[]; came_off: Row[]; warned: Row[]; notes: Row[]; late: Row[]; final: Row[]
-  rise: number | null; on_table: number; off_so_far: number; school_share: Share | null }
+  rise: number | null; on_table: number; off_so_far: number; school_share: Share | null; lines?: Lines | null }
+/** A version the district printed line by line (scripts/build_school_drafts.py): its page, and
+ *  what changed line by line against the version before -- null for a first draft. */
+type DiffPart = { n: number; dollars: number }
+type Lines = { path: string; short: string; version: number; lines: number
+  diff: { against: number; net: number; added: DiffPart; removed: DiffPart; up: DiffPart; down: DiffPart } | null }
 type Coming = { item: string; scope: string; date: string; who: string; why: string; cite: Cite | null; version: boolean }
 type Prop25 = { fy: number; prior_fy: number; prior_limit: number; step: number; new_growth: number | null; room: number | null; certified: boolean; floor: boolean; basis_fy?: number; basis_limit?: number; source: string }
 export type Season = { id: string; fy: number; source: string; rows: number; model: string; live?: boolean; as_of?: string | null; titles: Record<string, { title: string; sub: string }>; blocks: Record<'deficit' | 'proposals' | 'cuts' | 'override' | 'late' | 'final', Row[]>; lines: Line[]
@@ -101,6 +106,11 @@ function changedLine(v: Version): string {
   if (v.cuts_added.length) bits.push(`${v.cuts_added.length} cut${v.cuts_added.length === 1 ? '' : 's'}`)
   if (v.came_off.length) bits.push(`${v.came_off.length} came off`)
   if (v.proposals.length) bits.push(`${v.proposals.length} budget${v.proposals.length === 1 ? '' : 's'} side by side`)
+  const ld = v.lines?.diff
+  if (ld) {
+    const n = ld.added.n + ld.removed.n + ld.up.n + ld.down.n
+    bits.push(`${n} line${n === 1 ? '' : 's'} changed since version ${ld.against}, net ${ld.net < 0 ? '−' : '+'}${usd(Math.abs(ld.net))}`)
+  }
   const ballot = v.final.filter(r => r.status === 'ballot' && r.figure)
   if (ballot.length) bits.push(`${ballot.length} override question${ballot.length === 1 ? '' : 's'} ${ballot.every(r => /failed/i.test(r.why)) ? 'failed' : 'voted'}`)
   return bits.join(' · ')
@@ -145,6 +155,20 @@ function DeficitCell({ d }: { d: Deficit }) {
   )
 }
 
+/** LINE BY LINE: the draft's own page, and where it changed against the version before. Outside
+ *  the summary, so it shows on a folded card and a tap on it does not fold the card. */
+function LinesLink({ l }: { l: Lines }) {
+  const d = l.diff
+  const part = (label: string, x: DiffPart, sign: string) => x.n ? `${x.n} ${label}${x.dollars ? ` ${sign}${usd(Math.abs(x.dollars))}` : ''}` : ''
+  const parts = d ? [part('up', d.up, '+'), part('down', d.down, '−'), part('added', d.added, '+'), part('removed', d.removed, '−')].filter(Boolean) : []
+  return (
+    <div className="px-4 -mt-2 pb-3 text-[13px]">
+      <a className="font-semibold underline" href={l.path}>Line by line</a>
+      <span style={{ color: 'var(--text-secondary)' }}> — all {l.lines} lines of version {l.version}{d ? `; since version ${d.against}: ${parts.join(', ') || 'no line changed'}` : ', the first draft printed line by line'}.</span>
+    </div>
+  )
+}
+
 function VersionCard({ v, p, open, color }: { v: Version; p: Prop25 | null | undefined; open: boolean; color: string }) {
   const h = headline(v)
   const changed = changedLine(v)
@@ -165,6 +189,7 @@ function VersionCard({ v, p, open, color }: { v: Version; p: Prop25 | null | und
         </div>}
         {changed && <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>{changed}</p>}
       </summary>
+      {v.lines && <LinesLink l={v.lines} />}
       <div className="px-4 pb-4">
         <p className="text-[13.5px]" style={{ color: 'var(--text-secondary)' }}>{v.why}<CiteLink c={v.cite} />{v.also.map((c, i) => <CiteLink key={i} c={c} />)}</p>
         {v.note && !v.note.startsWith('internal:') && <p className="text-xs italic mt-1" style={{ color: 'var(--text-muted)' }}>{v.note}</p>}

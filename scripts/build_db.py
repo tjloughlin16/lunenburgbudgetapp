@@ -1196,6 +1196,8 @@ REFERENCE = [
     # comparing a co-op total with every other sport's one-town total.
     'ski-coop',
     'athletics-history', 'capital-funding-history', 'capital-plan-fy27',
+    # which planning documents are held for each capital cycle, FY1999-FY2028 (the /capital-rankings table)
+    'capital-coverage',
     'free-cash-proof', 'fund-1301-cash-journal', 'ood-tuition-history',
     'line-history-disagreements', 'rate-register', 'sped-para-history',
     'sped-teacher-history', 'sped-transport-history', 'total-expenses-history',
@@ -2455,6 +2457,47 @@ def check_fy_types(db):
     return len(FY_TEXT_EXPECTED)
 
 
+def load_school_draft_lines(db):
+    """The district's budget DRAFTS, line by line -- every version it prints, appended, keyed
+    fy + version + section + cost centre + line + ordinal -- from
+    scripts/extract_fy28_draft_lines.py, which writes a draft only if every column it proposes
+    foots to the document's own printed totals. `school_draft_footing` is that check, one row
+    per identity, including any `printed defect` in a prior-year column.
+
+    Two traps. Every figure is a NET APPROPRIATION, not a cost (rule 11). And `fy26_actual` is
+    spending, reprinted beside budgets: it may explain a line and never feeds a projection or a
+    growth rate against a budget column (rule 1)."""
+    seasons = os.path.join(DATA, 'budget-seasons')
+    db.execute('''CREATE TABLE school_draft_lines (
+        fy INTEGER NOT NULL, version INTEGER NOT NULL, section TEXT NOT NULL,
+        cost_centre TEXT, cost_centre_name TEXT, line TEXT NOT NULL, ordinal INTEGER NOT NULL,
+        fy26_original REAL, fy26_actual REAL, fy27_budget REAL, fy28_proposed REAL,
+        diff REAL, pct_diff TEXT, document TEXT NOT NULL, sha256 TEXT, page INTEGER,
+        PRIMARY KEY (fy, version, section, cost_centre, line, ordinal))''')
+    db.execute('''CREATE TABLE school_draft_footing (
+        fy INTEGER, version INTEGER, "check" TEXT, "column" TEXT,
+        lines_sum REAL, printed REAL, difference REAL, result TEXT)''')
+    lines = os.path.join(seasons, 'fy28-draft-lines.csv')
+    if not os.path.exists(lines):
+        return 0
+    data = list(csv.DictReader(open(_note(lines), encoding='utf-8')))
+    db.executemany('INSERT INTO school_draft_lines VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+                   [(int(r['fy']), int(r['version']), r['section'], r['cost_centre'], r['cost_centre_name'],
+                     r['line'], int(r['ordinal']), num(r['fy26_original']), num(r['fy26_actual']),
+                     num(r['fy27_budget']), num(r['fy28_proposed']), num(r['diff']), r['pct_diff'] or None,
+                     r['document'], r['sha256'] or None, int(r['page'])) for r in data])
+    foot = os.path.join(seasons, 'fy28-draft-lines.footing.csv')
+    if os.path.exists(foot):
+        db.executemany('INSERT INTO school_draft_footing VALUES (?,?,?,?,?,?,?,?)',
+                       [(int(r['fy']), int(r['version']), r['check'], r['column'], num(r['lines_sum']),
+                         num(r['printed']), num(r['difference']), r['result'])
+                        for r in csv.DictReader(open(_note(foot), encoding='utf-8'))])
+    got = db.execute('SELECT COUNT(*) FROM school_draft_lines').fetchone()[0]
+    if got != len(data):                       # a load that matched less than it read must not pass silently
+        raise SystemExit('school_draft_lines: loaded %d of %d rows' % (got, len(data)))
+    return got
+
+
 def load_reference(db):
     """Load the remaining CSVs verbatim, one table each, all columns TEXT.
 
@@ -3463,6 +3506,7 @@ def main():
     print('  workbook figures %5d' % load_workbook(db))
     print('  budget lines     %5d' % db.execute(
         'SELECT COUNT(*) FROM budget_line').fetchone()[0])
+    print('  school drafts    %5d  (line by line, every version; footed)' % load_school_draft_lines(db))
     fa, gr, st, ds = load_funds(db)
     print('  fund activity    %5d' % fa)
     print('  grant awards     %5d' % gr)

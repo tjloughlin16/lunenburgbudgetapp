@@ -283,6 +283,9 @@ CHECKS = [
     ('build_budget_season.py', ['fy27', '--check']),
     ('build_budget_season.py', ['fy26', '--check']),
     ('build_budget_season.py', ['fy27-summer-governors-budget', '--check']),
+    # the school drafts, line by line: the table foots and reproduces, and every draft's page with it
+    ('extract_fy28_draft_lines.py', ['--check']),
+    ('build_school_drafts.py', ['--check']),
     ('build_budget_season.py', ['fy28', '--check']),
     ('write_budget_state.py', ['--check']),
     ('write_document_budget_state.py', ['--check']),

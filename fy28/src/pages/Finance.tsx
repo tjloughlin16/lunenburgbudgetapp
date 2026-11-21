@@ -168,6 +168,9 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
       <div hidden={tab !== 'overview'} role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
       <Grain>{d.grain}</Grain>
       {isBoard && <p className="text-[13px] mt-3"><a className="underline" href={`/boards/${slug}`}>&larr; the {o.name}&rsquo;s board page</a> · <a className="underline" href="/accounts">every account, once</a></p>}
+      {/* THE BUDGET DRAFTS, LINE BY LINE (scripts/build_school_drafts.py). TJ, 20 November 2026: a
+          link to each draft's page "on other report pages under the school hub". */}
+      {slug === 'school-committee' && <SchoolDrafts />}
       {/* JOB POSTINGS this body owns, if any -- the same block the board pages carry. */}
       <JobsLink slug={slug} />
       {/* THE PEOPLE BEHIND THE MONEY. TJ, 25 September 2026: *"i would like to cross link the
@@ -666,5 +669,21 @@ function AccountsIndex({ d }: { d: Payload }) {
       {d.unresolved.length > 0 && <FundTable ms={d.unresolved.map(i => d.measures[i])} />}
       <Legend d={d} />
     </>
+  )
+}
+
+/** Every school budget draft the district printed line by line, newest first, each with its page.
+ *  Read from /data/school-drafts.json, which scripts/build_school_drafts.py writes for every draft
+ *  that footed. Every string is formatted there. */
+type Draft = { fy: number; version: number; path: string; total: string; change: string; lines: number }
+function SchoolDrafts() {
+  const { d } = useReport<{ drafts: Draft[] }>('school-drafts.json')
+  if (!d || !d.drafts.length) return null
+  return (
+    <p className="text-[13px] mt-2">
+      <span className="font-semibold">The budget drafts, line by line:</span>{' '}
+      {d.drafts.map((x, i) => <span key={x.path}>{i ? ' · ' : ''}<a className="underline" href={x.path}>FY{String(x.fy).slice(2)} version {x.version}</a>
+        <span style={{ color: 'var(--text-secondary)' }}> ({x.total}, {x.change} on last year)</span></span>)}
+    </p>
   )
 }

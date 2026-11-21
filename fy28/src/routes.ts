@@ -1029,6 +1029,10 @@ function resolvePath(pathname: string): Tab | null {
   // A TOPIC PAGE AT AN ADDRESS OUTSIDE ITS SHELF (TOPIC_PATHS below).
   if (TOPIC_PATHS[seg]) return 'topic'
   if (TOPIC_ALIASES[seg]) return 'topic'
+  // ONE PAGE PER SCHOOL BUDGET DRAFT, also at a short address: /school-budget-fy28-version-1 opens
+  // /school-all-funds/school-budget-fy28-version-1 (scripts/build_school_drafts.py). One pattern
+  // for every version, so a draft the refresh adds needs nothing here.
+  if (SCHOOL_DRAFT.test(seg)) return 'topic'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'
   // The third. Every thread shares one page component; the id is in the path.
@@ -1065,6 +1069,7 @@ export function topicIdFromPath(pathname: string): string | null {
   const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
   if (m && m[2] && TOPIC_PATHS[`${m[1]}/${m[2]}`]) return TOPIC_PATHS[`${m[1]}/${m[2]}`]
   if (m && !m[2] && TOPIC_ALIASES[m[1]]) return TOPIC_ALIASES[m[1]]
+  if (m && !m[2] && SCHOOL_DRAFT.test(m[1])) return m[1]
   if (!m || !TOPIC_CATEGORIES.includes(m[1])) return null
   return m[2] ? (TOPIC_MERGED[m[2]] ?? m[2]) : m[1]
 }
@@ -1104,6 +1109,9 @@ export const TOPIC_MERGED: Record<string, string> = {
  *  (pages/TownFund.tsx) holding only the school receipts the Town books; TJ, 31 October 2026:
  *  "build another page for the town fund". The receipts went to
  *  /school-all-funds/school-receipts-to-town, and the address opens the whole fund. */
+/** A school budget draft's short address, its page id (scripts/build_school_drafts.py page_id). */
+const SCHOOL_DRAFT = /^school-budget-fy\d{2}-version-\d+$/
+
 export const TOPIC_PATHS: Record<string, string> = {
   'town-funds/general-fund': 'town-general-fund',
 }

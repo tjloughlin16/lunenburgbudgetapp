@@ -1606,6 +1606,24 @@ def run(a, notes, ctx):
     # 7a'. The live season's board, re-read from the record: warnings straight onto the
     # page, figures and cuts PROPOSED into budget-seasons/fy28.proposed.csv for a person to
     # confirm by copying a row into fy28.csv. Nothing with a figure appears unconfirmed.
+    # 7a''. THE DISTRICT'S LINE-BY-LINE DRAFTS. TJ, 20 November 2026: "as the schools give more
+    # line budgets, we need to process them and do the same, automatically without me asking."
+    # A PDF-reading extractor in an unattended run, against the rule above SITE_PAYLOADS -- by
+    # the owner's request, and safe for the reason that rule exists: it writes a draft only if it
+    # foots to the document's own totals, and appends, never replaces. A draft that does not foot
+    # is HELD (exit 2) and named here; it gets no rows, no page and no card. The database
+    # (SITE_PAYLOADS, below) then loads the rows, and the season board links each draft's card.
+    if not a.dry_run:
+        r = py('extract_fy28_draft_lines.py', check=False)
+        if r.returncode == 2:
+            held = os.path.join(ROOT, 'sources', 'data', 'budget-seasons', 'fy28-draft-lines.held.txt')
+            for line in (open(held, encoding='utf-8').read().splitlines() if os.path.exists(held) else []):
+                notes.append('school budget draft HELD, not published: %s' % line[:300])
+        elif r.returncode:
+            notes.append('extract_fy28_draft_lines.py: exit %d -- no draft read this run' % r.returncode)
+        if py('build_school_drafts.py', check=False).returncode:
+            notes.append('build_school_drafts.py failed -- the draft pages were not rebuilt')
+
     if not a.dry_run:
         py('build_budget_season.py', 'fy28', check=False)
         try:
