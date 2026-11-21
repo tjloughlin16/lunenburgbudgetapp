@@ -18,16 +18,36 @@
 import { useMemo, useState } from 'react'
 import type { CustomProps } from './index'
 
-type Vals = [number | null, number | null, number | null, number, number | null, number | null]
-type Line = { line: string; actual: string; prior: string; proposed: string; change: string; pct: string; share: string; n: number; v: Vals; tag: '' | 'new' | 'zero'; page: number }
-type Group = { section: string; code: string; name: string; prior: string; proposed: string; change: string; pct: string; share: string; n: number; v: Vals; lines: Line[] }
-type Filter = 'all' | 'up' | 'down' | 'new' | 'zero'
-/** 'order' is the district's; 'line' sorts by name; 0-3 by a figure column. */
-type SortKey = 'order' | 'line' | 0 | 1 | 2 | 3 | 4 | 5
+/** The numbers each column sorts on, by index: 0 FY26 actual, 1 FY27 budget, 2 Version N, 3 change,
+ *  4 % change, 5 % of FY27, 6 FY26 budget, 7 FY26 spent - budget, 8 its %, 9 Version N - FY26 spent. */
+type Vals = (number | null)[]
+type Cells = { actual: string; prior: string; proposed: string; change: string; pct: string; share: string
+  orig26: string; spent26: string; over26: string; overpct26: string; vs26: string }
+type Line = Cells & { line: string; n: number; v: Vals; tag: '' | 'new' | 'zero'; below: boolean; page: number }
+type Group = Cells & { section: string; code: string; name: string; n: number; v: Vals; lines: Line[] }
+type Filter = 'all' | 'up' | 'down' | 'new' | 'zero' | 'below'
+/** 'order' is the district's; 'line' sorts by name; a number sorts by that index of `v`. */
+type SortKey = 'order' | 'line' | number
+/** TWO WAYS TO READ A LINE (TJ, 21 November 2026). Against last year's BUDGET: how the draft moves
+ *  it. Against FY26 SPENDING: "is this budget matching what they REALLY spend for these lines". The
+ *  second compares a budget with an actual in dollars only (rule 1): no rate is drawn between them. */
+type View = 'budget' | 'spent'
+type Col = { k: number; f: keyof Cells; tone?: (v: Vals) => string; muted?: boolean; phone?: false }
+const VIEWS: Record<View, Col[]> = {
+  budget: [
+    { k: 0, f: 'actual', muted: true, phone: false }, { k: 1, f: 'prior' }, { k: 2, f: 'proposed' },
+    { k: 3, f: 'change', tone: v => tone(v[3] ?? 0) }, { k: 4, f: 'pct', tone: v => (v[4] == null ? 'var(--text-secondary)' : tone(v[3] ?? 0)) },
+    { k: 5, f: 'share', tone: () => 'var(--text-secondary)' }],
+  spent: [
+    { k: 6, f: 'orig26', muted: true, phone: false }, { k: 0, f: 'spent26' },
+    { k: 7, f: 'over26', tone: v => tone(v[7] ?? 0) }, { k: 8, f: 'overpct26', tone: v => tone(v[7] ?? 0) },
+    { k: 2, f: 'proposed' }, { k: 9, f: 'vs26', tone: v => ((v[9] ?? 0) < -0.5 ? 'var(--status-warning)' : 'var(--text-secondary)') }],
+}
+const SORT0: Record<View, { key: SortKey; desc: boolean }> = { budget: { key: 3, desc: true }, spent: { key: 9, desc: false } }
 type Data = {
   groups: Group[]
   counts: { new: number; zero: number }
-  text: Record<'share' | 'pct' | 'line' | 'actual' | 'prior' | 'proposed' | 'change' | 'all' | 'up' | 'down' | 'new' | 'zero' | 'expand' | 'collapse'
+  text: Record<keyof Cells | 'view' | 'view_budget' | 'view_spent' | 'below' | 'spent_summary' | 'spent_note' | 'share' | 'pct' | 'line' | 'actual' | 'prior' | 'proposed' | 'change' | 'all' | 'up' | 'down' | 'new' | 'zero' | 'expand' | 'collapse'
     | 'actual_note' | 'page' | 'grouped' | 'sort_hint' | 'cost_center' | 'search' | 'none' | 'show_all' | 'fewer', string>
 }
 
@@ -39,7 +59,7 @@ const tone = (n: number) => (n > 0.5 ? UP : n < -0.5 ? DOWN : 'var(--text-muted)
 const FIRST = 25
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
 const keep = (f: Filter, l: Line) =>
-  f === 'all' || (f === 'up' && l.n > 0.5) || (f === 'down' && l.n < -0.5) || (f === 'new' && l.tag === 'new') || (f === 'zero' && l.tag === 'zero')
+  f === 'all' || (f === 'below' && l.below) || (f === 'up' && l.n > 0.5) || (f === 'down' && l.n < -0.5) || (f === 'new' && l.tag === 'new') || (f === 'zero' && l.tag === 'zero')
 
 function compare<T extends { v: Vals }>(key: SortKey, desc: boolean, name: (x: T) => string) {
   return (a: T, b: T) => {
@@ -61,7 +81,12 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
   // year's budget to this draft show up in the 'every line' chart" -- they were there, folded, in
   // print order. So it opens flat, largest change first: the bridge's lines are the first rows.
   const [grouped, setGrouped] = useState(false)
-  const [sort, setSort] = useState<{ key: SortKey; desc: boolean }>({ key: 3, desc: true })
+  // `?view=spent` opens the spending comparison, so a link can point straight at it.
+  const start: View = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('view') === 'spent' ? 'spent' : 'budget'
+  const [view, setView] = useState<View>(start)
+  const [sort, setSort] = useState<{ key: SortKey; desc: boolean }>(SORT0[start])
+  const pick = (w: View) => { setView(w); setSort(SORT0[w]); if (w === 'budget' && filter === 'below') setFilter('all') }
+  const cols = VIEWS[view]
   const [more, setMore] = useState(false)
   const [q, setQ] = useState('')
   const query = norm(q)
@@ -87,7 +112,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
   }, [shown, sort])
 
   const isOpen = (g: Group) => all || filter !== 'all' || !!query || !!open[id(g)]
-  const filters: Filter[] = ['all', 'up', 'down', 'new', 'zero']
+  const filters: Filter[] = view === 'spent' ? ['all', 'below', 'up', 'down'] : ['all', 'up', 'down', 'new', 'zero']
   // A figure column opens largest first; a name opens A to Z; a third click returns to print order.
   const click = (key: SortKey) => setSort(s => s.key !== key ? { key, desc: key !== 'line' }
     : s.desc === (key !== 'line') ? { key, desc: !s.desc } : { key: 'order', desc: true })
@@ -111,17 +136,27 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
         ) : null}
         {g ? <span className="block text-[11px]" style={{ color: 'var(--text-muted)' }}>{g.code ? `${g.code} ` : ''}{g.name}</span> : null}
       </td>
-      <td className="text-right px-2 py-1 tabular-nums hidden sm:table-cell" style={{ color: 'var(--text-muted)' }}>{l.actual}</td>
-      <td className="text-right px-2 py-1 tabular-nums">{l.prior}</td>
-      <td className="text-right px-2 py-1 tabular-nums">{l.proposed}</td>
-      <td className="text-right px-2 py-1 tabular-nums" style={{ color: tone(l.n) }}>{l.change}</td>
-      <td className="text-right px-2 py-1 tabular-nums" style={{ color: l.pct === 'new' ? 'var(--text-secondary)' : tone(l.n) }}>{l.pct}</td>
-      <td className="text-right px-2 py-1 tabular-nums" style={{ color: 'var(--text-secondary)' }}>{l.share}</td>
+      {cols.map(c => (
+        <td key={c.f} className={`text-right px-2 py-1 tabular-nums${c.phone === false ? ' hidden sm:table-cell' : ''}`}
+          style={{ color: c.muted ? 'var(--text-muted)' : c.tone ? c.tone(l.v) : undefined }}>{l[c.f]}</td>
+      ))}
     </tr>
   )
   let section = ''
   return (
     <figure className="my-2 w-full max-w-full min-w-0" aria-label={alt}>
+      <div role="tablist" aria-label={d.text.view} className="inline-flex items-center gap-1 mb-2 text-[13px]">
+        <span className="mr-1" style={{ color: 'var(--text-secondary)' }}>{d.text.view}</span>
+        {(['budget', 'spent'] as View[]).map(w => (
+          <button key={w} role="tab" type="button" aria-selected={view === w} onClick={() => pick(w)}
+            className="rounded-md border px-3 py-1 font-semibold"
+            style={{ borderColor: view === w ? 'var(--brand)' : 'var(--grid)', color: view === w ? 'var(--brand)' : 'var(--text-secondary)',
+              background: view === w ? 'var(--surface-2, transparent)' : 'transparent' }}>
+            {w === 'budget' ? d.text.view_budget : d.text.view_spent}
+          </button>
+        ))}
+      </div>
+      {view === 'spent' ? <p className="mb-2 text-[14px] font-semibold leading-snug">{d.text.spent_summary}</p> : null}
       <div className="flex flex-wrap items-center gap-1.5 mb-1 text-[12px]">
         {filters.map(f => (
           <button key={f} type="button" onClick={() => setFilter(f)} className="rounded-full border px-2.5 py-0.5" aria-pressed={filter === f}
@@ -150,12 +185,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
           <thead>
             <tr>
               <Head k="line" label={d.text.line} cls="text-left" />
-              <Head k={0} label={d.text.actual} cls="text-right hidden sm:table-cell" muted />
-              <Head k={1} label={d.text.prior} cls="text-right" />
-              <Head k={2} label={d.text.proposed} cls="text-right" />
-              <Head k={3} label={d.text.change} cls="text-right" />
-              <Head k={4} label={d.text.pct} cls="text-right" />
-              <Head k={5} label={d.text.share} cls="text-right" />
+              {cols.map(c => <Head key={c.f} k={c.k} label={d.text[c.f]} cls={`text-right${c.phone === false ? ' hidden sm:table-cell' : ''}`} muted={c.muted} />)}
             </tr>
           </thead>
           <tbody>
@@ -166,7 +196,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
               return [
                 head ? (
                   <tr key={`s-${g.section}`}>
-                    <th colSpan={7} scope="rowgroup" className="text-left font-semibold px-2 pt-4 pb-1 text-[11px] uppercase tracking-wide"
+                    <th colSpan={cols.length + 1} scope="rowgroup" className="text-left font-semibold px-2 pt-4 pb-1 text-[11px] uppercase tracking-wide"
                       style={{ color: 'var(--text-muted)' }}>{g.section}</th>
                   </tr>
                 ) : null,
@@ -179,17 +209,15 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
                       {g.name}
                     </button>
                   </th>
-                  <td className="hidden sm:table-cell" />
-                  <td className="text-right px-2 py-1.5 tabular-nums font-semibold">{g.prior}</td>
-                  <td className="text-right px-2 py-1.5 tabular-nums font-semibold">{g.proposed}</td>
-                  <td className="text-right px-2 py-1.5 tabular-nums font-semibold" style={{ color: tone(g.n) }}>{g.change}</td>
-                  <td className="text-right px-2 py-1.5 tabular-nums font-semibold" style={{ color: tone(g.n) }}>{g.pct}</td>
-                  <td className="text-right px-2 py-1.5 tabular-nums font-semibold" style={{ color: 'var(--text-secondary)' }}>{g.share}</td>
+                  {cols.map(c => (
+                    <td key={c.f} className={`text-right px-2 py-1.5 tabular-nums font-semibold${c.phone === false ? ' hidden sm:table-cell' : ''}`}
+                      style={{ color: c.muted ? 'var(--text-muted)' : c.tone ? c.tone(g.v) : undefined }}>{g[c.f]}</td>
+                  ))}
                 </tr>,
                 ...(o ? lines.map((l, i) => lineRow(l, `${id(g)}-${i}`)) : []),
               ]
             })}
-            {!shown.length ? <tr><td colSpan={7} className="px-2 py-3" style={{ color: 'var(--text-muted)' }}>{d.text.none}</td></tr> : null}
+            {!shown.length ? <tr><td colSpan={cols.length + 1} className="px-2 py-3" style={{ color: 'var(--text-muted)' }}>{d.text.none}</td></tr> : null}
           </tbody>
         </table>
       </div>
@@ -199,7 +227,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
           {more ? d.text.fewer : `${d.text.show_all} (${flat.length})`}
         </button>
       ) : null}
-      <figcaption className="mt-2 text-[12.5px]" style={{ color: 'var(--text-muted)' }}>{d.text.actual_note}</figcaption>
+      <figcaption className="mt-2 text-[12.5px]" style={{ color: 'var(--text-muted)' }}>{view === 'spent' ? d.text.spent_note : d.text.actual_note}</figcaption>
     </figure>
   )
 }

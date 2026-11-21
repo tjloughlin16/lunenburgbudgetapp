@@ -350,6 +350,26 @@ def page(fy, v, rows, prev, foot):
         t = C.pct(p)
         figs.add(t)
         return round(p, 4), t
+    def against_spending(orig, actual, proposed):
+        """THE FY26 VIEW (TJ, 21 November 2026: "compare the budget to the last known full year of
+        actuals ... line by line"). Rule 1 shapes it: spent against budget is one year against itself,
+        so it may carry a percent; Version N against what was spent is a budget against an actual, so
+        it is dollars only -- a rate between them would be partly growth and partly the usual gap
+        between what a line is voted and what it spends."""
+        if actual is None:
+            return dict(orig26=money(orig), spent26='', over26='', overpct26='', vs26='', below=False), [orig, None, None, None]
+        over = actual - z(orig)
+        ot = signed(over)
+        if orig:
+            op = 100 * over / orig
+            opt = '—' if not round(over) else ('+' if op > 0 else '') + C.pct(op)
+            figs.add(opt)
+        else:
+            op, opt = None, ('no budget' if round(actual) else '—')
+        vs = z(proposed) - actual
+        return (dict(orig26=money(orig), spent26=money(actual), over26=ot, overpct26=opt, vs26=signed(vs),
+                     below=bool(actual > 0.5 and z(proposed) < actual - 0.5)),
+                [orig, round(over, 2), round(op, 4) if op is not None else None, round(vs, 2)])
     SEC = dict(expenses='Everything else', salaries='Salaries', reserve='Reserve')
     gl = []
     for (sec, cc, name), ls in groups.items():
@@ -361,18 +381,35 @@ def page(fy, v, rows, prev, foot):
             tag = 'new' if r in new else ('zero' if r in zero else '')
             pv, pt = pctof(z(r['fy27_budget']), r['_d'])
             sv, st = shareof(z(r['fy27_budget']), z(r['fy28_proposed']))
+            a26, av = against_spending(r['fy26_original'], r['fy26_actual'], r['fy28_proposed'])
             lines.append(dict(line=r['line'], actual=money(r['fy26_actual']), prior=money(r['fy27_budget']),
                               proposed=money(r['fy28_proposed']), change=signed(r['_d']), n=round(r['_d'], 2),
                               # the values each column sorts on: numbers, not prose (rule 2 checks strings)
-                              v=[r['fy26_actual'], r['fy27_budget'], r['fy28_proposed'], round(r['_d'], 2), pv, sv],
-                              pct=pt, share=st, tag=tag, page=r['page']))
+                              v=[r['fy26_actual'], r['fy27_budget'], r['fy28_proposed'], round(r['_d'], 2), pv, sv] + av,
+                              pct=pt, share=st, tag=tag, page=r['page'], **a26))
         gpv, gpt = pctof(sum(z(r['fy27_budget']) for r in ls), d)
         gsv, gst = shareof(sum(z(r['fy27_budget']) for r in ls), sum(z(r['fy28_proposed']) for r in ls))
+        ga26, gav = against_spending(round(sum(z(r['fy26_original']) for r in ls), 2),
+                                     round(sum(z(r['fy26_actual']) for r in ls), 2),
+                                     round(sum(z(r['fy28_proposed']) for r in ls), 2))
+        ga26.pop('below')
         gl.append(dict(section=SEC[sec], code=cc, name=name or SEC[sec], prior=money(sum(z(r['fy27_budget']) for r in ls)),
                        proposed=money(sum(z(r['fy28_proposed']) for r in ls)), change=signed(d), n=round(d, 2),
                        v=[round(sum(z(r['fy26_actual']) for r in ls), 2), round(sum(z(r['fy27_budget']) for r in ls), 2),
-                          round(sum(z(r['fy28_proposed']) for r in ls), 2), round(d, 2), gpv, gsv],
-                       pct=gpt, share=gst, lines=lines))
+                          round(sum(z(r['fy28_proposed']) for r in ls), 2), round(d, 2), gpv, gsv] + gav,
+                       pct=gpt, share=gst, lines=lines, **ga26))
+    # THE ANSWER THE FY26 VIEW LEADS WITH. TJ, 21 November 2026: "is this budget matching what they
+    # REALLY spend for these lines". Counted from the rows: lines with FY26 spending, budgeted below
+    # it and above it, and by how much together. Dollars, never a rate (rule 1).
+    spent = [r for r in rows if r['fy26_actual'] is not None and r['fy26_actual'] > 0.5]
+    under = [r for r in spent if z(r['fy28_proposed']) < r['fy26_actual'] - 0.5]
+    over = [r for r in spent if z(r['fy28_proposed']) > r['fy26_actual'] + 0.5]
+    u_sum = sum(r['fy26_actual'] - z(r['fy28_proposed']) for r in under)
+    o_sum = sum(z(r['fy28_proposed']) - r['fy26_actual'] for r in over)
+    spent_summary = ('Of %s lines that spent money in %s, Version %d budgets %s below what they spent, by %s '
+                     'together, and %s above it, by %s.' % (C.num(len(spent)), C.fy(fy - 2), v, C.num(len(under)),
+                                                          C.usd(u_sum), C.num(len(over)), C.usd(o_sum)))
+    figs.update([C.num(len(spent)), C.num(len(under)), C.num(len(over)), C.usd(u_sum), C.usd(o_sum), str(v)])
     for g in gl:
         figs.update([g['prior'], g['proposed']])
     figs.discard('')
@@ -383,11 +420,20 @@ def page(fy, v, rows, prev, foot):
                 search='Find a line, e.g. health insurance', none='No line matches.',
                 show_all='Show every line', fewer='Show fewer',
                 cost_center='Cost center',
-                actual_note='The %s actual is what was spent, printed for reference; nothing on this page is '
-                            'measured from it.' % C.fy(fy - 2),
+                actual_note='The %s actual is what was spent, printed for reference.' % C.fy(fy - 2),
+                view='Compare with', view_budget='%s budget' % C.fy(fy_prior), view_spent='%s spending' % C.fy(fy - 2),
+                orig26='%s budget' % C.fy(fy - 2), spent26='%s spent' % C.fy(fy - 2),
+                over26='Spent − budget', overpct26='% over budget', vs26='Version %d − %s spent' % (v, C.fy(fy - 2)),
+                below='Below %s spending' % C.fy(fy - 2), spent_summary=spent_summary,
+                spent_note=('%s spent is the district’s own actual column for the closed year; it does not say whether '
+                            'bills still owed at year end are in it. Spent − budget compares %s with itself. '
+                            'Version %d against what was spent is in dollars only: a percent from spending to a budget '
+                            'mixes two kinds of figure, and the two are two years apart. Each line is net of grants '
+                            'and fees, not its whole cost.'
+                            % (C.fy(fy - 2), C.fy(fy - 2), v)),
                 page='page')
-    allow.update([C.fy(fy - 2), C.fy(fy_prior), 'Version %d' % v, 'page'])
-    lines_block = TB.custom('school-draft-lines', 'Every line, largest change first',
+    allow.update([C.fy(fy - 2), C.fy(fy_prior), 'Version %d' % v, 'page', 'Version %d − %s spent' % (v, C.fy(fy - 2))])
+    lines_block = TB.custom('school-draft-lines', 'Every line',
                             dict(groups=gl, text=text, counts=dict(new=len(new), zero=len(zero))),
                             place='body', figures=sorted(figs), allow=sorted(allow),
                             so='Each line is what the town would appropriate for it, net of grants and fees, not its cost.')
