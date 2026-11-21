@@ -22,7 +22,7 @@
  },
  "blocks": [
   {
-   "alt": "Every capital request the committee ranked, in each year’s order, with lines joining the same project across years.",
+   "alt": "Every capital request the committee ranked, in each year’s order, then the requests it never ranked, with lines joining the same project across years.",
    "block": "custom",
    "claims": [
     {
@@ -50,9 +50,9 @@
         "text": "on the lists in two or more years"
        },
        "value": {
-        "text": "19",
+        "text": "17",
         "unit": "projects",
-        "value": 19
+        "value": 17
        }
       }
      ],
@@ -63,9 +63,9 @@
        "value": 142
       },
       "b": {
-       "text": "19",
+       "text": "17",
        "unit": "projects",
-       "value": 19
+       "value": 17
       }
      },
      "literals": [],
@@ -74,7 +74,7 @@
       "literals": [],
       "text": "A dashed line is our join, by name; where the town’s number joins two years the line is solid."
      },
-     "text": "Of 142 ranked requests on the five lists, 19 projects came back in a later year."
+     "text": "Of 142 ranked requests on the five lists, 17 projects came back in a later year."
     },
     {
      "facts": [
@@ -87,9 +87,9 @@
         "text": "unfunded the first year, funded on a later list"
        },
        "value": {
-        "text": "8",
+        "text": "9",
         "unit": "projects",
-        "value": 8
+        "value": 9
        }
       },
       {
@@ -101,22 +101,22 @@
         "text": "on two or more lists and never funded in these years"
        },
        "value": {
-        "text": "7",
+        "text": "6",
         "unit": "projects",
-        "value": 7
+        "value": 6
        }
       }
      ],
      "figures": {
       "a": {
-       "text": "8",
+       "text": "9",
        "unit": "projects",
-       "value": 8
+       "value": 9
       },
       "b": {
-       "text": "7",
+       "text": "6",
        "unit": "projects",
-       "value": 7
+       "value": 6
       }
      },
      "literals": [],
@@ -125,7 +125,58 @@
       "literals": [],
       "text": "One year’s outcome was not the last word on those projects."
      },
-     "text": "8 were unfunded the first time and funded later; 7 never were."
+     "text": "9 were unfunded the first time and funded later; 6 never were."
+    },
+    {
+     "facts": [
+      {
+       "id": "asked",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "requested and never ranked, five years"
+       },
+       "value": {
+        "text": "23",
+        "unit": "requests",
+        "value": 23
+       }
+      },
+      {
+       "id": "stated",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "never ranked, with a reason a document or recording states"
+       },
+       "value": {
+        "text": "18 of 23",
+        "unit": "requests",
+        "value": 18
+       }
+      }
+     ],
+     "figures": {
+      "a": {
+       "text": "23",
+       "unit": "requests",
+       "value": 23
+      },
+      "b": {
+       "text": "18 of 23",
+       "unit": "requests",
+       "value": 18
+      }
+     },
+     "literals": [],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "At least, because the departments’ own lists are not held; the rest were found in minutes, decks and recordings."
+     },
+     "text": "At least 23 more requests were made and never ranked; 18 of 23 have a stated reason."
     }
    ],
    "component": "capital-thread-table",
@@ -372,9 +423,59 @@
         "project": "TC Passios Repairs- Vertex  Year 0-1",
         "rank_text": "30",
         "thread": 2
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Town Facilities",
+        "funded": false,
+        "never": true,
+        "project": "Town Beach Building Repairs",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": null
+       },
+       {
+        "amount_text": "$50,000",
+        "dept": "Town Facilities",
+        "funded": false,
+        "never": true,
+        "project": "Town Hall, remove, replace, repair electrical, phone & cable wiring",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": null
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Town Facilities",
+        "funded": false,
+        "never": true,
+        "project": "PSB, HVAC and Window Assessment",
+        "rank_text": null,
+        "status_text": "withdrawn",
+        "thread": null
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Police",
+        "funded": false,
+        "never": true,
+        "project": "Police replacement cruiser (4th police item)",
+        "rank_text": null,
+        "status_text": "moved to a later year",
+        "thread": null
+       },
+       {
+        "amount_text": "$115,000",
+        "dept": "Fire",
+        "funded": false,
+        "never": true,
+        "project": "Replace Engine 2 chassis",
+        "rank_text": null,
+        "status_text": "moved to FY2024",
+        "thread": null
        }
       ],
-      "count_text": "30 requests",
+      "count_text": "30 on the list · 5 never ranked",
       "cut": 21,
       "label": "FY2023"
      },
@@ -442,7 +543,7 @@
         "funded": true,
         "project": "Public Safety Radio system- Update/Replace Obsolete Hardware Phase 1",
         "rank_text": "8",
-        "thread": 3
+        "thread": null
        },
        {
         "amount_text": "$55,000",
@@ -466,7 +567,7 @@
         "funded": true,
         "project": "Northfield Culvert (Kellys Pond) Survey/Design/Permit",
         "rank_text": "11",
-        "thread": 4
+        "thread": 3
        },
        {
         "amount_text": "$25,000",
@@ -482,7 +583,7 @@
         "funded": false,
         "project": "Parks McNally Park",
         "rank_text": "13",
-        "thread": 5
+        "thread": 4
        },
        {
         "amount_text": "$25,000",
@@ -498,7 +599,7 @@
         "funded": false,
         "project": "School Pickup Truck with Plow and Sander",
         "rank_text": "15",
-        "thread": 6
+        "thread": 5
        },
        {
         "amount_text": "$50,000",
@@ -514,7 +615,7 @@
         "funded": true,
         "project": "Parks, Whalom Lake/Marshall Pond Treatment",
         "rank_text": "17",
-        "thread": 7
+        "thread": null
        },
        {
         "amount_text": "$130,000",
@@ -522,7 +623,7 @@
         "funded": false,
         "project": "LMHS, THES, Primary- Installation of 3M Window Safety Film",
         "rank_text": "18",
-        "thread": 8
+        "thread": 6
        },
        {
         "amount_text": "$38,000",
@@ -530,7 +631,7 @@
         "funded": false,
         "project": "Cemetery, Headstone Restoration",
         "rank_text": "19",
-        "thread": 9
+        "thread": 7
        },
        {
         "amount_text": "$50,000",
@@ -546,7 +647,7 @@
         "funded": false,
         "project": "MS/HS Turf Field Feasibility Study",
         "rank_text": "21",
-        "thread": 10
+        "thread": null
        },
        {
         "amount_text": "$65,000",
@@ -554,7 +655,7 @@
         "funded": false,
         "project": "Ritter Building, Floor Covering Replacement Vertex Item #14",
         "rank_text": "22",
-        "thread": 11
+        "thread": 8
        },
        {
         "amount_text": "$65,000",
@@ -562,7 +663,7 @@
         "funded": false,
         "project": "Ritter Building, Painting, Vertex Year 2 Items #15-16",
         "rank_text": "23",
-        "thread": 12
+        "thread": 9
        },
        {
         "amount_text": "$20,000",
@@ -611,9 +712,39 @@
         "project": "Brooks House, Window Repairs Vertex Items #5-6",
         "rank_text": "29",
         "thread": 0
+       },
+       {
+        "amount_text": "$200,000",
+        "dept": "Facilities, Parks & Recreation",
+        "funded": false,
+        "never": true,
+        "project": "Marshall Park Engineering",
+        "rank_text": null,
+        "status_text": "left unrated",
+        "thread": null
+       },
+       {
+        "amount_text": "$240,000",
+        "dept": "Public Works (infrastructure)",
+        "funded": false,
+        "never": true,
+        "project": "Flat Hill Road Drainage Construction",
+        "rank_text": null,
+        "status_text": "left unrated",
+        "thread": null
+       },
+       {
+        "amount_text": "$126,500",
+        "dept": "Fire",
+        "funded": false,
+        "never": true,
+        "project": "Replace Engine 2 chassis",
+        "rank_text": null,
+        "status_text": "moved to FY2025",
+        "thread": null
        }
       ],
-      "count_text": "29 requests",
+      "count_text": "29 on the list · 3 never ranked",
       "cut": 9,
       "label": "FY2024"
      },
@@ -625,7 +756,7 @@
         "funded": true,
         "project": "Public Safety Radio System - Replace update obsolete equipment- Phase 2",
         "rank_text": "1",
-        "thread": 3
+        "thread": null
        },
        {
         "amount_text": "$185,000",
@@ -673,7 +804,7 @@
         "funded": true,
         "project": "Northfield Culvert (Kelly's Pond) Construction",
         "rank_text": "7",
-        "thread": 4
+        "thread": 3
        },
        {
         "amount_text": "$33,569",
@@ -681,7 +812,7 @@
         "funded": true,
         "project": "THES, Installation of 3M Window Safety Film",
         "rank_text": "8",
-        "thread": 8
+        "thread": 6
        },
        {
         "amount_text": "$36,450",
@@ -721,7 +852,7 @@
         "funded": false,
         "project": "District, Dump Truck with Plow",
         "rank_text": "13",
-        "thread": 6
+        "thread": 5
        },
        {
         "amount_text": "$60,000",
@@ -737,7 +868,7 @@
         "funded": false,
         "project": "North Cemetery Expansion Area",
         "rank_text": "15",
-        "thread": 13
+        "thread": 10
        },
        {
         "amount_text": "$65,000",
@@ -761,7 +892,7 @@
         "funded": false,
         "project": "Parks McNally Park",
         "rank_text": "18",
-        "thread": 5
+        "thread": 4
        },
        {
         "amount_text": "$200,000",
@@ -769,7 +900,7 @@
         "funded": false,
         "project": "LMHS Turf Field, Site Survey & Drainage Improvements",
         "rank_text": "19",
-        "thread": 10
+        "thread": 11
        },
        {
         "amount_text": "$30,000",
@@ -777,7 +908,7 @@
         "funded": false,
         "project": "Lunenburg Primary School, Designer Services, Playground Equipment",
         "rank_text": "20",
-        "thread": 14
+        "thread": 12
        },
        {
         "amount_text": "$160,000",
@@ -793,7 +924,7 @@
         "funded": false,
         "project": "Parks, Marshall Pond Treatment",
         "rank_text": "22",
-        "thread": 7
+        "thread": 13
        },
        {
         "amount_text": "$275,000",
@@ -801,7 +932,7 @@
         "funded": false,
         "project": "Front End Loader with Plow",
         "rank_text": "23",
-        "thread": 15
+        "thread": 14
        },
        {
         "amount_text": "$35,000",
@@ -809,7 +940,7 @@
         "funded": false,
         "project": "Public Safety Building 2nd Floor Space Engineering",
         "rank_text": "24",
-        "thread": 16
+        "thread": 15
        },
        {
         "amount_text": "$38,500",
@@ -817,7 +948,7 @@
         "funded": false,
         "project": "Cemetery, Headstone Restoration",
         "rank_text": "25",
-        "thread": 9
+        "thread": 7
        },
        {
         "amount_text": "$30,000",
@@ -825,7 +956,7 @@
         "funded": false,
         "project": "Lunenburg Primary School, Feasibility Study for Entry & Drive Way Expansion",
         "rank_text": "26",
-        "thread": 17
+        "thread": 16
        },
        {
         "amount_text": "$35,000",
@@ -849,7 +980,7 @@
         "funded": false,
         "project": "Primary, Installation of 3M Window Safety Film",
         "rank_text": "29",
-        "thread": 8
+        "thread": 6
        },
        {
         "amount_text": "$42,618",
@@ -857,7 +988,7 @@
         "funded": false,
         "project": "MSHS, Installation of 3M Window Safety Film",
         "rank_text": "30",
-        "thread": 8
+        "thread": 6
        },
        {
         "amount_text": "$20,000",
@@ -873,7 +1004,7 @@
         "funded": false,
         "project": "Senior Center, Parking Lot Design",
         "rank_text": "32",
-        "thread": 18
+        "thread": 17
        },
        {
         "amount_text": "$65,000",
@@ -881,7 +1012,7 @@
         "funded": false,
         "project": "Ritter Building, Floor Covering Replacement Vertex Item #14",
         "rank_text": "33",
-        "thread": 11
+        "thread": 8
        },
        {
         "amount_text": "$65,000",
@@ -889,7 +1020,7 @@
         "funded": false,
         "project": "Ritter Building, Painting, Vertex Year 2 Items #15-16",
         "rank_text": "34",
-        "thread": 12
+        "thread": 9
        },
        {
         "amount_text": "$350,000",
@@ -898,9 +1029,39 @@
         "project": "North Cemetery New Stone Wall",
         "rank_text": "35",
         "thread": null
+       },
+       {
+        "amount_text": "$50,000",
+        "dept": "Town Facilities and Parks",
+        "funded": false,
+        "never": true,
+        "project": "TC Passios, Abatement Testing Vertex Item#21",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": 2
+       },
+       {
+        "amount_text": "$20,000",
+        "dept": "Town Facilities and Parks",
+        "funded": false,
+        "never": true,
+        "project": "TC Passios Plumbing Upgrade Vertex Item #24",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": 2
+       },
+       {
+        "amount_text": "$20,000",
+        "dept": "Town Facilities and Parks",
+        "funded": false,
+        "never": true,
+        "project": "Ritter Building, Basement and Foundation Repair",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": null
        }
       ],
-      "count_text": "35 requests",
+      "count_text": "35 on the list · 3 never ranked",
       "cut": 10,
       "label": "FY2025"
      },
@@ -920,7 +1081,7 @@
         "funded": false,
         "project": "Primary School Feasibility Study for Entry & Drive Way Expansion",
         "rank_text": "2",
-        "thread": 17
+        "thread": 16
        },
        {
         "amount_text": "$75,000",
@@ -952,7 +1113,7 @@
         "funded": false,
         "project": "Primary School Designer Services, Playground Equipment",
         "rank_text": "6",
-        "thread": 14
+        "thread": 12
        },
        {
         "amount_text": "$20,000",
@@ -984,7 +1145,7 @@
         "funded": true,
         "project": "Public Safety Building 2nd Floor Design – Office/File Space",
         "rank_text": "10",
-        "thread": 16
+        "thread": 15
        },
        {
         "amount_text": "$72,058",
@@ -1032,7 +1193,7 @@
         "funded": true,
         "project": "Senior Center Parking Design",
         "rank_text": "16",
-        "thread": 18
+        "thread": 17
        },
        {
         "amount_text": "$70,000",
@@ -1056,7 +1217,7 @@
         "funded": false,
         "project": "Primary School Window Safety Film",
         "rank_text": "19",
-        "thread": 8
+        "thread": 6
        },
        {
         "amount_text": "$50,000",
@@ -1064,7 +1225,7 @@
         "funded": true,
         "project": "North Cemetery Expansion Area Prep",
         "rank_text": "20",
-        "thread": 13
+        "thread": 10
        },
        {
         "amount_text": "$50,000",
@@ -1080,7 +1241,7 @@
         "funded": true,
         "project": "Marshall Pond Weed Treatment",
         "rank_text": "22",
-        "thread": 7
+        "thread": 13
        },
        {
         "amount_text": "$200,000",
@@ -1113,9 +1274,39 @@
         "project": "Primary School Heat Pump System (Local Funding for Green Communities Award)",
         "rank_text": null,
         "thread": null
+       },
+       {
+        "amount_text": "$33,250",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "LMHS (Middle-High School) Window Safety Film",
+        "rank_text": null,
+        "status_text": "withdrawn",
+        "thread": 6
+       },
+       {
+        "amount_text": "$64,780",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "Utility Pickup Truck with Plow",
+        "rank_text": null,
+        "status_text": "withdrawn",
+        "thread": 5
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "LMHS track and field complex: design and bid solicitation (spring 2025 warrant article)",
+        "rank_text": null,
+        "status_text": "withdrawn",
+        "thread": null
        }
       ],
-      "count_text": "26 requests",
+      "count_text": "26 on the list · 3 never ranked",
       "cut": 1,
       "label": "FY2026"
      },
@@ -1151,7 +1342,7 @@
         "funded": true,
         "project": "Primary School Entry and Driveway Expansion (Design)",
         "rank_text": "4",
-        "thread": 17
+        "thread": 16
        },
        {
         "amount_text": "$30,000",
@@ -1159,7 +1350,7 @@
         "funded": true,
         "project": "Primary School Playground (Design)",
         "rank_text": "5",
-        "thread": 14
+        "thread": 12
        },
        {
         "amount_text": "$68,627",
@@ -1207,7 +1398,7 @@
         "funded": true,
         "project": "Front End Loader with Snow Plow (replacement, retain spare)",
         "rank_text": "11",
-        "thread": 15
+        "thread": 14
        },
        {
         "amount_text": "$20,405",
@@ -1231,7 +1422,7 @@
         "funded": false,
         "project": "Primary School Window Safety Film",
         "rank_text": "14",
-        "thread": 8
+        "thread": 6
        },
        {
         "amount_text": "$49,800",
@@ -1296,9 +1487,99 @@
         "project": "TC Passios Hazmat Abatement",
         "rank_text": "22",
         "thread": null
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "LMHS turf field: site survey, hillside hardscape and drainage",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": 11
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "Turkey Hill hot water tank replacement",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": null
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "Security camera central server replacement (district)",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": null
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "LMHS window safety film",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": 6
+       },
+       {
+        "amount_text": "$292,998",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "Primary School generator",
+        "rank_text": null,
+        "status_text": "moved to FY2028",
+        "thread": null
+       },
+       {
+        "amount_text": "$500,000",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "Turkey Hill classroom mini-splits",
+        "rank_text": null,
+        "status_text": "moved to FY2028",
+        "thread": null
+       },
+       {
+        "amount_text": "$49,984",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "LMHS auditorium booth upgrades",
+        "rank_text": null,
+        "status_text": "moved to FY2028",
+        "thread": null
+       },
+       {
+        "amount_text": "$30,000",
+        "dept": "Schools",
+        "funded": false,
+        "never": true,
+        "project": "Primary School gas condensing boilers (plans)",
+        "rank_text": null,
+        "status_text": "moved to FY2029",
+        "thread": null
+       },
+       {
+        "amount_text": "amount not printed",
+        "dept": "Facilities",
+        "funded": false,
+        "never": true,
+        "project": "Public Safety Building garage oil-fired unit heaters",
+        "rank_text": null,
+        "status_text": "dropped before ranking",
+        "thread": null
        }
       ],
-      "count_text": "22 requests",
+      "count_text": "22 on the list · 9 never ranked",
       "cut": 12,
       "label": "FY2027"
      }
@@ -1338,7 +1619,7 @@
        6
       ],
       "ours": false,
-      "thread": 4
+      "thread": 3
      },
      {
       "a": [
@@ -1350,7 +1631,7 @@
        17
       ],
       "ours": false,
-      "thread": 5
+      "thread": 4
      },
      {
       "a": [
@@ -1374,7 +1655,7 @@
        12
       ],
       "ours": false,
-      "thread": 6
+      "thread": 5
      },
      {
       "a": [
@@ -1386,7 +1667,7 @@
        24
       ],
       "ours": false,
-      "thread": 9
+      "thread": 7
      },
      {
       "a": [
@@ -1410,7 +1691,7 @@
        32
       ],
       "ours": false,
-      "thread": 11
+      "thread": 8
      },
      {
       "a": [
@@ -1422,7 +1703,7 @@
        33
       ],
       "ours": false,
-      "thread": 12
+      "thread": 9
      },
      {
       "a": [
@@ -1494,7 +1775,7 @@
        7
       ],
       "ours": false,
-      "thread": 8
+      "thread": 6
      },
      {
       "a": [
@@ -1506,7 +1787,7 @@
        28
       ],
       "ours": false,
-      "thread": 8
+      "thread": 6
      },
      {
       "a": [
@@ -1518,43 +1799,7 @@
        29
       ],
       "ours": false,
-      "thread": 8
-     },
-     {
-      "a": [
-       1,
-       7
-      ],
-      "b": [
-       2,
-       0
-      ],
-      "ours": true,
-      "thread": 3
-     },
-     {
-      "a": [
-       1,
-       16
-      ],
-      "b": [
-       2,
-       21
-      ],
-      "ours": true,
-      "thread": 7
-     },
-     {
-      "a": [
-       1,
-       20
-      ],
-      "b": [
-       2,
-       18
-      ],
-      "ours": true,
-      "thread": 10
+      "thread": 6
      },
      {
       "a": [
@@ -1566,7 +1811,7 @@
        21
       ],
       "ours": true,
-      "thread": 7
+      "thread": 13
      },
      {
       "a": [
@@ -1578,7 +1823,7 @@
        5
       ],
       "ours": true,
-      "thread": 14
+      "thread": 12
      },
      {
       "a": [
@@ -1590,7 +1835,7 @@
        4
       ],
       "ours": true,
-      "thread": 14
+      "thread": 12
      },
      {
       "a": [
@@ -1602,7 +1847,7 @@
        1
       ],
       "ours": true,
-      "thread": 17
+      "thread": 16
      },
      {
       "a": [
@@ -1614,7 +1859,7 @@
        3
       ],
       "ours": true,
-      "thread": 17
+      "thread": 16
      },
      {
       "a": [
@@ -1626,7 +1871,7 @@
        18
       ],
       "ours": true,
-      "thread": 8
+      "thread": 6
      },
      {
       "a": [
@@ -1638,7 +1883,7 @@
        13
       ],
       "ours": true,
-      "thread": 8
+      "thread": 6
      },
      {
       "a": [
@@ -1650,7 +1895,7 @@
        19
       ],
       "ours": true,
-      "thread": 13
+      "thread": 10
      },
      {
       "a": [
@@ -1662,7 +1907,7 @@
        9
       ],
       "ours": true,
-      "thread": 16
+      "thread": 15
      },
      {
       "a": [
@@ -1674,7 +1919,7 @@
        15
       ],
       "ours": true,
-      "thread": 18
+      "thread": 17
      },
      {
       "a": [
@@ -1686,15 +1931,100 @@
        10
       ],
       "ours": true,
-      "thread": 15
+      "thread": 14
+     },
+     {
+      "a": [
+       1,
+       19
+      ],
+      "b": [
+       2,
+       35
+      ],
+      "ours": false,
+      "thread": 2
+     },
+     {
+      "a": [
+       1,
+       23
+      ],
+      "b": [
+       2,
+       36
+      ],
+      "ours": false,
+      "thread": 2
+     },
+     {
+      "a": [
+       1,
+       17
+      ],
+      "b": [
+       3,
+       26
+      ],
+      "ours": false,
+      "thread": 6
+     },
+     {
+      "a": [
+       2,
+       29
+      ],
+      "b": [
+       3,
+       26
+      ],
+      "ours": true,
+      "thread": 6
+     },
+     {
+      "a": [
+       2,
+       12
+      ],
+      "b": [
+       3,
+       27
+      ],
+      "ours": false,
+      "thread": 5
+     },
+     {
+      "a": [
+       2,
+       18
+      ],
+      "b": [
+       4,
+       22
+      ],
+      "ours": true,
+      "thread": 11
+     },
+     {
+      "a": [
+       2,
+       29
+      ],
+      "b": [
+       4,
+       25
+      ],
+      "ours": true,
+      "thread": 6
      }
     ],
-    "note": "Each column is one year’s full ranked list in the Capital Planning Committee’s order. A request withdrawn or set aside before the committee ranked it is not drawn: the departments’ own lists are not held.",
+    "note": "Each column is one year’s full ranked list in the Capital Planning Committee’s order. Below it, dotted: requests made for that year that the committee never ranked, as found in its minutes, the department and Town Manager decks and the recordings. The departments’ own complete lists are not held, so there may be more. Each year’s page gives the reason, where one is recorded.",
     "text": {
      "cut": "Highest-ranked request left unfunded",
      "funded": "Funded",
      "gap": "Rank not in the documents held",
      "hint": "Tap a request to follow it across years.",
+     "never": "Requested that year, never ranked",
      "ours": "Same project, joined by us by name",
      "town": "Same project, by the town’s project number",
      "unfunded": "Not funded",
@@ -1707,7 +2037,7 @@
     "literals": [],
     "text": "Most requests appear in one year only; the lines show the few that came back, and where each stood against the funding line each time."
    },
-   "title": "Every ranked request, every year"
+   "title": "Every request, every year"
   },
   {
    "block": "chart",

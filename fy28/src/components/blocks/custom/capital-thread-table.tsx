@@ -7,7 +7,9 @@
  *  across years. Because the cells are opaque, a line shows only in the gutters, and one that skips
  *  a year passes visibly behind that year's column. A split (one request becoming three) is three
  *  lines from one cell. Solid: the town's own project number joins them; dashed: we joined them by
- *  name (scripts/build_capital_rankings.py LINKS).
+ *  name (scripts/build_capital_rankings.py LINKS). Below each year's ranked list, in dotted cells,
+ *  the requests departments made for that year that the committee never ranked (status_text says
+ *  what happened: dropped, withdrawn, moved), joined to the years they were ranked.
  *
  *  Fixed row height is the point of the layout: every line's end is arithmetic on (column, slot),
  *  so nothing is measured after render and nothing reflows. Each column's dashed rule sits above its
@@ -20,12 +22,13 @@ import type { CustomProps } from './index'
 type Cell = { gap: true } | {
   gap?: false; project: string; rank_text: string | null; amount_text: string; funded: boolean
   dept: string; thread: number | null
+  never?: boolean; status_text?: string   // asked for that year, never on the committee's list
 }
 type Col = { label: string; count_text: string; cells: Cell[]; cut: number | null }
 type Line = { a: [number, number]; b: [number, number]; ours: boolean; thread: number }
 type Data = {
   columns: Col[]; lines: Line[]; note: string
-  text: { funded: string; unfunded: string; town: string; ours: string; cut: string; gap: string; unranked: string; hint: string }
+  text: { funded: string; unfunded: string; town: string; ours: string; cut: string; gap: string; unranked: string; hint: string; never?: string }
 }
 
 const COLW = 172, GAP = 40, ROWH = 38, HEAD = 44, PAD = 3
@@ -59,6 +62,10 @@ export default function CapitalThreadTable({ data, alt }: CustomProps) {
           <svg width="22" height="6"><line x1="0" y1="3" x2="22" y2="3" stroke="var(--text-secondary)" strokeWidth="1.6" strokeDasharray="4 3" /></svg>{d.text.ours}</span>
         <span className="inline-flex items-center gap-1.5">
           <svg width="22" height="6"><line x1="0" y1="3" x2="22" y2="3" stroke="var(--status-warning)" strokeWidth="1.6" strokeDasharray="5 3" /></svg>{d.text.cut}</span>
+        {d.text.never ? (
+          <span className="inline-flex items-center gap-1.5">
+            <span className="inline-block w-4 h-3 rounded-sm" style={{ border: '1px dotted var(--text-muted)' }} />{d.text.never}</span>
+        ) : null}
       </div>
       <p className="text-[12px] mb-2" style={{ color: 'var(--text-muted)' }}>{d.text.hint}</p>
       <div className="overflow-x-auto -mx-1 px-1 pb-2">
@@ -90,7 +97,7 @@ export default function CapitalThreadTable({ data, alt }: CustomProps) {
                 const key = `${ci}-${s}`
                 const on = (active !== null && t === active) || here === key
                 return (
-                  <button key={s} type="button" title={`${cell.project} · ${cell.dept} · ${cell.amount_text}`}
+                  <button key={s} type="button" title={`${cell.project} · ${cell.dept} · ${cell.amount_text}${cell.status_text ? ' · ' + cell.status_text : ''}`}
                     className="absolute rounded-sm text-left px-2 py-[3px] overflow-hidden"
                     onMouseEnter={() => { setHover(t); setHere(key) }}
                     onMouseLeave={() => { setHover(null); setHere(null) }}
@@ -100,13 +107,13 @@ export default function CapitalThreadTable({ data, alt }: CustomProps) {
                     style={{
                       ...style, cursor: t !== null ? 'pointer' : 'default',
                       background: cell.funded ? `color-mix(in srgb, ${FUNDED} 16%, var(--surface-1))` : 'var(--surface-1)',
-                      border: `1px solid ${on ? 'var(--text-primary)' : 'var(--grid)'}`,
-                      borderLeft: `3px solid ${cell.funded ? FUNDED : UNFUNDED}`,
+                      border: `1px ${cell.never ? 'dotted' : 'solid'} ${on ? 'var(--text-primary)' : cell.never ? 'var(--text-muted)' : 'var(--grid)'}`,
+                      borderLeft: cell.never ? `1px dotted ${on ? 'var(--text-primary)' : 'var(--text-muted)'}` : `3px solid ${cell.funded ? FUNDED : UNFUNDED}`,
                       opacity: lit(t) ? 1 : 0.35,
                     }}>
                     <span className="block truncate text-[12px] leading-tight" style={{ color: 'var(--text-primary)', fontWeight: t !== null ? 600 : 400 }}>{cell.project}</span>
                     <span className="block text-[11px] leading-tight tabular-nums mt-[2px]" style={{ color: 'var(--text-muted)' }}>
-                      {cell.rank_text ?? d.text.unranked} · {cell.amount_text}</span>
+                      {cell.rank_text ?? cell.status_text ?? d.text.unranked} · {cell.amount_text}</span>
                   </button>)
               })}
               {c.cut !== null ? (

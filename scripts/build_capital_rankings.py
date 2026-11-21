@@ -35,8 +35,10 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 import topic_blocks as TB  # noqa: E402
+import build_capital_unranked as BU  # noqa: E402
 
 DATA = os.path.join(ROOT, 'sources', 'data', 'capital-rankings.csv')
+UDATA = BU.DATA   # requests made and never ranked: scripts/build_capital_unranked.py
 OUT_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 HUB = 'capital-rankings'
 YEARS = (2023, 2024, 2025, 2026, 2027)
@@ -76,6 +78,8 @@ DOC = {   # every document a page cites: label and the archive address
              'town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf'),
     'data': ('Lunenburg Budget Project — capital-rankings.csv, every row and its page or cell',
              None),
+    'unranked': ('Lunenburg Budget Project — capital-requests-unranked.csv, every request made and never '
+                 'ranked, with the page, line or second it was read from', None),
 }
 RANKS_FROM = {2023: ['a75'], 2024: ['a195', 'a194', 'cpc24'], 2025: ['cpc25', '1504'], 2026: ['cpc26', 'ar25'],
               2027: ['plan27', 'cpc27', 'pre27']}
@@ -105,9 +109,102 @@ def load():
     return rows
 
 
+def load_unranked():
+    """Requests made and never ranked (scripts/build_capital_unranked.py, which validates them and
+    derives ranked_in). Only kinds that ARE a request for that year and never ranked are drawn as
+    unranked; `merged` rows are listed apart on the year page; `out-year` rows stay in the data."""
+    if not os.path.exists(UDATA):
+        fail('%s is not built -- python3.11 scripts/build_capital_unranked.py' % os.path.relpath(UDATA, ROOT))
+    out = []
+    for r in csv.DictReader(open(UDATA, encoding='utf-8')):
+        r['fy'] = int(r['cycle_fy'])
+        r['amt'] = float(r['amount']) if r['amount'] else None
+        r['ok'], r['cpc'] = False, None
+        out.append(r)
+    return out
+
+
+def drawn(UN, fy=None):
+    return [u for u in UN if u['kind'] in BU.UNRANKED and u['fy'] in YEARS and (fy is None or u['fy'] == fy)]
+
+
+WHAT = {'dropped': 'dropped before ranking', 'withdrawn': 'withdrawn', 'not-ranked': 'left unrated',
+        'merged': 'folded into a ranked request'}
+
+
+def what(u):
+    if u['kind'] == 'moved':
+        return 'moved to %s' % C.fy(int(u['money_fy'])) if u['money_fy'] else 'moved to a later year'
+    return WHAT[u['kind']]
+
+
+def amount_text(u):
+    return C.usd(u['amt']) if u['amt'] is not None else 'amount not printed'
+
+
+def _href(u):
+    path = u['reason_source'].split(';')[0].strip()
+    if not path:
+        return None
+    if 'youtube-transcripts' in path:
+        m = [w for w in (u['reason_where'] + ' ' + u['reason_source']).split() if w.startswith('https://')]
+        return m[0].rstrip(';,') if m else None
+    if path.startswith('meetings/text/') and path.endswith('.txt'):   # link the minutes, not our text
+        pdf = 'meetings/' + path[len('meetings/text/'):-4] + '.pdf'
+        if os.path.exists(os.path.join(ROOT, 'sources', pdf)):
+            path = pdf
+    return '/docs/' + path
+
+
+def unranked_block(fy, UN):
+    """Every request made for the year that the committee's list does not hold, with its reason."""
+    rows, merged, allow, figs = [], [], set(), set()
+    for u in [x for x in UN if x['fy'] == fy and x['kind'] in BU.UNRANKED + ('merged',)]:
+        b = u['reason_basis']
+        basis, btext = {'document': ('document', 'document'),
+                        'document (match ours)': ('ours', 'document; that it is this request is our match'),
+                        'captions (finding aid)': ('captions', 'meeting recording, captions'),
+                        'none recorded': ('none', 'minutes and recordings searched')}[b]
+        reason = 'none recorded' if b == 'none recorded' else u['reason']
+        rt = u['ranked_in'].replace('never ranked FY2023-FY2027', 'never, FY2023 to FY2027')
+        item = dict(project=u['project'], dept=u['department'] or 'department not printed',
+                    amount_text=amount_text(u), what=what(u), reason=reason, basis=basis, basis_text=btext,
+                    href=_href(u) if basis != 'none' else None, ranked_text=rt)
+        (merged if u['kind'] == 'merged' else rows).append(item)
+        if u['amt'] is not None:
+            figs.add(item['amount_text'])
+        allow |= {u['project'], reason, rt, item['what'], item['dept']}
+        if item['href']:
+            allow.add(item['href'])
+    n = len(rows)
+    stated = sum(1 for r in rows if r['basis'] != 'none')
+    data = dict(rows=rows, merged=merged, text=dict(
+        merged='Folded into requests the committee did rank', reason='Why:', ranked='Ranked in:'),
+        note='Requests found in the committee’s minutes, the department and Town Manager decks, the '
+             'committee’s workbooks and the School Committee’s plans. The departments’ own complete '
+             'lists are not held, so there may be more. A reason is shown only where a document or a '
+             'speaker states one.')
+    blk = TB.custom('capital-unranked-list', 'Requested, never ranked', data, place='body',
+                    figures=sorted(figs), allow=sorted(a for a in allow if a),
+                    alt='%s: each capital request made for the year that the committee did not rank, '
+                        'what happened to it, and the reason where one is recorded.' % C.fy(fy),
+                    so='The ranked list is not every request; these never reached it.')
+    f = LD.fact
+    facts = [f('asked', N(n, 'requests'), 'requested and never ranked', 'published'),
+             f('stated', figure(stated, '%d of %d' % (stated, n), 'requests'),
+               'with a reason a document or recording states', 'published')]
+    con = TP.conclusion('%s requests made for %s never reached the ranked list; %s have a stated reason.'
+                        % (C.num(n), C.fy(fy), '%d of %d' % (stated, n)), ['asked', 'stated'],
+                        {'a': N(n, 'requests'), 'y': F(fy), 'b': figure(stated, '%d of %d' % (stated, n), 'requests')},
+                        so='The list the committee ranked is what reached it, not every request a '
+                           'department made.')
+    return TB.claims(blk, [con], facts)
+
+
 def src(key):
     label, path = DOC[key]
-    return dict(key=key, label=label, href='/docs/' + path if path else '/data/capital-rankings.csv')
+    data = '/docs/data/capital-requests-unranked.csv' if key == 'unranked' else '/docs/data/capital-rankings.csv'
+    return dict(key=key, label=label, href='/docs/' + path if path else data)
 
 
 def P(x):
@@ -288,7 +385,7 @@ def bands_block(d, title, place, alt, note, so, allow=(), highlight=None):
                      allow=list(allow))
 
 
-def year_page(fy, rs):
+def year_page(fy, rs, UN):
     s = year_stats(rs)
     pid = 'capital-fy%d' % fy
     d = s['d']
@@ -343,6 +440,7 @@ def year_page(fy, rs):
         cons.append(con('Every funded project ranked above every unfunded one in the committee’s order.',
                         ['fn'], so='Here the funding line is one clean cut across the committee’s list.'))
     flow += [cite(lb, *ranks, out), ('conclusion', len(cons) - 1)]
+    flow.append(cite(unranked_block(fy, UN), 'unranked'))
 
     # 3. two orders, where both are printed
     if oblk:
@@ -375,6 +473,9 @@ def year_page(fy, rs):
         gaps.append(('Each department’s own order of its requests. Closes: each department’s %s priority list, '
                      'requested by records request on 20 November 2026.' % C.fy(fy), None,
                      (C.fy(fy), '20 November 2026')))
+    gaps.append(('Every request each department filed for %s, including any never presented or minuted. '
+                 'Closes: each department’s complete request list, requested by records request on '
+                 '20 November 2026.' % C.fy(fy), None, (C.fy(fy), '20 November 2026')))
     if fy == 2027:
         gaps.append(('The Town Clerk’s written record of the Article 13 vote. The vote is known from the meeting '
                      'recording only.', None, ('Article 13',)))
@@ -409,7 +510,7 @@ def year_page(fy, rs):
                                     place='end', tone='plain'), *ranks, out))
     flow.append('sources')
 
-    keys = list(OrderedDict.fromkeys(ranks + [first_doc, out, 'data']))
+    keys = list(OrderedDict.fromkeys(ranks + [first_doc, out, 'data', 'unranked']))
     sources = [src(k) for k in keys]
     finding = ('%s of %s capital requests were funded, %s of the dollars requested.'
                % (C.num(s['fn']), C.num(s['n']), C.pct(s['share'])))
@@ -426,9 +527,6 @@ def year_page(fy, rs):
 # drawn dashed. Pairs we judged too doubtful to draw are listed in DOUBTFUL so the next reader
 # sees they were looked at, not missed.
 LINKS = [
-    ((2024, 'FD23-01'), (2025, 'FD23-02')),            # radio system, phase 1 then phase 2
-    ((2024, 'FM23-03'), (2025, 'FM23-36')),            # Whalom Lake/Marshall Pond, then Marshall Pond
-    ((2024, 'LPS23-06'), (2025, 'LPS20-04-A')),        # the MS/HS turf field: feasibility study, then site survey
     ((2025, 'FM23-36'), (2026, 'Marshall Pond Weed Treatment')),
     ((2025, 'LPS23-04'), (2026, 'Primary School Designer Services, Playground Equipment')),
     ((2026, 'Primary School Designer Services, Playground Equipment'), (2027, 'Primary School Playground (Design)')),
@@ -442,13 +540,22 @@ LINKS = [
     ((2025, 'FM24-08'), (2026, 'Senior Center Parking Design')),
     ((2025, 'DPW22-01'), (2027, 'Front End Loader with Snow Plow (replacement, retain spare)')),
 ]
+# TJ, 20 November 2026: "you should assume if they have different codes, that they are different
+# projects." So two rows carrying different town codes are never joined, and these were settled
+# by that rule rather than judged. (A suffix split, X-1 under X, is one code and still joins.)
+DIFFERENT = [
+    'FD23-01 radio system (FY2024) and FD23-02 (FY2025): different codes',
+    'FM23-03 Whalom Lake/Marshall Pond (FY2024) and FM23-36 Marshall Pond (FY2025): different codes',
+    'LPS23-06 turf field feasibility study (FY2024) and LPS20-04-A turf field site survey (FY2025): different codes',
+    'FM20-05 Senior Center parking lot (FY2023, FY2024) and FM24-08 parking lot design (FY2025): different codes',
+    'FM19-06A Ritter, Vertex year 0-1 (FY2023) and FM19-06C-1/-2 Ritter items (FY2024): different codes',
+]
+# Rows of FY2026 and FY2027 print no codes, so the rule cannot decide these.
 DOUBTFUL = [
-    'FM20-05 Senior Center parking lot (FY2023, FY2024) and FM24-08 parking lot design (FY2025): a new number, a design request',
     'DPW23-18 / DPW 17-14 six-wheel trucks (FY2024, funded) and the FY2027 six-wheel replacement',
     'DPW17-09 one-ton dump (FY2023, funded) and the FY2027 one-ton replacement',
     'LPS19-10 mower (FY2023, funded) and the FY2027 mower replacement',
     'FM19-08A Old Primary abatement (FY2023, funded) and FY2027 TC Passios hazmat abatement',
-    'FM19-06A Ritter, Vertex year 0-1 (FY2023) and FM19-06C-1/-2 Ritter items (FY2024)',
 ]
 
 
@@ -512,9 +619,34 @@ def threads(R, E):
     return out
 
 
-def thread_table_block(R):
-    E = edges(R)
-    T = threads(R, E)
+def unranked_edges(R, D):
+    """Lines to the requests made and never ranked: the same town number on a ranked list (the
+    nearest year before and after), or the ranked request the row's `same_as` names (ours, by name,
+    where the later year prints no number -- TJ's rule: different codes are different projects)."""
+    out = []
+    for d in D:
+        same = [r for r in R if d['project_number'] and r['project_number'] == d['project_number']]
+        before = [r for r in same if r['fy'] < d['fy']]
+        after = [r for r in same if r['fy'] > d['fy']]
+        if before:
+            out.append((max(before, key=lambda r: r['fy']), d, False))
+        if after:
+            out.append((d, min(after, key=lambda r: r['fy']), False))
+        for ref in filter(None, (x.strip() for x in d['same_as'].split(';'))):
+            fy, _, k = ref.partition(':')
+            r = _row(R, int(fy), k)
+            if r in same or r['fy'] == d['fy']:
+                continue
+            out.append((r, d, True) if r['fy'] < d['fy'] else (d, r, True))
+    return out
+
+
+def thread_table_block(R, UN):
+    E0 = edges(R)
+    T0 = threads(R, E0)            # the facts count ranked projects only, as before
+    D = drawn(UN)
+    E = E0 + unranked_edges(R, D)
+    T = threads(R + D, E)
     tid = {id(r): i for i, t in enumerate(T) for r in t['rows']}
     figs, names = set(), set()
     cols, where = [], {}
@@ -529,6 +661,8 @@ def thread_table_block(R):
         for k in range(1, top + 1):
             slots.append(by.get(k))
         slots += [r for r in yr if not r['cpc']]
+        never = [u for u in D if u['fy'] == y]
+        slots += never
         cells, cut = [], None
         for s, r in enumerate(slots):
             if r is None:
@@ -536,36 +670,46 @@ def thread_table_block(R):
                 continue
             where[id(r)] = (c, s)
             rank = C.num(r['cpc']) if r['cpc'] else None
-            amt = C.usd(r['amt'])
+            amt = C.usd(r['amt']) if r['amt'] is not None else 'amount not printed'
             figs |= {amt} | ({rank} if rank else set())
             names.add(r['project'])
             if cut is None and r['cpc'] and not r['ok']:
                 cut = s
-            cells.append(dict(project=r['project'], rank_text=rank, amount_text=amt, funded=r['ok'],
-                              dept=r['department'], thread=tid.get(id(r))))
-        n = C.num(len(yr))
-        figs |= {C.fy(y), n}
-        cols.append(dict(label=C.fy(y), count_text='%s requests' % n, cells=cells, cut=cut))
+            cell = dict(project=r['project'], rank_text=rank, amount_text=amt, funded=r['ok'],
+                        dept=r['department'] or 'department not printed', thread=tid.get(id(r)))
+            if 'kind' in r:
+                cell.update(never=True, status_text=what(r))
+                names.add(cell['status_text'])
+            cells.append(cell)
+        n, m = C.num(len(yr)), C.num(len(never))
+        figs |= {C.fy(y), n, m}
+        cols.append(dict(label=C.fy(y), count_text='%s on the list · %s never ranked' % (n, m), cells=cells, cut=cut))
     lines = [dict(a=where[id(a)], b=where[id(b)], ours=ours, thread=tid[id(a)]) for a, b, ours in E]
     data = dict(columns=cols, lines=lines, text=dict(
         funded='Funded', unfunded='Not funded', town='Same project, by the town’s project number',
         ours='Same project, joined by us by name', cut='Highest-ranked request left unfunded',
-        gap='Rank not in the documents held', unranked='unranked', hint='Tap a request to follow it across years.'),
-        note='Each column is one year’s full ranked list in the Capital Planning Committee’s order. A request '
-             'withdrawn or set aside before the committee ranked it is not drawn: the departments’ own '
-             'lists are not held.')
-    blk = TB.custom('capital-thread-table', 'Every ranked request, every year', data, place='lead',
+        gap='Rank not in the documents held', unranked='unranked', hint='Tap a request to follow it across years.',
+        never='Requested that year, never ranked'),
+        note='Each column is one year’s full ranked list in the Capital Planning Committee’s order. Below it, '
+             'dotted: requests made for that year that the committee never ranked, as found in its minutes, '
+             'the department and Town Manager decks and the recordings. The departments’ own complete lists '
+             'are not held, so there may be more. Each year’s page gives the reason, where one is recorded.')
+    blk = TB.custom('capital-thread-table', 'Every request, every year', data, place='lead',
                     figures=sorted(figs), allow=sorted(names),
-                    alt='Every capital request the committee ranked, in each year’s order, with lines joining the same project across years.',
+                    alt='Every capital request the committee ranked, in each year’s order, then the requests it never ranked, with lines joining the same project across years.',
                     so='Most requests appear in one year only; the lines show the few that came back, and where '
                        'each stood against the funding line each time.')
-    n, back, never = len(T), sum(t['back'] for t in T), sum(not t['ever'] for t in T)
+    n, back, never = len(T0), sum(t['back'] for t in T0), sum(not t['ever'] for t in T0)
     total = len(R)
+    stated = sum(1 for d in D if d['reason_basis'] != 'none recorded')
     f = LD.fact
     facts = [f('all', N(total, 'requests'), 'ranked on the five lists, all drawn', 'published'),
              f('again', N(n, 'projects'), 'on the lists in two or more years', 'published'),
              f('back', N(back, 'projects'), 'unfunded the first year, funded on a later list', 'published'),
-             f('never', N(never, 'projects'), 'on two or more lists and never funded in these years', 'published')]
+             f('never', N(never, 'projects'), 'on two or more lists and never funded in these years', 'published'),
+             f('asked', N(len(D), 'requests'), 'requested and never ranked, five years', 'published'),
+             f('stated', figure(stated, '%d of %d' % (stated, len(D)), 'requests'),
+               'never ranked, with a reason a document or recording states', 'published')]
     cons = [TP.conclusion('Of %s ranked requests on the five lists, %s projects came back in a later year.'
                           % (C.num(total), C.num(n)), ['all', 'again'],
                           {'a': N(total, 'requests'), 'b': N(n, 'projects')},
@@ -573,11 +717,16 @@ def thread_table_block(R):
             TP.conclusion('%s were unfunded the first time and funded later; %s never were.'
                           % (C.num(back), C.num(never)), ['back', 'never'],
                           {'a': N(back, 'projects'), 'b': N(never, 'projects')},
-                          so='One year’s outcome was not the last word on those projects.')]
+                          so='One year’s outcome was not the last word on those projects.'),
+            TP.conclusion('At least %s more requests were made and never ranked; %s have a stated reason.'
+                          % (C.num(len(D)), '%d of %d' % (stated, len(D))), ['asked', 'stated'],
+                          {'a': N(len(D), 'requests'), 'b': figure(stated, '%d of %d' % (stated, len(D)), 'requests')},
+                          so='At least, because the departments’ own lists are not held; the rest were '
+                             'found in minutes, decks and recordings.')]
     return TB.claims(blk, cons, facts)
 
 
-def hub(R):
+def hub(R, UN):
     st = {y: year_stats([r for r in R if r['fy'] == y]) for y in YEARS}
     full = list(YEARS)
     lo = min(full, key=lambda y: st[y]['share'])
@@ -661,16 +810,17 @@ def hub(R):
         'Five years of capital requests, each ranked by the Capital Planning Committee: between %s and %s '
         'of the dollars requested were funded, and in %s years the money did not follow the committee’s order.'
         % (C.pct(st[lo]['share']), C.pct(st[hi]['share']), C.num(len(out_order))),
-        None, table=table, blocks=[thread_table_block(R), yblk, bblk],
+        None, table=table, blocks=[thread_table_block(R, UN), yblk, bblk],
         tabs=('Each fiscal year', ['capital-fy%d' % y for y in sorted(YEARS, reverse=True)]),
         answer_figures={'a': P(st[lo]['share']), 'b': P(st[hi]['share']), 'n': N(len(out_order), 'years')})
 
 
 def build():
     R = load()
-    out = {HUB: hub(R)}
+    UN = load_unranked()
+    out = {HUB: hub(R, UN)}
     for y in YEARS:
-        out['capital-fy%d' % y] = year_page(y, [r for r in R if r['fy'] == y])
+        out['capital-fy%d' % y] = year_page(y, [r for r in R if r['fy'] == y], UN)
     mine = sorted(t for t, (_, home, gen) in REG.TOPICS.items() if home == HUB and gen == 'build_capital_rankings.py')
     if sorted(k for k in out if k != HUB) != mine:
         fail('the pages built are not the registry’s: %s' % sorted(set(mine) ^ set(out)))

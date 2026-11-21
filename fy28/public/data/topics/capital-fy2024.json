@@ -657,6 +657,143 @@
    "title": "Every request, in rank order"
   },
   {
+   "alt": "FY2024: each capital request made for the year that the committee did not rank, what happened to it, and the reason where one is recorded.",
+   "block": "custom",
+   "claims": [
+    {
+     "facts": [
+      {
+       "id": "asked",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "requested and never ranked"
+       },
+       "value": {
+        "text": "3",
+        "unit": "requests",
+        "value": 3
+       }
+      },
+      {
+       "id": "stated",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "with a reason a document or recording states"
+       },
+       "value": {
+        "text": "3 of 3",
+        "unit": "requests",
+        "value": 3
+       }
+      }
+     ],
+     "figures": {
+      "a": {
+       "text": "3",
+       "unit": "requests",
+       "value": 3
+      },
+      "b": {
+       "text": "3 of 3",
+       "unit": "requests",
+       "value": 3
+      },
+      "y": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      }
+     },
+     "literals": [],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "The list the committee ranked is what reached it, not every request a department made."
+     },
+     "text": "3 requests made for FY2024 never reached the ranked list; 3 of 3 have a stated reason."
+    }
+   ],
+   "component": "capital-unranked-list",
+   "data": {
+    "merged": [
+     {
+      "amount_text": "$240,000",
+      "basis": "none",
+      "basis_text": "minutes and recordings searched",
+      "dept": "Public Works (equipment)",
+      "href": null,
+      "project": "6 Wheel Dump/Spreader/Plow Truck",
+      "ranked_text": "FY2024 rank 6 of 29 (funded)",
+      "reason": "none recorded",
+      "what": "folded into a ranked request"
+     },
+     {
+      "amount_text": "$81,600",
+      "basis": "captions",
+      "basis_text": "meeting recording, captions",
+      "dept": "Public Works (infrastructure)",
+      "href": "https://www.youtube.com/watch?v=dZtV-sOgDZM",
+      "project": "Cemetery - Hedge Restoration, Turf Restoration, Headstone Restoration and Layout plots in new section",
+      "ranked_text": "FY2024 rank 16 of 29 (not funded); FY2024 rank 19 of 29 (not funded)",
+      "reason": "CPC asked the DPW Director to unbundle the items under $20,000 from the project",
+      "what": "folded into a ranked request"
+     }
+    ],
+    "note": "Requests found in the committee’s minutes, the department and Town Manager decks, the committee’s workbooks and the School Committee’s plans. The departments’ own complete lists are not held, so there may be more. A reason is shown only where a document or a speaker states one.",
+    "rows": [
+     {
+      "amount_text": "$200,000",
+      "basis": "captions",
+      "basis_text": "meeting recording, captions",
+      "dept": "Facilities, Parks & Recreation",
+      "href": "https://www.youtube.com/watch?v=UuCZTTYVUwI",
+      "project": "Marshall Park Engineering",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "facilities said the request would be withdrawn if the Special Town Meeting article for Marshall Park engineering passed; the STM voted it (Article 4, 15 Nov 2022)",
+      "what": "left unrated"
+     },
+     {
+      "amount_text": "$240,000",
+      "basis": "captions",
+      "basis_text": "meeting recording, captions",
+      "dept": "Public Works (infrastructure)",
+      "href": "https://www.youtube.com/watch?v=3DtWeBgX5tE",
+      "project": "Flat Hill Road Drainage Construction",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "CPC chair said there was not enough information to support it (no plan for where the water goes); a motion not to rate it was floated and held off",
+      "what": "left unrated"
+     },
+     {
+      "amount_text": "$126,500",
+      "basis": "document",
+      "basis_text": "document",
+      "dept": "Fire",
+      "href": "/docs/town-budget/docs/a199-fy24-fy33-fire-department-capital-plan-presentation-pdf.pdf",
+      "project": "Replace Engine 2 chassis",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "moved out a year due to higher priority items",
+      "what": "moved to FY2025"
+     }
+    ],
+    "text": {
+     "merged": "Folded into requests the committee did rank",
+     "ranked": "Ranked in:",
+     "reason": "Why:"
+    }
+   },
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The ranked list is not every request; these never reached it."
+   },
+   "title": "Requested, never ranked"
+  },
+  {
    "alt": "FY2024: each request’s Capital Planning Committee rank joined to its Town Manager rank.",
    "block": "custom",
    "component": "capital-two-orders",
@@ -915,6 +1052,14 @@
       "20 November 2026"
      ],
      "text": "Each department’s own order of its requests. Closes: each department’s FY2024 priority list, requested by records request on 20 November 2026."
+    },
+    {
+     "figures": {},
+     "literals": [
+      "FY2024",
+      "20 November 2026"
+     ],
+     "text": "Every request each department filed for FY2024, including any never presented or minuted. Closes: each department’s complete request list, requested by records request on 20 November 2026."
     }
    ],
    "place": "end",
@@ -1224,9 +1369,16 @@
   },
   {
    "cites": [
-    0
+    5
    ],
    "i": 2,
+   "part": "block"
+  },
+  {
+   "cites": [
+    0
+   ],
+   "i": 3,
    "part": "block"
   },
   {
@@ -1238,7 +1390,7 @@
     3,
     4
    ],
-   "i": 3,
+   "i": 4,
    "part": "block"
   },
   {
@@ -1274,7 +1426,7 @@
     2,
     3
    ],
-   "i": 4,
+   "i": 5,
    "part": "block"
   },
   {
@@ -1314,9 +1466,14 @@
    "label": "Town of Lunenburg — FY2023 annual town report (Article 6, May 2023)"
   },
   {
-   "href": "/data/capital-rankings.csv",
+   "href": "/docs/data/capital-rankings.csv",
    "key": "data",
    "label": "Lunenburg Budget Project — capital-rankings.csv, every row and its page or cell"
+  },
+  {
+   "href": "/docs/data/capital-requests-unranked.csv",
+   "key": "unranked",
+   "label": "Lunenburg Budget Project — capital-requests-unranked.csv, every request made and never ranked, with the page, line or second it was read from"
   }
  ],
  "table": {

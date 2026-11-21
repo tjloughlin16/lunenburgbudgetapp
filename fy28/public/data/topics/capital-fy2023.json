@@ -594,6 +594,154 @@
    "title": "Every request, in rank order"
   },
   {
+   "alt": "FY2023: each capital request made for the year that the committee did not rank, what happened to it, and the reason where one is recorded.",
+   "block": "custom",
+   "claims": [
+    {
+     "facts": [
+      {
+       "id": "asked",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "requested and never ranked"
+       },
+       "value": {
+        "text": "5",
+        "unit": "requests",
+        "value": 5
+       }
+      },
+      {
+       "id": "stated",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "with a reason a document or recording states"
+       },
+       "value": {
+        "text": "4 of 5",
+        "unit": "requests",
+        "value": 4
+       }
+      }
+     ],
+     "figures": {
+      "a": {
+       "text": "5",
+       "unit": "requests",
+       "value": 5
+      },
+      "b": {
+       "text": "4 of 5",
+       "unit": "requests",
+       "value": 4
+      },
+      "y": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      }
+     },
+     "literals": [],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "The list the committee ranked is what reached it, not every request a department made."
+     },
+     "text": "5 requests made for FY2023 never reached the ranked list; 4 of 5 have a stated reason."
+    }
+   ],
+   "component": "capital-unranked-list",
+   "data": {
+    "merged": [
+     {
+      "amount_text": "amount not printed",
+      "basis": "none",
+      "basis_text": "minutes and recordings searched",
+      "dept": "Highway (DPW infrastructure)",
+      "href": null,
+      "project": "Flat Hill Road Drainage Construction",
+      "ranked_text": "FY2023 rank 10 of 30 (funded)",
+      "reason": "none recorded",
+      "what": "folded into a ranked request"
+     }
+    ],
+    "note": "Requests found in the committee’s minutes, the department and Town Manager decks, the committee’s workbooks and the School Committee’s plans. The departments’ own complete lists are not held, so there may be more. A reason is shown only where a document or a speaker states one.",
+    "rows": [
+     {
+      "amount_text": "amount not printed",
+      "basis": "ours",
+      "basis_text": "document; that it is this request is our match",
+      "dept": "Town Facilities",
+      "href": "/docs/town-budget/docs/a75-fy23-capital-plan-presentation-pdf.pdf",
+      "project": "Town Beach Building Repairs",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "removed before ranking for want of a cost estimate -- but the deck does not name the project",
+      "what": "dropped before ranking"
+     },
+     {
+      "amount_text": "$50,000",
+      "basis": "none",
+      "basis_text": "minutes and recordings searched",
+      "dept": "Town Facilities",
+      "href": null,
+      "project": "Town Hall, remove, replace, repair electrical, phone & cable wiring",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "none recorded",
+      "what": "dropped before ranking"
+     },
+     {
+      "amount_text": "amount not printed",
+      "basis": "document",
+      "basis_text": "document",
+      "dept": "Town Facilities",
+      "href": "/docs/meetings/capital-planning-committee/2021-12-21-minutes-1297.pdf",
+      "project": "PSB, HVAC and Window Assessment",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "DPW Director recommended taking it off; drainage work would relieve moisture; Town Manager wants a professional window assessment, possibly Green Communities funded",
+      "what": "withdrawn"
+     },
+     {
+      "amount_text": "amount not printed",
+      "basis": "document",
+      "basis_text": "document",
+      "dept": "Police",
+      "href": "/docs/meetings/capital-planning-committee/2021-12-21-minutes-1297.pdf",
+      "project": "Police replacement cruiser (4th police item)",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "pushed out of FY2023; why is not recorded",
+      "what": "moved to a later year"
+     },
+     {
+      "amount_text": "$115,000",
+      "basis": "document",
+      "basis_text": "document",
+      "dept": "Fire",
+      "href": "/docs/meetings/capital-planning-committee/2021-10-26-minutes-1299.pdf",
+      "project": "Replace Engine 2 chassis",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "Fire Chief not satisfied with the estimates received; chassis cost hard to pin down",
+      "what": "moved to FY2024"
+     }
+    ],
+    "text": {
+     "merged": "Folded into requests the committee did rank",
+     "ranked": "Ranked in:",
+     "reason": "Why:"
+    }
+   },
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The ranked list is not every request; these never reached it."
+   },
+   "title": "Requested, never ranked"
+  },
+  {
    "alt": "FY2023: each request’s Capital Planning Committee rank joined to its Town Manager rank.",
    "block": "custom",
    "component": "capital-two-orders",
@@ -865,6 +1013,14 @@
       "20 November 2026"
      ],
      "text": "Each department’s own order of its requests. Closes: each department’s FY2023 priority list, requested by records request on 20 November 2026."
+    },
+    {
+     "figures": {},
+     "literals": [
+      "FY2023",
+      "20 November 2026"
+     ],
+     "text": "Every request each department filed for FY2023, including any never presented or minuted. Closes: each department’s complete request list, requested by records request on 20 November 2026."
     }
    ],
    "place": "end",
@@ -1172,9 +1328,16 @@
   },
   {
    "cites": [
-    0
+    3
    ],
    "i": 2,
+   "part": "block"
+  },
+  {
+   "cites": [
+    0
+   ],
+   "i": 3,
    "part": "block"
   },
   {
@@ -1186,7 +1349,7 @@
     1,
     2
    ],
-   "i": 3,
+   "i": 4,
    "part": "block"
   },
   {
@@ -1218,7 +1381,7 @@
     0,
     1
    ],
-   "i": 4,
+   "i": 5,
    "part": "block"
   },
   {
@@ -1248,9 +1411,14 @@
    "label": "Town of Lunenburg — FY2022 annual town report (Article 6, May 2022)"
   },
   {
-   "href": "/data/capital-rankings.csv",
+   "href": "/docs/data/capital-rankings.csv",
    "key": "data",
    "label": "Lunenburg Budget Project — capital-rankings.csv, every row and its page or cell"
+  },
+  {
+   "href": "/docs/data/capital-requests-unranked.csv",
+   "key": "unranked",
+   "label": "Lunenburg Budget Project — capital-requests-unranked.csv, every request made and never ranked, with the page, line or second it was read from"
   }
  ],
  "table": {

@@ -852,6 +852,143 @@
    "title": "Every request, in rank order"
   },
   {
+   "alt": "FY2025: each capital request made for the year that the committee did not rank, what happened to it, and the reason where one is recorded.",
+   "block": "custom",
+   "claims": [
+    {
+     "facts": [
+      {
+       "id": "asked",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "requested and never ranked"
+       },
+       "value": {
+        "text": "3",
+        "unit": "requests",
+        "value": 3
+       }
+      },
+      {
+       "id": "stated",
+       "kind": "published",
+       "label": {
+        "figures": {},
+        "literals": [],
+        "text": "with a reason a document or recording states"
+       },
+       "value": {
+        "text": "1 of 3",
+        "unit": "requests",
+        "value": 1
+       }
+      }
+     ],
+     "figures": {
+      "a": {
+       "text": "3",
+       "unit": "requests",
+       "value": 3
+      },
+      "b": {
+       "text": "1 of 3",
+       "unit": "requests",
+       "value": 1
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "literals": [],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "The list the committee ranked is what reached it, not every request a department made."
+     },
+     "text": "3 requests made for FY2025 never reached the ranked list; 1 of 3 have a stated reason."
+    }
+   ],
+   "component": "capital-unranked-list",
+   "data": {
+    "merged": [
+     {
+      "amount_text": "$150,000",
+      "basis": "document",
+      "basis_text": "document",
+      "dept": "Town Facilities and Parks",
+      "href": "/docs/meetings/capital-planning-committee/2023-12-04-minutes-6103.pdf",
+      "project": "Senior Center, Parking Lot",
+      "ranked_text": "FY2023 rank 27 of 30 (not funded); FY2024 rank 27 of 29 (not funded); FY2025 rank 32 of 35 (not funded)",
+      "reason": "project split into a design phase and a construction phase; design estimated at $35,000 and given a new number",
+      "what": "folded into a ranked request"
+     },
+     {
+      "amount_text": "$130,000",
+      "basis": "captions",
+      "basis_text": "meeting recording, captions",
+      "dept": "School Department",
+      "href": "https://www.youtube.com/watch?v=gmR4dClldSY",
+      "project": "District Schools, Installation of 3M Window Safety Film",
+      "ranked_text": "FY2024 rank 18 of 29 (not funded); FY2025 rank 8 of 35 (funded); FY2025 rank 29 of 35 (not funded); FY2025 rank 30 of 35 (not funded)",
+      "reason": "School Committee split the film by building so it could rank Turkey Hill higher",
+      "what": "folded into a ranked request"
+     }
+    ],
+    "note": "Requests found in the committee’s minutes, the department and Town Manager decks, the committee’s workbooks and the School Committee’s plans. The departments’ own complete lists are not held, so there may be more. A reason is shown only where a document or a speaker states one.",
+    "rows": [
+     {
+      "amount_text": "$50,000",
+      "basis": "captions",
+      "basis_text": "meeting recording, captions",
+      "dept": "Town Facilities and Parks",
+      "href": "https://www.youtube.com/watch?v=gmR4dClldSY",
+      "project": "TC Passios, Abatement Testing Vertex Item#21",
+      "ranked_text": "FY2024 rank 20 of 29 (not funded)",
+      "reason": "the testing had already been done: an assessment report from the earlier conceptual design was found (remediation costs still to be identified)",
+      "what": "dropped before ranking"
+     },
+     {
+      "amount_text": "$20,000",
+      "basis": "none",
+      "basis_text": "minutes and recordings searched",
+      "dept": "Town Facilities and Parks",
+      "href": null,
+      "project": "TC Passios Plumbing Upgrade Vertex Item #24",
+      "ranked_text": "FY2024 rank 24 of 29 (not funded)",
+      "reason": "none recorded",
+      "what": "dropped before ranking"
+     },
+     {
+      "amount_text": "$20,000",
+      "basis": "none",
+      "basis_text": "minutes and recordings searched",
+      "dept": "Town Facilities and Parks",
+      "href": null,
+      "project": "Ritter Building, Basement and Foundation Repair",
+      "ranked_text": "never, FY2023 to FY2027",
+      "reason": "none recorded",
+      "what": "dropped before ranking"
+     }
+    ],
+    "text": {
+     "merged": "Folded into requests the committee did rank",
+     "ranked": "Ranked in:",
+     "reason": "Why:"
+    }
+   },
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The ranked list is not every request; these never reached it."
+   },
+   "title": "Requested, never ranked"
+  },
+  {
    "alt": "FY2025: each request’s Capital Planning Committee rank joined to its Town Manager rank.",
    "block": "custom",
    "component": "capital-two-orders",
@@ -1149,6 +1286,22 @@
     "text": "A band that narrows was a smaller share of what was funded than of what was requested."
    },
    "title": "Who asked, who got"
+  },
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [
+      "FY2025",
+      "20 November 2026"
+     ],
+     "text": "Every request each department filed for FY2025, including any never presented or minuted. Closes: each department’s complete request list, requested by records request on 20 November 2026."
+    }
+   ],
+   "place": "end",
+   "title": "What the documents do not show",
+   "tone": "plain"
   }
  ],
  "category": "capital-rankings",
@@ -1428,9 +1581,16 @@
   },
   {
    "cites": [
-    0
+    4
    ],
    "i": 2,
+   "part": "block"
+  },
+  {
+   "cites": [
+    0
+   ],
+   "i": 3,
    "part": "block"
   },
   {
@@ -1442,7 +1602,7 @@
     2,
     3
    ],
-   "i": 3,
+   "i": 4,
    "part": "block"
   },
   {
@@ -1469,6 +1629,15 @@
    ],
    "i": 1,
    "part": "table"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 5,
+   "part": "block"
   },
   {
    "part": "sources"
@@ -1502,9 +1671,14 @@
    "label": "Town of Lunenburg — FY2024 annual town report (Article 6, May 2024)"
   },
   {
-   "href": "/data/capital-rankings.csv",
+   "href": "/docs/data/capital-rankings.csv",
    "key": "data",
    "label": "Lunenburg Budget Project — capital-rankings.csv, every row and its page or cell"
+  },
+  {
+   "href": "/docs/data/capital-requests-unranked.csv",
+   "key": "unranked",
+   "label": "Lunenburg Budget Project — capital-requests-unranked.csv, every request made and never ranked, with the page, line or second it was read from"
   }
  ],
  "table": {
