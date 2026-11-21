@@ -293,6 +293,26 @@ def of(t):
     return '%d of %d' % t
 
 
+def nth(t):
+    r = t[0]
+    suf = 'th' if 10 <= r % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(r % 10, 'th')
+    return '%d%s of %d' % (r, suf, t[1])
+
+
+def band(t):
+    """Where a rank sits in ITS OWN list, so 5 of 6 and 19 of 35 can be compared: the
+    first place, or the top, middle or bottom third by rank over list length."""
+    r, n = t
+    if r == 1:
+        return 'first'
+    f = r / n
+    return 'top third' if f <= 1 / 3 else ('middle third' if f <= 2 / 3 else 'bottom third')
+
+
+def _ob(t):
+    return '%s (%s)' % (of(t), band(t))
+
+
 def rank_table(F):
     """cycle | requested | amount | each scheme's rank, as printed | how it ended."""
     return [
@@ -301,17 +321,17 @@ def rank_table(F):
              cpc='not in the plan', outcome='%s borrowed by separate article, May 2016'
              % C.usd(F['vote16']), basis='document'),
         dict(cycle='FY2024', requested='Feasibility study', amount=C.usd(F['req24']),
-             schools=of(F['sc24']), town_manager=of(F['tm24']), cpc=of(F['cpc24']),
+             schools=_ob(F['sc24']), town_manager=_ob(F['tm24']), cpc=_ob(F['cpc24']),
              outcome='listed as not included; study paid from ARPA (%s)' % C.usd(F['arpa24']),
              basis='document'),
         dict(cycle='FY2025', requested='Site survey and drainage', amount=C.usd(F['req25']),
-             schools=of(F['sc25']), town_manager=of(F['tm25']), cpc=of(F['cpc25']),
+             schools=_ob(F['sc25']), town_manager=_ob(F['tm25']), cpc=_ob(F['cpc25']),
              outcome='listed as not included in the preliminary plan', basis='document'),
         dict(cycle='FY2026', requested='Design and bid documents', amount='not stated',
              schools='not on the ranked list', town_manager='—', cpc='not ranked',
              outcome='spring 2025 article removed from the warrant (as heard)', basis='captions'),
         dict(cycle='FY2027', requested='Hardscape and drainage', amount=C.usd(F['hard25']),
-             schools=of(F['sc27']) + ' (as heard)', town_manager='—',
+             schools=_ob(F['sc27']) + ' (as heard)', town_manager='—',
              cpc='not among the %d ranked' % F['cpc27_n'],
              outcome='withdrawn from the cycle; then Article 9, %s (as heard)'
              % C.usd(F['vote26']), basis='captions'),
@@ -337,7 +357,7 @@ def build_conclusions(F):
     h25, t25 = C.usd(F['hard25']), C.usd(F['turf25'])
     rows = [
         conclusion(
-            id='ranked-in-the-bottom-third',
+            id='where-the-committee-ranked-it',
             claim='The two times the capital committee ranked the field, it put it %s, then %s.'
                   % (cpc24, cpc25),
             so_what='Both years the Town Manager\u2019s preliminary plan listed it among requests not included.',
@@ -578,8 +598,13 @@ def payload(rows, F, concl):
         about='The track and field in the town\u2019s capital process: every ranking, request, '
               'plan line and vote the archive holds, FY%d to FY%d.' % (FIRST, LAST),
         stats=[
-            dict(value=of(F['cpc24']), label='the capital committee\u2019s rank for it, FY2024 (%s in FY2025)'
-                 % of(F['cpc25'])),
+            dict(value='%s \u2192 %s' % (band(F['sc24']).split()[0], 'top'),
+                 label='where the schools put the field on their own list: %s in FY2024, %s in '
+                       'FY2025, %s in FY2027, first for FY2028 (the last two as heard)'
+                       % (nth(F['sc24']), nth(F['sc25']), nth(F['sc27']))),
+            dict(value=of(F['cpc24']),
+                 label='the capital committee\u2019s rank, FY2024: the %s. FY2025: %s, the %s'
+                       % (band(F['cpc24']), of(F['cpc25']), band(F['cpc25']))),
             dict(value=C.usd(F['vote16']), label='borrowed by separate article, May 2016'),
             dict(value=C.usd(F['vote26']), label='for engineering, Special Town Meeting Nov 2026 (as heard)'),
             dict(value=C.usd(F['est25']), label='the September 2025 school plan\u2019s estimate'),

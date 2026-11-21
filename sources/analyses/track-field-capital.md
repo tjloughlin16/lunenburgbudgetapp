@@ -11,10 +11,10 @@ Analysis, November 2026. Ranks are as each document prints them; anything marked
 | cycle | requested | amount | schools’ rank | Town Manager | capital committee | how it ended |
 |---|---|---|---|---|---|---|
 | FY2017 | Turf field and track replacement | $800,000 (2015 estimate) | — | — | not in the plan | $770,000 borrowed by separate article, May 2016 |
-| FY2024 | Feasibility study | $50,000 | 5 of 6 | 18 of 29 | 21 of 29 | listed as not included; study paid from ARPA ($50,000) |
-| FY2025 | Site survey and drainage | $200,000 | 7 of 9 | 15 of 35 | 19 of 35 | listed as not included in the preliminary plan |
+| FY2024 | Feasibility study | $50,000 | 5 of 6 (bottom third) | 18 of 29 (middle third) | 21 of 29 (bottom third) | listed as not included; study paid from ARPA ($50,000) |
+| FY2025 | Site survey and drainage | $200,000 | 7 of 9 (bottom third) | 15 of 35 (middle third) | 19 of 35 (middle third) | listed as not included in the preliminary plan |
 | FY2026 | Design and bid documents | not stated | not on the ranked list | — | not ranked | spring 2025 article removed from the warrant (as heard) |
-| FY2027 | Hardscape and drainage | $920,000 | 4 of 8 (as heard) | — | not among the 22 ranked | withdrawn from the cycle; then Article 9, $195,830 (as heard) |
+| FY2027 | Hardscape and drainage | $920,000 | 4 of 8 (middle third) (as heard) | — | not among the 22 ranked | withdrawn from the cycle; then Article 9, $195,830 (as heard) |
 | FY2028 | Turf and track | about $3,000,000 (as heard) | first (as heard) | — | no list held yet | under way |
 
 ## What it shows
