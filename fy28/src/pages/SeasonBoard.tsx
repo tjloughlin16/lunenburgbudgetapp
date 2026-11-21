@@ -162,9 +162,14 @@ function LinesLink({ l }: { l: Lines }) {
   const part = (label: string, x: DiffPart, sign: string) => x.n ? `${x.n} ${label}${x.dollars ? ` ${sign}${usd(Math.abs(x.dollars))}` : ''}` : ''
   const parts = d ? [part('up', d.up, '+'), part('down', d.down, '−'), part('added', d.added, '+'), part('removed', d.removed, '−')].filter(Boolean) : []
   return (
-    <div className="px-4 -mt-2 pb-3 text-[13px]">
-      <a className="font-semibold underline" href={l.path}>Line by line</a>
-      <span style={{ color: 'var(--text-secondary)' }}> — all {l.lines} lines of version {l.version}{d ? `; since version ${d.against}: ${parts.join(', ') || 'no line changed'}` : ', the first draft printed line by line'}.</span>
+    <div className="px-4 -mt-1 pb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px]">
+      {/* A BUTTON, NOT A WORD. TJ, 21 November 2026, looking for it: "the line by line link doenst
+          look line a clickable link" -- an underlined word in a row of prose reads as prose. */}
+      <a href={l.path} className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 font-semibold no-underline hover:opacity-80"
+        style={{ borderColor: 'var(--brand)', color: 'var(--brand)' }}>
+        See every line <span aria-hidden>→</span>
+      </a>
+      <span style={{ color: 'var(--text-secondary)' }}>all {l.lines} lines of version {l.version}{d ? `; since version ${d.against}: ${parts.join(', ') || 'no line changed'}` : ', the first draft printed line by line'}</span>
     </div>
   )
 }
