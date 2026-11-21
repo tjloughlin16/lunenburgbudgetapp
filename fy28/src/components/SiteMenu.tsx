@@ -28,7 +28,7 @@ type Item = { label: string; sub: string } & ({ to: Tab; anchor?: string; href?:
  *  the breadcrumb are two maps of one site, and they drifted -- TJ, 13 October 2026:
  *  *"looks like breadcrumbs are very frequently wrong"*. scripts/check-crumbs.mjs holds
  *  PARENT to this field and fails the build when they disagree. */
-type Group = { title: string; under: Tab | null; items: Item[] }
+type Group = { title: string; under: Tab | null; items: Item[]; primary?: boolean }
 
 /* EIGHT GROUPS (TEN SINCE 22 OCTOBER 2026), AND THE FIRST CUT HAD FIVE. TJ, same day: *"I likely missed full
  * categories (which really is the reason I asked for this)."* He had: the first version
@@ -39,17 +39,26 @@ type Group = { title: string; under: Tab | null; items: Item[] }
  * (sources/analyses/UNLISTED and routes.UNLISTED), and the single reports, which /reports
  * indexes and which each subject group below links into. */
 export const GROUPS: Group[] = [
+  /* THE FIVE DOORS MOST READERS COME FOR, first and drawn bigger. TJ, 21 November 2026:
+   * "Boards and Commissions, Search, This week, Sources, and minutes are the biggest high level
+   * items that need to be the primary grouping at the top so they are SUPER easy to find."
+   * Each appears here ONLY -- moved out of its old group, not copied, so the map does not list
+   * one page twice. */
+  { title: 'Start here', under: null, primary: true, items: [
+    { to: 'thisweek', label: 'This week', sub: 'Meetings ahead and what just happened' },
+    { to: 'boards', label: 'Boards & committees', sub: 'Meetings, votes, finance, per board' },
+    { to: 'recorded', label: 'Meeting minutes', sub: 'What was said, meeting by meeting' },
+    { to: 'search', label: 'Search', sub: 'Pages, documents, minutes, video' },
+    { to: 'sources', label: 'Sources', sub: 'Every document this rests on' },
+  ] },
   { title: 'Lately', under: null, items: [
-    { to: 'thisweek', label: 'This week in town', sub: 'Meetings ahead and what just happened' },
     { to: 'budgetfeed', label: 'Budget feed', sub: 'This season, every board, as it happens' },
     { href: '/budget-feed/fy27', label: 'Past budget seasons', sub: 'FY27 and FY26, replayed' },
-    { to: 'recorded', label: 'Meeting minutes', sub: 'What was said, meeting by meeting' },
     { to: 'blog', label: 'Articles', sub: 'Written up, one question at a time' },
     { href: '/feeds/all.xml', label: 'Subscribe (feeds)', sub: 'Atom feeds: every board, or all' },
   ] },
   { title: 'Who decides', under: null, items: [
     { to: 'threads', label: 'Threads', sub: 'Each matter, followed across boards' },
-    { to: 'boards', label: 'Boards & committees', sub: 'Meetings, votes, finance, per board' },
     { to: 'tmvotes', label: 'Town Meeting votes', sub: 'Every article, searchable by fiscal year' },
     { href: '/board-records', label: 'Board records', sub: 'Who posts minutes, seats, turnover' },
     { to: 'orgcharts', label: 'Org charts', sub: 'Who works where, by year' },
@@ -112,8 +121,6 @@ export const GROUPS: Group[] = [
     { href: '/school-all-funds/youth-league-payments', label: 'Youth sports and fields', sub: 'What the leagues pay the schools' },
   ] },
   { title: 'Check it', under: null, items: [
-    { to: 'sources', label: 'Sources', sub: 'Every document this rests on' },
-    { to: 'search', label: 'Search', sub: 'Pages, documents, minutes, video' },
     { to: 'gaps', label: 'What we cannot answer', sub: 'And what would settle it' },
     { to: 'askus', label: 'Ask us a question', sub: 'If it is not here' },
     { to: 'database', label: 'The database', sub: 'Query it yourself' },
@@ -157,13 +164,13 @@ function SpecialReports({ tab, onPick, compact }: { tab: Tab; onPick?: () => voi
   )
 }
 
-function ItemLink({ it, tab, onPick, compact, n }: { it: Item; tab: Tab; onPick?: () => void; compact?: boolean; n: number }) {
+function ItemLink({ it, tab, onPick, compact, n, version }: { it: Item; tab: Tab; onPick?: () => void; compact?: boolean; n: number; version?: Version | null }) {
   const here = it.to !== undefined && tab === it.to && !it.anchor
   const cls = 'block rounded px-2 -mx-2 no-underline hover:bg-[var(--surface-3)] ' + (compact ? 'py-0.5' : 'py-1')
   const body = (
     <>
       <span className={'block font-semibold ' + (compact ? 'text-[13px]' : 'text-[14px]')}
-        style={{ color: here ? 'var(--series-cost)' : 'var(--text-primary)' }}>{it.label}{n > 0 && <Pill n={n} />}</span>
+        style={{ color: here ? 'var(--series-cost)' : 'var(--text-primary)' }}>{it.label}{version ? <InfoTag v={version} /> : n > 0 && <Pill n={n} />}</span>
       {!compact && <span className="hidden sm:block text-[12px] leading-snug" style={{ color: 'var(--text-secondary)' }}>{it.sub}</span>}
     </>
   )
@@ -240,7 +247,8 @@ function NewStrip({ onPick, max = 5 }: { onPick?: () => void; max?: number }) {
  *  else; a private window simply sees the last fortnight. */
 const CHANGE_DAYS = 14
 const SEEN_KEY = 'menu-seen'
-type Changes = { items: Record<string, { d: string; id: string }[]> }
+type Version = { d: string; n: number | null; scope: string | null; label: string }
+type Changes = { items: Record<string, { d: string; id: string }[]>; budget_version?: Version | null }
 function readSeen(): Record<string, string> {
   try { return JSON.parse(window.localStorage.getItem(SEEN_KEY) || '{}') } catch { return {} }
 }
@@ -268,7 +276,11 @@ export function useChanges(tab: Tab) {
   }, [])
   useEffect(() => {
     const s = readSeen()
-    const latest = d?.items[tab]?.[0]?.d
+    // On the budget feed, opening it also counts as seeing the newest budget VERSION, whose
+    // date can be later than the newest line on the feed.
+    const vd = tab === 'budgetfeed' ? d?.budget_version?.d ?? '' : ''
+    const ld = d?.items[tab]?.[0]?.d ?? ''
+    const latest = vd > ld ? vd : ld
     if (latest && s[tab] !== latest) {
       s[tab] = latest
       try { window.localStorage.setItem(SEEN_KEY, JSON.stringify(s)) } catch { /* harmless */ }
@@ -283,7 +295,14 @@ export function useChanges(tab: Tab) {
     return n && n === all.length && all.length >= 200 ? n + 0.5 : n
   }
   const total = d ? Object.keys(d.items).reduce((n, k) => n + count(k), 0) : 0
-  return { count, total }
+  /* A NEW BUDGET VERSION is a word, not one more on the count. TJ, 21 November 2026: *"we need
+   * 'new info' tag on the Budget Feed in the menu, for when a new version comes out"*. A new
+   * draft changes what every line on the feed is measured against; a count of fifty new lines
+   * cannot say that. Same unread model as the count: within CHANGE_DAYS, and newer than the
+   * last time this reader opened the feed. */
+  const v = d?.budget_version
+  const version = v && since && v.d >= since && (!seen.budgetfeed || v.d > seen.budgetfeed) ? v : null
+  return { count, total, version }
 }
 
 function Pill({ n }: { n: number }) {
@@ -294,22 +313,52 @@ function Pill({ n }: { n: number }) {
   )
 }
 
+/** The tag for a new budget version. It REPLACES the count rather than sitting beside it:
+ *  two badges on one short label is a cluster nobody reads. The count comes back once the
+ *  reader has opened the feed and the version is seen. */
+function InfoTag({ v }: { v: Version }) {
+  return (
+    <span className="ml-1.5 inline-block text-[10px] font-bold uppercase tracking-wider leading-none px-1.5 py-[3px] rounded-full align-[2px] whitespace-nowrap"
+      style={{ background: 'var(--series-cost)', color: 'var(--surface-2)' }}
+      title={`${v.label}, ${v.d}: new since you last opened the feed`}>new info</span>
+  )
+}
+
 /** The same groups, drawn as a SITE MAP -- the panel's body, and the FAT FOOTER on
  *  every page. A menu behind a button is found only by people who think to press it; a
  *  footer map is where a reader who has scrolled to the end looks for "what else is here". */
 export function SiteMap({ tab, onPick, compact }: { tab: Tab; onPick?: () => void; compact?: boolean }) {
-  const { count } = useChanges(tab)
+  const { count, version } = useChanges(tab)
+  const primary = GROUPS.filter(g => g.primary).flatMap(g => g.items)
   return (
     <>
+    {/* Tiles, not a list: a row of five boxes is found before anything is read. Two columns on
+        a phone, five across from a laptop. */}
+    <nav aria-label="Start here" className={'grid grid-cols-2 sm:grid-cols-5 gap-2 ' + (compact ? 'mb-4' : 'mb-5')}>
+      {primary.map((it, i) => {
+        const here = tab === it.to
+        const n = it.to ? count(it.to) : 0
+        return (
+          <Go key={it.label} to={it.to!} onClick={onPick} title={it.sub} aria-current={here ? 'page' : undefined}
+            className={'block rounded-lg border px-3 no-underline hover:bg-[var(--surface-3)] ' + (compact ? 'py-1.5' : 'py-2.5') + (i === primary.length - 1 && primary.length % 2 ? ' col-span-2 sm:col-span-1' : '')}
+            style={{ borderColor: here ? 'var(--series-cost)' : 'var(--grid)', background: 'var(--surface-1, transparent)' }}>
+            <span className={'block font-bold ' + (compact ? 'text-[13.5px]' : 'text-[15px]')}
+              style={{ color: here ? 'var(--series-cost)' : 'var(--text-primary)' }}>{it.label}{n > 0 && <Pill n={n} />}</span>
+            {!compact && <span className="hidden sm:block text-[12px] leading-snug mt-0.5" style={{ color: 'var(--text-secondary)' }}>{it.sub}</span>}
+          </Go>
+        )
+      })}
+    </nav>
     <NewStrip onPick={onPick} />
     <div className={'grid gap-x-6 grid-cols-2 lg:grid-cols-4 ' + (compact ? 'gap-y-5' : 'gap-y-6')}>
-      {GROUPS.map(g => (
+      {GROUPS.filter(g => !g.primary).map(g => (
         <section key={g.title}>
           <h2 className="text-[11px] font-bold uppercase tracking-widest mb-1"
             style={{ color: 'var(--text-muted)' }}>{g.title}</h2>
           <ul className="m-0 p-0 list-none">
             {g.items.map(it => <li key={it.label}><ItemLink it={it} tab={tab} onPick={onPick} compact={compact}
-              n={it.to && !it.anchor ? count(it.to) : 0} /></li>)}
+              n={it.to && !it.anchor ? count(it.to) : 0}
+              version={it.to === 'budgetfeed' ? version : null} /></li>)}
           </ul>
         </section>
       ))}
@@ -321,7 +370,7 @@ export function SiteMap({ tab, onPick, compact }: { tab: Tab; onPick?: () => voi
 
 export function SiteMenu({ tab }: { tab: Tab }) {
   const [open, setOpen] = useState(false)
-  const { total } = useChanges(tab)
+  const { total, version } = useChanges(tab)
   const btn = useRef<HTMLButtonElement>(null)
   const panel = useRef<HTMLDivElement>(null)
 
@@ -358,7 +407,7 @@ export function SiteMenu({ tab }: { tab: Tab }) {
         Menu
         {/* One dot, not a number: the button says THAT something changed, and the panel
             says where. A sum across unlike things (jobs + minutes + threads) is not a quantity. */}
-        {total > 0 && !open && (
+        {(total > 0 || version) && !open && (
           <span aria-label="new since your last visit" className="inline-block w-2 h-2 rounded-full -ml-0.5"
             style={{ background: 'var(--status-good)' }} />
         )}
