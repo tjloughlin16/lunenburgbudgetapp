@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**716 of 6550 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**747 of 6604 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5834 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5857 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -43,19 +43,21 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY19 | 30 |
 | FY20 | 64 |
 | FY21 | 17 |
-| FY22 | 22 |
+| FY22 | 23 |
 | FY23 | 45 |
-| FY24 | 92 |
-| FY25 | 121 |
-| FY26 | 163 |
-| FY27 | 295 |
-| FY28 | 15 |
-| FY29 | 3 |
-| FY30 | 1 |
-| FY32 | 1 |
-| FY33 | 8 |
+| FY24 | 93 |
+| FY25 | 122 |
+| FY26 | 164 |
+| FY27 | 296 |
+| FY28 | 36 |
+| FY29 | 5 |
+| FY30 | 3 |
+| FY32 | 2 |
+| FY33 | 9 |
 | FY34 | 12 |
 | FY35 | 2 |
+| FY36 | 2 |
+| FY37 | 1 |
 
 ## Documents with no stated fiscal year
 
@@ -160,10 +162,12 @@ Listed so this view cannot look more complete than it is.
 - `analyses/town-budgets.md` — Budgets across town: every department, and which ones move the total
 - `analyses/town-personnel.md` — Who runs the town: every elected seat, appointed seat and officer
 - `analyses/towns-like-us.md` — How Lunenburg compares: neighbours, peers, look-alikes and destinations
+- `analyses/track-field-capital.md` — Track and field capital
 - `analyses/transportation.md` — School transportation: what the buses cost, and who pays
 - `analyses/what-you-can-ask.md` — What you can ask this archive, in plain English
 - `budget-workbooks/PROVENANCE-finance-committee.md` — How the Finance Committee’s files reached us
 - `budget-workbooks/PROVENANCE-forwarded-anonymously-2026-10-09.md` — How these documents reached us, and what is not known
+- `budget-workbooks/PROVENANCE-school-committee-2026-10-21.md` — How this packet reached us, and what was held back
 - `budget-workbooks/dese-all-districts.xlsx` — DESE per-pupil expenditures, FY2018–FY2024
 - `budget-workbooks/finance-committee/data-and-trends/lps-staff-2019-2025.xlsx` — LPS Staff 2019-2025 — Finance Committee, Data and Trends
 - `budget-workbooks/finance-committee/dls-levylimitsprimer.pdf` — DLS levylimitsprimer — Finance Committee
@@ -183,6 +187,17 @@ Listed so this view cannot look more complete than it is.
 - `budget-workbooks/forwarded-anonymously-2026-10-09/fair-share-earmarks-memo.pdf` — Fair_Share_Earmarks_Memo — forwarded anonymously, 9 October 2026
 - `budget-workbooks/forwarded-anonymously-2026-10-09/fc1192-fair-share-special-support-memo.pdf` — FC1192_Fair_Share_Special_Support_Memo — forwarded anonymously, 9 October 2026
 - `budget-workbooks/forwarded-anonymously-2026-10-09/line-item-transfers-10-7-26.pdf` — Line Item Transfers 10-7-26 — forwarded anonymously, 9 October 2026
+- `budget-workbooks/school-committee-2026-10-21/10.21.26-homecoming-participation.docx` — 10.21.26 Homecoming Participation — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/auditorium-audiovideo-upgrade.pdf` — Auditorium AudioVideo Upgrade — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/capital-projects-tech.docx` — Capital Projects - Tech — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/line-item-transfer-multiple-budget-ines-10-21-26.pdf` — Line Item Transfer Multiple Budget ines 10-21-26 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/lunenburg-capital-plan-narrative-v.2.docx` — Lunenburg_Capital_Plan Narrative V.2 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/lunenburg-ps-district-wide-voip-proposal-10.05.26.pdf` — Lunenburg PS District-wide VOIP Proposal 10.05.26 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/lunenburg-public-schools-network-upgrade-core-switches-10.07.26.pdf` — Lunenburg Public Schools Network Upgrade - Core Switches 10.07.26 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/lunenburg-public-schools-network-upgrade-distribution-access-switches-10.07.26.pdf` — Lunenburg Public Schools Network Upgrade - Distribution Access Switches 10.07.26 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/lunenburg-school-district-camera-replacement-oct-2026.001685.v1.10-10132026.pdf` — Lunenburg School District-Camera Replacement Oct 2026.001685.v1.10 10132026 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/lunenburg-school-district-turkey-hill-clocks-and-bells.001702.v1.7-10132026.pdf` — Lunenburg School District-Turkey Hill Clocks and Bells.001702.v1.7 10132026 — School Committee packet, 21 October 2026
+- `budget-workbooks/school-committee-2026-10-21/ockers-technologies.017729.v1.2.pdf` — Ockers_Technologies.017729.v1.2 — School Committee packet, 21 October 2026
 - `contracts/CONTRACTS.md` — Research notes: union contracts
 - `contracts/PROVENANCE-records-request-2026-10-09.md` — How the paraprofessional and Dee Bus documents reached us
 - `contracts/docx/dese-teacher-contract-nashoba.docx` — Nashoba Unit A agreement as filed with DESE, 2021-2022, with the 2017-2020 agreement
@@ -250,6 +265,8 @@ Listed so this view cannot look more complete than it is.
 - `correspondence/2026-11-19-check-218995-register-line.png` — Check 218995, the register line
 - `correspondence/2026-11-19-records-requests-superintendent.txt` — The Superintendent’s reply, 19 November 2026
 - `correspondence/2026-11-19-school-warrant-batch-5853-2026-06-30.pdf` — Warrant batch 5853, dated 30 June 2026
+- `correspondence/2026-11-20-cpc-rankings-cpc-chair.txt` — The Chair’s reply and the four emails, 20 November 2026
+- `correspondence/2026-11-20-cpc-rankings.md` — How these reached us
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -302,11 +319,14 @@ Listed so this view cannot look more complete than it is.
 - `data/building-payee-trades.csv` — What kind of work each school buildings payee does -- our grouping
 - `data/business/categorized.csv` — Business records by industry
 - `data/business/merged_dataset.csv` — Business certificate records
+- `data/capital-coverage.csv` — Which capital planning documents we hold for each year
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
 - `data/capital-plan-field-lines.csv` — Every playing-field line in every capital plan held, by fiscal year
 - `data/capital-plans-refused.csv` — The capital-plan pages that would not read, and why each refused
 - `data/capital-plans.csv` — What the Capital Planning Committee asked for, ranked, FY2015-FY2023
 - `data/capital-program-options.csv` — The two capital plans the town meeting was asked to choose between
+- `data/capital-rankings.csv` — Every ranked capital request, FY2023 to FY2027, with its ranks and outcome
+- `data/capital-requests-unranked.csv` — Capital requests made and never ranked, FY2023 to FY2027
 - `data/capital-requests.csv` — Capital requests and ranked plans, FY2025–FY2034 and FY2027
 - `data/caption-corrections.csv` — Proper nouns the captions mishear, spelled as the town spells them
 - `data/census-acs.csv` — The Census figures, one row per estimate
@@ -443,21 +463,3 @@ Listed so this view cannot look more complete than it is.
 - `data/org-chart.csv` — Who held which role, in every department, board and school
 - `data/outstanding-debt.csv` — What the town owed on 30 June, by purpose, FY2007–FY2025
 - `data/page-blocked.csv` — Pages that CANNOT be read, and what would change that
-- `data/pages-read.csv` — Every figure somebody READ off a page, with the verdict its group earned
-- `data/parks-myrec-sales-fy2025.csv` — Parks & Recreation sales, FY2025, both MyRec reports as rows
-- `data/pec-history.csv` — The Public Employees Committee agreement, event by event
-- `data/peer-teacher-pay-distribution.csv` — Teacher gross pay in Harvard, Ashburnham-Westminster and Tyngsborough, on each district’s own scale — NO NAMES
-- `data/peg-access-fund.csv` — The cable fund: what Comcast pays, and what it buys
-- `data/peg-access-identities.csv` — The arithmetic each PEG statement states about itself
-- `data/peg-access-printed-totals.csv` — The revenue-versus-expenses statement each report prints
-- `data/peg-access.csv` — PEG Access expenses, line by line, read from the page
-- `data/pipeline-state.csv` — Where every fiscal year stands in the ingestion pipeline
-- `data/placement-counts.csv` — Out-of-district placements, by year, FY2011–FY2025
-- `data/police-expended-vs-gl-history.csv` — Police as expended, compared with the general fund history
-- `data/police-expended.csv` — Police spending as expended, FY2015-FY2023
-- `data/position-funds-crosswalk.csv` — Leadership posts paired with their budget line and ledger account
-- `data/prior-year-bills-fincom.csv` — Prior-year bills on the FY2027 warrant
-- `data/public-safety-staffing-plans-vs-roster.csv` — Planned positions against the published roster
-- `data/public-safety-staffing-plans.csv` — Police and fire staffing plans: positions PLANNED, not hired
-- `data/rate-register.csv` — Every rate, with the year it applies to and who set it
-- `data/receivables-reconciliation.csv` — Every year of that table, published or refused, with the reason

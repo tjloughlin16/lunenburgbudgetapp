@@ -2,14 +2,14 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-11-20",
+ "as_of": "2026-11-21",
  "window": {
-  "from": "2026-11-06",
-  "to": "2026-12-18"
+  "from": "2026-11-07",
+  "to": "2026-12-19"
  },
  "counts": {
   "agendas": 41,
-  "agendas_upcoming": 13,
+  "agendas_upcoming": 12,
   "agendas_unreadable": 3,
   "items": 377,
   "business_items": 211,
@@ -2596,7 +2596,7 @@
    "date": "2026-11-20",
    "file_id": "8148",
    "body_as_printed": "NDA Lunenburg Public Library Board of Trustees Strategic Plan Subcommittee",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11202026-8148",
    "agenda_doc": "/docs/meetings/library-board-of-trustees-strategic-plan-subcommittee/2026-11-20-agenda-8148.pdf",
    "items": [

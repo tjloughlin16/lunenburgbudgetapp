@@ -90,13 +90,14 @@ character for character what you get from
 
 | shape | count | what it is |
 |---|---:|---|
-| `NNNN-NNNNN-NNNNNN` | 636 | fund–org–object, an ordinary detail account |
-| `NNNN-SNNNNNNN-NNNNNN` | 258 | fund–org–object where the org is **S-prefixed** |
+| `NNNN-NNNNN-NNNNNN` | 998 | fund–org–object, an ordinary detail account |
+| `NNNN-SNNNNNNN-NNNNNN` | 414 | fund–org–object where the org is **S-prefixed** |
 | `NNNN-NNN` | 69 | fund–department — a **roll-up** row, not a detail account |
-| `NNNN-NNNNNNNN-NNNNNN` | 10 | fund–org–object, an ordinary detail account |
+| `NNNN-NNNNNNNN-NNNNNN` | 15 | fund–org–object, an ordinary detail account |
 | `NNNN-NNNN-NNNNNN` | 8 | fund–org–object, an ordinary detail account |
+| `NNNN--NNNNNN` | 1 | fund–org–object, an ordinary detail account |
 
-**The `S` prefix means school.** 258 accounts carry it and all of them are department 300; department 300 has 258 detail accounts and 0 of them lack the prefix. It is an exact match in both directions, which makes `account_id LIKE '0100-S%'` a **structural** way to find school spending — one that does not depend on any name.
+**The `S` prefix means school.** 415 accounts carry it and all of them are department 300; department 300 has 415 detail accounts and 0 of them lack the prefix. It is an exact match in both directions, which makes `account_id LIKE '0100-S%'` a **structural** way to find school spending — one that does not depend on any name.
 
 
 ## 2. Two grains of the same money, told apart only by period
@@ -105,9 +106,7 @@ character for character what you get from
 |---:|---|---:|---:|
 | 9 | department | 67 | $51,189,961 |
 | 12 | account | 635 | $51,189,965 |
-
-The same general fund, twice, $4 apart. They are **different MUNIS reports**, and `period` is the only column that distinguishes them — so a query without it adds one report to the other.
-
+| 13 | account | 1,160 | $51,189,965 |
 
 ## 3. Three columns that look optional and are not
 
@@ -145,7 +144,7 @@ School money is spread across `13xx` (revolving), `15xx`, `22xx` (lunch) and `26
 
 ## 5. The ten-character ceiling
 
-The longest account name in the ledger is **10 characters**, and 574 accounts sit exactly at it. The district’s own budget book runs to 48. MUNIS truncates hard, and the casualties are readable in the data: `COUNT RET`, `SCHRETHLTH`, `PS TEACH R`, `PRE-SCHOOL T UIT ION` once OCR gets involved.
+The longest account name in the ledger is **30 characters**, and 168 accounts sit exactly at it. The district’s own budget book runs to 48. MUNIS truncates hard, and the casualties are readable in the data: `COUNT RET`, `SCHRETHLTH`, `PS TEACH R`, `PRE-SCHOOL T UIT ION` once OCR gets involved.
 
 Two consequences that have already bitten:
 

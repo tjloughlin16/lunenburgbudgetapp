@@ -5,14 +5,14 @@
   "rank_note": "newest first — by the date each thread last came up",
   "dated_in_the_future_and_excluded": [],
   "rank_basis": "when each last came up, newest first",
-  "meetings_readable": 5443,
-  "meetings_with_our_minutes": 2658,
+  "meetings_readable": 5445,
+  "meetings_with_our_minutes": 2660,
   "meetings_with_town_minutes_read": 4487,
   "boards_readable": 52,
-  "agendas_as_of": "2026-11-20",
+  "agendas_as_of": "2026-11-21",
   "agendas_matched": {
    "agendas": 41,
-   "agendas_upcoming": 13,
+   "agendas_upcoming": 12,
    "agendas_unreadable": 3,
    "items": 377,
    "business_items": 211,
@@ -41,35 +41,26 @@
   ]
  },
  "hottest": {
-  "as_of": "2026-11-20",
+  "as_of": "2026-11-21",
   "window_days": 30,
   "threads": [
    {
     "id": "stormwater-fee",
     "label": "The stormwater fee",
     "short": "The stormwater fee",
-    "hook": "$85 per year projected yearly fee, not set",
+    "hook": "$85 a year projected stormwater fee",
     "meetings": 9,
-    "boards": 6,
-    "days_since_last": 2
+    "boards": 7,
+    "days_since_last": 3
    },
    {
     "id": "turf-field-study",
     "label": "The track and turf field",
     "short": "The track and turf field",
     "hook": "$195,830 approved for engineering design",
-    "meetings": 7,
+    "meetings": 6,
     "boards": 5,
-    "days_since_last": 2
-   },
-   {
-    "id": "veterans-exemption",
-    "label": "The veterans property tax exemption",
-    "short": "The veterans property tax exemption",
-    "hook": "",
-    "meetings": 4,
-    "boards": 3,
-    "days_since_last": 2
+    "days_since_last": 3
    },
    {
     "id": "tc-passios-site",
@@ -78,7 +69,7 @@
     "hook": "$1M–$4M to demolish",
     "meetings": 3,
     "boards": 3,
-    "days_since_last": 3
+    "days_since_last": 4
    },
    {
     "id": "town-offices",
@@ -87,7 +78,7 @@
     "hook": "$21.4M–$22.3M plan voters rejected",
     "meetings": 3,
     "boards": 3,
-    "days_since_last": 11
+    "days_since_last": 12
    }
   ]
  },
@@ -2923,12 +2914,12 @@
    "tangled": true,
    "hot": true,
    "momentum": {
-    "meetings_last_30": 7,
+    "meetings_last_30": 6,
     "boards_last_30": 5,
     "meetings": 18,
     "boards": 5,
     "votes": 4,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 301,
     "meetings_last_90": 14,
     "board_meetings_since": 1
@@ -3254,45 +3245,13 @@
     {
      "order": 1,
      "kind": "fee",
-     "value": "$85 per year",
+     "value": "$85 a year",
      "label": "projected stormwater fee for a single-family home, not yet adopted",
-     "hook": "projected yearly fee, not set",
+     "hook": "projected stormwater fee",
      "sources": [
       {
        "basis": "heard",
        "href": "https://www.youtube.com/watch?v=_yr_TREvqpg&t=6765s",
-       "where": "Town Meeting, 17 Nov 2026",
-       "checked_against": "the captions"
-      }
-     ],
-     "auto": true
-    },
-    {
-     "order": 2,
-     "kind": "money",
-     "value": "$480,000",
-     "label": "estimated yearly cost of meeting the stormwater permit; the town spends about $100,000 now",
-     "hook": "",
-     "sources": [
-      {
-       "basis": "printed",
-       "href": "/docs/meetings/select-board/2026-10-20-minutes-8080.pdf",
-       "where": "Select Board minutes, 20 Oct 2026",
-       "checked_against": "the document"
-      }
-     ],
-     "auto": true
-    },
-    {
-     "order": 3,
-     "kind": "warrant",
-     "value": "Advisory vote",
-     "label": "Town Meeting's non-binding vote on a utility fee versus the operating budget for stormwater",
-     "hook": "",
-     "sources": [
-      {
-       "basis": "heard",
-       "href": "https://www.youtube.com/watch?v=_yr_TREvqpg&t=5993s",
        "where": "Town Meeting, 17 Nov 2026",
        "checked_against": "the captions"
       }
@@ -4597,6 +4556,22 @@
      "fy_basis": "voted-in"
     },
     {
+     "date": "2026-11-16",
+     "board": "Economic Development Committee",
+     "board_slug": "economic-development-committee",
+     "source": "ours",
+     "text": "The economic development committee does not support a separate stormwater utility.",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 593,
+     "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
      "date": "2026-11-17",
      "board": "Town Meeting",
      "board_slug": "town-meeting",
@@ -5154,6 +5129,15 @@
        "watch_at": "https://www.youtube.com/watch?v=_yr_TREvqpg&t=6638s",
        "at": "1:50:38",
        "our_minutes": "/meeting-minutes/town-meeting/2026-11-17-_yr_TREvqpg"
+      },
+      {
+       "date": "2026-11-16",
+       "board": "Economic Development Committee",
+       "fiscal_year": "FY2027",
+       "question_then": "How would a stormwater utility fee fall on businesses compared with funding it in the budget?",
+       "watch_at": "https://www.youtube.com/watch?v=Q9t-hcVSgGo&t=255s",
+       "at": "0:04:15",
+       "our_minutes": "/meeting-minutes/economic-development-committee/2026-11-16-Q9t-hcVSgGo"
       },
       {
        "date": "2026-11-04",
@@ -8958,6 +8942,70 @@
      ]
     },
     {
+     "board": "Economic Development Committee",
+     "board_slug": "economic-development-committee",
+     "date": "2026-11-16",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "The economic development committee does not support a separate stormwater utility.",
+       "outcome": "not audible",
+       "t": 593,
+       "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Stormwater utility discussion and motion",
+       "outcome": "",
+       "t": 212,
+       "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Stormwater utility charges on businesses. A member said some businesses would be charged substantial amounts under the plan, with a cap mentioned. Members worried the cost would be passed on to tenants and customers.",
+       "outcome": "",
+       "t": 255,
+       "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Funding stormwater within the budget. A member said the town could phase in funding gradually inside its budget instead of creating a new fee.",
+       "outcome": "",
+       "t": 693,
+       "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "liability",
+       "text": "A utility could let the town raise fees without going to voters. (a member): \"we're kind of giving them a blank check because now they can raise if they make the decision\"",
+       "outcome": "",
+       "t": 487,
+       "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "condition",
+       "text": "The member supports compliance only if it is paid for within the budget. (a member): \"we just have to do it within our budget like each and every one of us do within our household budgets\"",
+       "outcome": "",
+       "t": 673,
+       "video_url": "https://www.youtube.com/watch?v=Q9t-hcVSgGo",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
      "board": "Town Meeting",
      "board_slug": "town-meeting",
      "date": "2026-11-17",
@@ -9104,8 +9152,8 @@
      ]
     }
    ],
-   "meetings": 70,
-   "boards_touched": 9,
+   "meetings": 71,
+   "boards_touched": 10,
    "first_seen": "2026-01-13",
    "last_moved": "2026-11-18",
    "claims_before_started": 628,
@@ -9157,16 +9205,16 @@
    "hot": true,
    "momentum": {
     "meetings_last_30": 9,
-    "boards_last_30": 6,
-    "meetings": 65,
-    "boards": 9,
-    "votes": 9,
-    "days_since_last": 2,
+    "boards_last_30": 7,
+    "meetings": 66,
+    "boards": 10,
+    "votes": 10,
+    "days_since_last": 3,
     "span_days": 309,
-    "meetings_last_90": 24,
+    "meetings_last_90": 25,
     "board_meetings_since": 0
    },
-   "weight": 966
+   "weight": 1066
   },
   {
    "id": "veterans-exemption",
@@ -10271,14 +10319,14 @@
    "heat": "moving",
    "stage": "voted on, not decided",
    "tangled": false,
-   "hot": true,
+   "hot": false,
    "momentum": {
-    "meetings_last_30": 4,
-    "boards_last_30": 3,
+    "meetings_last_30": 2,
+    "boards_last_30": 1,
     "meetings": 11,
     "boards": 6,
     "votes": 11,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 70,
     "meetings_last_90": 11,
     "board_meetings_since": 0
@@ -11073,12 +11121,631 @@
     "meetings": 11,
     "boards": 5,
     "votes": 0,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 314,
     "meetings_last_90": 1,
     "board_meetings_since": 0
    },
    "weight": 539
+  },
+  {
+   "id": "water-district-pfas-compliance",
+   "label": "Water district PFAS compliance",
+   "question": "How will the water district meet the PFAS compliance deadline and at what cost?",
+   "kind": "project;service",
+   "groups": "water-sewer-roads",
+   "tags": "",
+   "boards": "",
+   "registered_on": "2026-11-06",
+   "started": "2026-08-12",
+   "closes": "A commissioners' vote on a treatment or compliance approach",
+   "status": "open",
+   "resolved_on": "",
+   "caveat": "Opened automatically. A model wrote this question and its closing condition from the meeting record, and no person has read them yet.",
+   "closure": null,
+   "callouts": [],
+   "history": [],
+   "votes": [
+    {
+     "date": "2021-12-15",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Authorize superintendent to sign Rodman legal services agreement for PFAS litigation pending counsel review",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 380,
+     "video_url": "https://www.youtube.com/watch?v=Nvfi3KsZHyw",
+     "quote": "",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2022-03-26",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Appropriate from the water enhancement account for an engineering consultant pilot study of PFAS treatment at the Hickory Hills well (article nine).",
+     "outcome": "failed",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 840,
+     "video_url": "https://www.youtube.com/watch?v=w3B0zRuW1z8",
+     "quote": "",
+     "fy": 2023,
+     "fy_meeting": "Annual Town Meeting, 2022-05-07",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2022-06-08",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Authorize the chairman to sign the PFAS class action litigation agreement",
+     "outcome": "passed (voice vote, ayes heard)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 2186,
+     "video_url": "https://www.youtube.com/watch?v=FjiP12DCuho",
+     "quote": "",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2022-06-08",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Use the named engineering firm (heard as time bond / italian bond) as consulting engineer for the Hickory Hills PFAS pilot study",
+     "outcome": "passed (voice vote, ayes heard)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 3214,
+     "video_url": "https://www.youtube.com/watch?v=FjiP12DCuho",
+     "quote": "",
+     "fy": 2022,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2022-09-28",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Approve option number three for the PFAS pilot study",
+     "outcome": "passed (voice aye; count not audible)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 769,
+     "video_url": "https://www.youtube.com/watch?v=q6hUvKBRkok",
+     "quote": "",
+     "fy": 2023,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2022-10-19",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Article 1: appropriate funds from the water system enhancement account to hire Tighe & Bond to design and coordinate a pilot study of iron, manganese and PFAS treatment at the Hickory Hills well.",
+     "outcome": "passed (standing count tied 77-77, recount 79 to 77 as heard)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 98,
+     "video_url": "https://www.youtube.com/watch?v=Aw1AjcfAedo",
+     "quote": "",
+     "fy": 2023,
+     "fy_meeting": "Special Town Meeting, 2022-11-15",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2022-12-14",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Authorize the superintendent to sign the aqueous film forming foam PFAS litigation document",
+     "outcome": "passed (ayes heard)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 3453,
+     "video_url": "https://www.youtube.com/watch?v=SlprUipk_K8",
+     "quote": "",
+     "fy": 2023,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2024-03-27",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Approve the capital improvement planning summary: Hickory Hills and Lancaster Ave tied via raw water transmission to one treatment facility, plus PFAS treatment for the Keyes well",
+     "outcome": "passed unanimously (per chair's statement that the board voted unanimously)",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 2919,
+     "video_url": "https://www.youtube.com/watch?v=UMZ11C3Jn8k",
+     "quote": "",
+     "fy": 2025,
+     "fy_meeting": "Annual Town Meeting, 2024-05-04",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2024-05-08",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "ours",
+     "text": "Take no action: make no recommendation either way on the water district's PFAS plan",
+     "outcome": "failed",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 7726,
+     "video_url": "https://www.youtube.com/watch?v=dO7n5fBtuww",
+     "quote": "",
+     "fy": 2024,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    },
+    {
+     "date": "2024-05-08",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "town",
+     "fy": 2024,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Vice-Chair Franco moved that the Board not make a recommendation in either direction on the Water District PFAS proposal.",
+     "outcome": "failed 2-3-0",
+     "moved_by": "Vice-Chair Franco",
+     "seconded_by": "Clerk Nuzzolo",
+     "doc_url": "/docs/meetings/select-board/2024-05-08-minutes-6562.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082024-6562",
+     "quote": "motion by vice-chair franco that the board not make a recommendation in either direction. clerk nuzzolo seconded the motion."
+    },
+    {
+     "date": "2024-05-08",
+     "board": "Select Board",
+     "board_slug": "select-board",
+     "source": "town",
+     "fy": 2024,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Member Alonzo moved that the Board recommend disapproval (a \"no\" vote) on the Water District PFAS project as presented at the May 18 meeting.",
+     "outcome": "passed 2-1-2",
+     "moved_by": "Member Alonzo",
+     "seconded_by": "Member Emkey",
+     "doc_url": "/docs/meetings/select-board/2024-05-08-minutes-6562.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082024-6562",
+     "quote": "member alonzo moved that the board of selectmen recommend a disapproval, or a \"no\" vote, on this issue at the may 18 meeting on the project as presented. member emkey seconded."
+    },
+    {
+     "date": "2024-05-16",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Article 1: appropriate a stated sum to design and construct a PFAS water treatment facility at the Lancaster Avenue wellfield, with borrowing authorized under G.L. c.44 and possibly the Mass. Clean Water Trust.",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 536,
+     "video_url": "https://www.youtube.com/watch?v=_OjFupFJZZQ",
+     "quote": "",
+     "fy": 2025,
+     "fy_meeting": "Special Town Meeting, 2024-11-12",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2025-05-28",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Engage Capital Strategic Solutions for PFAS/well-operations informational services for $7,200",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 230,
+     "video_url": "https://www.youtube.com/watch?v=gtkfbmuZkwk",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "Annual Town Meeting, 2026-05-02",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2025-07-21",
+     "board": "Board of Health",
+     "board_slug": "board-of-health",
+     "source": "town",
+     "fy": 2026,
+     "fy_meeting": "",
+     "fy_basis": "voted-in",
+     "text": "Require that PFAS also be included in the well testing for 177 Burrage Street.",
+     "outcome": "passed",
+     "moved_by": "Rudd",
+     "seconded_by": "Fortin",
+     "doc_url": "/docs/meetings/board-of-health/2025-07-21-minutes-7320.pdf",
+     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07212025-7320",
+     "quote": "on motion by rudd and second by fortin, the board voted to require pfas also be included in the well testing."
+    },
+    {
+     "date": "2026-06-03",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "the district vote to borrow a sum not to exceed a stated amount to fund water system improvements including a PFAS water treatment plant at the Lancaster Avenue well field and associated well/transmission main work",
+     "outcome": "not audible",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 196,
+     "video_url": "https://www.youtube.com/watch?v=jFhkCL7o0oE",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "Special Town Meeting, 2026-09-03",
+     "fy_basis": "town-meeting"
+    },
+    {
+     "date": "2026-09-23",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "source": "ours",
+     "text": "Upload the manganese and PFAS data spreadsheet and corresponding charts to the district website, kept current, updated at minimum quarterly",
+     "outcome": "passed",
+     "moved_by": "",
+     "seconded_by": "",
+     "t": 1684,
+     "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+     "quote": "",
+     "fy": 2027,
+     "fy_meeting": "",
+     "fy_basis": "voted-in"
+    }
+   ],
+   "reports": [],
+   "reports_needed": [],
+   "on_agenda": [],
+   "chronology": [
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-08-12",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Adopt well-blending as the district's temporary corrective-action response to manganese and PFAS exceedances until DEP specifies a long-term treatment plan.",
+       "outcome": "",
+       "t": 2864,
+       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "New PFAS/manganese data-tracking spreadsheet and charts proposed by a commissioner; board debate over board vs. superintendent role",
+       "outcome": "",
+       "t": 549,
+       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Corrective action plan for manganese/PFAS exceedances at wells two, four and five",
+       "outcome": "",
+       "t": 2306,
+       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Results of the multi-well pumping-ratio test plan for PFAS",
+       "outcome": "",
+       "t": 3262,
+       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-08-26",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "Hold off on a formal motion to publish quarterly PFAS/manganese data on the website; first get cost and process details from the vendors Level Up and Pixelated before committing.",
+       "outcome": "",
+       "t": 1007,
+       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Full round of manganese/iron/PFAS sampling results across wells (Lancaster, Kings, Well 5)",
+       "outcome": "",
+       "t": 1027,
+       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "PFAS regulation status: EPA maintaining its 4 ppt standard, awaiting Massachusetts DEP guidance",
+       "outcome": "",
+       "t": 2147,
+       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Website quarterly water-quality data section (Level Up). Building a dedicated section on the district website for quarterly PFAS/manganese charts might carry a small one-time setup fee from the vendor Level Up, with ongoing quarterly updates possibly covered under the existing maintenance arrangement.",
+       "outcome": "",
+       "t": 803,
+       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "PFAS/manganese testing of four wells feeding Well 5. The board decided to wait until the October sampling round to test the four wells that feed Well 5 rather than testing twice, which saves the district $2,000.",
+       "outcome": "",
+       "t": 1317,
+       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-09-08",
+     "items": [
+      {
+       "kind": "decision",
+       "text": "The board effectively agreed to stop the blending water-quality tests, since the superintendent's conversation with MassDEP established that blending will not be accepted as a long-term compliance method and every individual well must pass PFAS limits on its own.",
+       "outcome": "",
+       "t": 1788,
+       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "MassDEP conversation on PFAS regulations, blending, and the 2029 compliance deadline",
+       "outcome": "",
+       "t": 338,
+       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Manganese/PFAS levels by well, bacteria failures, and UV disinfection history",
+       "outcome": "",
+       "t": 1454,
+       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Cost to address PFAS/manganese treatment. When asked what it would cost to fix the water quality problem, one participant jokingly threw out a figure while the superintendent said he did not yet have data or cost comparisons.",
+       "outcome": "",
+       "t": 3032,
+       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "Purchasing water from Townsend as an alternative to a treatment plant. The board discussed asking Townsend to quote a price to supply the district's average and peak daily water use instead of building a PFAS treatment plant; no rate was given yet.",
+       "outcome": "",
+       "t": 1103,
+       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-09-23",
+     "items": [
+      {
+       "kind": "vote",
+       "text": "Upload the manganese and PFAS data spreadsheet and corresponding charts to the district website, kept current, updated at minimum quarterly",
+       "outcome": "passed",
+       "t": 1684,
+       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "decision",
+       "text": "Commissioner Bill's PFAS/manganese well-blending proposal will not be presented at this meeting; he will send it by email for the other commissioners to review, and it will be discussed at the next meeting.",
+       "outcome": "",
+       "t": 3037,
+       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Website additions and format for PFAS/manganese water-quality data",
+       "outcome": "",
+       "t": 1396,
+       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "topic",
+       "text": "Treatment options for PFAS/manganese/iron removal, including a well-blending alternative to a treatment plant",
+       "outcome": "",
+       "t": 1892,
+       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "PFAS/manganese treatment plant vs. alternative proposal. A commissioner argued the standard treatment-plant solution for PFAS would cost roughly forty million dollars and urged the board to investigate a cheaper well-blending alternative to avoid that cost.",
+       "outcome": "",
+       "t": 1913,
+       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-10-21",
+     "items": [
+      {
+       "kind": "topic",
+       "text": "PFAS treatment option presentation",
+       "outcome": "",
+       "t": 1649,
+       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "budget",
+       "text": "PFAS treatment plant cost. A commissioner cited the cost of a filtration plant and its annual operating expense, which another commissioner said looked high.",
+       "outcome": "",
+       "t": 1850,
+       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "contention",
+       "text": "Whether the blending proposal is workable versus a treatment plant (one commissioner for the proposal, the superintendent and others skeptical): \"Oh my goodness. Well, then we we should do a financial analysis then because it's not even going to be close.\"",
+       "outcome": "",
+       "t": 4492,
+       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
+       "source": "ours",
+       "recording_note": ""
+      },
+      {
+       "kind": "safety",
+       "text": "Contaminants below the threshold still affect health (a member): \"we still have contaminants in our water that affect the health and well-being of our residents.\"",
+       "outcome": "",
+       "t": 4574,
+       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    },
+    {
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-11-18",
+     "items": [
+      {
+       "kind": "budget",
+       "text": "PFAS litigation money. Litigation funds sit in surplus; intended for PFAS remediation.",
+       "outcome": "",
+       "t": 1457,
+       "video_url": "https://www.youtube.com/watch?v=MutqteYmYj8",
+       "source": "ours",
+       "recording_note": ""
+      }
+     ],
+     "records": [
+      "ours"
+     ]
+    }
+   ],
+   "meetings": 6,
+   "boards_touched": 1,
+   "first_seen": "2026-08-12",
+   "last_moved": "2026-11-18",
+   "claims_before_started": 345,
+   "stands": {
+    "vote": {
+     "kind": "vote",
+     "text": "Upload the manganese and PFAS data spreadsheet and corresponding charts to the district website, kept current, updated at minimum quarterly",
+     "outcome": "passed",
+     "t": 1684,
+     "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+     "source": "ours",
+     "recording_note": "",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-09-23"
+    },
+    "decision": {
+     "kind": "decision",
+     "text": "Commissioner Bill's PFAS/manganese well-blending proposal will not be presented at this meeting; he will send it by email for the other commissioners to review, and it will be discussed at the next meeting.",
+     "outcome": "",
+     "t": 3037,
+     "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
+     "source": "ours",
+     "recording_note": "",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-09-23"
+    },
+    "any": {
+     "kind": "topic",
+     "text": "PFAS treatment option presentation",
+     "outcome": "",
+     "t": 1649,
+     "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
+     "source": "ours",
+     "recording_note": "",
+     "board": "Lunenburg Water District",
+     "board_slug": "lunenburg-water-district",
+     "date": "2026-10-21"
+    }
+   },
+   "is_new": false,
+   "pin": null,
+   "heat": "moving",
+   "stage": "voted on, not decided",
+   "tangled": false,
+   "hot": false,
+   "momentum": {
+    "meetings_last_30": 1,
+    "boards_last_30": 1,
+    "meetings": 6,
+    "boards": 1,
+    "votes": 1,
+    "days_since_last": 3,
+    "span_days": 98,
+    "meetings_last_90": 5,
+    "board_meetings_since": 0
+   },
+   "weight": 132,
+   "generated": "opened-by-model"
   },
   {
    "id": "paraprofessional-contract",
@@ -11640,7 +12307,7 @@
     "meetings": 3,
     "boards": 1,
     "votes": 2,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "span_days": 63,
     "meetings_last_90": 3,
     "board_meetings_since": 0
@@ -13245,12 +13912,12 @@
    "tangled": false,
    "hot": false,
    "momentum": {
-    "meetings_last_30": 9,
-    "boards_last_30": 7,
+    "meetings_last_30": 8,
+    "boards_last_30": 6,
     "meetings": 25,
     "boards": 14,
     "votes": 48,
-    "days_since_last": 3,
+    "days_since_last": 4,
     "span_days": 91,
     "meetings_last_90": 24,
     "board_meetings_since": 4
@@ -17766,7 +18433,7 @@
     "meetings": 28,
     "boards": 7,
     "votes": 9,
-    "days_since_last": 3,
+    "days_since_last": 4,
     "span_days": 287,
     "meetings_last_90": 9,
     "board_meetings_since": 1
@@ -20177,7 +20844,7 @@
     "meetings": 13,
     "boards": 6,
     "votes": 4,
-    "days_since_last": 3,
+    "days_since_last": 4,
     "span_days": 126,
     "meetings_last_90": 6,
     "board_meetings_since": 2
@@ -21387,7 +22054,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 5,
-    "days_since_last": 3,
+    "days_since_last": 4,
     "span_days": 119,
     "meetings_last_90": 8,
     "board_meetings_since": 1
@@ -31142,612 +31809,12 @@
     "meetings": 139,
     "boards": 20,
     "votes": 16,
-    "days_since_last": 11,
+    "days_since_last": 12,
     "span_days": 777,
     "meetings_last_90": 13,
-    "board_meetings_since": 9
+    "board_meetings_since": 11
    },
    "weight": 2066
-  },
-  {
-   "id": "water-district-pfas-compliance",
-   "label": "Water district PFAS compliance",
-   "question": "How will the water district meet the PFAS compliance deadline and at what cost?",
-   "kind": "project;service",
-   "groups": "water-sewer-roads",
-   "tags": "",
-   "boards": "",
-   "registered_on": "2026-11-06",
-   "started": "2026-08-12",
-   "closes": "A commissioners' vote on a treatment or compliance approach",
-   "status": "open",
-   "resolved_on": "",
-   "caveat": "Opened automatically. A model wrote this question and its closing condition from the meeting record, and no person has read them yet.",
-   "closure": null,
-   "callouts": [],
-   "history": [],
-   "votes": [
-    {
-     "date": "2021-12-15",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Authorize superintendent to sign Rodman legal services agreement for PFAS litigation pending counsel review",
-     "outcome": "not audible",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 380,
-     "video_url": "https://www.youtube.com/watch?v=Nvfi3KsZHyw",
-     "quote": "",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2022-03-26",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Appropriate from the water enhancement account for an engineering consultant pilot study of PFAS treatment at the Hickory Hills well (article nine).",
-     "outcome": "failed",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 840,
-     "video_url": "https://www.youtube.com/watch?v=w3B0zRuW1z8",
-     "quote": "",
-     "fy": 2023,
-     "fy_meeting": "Annual Town Meeting, 2022-05-07",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2022-06-08",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Authorize the chairman to sign the PFAS class action litigation agreement",
-     "outcome": "passed (voice vote, ayes heard)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 2186,
-     "video_url": "https://www.youtube.com/watch?v=FjiP12DCuho",
-     "quote": "",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2022-06-08",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Use the named engineering firm (heard as time bond / italian bond) as consulting engineer for the Hickory Hills PFAS pilot study",
-     "outcome": "passed (voice vote, ayes heard)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 3214,
-     "video_url": "https://www.youtube.com/watch?v=FjiP12DCuho",
-     "quote": "",
-     "fy": 2022,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2022-09-28",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Approve option number three for the PFAS pilot study",
-     "outcome": "passed (voice aye; count not audible)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 769,
-     "video_url": "https://www.youtube.com/watch?v=q6hUvKBRkok",
-     "quote": "",
-     "fy": 2023,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2022-10-19",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Article 1: appropriate funds from the water system enhancement account to hire Tighe & Bond to design and coordinate a pilot study of iron, manganese and PFAS treatment at the Hickory Hills well.",
-     "outcome": "passed (standing count tied 77-77, recount 79 to 77 as heard)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 98,
-     "video_url": "https://www.youtube.com/watch?v=Aw1AjcfAedo",
-     "quote": "",
-     "fy": 2023,
-     "fy_meeting": "Special Town Meeting, 2022-11-15",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2022-12-14",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Authorize the superintendent to sign the aqueous film forming foam PFAS litigation document",
-     "outcome": "passed (ayes heard)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 3453,
-     "video_url": "https://www.youtube.com/watch?v=SlprUipk_K8",
-     "quote": "",
-     "fy": 2023,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2024-03-27",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Approve the capital improvement planning summary: Hickory Hills and Lancaster Ave tied via raw water transmission to one treatment facility, plus PFAS treatment for the Keyes well",
-     "outcome": "passed unanimously (per chair's statement that the board voted unanimously)",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 2919,
-     "video_url": "https://www.youtube.com/watch?v=UMZ11C3Jn8k",
-     "quote": "",
-     "fy": 2025,
-     "fy_meeting": "Annual Town Meeting, 2024-05-04",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2024-05-08",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "ours",
-     "text": "Take no action: make no recommendation either way on the water district's PFAS plan",
-     "outcome": "failed",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 7726,
-     "video_url": "https://www.youtube.com/watch?v=dO7n5fBtuww",
-     "quote": "",
-     "fy": 2024,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    },
-    {
-     "date": "2024-05-08",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "town",
-     "fy": 2024,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Vice-Chair Franco moved that the Board not make a recommendation in either direction on the Water District PFAS proposal.",
-     "outcome": "failed 2-3-0",
-     "moved_by": "Vice-Chair Franco",
-     "seconded_by": "Clerk Nuzzolo",
-     "doc_url": "/docs/meetings/select-board/2024-05-08-minutes-6562.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082024-6562",
-     "quote": "motion by vice-chair franco that the board not make a recommendation in either direction. clerk nuzzolo seconded the motion."
-    },
-    {
-     "date": "2024-05-08",
-     "board": "Select Board",
-     "board_slug": "select-board",
-     "source": "town",
-     "fy": 2024,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Member Alonzo moved that the Board recommend disapproval (a \"no\" vote) on the Water District PFAS project as presented at the May 18 meeting.",
-     "outcome": "passed 2-1-2",
-     "moved_by": "Member Alonzo",
-     "seconded_by": "Member Emkey",
-     "doc_url": "/docs/meetings/select-board/2024-05-08-minutes-6562.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05082024-6562",
-     "quote": "member alonzo moved that the board of selectmen recommend a disapproval, or a \"no\" vote, on this issue at the may 18 meeting on the project as presented. member emkey seconded."
-    },
-    {
-     "date": "2024-05-16",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Article 1: appropriate a stated sum to design and construct a PFAS water treatment facility at the Lancaster Avenue wellfield, with borrowing authorized under G.L. c.44 and possibly the Mass. Clean Water Trust.",
-     "outcome": "not audible",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 536,
-     "video_url": "https://www.youtube.com/watch?v=_OjFupFJZZQ",
-     "quote": "",
-     "fy": 2025,
-     "fy_meeting": "Special Town Meeting, 2024-11-12",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2025-05-28",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Engage Capital Strategic Solutions for PFAS/well-operations informational services for $7,200",
-     "outcome": "not audible",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 230,
-     "video_url": "https://www.youtube.com/watch?v=gtkfbmuZkwk",
-     "quote": "",
-     "fy": 2027,
-     "fy_meeting": "Annual Town Meeting, 2026-05-02",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2025-07-21",
-     "board": "Board of Health",
-     "board_slug": "board-of-health",
-     "source": "town",
-     "fy": 2026,
-     "fy_meeting": "",
-     "fy_basis": "voted-in",
-     "text": "Require that PFAS also be included in the well testing for 177 Burrage Street.",
-     "outcome": "passed",
-     "moved_by": "Rudd",
-     "seconded_by": "Fortin",
-     "doc_url": "/docs/meetings/board-of-health/2025-07-21-minutes-7320.pdf",
-     "town_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07212025-7320",
-     "quote": "on motion by rudd and second by fortin, the board voted to require pfas also be included in the well testing."
-    },
-    {
-     "date": "2026-06-03",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "the district vote to borrow a sum not to exceed a stated amount to fund water system improvements including a PFAS water treatment plant at the Lancaster Avenue well field and associated well/transmission main work",
-     "outcome": "not audible",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 196,
-     "video_url": "https://www.youtube.com/watch?v=jFhkCL7o0oE",
-     "quote": "",
-     "fy": 2027,
-     "fy_meeting": "Special Town Meeting, 2026-09-03",
-     "fy_basis": "town-meeting"
-    },
-    {
-     "date": "2026-09-23",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "source": "ours",
-     "text": "Upload the manganese and PFAS data spreadsheet and corresponding charts to the district website, kept current, updated at minimum quarterly",
-     "outcome": "passed",
-     "moved_by": "",
-     "seconded_by": "",
-     "t": 1684,
-     "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-     "quote": "",
-     "fy": 2027,
-     "fy_meeting": "",
-     "fy_basis": "voted-in"
-    }
-   ],
-   "reports": [],
-   "reports_needed": [],
-   "on_agenda": [],
-   "chronology": [
-    {
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-08-12",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Adopt well-blending as the district's temporary corrective-action response to manganese and PFAS exceedances until DEP specifies a long-term treatment plan.",
-       "outcome": "",
-       "t": 2864,
-       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "New PFAS/manganese data-tracking spreadsheet and charts proposed by a commissioner; board debate over board vs. superintendent role",
-       "outcome": "",
-       "t": 549,
-       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Corrective action plan for manganese/PFAS exceedances at wells two, four and five",
-       "outcome": "",
-       "t": 2306,
-       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Results of the multi-well pumping-ratio test plan for PFAS",
-       "outcome": "",
-       "t": 3262,
-       "video_url": "https://www.youtube.com/watch?v=ezUwmNgj3w8",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-08-26",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "Hold off on a formal motion to publish quarterly PFAS/manganese data on the website; first get cost and process details from the vendors Level Up and Pixelated before committing.",
-       "outcome": "",
-       "t": 1007,
-       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Full round of manganese/iron/PFAS sampling results across wells (Lancaster, Kings, Well 5)",
-       "outcome": "",
-       "t": 1027,
-       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "PFAS regulation status: EPA maintaining its 4 ppt standard, awaiting Massachusetts DEP guidance",
-       "outcome": "",
-       "t": 2147,
-       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Website quarterly water-quality data section (Level Up). Building a dedicated section on the district website for quarterly PFAS/manganese charts might carry a small one-time setup fee from the vendor Level Up, with ongoing quarterly updates possibly covered under the existing maintenance arrangement.",
-       "outcome": "",
-       "t": 803,
-       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "PFAS/manganese testing of four wells feeding Well 5. The board decided to wait until the October sampling round to test the four wells that feed Well 5 rather than testing twice, which saves the district $2,000.",
-       "outcome": "",
-       "t": 1317,
-       "video_url": "https://www.youtube.com/watch?v=gzjEdL1J5N0",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-09-08",
-     "items": [
-      {
-       "kind": "decision",
-       "text": "The board effectively agreed to stop the blending water-quality tests, since the superintendent's conversation with MassDEP established that blending will not be accepted as a long-term compliance method and every individual well must pass PFAS limits on its own.",
-       "outcome": "",
-       "t": 1788,
-       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "MassDEP conversation on PFAS regulations, blending, and the 2029 compliance deadline",
-       "outcome": "",
-       "t": 338,
-       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Manganese/PFAS levels by well, bacteria failures, and UV disinfection history",
-       "outcome": "",
-       "t": 1454,
-       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Cost to address PFAS/manganese treatment. When asked what it would cost to fix the water quality problem, one participant jokingly threw out a figure while the superintendent said he did not yet have data or cost comparisons.",
-       "outcome": "",
-       "t": 3032,
-       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "Purchasing water from Townsend as an alternative to a treatment plant. The board discussed asking Townsend to quote a price to supply the district's average and peak daily water use instead of building a PFAS treatment plant; no rate was given yet.",
-       "outcome": "",
-       "t": 1103,
-       "video_url": "https://www.youtube.com/watch?v=wkIczMuIDqA",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-09-23",
-     "items": [
-      {
-       "kind": "vote",
-       "text": "Upload the manganese and PFAS data spreadsheet and corresponding charts to the district website, kept current, updated at minimum quarterly",
-       "outcome": "passed",
-       "t": 1684,
-       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "decision",
-       "text": "Commissioner Bill's PFAS/manganese well-blending proposal will not be presented at this meeting; he will send it by email for the other commissioners to review, and it will be discussed at the next meeting.",
-       "outcome": "",
-       "t": 3037,
-       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Website additions and format for PFAS/manganese water-quality data",
-       "outcome": "",
-       "t": 1396,
-       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "topic",
-       "text": "Treatment options for PFAS/manganese/iron removal, including a well-blending alternative to a treatment plant",
-       "outcome": "",
-       "t": 1892,
-       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "PFAS/manganese treatment plant vs. alternative proposal. A commissioner argued the standard treatment-plant solution for PFAS would cost roughly forty million dollars and urged the board to investigate a cheaper well-blending alternative to avoid that cost.",
-       "outcome": "",
-       "t": 1913,
-       "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    },
-    {
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-10-21",
-     "items": [
-      {
-       "kind": "topic",
-       "text": "PFAS treatment option presentation",
-       "outcome": "",
-       "t": 1649,
-       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "budget",
-       "text": "PFAS treatment plant cost. A commissioner cited the cost of a filtration plant and its annual operating expense, which another commissioner said looked high.",
-       "outcome": "",
-       "t": 1850,
-       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "contention",
-       "text": "Whether the blending proposal is workable versus a treatment plant (one commissioner for the proposal, the superintendent and others skeptical): \"Oh my goodness. Well, then we we should do a financial analysis then because it's not even going to be close.\"",
-       "outcome": "",
-       "t": 4492,
-       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-       "source": "ours",
-       "recording_note": ""
-      },
-      {
-       "kind": "safety",
-       "text": "Contaminants below the threshold still affect health (a member): \"we still have contaminants in our water that affect the health and well-being of our residents.\"",
-       "outcome": "",
-       "t": 4574,
-       "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-       "source": "ours",
-       "recording_note": ""
-      }
-     ],
-     "records": [
-      "ours"
-     ]
-    }
-   ],
-   "meetings": 5,
-   "boards_touched": 1,
-   "first_seen": "2026-08-12",
-   "last_moved": "2026-10-21",
-   "claims_before_started": 345,
-   "stands": {
-    "vote": {
-     "kind": "vote",
-     "text": "Upload the manganese and PFAS data spreadsheet and corresponding charts to the district website, kept current, updated at minimum quarterly",
-     "outcome": "passed",
-     "t": 1684,
-     "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-     "source": "ours",
-     "recording_note": "",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-09-23"
-    },
-    "decision": {
-     "kind": "decision",
-     "text": "Commissioner Bill's PFAS/manganese well-blending proposal will not be presented at this meeting; he will send it by email for the other commissioners to review, and it will be discussed at the next meeting.",
-     "outcome": "",
-     "t": 3037,
-     "video_url": "https://www.youtube.com/watch?v=zKMLA7kBTnI",
-     "source": "ours",
-     "recording_note": "",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-09-23"
-    },
-    "any": {
-     "kind": "topic",
-     "text": "PFAS treatment option presentation",
-     "outcome": "",
-     "t": 1649,
-     "video_url": "https://www.youtube.com/watch?v=DeWX3_WYFJg",
-     "source": "ours",
-     "recording_note": "",
-     "board": "Lunenburg Water District",
-     "board_slug": "lunenburg-water-district",
-     "date": "2026-10-21"
-    }
-   },
-   "is_new": false,
-   "pin": null,
-   "heat": "moving",
-   "stage": "voted on, not decided",
-   "tangled": false,
-   "hot": false,
-   "momentum": {
-    "meetings_last_30": 1,
-    "boards_last_30": 1,
-    "meetings": 5,
-    "boards": 1,
-    "votes": 1,
-    "days_since_last": 30,
-    "span_days": 70,
-    "meetings_last_90": 4,
-    "board_meetings_since": 0
-   },
-   "weight": 131,
-   "generated": "opened-by-model"
   },
   {
    "id": "trust-fund-vacancy",
@@ -32177,7 +32244,7 @@
     "meetings": 6,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 31,
+    "days_since_last": 32,
     "span_days": 40,
     "meetings_last_90": 6,
     "board_meetings_since": 4
@@ -34642,7 +34709,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 38,
+    "days_since_last": 39,
     "span_days": 35,
     "meetings_last_90": 2,
     "board_meetings_since": 2
@@ -35263,6 +35330,25 @@
        "our_minutes": "/meeting-minutes/finance-committee/2013-12-12-7d1xDTZf60M"
       }
      ]
+    },
+    {
+     "title": "Water district surplus articles",
+     "slug": "water-district-special-meeting-articles",
+     "status": "new",
+     "url": "",
+     "question": "What would the special meeting articles take from surplus and for what?",
+     "how": "words",
+     "meetings": [
+      {
+       "date": "2026-11-18",
+       "board": "Lunenburg Water District",
+       "fiscal_year": "FY2027",
+       "question_then": "What would the special meeting articles take from surplus and for what?",
+       "watch_at": "https://www.youtube.com/watch?v=MutqteYmYj8&t=1330s",
+       "at": "0:22:10",
+       "our_minutes": "/meeting-minutes/lunenburg-water-district/2026-11-18-MutqteYmYj8"
+      }
+     ]
     }
    ],
    "on_agenda": [],
@@ -35389,7 +35475,7 @@
     "meetings": 5,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 44,
+    "days_since_last": 45,
     "span_days": 92,
     "meetings_last_90": 4,
     "board_meetings_since": 10
@@ -36963,7 +37049,7 @@
     "meetings": 3,
     "boards": 3,
     "votes": 0,
-    "days_since_last": 45,
+    "days_since_last": 46,
     "span_days": 36,
     "meetings_last_90": 3,
     "board_meetings_since": 10
@@ -39511,7 +39597,7 @@
     "meetings": 30,
     "boards": 8,
     "votes": 0,
-    "days_since_last": 65,
+    "days_since_last": 66,
     "span_days": 336,
     "meetings_last_90": 3,
     "board_meetings_since": 22
@@ -40000,7 +40086,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 66,
+    "days_since_last": 67,
     "span_days": 119,
     "meetings_last_90": 2,
     "board_meetings_since": 9
@@ -41166,7 +41252,7 @@
     "meetings": 21,
     "boards": 11,
     "votes": 20,
-    "days_since_last": 78,
+    "days_since_last": 79,
     "span_days": 52,
     "meetings_last_90": 5,
     "board_meetings_since": 46
@@ -42953,7 +43039,7 @@
     "meetings": 12,
     "boards": 4,
     "votes": 4,
-    "days_since_last": 92,
+    "days_since_last": 93,
     "span_days": 220,
     "meetings_last_90": 0,
     "board_meetings_since": 20
@@ -43437,7 +43523,7 @@
     "meetings": 3,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 94,
+    "days_since_last": 95,
     "span_days": 42,
     "meetings_last_90": 0,
     "board_meetings_since": 7
@@ -44224,7 +44310,7 @@
     "meetings": 11,
     "boards": 5,
     "votes": 1,
-    "days_since_last": 114,
+    "days_since_last": 115,
     "span_days": 238,
     "meetings_last_90": 0,
     "board_meetings_since": 31
@@ -44791,7 +44877,7 @@
     "meetings": 9,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 136,
+    "days_since_last": 137,
     "span_days": 230,
     "meetings_last_90": 0,
     "board_meetings_since": 36
@@ -45551,7 +45637,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 149,
+    "days_since_last": 150,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 11
@@ -46714,7 +46800,7 @@
     "meetings": 21,
     "boards": 5,
     "votes": 10,
-    "days_since_last": 192,
+    "days_since_last": 193,
     "span_days": 461,
     "meetings_last_90": 0,
     "board_meetings_since": 51
@@ -50605,10 +50691,10 @@
     "meetings": 35,
     "boards": 11,
     "votes": 163,
-    "days_since_last": 202,
+    "days_since_last": 203,
     "span_days": 116,
     "meetings_last_90": 0,
-    "board_meetings_since": 108
+    "board_meetings_since": 109
    },
    "weight": 1166,
    "generated": "town-meetings",
@@ -52370,7 +52456,7 @@
     "meetings": 14,
     "boards": 4,
     "votes": 0,
-    "days_since_last": 202,
+    "days_since_last": 203,
     "span_days": 214,
     "meetings_last_90": 0,
     "board_meetings_since": 48
@@ -52699,7 +52785,7 @@
     "meetings": 5,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 202,
+    "days_since_last": 203,
     "span_days": 60,
     "meetings_last_90": 0,
     "board_meetings_since": 33
@@ -53075,7 +53161,7 @@
     "meetings": 5,
     "boards": 1,
     "votes": 3,
-    "days_since_last": 202,
+    "days_since_last": 203,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 23
@@ -53354,7 +53440,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 232,
+    "days_since_last": 233,
     "span_days": 135,
     "meetings_last_90": 0,
     "board_meetings_since": 12
@@ -56678,10 +56764,10 @@
     "meetings": 25,
     "boards": 14,
     "votes": 97,
-    "days_since_last": 367,
+    "days_since_last": 368,
     "span_days": 98,
     "meetings_last_90": 0,
-    "board_meetings_since": 247
+    "board_meetings_since": 248
    },
    "weight": 1460,
    "generated": "town-meetings",
@@ -57684,7 +57770,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 367,
+    "days_since_last": 368,
     "span_days": 91,
     "meetings_last_90": 0,
     "board_meetings_since": 105
@@ -58020,7 +58106,7 @@
     "meetings": 4,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 367,
+    "days_since_last": 368,
     "span_days": 42,
     "meetings_last_90": 0,
     "board_meetings_since": 51
@@ -62214,10 +62300,10 @@
     "meetings": 44,
     "boards": 14,
     "votes": 164,
-    "days_since_last": 566,
+    "days_since_last": 567,
     "span_days": 165,
     "meetings_last_90": 0,
-    "board_meetings_since": 386
+    "board_meetings_since": 387
    },
    "weight": 1465,
    "generated": "town-meetings",
@@ -63389,7 +63475,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 0,
-    "days_since_last": 566,
+    "days_since_last": 567,
     "span_days": 30,
     "meetings_last_90": 0,
     "board_meetings_since": 37
@@ -65084,7 +65170,7 @@
     "meetings": 27,
     "boards": 12,
     "votes": 63,
-    "days_since_last": 738,
+    "days_since_last": 739,
     "span_days": 104,
     "meetings_last_90": 0,
     "board_meetings_since": 438
@@ -65904,7 +65990,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 738,
+    "days_since_last": 739,
     "span_days": 85,
     "meetings_last_90": 0,
     "board_meetings_since": 215
@@ -69247,10 +69333,10 @@
     "meetings": 36,
     "boards": 13,
     "votes": 116,
-    "days_since_last": 930,
+    "days_since_last": 931,
     "span_days": 116,
     "meetings_last_90": 0,
-    "board_meetings_since": 569
+    "board_meetings_since": 570
    },
    "weight": 1364,
    "generated": "town-meetings",
@@ -70242,7 +70328,7 @@
     "meetings": 2,
     "boards": 2,
     "votes": 3,
-    "days_since_last": 930,
+    "days_since_last": 931,
     "span_days": 37,
     "meetings_last_90": 0,
     "board_meetings_since": 14
@@ -72651,7 +72737,7 @@
     "meetings": 29,
     "boards": 11,
     "votes": 87,
-    "days_since_last": 1102,
+    "days_since_last": 1103,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 551
@@ -73552,7 +73638,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 1102,
+    "days_since_last": 1103,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 252
@@ -74070,7 +74156,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 2,
-    "days_since_last": 1102,
+    "days_since_last": 1103,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 205
@@ -76515,10 +76601,10 @@
     "meetings": 28,
     "boards": 9,
     "votes": 74,
-    "days_since_last": 1294,
+    "days_since_last": 1295,
     "span_days": 123,
     "meetings_last_90": 0,
-    "board_meetings_since": 593
+    "board_meetings_since": 594
    },
    "weight": 954,
    "generated": "town-meetings",
@@ -77446,7 +77532,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 1294,
+    "days_since_last": 1295,
     "span_days": 123,
     "meetings_last_90": 0,
     "board_meetings_since": 247
@@ -77534,7 +77620,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 1294,
+    "days_since_last": 1295,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 8
@@ -79534,10 +79620,10 @@
     "meetings": 38,
     "boards": 12,
     "votes": 59,
-    "days_since_last": 1466,
+    "days_since_last": 1467,
     "span_days": 189,
     "meetings_last_90": 0,
-    "board_meetings_since": 896
+    "board_meetings_since": 897
    },
    "weight": 1262,
    "generated": "town-meetings",
@@ -80453,7 +80539,7 @@
     "meetings": 8,
     "boards": 4,
     "votes": 1,
-    "days_since_last": 1466,
+    "days_since_last": 1467,
     "span_days": 168,
     "meetings_last_90": 0,
     "board_meetings_since": 240
@@ -83658,10 +83744,10 @@
     "meetings": 35,
     "boards": 10,
     "votes": 113,
-    "days_since_last": 1658,
+    "days_since_last": 1659,
     "span_days": 123,
     "meetings_last_90": 0,
-    "board_meetings_since": 824
+    "board_meetings_since": 825
    },
    "weight": 1059,
    "generated": "town-meetings",
@@ -87173,7 +87259,7 @@
     "meetings": 37,
     "boards": 12,
     "votes": 67,
-    "days_since_last": 1830,
+    "days_since_last": 1831,
     "span_days": 196,
     "meetings_last_90": 0,
     "board_meetings_since": 1027
@@ -90121,10 +90207,10 @@
     "meetings": 36,
     "boards": 14,
     "votes": 71,
-    "days_since_last": 2031,
+    "days_since_last": 2032,
     "span_days": 114,
     "meetings_last_90": 0,
-    "board_meetings_since": 1276
+    "board_meetings_since": 1277
    },
    "weight": 1461,
    "generated": "town-meetings",
@@ -91178,7 +91264,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 0,
-    "days_since_last": 2082,
+    "days_since_last": 2083,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 243
@@ -93232,7 +93318,7 @@
     "meetings": 34,
     "boards": 13,
     "votes": 59,
-    "days_since_last": 2194,
+    "days_since_last": 2195,
     "span_days": 154,
     "meetings_last_90": 0,
     "board_meetings_since": 1174
@@ -96077,7 +96163,7 @@
     "meetings": 36,
     "boards": 9,
     "votes": 54,
-    "days_since_last": 2351,
+    "days_since_last": 2352,
     "span_days": 158,
     "meetings_last_90": 0,
     "board_meetings_since": 935
@@ -98446,7 +98532,7 @@
     "meetings": 21,
     "boards": 6,
     "votes": 59,
-    "days_since_last": 2565,
+    "days_since_last": 2566,
     "span_days": 189,
     "meetings_last_90": 0,
     "board_meetings_since": 951
@@ -101075,7 +101161,7 @@
     "meetings": 26,
     "boards": 6,
     "votes": 110,
-    "days_since_last": 2757,
+    "days_since_last": 2758,
     "span_days": 137,
     "meetings_last_90": 0,
     "board_meetings_since": 843
@@ -102538,7 +102624,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2757,
+    "days_since_last": 2758,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 15
@@ -102665,7 +102751,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2757,
+    "days_since_last": 2758,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 15
@@ -102792,7 +102878,7 @@
     "meetings": 1,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 2757,
+    "days_since_last": 2758,
     "span_days": 0,
     "meetings_last_90": 0,
     "board_meetings_since": 15
@@ -103891,7 +103977,7 @@
     "meetings": 21,
     "boards": 8,
     "votes": 35,
-    "days_since_last": 2929,
+    "days_since_last": 2930,
     "span_days": 183,
     "meetings_last_90": 0,
     "board_meetings_since": 1054
@@ -104690,7 +104776,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 1,
-    "days_since_last": 2929,
+    "days_since_last": 2930,
     "span_days": 98,
     "meetings_last_90": 0,
     "board_meetings_since": 411
@@ -104985,7 +105071,7 @@
     "meetings": 4,
     "boards": 3,
     "votes": 5,
-    "days_since_last": 3125,
+    "days_since_last": 3126,
     "span_days": 105,
     "meetings_last_90": 0,
     "board_meetings_since": 567
@@ -107252,7 +107338,7 @@
     "meetings": 15,
     "boards": 9,
     "votes": 53,
-    "days_since_last": 3279,
+    "days_since_last": 3280,
     "span_days": 70,
     "meetings_last_90": 0,
     "board_meetings_since": 1460
@@ -108503,7 +108589,7 @@
     "meetings": 8,
     "boards": 6,
     "votes": 40,
-    "days_since_last": 3485,
+    "days_since_last": 3486,
     "span_days": 109,
     "meetings_last_90": 0,
     "board_meetings_since": 1050
@@ -110278,7 +110364,7 @@
     "meetings": 9,
     "boards": 3,
     "votes": 12,
-    "days_since_last": 3650,
+    "days_since_last": 3651,
     "span_days": 49,
     "meetings_last_90": 0,
     "board_meetings_since": 624
@@ -111191,7 +111277,7 @@
     "meetings": 6,
     "boards": 4,
     "votes": 27,
-    "days_since_last": 3742,
+    "days_since_last": 3743,
     "span_days": 41,
     "meetings_last_90": 0,
     "board_meetings_since": 915
@@ -112114,7 +112200,7 @@
     "meetings": 8,
     "boards": 3,
     "votes": 2,
-    "days_since_last": 3753,
+    "days_since_last": 3754,
     "span_days": 93,
     "meetings_last_90": 0,
     "board_meetings_since": 899
@@ -114690,7 +114776,7 @@
     "meetings": 20,
     "boards": 8,
     "votes": 122,
-    "days_since_last": 3849,
+    "days_since_last": 3850,
     "span_days": 166,
     "meetings_last_90": 0,
     "board_meetings_since": 1392
@@ -116510,7 +116596,7 @@
     "meetings": 7,
     "boards": 4,
     "votes": 3,
-    "days_since_last": 3849,
+    "days_since_last": 3850,
     "span_days": 74,
     "meetings_last_90": 0,
     "board_meetings_since": 940
@@ -117252,7 +117338,7 @@
     "meetings": 16,
     "boards": 2,
     "votes": 11,
-    "days_since_last": 4022,
+    "days_since_last": 4023,
     "span_days": 195,
     "meetings_last_90": 0,
     "board_meetings_since": 726
@@ -119578,7 +119664,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 88,
-    "days_since_last": 4220,
+    "days_since_last": 4221,
     "span_days": 207,
     "meetings_last_90": 0,
     "board_meetings_since": 1406
@@ -121446,7 +121532,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 2,
-    "days_since_last": 4220,
+    "days_since_last": 4221,
     "span_days": 159,
     "meetings_last_90": 0,
     "board_meetings_since": 1145
@@ -123208,7 +123294,7 @@
     "meetings": 20,
     "boards": 7,
     "votes": 49,
-    "days_since_last": 4584,
+    "days_since_last": 4585,
     "span_days": 102,
     "meetings_last_90": 0,
     "board_meetings_since": 1671
@@ -124579,7 +124665,7 @@
     "meetings": 9,
     "boards": 2,
     "votes": 2,
-    "days_since_last": 4588,
+    "days_since_last": 4589,
     "span_days": 161,
     "meetings_last_90": 0,
     "board_meetings_since": 812
@@ -125260,7 +125346,7 @@
     "meetings": 15,
     "boards": 4,
     "votes": 9,
-    "days_since_last": 4700,
+    "days_since_last": 4701,
     "span_days": 120,
     "meetings_last_90": 0,
     "board_meetings_since": 1158
@@ -127081,7 +127167,7 @@
     "meetings": 30,
     "boards": 9,
     "votes": 52,
-    "days_since_last": 5312,
+    "days_since_last": 5313,
     "span_days": 207,
     "meetings_last_90": 0,
     "board_meetings_since": 2169
@@ -127813,7 +127899,7 @@
     "meetings": 7,
     "boards": 5,
     "votes": 3,
-    "days_since_last": 5608,
+    "days_since_last": 5609,
     "span_days": 66,
     "meetings_last_90": 0,
     "board_meetings_since": 1633
@@ -128519,7 +128605,7 @@
     "meetings": 13,
     "boards": 4,
     "votes": 12,
-    "days_since_last": 5676,
+    "days_since_last": 5677,
     "span_days": 117,
     "meetings_last_90": 0,
     "board_meetings_since": 1524
@@ -129138,7 +129224,7 @@
     "meetings": 2,
     "boards": 1,
     "votes": 1,
-    "days_since_last": 5676,
+    "days_since_last": 5677,
     "span_days": 9,
     "meetings_last_90": 0,
     "board_meetings_since": 359

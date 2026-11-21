@@ -1,0 +1,61 @@
+{
+ "board": "Town of Lunenburg \u2014 a budget document",
+ "board_slug": "documents",
+ "document": true,
+ "first_seen": "2026-11-01",
+ "label": "November 17, 2026 Special Town Meeting Warrant",
+ "meeting_date": "2026-11-01",
+ "source": {
+  "document": "sources/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+  "sha256": "35adf98dd7fda94c55ae1beea37f72059f56d01449f3ec5f1f788a8dbb5fc99f",
+  "text": "sources/town-budget/text/4559-november-17-2026-special-town-meeting-warrant.txt"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$300,000",
+    "fiscal_year": 2027,
+    "kind": "free_cash",
+    "scope": "school",
+    "statement": "Article 4 proposed motion would fund the Special Education Reserve Fund with a transfer of $300,000 from Certified Free Cash. Select Board recommends disapproval (4-1-0).",
+    "status": "proposed",
+    "t": 2,
+    "who": "the town's special town meeting warrant (School Committee article)"
+   },
+   {
+    "amount_as_heard": "$195,830",
+    "fiscal_year": null,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Article 9 requests $195,830 for engineering and related services for the Middle/High School track and field reconstruction; construction would need a separate funding decision. Select Board deferred.",
+    "status": "proposed",
+    "t": 6,
+    "who": "the town's special town meeting warrant (School Committee article)"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "stormwater funding via operating budget",
+    "condition": "if Town Meeting prefers funding through the annual operating budget (Option 2)",
+    "fiscal_year": null,
+    "prediction": "Funding stormwater maintenance and MS4 compliance through the operating budget has historically been insufficient and will likely require a Proposition 2 1/2 override in the future; it would compete annually with schools, public safety and other departments.",
+    "scope": "town",
+    "t": 6,
+    "who": "the town's special town meeting warrant summary (Stormwater Task Force article)"
+   }
+  ]
+ },
+ "upstream": "https://www.lunenburgma.gov/DocumentCenter/View/4559",
+ "video_id": "4559-november-17-2026-special-town-meeting-warrant",
+ "video_url": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM A DOCUMENT'S TEXT. Every figure is as printed and every line carries the page it was read from, which is the record.",
+ "written": {
+  "at": "2026-11-21T12:07:21Z",
+  "by": "scripts/write_document_budget_state.py",
+  "cost_usd": 0.057262,
+  "model": "sonnet",
+  "schema": 2
+ }
+}
