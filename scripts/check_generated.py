@@ -831,6 +831,9 @@ CHECKS = [
     # a rollup summed with its own detail going unnoticed. `dese_xlsx.py` is why it is
     # four minutes and not forty.
     ('extract_dese_staffing.py', ['--check']),
+    # SCHOOL FACILITY JOBS: every order on the school upkeep lines (the dataset, the database table)
+    # and the capital-rankings companion page. Rebuilt by the refresh whenever the journal moves.
+    ('build_school_facility_jobs.py', ['--check']),
     ('build_db.py', ['--check']),
     ('check_archive_layout.py', []),
     ('check_moved_docs.py', []),
@@ -872,7 +875,7 @@ PREREQ = {
     # ...and the database READS money-gaps.csv, which this writes. So the gaps come first
     # and the database after, which is the reverse of the intuition that a gap registry is
     # downstream of the data.
-    'build_db.py': ['build_extraction_gaps.py'],
+    'build_db.py': ['build_extraction_gaps.py', 'build_school_facility_jobs.py'],
     # THE PAGE MAP IS UPSTREAM OF THE QUEUE AND OF THE GAPS IT IMPLIES. Both read its
     # `state` column: the plan to decide what is still worth a model read, the gap registry
     # to name the pages that were read and refused.

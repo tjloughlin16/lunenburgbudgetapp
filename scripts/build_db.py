@@ -1413,6 +1413,12 @@ REFERENCE = [
     # came from. Built by scripts/extract_capital_rankings.py; pages by build_capital_rankings.py.
     'capital-rankings',
 
+    # Every purchase order on the school building-and-grounds lines, FY2023-FY2026, from the school
+    # journal: ordered, paid, our reading of each order of $10,000 or more as a one-time job or a
+    # recurring order, same-purpose jobs grouped, and whether each met the Town's $20,000 capital
+    # cost test. Built by scripts/build_school_facility_jobs.py.
+    'school-facility-jobs',
+
 ]
 
 # YEAR-BY-YEAR SERIES READ OUT OF THE ANNUAL REPORTS, one family a file: quotes checked against

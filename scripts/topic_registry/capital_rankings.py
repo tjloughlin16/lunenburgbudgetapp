@@ -16,10 +16,15 @@ CATEGORY = dict(
     order=55,
     groups=[
         ('Every year, one at a time', ['capital-years']),
+        ('Beside the capital process', ['school-facility-jobs']),
         ('Each year as its own page', ['capital-fy2027', 'capital-fy2026', 'capital-fy2025', 'capital-fy2024',
                               'capital-fy2023']),
     ])
 GENERATOR = 'build_capital_rankings.py'
+# School upkeep orders that met the capital cost test without going through ranking (TJ, 21 November
+# 2026: "a companion report for the schools ... projects that are WELL WITHIN the purview of capital
+# planning"). Its own generator, rebuilt by the refresh whenever the school journal changes.
+TOPIC_GENERATORS = {'school-facility-jobs': 'build_school_facility_jobs.py'}
 TOPICS = {
     'capital-years': 'Capital plans by year',
     'capital-fy2023': 'FY2023 capital plan',
@@ -27,4 +32,5 @@ TOPICS = {
     'capital-fy2025': 'FY2025 capital plan',
     'capital-fy2026': 'FY2026 capital plan',
     'capital-fy2027': 'FY2027 capital plan',
+    'school-facility-jobs': 'School upkeep and capital',
 }

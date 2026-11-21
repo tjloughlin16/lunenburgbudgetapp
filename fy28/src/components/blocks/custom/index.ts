@@ -20,6 +20,7 @@ import CapitalUnrankedList from './capital-unranked-list'
 import CapitalCoverage from './capital-coverage'
 import CapitalDeptYears from './capital-dept-years'
 import CapitalRequestSizes from './capital-request-sizes'
+import DollarStrips from './dollar-strips'
 import FyFlags from './fy-flags'
 import FyLineTable from './fy-line-table'
 import FyYearFacts from './fy-year-facts'
@@ -65,6 +66,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'capital-coverage': CapitalCoverage,
   'capital-dept-years': CapitalDeptYears,
   'capital-request-sizes': CapitalRequestSizes,
+  'dollar-strips': DollarStrips,
   'fy-flags': FyFlags,
   'fy-line-table': FyLineTable,
   'fy-year-facts': FyYearFacts,

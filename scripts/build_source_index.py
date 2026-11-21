@@ -4448,6 +4448,22 @@ GROUPS = [
              'total of $27,903,187. A function code is not a budget line and not a post, '
              'so this bounds the funding-source question rather than settling it. '
              'Rebuild with scripts/extract_dese_finance.py.'),
+            ('data/school-facility-jobs.csv',
+             'Every purchase order on the school building and grounds lines, FY2023-FY2026', 1,
+             'OURS, from the school journal. One row per purchase order on the school department\u2019s '
+             'building and grounds lines (general fund department 300, non-salary accounts in DESE functions '
+             '4000-4999 except utilities): what it bought in its own words, when it was opened, what was '
+             'ordered and what was paid against it. `kind` is our reading of each order of $10,000 or more as '
+             'a one-time job or a recurring order; `job` groups orders of one purpose, as the Capital Planning '
+             'Committee\u2019s definition allows; `meets_cost_test` sets the job against the Town\u2019s $20,000 '
+             'capital threshold. Only the cost half of that test can be measured: a ledger records no useful '
+             'life. Rebuild with scripts/build_school_facility_jobs.py.'),
+            ('data/school-facility-job-kinds.csv',
+             'Each large school upkeep order read as a one-time job or a recurring order -- our reading', 1,
+             'OURS. One row per purchase order of $10,000 or more on the school building and grounds lines, '
+             'read as a one-time job or a recurring order from its own description, with the words it was read '
+             'from, and a job name where several orders share one purpose. Read by '
+             'scripts/build_school_facility_jobs.py, which lists any new order not yet read here.'),
             ('data/building-payee-trades.csv',
              'What kind of work each school buildings payee does -- our grouping', 1,
              'OURS. One row per payee on the school department\u2019s building and grounds '
