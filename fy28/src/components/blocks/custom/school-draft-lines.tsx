@@ -18,16 +18,16 @@
 import { useMemo, useState } from 'react'
 import type { CustomProps } from './index'
 
-type Vals = [number | null, number | null, number | null, number]
-type Line = { line: string; actual: string; prior: string; proposed: string; change: string; n: number; v: Vals; tag: '' | 'new' | 'zero'; page: number }
-type Group = { section: string; code: string; name: string; prior: string; proposed: string; change: string; n: number; v: Vals; lines: Line[] }
+type Vals = [number | null, number | null, number | null, number, number | null]
+type Line = { line: string; actual: string; prior: string; proposed: string; change: string; pct: string; n: number; v: Vals; tag: '' | 'new' | 'zero'; page: number }
+type Group = { section: string; code: string; name: string; prior: string; proposed: string; change: string; pct: string; n: number; v: Vals; lines: Line[] }
 type Filter = 'all' | 'up' | 'down' | 'new' | 'zero'
 /** 'order' is the district's; 'line' sorts by name; 0-3 by a figure column. */
-type SortKey = 'order' | 'line' | 0 | 1 | 2 | 3
+type SortKey = 'order' | 'line' | 0 | 1 | 2 | 3 | 4
 type Data = {
   groups: Group[]
   counts: { new: number; zero: number }
-  text: Record<'line' | 'actual' | 'prior' | 'proposed' | 'change' | 'all' | 'up' | 'down' | 'new' | 'zero' | 'expand' | 'collapse'
+  text: Record<'pct' | 'line' | 'actual' | 'prior' | 'proposed' | 'change' | 'all' | 'up' | 'down' | 'new' | 'zero' | 'expand' | 'collapse'
     | 'actual_note' | 'page' | 'grouped' | 'sort_hint' | 'cost_center' | 'search' | 'none' | 'show_all' | 'fewer', string>
 }
 
@@ -115,6 +115,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
       <td className="text-right px-2 py-1 tabular-nums">{l.prior}</td>
       <td className="text-right px-2 py-1 tabular-nums">{l.proposed}</td>
       <td className="text-right px-2 py-1 tabular-nums" style={{ color: tone(l.n) }}>{l.change}</td>
+      <td className="text-right px-2 py-1 tabular-nums" style={{ color: l.pct === 'new' ? 'var(--text-secondary)' : tone(l.n) }}>{l.pct}</td>
     </tr>
   )
   let section = ''
@@ -144,7 +145,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
         <span className="text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{d.text.sort_hint}</span>
       </div>
       <div className="w-full max-w-full overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
-        <table className="w-full border-collapse text-[12.5px]" style={{ minWidth: 520 }}>
+        <table className="w-full border-collapse text-[12.5px]" style={{ minWidth: 600 }}>
           <thead>
             <tr>
               <Head k="line" label={d.text.line} cls="text-left" />
@@ -152,6 +153,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
               <Head k={1} label={d.text.prior} cls="text-right" />
               <Head k={2} label={d.text.proposed} cls="text-right" />
               <Head k={3} label={d.text.change} cls="text-right" />
+              <Head k={4} label={d.text.pct} cls="text-right" />
             </tr>
           </thead>
           <tbody>
@@ -162,7 +164,7 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
               return [
                 head ? (
                   <tr key={`s-${g.section}`}>
-                    <th colSpan={5} scope="rowgroup" className="text-left font-semibold px-2 pt-4 pb-1 text-[11px] uppercase tracking-wide"
+                    <th colSpan={6} scope="rowgroup" className="text-left font-semibold px-2 pt-4 pb-1 text-[11px] uppercase tracking-wide"
                       style={{ color: 'var(--text-muted)' }}>{g.section}</th>
                   </tr>
                 ) : null,
@@ -179,11 +181,12 @@ export default function SchoolDraftLines({ data, alt }: CustomProps) {
                   <td className="text-right px-2 py-1.5 tabular-nums font-semibold">{g.prior}</td>
                   <td className="text-right px-2 py-1.5 tabular-nums font-semibold">{g.proposed}</td>
                   <td className="text-right px-2 py-1.5 tabular-nums font-semibold" style={{ color: tone(g.n) }}>{g.change}</td>
+                  <td className="text-right px-2 py-1.5 tabular-nums font-semibold" style={{ color: tone(g.n) }}>{g.pct}</td>
                 </tr>,
                 ...(o ? lines.map((l, i) => lineRow(l, `${id(g)}-${i}`)) : []),
               ]
             })}
-            {!shown.length ? <tr><td colSpan={5} className="px-2 py-3" style={{ color: 'var(--text-muted)' }}>{d.text.none}</td></tr> : null}
+            {!shown.length ? <tr><td colSpan={6} className="px-2 py-3" style={{ color: 'var(--text-muted)' }}>{d.text.none}</td></tr> : null}
           </tbody>
         </table>
       </div>
