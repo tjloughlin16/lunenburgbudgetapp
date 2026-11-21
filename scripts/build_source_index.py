@@ -1806,6 +1806,36 @@ GROUPS = [
              'quote it rests on and its page or second. Rows heard through machine captions say '
              'so. build_track_field_capital.py re-finds every quote and builds '
              '/analysis/track-field-capital from it.'),
+            ('data/capital-submissions-fy28.csv',
+             'The school department\u2019s FY28-FY37 capital request forms, one row each', 2,
+             'Extracted by us from the School Committee packet of 21 October 2026: project, '
+             'department, location, priority tier and rank, the year and amount each form '
+             'requests (as printed, and parsed), and the line of the Superintendent\u2019s '
+             'narrative it became, with every difference between the two named. '
+             'extract_capital_submissions.py builds it.'),
+            ('data/capital-narrative-fy28.csv',
+             'The Superintendent\u2019s FY28-FY33 capital schedule, line by line', 2,
+             'Extracted by us from the capital plan narrative in the 21 October 2026 packet: '
+             'every line of its year-by-year schedule and its smaller-requests table. The '
+             'build refuses to write unless the lines sum to every year total the narrative '
+             'prints.'),
+            ('data/sc-packet-2026-10-21-delivery.csv',
+             'What became of each file in the 21 October 2026 School Committee packet', 1,
+             'Written by ingest_sc_packet.py: every member of the downloaded archive, by its '
+             'delivered name and sha256, and whether it was filed, already held, a duplicate '
+             'or held private.'),
+            ('data/capital-requests-unranked.csv',
+             'Capital requests made and never ranked, FY2023 to FY2027', 2,
+             'Read by hand: one row per request a department made for a year that the '
+             'Capital Planning Committee\u2019s list for that year does not hold, with the '
+             'document showing it was made and, where one is recorded, the document or '
+             'recording that says why it went no further. build_capital_unranked.py checks it.'),
+            ('data/capital-coverage.csv',
+             'Which capital planning documents we hold for each year', 1,
+             'Written by us: one row per fiscal year and part (every department\u2019s requests, '
+             'departments\u2019 own order, the School Committee\u2019s order, the committee\u2019s '
+             'ranked list, the Town Manager\u2019s plan), naming the document and page it was read '
+             'from. build_capital_rankings.py checks it against the archive and the ranks.'),
             ('data/capital-rankings.csv',
              'Every ranked capital request, FY2023 to FY2027, with its ranks and outcome', 2,
              'Extracted by us: one row per request the Capital Planning Committee ranked in a '
@@ -5124,6 +5154,8 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # ...and so is the delivery forwarded anonymously on 9 October 2026, by
              # `forwarded_group()`. One catalogue, two deliveries, split by path.
              'budget-workbooks/forwarded-anonymously-2026-10-09',
+             # ...and the School Committee packet for 21 October 2026, by `sc_packet_group()`.
+             'budget-workbooks/school-committee-2026-10-21',
              # Working files, one per page, that the catalogue and the datasets summarise.
              # `data/inventory/` is what an agent read off each report page before anything
              # was extracted, and `data/rosters/` the parsed roster blocks. They are kept
@@ -5206,6 +5238,7 @@ SKIP_FILES = {'supplemental.csv',
               # Catalogued, but by `finance_committee_group()`, which runs after this walk.
               'budget-workbooks/PROVENANCE-finance-committee.md',
               'budget-workbooks/PROVENANCE-forwarded-anonymously-2026-10-09.md',
+              'budget-workbooks/PROVENANCE-school-committee-2026-10-21.md',
               # A BUILD CONTROL FILE, not a source document. It names which analyses are
               # published and linked from nowhere, so cataloguing it published it at
               # /docs/analyses/UNLISTED -- an unlinked report's slug, at a guessable
@@ -5917,6 +5950,35 @@ def forwarded_group(catalogued_hashes):
     return g
 
 
+def sc_packet_group(catalogued_hashes):
+    """The School Committee's packet for 21 October 2026, from a Drive folder shared with TJ
+    and downloaded 18 November 2026. Described from `budget-workbooks/index.csv`; the twelve
+    warrant batches are held private and so are not listed. See ingest_sc_packet.py."""
+    g = mirror_group(
+        'budget-workbooks', 'school-committee-2026-10-21',
+        'School Committee packet, 21 October 2026',
+        '{n} documents from the packet for the School Committee meeting of 21 October 2026: '
+        'the school department\u2019s FY28-FY37 capital request forms, the Superintendent\u2019s '
+        'capital narrative, vendor quotes, a line item transfer and a homecoming memo. Twelve '
+        'warrant batches are held back until every page is read.',
+        'request', catalogued_hashes,
+        what='From a packet share downloaded by TJ; no public address found. The forms are '
+             'read into capital-submissions-fy28.csv.',
+        prefix='sources/budget-workbooks/school-committee-2026-10-21/')
+    if not g:
+        return None
+    rel = 'budget-workbooks/PROVENANCE-school-committee-2026-10-21.md'
+    publish(rel)
+    g['items'].insert(0, {
+        'path': rel, 'title': 'How this packet reached us, and what was held back',
+        'stars': 2,
+        'what': 'Written by us. The share, the archive\u2019s sha256, what was already posted, '
+                'and why the warrant batches are held.',
+        'kind': KIND['.md'], 'bytes': os.path.getsize(os.path.join(SRC, rel)),
+        'url': '/docs/' + rel, 'upstream': ''})
+    return g
+
+
 def district_page_group(catalogued_hashes):
     """The district's whole budget page, mirrored.
 
@@ -6169,6 +6231,7 @@ def main():
         district_page_group(catalogued_hashes),
         finance_committee_group(catalogued_hashes),
         forwarded_group(catalogued_hashes),
+        sc_packet_group(catalogued_hashes),
         mirror_group('town-budget', 'town-budget',
                      'The town’s budget and finance documents, mirrored',
                      'Every budget-relevant document linked from the town’s finance pages '
