@@ -219,6 +219,7 @@ def build_versions(fy, vrows, blocks):
         raise SystemExit('%s: %d of %d rows placed in a version, a strand or the upcoming list' % (fy, placed, total))
 
     out, last_gap = [], {}
+    last_stated = {}                          # scope -> the latest deficit any version stated, for a version that restates none
     tm_target = None
     on_table, off_so_far = 0, 0
     for i, v in enumerate(on):
@@ -244,13 +245,41 @@ def build_versions(fy, vrows, blocks):
                 moved = dict(by=round(g['v'] - prev['v'], 2), approx=g['approx'] or prev['approx'], from_figure=prev['figure'], from_version=prev['version'])
             if g and not g['signed']:
                 last_gap[gap['scope']] = dict(v=g['v'], approx=g['approx'], figure=gap['figure'], version=v['item'], status=gap['status'])
+        # THE PROJECTED DEFICIT ON THE MAIN LINE. TJ, 20 November 2026: "bump the projected
+        # deficit up to the main line near the top of each draft". This version's own figure
+        # if it states one (the gap, what was left to cut, or how it closed); otherwise the
+        # last one stated, named with the version it came from. Never derived: where nothing
+        # has been stated (FY28 Version 1) it stays None and the page says so.
+        # A 'now' row printed as a TOTAL ('$25,787,474 approved') is how the season closed,
+        # not a deficit, and is never carried as one.
+        deficits = [r for r in closed if not re.search(r'approved|adopted', r['figure'], re.I)]
+        own = gap or next((r for r in deficits if r['scope'] == v['scope']), None) or (deficits[0] if deficits else None)
+        for r in ([gap] if gap else []) + deficits:
+            if r['date'] >= last_stated.get(r['scope'], {}).get('date', ''):
+                last_stated[r['scope']] = dict(figure=r['figure'], status=r['status'], scope=r['scope'], date=r['date'], who=r['who'], cite=r['cite'], carried_from=v['item'], basis='stated')
+        if own:
+            stated = dict(figure=own['figure'], status=own['status'], scope=own['scope'], date=own['date'], who=own['who'], cite=own['cite'], carried_from=None, basis='stated')
+        elif v.get('total') and v.get('base'):
+            # OURS, AND SAID SO. TJ, 20 November 2026: "i want US to derive it but say that"
+            # ... "prop 2.5% increase max". A draft with no deficit on the record gets one:
+            # the draft's total against last year's budget grown by 2.5%, the most Prop 2½ lets
+            # the levy rise without an override. Prop 2½ caps the LEVY, not the school budget,
+            # so the 2.5% for the schools is our assumption, and the page says that too.
+            total, base = float(v['total']), float(v['base'])
+            allowed = round(base * 1.025, 2)
+            stated = dict(basis='derived', v=round(total - allowed, 2), total=total, base=base, allowed=allowed, rate=0.025, carried_from=None)
+        else:
+            # the last deficit stated on a side this version answers for, newest by date
+            sides = {'both': ('school', 'town', 'both'), 'school': ('school', 'both'), 'town': ('town', 'both')}[v['scope']]
+            cands = [last_stated[s] for s in sides if s in last_stated]
+            stated = max(cands, key=lambda c: c['date']) if cands else None
         if re.search(r'Town Manager.s target', v['item']):
             t = next((r for r in by('proposals') if re.search(r'target', r['item'], re.I)), None)
             tm_target = dict(figure=t['figure'], why=t['why'], version=v['item'], date=v['date'], cite=t['cite']) if t else dict(figure=v['figure'], why=v['why'], version=v['item'], date=v['date'], cite=v['cite'])
         rise = money(v['figure'])
         out.append(dict(item=v['item'], scope=v['scope'], status=v['status'], figure=v['figure'], date=v['date'], who=v['who'], why=v['why'], note=v['note'],
                         cite=v['cite'], also=v['also'], n=i + 1,
-                        gap=gap, gap_moved=moved, closed=closed, path=[r for r in deficit if r is not gap and r['status'] != 'now'],
+                        gap=gap, gap_moved=moved, deficit=stated, closed=closed, path=[r for r in deficit if r is not gap and r['status'] != 'now'],
                         proposals=by('proposals'), cuts_added=added, came_off=came_off, warned=[r for r in by('cuts') if r['status'] == 'warned'],
                         notes=[r for r in cuts if r['status'] not in ('decided', 'proposed', 'tier_only', 'came_off')],
                         late=by('late'), final=by('final'),

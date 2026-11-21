@@ -11,10 +11,11 @@ import { useReport } from '../components/report'
 type Cite = { kind: 'meeting' | 'document' | 'ballot'; href: string; label: string; page?: string; board?: string; date?: string; t?: number }
 type Row = { block: string; item: string; scope: string; status: string; figure: string; fte: number | null; date: string; who: string; why: string; evidence: string; note: string; cite: Cite | null; also?: Cite[] }
 type Line = { side: string; document: string; category: string; line: string; level_service: number | null; balanced: number | null; tier1_core: number | null; tier2_restoration: number | null; cut: number | null; tier1_restores: number | null; tier2_restores: number | null }
+type Deficit = { basis: 'stated' | 'derived'; figure?: string; status?: string; scope?: string; date?: string; who?: string; cite?: Cite | null; carried_from: string | null; v?: number; total?: number; base?: number; allowed?: number; rate?: number }
 type Moved = { by: number; approx: boolean; from_figure: string; from_version: string }
 type Share = { figure: string; why: string; version: string; date: string; cite: Cite | null }
 type Version = { n: number; item: string; scope: string; status: string; figure: string; date: string; who: string; why: string; note: string; cite: Cite | null; also: Cite[]
-  gap: Row | null; gap_moved: Moved | null; closed: Row[]; path: Row[]; proposals: Row[]; cuts_added: Row[]; came_off: Row[]; warned: Row[]; notes: Row[]; late: Row[]; final: Row[]
+  gap: Row | null; gap_moved: Moved | null; deficit: Deficit | null; closed: Row[]; path: Row[]; proposals: Row[]; cuts_added: Row[]; came_off: Row[]; warned: Row[]; notes: Row[]; late: Row[]; final: Row[]
   rise: number | null; on_table: number; off_so_far: number; school_share: Share | null }
 type Coming = { item: string; scope: string; date: string; who: string; why: string; cite: Cite | null; version: boolean }
 type Prop25 = { fy: number; prior_fy: number; prior_limit: number; step: number; new_growth: number | null; room: number | null; certified: boolean; floor: boolean; basis_fy?: number; basis_limit?: number; source: string }
@@ -86,10 +87,9 @@ const STATUS: Record<string, string> = { preliminary: 'draft', target: 'target',
 
 function headline(v: Version): { label: string; figure: string } | null {
   if (v.figure) return { label: v.rise != null ? 'over last year' : 'the figure', figure: v.figure }
-  if (v.gap) return { label: v.gap.status === 'to_cut' ? 'left to cut' : v.gap.scope === 'both' ? 'the gap, town and schools' : 'the gap', figure: v.gap.figure.split(' (')[0] }
   const appr = v.final.find(r => r.status === 'appropriated')
   if (appr) return { label: appr.item.toLowerCase(), figure: appr.figure }
-  if (v.closed[0]) return { label: 'how it closed', figure: v.closed[0].figure.split(' — ')[0] }
+  if (v.deficit) return null                  // the deficit is the headline then
   if (v.path[0]) return { label: v.path[0].figure.replace(/^\$[\d,.]+\s*(million)?\s*/, '').split(' (')[0] || 'as stated', figure: (v.path[0].figure.match(/^\$[\d,.]+(\s*million)?/) || [v.path[0].figure])[0] }
   return null
 }
@@ -113,10 +113,34 @@ function Prop25Line({ p, v }: { p: Prop25; v: Version }) {
       <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Prop 2½ — what the levy can rise without an override</p>
       <p><span className="font-bold tnum">{p.floor ? 'at least ' : ''}{usd(p.step)}</span>{p.room != null ? <> plus <span className="tnum">{usd(p.new_growth || 0)}</span> new growth: <span className="font-bold tnum">{usd(p.room)}</span></> : ' plus new growth'}
         <span style={{ color: 'var(--text-secondary)' }}> — for the whole town, schools and town together. 2.5% of the {fy(p.prior_fy)} levy limit{p.floor ? `, which is not certified yet; this is the ${fy(p.basis_fy!)} limit (${usd(p.basis_limit!)}) grown by 2.5%` : ` (${usd(p.prior_limit)})`}.{p.room == null && !p.floor ? ` New growth for ${fy(p.fy)} is not in the state’s file yet.` : ''}</span></p>
+      {v.deficit?.basis === 'derived' && <p className="mt-1 text-xs" style={{ color: 'var(--status-warning)' }}>The projected deficit above is ours, not the district’s or the town’s: nobody has stated one for this draft yet. It assumes the schools get 2.5% more than last year. Prop 2½ caps the town’s levy, not the school budget, so that split is our assumption; the Town Manager’s target will replace it.</p>}
       {v.rise != null && <p className="mt-1">This draft rises <span className="font-bold tnum">{usd(v.rise)}</span> over last year — against the whole town’s levy step above.</p>}
       {v.school_share ? <p className="mt-1">The schools’ share, as the Town Manager set it: <span className="font-bold tnum">{v.school_share.figure}</span> <span style={{ color: 'var(--text-secondary)' }}>— {v.school_share.why} ({mmdd(v.school_share.date)})</span><CiteLink c={v.school_share.cite} /></p>
         : <p className="mt-1 text-xs" style={{ color: 'var(--text-muted)' }}>No school share is shown: the Town Manager has not set the schools’ target in this season’s record by this point, and any split before then would be ours.</p>}
       <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Our arithmetic on the <a className="underline" href={p.source}>state’s levy limit figures</a>. The levy is one part of the revenue; state aid and local receipts move separately.</p>
+    </div>
+  )
+}
+
+/** THE PROJECTED DEFICIT, ON THE MAIN LINE. TJ, 20 November 2026: "bump the projected deficit
+ *  up to the main line near the top of each draft". As stated by whoever stated it; carried
+ *  from an earlier version where this one restated none; or, where nothing is on the record,
+ *  OURS -- "i want US to derive it but say that" -- at last year's budget plus 2.5%, the most
+ *  Prop 2½ lets the levy rise, in the estimate colour and labelled as our assumption. */
+function DeficitCell({ d }: { d: Deficit }) {
+  if (d.basis === 'derived') return (
+    <div>
+      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-warning)' }}>Projected deficit · our estimate</p>
+      <p className="text-xl font-bold tnum leading-tight" style={{ color: 'var(--status-warning)' }}>≈ {usd(d.v!)}</p>
+      <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>the draft against last year’s {usd(d.base!)} plus {Math.round(d.rate! * 1000) / 10}% ({usd(d.allowed!)})</p>
+    </div>
+  )
+  const label = d.scope === 'town' ? 'the town side' : d.status === 'to_cut' ? 'left to cut' : d.status === 'now' ? 'at the close' : d.scope === 'both' ? 'town and schools' : ''
+  return (
+    <div>
+      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-critical)' }}>Projected deficit{label ? ` · ${label}` : ''}</p>
+      <p className="text-xl font-bold tnum leading-tight" style={{ color: 'var(--status-critical)' }}>{d.figure!.split(' (')[0].split(' — ')[0]}</p>
+      <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{d.carried_from ? `last stated in ${d.carried_from.replace(/^The /, 'the ')}` : `${d.who}, ${mmdd(d.date!)}`}</p>
     </div>
   )
 }
@@ -135,7 +159,10 @@ function VersionCard({ v, p, open, color }: { v: Version; p: Prop25 | null | und
           <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{v.who}, {mmdd(v.date)}</span>
         </div>
         <p className="font-bold text-[16px] leading-snug">{v.item}</p>
-        {h && <p className="mt-0.5"><span className="text-xl font-bold tnum">{h.figure}</span> <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{h.label}</span></p>}
+        {(h || v.deficit) && <div className="mt-1 flex flex-wrap gap-x-8 gap-y-2">
+          {h && <div><p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{h.label}</p><p className="text-xl font-bold tnum leading-tight">{h.figure}</p></div>}
+          {v.deficit && <DeficitCell d={v.deficit} />}
+        </div>}
         {changed && <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>{changed}</p>}
       </summary>
       <div className="px-4 pb-4">

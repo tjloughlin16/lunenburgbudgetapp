@@ -232,3 +232,13 @@ strands under the versions, because they are not drafts.
 Version 2 the recommended budget, the scenarios). Its Prop 2½ step cannot be exact: the FY27
 levy limit is not yet certified, so it is shown as at least 2.5% of FY26's limit grown by
 2.5%, plus new growth, and says so.
+
+**The projected deficit is on every card's main line** (TJ, 20 November 2026). As stated by
+whoever stated it; for a version that restates none, the last one stated, named with the
+version it came from. Where none is on the record at all, it is OURS and labelled so, in the
+estimate colour: the draft's `total` against last year's `base` plus 2.5%, the most Prop 2½
+lets the levy rise without an override (TJ: *"i want US to derive it but say that"* ...
+*"prop 2.5% increase max"*). Prop 2½ caps the levy, not the school budget, so giving the
+schools 2.5% is our assumption, and the card says that too. A draft gets the derivation only
+if its row carries `total` and `base` (the two columns added to `fy28.csv` for it); the Town
+Manager's target, once on record, replaces it.
