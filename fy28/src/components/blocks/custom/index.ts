@@ -17,6 +17,7 @@ import CapitalThreadTable from './capital-thread-table'
 import CapitalShareBands from './capital-share-bands'
 import CapitalTwoOrders from './capital-two-orders'
 import CapitalUnrankedList from './capital-unranked-list'
+import CapitalCoverage from './capital-coverage'
 import FyFlags from './fy-flags'
 import FyLineTable from './fy-line-table'
 import FyYearFacts from './fy-year-facts'
@@ -58,6 +59,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'capital-share-bands': CapitalShareBands,
   'capital-two-orders': CapitalTwoOrders,
   'capital-unranked-list': CapitalUnrankedList,
+  'capital-coverage': CapitalCoverage,
   'fy-flags': FyFlags,
   'fy-line-table': FyLineTable,
   'fy-year-facts': FyYearFacts,

@@ -726,6 +726,253 @@ def thread_table_block(R, UN):
     return TB.claims(blk, cons, facts)
 
 
+# ---------------------------------------------------------------- what we hold for every year
+# TJ, 20 November 2026: "put a table on the page, probably toward the bottom, that shows the
+# information we have for every year." One row per fiscal year, as far back as any held source
+# reaches. The planning documents are a REGISTER, sources/data/capital-coverage.csv, one row per
+# (year, part) naming the document and the page it was read from; every document must be in the
+# archive, and the register is checked against the datasets that also hold these ranks below. The
+# funded column and the minutes column are computed from their datasets and nothing else.
+CDATA = os.path.join(ROOT, 'sources', 'data', 'capital-coverage.csv')
+PARTS = [('requests', 'Every department’s requests'), ('dept', 'Departments’ own order'),
+         ('sc', 'School Committee’s order'), ('cpc_own', 'Committee’s ranked list, its own sheet'),
+         ('cpc_copy', 'Committee’s ranked list, as others printed it'), ('tm', 'Town Manager’s plan'),
+         ('funded', 'What was funded'), ('minutes', 'Committee minutes')]
+REGISTERED = {'requests', 'dept', 'sc', 'cpc_own', 'cpc_copy', 'tm'}
+STATES = ('held', 'part', 'spoken', 'none')
+GAPS = os.path.join(ROOT, 'sources', 'data', 'money-gaps.csv')
+
+
+def _rows(name):
+    return list(csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', name), encoding='utf-8')))
+
+
+def _docs():
+    return {l.split(',', 1)[0] for l in open(os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv'),
+                                             encoding='utf-8')}
+
+
+def _link(path):
+    """A document's address on the site; a recording's transcript links the video it transcribes."""
+    if 'youtube-transcripts' in path:
+        vid = os.path.basename(path)[len('YYYY-MM-DD-'):-len('.json')]
+        return 'https://www.youtube.com/watch?v=' + vid
+    return '/docs/' + path
+
+
+def _doc_label(path):
+    b = os.path.basename(path)
+    return 'recording' if 'youtube-transcripts' in path else b
+
+
+def coverage(R):
+    """{(fy, part): cell} and the year range. A cell: state, text, where, links [(label, href)]."""
+    man = _docs()
+    cells, figs = {}, set()
+    for r in _rows('capital-coverage.csv'):
+        y, part, state = int(r['cycle_fy']), r['part'], r['state']
+        if part not in REGISTERED or state not in STATES or (y, part) in cells:
+            fail('capital-coverage.csv: %s %s %s is not a part, a state, or is a repeat' % (y, part, state))
+        docs = [d.strip() for d in r['document'].split(';') if d.strip()]
+        for d in docs:
+            if d not in man and not os.path.exists(os.path.join(ROOT, 'sources', d)):
+                fail('capital-coverage.csv: %s %s names %s, not in the archive' % (y, part, d))
+        cells[(y, part)] = dict(state=state, text=r['what'], where=r['where'],
+                                links=[dict(label=_doc_label(d), href=_link(d)) for d in docs])
+    # the register agrees with the ranking dataset: every document a year's ranks were read from is
+    # registered as that year's committee list, and a year whose departments' order fills every row
+    # is registered as held
+    for y, keys in RANKS_FROM.items():
+        reg = {l['href'] for p in ('cpc_own', 'cpc_copy') for l in cells.get((y, p), {}).get('links', [])}
+        miss = [k for k in keys if DOC[k][1] and '/docs/' + DOC[k][1] not in reg]
+        if miss:
+            fail('capital-coverage.csv: %s ranks were read from %s, not registered as its committee list'
+                 % (C.fy(y), miss))
+    for y in YEARS:
+        rs = [r for r in R if r['fy'] == y]
+        full = all(r['dept_rank'] for r in rs)
+        if full != (cells.get((y, 'dept'), {}).get('state') == 'held'):
+            fail('capital-coverage.csv: %s departments’ order is %s in the dataset, not in the register'
+                 % (C.fy(y), 'complete' if full else 'incomplete'))
+    for t in _rows('track-field-capital-history.csv'):   # a printed School Committee ranking table
+        if t['body'] == 'School Committee' and t['kind'] == 'ranking' and t['basis'] == 'document' \
+                and (int(t['cycle_fy']), 'sc') not in cells:
+            fail('capital-coverage.csv: %s holds a School Committee ranking (%s), unregistered'
+                 % (t['cycle_fy'], t['doc']))
+    if any(s['rank'] for s in _rows('capital-submissions-fy28.csv')) and (2028, 'dept') not in cells:
+        fail('capital-coverage.csv: the FY2028 submission forms carry ranks, unregistered')
+
+    # WHAT WAS FUNDED, computed: the ranked lists' outcomes; else the voted item lists the annual
+    # reports print; else the funding total; else the capital project fund balances, which show
+    # money held, not the year's vote.
+    funded = {}
+    for y in YEARS:
+        rs = [r for r in R if r['fy'] == y]
+        a, b = C.num(sum(r['ok'] for r in rs)), C.num(len(rs))
+        funded[y] = dict(state='held', text='%s of %s ranked requests, with their outcome' % (a, b),
+                         where='', links=[dict(label=_doc_label(DOC[OUTCOME_FROM[y]][1]),
+                                               href=_link(DOC[OUTCOME_FROM[y]][1]))])
+        figs |= {a, b}
+    plans = {}
+    for p in _rows('capital-plans.csv'):
+        plans.setdefault(int(p['plan_fiscal_year']), {}).setdefault(p['copy'], []).append(p)
+    for y, by in plans.items():
+        if y in funded:
+            continue
+        copy = 'town meeting article' if 'town meeting article' in by else 'committee report'
+        ps = by[copy]
+        # a page can print more than one list (cash and borrowing): quote each printed total
+        tots = list(OrderedDict.fromkeys(C.usd(float(p['printed_total'])) for p in ps))
+        n, tot = C.num(len(ps)), ' and '.join(tots)
+        doc = 'town-annual-reports/docs/' + ps[0]['document']
+        if doc not in man:
+            fail('capital-plans.csv cites %s, not in the archive' % doc)
+        figs.update(tots)
+        funded[y] = dict(state='held', text='%s items, item by item; printed %s %s'
+                         % (n, 'totals' if len(tots) > 1 else 'total', tot),
+                         where='p%s' % ps[0]['page'], links=[dict(label=_doc_label(doc), href=_link(doc))])
+        figs.add(n)
+    for h in _rows('capital-funding-history.csv'):
+        y = int(h['fy'])
+        if y not in funded:
+            t = C.usd(float(h['total']))
+            funded[y] = dict(state='part', text='the plan’s total, %s; no item list read' % t, where='',
+                             links=[dict(label='capital-funding-history.csv', href='/docs/data/capital-funding-history.csv')])
+            figs.add(t)
+    for y in sorted({int(r['fy']) for r in _rows('report-capital-projects.csv')}):
+        if y not in funded:
+            funded[y] = dict(state='part', text='capital project fund balances only, not the year’s vote',
+                             where='', links=[dict(label='report-capital-projects.csv',
+                                                   href='/docs/data/report-capital-projects.csv')])
+    for y, c in funded.items():
+        cells[(y, 'funded')] = c
+
+    # COMMITTEE MINUTES, computed from the meeting index. The committee ranks in the autumn and
+    # winter for the year after next July, so a meeting is counted toward the fiscal year AFTER the
+    # one it was held in -- our mapping, by date, and the note says so.
+    mins = {}
+    for m in csv.DictReader(open(os.path.join(ROOT, 'sources', 'meetings', 'index.csv'), encoding='utf-8')):
+        if m['board'] != 'Capital Planning Committee' or not m['path']:
+            continue
+        yy, mm = int(m['date'][:4]), int(m['date'][5:7])
+        cyc = (yy + 1 if mm >= 7 else yy) + 1
+        mins.setdefault(cyc, {}).setdefault(m['kind'], 0)
+        mins[cyc][m['kind']] += 1
+    for y, k in mins.items():
+        n, a = k.get('minutes', 0), k.get('agenda', 0)
+        if n:
+            t = C.num(n)
+            cells[(y, 'minutes')] = dict(state='held', text='%s sets of minutes' % t, where='',
+                                         links=[dict(label='minutes', href='/minutes/capital-planning-committee/')])
+        else:
+            t = C.num(a)
+            cells[(y, 'minutes')] = dict(state='part', text='%s agendas, no minutes posted' % t, where='',
+                                         links=[dict(label='agendas', href='/minutes/capital-planning-committee/')])
+        figs.add(t)
+    years = list(range(max(y for y, _ in cells), min(y for y, _ in cells) - 1, -1))
+    return cells, years, figs, mins
+
+
+def _gap(what_has):
+    """The money-gaps row whose question contains every string given; the build fails without it."""
+    for g in _rows('money-gaps.csv'):
+        if all(s in g['what'] for s in what_has):
+            return g
+    fail('no row in money-gaps.csv asks %r -- register the gap (CLAUDE.md rule 7c)' % (what_has,))
+
+
+def coverage_block(R):
+    cells, years, figs, mins = coverage(R)
+    for y in years:
+        figs.add(C.fy(y))
+    rows = []
+    for y in years:
+        rc = []
+        for k, _ in PARTS:
+            c = cells.get((y, k))
+            rc.append(c if c else dict(state='none', text='', where='', links=[]))
+        rows.append(dict(label=C.fy(y), cells=rc))
+    st = lambda k, s: [y for y in years if cells.get((y, k), {}).get('state') in s]   # noqa: E731
+    fund = st('funded', ('held',))
+    plan = sorted(set(st('cpc_own', ('held',))) | set(st('cpc_copy', ('held',))))
+    own = st('cpc_own', ('held',))
+    copies = [y for y in st('cpc_copy', ('held',)) if y not in own]
+    deptfull = st('dept', ('held',))
+    scp, scs = st('sc', ('held',)), st('sc', ('spoken',))
+    first_min = min(y for y, k in mins.items() if k.get('minutes'))
+    reqnone = [y for y in range(first_min, max(YEARS) + 1)
+               if cells.get((y, 'requests'), {}).get('state') not in ('held', 'part')]
+    noown = [y for y in YEARS if y not in own]
+    g_req = _gap([C.fy(y) for y in reqnone] + ['request'])
+    g_own = _gap([C.fy(y) for y in noown] + ['own ranking sheet'])
+    g_sc = _gap([C.fy(y) for y in scs] + ['School Committee'])
+    g_dept = _gap(['department rank its own'])
+    data = dict(columns=[dict(key=k, label=l) for k, l in PARTS], rows=rows, text=dict(
+        held='held', part='part of it', spoken='heard in a recording only', none='nothing held',
+        year='Fiscal year', gaps='Registered as questions the documents cannot yet answer'),
+        gaps=[dict(what=g['what'], href='/what-we-cannot-answer') for g in (g_own, g_req, g_sc, g_dept)],
+        note='Each mark links the document it was read from. A ranked list is the year the money is for; '
+             'committee minutes are counted toward the year after the one the meeting was held in (our '
+             'mapping, by date). Nothing held means nothing found in what this archive holds, not that '
+             'the town never produced it.')
+    allow = sorted({c['where'] for r in rows for c in r['cells'] if c['where']}
+                   | {l[k] for r in rows for c in r['cells'] for l in c['links'] for k in ('label', 'href')}
+                   | {r['what'] for r in _rows('capital-coverage.csv')}   # register text: dates quoted
+                   | {g['what'] for g in data['gaps']})
+    blk = TB.custom('capital-coverage', 'What we hold, year by year', data, place='end',
+                    figures=sorted(figs), allow=allow,
+                    alt='For every fiscal year, which capital planning documents are held: requests, each '
+                        'body’s order, the committee’s ranked list, the Town Manager’s plan, what was funded, '
+                        'and the committee’s minutes.',
+                    so='The outcome of most years is on the record; how the ranking was reached is held '
+                       'for only the most recent few.')
+    f = LD.fact
+    facts = [f('fund', F(min(fund)), 'earliest year with the funded items held', 'published'),
+             f('plan', F(min(plan)), 'earliest year with the committee’s full ranked list', 'published'),
+             f('own', N(len(own), 'years'), 'with the committee’s own ranking sheet', 'published'),
+             f('copy', N(len(copies), 'years'), 'with the ranked list only as a printed copy', 'published'),
+             f('dept', N(len(deptfull), 'years'), 'with every department’s own order', 'published'),
+             f('scp', N(len(scp), 'years'), 'with the School Committee’s order printed', 'published')]
+    yrs = lambda n: 'year' if n == 1 else 'years'   # noqa: E731
+    cons = [TP.conclusion('What was funded is held back to %s; the committee’s full ranked list only from %s.'
+                          % (C.fy(min(fund)), C.fy(min(plan))), ['fund', 'plan'],
+                          {'a': F(min(fund)), 'b': F(min(plan))},
+                          so='For the earlier years the outcome is on the record and the ranking behind it is not.'),
+            TP.conclusion('The committee’s own ranking sheet is held for %s %s, and %s more only as printed copies.'
+                          % (C.num(len(own)), yrs(len(own)), C.num(len(copies))), ['own', 'copy'],
+                          {'a': N(len(own), 'years'), 'b': N(len(copies), 'years')},
+                          so='A copy is the Town Manager’s or the town report’s printing of the order, not '
+                             'the committee’s own record of it.'),
+            TP.conclusion('Every department’s own order is held for %s %s; the School Committee’s printed for %s.'
+                          % (C.num(len(deptfull)), yrs(len(deptfull)), C.num(len(scp))), ['dept', 'scp'],
+                          {'a': N(len(deptfull), 'years'), 'b': N(len(scp), 'years')},
+                          so='In other years no printed document shows which of its requests each body put on top.')]
+    return TB.claims(blk, cons, facts)
+
+
+def unranked_dept(u):
+    """A never-ranked request's department, on the ranked list's own grouping: the project number's
+    prefix where one is printed (extract_capital_rankings.PREFIX), else the department its source names."""
+    from extract_capital_rankings import PREFIX
+    if u['project_number']:
+        for p, d in PREFIX:
+            if u['project_number'].upper().startswith(p):
+                return d
+    n = u['department'].lower()
+    for word, d in (('school', 'Schools'), ('police', 'Police'), ('fire', 'Fire'), ('public works', 'Public Works'),
+                    ('highway', 'Public Works'), ('facilit', 'Facilities'), ('it', 'IT')):
+        if n == word or (len(word) > 2 and word in n):
+            return d
+    return 'Department not printed' if not n else fail('no department for never-ranked %r' % u['department'])
+
+
+def omnibus():
+    """{fy: dollars} -- the omnibus budget Town Meeting voted, as /town-budgets reads it
+    (scripts/build_town_budgets.py). A budget figure, like the capital it is set against (rule 1)."""
+    p = os.path.join(ROOT, 'fy28', 'public', 'data', 'town-budgets.json')
+    return {t['fy']: t['voted'] for t in json.load(open(p, encoding='utf-8'))['totals']}
+
+
 def hub(R, UN):
     st = {y: year_stats([r for r in R if r['fy'] == y]) for y in YEARS}
     full = list(YEARS)
@@ -802,15 +1049,46 @@ def hub(R, UN):
         trows.append(dict(label=k, cells=cells))
     trows.append(dict(label='All departments', cells=['%s of %s · %s' % (C.usd(st[y]['fun']), C.usd(st[y]['tot']),
                                                                          C.pct(st[y]['share'], 0)) for y in YEARS]))
-    table = dict(caption='Each department, year by year', views=[dict(
-        key='years', label='Funded of requested', kinds=['published'] * len(YEARS), columns=cols, rows=trows,
-        note='Dollars funded of dollars requested, and the percent.')])
+    # TJ, 20 November 2026: "a total COUNT of requests per FY per dept, and a total amount requested,
+    # and a total amount funded and a total amount funded by percent of the overall budget".
+    D = drawn(UN)
+    for u in D:
+        u['dgroup'] = unranked_dept(u)
+    crows = []
+    for k in DEPTS + ['Department not printed']:
+        ns = [(sum(r['department'] == k for r in R if r['fy'] == y), sum(u['dgroup'] == k for u in D if u['fy'] == y))
+              for y in YEARS]
+        if any(a or b for a, b in ns):
+            crows.append(dict(label=k, cells=['%s ranked · %s never ranked' % (C.num(a), C.num(b)) for a, b in ns]))
+    crows.append(dict(label='All departments', cells=[
+        '%s ranked · %s never ranked' % (C.num(sum(r['fy'] == y for r in R)), C.num(sum(u['fy'] == y for u in D)))
+        for y in YEARS]))
+    omni = omnibus()
+    srows = []
+    for k in DEPTS:
+        if any(k in st[y]['d'] for y in YEARS):
+            srows.append(dict(label=k, cells=['—' if k not in st[y]['d'] else C.pct(st[y]['d'][k]['share_fun'], 0)
+                                              for y in YEARS]))
+    srows.append(dict(label='All capital funded, of the omnibus budget', cells=[
+        '%s of %s · %s' % (C.usd(st[y]['fun']), C.usd(omni[y]), C.pct(100 * st[y]['fun'] / omni[y], 1))
+        if y in omni else '%s · omnibus total not held' % C.usd(st[y]['fun']) for y in YEARS]))
+    table = dict(caption='Each department, year by year', views=[
+        dict(key='years', label='Funded of requested', kinds=['published'] * len(YEARS), columns=cols, rows=trows,
+             note='Dollars funded of dollars requested, and the percent. Requests the committee ranked.'),
+        dict(key='count', label='Number of requests', kinds=['published'] * len(YEARS), columns=cols, rows=crows,
+             note='Requests on the committee’s ranked list, and requests made for that year it never ranked (found in '
+                  'minutes, decks and recordings; at least that many, since the departments’ own lists are not held). '
+                  'A never-ranked request is placed by its project number, or by the department the source names.'),
+        dict(key='share', label='Share of what was funded', kinds=['published'] * len(YEARS), columns=cols, rows=srows,
+             note='Each department’s share of the year’s funded capital dollars. The last row sets the year’s funded '
+                  'capital against the omnibus budget Town Meeting voted for the same year (/town-budgets), both voted '
+                  'budget figures.')])
     return TP.hub(
         HUB,
         'Five years of capital requests, each ranked by the Capital Planning Committee: between %s and %s '
         'of the dollars requested were funded, and in %s years the money did not follow the committee’s order.'
         % (C.pct(st[lo]['share']), C.pct(st[hi]['share']), C.num(len(out_order))),
-        None, table=table, blocks=[thread_table_block(R, UN), yblk, bblk],
+        None, table=table, blocks=[thread_table_block(R, UN), yblk, bblk, coverage_block(R)],
         tabs=('Each fiscal year', ['capital-fy%d' % y for y in sorted(YEARS, reverse=True)]),
         answer_figures={'a': P(st[lo]['share']), 'b': P(st[hi]['share']), 'n': N(len(out_order), 'years')})
 
