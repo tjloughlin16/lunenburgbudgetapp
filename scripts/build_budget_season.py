@@ -158,6 +158,141 @@ def live_rows(fy, opens, have):
     return auto, proposed
 
 
+# ---------------------------------------------------------------------------------------
+# VERSIONS. notes/process/BUDGET-SEASON-MODEL.md §6. TJ, 20 November 2026: "we need to
+# consider VERSIONS... each version has new cuts, deficits, etc." A version is a budget put on
+# the record by somebody with standing (a draft, a target, a vote, a scenarios document, the
+# adopted budget): a `block=version` row. Every other row belongs to the newest version of its
+# side dated on or before it, so a row the refresh proposes lands in the current draft with no
+# new column. The override track is not a draft and stays a season-wide strand; an `expected`
+# row is a moment still to come; a row older than the first version is 'before the first
+# version'. Nothing is dropped: the build fails if a row lands nowhere.
+
+KEY_GAP = ('started', 'corrected', 'to_cut')     # a gap as a version states it; 'now' is how a season closed, and path rows are said in passing
+APPROX = re.compile(r'about|roughly|slightly|north of|around|nearly|almost|~|as heard', re.I)
+
+
+def money(figure):
+    """The first dollar amount in a figure as printed, and whether it was stated loosely.
+    '$1.98 million (as captioned: ...)' -> 1980000; 'slightly north of $3 million' -> 3000000,
+    approximate. None where there is no amount."""
+    m = re.search(r'([+-]?)\$\s?([\d,]+(?:\.\d+)?)\s*(million|m\b)?', figure or '', re.I)
+    if not m:
+        return None
+    v = float(m.group(2).replace(',', '')) * (1e6 if m.group(3) else 1)
+    return dict(v=-v if m.group(1) == '-' else v, approx=bool(APPROX.search(figure) or m.group(3)), signed=bool(m.group(1)))
+
+
+def side_ok(row_scope, v_scope):
+    """A school row belongs to a school version or a whole-town one; a town row to a town or
+    whole-town one; a whole-town row to a whole-town version."""
+    if row_scope == 'both':
+        return v_scope == 'both'
+    return v_scope in (row_scope, 'both')
+
+
+def build_versions(fy, vrows, blocks):
+    if not vrows:
+        return [], None
+    on = sorted([v for v in vrows if v['status'] != 'expected'], key=lambda v: v['date'])
+    coming = sorted([v for v in vrows if v['status'] == 'expected'], key=lambda v: v['date'])
+    slots = {i: dict(rows=[]) for i in range(len(on))}
+    before, strand, upcoming = [], [], []
+    for b, rs in blocks.items():
+        for r in rs:
+            if r['status'] == 'expected':
+                upcoming.append(r)
+                continue
+            if b == 'override':
+                strand.append(r)
+                continue
+            fit = [i for i, v in enumerate(on) if v['date'] <= r['date'] and side_ok(r['scope'] or 'school', v['scope'])]
+            if not fit:                       # a whole-town row with no whole-town version: the newest of any side
+                fit = [i for i, v in enumerate(on) if v['date'] <= r['date']] if (r['scope'] or '') == 'both' else []
+            if fit:
+                slots[fit[-1]]['rows'].append(r)
+            else:
+                before.append(r)
+    placed = sum(len(s['rows']) for s in slots.values()) + len(before) + len(strand) + len(upcoming)
+    total = sum(len(rs) for rs in blocks.values())
+    if placed != total:
+        raise SystemExit('%s: %d of %d rows placed in a version, a strand or the upcoming list' % (fy, placed, total))
+
+    out, last_gap = [], {}
+    tm_target = None
+    on_table, off_so_far = 0, 0
+    for i, v in enumerate(on):
+        rs = slots[i]['rows']
+        by = lambda blk: [r for r in rs if r['block'] == blk]
+        deficit = by('deficit')
+        key = [r for r in deficit if r['status'] in KEY_GAP and r['scope'] == v['scope']] or [r for r in deficit if r['status'] in KEY_GAP]
+        gap = key[-1] if key else None
+        closed = [r for r in deficit if r['status'] == 'now']
+        cuts = [r for r in by('cuts') if r['status'] != 'warned']
+        added = [r for r in cuts if r['status'] in ('decided', 'proposed', 'tier_only')]
+        came_off = [r for r in cuts if r['status'] == 'came_off']
+        on_table += len([r for r in added if r['status'] != 'tier_only'])
+        off_so_far += len(came_off)
+        moved = None
+        if gap:
+            g = money(gap['figure'])
+            prev = last_gap.get(gap['scope'])
+            # A DELTA ONLY BETWEEN TWO STATEMENTS OF ONE QUANTITY: the gap as announced and as
+            # corrected. 'Left to cut on the night of the vote' is what remained after other
+            # measures -- a different quantity, so it is shown beside the gap, never subtracted.
+            if g and prev and not g['signed'] and gap['status'] in ('started', 'corrected') and prev['status'] in ('started', 'corrected'):
+                moved = dict(by=round(g['v'] - prev['v'], 2), approx=g['approx'] or prev['approx'], from_figure=prev['figure'], from_version=prev['version'])
+            if g and not g['signed']:
+                last_gap[gap['scope']] = dict(v=g['v'], approx=g['approx'], figure=gap['figure'], version=v['item'], status=gap['status'])
+        if re.search(r'Town Manager.s target', v['item']):
+            t = next((r for r in by('proposals') if re.search(r'target', r['item'], re.I)), None)
+            tm_target = dict(figure=t['figure'], why=t['why'], version=v['item'], date=v['date'], cite=t['cite']) if t else dict(figure=v['figure'], why=v['why'], version=v['item'], date=v['date'], cite=v['cite'])
+        rise = money(v['figure'])
+        out.append(dict(item=v['item'], scope=v['scope'], status=v['status'], figure=v['figure'], date=v['date'], who=v['who'], why=v['why'], note=v['note'],
+                        cite=v['cite'], also=v['also'], n=i + 1,
+                        gap=gap, gap_moved=moved, closed=closed, path=[r for r in deficit if r is not gap and r['status'] != 'now'],
+                        proposals=by('proposals'), cuts_added=added, came_off=came_off, warned=[r for r in by('cuts') if r['status'] == 'warned'],
+                        notes=[r for r in cuts if r['status'] not in ('decided', 'proposed', 'tier_only', 'came_off')],
+                        late=by('late'), final=by('final'),
+                        rise=rise['v'] if rise and rise['signed'] else None,
+                        on_table=on_table, off_so_far=off_so_far,
+                        # NO SCHOOL SHARE UNTIL THE TOWN MANAGER'S TARGET IS ON RECORD: before it,
+                        # any split of the town's room between schools and town would be ours.
+                        school_share=tm_target if (tm_target and v['scope'] in ('school', 'both')) else None))
+    out.reverse()                             # newest first
+    coming_out = [dict(item=v['item'], scope=v['scope'], status='expected', date=v['date'], who=v['who'], why=v['why'], cite=v['cite'], version=True) for v in coming]
+    coming_out += [dict(item=r['item'], scope=r['scope'], status='expected', date=r['date'], who=r['who'], why=r['why'], cite=r['cite'], version=False) for r in upcoming]
+    coming_out.sort(key=lambda r: r['date'])
+    return out, dict(override=strand, before=before, coming=coming_out)
+
+
+LEVY = os.path.join(ROOT, 'sources', 'data', 'dls-levy-limits.csv')
+
+
+def prop25(fy):
+    """THE PROP 2½ STEP for a season: how far the WHOLE TOWN's levy may rise without an
+    override -- 2.5% of the prior year's levy limit, plus new growth -- from the state's own
+    levy limit file. Our arithmetic on the state's figures; the Town Manager's FY27 preliminary
+    budget prints the same 2.5% step ($822,770.28), which is how this was checked. Where the
+    prior year's limit is not yet certified, the floor is the year before grown by 2.5%, and
+    says so. This is the LEVY only: state aid and local receipts move separately."""
+    rows = {int(r['fy']): r for r in read_csv(LEVY)}
+    num = lambda r, k: float(r[k]) if r and r.get(k) not in (None, '') else None
+    prior = rows.get(fy - 1)
+    src = '/docs/data/dls-levy-limits.csv'
+    if prior and num(prior, 'levy_limit') is not None:
+        lim = num(prior, 'levy_limit')
+        ng = num(rows.get(fy), 'new_growth')
+        return dict(fy=fy, prior_fy=fy - 1, prior_limit=lim, step=round(lim * 0.025, 2), new_growth=ng, room=round(lim * 0.025 + ng, 2) if ng is not None else None,
+                    certified=True, floor=False, source=src)
+    pp = rows.get(fy - 2)
+    if pp and num(pp, 'levy_limit') is not None:
+        lim = num(pp, 'levy_limit') * 1.025      # the prior limit before its own new growth and any override
+        return dict(fy=fy, prior_fy=fy - 1, prior_limit=round(lim, 2), step=round(lim * 0.025, 2), new_growth=None, room=None, certified=False, floor=True,
+                    basis_fy=fy - 2, basis_limit=num(pp, 'levy_limit'), source=src)
+    return None
+
+
 def build(fy):
     rows = read_csv(os.path.join(SEASONS, '%s.csv' % fy))
     live = next((r for r in rows if r['block'] == 'meta' and r['item'] == 'live'), None)
@@ -173,9 +308,14 @@ def build(fy):
                 w.writerow({k: r.get(k, '') for k in w.fieldnames})
     blocks = {b: [] for b in BLOCKS}
     titles = {}
+    version_rows = []
     for i, r in enumerate(rows):
         if r['block'] == 'meta':
             titles[r['item']] = dict(title=r['why'], sub=r['note'])
+            continue
+        if r['block'] == 'version':
+            evs = [e.strip() for e in (r['evidence'] or '').split(' ; ') if e.strip()]
+            version_rows.append(dict(r, cite=resolve(evs[0]) if evs else None, also=[resolve(e) for e in evs[1:]]))
             continue
         if r['block'] not in blocks:
             raise SystemExit('row %d: unknown block %r' % (i + 2, r['block']))
@@ -193,7 +333,9 @@ def build(fy):
     for r in lines:
         for k in ('level_service', 'balanced', 'tier1_core', 'tier2_restoration', 'cut', 'tier1_restores', 'tier2_restores'):
             r[k] = float(r[k]) if r[k] else None
+    versions, strands = build_versions(fy, version_rows, blocks)
     return dict(id=fy, fy=int(fy[2:4]) + 2000, source='sources/data/budget-seasons/%s.csv' % fy, rows=len(rows) - len(titles), blocks=blocks, lines=lines,
+                versions=versions, strands=strands, prop25=prop25(int(fy[2:4]) + 2000) if versions else None,
                 titles=titles, live=bool(live), proposed=len(proposed) if live else 0, as_of=__import__('datetime').date.today().isoformat() if live else None,
                 model='notes/process/BUDGET-SEASON-MODEL.md')
 

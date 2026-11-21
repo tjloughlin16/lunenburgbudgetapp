@@ -11,7 +11,15 @@ import { useReport } from '../components/report'
 type Cite = { kind: 'meeting' | 'document' | 'ballot'; href: string; label: string; page?: string; board?: string; date?: string; t?: number }
 type Row = { block: string; item: string; scope: string; status: string; figure: string; fte: number | null; date: string; who: string; why: string; evidence: string; note: string; cite: Cite | null; also?: Cite[] }
 type Line = { side: string; document: string; category: string; line: string; level_service: number | null; balanced: number | null; tier1_core: number | null; tier2_restoration: number | null; cut: number | null; tier1_restores: number | null; tier2_restores: number | null }
-export type Season = { id: string; fy: number; source: string; rows: number; model: string; live?: boolean; as_of?: string | null; titles: Record<string, { title: string; sub: string }>; blocks: Record<'deficit' | 'proposals' | 'cuts' | 'override' | 'late' | 'final', Row[]>; lines: Line[] }
+type Moved = { by: number; approx: boolean; from_figure: string; from_version: string }
+type Share = { figure: string; why: string; version: string; date: string; cite: Cite | null }
+type Version = { n: number; item: string; scope: string; status: string; figure: string; date: string; who: string; why: string; note: string; cite: Cite | null; also: Cite[]
+  gap: Row | null; gap_moved: Moved | null; closed: Row[]; path: Row[]; proposals: Row[]; cuts_added: Row[]; came_off: Row[]; warned: Row[]; notes: Row[]; late: Row[]; final: Row[]
+  rise: number | null; on_table: number; off_so_far: number; school_share: Share | null }
+type Coming = { item: string; scope: string; date: string; who: string; why: string; cite: Cite | null; version: boolean }
+type Prop25 = { fy: number; prior_fy: number; prior_limit: number; step: number; new_growth: number | null; room: number | null; certified: boolean; floor: boolean; basis_fy?: number; basis_limit?: number; source: string }
+export type Season = { id: string; fy: number; source: string; rows: number; model: string; live?: boolean; as_of?: string | null; titles: Record<string, { title: string; sub: string }>; blocks: Record<'deficit' | 'proposals' | 'cuts' | 'override' | 'late' | 'final', Row[]>; lines: Line[]
+  versions?: Version[]; strands?: { override: Row[]; before: Row[]; coming: Coming[] } | null; prop25?: Prop25 | null }
 
 const mmdd = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 const usd = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
@@ -65,6 +73,147 @@ function Block({ title, color, children, sub }: { title: string; color: string; 
   )
 }
 
+/* ---------------------------------------------------------------------------------------
+ * THE SEASON BY VERSION. notes/process/BUDGET-SEASON-MODEL.md §6. TJ, 20 November 2026: "we
+ * need to consider VERSIONS... each version has new cuts, deficits, etc." One card per budget
+ * put on the record -- a draft, a target, a vote, a scenarios document, the adopted budget --
+ * newest first, each with the same parts: its figure and gap, what changed from the version
+ * before, the cuts in it, the Prop 2½ step and its sources. The newest is open; older ones
+ * fold to their headline and what changed. Everything here is computed by
+ * build_budget_season.py from the season file; nothing is typed. */
+
+const STATUS: Record<string, string> = { preliminary: 'draft', target: 'target', voted: 'voted', scenarios: 'scenarios', recommended: 'recommended', adopted: 'final' }
+
+function headline(v: Version): { label: string; figure: string } | null {
+  if (v.figure) return { label: v.rise != null ? 'over last year' : 'the figure', figure: v.figure }
+  if (v.gap) return { label: v.gap.status === 'to_cut' ? 'left to cut' : v.gap.scope === 'both' ? 'the gap, town and schools' : 'the gap', figure: v.gap.figure.split(' (')[0] }
+  const appr = v.final.find(r => r.status === 'appropriated')
+  if (appr) return { label: appr.item.toLowerCase(), figure: appr.figure }
+  if (v.closed[0]) return { label: 'how it closed', figure: v.closed[0].figure.split(' — ')[0] }
+  if (v.path[0]) return { label: v.path[0].figure.replace(/^\$[\d,.]+\s*(million)?\s*/, '').split(' (')[0] || 'as stated', figure: (v.path[0].figure.match(/^\$[\d,.]+(\s*million)?/) || [v.path[0].figure])[0] }
+  return null
+}
+
+/** What changed from the version before, in one line: the folded card's summary. */
+function changedLine(v: Version): string {
+  const bits: string[] = []
+  if (v.gap_moved) bits.push(`gap ${v.gap_moved.by < 0 ? 'down' : 'up'} ${v.gap_moved.approx ? 'about ' : ''}${usd(Math.abs(v.gap_moved.by))}`)
+  if (v.cuts_added.length) bits.push(`${v.cuts_added.length} cut${v.cuts_added.length === 1 ? '' : 's'}`)
+  if (v.came_off.length) bits.push(`${v.came_off.length} came off`)
+  if (v.proposals.length) bits.push(`${v.proposals.length} budget${v.proposals.length === 1 ? '' : 's'} side by side`)
+  const ballot = v.final.filter(r => r.status === 'ballot' && r.figure)
+  if (ballot.length) bits.push(`${ballot.length} override question${ballot.length === 1 ? '' : 's'} ${ballot.every(r => /failed/i.test(r.why)) ? 'failed' : 'voted'}`)
+  return bits.join(' · ')
+}
+
+function Prop25Line({ p, v }: { p: Prop25; v: Version }) {
+  const fy = (n: number) => 'FY' + n
+  return (
+    <div className="mt-3 px-3 py-2 rounded-md text-[13px]" style={{ background: 'var(--surface-3)' }}>
+      <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Prop 2½ — what the levy can rise without an override</p>
+      <p><span className="font-bold tnum">{p.floor ? 'at least ' : ''}{usd(p.step)}</span>{p.room != null ? <> plus <span className="tnum">{usd(p.new_growth || 0)}</span> new growth: <span className="font-bold tnum">{usd(p.room)}</span></> : ' plus new growth'}
+        <span style={{ color: 'var(--text-secondary)' }}> — for the whole town, schools and town together. 2.5% of the {fy(p.prior_fy)} levy limit{p.floor ? `, which is not certified yet; this is the ${fy(p.basis_fy!)} limit (${usd(p.basis_limit!)}) grown by 2.5%` : ` (${usd(p.prior_limit)})`}.{p.room == null && !p.floor ? ` New growth for ${fy(p.fy)} is not in the state’s file yet.` : ''}</span></p>
+      {v.rise != null && <p className="mt-1">This draft rises <span className="font-bold tnum">{usd(v.rise)}</span> over last year — against the whole town’s levy step above.</p>}
+      {v.school_share ? <p className="mt-1">The schools’ share, as the Town Manager set it: <span className="font-bold tnum">{v.school_share.figure}</span> <span style={{ color: 'var(--text-secondary)' }}>— {v.school_share.why} ({mmdd(v.school_share.date)})</span><CiteLink c={v.school_share.cite} /></p>
+        : <p className="mt-1 text-xs" style={{ color: 'var(--text-muted)' }}>No school share is shown: the Town Manager has not set the schools’ target in this season’s record by this point, and any split before then would be ours.</p>}
+      <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>Our arithmetic on the <a className="underline" href={p.source}>state’s levy limit figures</a>. The levy is one part of the revenue; state aid and local receipts move separately.</p>
+    </div>
+  )
+}
+
+function VersionCard({ v, p, open, color }: { v: Version; p: Prop25 | null | undefined; open: boolean; color: string }) {
+  const h = headline(v)
+  const changed = changedLine(v)
+  const byFam = (xs: Row[]) => { const m = new Map<string, Row[]>(); for (const r of xs) { const f = family(r); m.set(f, [...(m.get(f) || []), r]) }; return [...m.entries()] }
+  const cut = v.cuts_added.filter(r => r.status !== 'tier_only'), tier = v.cuts_added.filter(r => r.status === 'tier_only')
+  const dated = (r: Row) => <li key={r.item + r.date + r.figure} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--grid)' }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span>{r.scope !== v.scope ? <span className="text-[10px] font-bold uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>{SCOPE[r.scope]}</span> : null}<span className="font-bold tnum">{r.figure}</span>{r.item && !['Schools', 'Town', 'Town and schools together'].includes(r.item) ? <span className="font-semibold"> {r.item}</span> : null} — {r.why} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} /></li>
+  return (
+    <details open={open} className="card mt-3" style={{ borderLeft: `4px solid ${color}` }}>
+      <summary className="cursor-pointer list-none p-4">
+        <div className="flex flex-wrap items-baseline gap-x-2">
+          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color }}>Version {v.n} · {STATUS[v.status] || v.status}</span>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{v.who}, {mmdd(v.date)}</span>
+        </div>
+        <p className="font-bold text-[16px] leading-snug">{v.item}</p>
+        {h && <p className="mt-0.5"><span className="text-xl font-bold tnum">{h.figure}</span> <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{h.label}</span></p>}
+        {changed && <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>{changed}</p>}
+      </summary>
+      <div className="px-4 pb-4">
+        <p className="text-[13.5px]" style={{ color: 'var(--text-secondary)' }}>{v.why}<CiteLink c={v.cite} />{v.also.map((c, i) => <CiteLink key={i} c={c} />)}</p>
+        {v.note && !v.note.startsWith('internal:') && <p className="text-xs italic mt-1" style={{ color: 'var(--text-muted)' }}>{v.note}</p>}
+
+        {(v.gap || v.gap_moved || v.path.length > 0 || v.closed.length > 0) && <>
+          <p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--status-critical)' }}>The gap in this version</p>
+          {v.gap_moved && <p className="text-[13.5px] mt-1">From <span className="tnum">{v.gap_moved.from_figure.split(' (')[0]}</span> ({v.gap_moved.from_version.replace(/^The /, 'the ')}) to <span className="tnum font-semibold">{v.gap!.figure.split(' (')[0]}</span>: <span className="font-semibold">{v.gap_moved.approx ? 'about ' : ''}{usd(Math.abs(v.gap_moved.by))} {v.gap_moved.by < 0 ? 'less' : 'more'}</span>.</p>}
+          <ul className="mt-1 space-y-1">{[...(v.gap ? [v.gap] : []), ...v.path, ...v.closed].sort((a, c) => a.date.localeCompare(c.date)).map(dated)}</ul>
+        </>}
+
+        {v.proposals.length > 0 && <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 mt-3">{v.proposals.map((r, i) => (
+          <div key={i} className="px-3 py-2 rounded-md" style={{ background: 'var(--surface-3)' }}>
+            <p className="font-bold text-[13.5px]">{r.item}</p>
+            <p className="tnum">{r.figure}</p>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{r.why}</p>
+            <p className="text-xs"><CiteLink c={r.cite} /></p>
+          </div>))}</div>}
+
+        {(cut.length > 0 || v.came_off.length > 0 || tier.length > 0 || v.warned.length > 0) && <div className="grid gap-4 lg:grid-cols-3 mt-3">
+          {cut.length > 0 && <div className="lg:col-span-2">
+            <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>{v.status === 'adopted' ? 'Stood' : 'Cut in this version'} — {cut.length}{fteOf(cut) ? `, ${fteOf(cut)} FTE where printed` : ''}</p>
+            {byFam(cut).map(([f, rows]) => <div key={f} className="mt-1"><p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f}</p><ul>{rows.map((r, i) => <Item key={i} r={r} />)}</ul></div>)}
+          </div>}
+          <div>
+            {v.came_off.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-good)' }}>Came off — {v.came_off.length}</p><ul className="mt-1">{v.came_off.map((r, i) => <Item key={i} r={r} />)}</ul></>}
+            {tier.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--text-muted)' }}>Only inside a tier — {tier.length}</p><ul className="mt-1">{tier.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
+            {v.warned.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--status-warning)' }}>Warned about — {v.warned.length}</p><p className="text-xs" style={{ color: 'var(--text-muted)' }}>A prediction on the record with no figure; nobody has confirmed it means a cut.</p><ul className="mt-1">{v.warned.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
+          </div>
+        </div>}
+        {v.notes.map((r, i) => <p key={i} className="text-[13px] mt-2" style={{ color: 'var(--text-secondary)' }}>{r.item} — {r.why}<CiteLink c={r.cite} /></p>)}
+        {v.on_table > cut.length && <p className="text-xs mt-2" style={{ color: 'var(--text-muted)' }}>{v.on_table} cuts on the list by this version, counting the versions before it{v.off_so_far ? `; ${v.off_so_far} came off along the way` : ''}.</p>}
+
+        {v.late.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-3" style={{ color: 'var(--series-cost)' }}>Fees, free cash and other moves</p><ul className="mt-1">{v.late.map((r, i) => <Item key={i} r={r} />)}</ul></>}
+        {v.final.length > 0 && <ul className="mt-3">{v.final.map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px solid var(--status-good)' }}>{r.figure ? <><span className="font-bold tnum">{r.figure}</span> — </> : null}<span className={r.figure ? '' : 'font-semibold'}>{r.item}</span>{r.why ? <span style={{ color: /failed/i.test(r.why) ? 'var(--status-critical)' : 'var(--text-secondary)' }}>, {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{r.who ? `${r.who}, ` : ''}{mmdd(r.date)}</span><CiteLink c={r.cite} /></li>)}</ul>}
+
+        {p && <Prop25Line p={p} v={v} />}
+      </div>
+    </details>
+  )
+}
+
+const fteOf = (xs: Row[]) => xs.reduce((a, r) => a + (r.fte || 0), 0)
+
+function Versions({ d, oneLine }: { d: Season; oneLine: string }) {
+  const vs = d.versions!, s = d.strands!
+  const coming = d.live ? s.coming.filter(c => !d.as_of || c.date >= d.as_of) : []
+  const next = coming.filter(c => c.version)
+  return (
+    <section className="mt-4">
+      {d.live && <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--status-good)' }}>Live — read from the record daily{d.as_of ? `, as of ${mmdd(d.as_of)}` : ''}</p>}
+      {!d.live && oneLine && <p className="text-[15px] max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{oneLine}</p>}
+      {next.length > 0 && <div className="mt-2 px-3 py-2 rounded-md" style={{ border: '1px dashed var(--grid)' }}>
+        <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Next versions expected</p>
+        <ul>{next.map((c, i) => <li key={i} className="text-[13.5px]"><span className="font-semibold">{c.item}</span> <span style={{ color: 'var(--text-secondary)' }}>— {c.why.split(' — ')[0]}</span>{c.who ? <span className="text-xs" style={{ color: 'var(--text-muted)' }}> · from {c.who}</span> : null}</li>)}</ul>
+      </div>}
+      <p className="text-xs font-bold uppercase tracking-wider mt-4" style={{ color: 'var(--text-muted)' }}>FY{String(d.fy).slice(2)} · {vs.length} version{vs.length === 1 ? '' : 's'}, newest first</p>
+      {vs.map((v, i) => <VersionCard key={v.n} v={v} p={d.prop25} open={i === 0} color={v.status === 'adopted' ? 'var(--status-good)' : v.scope === 'town' ? 'var(--series-cost)' : 'var(--status-critical)'} />)}
+
+      {s.before.length > 0 && <details className="card mt-3 p-4"><summary className="cursor-pointer text-[13.5px] font-semibold">Before the first version — {s.before.length} thing{s.before.length === 1 ? '' : 's'} said on the record</summary>
+        <ul className="mt-2">{s.before.map((r, i) => <Item key={i} r={r} muted={r.status === 'warned'} />)}</ul></details>}
+
+      {s.override.length > 0 && <Block title={T0(d, 'override', 'The override track')} color="var(--series-cost)" sub="Not a version of the budget: whether one is filed, for how much, and where each board stands — step by step, across every version.">
+        <ul>{s.override.map((r, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: `2px solid ${r.cite?.kind === 'ballot' ? 'var(--status-critical)' : 'var(--series-cost)'}` }}><span className="tnum text-xs mr-2" style={{ color: 'var(--text-muted)' }}>{mmdd(r.date)}</span><span className="font-semibold">{r.item}</span>{r.figure ? <span className="tnum"> · {r.figure}</span> : ''}{r.why ? <span style={{ color: 'var(--text-secondary)' }}> — {r.why}</span> : ''} <span className="text-xs" style={{ color: 'var(--text-muted)' }}>({r.who})</span><CiteLink c={r.cite} /></li>)}</ul>
+      </Block>}
+
+      {coming.filter(c => !c.version).length > 0 && <Block title="Still to come" color="var(--text-muted)" sub="The moments that have not happened yet this season, with when they usually do.">
+        <ul className="space-y-1">{coming.filter(c => !c.version).map((c, i) => <li key={i} className="pl-3 py-0.5 text-[13.5px]" style={{ borderLeft: '2px dashed var(--grid)', color: 'var(--text-muted)' }}><span className="font-semibold" style={{ color: 'var(--text-secondary)' }}>{c.item}</span> — {c.why}</li>)}</ul>
+      </Block>}
+
+      <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>Every version and every row is a line in <a className="underline" href={`/${d.source.replace('sources/', 'docs/')}`}>{d.source}</a>; each cites where it comes from. A row belongs to the newest version of its side on or before its date. Figures and FTEs as the documents state them; the Prop 2½ step and the changes between versions are our arithmetic.</p>
+    </section>
+  )
+}
+
+const T0 = (d: Season, block: string, title: string) => d.titles?.[block]?.title || title
+
 export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: string; fallback: ReactNode; onLoaded?: () => void }) {
   const { d, err } = useReport<Season>(`budget-season-${id || 'fy' + String(fy).slice(2)}.json`)
   const [showLines, setShowLines] = useState(false)
@@ -113,6 +262,7 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
   const liveLine = d.live ? `The ${'FY' + String(d.fy).slice(2)} budget is being built. ${draft ? `The schools' latest draft, ${draft.item} (${mmdd(draft.date)}): ${draft.figure}, ${draft.why.split(';')[0]}` : 'No figure is on the record yet'}${onRecord ? `; ${onRecord} thing${onRecord === 1 ? '' : 's'} said so far ${onRecord === 1 ? 'is' : 'are'} below` : ''}. ${nextUp ? `Next up: ${nextUp.item.toLowerCase()} — ${nextUp.why.split(' — ')[0]}.` : ''}` : ''
   const oneLine = d.titles?.summary?.title || (d.live && !started ? liveLine : '')
   const lines = d.lines.filter(l => l.side === 'school' && (l.cut || 0) > 0).sort((a, c) => (c.cut || 0) - (a.cut || 0))
+  if (d.versions?.length) return <Versions d={d} oneLine={oneLine || `FY${String(d.fy).slice(2)}: ${summary}.`} />
 
   // NEWEST FIRST WHILE A SEASON IS LIVE. TJ, 20 November 2026: "this page should be NEWEST
   // FIRST order... so draft 1 should be at the top, THEN the previously discussed things." A

@@ -183,3 +183,52 @@ before it ships, learned from three passes over FY27. For the budget feed only.
 
 Once agreed: FY27 by hand (so we can see the shape on real data), then FY26, then the
 detectors pointed at the table, then FY28 live.
+
+## 6. Versions — the page organised by draft, newest first (PROPOSAL, 21 November 2026)
+
+TJ, 20 November 2026: *"we need to consider VERSIONS... each version has new cuts, deficits,
+etc."* The board in §4 sorts by KIND -- gap, cuts, proposals -- so one draft is scattered
+across four blocks and a reader cannot see what a draft changed. This section reorganises
+the same rows by the draft they belong to. Nothing in §1-§3 is withdrawn: the milestones
+are still the moments, and the CSV is still the one source.
+
+**A version is a budget put on the record by somebody with standing**: a draft, a target, a
+vote, a scenarios document, the adopted budget. FY27 had seven:
+
+| version | who, when | headline |
+|---|---|---|
+| the Town Manager's preliminary budget | town manager, 19 Feb | town + schools gap |
+| the district's first number | superintendent, 25 Feb | the gap |
+| the corrected draft | district, 4 Mar | gap, and why it moved |
+| the School Committee vote | SC, 18 Mar | left to cut; the override ask |
+| four scenarios, A-D | district, 23 Mar | each tier's total |
+| the town's balanced budget, and its tiers | town manager, 17 Apr | the town's cuts |
+| as adopted, and the ballot | Town Meeting 2 May, election 16 May | what stood |
+
+**Each version is one card, with the same five parts:**
+
+1. **The figure and its gap** -- the total, and what it is short against (the TM target
+   once there is one; before that, the prior year).
+2. **What changed from the version before** -- the gap moved by $X and why; cuts added;
+   cuts that came off, with what pulled them off. This is the diff, and it is computed.
+3. **The cuts on the table in this version** -- cumulative, collapsed.
+4. **The Prop 2½ step** -- 2.5% of the prior year's levy limit plus new growth, from
+   `dls-levy-limits.csv`: how far the WHOLE TOWN's levy can rise without an override,
+   beside how far this version rises. Our arithmetic, labelled so. No school share until
+   the Town Manager's target is on record -- before that, any split is ours.
+5. **Sources.**
+
+Newest first; the newest open, older ones collapsed to their headline and diff line.
+
+**Data.** A version is a row in `<fy>.csv` with `block=version` (item = name, status =
+`expected`/`preliminary`/`recommended`/`voted`/`adopted`, figure, date, who, evidence). Every
+other row belongs to the newest version of its side (school / town / both) dated on or
+before it -- so live rows from the refresh land in the current draft with no new column.
+An explicit `version` column overrides that where the date misleads. The build fails if any
+row lands in no version. The override track and the meeting record stay as season-wide
+strands under the versions, because they are not drafts.
+
+**FY28 today** is one version (Version 1, 18 Nov) and three expected ones (the TM target,
+Version 2 the recommended budget, the scenarios). Its Prop 2½ step cannot be exact: the FY27
+levy limit is not yet certified, so it is shown as at least 2.5% of FY26's limit grown by
+2.5%, plus new growth, and says so.
