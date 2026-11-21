@@ -1402,6 +1402,30 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
                 table=table, full_report=_full(cid))
 
 
+def tabs_page(tid, finding, tabs_title, ids, finding_figures=None, finding_allow=()):
+    """A PAGE OF TABS under a hub: several of the shelf's own topics, one at a time, each drawn
+    whole from its own payload, the tab strip pinned while the reader scrolls. TJ, 20 November
+    2026, on the capital rankings: *"we move the per year data to a new page under the hub, with
+    the tabs at the top, and the selected year has to pin when scrolling. but then on the hub, we
+    keep aggregate data"*. The hub had drawn the years in its own tabs, so a figure for one year
+    sat on a page about five and read as one about all of them. Nothing is copied: each tab IS
+    its topic's page, which keeps its own address. `finding`: one line saying what the tabs hold."""
+    if tid not in REG.TOPICS:
+        raise ConclusionError('tabs page %s is not in the registry' % tid)
+    home = REG.TOPICS[tid][1]
+    cat = REG.category(home)
+    f = _unit(finding, finding_figures, finding_allow, FINDING_MAX, '%s finding' % tid)
+    bad = check_unit(f, '%s finding' % tid) + _title_bad(tabs_title, '%s tabs' % tid)
+    listed = [t for _, xs in cat['groups'] for t in xs]
+    if not ids or len(set(ids)) != len(ids) or any(t not in listed or t == tid for t in ids):
+        bad.append('tabs page %s: tabs must name other topics on its shelf, once each' % tid)
+    if bad:
+        raise ConclusionError('tabs page %s did not pass:\n  %s' % (tid, '\n  '.join(bad)))
+    return dict(id=tid, kind='tabs', title=REG.TOPICS[tid][0], category=home, path=REG.path(tid),
+                shelves=REG.shelves_of(tid), finding=f, sources=[],
+                tabs=dict(title=' '.join(tabs_title.split()), topics=list(ids)))
+
+
 def _full(cid):
     """The old long report a category came from, if it had one. Not promoted anywhere --
     TJ: "we dont need FULL reports" -- but a note's evidence link may still land in it.

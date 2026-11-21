@@ -93,6 +93,11 @@ type HubPayload = {
   /** Topics drawn IN the hub, one at a time (scripts/topic.py hub(tabs=)). */
   tabs?: { title: string; topics: string[] }
 }
+/** A PAGE OF TABS under a hub (scripts/topic.py tabs_page): the shelf's own topics, one at a
+ *  time, the tab strip pinned while scrolling. */
+type TabsPayload = {
+  kind: 'tabs'; id: string; title: string; category: string; path: string; shelves: string[]
+  finding: LadderUnit; tabs: { title: string; topics: string[] } }
 
 /** HOW IT WORKS: a mechanism as numbered steps (scripts/topic.py how()). */
 type HowData = { title: string; steps: LadderUnit[] }
@@ -420,7 +425,7 @@ function Placed({ c, p }: { c: TopicPayload['conclusions'][number]; p: TopicPayl
  *  power of the individualized pages"). The pick is kept in ?tab= so a tab can be linked, and the
  *  topic keeps its own address, linked from the tab. A row of tabs on a wide screen; a dropdown on
  *  a phone, where five tabs would not fit. */
-function HubTabs({ tabs, ix }: { tabs: { title: string; topics: string[] }; ix: Index }) {
+function HubTabs({ tabs, ix, pinned = false }: { tabs: { title: string; topics: string[] }; ix: Index; pinned?: boolean }) {
   const first = () => {
     const q = new URLSearchParams(window.location.search).get('tab')
     return q && tabs.topics.includes(q) ? q : tabs.topics[0]
@@ -442,7 +447,11 @@ function HubTabs({ tabs, ix }: { tabs: { title: string; topics: string[] }; ix: 
   }
   const name = (t: string) => ix.topics[t]?.title ?? t
   return (
-    <section className="mt-10" id="tabs">
+    <section className={pinned ? 'mt-4' : 'mt-10'} id="tabs">
+      {/* PINNED (a tabs page): the strip sticks under the site header, so the year being read is
+          always on screen -- TJ: "the selected year has to pin when scrolling". */}
+      <div className={pinned ? 'sticky z-20 pt-2 pb-1 -mx-4 px-4 sm:mx-0 sm:px-0' : ''}
+        style={pinned ? { top: 'var(--header-h)', background: 'var(--surface-2)' } : undefined}>
       <h2 className="text-[13px] font-semibold uppercase tracking-wide mb-2" style={{ color: 'var(--text-muted)' }}>
         {tabs.title}</h2>
       <div role="tablist" className="hidden sm:flex flex-wrap gap-1.5 border-b pb-2" style={{ borderColor: 'var(--grid)' }}>
@@ -459,6 +468,7 @@ function HubTabs({ tabs, ix }: { tabs: { title: string; topics: string[] }; ix: 
         style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }}>
         {tabs.topics.map(t => <option key={t} value={t}>{name(t)}</option>)}
       </select>
+      </div>
       {err ? <p className="mt-4 text-[14px]">{err}</p> : !p ? <p className="mt-4 text-[14px]"
         style={{ color: 'var(--text-muted)' }}>Loading…</p> : (
         <div role="tabpanel">
@@ -473,7 +483,7 @@ function HubTabs({ tabs, ix }: { tabs: { title: string; topics: string[] }; ix: 
 export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
   const id = topicIdFromPath(window.location.pathname) ?? fallback
   const [ix, setIx] = useState<Index | null>(null)
-  const [p, setP] = useState<TopicPayload | HubPayload | null>(null)
+  const [p, setP] = useState<TopicPayload | HubPayload | TabsPayload | null>(null)
   const [err, setErr] = useState<string | null>(null)
   useEffect(() => {
     fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(e => setErr(String(e)))
@@ -495,14 +505,14 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       window.history.replaceState(null, '', p.path + window.location.search + window.location.hash)
     const t = pageTitle(p.title)
     if (t) document.title = t
-    setShareMeta({ title: t, description: p.kind === 'topic' ? p.finding.text : p.answer.text,
+    setShareMeta({ title: t, description: p.kind !== 'hub' ? p.finding.text : p.answer.text,
                    page: true, type: 'article' })
   }, [p])
 
   const title = p?.title ?? ix?.topics[id]?.title ?? ix?.categories.find(c => c.id === id)?.title ?? ''
   const cat = ix?.categories.find(c => c.id === (p?.category ?? id))
   // The eyebrow IS the way back to the shelf on a topic page; on a hub it is just the name.
-  const shelf = cat ? (p?.kind === 'topic'
+  const shelf = cat ? (p?.kind !== 'hub'
     ? <a href={abs(cat.path)} className="hover:underline">{cat.shelf}</a> : cat.shelf) : null
 
   return (
@@ -532,6 +542,12 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
             ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
           {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
           <Blocks blocks={p.blocks} place="end" />
+        </>
+      ) : p && ix && p.kind === 'tabs' ? (
+        <>
+          <Shelf ix={ix} t={p} />
+          <p className="text-[17px] leading-snug mt-4 max-w-3xl">{p.finding.text}</p>
+          <HubTabs tabs={p.tabs} ix={ix} pinned />
         </>
       ) : p && ix && p.kind === 'topic' ? (
         <>

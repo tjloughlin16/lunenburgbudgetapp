@@ -1089,7 +1089,6 @@ def hub(R, UN):
         'of the dollars requested were funded, and in %s years the money did not follow the committee’s order.'
         % (C.pct(st[lo]['share']), C.pct(st[hi]['share']), C.num(len(out_order))),
         None, table=table, blocks=[thread_table_block(R, UN), yblk, bblk, coverage_block(R)],
-        tabs=('Each fiscal year', ['capital-fy%d' % y for y in sorted(YEARS, reverse=True)]),
         answer_figures={'a': P(st[lo]['share']), 'b': P(st[hi]['share']), 'n': N(len(out_order), 'years')})
 
 
@@ -1099,6 +1098,10 @@ def build():
     out = {HUB: hub(R, UN)}
     for y in YEARS:
         out['capital-fy%d' % y] = year_page(y, [r for r in R if r['fy'] == y], UN)
+    # the years, one at a time, on their own page; the hub keeps what spans them (TJ, 20 Nov 2026)
+    out['capital-years'] = TP.tabs_page(
+        'capital-years', 'Each year’s requests, rankings and funding, one year at a time.',
+        'Each fiscal year', ['capital-fy%d' % y for y in sorted(YEARS, reverse=True)])
     mine = sorted(t for t, (_, home, gen) in REG.TOPICS.items() if home == HUB and gen == 'build_capital_rankings.py')
     if sorted(k for k in out if k != HUB) != mine:
         fail('the pages built are not the registry’s: %s' % sorted(set(mine) ^ set(out)))
