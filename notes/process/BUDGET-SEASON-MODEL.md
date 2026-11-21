@@ -242,3 +242,29 @@ lets the levy rise without an override (TJ: *"i want US to derive it but say tha
 schools 2.5% is our assumption, and the card says that too. A draft gets the derivation only
 if its row carries `total` and `base` (the two columns added to `fy28.csv` for it); the Town
 Manager's target, once on record, replaces it.
+
+## 7. A draft, line by line: its own page (agreed 20 November 2026)
+
+TJ: *"we need to ingest it to put it in the DB ... something like /school-budget-fy28-draft1
+and theres a link to it on the budget feed version and on other report pages under the
+school hub."* The district's drafts are printed line by line --
+`sc-meetings/2026-2027-fy28-budget-version-1.pdf`: cost centre headings (`1110 - School
+Committee`), then per line FY26 Original Budget, FY26 Actual Exp, FY27 Budget, FY28 Proposed,
+$ Diff, % Diff.
+
+1. **Extract** into one table for every draft, keyed fy + version + cost centre + line, so
+   Version 2 appends rather than replaces -- modelled on `extract_scenario_lines.py`. It
+   refuses to write unless every cost centre and the grand total foot to the document's own
+   printed totals (rule 13); `pdf_kind` first (13d); `--check` reproduces.
+2. **Load** into `lunenburg.db` and publish the CSV with its provenance (rule 12).
+3. **A model-driven page per draft** (rule 7d, the `building-a-page` skill). Signature first:
+   what grew most, by line and cost centre; then lines below FY27, new lines, salaries against
+   everything else. The FY26 actual column may explain a line and never feeds a headline
+   (rule 1). A line is a net appropriation, not a cost (rule 11).
+4. **Address**: one pattern for every draft. The district calls them versions, so
+   `/school-budget-fy28-version-1` rather than `-draft1` -- TJ to confirm.
+5. **Links**: a `page` column on the version row in `<fy>.csv`, passed through by
+   `build_budget_season.py`, rendered as *Line by line* on the version card; and a door from
+   the school hub (`/school-finances`).
+6. **Version to version**: once two drafts are in the table, the card's "what changed" can
+   name the lines that moved.
