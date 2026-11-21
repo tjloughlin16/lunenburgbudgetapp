@@ -340,6 +340,16 @@ def page(fy, v, rows, prev, foot):
         t = '—' if not round(change) else ('+' if p > 0 else '') + C.pct(p)
         figs.add(t)
         return round(p, 4), t
+
+    def shareof(prior, proposed):
+        """Version N as a percent OF the FY27 budget: the same two amounts, read the other way (TJ,
+        21 November 2026: "add the other way to calc too"). Always 100 points above the % change."""
+        if not prior:
+            return None, ('new' if round(proposed) else '—')
+        p = 100 * proposed / prior
+        t = C.pct(p)
+        figs.add(t)
+        return round(p, 4), t
     SEC = dict(expenses='Everything else', salaries='Salaries', reserve='Reserve')
     gl = []
     for (sec, cc, name), ls in groups.items():
@@ -350,22 +360,24 @@ def page(fy, v, rows, prev, foot):
             allow.add(r['line'])
             tag = 'new' if r in new else ('zero' if r in zero else '')
             pv, pt = pctof(z(r['fy27_budget']), r['_d'])
+            sv, st = shareof(z(r['fy27_budget']), z(r['fy28_proposed']))
             lines.append(dict(line=r['line'], actual=money(r['fy26_actual']), prior=money(r['fy27_budget']),
                               proposed=money(r['fy28_proposed']), change=signed(r['_d']), n=round(r['_d'], 2),
                               # the values each column sorts on: numbers, not prose (rule 2 checks strings)
-                              v=[r['fy26_actual'], r['fy27_budget'], r['fy28_proposed'], round(r['_d'], 2), pv],
-                              pct=pt, tag=tag, page=r['page']))
+                              v=[r['fy26_actual'], r['fy27_budget'], r['fy28_proposed'], round(r['_d'], 2), pv, sv],
+                              pct=pt, share=st, tag=tag, page=r['page']))
         gpv, gpt = pctof(sum(z(r['fy27_budget']) for r in ls), d)
+        gsv, gst = shareof(sum(z(r['fy27_budget']) for r in ls), sum(z(r['fy28_proposed']) for r in ls))
         gl.append(dict(section=SEC[sec], code=cc, name=name or SEC[sec], prior=money(sum(z(r['fy27_budget']) for r in ls)),
                        proposed=money(sum(z(r['fy28_proposed']) for r in ls)), change=signed(d), n=round(d, 2),
                        v=[round(sum(z(r['fy26_actual']) for r in ls), 2), round(sum(z(r['fy27_budget']) for r in ls), 2),
-                          round(sum(z(r['fy28_proposed']) for r in ls), 2), round(d, 2), gpv],
-                       pct=gpt, lines=lines))
+                          round(sum(z(r['fy28_proposed']) for r in ls), 2), round(d, 2), gpv, gsv],
+                       pct=gpt, share=gst, lines=lines))
     for g in gl:
         figs.update([g['prior'], g['proposed']])
     figs.discard('')
     text = dict(line='Line', actual='%s actual' % C.fy(fy - 2), prior='%s budget' % C.fy(fy_prior),
-                proposed='Version %d' % v, change='Change', pct='% change', all='All lines', up='Up', down='Down',
+                proposed='Version %d' % v, change='Change', pct='% change', share='%% of %s' % C.fy(fy_prior), all='All lines', up='Up', down='Down',
                 new='New this year', zero='To zero', expand='Show every cost center', collapse='Fold them',
                 grouped='Group by cost center', sort_hint='Click a column to sort; again to reverse.',
                 search='Find a line, e.g. health insurance', none='No line matches.',
