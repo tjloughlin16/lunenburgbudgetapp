@@ -54,6 +54,12 @@ DOC = {   # every document a page cites: label and the archive address
     'cpc25': ('Capital Planning Committee — FY2025 capital requests by department, final (workbook)',
               'budget-workbooks/finance-committee/fy25-budget/capital-planning-committee-files/'
               'fy25-capital-requests-by-department-final-cpc.xlsx'),
+    'cpc24': ('Capital Planning Committee — FY2024 composite rankings, Rev. B (sent by its Chair, 20 November 2026)',
+              'correspondence/2026-11-20-cpc-fy24-composite-rankings-rev-b.xlsx'),
+    'cpc26': ('Capital Planning Committee — FY2026 final rankings, voted 16 December 2024 (sent by its Chair)',
+              'correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx'),
+    'cpc27': ('Capital Planning Committee — FY2027 priorities list, each member’s rank (sent by its Chair)',
+              'correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx'),
     'plan27': ('FY2027 capital plan workbook, CPC rank and average',
                'budget-workbooks/finance-committee/fy27-budget/capital-planning/fy27-capital-plan.xlsx'),
     'pre27': ('Town Manager — preliminary FY2027 capital program, 1 February 2026',
@@ -71,8 +77,8 @@ DOC = {   # every document a page cites: label and the archive address
     'data': ('Lunenburg Budget Project — capital-rankings.csv, every row and its page or cell',
              None),
 }
-RANKS_FROM = {2023: ['a75'], 2024: ['a195', 'a194'], 2025: ['cpc25', '1504'], 2026: ['ar25'],
-              2027: ['plan27', 'pre27']}
+RANKS_FROM = {2023: ['a75'], 2024: ['a195', 'a194', 'cpc24'], 2025: ['cpc25', '1504'], 2026: ['cpc26', 'ar25'],
+              2027: ['plan27', 'cpc27', 'pre27']}
 OUTCOME_FROM = {2023: 'ar22', 2024: 'ar23', 2025: 'ar24', 2026: 'ar25', 2027: 'w26'}
 SCHEMES = [('cpc_rank', 'cpc', 'Capital Planning Committee', False),
            ('tm_rank', 'tm', 'Town Manager', False),
@@ -215,7 +221,7 @@ FINAL = {2023: 'Funded at Town Meeting', 2024: 'Funded at Town Meeting', 2025: '
 FAR = 3    # a move of this many places or more between two orders is drawn strong and named
 
 
-def path_block(fy, rs, s, no_total):
+def path_block(fy, rs, s):
     first_label, first_doc = FIRST[fy]
     pre = [r for r in rs if r['tm_preliminary'] == 'yes']
     added = [r for r in rs if r['ok'] and r['tm_preliminary'] != 'yes']
@@ -232,8 +238,7 @@ def path_block(fy, rs, s, no_total):
                                    said(len(dropped), 'in it', 'not funded') if dropped else ''] if x) or None]
     docs = [DOC[k][0] for k in RANKS_FROM[fy][:1]] + [DOC[first_doc][0], DOC[OUTCOME_FROM[fy]][0]]
     data = dict(stages=[
-        dict(label='Ranked by the Capital Planning Committee' if not no_total
-             else 'Ranked, as the two options print them', doc=docs[0],
+        dict(label='Ranked by the Capital Planning Committee', doc=docs[0],
              count_text=reqs(len(rs)), amount_text=C.usd(s['tot']), amount=s['tot']),
         dict(label=first_label, doc=docs[1], count_text=reqs(len(pre)), amount_text=C.usd(pamt), amount=pamt),
         dict(label=FINAL[fy], doc=docs[2], count_text=reqs(s['fn']), amount_text=C.usd(s['fun']),
@@ -286,18 +291,16 @@ def bands_block(d, title, place, alt, note, so, allow=(), highlight=None):
 def year_page(fy, rs):
     s = year_stats(rs)
     pid = 'capital-fy%d' % fy
-    no_total = fy == 2026
     d = s['d']
     lag = min(d, key=lambda k: d[k]['share_fun'] - d[k]['share_req'])
     f, con = LD.fact, TP.conclusion
-    pblk, pth = path_block(fy, rs, s, no_total)
+    pblk, pth = path_block(fy, rs, s)
     oblk, two = two_orders_block(fy, rs)
     facts = [
-        f('req', N(s['n'], 'requests'), 'ranked requests' if not no_total else 'ranked requests the two options print',
-          'published'),
+        f('req', N(s['n'], 'requests'), 'ranked requests', 'published'),
         f('fn', N(s['fn'], 'projects'), 'funded', 'published'),
         f('pre', N(pth['pre'], 'requests'), 'in the first plan', 'published'),
-    ] + ([] if no_total else [f('share', P(s['share']), 'of the requested dollars funded', 'published')]) + [
+        f('share', P(s['share']), 'of the requested dollars funded', 'published'),
         f('lagreq', P(d[lag]['share_req']), '%s share of the dollars requested' % poss(lag), 'published'),
         f('lagfun', P(d[lag]['share_fun']), '%s share of the dollars funded' % poss(lag), 'published'),
     ]
@@ -307,26 +310,18 @@ def year_page(fy, rs):
     first_doc = FIRST[fy][1]
 
     # 1. the path
-    if no_total:
-        cons.append(con('Option 2 funded %s of the %s ranked requests the options print; Option 1 held %s.'
-                        % (C.num(s['fn']), C.num(s['n']), C.num(pth['pre'])), ['fn', 'req', 'pre'],
-                        {'a': N(s['fn'], 'projects'), 'b': N(s['n'], 'requests'), 'c': N(pth['pre'], 'requests')},
-                        allow=('Option 2', 'Option 1'),
-                        so='Requests that reached neither option are in no document we hold, so this is a '
-                           'share of a list, not of every request made.'))
-    else:
-        cons.append(con('%s of %s requests were funded, %s of the dollars; the first plan held %s.'
-                        % (C.num(s['fn']), C.num(s['n']), C.pct(s['share']), C.num(pth['pre'])),
-                        ['fn', 'req', 'share', 'pre'],
-                        {'a': N(s['fn'], 'projects'), 'b': N(s['n'], 'requests'), 'c': P(s['share']),
-                         'd': N(pth['pre'], 'requests')},
-                        so='The rest was not cancelled by this vote; the road-back grid on the hub shows '
-                           'which requests came back.'))
+    cons.append(con('%s of %s requests were funded, %s of the dollars; the first plan held %s.'
+                    % (C.num(s['fn']), C.num(s['n']), C.pct(s['share']), C.num(pth['pre'])),
+                    ['fn', 'req', 'share', 'pre'],
+                    {'a': N(s['fn'], 'projects'), 'b': N(s['n'], 'requests'), 'c': P(s['share']),
+                     'd': N(pth['pre'], 'requests')},
+                    so='The rest was not cancelled by this vote; the road-back grid on the hub shows '
+                       'which requests came back.'))
     flow += [cite(pblk, *list(OrderedDict.fromkeys(ranks[:1] + [first_doc, out]))), ('conclusion', 0)]
 
     # 2. the list in rank order, the funding line drawn
     lb = ladder_block(fy, rs)
-    swap = option_swap(rs) if no_total else None
+    swap = option_swap(rs) if fy == 2026 else None
     if swap:
         facts.append(f('swap', U(swap['out']), 'of %s requests Option 2 dropped' % swap['dept'], 'published',
                        allow=('Option 2',)))
@@ -376,10 +371,6 @@ def year_page(fy, rs):
 
     # 5. what is not held (rule 7c; each is a row in money-gaps.csv)
     gaps = []
-    if no_total:
-        gaps.append(('Every request made for %s, and its total. Closes: the Capital Planning Committee’s ranked '
-                     'list for %s, approved 16 December 2024.' % (C.fy(fy), C.fy(fy)), None,
-                     (C.fy(fy), '16 December 2024')))
     if fy in (2023, 2024, 2026, 2027):
         gaps.append(('Each department’s own order of its requests. Closes: each department’s %s priority list, '
                      'requested by records request on 20 November 2026.' % C.fy(fy), None,
@@ -398,8 +389,7 @@ def year_page(fy, rs):
         key='shares', label='By department', kinds=['published'] * 6,
         columns=['Funded of requested', 'Requested', 'Share of requests', 'Funded', 'Share of funded',
                  'Its own dollars funded'],
-        rows=trow, note='Shares of dollars. %s.' % ('Requested means the ranked requests the two '
-                                                   'options print' if no_total else 'Requested means every ranked request'))])
+        rows=trow, note='Shares of dollars. Requested means every request the committee’s list holds.')])
     present = [(col, label) for col, _, label, _ in SCHEMES if any(r[col] for r in rs)]
     cols = ['Department', 'Cost'] + [l for _, l in present] + ['Funded']
 
@@ -422,11 +412,8 @@ def year_page(fy, rs):
     keys = list(OrderedDict.fromkeys(ranks + [first_doc, out, 'data']))
     sources = [src(k) for k in keys]
     finding = ('%s of %s capital requests were funded, %s of the dollars requested.'
-               % (C.num(s['fn']), C.num(s['n']), C.pct(s['share'])) if not no_total else
-               '%s of the %s ranked requests the voted options print were funded, %s.'
-               % (C.num(s['fn']), C.num(s['n']), C.usd(s['fun'])))
-    ff = ({'a': N(s['fn'], 'projects'), 'b': N(s['n'], 'requests'), 'c': P(s['share'])} if not no_total else
-          {'a': N(s['fn'], 'projects'), 'b': N(s['n'], 'requests'), 'c': U(s['fun'])})
+               % (C.num(s['fn']), C.num(s['n']), C.pct(s['share'])))
+    ff = {'a': N(s['fn'], 'projects'), 'b': N(s['n'], 'requests'), 'c': P(s['share'])}
     return TP.page(pid, finding, facts, cons, table=table, tables=[shares], sources=sources,
                    finding_figures=ff, flow=['finding'] + flow)
 
@@ -560,15 +547,13 @@ def thread_table_block(R):
         figs |= {C.fy(y), n}
         cols.append(dict(label=C.fy(y), count_text='%s requests' % n, cells=cells, cut=cut))
     lines = [dict(a=where[id(a)], b=where[id(b)], ours=ours, thread=tid[id(a)]) for a, b, ours in E]
-    figs.add(C.fy(2026))
     data = dict(columns=cols, lines=lines, text=dict(
         funded='Funded', unfunded='Not funded', town='Same project, by the town’s project number',
         ours='Same project, joined by us by name', cut='Highest-ranked request left unfunded',
         gap='Rank not in the documents held', unranked='unranked', hint='Tap a request to follow it across years.'),
         note='Each column is one year’s full ranked list in the Capital Planning Committee’s order. A request '
              'withdrawn or set aside before the committee ranked it is not drawn: the departments’ own '
-             'lists are not held. %s prints only the ranked requests in the two options voted on, so its '
-             'missing ranks are blank.' % C.fy(2026))
+             'lists are not held.')
     blk = TB.custom('capital-thread-table', 'Every ranked request, every year', data, place='lead',
                     figures=sorted(figs), allow=sorted(names),
                     alt='Every capital request the committee ranked, in each year’s order, with lines joining the same project across years.',
@@ -594,7 +579,7 @@ def thread_table_block(R):
 
 def hub(R):
     st = {y: year_stats([r for r in R if r['fy'] == y]) for y in YEARS}
-    full = [y for y in YEARS if y != 2026]
+    full = list(YEARS)
     lo = min(full, key=lambda y: st[y]['share'])
     hi = max(full, key=lambda y: st[y]['share'])
     inorder = [y for y in YEARS if not st[y]['below'] and not st[y]['unranked_funded']]
@@ -605,9 +590,7 @@ def hub(R):
     chart = TP.series('Requested and funded, by year', [C.fy(y) for y in YEARS], [
         TP.track('Funded', [st[y]['fun'] for y in YEARS], 'published', 'bar'),
         TP.track('Not funded', [st[y]['tot'] - st[y]['fun'] for y in YEARS], 'published', 'bar'),
-    ], '$', kind='bar', stacked=True, totals=True,
-        note='%s counts only the ranked requests the two voted options print; the full list is not held.'
-             % C.fy(2026), note_figures={'y': F(2026)})
+    ], '$', kind='bar', stacked=True, totals=True)
     yfacts = [f('lo', P(st[lo]['share']), '%s, share of requested dollars funded' % C.fy(lo), 'published', {'y': F(lo)}),
               f('hi', P(st[hi]['share']), '%s, share of requested dollars funded' % C.fy(hi), 'published', {'y': F(hi)}),
               f('inord', figure(len(inorder), '%d of %d' % (len(inorder), len(YEARS)), 'years'),
@@ -622,7 +605,7 @@ def hub(R):
     yblk = TB.claims(TB.chart(chart, place='body',
                               so='The unfunded part of each bar is the unshaded requests in that year’s column above.'), ycons, yfacts)
 
-    # who asked, who got, the four years with a request total
+    # who asked, who got, every year together
     agg = OrderedDict()
     for y in full:
         for k, v in st[y]['d'].items():
@@ -639,10 +622,10 @@ def hub(R):
     fac = agg['Facilities']
     bfacts = [f('facr', P(fac['share_req']), 'Facilities’ share of dollars requested', 'published'),
               f('facf', P(fac['share_fun']), 'Facilities’ share of dollars funded', 'published')]
-    bcons = [LD.conclusion('Facilities requested %s of the dollars in four years and received %s of what was funded.'
+    bcons = [LD.conclusion('Facilities requested %s of the dollars in five years and received %s of what was funded.'
                            % (C.pct(fac['share_req']), C.pct(fac['share_fun'])), ['facr', 'facf'],
                            {'a': P(fac['share_req']), 'b': P(fac['share_fun'])},
-                           so='A share of dollars over four years; each year’s tab shows which Facilities requests were funded.')]
+                           so='A share of dollars over five years; each year’s tab shows which Facilities requests were funded.')]
     for k in always:
         i = 'all-' + k.lower().replace(' ', '-')
         bfacts.append(f(i, U(sum(st[y]['d'][k]['amt'] for y in full if k in st[y]['d'])),
@@ -651,10 +634,9 @@ def hub(R):
         bcons.append(LD.conclusion('%s received every dollar it requested, in each year it made a request.'
                                    % ' and '.join(always), ['all-' + k.lower().replace(' ', '-') for k in always],
                                    so='The year tabs list each of those requests.'))
-    bblk = TB.claims(bands_block(agg, 'Who asked, who got, four years', 'body',
-                                 'Each department’s share of the dollars requested in four years, joined to its share of the dollars funded.',
-                                 '%s, %s, %s and %s together; %s is left out because no request total is held. '
-                                 'Shares of dollars.' % tuple([C.fy(y) for y in full] + [C.fy(2026)]),
+    bblk = TB.claims(bands_block(agg, 'Who asked, who got, five years', 'body',
+                                 'Each department’s share of the dollars requested in five years, joined to its share of the dollars funded.',
+                                 '%s to %s together. Shares of dollars.' % (C.fy(YEARS[0]), C.fy(YEARS[-1])),
                                  'A band that narrows was a smaller share of what was funded than of what was requested.',
                                  allow=[C.fy(y) for y in YEARS], highlight='Facilities'),
                      bcons, bfacts)
@@ -673,8 +655,7 @@ def hub(R):
                                                                          C.pct(st[y]['share'], 0)) for y in YEARS]))
     table = dict(caption='Each department, year by year', views=[dict(
         key='years', label='Funded of requested', kinds=['published'] * len(YEARS), columns=cols, rows=trows,
-        note='Dollars funded of dollars requested, and the percent. %s: only the ranked requests the two '
-             'options print.' % C.fy(2026))])
+        note='Dollars funded of dollars requested, and the percent.')])
     return TP.hub(
         HUB,
         'Five years of capital requests, each ranked by the Capital Planning Committee: between %s and %s '

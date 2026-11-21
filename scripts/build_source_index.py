@@ -1088,6 +1088,47 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'cpc-final-rankings-2026-11', 'origin': 'request',
+        'title': 'The Capital Planning Committee’s final rankings, FY2022 and FY2024-FY2027',
+        'blurb': 'Sent to this project by the Chair of the Capital Planning Committee on 20 '
+                 'November 2026 in answer to a records request: the committee’s own ranking '
+                 'sheets, and the emails that carried them. No FY2023 ranking was in the set.',
+        'items': [
+            ('correspondence/2026-11-20-cpc-fy24-composite-rankings-rev-b.xlsx',
+             'FY2024 composite rankings, Rev. B', 2,
+             'Each member’s rank and the composite for 29 requests. Rev. B superseded the '
+             'list voted on 14 December 2022. The publisher’s filename was “FY24 CPC - '
+             'COMPOSITE RANKINGS w_AVERAGED SCORES_SORTED_FINAL-RevB.xlsx”.'),
+            ('correspondence/2026-11-20-cpc-fy25-prioritized-list-2023-12-21.xlsx',
+             'FY2025 prioritized list', 2,
+             'Every request by department, with members’ ranks, Collins score and average. '
+             'The publisher’s filename was “FY25 Capital Requests by '
+             'Department-AGGREGATE-revised231221.xlsx”.'),
+            ('correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx',
+             'FY2026 final rankings', 1,
+             'The committee’s ranked list, 1 to 25, with cumulative cost: the only copy of '
+             'the ranks the printed FY2026 program leaves out. The publisher’s filename was '
+             '“Capital Planning Committee Fy26 Final rankings.xlsx”.'),
+            ('correspondence/2026-11-20-cpc-fy27-priorities-list-working-final.xlsx',
+             'FY2027 priorities list', 2,
+             'Each member’s rank, their average and median, and the ranked list of 22. The '
+             'publisher’s filename was “fy27 capital planning committee priorities list - '
+             'working final.xlsx”.'),
+            ('correspondence/2026-11-20-cpc-fy22-capital-plan-fincom-2021-03-11.pdf',
+             'FY2022: the Town Manager’s budget presentation, 11 March 2021', 3,
+             'Slide 10 prints the FY2022 plan with each project’s CPC priority; slide 11 '
+             'all 19 requests. The publisher’s filename was “Fy22_capital_plan.pdf”.'),
+            ('correspondence/2026-11-20-cpc-rankings-cpc-chair.txt',
+             'The Chair’s reply and the four emails, 20 November 2026', 2,
+             'Our transcription: every word, with email addresses removed. The originals are '
+             'held privately.'),
+            ('correspondence/2026-11-20-cpc-rankings.md',
+             'How these reached us', 3,
+             'The request, how each email is dated against the sender’s warning about '
+             'corrupted date stamps, the filenames and sha256s, and what each file prints.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'business', 'origin': 'town',
         'title': 'Business registrations',
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '

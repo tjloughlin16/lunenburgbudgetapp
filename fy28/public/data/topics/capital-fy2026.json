@@ -6,17 +6,17 @@
    "component": "capital-path",
    "data": {
     "moves": [
-     "1 request ranked here was not in it",
+     "7 requests ranked here were not in it",
      "1 request it left out was added; 5 requests in it were not funded"
     ],
     "note": "Each bar is that stage’s dollars against the ranked total. Stage names are the year’s own documents’.",
     "stages": [
      {
-      "amount": 1302846.0,
-      "amount_text": "$1,302,846",
-      "count_text": "20 requests",
-      "doc": "Town of Lunenburg — FY2025 annual town report (FY2026 options, May 2025)",
-      "label": "Ranked, as the two options print them"
+      "amount": 3062742.0,
+      "amount_text": "$3,062,742",
+      "count_text": "26 requests",
+      "doc": "Capital Planning Committee — FY2026 final rankings, voted 16 December 2024 (sent by its Chair)",
+      "label": "Ranked by the Capital Planning Committee"
      },
      {
       "amount": 1155981.0,
@@ -237,6 +237,19 @@
       }
      },
      {
+      "amount": 171896.0,
+      "amount_text": "$171,896",
+      "dept": 2,
+      "funded": false,
+      "project": "Primary School Generator",
+      "rank_text": {
+       "cpc": "14"
+      },
+      "ranks": {
+       "cpc": 14.0
+      }
+     },
+     {
       "amount": 40000.0,
       "amount_text": "$40,000",
       "dept": 2,
@@ -276,6 +289,19 @@
       }
      },
      {
+      "amount": 401000.0,
+      "amount_text": "$401,000",
+      "dept": 0,
+      "funded": false,
+      "project": "6 Wheel Dump / Spreader / Plow",
+      "rank_text": {
+       "cpc": "18"
+      },
+      "ranks": {
+       "cpc": 18.0
+      }
+     },
+     {
       "amount": 26865.0,
       "amount_text": "$26,865",
       "dept": 2,
@@ -305,6 +331,19 @@
       "amount": 50000.0,
       "amount_text": "$50,000",
       "dept": 1,
+      "funded": false,
+      "project": "McNally Park Survey & Design",
+      "rank_text": {
+       "cpc": "21"
+      },
+      "ranks": {
+       "cpc": 21.0
+      }
+     },
+     {
+      "amount": 50000.0,
+      "amount_text": "$50,000",
+      "dept": 1,
       "funded": true,
       "project": "Marshall Pond Weed Treatment",
       "rank_text": {
@@ -312,6 +351,45 @@
       },
       "ranks": {
        "cpc": 22.0
+      }
+     },
+     {
+      "amount": 200000.0,
+      "amount_text": "$200,000",
+      "dept": 0,
+      "funded": false,
+      "project": "Catch Basin Cleaning Truck",
+      "rank_text": {
+       "cpc": "23"
+      },
+      "ranks": {
+       "cpc": 23.0
+      }
+     },
+     {
+      "amount": 225000.0,
+      "amount_text": "$225,000",
+      "dept": 0,
+      "funded": false,
+      "project": "North Cemetery Roads Repaving",
+      "rank_text": {
+       "cpc": "24"
+      },
+      "ranks": {
+       "cpc": 24.0
+      }
+     },
+     {
+      "amount": 712000.0,
+      "amount_text": "$712,000",
+      "dept": 1,
+      "funded": false,
+      "project": "Ritter Building Capital Supplement",
+      "rank_text": {
+       "cpc": "25"
+      },
+      "ranks": {
+       "cpc": 25.0
       }
      },
      {
@@ -359,39 +437,39 @@
       "fun": 48.0111697337586,
       "fun_text": "48.0%",
       "label": "Facilities",
-      "req": 42.59904854449413,
-      "req_text": "42.6%"
-     },
-     {
-      "fun": 12.70479359089812,
-      "fun_text": "12.7%",
-      "label": "Schools",
-      "req": 22.545258610764435,
-      "req_text": "22.5%"
+      "req": 43.0006837010757,
+      "req_text": "43.0%"
      },
      {
       "fun": 20.32905385123112,
       "fun_text": "20.3%",
       "label": "Public Works",
-      "req": 18.037434969290306,
-      "req_text": "18.0%"
+      "req": 34.64216052151961,
+      "req_text": "34.6%"
+     },
+     {
+      "fun": 12.70479359089812,
+      "fun_text": "12.7%",
+      "label": "Schools",
+      "req": 15.202912945328075,
+      "req_text": "15.2%"
      },
      {
       "fun": 12.466986914144783,
       "fun_text": "12.5%",
       "label": "Police",
-      "req": 11.061629693762733,
-      "req_text": "11.1%"
+      "req": 4.705456744316041,
+      "req_text": "4.7%"
      },
      {
       "fun": 6.4879959099673785,
       "fun_text": "6.5%",
       "label": "Fire",
-      "req": 5.756628181688396,
-      "req_text": "5.8%"
+      "req": 2.4487860877605754,
+      "req_text": "2.4%"
      }
     ],
-    "highlight": "Schools",
+    "highlight": "Public Works",
     "note": "Shares of dollars. Department is our grouping of the printed project numbers; it matches every department total the year’s documents print.",
     "text": {
      "fun": "Funded",
@@ -409,14 +487,6 @@
   {
    "block": "explain",
    "paragraphs": [
-    {
-     "figures": {},
-     "literals": [
-      "FY2026",
-      "16 December 2024"
-     ],
-     "text": "Every request made for FY2026, and its total. Closes: the Capital Planning Committee’s ranked list for FY2026, approved 16 December 2024."
-    },
     {
      "figures": {},
      "literals": [
@@ -443,31 +513,34 @@
      "value": 15
     },
     "b": {
-     "text": "20",
+     "text": "26",
      "unit": "requests",
-     "value": 20
+     "value": 26
     },
     "c": {
+     "text": "37.7%",
+     "unit": "percent",
+     "value": 37.743335873540765
+    },
+    "d": {
      "text": "19",
      "unit": "requests",
      "value": 19
     }
    },
-   "literals": [
-    "Option 2",
-    "Option 1"
-   ],
+   "literals": [],
    "rests_on": [
     "fn",
     "req",
+    "share",
     "pre"
    ],
    "so": {
     "figures": {},
     "literals": [],
-    "text": "Requests that reached neither option are in no document we hold, so this is a share of a list, not of every request made."
+    "text": "The rest was not cancelled by this vote; the road-back grid on the hub shows which requests came back."
    },
-   "text": "Option 2 funded 15 of the 20 ranked requests the options print; Option 1 held 19."
+   "text": "15 of 26 requests were funded, 37.7% of the dollars; the first plan held 19."
   },
   {
    "figures": {
@@ -503,14 +576,14 @@
   {
    "figures": {
     "a": {
-     "text": "22.5%",
+     "text": "34.6%",
      "unit": "percent",
-     "value": 22.545258610764435
+     "value": 34.64216052151961
     },
     "b": {
-     "text": "12.7%",
+     "text": "20.3%",
      "unit": "percent",
-     "value": 12.70479359089812
+     "value": 20.32905385123112
     }
    },
    "literals": [],
@@ -523,7 +596,7 @@
     "literals": [],
     "text": "A share of dollars, not of projects: one large request moves it more than several small ones."
    },
-   "text": "Schools requested 22.5% of the dollars and received 12.7% of what was funded."
+   "text": "Public Works requested 34.6% of the dollars and received 20.3% of what was funded."
   }
  ],
  "facts": [
@@ -533,12 +606,12 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "ranked requests the two options print"
+    "text": "ranked requests"
    },
    "value": {
-    "text": "20",
+    "text": "26",
     "unit": "requests",
-    "value": 20
+    "value": 26
    }
   },
   {
@@ -570,17 +643,31 @@
    }
   },
   {
+   "id": "share",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of the requested dollars funded"
+   },
+   "value": {
+    "text": "37.7%",
+    "unit": "percent",
+    "value": 37.743335873540765
+   }
+  },
+  {
    "id": "lagreq",
    "kind": "published",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "Schools’ share of the dollars requested"
+    "text": "Public Works’ share of the dollars requested"
    },
    "value": {
-    "text": "22.5%",
+    "text": "34.6%",
     "unit": "percent",
-    "value": 22.545258610764435
+    "value": 34.64216052151961
    }
   },
   {
@@ -589,12 +676,12 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "Schools’ share of the dollars funded"
+    "text": "Public Works’ share of the dollars funded"
    },
    "value": {
-    "text": "12.7%",
+    "text": "20.3%",
     "unit": "percent",
-    "value": 12.70479359089812
+    "value": 20.32905385123112
    }
   },
   {
@@ -622,18 +709,18 @@
     "value": 15
    },
    "b": {
-    "text": "20",
+    "text": "26",
     "unit": "requests",
-    "value": 20
+    "value": 26
    },
    "c": {
-    "text": "$1,155,981",
-    "unit": "dollars",
-    "value": 1155981.0
+    "text": "37.7%",
+    "unit": "percent",
+    "value": 37.743335873540765
    }
   },
   "literals": [],
-  "text": "15 of the 20 ranked requests the voted options print were funded, $1,155,981."
+  "text": "15 of 26 capital requests were funded, 37.7% of the dollars requested."
  },
  "flow": [
   {
@@ -641,30 +728,32 @@
   },
   {
    "cites": [
-    0
+    0,
+    1
    ],
    "i": 0,
    "part": "block"
   },
   {
    "i": 0,
-   "part": "conclusion"
-  },
-  {
-   "cites": [
-    0
-   ],
-   "i": 1,
-   "part": "block"
-  },
-  {
-   "i": 1,
    "part": "conclusion"
   },
   {
    "cites": [
     0,
     1
+   ],
+   "i": 1,
+   "part": "block"
+  },
+  {
+   "i": 1,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    1,
+    2
    ],
    "i": 2,
    "part": "block"
@@ -679,22 +768,24 @@
   {
    "cites": [
     0,
-    1
+    1,
+    2
    ],
    "i": 0,
    "part": "table"
   },
   {
    "cites": [
-    0,
-    1
+    1,
+    2
    ],
    "i": 1,
    "part": "table"
   },
   {
    "cites": [
-    0
+    0,
+    1
    ],
    "i": 3,
    "part": "block"
@@ -715,6 +806,11 @@
   "capital-rankings"
  ],
  "sources": [
+  {
+   "href": "/docs/correspondence/2026-11-20-cpc-fy26-final-rankings.xlsx",
+   "key": "cpc26",
+   "label": "Capital Planning Committee — FY2026 final rankings, voted 16 December 2024 (sent by its Chair)"
+  },
   {
    "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
    "key": "ar25",
@@ -865,6 +961,15 @@
      {
       "cells": [
        "Schools",
+       "$171,896",
+       "14",
+       "no"
+      ],
+      "label": "Primary School Generator"
+     },
+     {
+      "cells": [
+       "Schools",
        "$40,000",
        "15",
        "no"
@@ -891,6 +996,15 @@
      },
      {
       "cells": [
+       "Public Works",
+       "$401,000",
+       "18",
+       "no"
+      ],
+      "label": "6 Wheel Dump / Spreader / Plow"
+     },
+     {
+      "cells": [
        "Schools",
        "$26,865",
        "19",
@@ -911,10 +1025,46 @@
       "cells": [
        "Facilities",
        "$50,000",
+       "21",
+       "no"
+      ],
+      "label": "McNally Park Survey & Design"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$50,000",
        "22",
        "yes"
       ],
       "label": "Marshall Pond Weed Treatment"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$200,000",
+       "23",
+       "no"
+      ],
+      "label": "Catch Basin Cleaning Truck"
+     },
+     {
+      "cells": [
+       "Public Works",
+       "$225,000",
+       "24",
+       "no"
+      ],
+      "label": "North Cemetery Roads Repaving"
+     },
+     {
+      "cells": [
+       "Facilities",
+       "$712,000",
+       "25",
+       "no"
+      ],
+      "label": "Ritter Building Capital Supplement"
      },
      {
       "cells": [
@@ -952,46 +1102,46 @@
       "published"
      ],
      "label": "By department",
-     "note": "Shares of dollars. Requested means the ranked requests the two options print.",
+     "note": "Shares of dollars. Requested means every request the committee’s list holds.",
      "rows": [
       {
        "cells": [
-        "8 of 8",
-        "$555,000",
-        "42.6%",
+        "8 of 10",
+        "$1,317,000",
+        "43.0%",
         "$555,000",
         "48.0%",
-        "100.0%"
+        "42.1%"
        ],
        "label": "Facilities"
       },
       {
        "cells": [
-        "1 of 6",
-        "$293,730",
-        "22.5%",
-        "$146,865",
-        "12.7%",
-        "50.0%"
-       ],
-       "label": "Schools"
-      },
-      {
-       "cells": [
-        "3 of 3",
-        "$235,000",
-        "18.0%",
+        "3 of 6",
+        "$1,061,000",
+        "34.6%",
         "$235,000",
         "20.3%",
-        "100.0%"
+        "22.1%"
        ],
        "label": "Public Works"
       },
       {
        "cells": [
+        "1 of 7",
+        "$465,626",
+        "15.2%",
+        "$146,865",
+        "12.7%",
+        "31.5%"
+       ],
+       "label": "Schools"
+      },
+      {
+       "cells": [
         "2 of 2",
         "$144,116",
-        "11.1%",
+        "4.7%",
         "$144,116",
         "12.5%",
         "100.0%"
@@ -1002,7 +1152,7 @@
        "cells": [
         "1 of 1",
         "$75,000",
-        "5.8%",
+        "2.4%",
         "$75,000",
         "6.5%",
         "100.0%"
