@@ -268,3 +268,9 @@ $ Diff, % Diff.
    the school hub (`/school-finances`).
 6. **Version to version**: once two drafts are in the table, the card's "what changed" can
    name the lines that moved.
+7. **Automatic for every later draft.** TJ, 20 November 2026: *"as the schools give more line
+   budgets, we need to process them and do the same, automatically without me asking."* The
+   refresh's documents watch spots a new line-by-line draft from the district, runs the
+   extractor, and, only if it foots, adds the rows, builds that draft's page and links it from
+   its version. A draft that does not foot is held and reported in the refresh row. It is
+   never published unfooted, and never in silence.
