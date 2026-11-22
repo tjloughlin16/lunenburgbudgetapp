@@ -98,7 +98,7 @@
    "status": "on the record"
   }
  ],
- "as_of": "2026-11-20",
+ "as_of": "2026-11-22",
  "calendar": [
   {
    "key": "budget-presentation",
@@ -413,7 +413,7 @@
    "topic": 146,
    "vote": 44
   },
-  "upcoming": 3
+  "upcoming": 2
  },
  "cycle_closes": "",
  "cycle_fy": 2028,
@@ -6238,7 +6238,7 @@
       "page": "/docs/district-budget/docs/sc-meetings/2026-2027-fy28-school-committee-budget-version-1-memo.pdf"
      }
     ],
-    "meetings_read": 34,
+    "meetings_read": 39,
     "warnings": [
      {
       "about": "final FY28 appropriation request",
@@ -6383,6 +6383,22 @@
       "thread": "cuts",
       "video_url": "https://www.youtube.com/watch?v=4G9q_g67RcA&t=7559s",
       "who": "a member"
+     },
+     {
+      "about": "stormwater funding via operating budget",
+      "board": "Town of Lunenburg \u2014 a budget document",
+      "board_slug": "documents",
+      "condition": "if Town Meeting prefers funding through the annual operating budget (Option 2)",
+      "date": "2026-11-01",
+      "document": true,
+      "fiscal_year": null,
+      "page": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+      "prediction": "Funding stormwater maintenance and MS4 compliance through the operating budget has historically been insufficient and will likely require a Proposition 2 1/2 override in the future; it would compete annually with schools, public safety and other departments.",
+      "scope": "town",
+      "t": 6,
+      "thread": "override",
+      "video_url": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf#page=6",
+      "who": "the town's special town meeting warrant summary (Stormwater Task Force article)"
      },
      {
       "about": "facilities trucks",
@@ -11748,7 +11764,6 @@
  ],
  "generated_by": "scripts/build_budget_feed.py",
  "markers": [
-  "appropriation",
   "budget"
  ],
  "notices": [
@@ -11824,6 +11839,19 @@
    }
   },
   {
+   "first": "2026-09-16",
+   "last": "2026-11-18",
+   "meetings": 11,
+   "name": "special education",
+   "rows": 20,
+   "suggested": {
+    "id": "special-education",
+    "label": "special education",
+    "match": "\\bspecial\\ education\\w*",
+    "order": 5
+   }
+  },
+  {
    "first": "2026-05-20",
    "last": "2026-09-09",
    "meetings": 10,
@@ -11837,15 +11865,15 @@
    }
   },
   {
-   "first": "2026-09-16",
+   "first": "2026-09-09",
    "last": "2026-11-18",
    "meetings": 10,
-   "name": "special education",
-   "rows": 19,
+   "name": "reserve fund",
+   "rows": 17,
    "suggested": {
-    "id": "special-education",
-    "label": "special education",
-    "match": "\\bspecial\\ education\\w*",
+    "id": "reserve-fund",
+    "label": "reserve fund",
+    "match": "\\breserve\\ fund\\w*",
     "order": 5
    }
   },
@@ -11859,19 +11887,6 @@
     "id": "athletic",
     "label": "athletic",
     "match": "\\bathletic\\w*",
-    "order": 5
-   }
-  },
-  {
-   "first": "2026-09-09",
-   "last": "2026-11-18",
-   "meetings": 9,
-   "name": "reserve fund",
-   "rows": 16,
-   "suggested": {
-    "id": "reserve-fund",
-    "label": "reserve fund",
-    "match": "\\breserve\\ fund\\w*",
     "order": 5
    }
   },
@@ -15418,6 +15433,24 @@
     },
     {
      "amount_as_heard": "$300,000",
+     "board": "Town of Lunenburg \u2014 a budget document",
+     "board_slug": "documents",
+     "date": "2026-11-01",
+     "document": true,
+     "fiscal_year": 2027,
+     "kind": "free_cash",
+     "page": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+     "rank": 3,
+     "scope": "school",
+     "statement": "Article 4 proposed motion would fund the Special Education Reserve Fund with a transfer of $300,000 from Certified Free Cash. Select Board recommends disapproval (4-1-0).",
+     "status": "proposed",
+     "t": 2,
+     "thread": "state-aid",
+     "video_url": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf#page=2",
+     "who": "the town's special town meeting warrant (School Committee article)"
+    },
+    {
+     "amount_as_heard": "$300,000",
      "board": "Select Board",
      "board_slug": "select-board",
      "date": "2026-10-27",
@@ -16550,21 +16583,21 @@
    },
    "school/free_cash": {
     "amount_as_heard": "$300,000",
-    "board": "Select Board",
-    "board_slug": "select-board",
-    "date": "2026-10-27",
-    "document": false,
+    "board": "Town of Lunenburg \u2014 a budget document",
+    "board_slug": "documents",
+    "date": "2026-11-01",
+    "document": true,
     "fiscal_year": 2027,
     "kind": "free_cash",
-    "page": "/meeting-minutes/select-board/2026-10-27-EEjHeG_q7gY",
+    "page": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
     "rank": 3,
     "scope": "school",
-    "statement": "Article 4 would transfer this from certified free cash to the special education reserve; board recommended disapproval.",
-    "status": "voted",
-    "t": 4807,
+    "statement": "Article 4 proposed motion would fund the Special Education Reserve Fund with a transfer of $300,000 from Certified Free Cash. Select Board recommends disapproval (4-1-0).",
+    "status": "proposed",
+    "t": 2,
     "thread": "state-aid",
-    "video_url": "https://www.youtube.com/watch?v=EEjHeG_q7gY&t=4807s",
-    "who": "the town manager"
+    "video_url": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf#page=2",
+    "who": "the town's special town meeting warrant (School Committee article)"
    },
    "school/override": {
     "amount_as_heard": "$418,000",
@@ -17015,7 +17048,7 @@
     "page": "/meeting-minutes/school-committee/2026-05-20-WMLR7WqrZPw"
    }
   ],
-  "meetings_read": 61,
+  "meetings_read": 66,
   "warnings": [
    {
     "about": "final FY28 appropriation request",
@@ -17160,6 +17193,22 @@
     "thread": "cuts",
     "video_url": "https://www.youtube.com/watch?v=4G9q_g67RcA&t=7559s",
     "who": "a member"
+   },
+   {
+    "about": "stormwater funding via operating budget",
+    "board": "Town of Lunenburg \u2014 a budget document",
+    "board_slug": "documents",
+    "condition": "if Town Meeting prefers funding through the annual operating budget (Option 2)",
+    "date": "2026-11-01",
+    "document": true,
+    "fiscal_year": null,
+    "page": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf",
+    "prediction": "Funding stormwater maintenance and MS4 compliance through the operating budget has historically been insufficient and will likely require a Proposition 2 1/2 override in the future; it would compete annually with schools, public safety and other departments.",
+    "scope": "town",
+    "t": 6,
+    "thread": "override",
+    "video_url": "/docs/town-budget/docs/4559-november-17-2026-special-town-meeting-warrant.pdf#page=6",
+    "who": "the town's special town meeting warrant summary (Stormwater Task Force article)"
    },
    {
     "about": "FY27 expense lines",
@@ -18688,30 +18737,13 @@
  ],
  "upcoming": [
   {
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11202026-8148",
-   "attend": null,
-   "board": "Library Board of Trustees Strategic Plan Subcommittee",
-   "board_page": "/boards/library-board-of-trustees-strategic-plan-subcommittee",
-   "board_slug": "library-board-of-trustees-strategic-plan-subcommittee",
-   "date": "2026-11-20",
-   "days_away": 0,
-   "hook": null,
-   "items": [],
-   "join": null,
-   "markers": [
-    "appropriation"
-   ],
-   "time": null,
-   "where": null
-  },
-  {
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11232026-8142",
    "attend": null,
    "board": "School Advisory Councils & Committees",
    "board_page": "/boards/school-advisory-councils-committees",
    "board_slug": "school-advisory-councils-committees",
    "date": "2026-11-23",
-   "days_away": 3,
+   "days_away": 1,
    "hook": null,
    "items": [],
    "join": null,
@@ -18728,7 +18760,7 @@
    "board_page": "/boards/sewer-commission",
    "board_slug": "sewer-commission",
    "date": "2026-11-24",
-   "days_away": 4,
+   "days_away": 2,
    "hook": null,
    "items": [],
    "join": null,

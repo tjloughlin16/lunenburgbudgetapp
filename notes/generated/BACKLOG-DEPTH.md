@@ -13,7 +13,7 @@ Every outstanding machine-reading job, placed by the **meeting’s own date** �
 
 **The streams are not interchangeable and must not be added into one bar.** `reconcile` can only exist where a recording exists, so its zero before 2025 is the channel’s start date, not neglect.
 
-**3,460 meeting(s) are missing a record outright and are not counted above: 2,408 no town minutes, 1,492 no recording, 222 no transcript.** Not backlog -- there is no command that produces a transcript the town never recorded. Of the missing transcripts, 187 have captions disabled rather than unfetched.
+**3,461 meeting(s) are missing a record outright and are not counted above: 2,409 no town minutes, 1,493 no recording, 222 no transcript.** Not backlog -- there is no command that produces a transcript the town never recorded. Of the missing transcripts, 187 have captions disabled rather than unfetched.
 
 ## By calendar year of the meeting
 
@@ -69,7 +69,7 @@ The town never published minutes, never recorded the meeting, or the recording h
 | FY2024 | 140 | 114 | 0 | **254** |
 | FY2025 | 163 | 101 | 5 | **269** |
 | FY2026 | 145 | 98 | 17 | **260** |
-| FY2027 | 55 | 28 | 1 | **84** |
+| FY2027 | 56 | 29 | 1 | **86** |
 
 ## Select Board, by fiscal year
 
