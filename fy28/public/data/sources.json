@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21",
+ "generated": "2026-11-23",
  "origins": [
   {
    "id": "school",
@@ -60,7 +60,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 52 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 142 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 52 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 145 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -1697,7 +1697,7 @@
      "what": "Benefit terms for the same group.",
      "upstream": "https://drive.google.com/file/d/0B-TXWy9uLFrVZlRWd0ctTjg0ZWs/view",
      "upstreamRestricted": true,
-     "upstreamCheckedOn": "2026-09-05",
+     "upstreamCheckedOn": "2026-11-22",
      "kind": "PDF",
      "bytes": 228477,
      "url": "/docs/contracts/pdf/nonaffiliated-benefits.pdf",
@@ -1723,7 +1723,7 @@
      "what": "Staff outside any bargaining unit.",
      "upstream": "https://drive.google.com/file/d/0B-TXWy9uLFrVelNCaVFfSnpXbzA/view",
      "upstreamRestricted": true,
-     "upstreamCheckedOn": "2026-09-05",
+     "upstreamCheckedOn": "2026-11-22",
      "kind": "PDF",
      "bytes": 26536,
      "url": "/docs/contracts/pdf/nonaffiliated-salary-schedule.pdf",
@@ -2384,6 +2384,48 @@
   },
   {
    "section": "theirs",
+   "id": "check-218995-town-hall",
+   "origin": "request",
+   "title": "Check 218995: the town’s vendor invoice list",
+   "blurb": "The town’s MUNIS list of the twelve invoices check 218995 paid, on warrant 68 26, sent to this project by the Town Manager on 23 November 2026 in answer to a records request, redacted by the town.",
+   "items": [
+    {
+     "path": "correspondence/2026-11-23-town-hall-check-218995.md",
+     "title": "How these reached us",
+     "stars": 3,
+     "what": "The filenames and sha256s, the redaction check, what the list prints and how it ties, and what the held invoice scan shows about who signed batch 5853.",
+     "kind": "Notes",
+     "bytes": 7904,
+     "url": "/docs/correspondence/2026-11-23-town-hall-check-218995.md",
+     "count": 117,
+     "unit": "lines",
+     "textUrl": "/docs/correspondence/2026-11-23-town-hall-check-218995.md"
+    },
+    {
+     "path": "correspondence/2026-11-23-town-vendor-invoice-list-check-218995.pdf",
+     "title": "Vendor invoice list, check 218995",
+     "stars": 2,
+     "what": "Twelve FLLAC invoices, $199,364.25, warrant 68 26, check dated 16 July 2026. Redacted by the town.",
+     "kind": "PDF",
+     "bytes": 245098,
+     "url": "/docs/correspondence/2026-11-23-town-vendor-invoice-list-check-218995.pdf",
+     "count": 1,
+     "unit": "pages"
+    },
+    {
+     "path": "correspondence/2026-11-23-town-hall-check-218995-thread.txt",
+     "title": "The Town Manager’s reply, 22-23 November 2026",
+     "stars": 2,
+     "what": "The email thread, including the town’s request that the unredacted scans not be uploaded.",
+     "kind": "Text",
+     "bytes": 3916,
+     "url": "/docs/correspondence/2026-11-23-town-hall-check-218995-thread.txt",
+     "textUrl": "/docs/correspondence/2026-11-23-town-hall-check-218995-thread.txt"
+    }
+   ]
+  },
+  {
+   "section": "theirs",
    "id": "cpc-final-rankings-2026-11",
    "origin": "request",
    "title": "The Capital Planning Committee’s final rankings, FY2022 and FY2024-FY2027",
@@ -2808,9 +2850,9 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 98829,
+     "bytes": 99852,
      "url": "/docs/data/redactions.csv",
-     "count": 135,
+     "count": 136,
      "unit": "rows",
      "textUrl": "/docs/data/redactions.csv"
     },
@@ -4662,7 +4704,7 @@
      "stars": 2,
      "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
      "kind": "Data",
-     "bytes": 15219,
+     "bytes": 15221,
      "url": "/docs/data/school-job-postings.csv",
      "count": 30,
      "unit": "rows",
@@ -5423,6 +5465,18 @@
      "textUrl": "/docs/analyses/charts/fy26-school-spend.svg"
     },
     {
+     "path": "data/thread-review-queue.csv",
+     "title": "Possible threads, not published",
+     "stars": 1,
+     "what": "Written by us, by scripts/open_threads.py: matters a model named that the build would not publish, each with the reason. Not established as matters.",
+     "kind": "Data",
+     "bytes": 4535,
+     "url": "/docs/data/thread-review-queue.csv",
+     "count": 12,
+     "unit": "rows",
+     "textUrl": "/docs/data/thread-review-queue.csv"
+    },
+    {
      "path": "analyses/charts/stabilization-flows.svg",
      "title": "Money in and money out of the stabilization funds, by year",
      "stars": 1,
@@ -5461,18 +5515,6 @@
      "bytes": 4216,
      "url": "/docs/analyses/charts/town-budgets-pull.svg",
      "textUrl": "/docs/analyses/charts/town-budgets-pull.svg"
-    },
-    {
-     "path": "data/thread-review-queue.csv",
-     "title": "Possible threads, not published",
-     "stars": 1,
-     "what": "Written by us, by scripts/open_threads.py: matters a model named that the build would not publish, each with the reason. Not established as matters.",
-     "kind": "Data",
-     "bytes": 4096,
-     "url": "/docs/data/thread-review-queue.csv",
-     "count": 11,
-     "unit": "rows",
-     "textUrl": "/docs/data/thread-review-queue.csv"
     },
     {
      "path": "analyses/charts/town-budgets-rates.svg",
@@ -6401,7 +6443,7 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 544623,
+     "bytes": 545270,
      "url": "/docs/data/money-gaps.csv",
      "count": 679,
      "unit": "rows",
@@ -9192,7 +9234,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 137707520,
+     "bytes": 137711616,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -9334,9 +9376,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 1308533,
+     "bytes": 1308750,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 18638,
+     "count": 18642,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -10248,9 +10290,9 @@
      "stars": 2,
      "what": "For every archived document that records where its publisher put it, whether that address still opens. On 29 August 2026 it mostly did not: 57 of 184 returned a Google sign-in wall, every one of them a Drive or Docs link, while the town’s own web server answered 81 of 81. The district was asked to reopen them and did — on 31 August the same 187 came back 186 open. Both readings are the archive’s reason for existing, measured. Rebuild with scripts/check_source_links.py.",
      "kind": "Data",
-     "bytes": 1399193,
+     "bytes": 1423082,
      "url": "/docs/data/link-status.csv",
-     "count": 5336,
+     "count": 5469,
      "unit": "rows",
      "textUrl": "/docs/data/link-status.csv"
     },
@@ -10284,9 +10326,9 @@
      "stars": 2,
      "what": "The question underneath the one above. A link can still open and serve a different document — a Drive file can be replaced in place without its URL changing, and nothing in a link check would notice. So every address is fetched and the result compared to our copy by sha256. It also separates the ways bytes can differ without the document differing: a Google Doc is re-zipped on every export, and a PDF can be re-saved with a heading’s line-break in a new place. Only one of those is a change. Rebuild with scripts/verify_source_copies.py.",
      "kind": "Data",
-     "bytes": 825638,
+     "bytes": 857807,
      "url": "/docs/data/copy-status.csv",
-     "count": 2316,
+     "count": 2396,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
     },
@@ -10308,9 +10350,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 619604,
+     "bytes": 624967,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4387,
+     "count": 4420,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -10368,9 +10410,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 244752,
+     "bytes": 253947,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 70,
+     "count": 72,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -10740,9 +10782,9 @@
      "stars": 2,
      "what": "Appended by the daily refresh, one row per look: the source, the day, and whether the look succeeded. A source is due again when its cadence has passed since its last successful look, so a failed one is retried the next morning. Written by scripts/refresh.py through scripts/source_cadence.py.",
      "kind": "Data",
-     "bytes": 10766,
+     "bytes": 11426,
      "url": "/docs/data/source-checks.csv",
-     "count": 366,
+     "count": 390,
      "unit": "rows",
      "textUrl": "/docs/data/source-checks.csv"
     },
@@ -10922,9 +10964,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 2196,
+     "bytes": 2258,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 68,
+     "count": 70,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -10934,9 +10976,9 @@
      "stars": 2,
      "what": "Written by us. One row per item first seen, with when.",
      "kind": "Data",
-     "bytes": 2026,
+     "bytes": 2214,
      "url": "/docs/data/feed-watch-events.csv",
-     "count": 12,
+     "count": 13,
      "unit": "rows",
      "textUrl": "/docs/data/feed-watch-events.csv"
     },
@@ -21246,7 +21288,8 @@
      "bytes": 51987,
      "url": "/docs/district-budget/docs/superintendent-39-s-proposed-budget.docx",
      "textUrl": "/docs/district-budget/text/superintendent-39-s-proposed-budget.txt",
-     "upstream": "https://docs.google.com/document/d/1N4rN27vN6JIMB8zc4h0RJ0E5K0Yg6Jfcs3-TqZwdM-Y/edit?usp=sharing"
+     "upstream": "https://docs.google.com/document/d/1N4rN27vN6JIMB8zc4h0RJ0E5K0Yg6Jfcs3-TqZwdM-Y/edit?usp=sharing",
+     "upstreamRestricted": true
     },
     {
      "path": "district-budget/docs/sc-meetings/2025-2026-superintendent-s-entry-report.pdf",
@@ -73206,7 +73249,8 @@
      "bytes": 257035,
      "url": "/docs/state-law/2026-10-08/frequently-asked-questions-about-the-open-meeting-law.html",
      "textUrl": "/docs/state-law/text/oml-faq.txt",
-     "upstream": "https://www.mass.gov/info-details/frequently-asked-questions-about-the-open-meeting-law"
+     "upstream": "https://www.mass.gov/info-details/frequently-asked-questions-about-the-open-meeting-law",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/Section18.html",
@@ -73305,7 +73349,8 @@
      "bytes": 111805,
      "url": "/docs/state-law/2026-10-08/oml-text.pdf",
      "textUrl": "/docs/state-law/text/c30a-18-25-ag-text.txt",
-     "upstream": "https://www.mass.gov/doc/open-meeting-law-text/download"
+     "upstream": "https://www.mass.gov/doc/open-meeting-law-text/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-24/section13e.html",
@@ -73470,7 +73515,8 @@
      "bytes": 128752,
      "url": "/docs/state-law/2026-10-08/11.06.2024-oml-executive-session-checklist-2024.pdf",
      "textUrl": "/docs/state-law/text/oml-executive-session-checklist.txt",
-     "upstream": "https://www.mass.gov/doc/11062024-oml-executive-session-checklist/download"
+     "upstream": "https://www.mass.gov/doc/11062024-oml-executive-session-checklist/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/11.06.24-oml-minutes-checklist-2024.pdf",
@@ -73481,7 +73527,8 @@
      "bytes": 116055,
      "url": "/docs/state-law/2026-10-08/11.06.24-oml-minutes-checklist-2024.pdf",
      "textUrl": "/docs/state-law/text/oml-minutes-checklist.txt",
-     "upstream": "https://www.mass.gov/doc/110624-oml-minutes-checklist/download"
+     "upstream": "https://www.mass.gov/doc/110624-oml-minutes-checklist/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/11.06.2024-oml-notice-checklist-2024.pdf",
@@ -73492,7 +73539,8 @@
      "bytes": 131551,
      "url": "/docs/state-law/2026-10-08/11.06.2024-oml-notice-checklist-2024.pdf",
      "textUrl": "/docs/state-law/text/oml-notice-checklist.txt",
-     "upstream": "https://www.mass.gov/doc/11062024-oml-notice-checklist/download"
+     "upstream": "https://www.mass.gov/doc/11062024-oml-notice-checklist/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/11.06.2024-oml-responsibilities-of-the-chair-checklist-2024.pdf",
@@ -73503,7 +73551,8 @@
      "bytes": 91654,
      "url": "/docs/state-law/2026-10-08/11.06.2024-oml-responsibilities-of-the-chair-checklist-2024.pdf",
      "textUrl": "/docs/state-law/text/oml-chair-checklist.txt",
-     "upstream": "https://www.mass.gov/doc/11062024-oml-responsibilities-of-the-chair-checklist/download"
+     "upstream": "https://www.mass.gov/doc/11062024-oml-responsibilities-of-the-chair-checklist/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/2025-guide-with-ed-materials-6-25-25-updated-cover.pdf",
@@ -73514,7 +73563,8 @@
      "bytes": 1070570,
      "url": "/docs/state-law/2026-10-08/2025-guide-with-ed-materials-6-25-25-updated-cover.pdf",
      "textUrl": "/docs/state-law/text/oml-guide.txt",
-     "upstream": "https://www.mass.gov/doc/open-meeting-law-guide-5/download"
+     "upstream": "https://www.mass.gov/doc/open-meeting-law-guide-5/download",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/open-meeting-law-educational-materials.html",
@@ -73525,7 +73575,8 @@
      "bytes": 189085,
      "url": "/docs/state-law/2026-10-08/open-meeting-law-educational-materials.html",
      "textUrl": "/docs/state-law/text/oml-educational-materials.txt",
-     "upstream": "https://www.mass.gov/info-details/open-meeting-law-educational-materials"
+     "upstream": "https://www.mass.gov/info-details/open-meeting-law-educational-materials",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/the-open-meeting-law.html",
@@ -73536,7 +73587,8 @@
      "bytes": 194798,
      "url": "/docs/state-law/2026-10-08/the-open-meeting-law.html",
      "textUrl": "/docs/state-law/text/oml-landing.txt",
-     "upstream": "https://www.mass.gov/the-open-meeting-law"
+     "upstream": "https://www.mass.gov/the-open-meeting-law",
+     "upstreamRestricted": true
     },
     {
      "path": "state-law/2026-10-08/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures.html",
@@ -73547,7 +73599,8 @@
      "bytes": 187962,
      "url": "/docs/state-law/2026-10-08/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures.html",
      "textUrl": "/docs/state-law/text/remote-participation-guidance.txt",
-     "upstream": "https://www.mass.gov/info-details/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures"
+     "upstream": "https://www.mass.gov/info-details/updated-guidance-on-holding-meetings-pursuant-to-the-act-extending-certain-covid-19-measures",
+     "upstreamRestricted": true
     }
    ]
   }
@@ -73776,10 +73829,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 6604,
-  "groups": 36,
-  "bytes": 7485699340,
-  "loadBearing": 225
+  "documents": 6607,
+  "groups": 37,
+  "bytes": 7486034208,
+  "loadBearing": 226
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1017 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1028 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

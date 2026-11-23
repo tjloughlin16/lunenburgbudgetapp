@@ -1088,6 +1088,27 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'check-218995-town-hall', 'origin': 'request',
+        'title': 'Check 218995: the town’s vendor invoice list',
+        'blurb': 'The town’s MUNIS list of the twelve invoices check 218995 paid, on warrant '
+                 '68 26, sent to this project by the Town Manager on 23 November 2026 in '
+                 'answer to a records request, redacted by the town.',
+        'items': [
+            ('correspondence/2026-11-23-town-vendor-invoice-list-check-218995.pdf',
+             'Vendor invoice list, check 218995', 2,
+             'Twelve FLLAC invoices, $199,364.25, warrant 68 26, check dated 16 July 2026. '
+             'Redacted by the town.'),
+            ('correspondence/2026-11-23-town-hall-check-218995-thread.txt',
+             'The Town Manager’s reply, 22-23 November 2026', 2,
+             'The email thread, including the town’s request that the unredacted scans not '
+             'be uploaded.'),
+            ('correspondence/2026-11-23-town-hall-check-218995.md',
+             'How these reached us', 3,
+             'The filenames and sha256s, the redaction check, what the list prints and how '
+             'it ties, and what the held invoice scan shows about who signed batch 5853.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'cpc-final-rankings-2026-11', 'origin': 'request',
         'title': 'The Capital Planning Committee’s final rankings, FY2022 and FY2024-FY2027',
         'blurb': 'Sent to this project by the Chair of the Capital Planning Committee on 20 '
