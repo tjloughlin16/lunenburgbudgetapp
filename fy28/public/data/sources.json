@@ -60,7 +60,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 52 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 146 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 52 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 81 of them link back to the exact file the publisher put up, and 75 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 147 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -2423,6 +2423,16 @@
      "unit": "pages"
     },
     {
+     "path": "correspondence/2026-11-23-school-committee-minutes-overview.xlsx",
+     "title": "The district’s own minutes-posted list, 2024-2026",
+     "stars": 2,
+     "what": "One row per School Committee or sub-committee meeting, 3 January 2024 to 21 October 2026, marked Yes or No for minutes posted. In the 23 November 2026 minutes delivery; see meetings/PROVENANCE-school-committee-2026-11-23.md.",
+     "kind": "Spreadsheet",
+     "bytes": 59615,
+     "url": "/docs/correspondence/2026-11-23-school-committee-minutes-overview.xlsx",
+     "textUrl": "/docs/correspondence/2026-11-23-school-committee-minutes-overview.xlsx"
+    },
+    {
      "path": "correspondence/2026-11-23-town-hall-check-218995-thread.txt",
      "title": "The Town Manager’s reply, 22-23 November 2026",
      "stars": 2,
@@ -2860,9 +2870,9 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 99852,
+     "bytes": 100472,
      "url": "/docs/data/redactions.csv",
-     "count": 136,
+     "count": 137,
      "unit": "rows",
      "textUrl": "/docs/data/redactions.csv"
     },
@@ -5525,6 +5535,18 @@
      "bytes": 4216,
      "url": "/docs/analyses/charts/town-budgets-pull.svg",
      "textUrl": "/docs/analyses/charts/town-budgets-pull.svg"
+    },
+    {
+     "path": "data/sc-minutes-2026-11-23-delivery.csv",
+     "title": "What became of each file in the 23 November 2026 minutes delivery",
+     "stars": 1,
+     "what": "Written by ingest_sc_minutes_2026_11_23.py: all eighteen files the Superintendent’s office shared, by delivered name and sha256, and whether each was filed, already held, the same text as a held copy, or held private.",
+     "kind": "Data",
+     "bytes": 4063,
+     "url": "/docs/data/sc-minutes-2026-11-23-delivery.csv",
+     "count": 18,
+     "unit": "rows",
+     "textUrl": "/docs/data/sc-minutes-2026-11-23-delivery.csv"
     },
     {
      "path": "analyses/charts/town-budgets-rates.svg",
@@ -73679,7 +73701,7 @@
    },
    {
     "name": "School Committee",
-    "documents": 300
+    "documents": 306
    },
    {
     "name": "Capital Planning Committee",
@@ -73827,10 +73849,10 @@
    }
   ],
   "boardCount": 52,
-  "listed": 12343,
-  "fetched": 12293,
+  "listed": 12349,
+  "fetched": 12299,
   "agendas": 7543,
-  "minutes": 4800,
+  "minutes": 4806,
   "from": "2009-01-05",
   "to": "2026-12-09",
   "textFiles": 12295,
@@ -73839,9 +73861,9 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 6608,
+  "documents": 6610,
   "groups": 37,
-  "bytes": 7486037414,
+  "bytes": 7486101712,
   "loadBearing": 226
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1028 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

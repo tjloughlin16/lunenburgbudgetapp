@@ -1110,6 +1110,11 @@ GROUPS = [
              'How these reached us', 3,
              'The filenames and sha256s, the redaction check, what the list prints and how '
              'it ties, and what the held invoice scan shows about who signed batch 5853.'),
+            ('correspondence/2026-11-23-school-committee-minutes-overview.xlsx',
+             'The district\u2019s own minutes-posted list, 2024-2026', 2,
+             'One row per School Committee or sub-committee meeting, 3 January 2024 to 21 '
+             'October 2026, marked Yes or No for minutes posted. In the 23 November 2026 '
+             'minutes delivery; see meetings/PROVENANCE-school-committee-2026-11-23.md.'),
         ],
     },
     {
@@ -1849,6 +1854,11 @@ GROUPS = [
              'Written by ingest_sc_packet.py: every member of the downloaded archive, by its '
              'delivered name and sha256, and whether it was filed, already held, a duplicate '
              'or held private.'),
+            ('data/sc-minutes-2026-11-23-delivery.csv',
+             'What became of each file in the 23 November 2026 minutes delivery', 1,
+             'Written by ingest_sc_minutes_2026_11_23.py: all eighteen files the '
+             'Superintendent\u2019s office shared, by delivered name and sha256, and whether '
+             'each was filed, already held, the same text as a held copy, or held private.'),
             ('data/capital-requests-unranked.csv',
              'Capital requests made and never ranked, FY2023 to FY2027', 2,
              'Read by hand: one row per request a department made for a year that the '
