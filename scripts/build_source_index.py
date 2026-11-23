@@ -1081,6 +1081,10 @@ GROUPS = [
              'The Superintendent’s reply, 19 November 2026', 2,
              'Answers three records requests: the 21 October documents, the June warrant '
              'total, and check 218995.'),
+            ('correspondence/2026-11-21-check-218995-followup-superintendent.txt',
+             'The follow-up, 19 to 21 November 2026', 2,
+             'TJ notes that batch 5853 cannot fit in the 29 July warrant; the Superintendent '
+             'replies that the district will review the concerns internally.'),
             ('correspondence/2026-11-19-batch-5853-and-check-218995.md',
              'How these reached us', 3,
              'The email, the filenames and sha256s, the check of the redaction, what the '
