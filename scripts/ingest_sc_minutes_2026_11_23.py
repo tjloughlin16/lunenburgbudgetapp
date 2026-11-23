@@ -77,18 +77,19 @@ MINUTES = {
 # (pypdf / the docx XML), 23 November 2026.
 SAME_TEXT = {
     '7  Policy Meeting  6-21-24 Minutes (1).pdf': (
-        'meetings/school-advisory-councils-committees/2024-06-21-minutes-rr2026-11-18.pdf',
+        'meetings/school-committee/2024-06-21-minutes-rr2026-11-18.pdf',
         'the held copy with one word fewer (a stray "In"); 223 words against 224'),
     'MINUTES 1 Policy Meeting  7-12-24.docx': (
-        'meetings/school-advisory-councils-committees/2024-07-12-minutes-rr2026-11-18.pdf',
+        'meetings/school-committee/2024-07-12-minutes-rr2026-11-18.pdf',
         'the Word file behind the held PDF; identical text but for an image-size field'),
 }
 
-# HELD BY THE SCREEN, and rightly. The 5 March 2025 budget hearing's public comment has two
-# speakers, each named with a home address, describing a disability: one their own diagnosis,
-# one a sibling's special education support. notes/process/DATA-PRIVACY.md's one test says
-# mask that person. The raw waits in the private bucket for a redacted copy that masks the
-# two speakers; no name is written here, because this file and the register are public.
+# HELD BY THE SCREEN AT INGEST, THEN PUBLISHED AS DELIVERED. The 5 March 2025 budget hearing's
+# public comment has two speakers, each named with a home address, describing a disability.
+# The screen held it and this file first planned a redacted copy. TJ, 23 November 2026, overruled
+# that: public speakers must give name and address for the record, so minutes are never redacted
+# for them (notes/process/DATA-PRIVACY.md). redactions.csv now says `publish`, so a rerun files
+# it like any other set; HELD_NOTE applies only while a row says otherwise.
 HELD_NOTE = {
     '03.05.25 Minutes (Autosaved).pdf':
         'held private: public comment ties a disability to two named speakers; '

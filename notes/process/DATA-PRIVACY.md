@@ -24,6 +24,7 @@ Over-masking hides exactly the spending this project exists to show.
 | **Everything in the annual town reports**, 1959 to date: pension allowances, pupils' prizes, private payees, births, burials, rosters | The town printed and distributed them; republishing a public document is not a disclosure. No `withheld_rows` for privacy |
 | **Scholarship and prize recipients** | Public honours |
 | **Roster COUNTS** per team or school | Counts identify nobody |
+| **Public-comment speakers in meeting minutes**, by name and address, and whatever they chose to say -- their own diagnosis, their child's services included. Whoever delivered the minutes, and even where the one test above would otherwise apply | The boards require a public speaker to give a name and address for the record, so minutes are never redacted for them. TJ, 23 November 2026: *"it's required by our boards for public speakers to say their name and address, so meeting minutes can't be redacted ever for that reason."* First applied to the 5 March 2025 School Committee budget hearing, which the screen had held. A speaker CHOOSING to speak in public is not the town disclosing a recipient: the masked list below covers what a record reveals about somebody, not what they stood up and said |
 | **Anything a published page already shows**: payees, coaches, memos, names in postings | Indexing, searching and querying it is the same disclosure as the page. Search, the API and the database take it whole; never a separate question to TJ (1 November 2026: *"ANYTHING on the annual reports is public. dont ask again about redacting."*) |
 
 ## Masked
@@ -45,7 +46,7 @@ Over-masking hides exactly the spending this project exists to show.
 | Town and district websites, meeting packets, minutes | Public as published |
 | **MUNIS deliveries** (`town-ledgers/`) | Held `pending` at `redact.gate()` whatever the screen says. Process, then WE review every distinct text field for a person, then `publish` in `sources/data/redactions.csv`, then publish, then build. Nothing is analysed or built while it is private. The Town does not need to confirm; we are responsible. The fact of a delivery (register row, filenames) is public from the start |
 | **Records-request and emailed documents** | Through `redact.gate()`. Raw to the private bucket; our redacted copy public, marked UNOFFICIAL with *Official document available upon request* |
-| Minutes a board emails to us | Filed as that meeting's minutes, held but not "posted" (see `delivered-minutes-are-posted` in the project memory) |
+| Minutes a board emails to us | Filed as that meeting's minutes, held but not "posted" (see `delivered-minutes-are-posted` in the project memory). Published as delivered: public-comment speakers are never masked (above). If `redact.gate()` holds a set of minutes for a speaker's words, the decision is `publish`, not `redact` |
 
 ## The mechanisms, so nobody builds another
 

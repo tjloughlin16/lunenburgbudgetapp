@@ -2870,7 +2870,7 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 100472,
+     "bytes": 100680,
      "url": "/docs/data/redactions.csv",
      "count": 137,
      "unit": "rows",
@@ -3033,6 +3033,18 @@
      "unit": "pages"
     },
     {
+     "path": "data/archive-orphans.csv",
+     "title": "Objects in the bucket that the index no longer names",
+     "stars": 2,
+     "what": "The bucket forbids deletion for ten years and cannot be listed, so a document that leaves the manifest — usually a rename — leaves an object behind that nothing can find or remove. This register names each one, matched by sha256 rather than by name, and says `superseded_by` where the same bytes are held under another key. That is the only remedy there is.",
+     "kind": "Data",
+     "bytes": 14622,
+     "url": "/docs/data/archive-orphans.csv",
+     "count": 32,
+     "unit": "rows",
+     "textUrl": "/docs/data/archive-orphans.csv"
+    },
+    {
      "path": "state-dls/PROVENANCE.md",
      "title": "Where these came from, and what they cannot do",
      "stars": 2,
@@ -3055,18 +3067,6 @@
      "count": 72,
      "unit": "rows",
      "textUrl": "/docs/data/dls-cherry-sheet-sources.csv"
-    },
-    {
-     "path": "data/archive-orphans.csv",
-     "title": "Objects in the bucket that the index no longer names",
-     "stars": 2,
-     "what": "The bucket forbids deletion for ten years and cannot be listed, so a document that leaves the manifest — usually a rename — leaves an object behind that nothing can find or remove. This register names each one, matched by sha256 rather than by name, and says `superseded_by` where the same bytes are held under another key. That is the only remedy there is.",
-     "kind": "Data",
-     "bytes": 12030,
-     "url": "/docs/data/archive-orphans.csv",
-     "count": 26,
-     "unit": "rows",
-     "textUrl": "/docs/data/archive-orphans.csv"
     },
     {
      "path": "state-dls/PROVENANCE-levy-limits.md",
@@ -5116,7 +5116,7 @@
      "stars": 1,
      "what": "Written by ingest_sc_packet.py: every member of the downloaded archive, by its delivered name and sha256, and whether it was filed, already held, a duplicate or held private.",
      "kind": "Data",
-     "bytes": 17105,
+     "bytes": 16991,
      "url": "/docs/data/sc-packet-2026-10-21-delivery.csv",
      "count": 57,
      "unit": "rows",
@@ -5537,18 +5537,6 @@
      "textUrl": "/docs/analyses/charts/town-budgets-pull.svg"
     },
     {
-     "path": "data/sc-minutes-2026-11-23-delivery.csv",
-     "title": "What became of each file in the 23 November 2026 minutes delivery",
-     "stars": 1,
-     "what": "Written by ingest_sc_minutes_2026_11_23.py: all eighteen files the Superintendent’s office shared, by delivered name and sha256, and whether each was filed, already held, the same text as a held copy, or held private.",
-     "kind": "Data",
-     "bytes": 4063,
-     "url": "/docs/data/sc-minutes-2026-11-23-delivery.csv",
-     "count": 18,
-     "unit": "rows",
-     "textUrl": "/docs/data/sc-minutes-2026-11-23-delivery.csv"
-    },
-    {
      "path": "analyses/charts/town-budgets-rates.svg",
      "title": "How fast each department grows, against the levy cap",
      "stars": 1,
@@ -5577,6 +5565,18 @@
      "bytes": 3950,
      "url": "/docs/analyses/charts/stabilization-option-burndown.svg",
      "textUrl": "/docs/analyses/charts/stabilization-option-burndown.svg"
+    },
+    {
+     "path": "data/sc-minutes-2026-11-23-delivery.csv",
+     "title": "What became of each file in the 23 November 2026 minutes delivery",
+     "stars": 1,
+     "what": "Written by ingest_sc_minutes_2026_11_23.py: all eighteen files the Superintendent’s office shared, by delivered name and sha256, and whether each was filed, already held, the same text as a held copy, or held private.",
+     "kind": "Data",
+     "bytes": 3947,
+     "url": "/docs/data/sc-minutes-2026-11-23-delivery.csv",
+     "count": 18,
+     "unit": "rows",
+     "textUrl": "/docs/data/sc-minutes-2026-11-23-delivery.csv"
     },
     {
      "path": "analyses/charts/fy26-school-surplus-waterfall.svg",
@@ -9288,9 +9288,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 4113021,
+     "bytes": 4112554,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7152,
+     "count": 7146,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -10286,7 +10286,7 @@
      "stars": 2,
      "what": "One row per PDF in the archive: what pdf_kind found (digital, scan, mixed), which pages carry no readable text, how many of those Amazon Textract has read, and whether our searchable copy is built. A searchable copy is the publisher’s file with every page image unchanged and invisible Textract words under the picture pages, served at /docs/searchable/<path>; the original stays at its own address. Ours, not the publisher’s. Rebuild with scripts/searchable_pdfs.py.",
      "kind": "Data",
-     "bytes": 2622166,
+     "bytes": 2622052,
      "url": "/docs/data/searchable-pdfs.csv",
      "count": 16377,
      "unit": "rows",
@@ -10298,9 +10298,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2611001,
+     "bytes": 2612250,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12293,
+     "count": 12300,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -73685,7 +73685,7 @@
    },
    {
     "name": "School Advisory Councils & Committees",
-    "documents": 344
+    "documents": 338
    },
    {
     "name": "Historical Commission",
@@ -73701,7 +73701,7 @@
    },
    {
     "name": "School Committee",
-    "documents": 306
+    "documents": 313
    },
    {
     "name": "Capital Planning Committee",
@@ -73849,10 +73849,10 @@
    }
   ],
   "boardCount": 52,
-  "listed": 12349,
-  "fetched": 12299,
+  "listed": 12350,
+  "fetched": 12300,
   "agendas": 7543,
-  "minutes": 4806,
+  "minutes": 4807,
   "from": "2009-01-05",
   "to": "2026-12-09",
   "textFiles": 12295,
@@ -73863,7 +73863,7 @@
  "totals": {
   "documents": 6610,
   "groups": 37,
-  "bytes": 7486101712,
+  "bytes": 7486104950,
   "loadBearing": 226
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1028 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."

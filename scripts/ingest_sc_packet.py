@@ -16,7 +16,9 @@ WHERE EACH MEMBER GOES, decided by what it is rather than by the folder it came 
   * the 21 October agenda and the four sets of regular-session minutes are ALREADY HELD,
     byte for byte, from the town's Agenda Center. Nothing new is written for them.
   * six School Committee Policy Sub-Committee minutes (2024) are MINUTES, so they are filed
-    under `meetings/school-advisory-councils-committees/` with the delivery id
+    under `meetings/school-committee/`, the Agenda Center board where the town posts that
+    sub-committee's agendas, so each set joins its own meeting's row (refiled there from
+    `school-advisory-councils-committees/` on 23 November 2026), with the delivery id
     `rr2026-11-18`, the convention of `PROVENANCE-school-committee-2026-10-27.md`: held and
     searchable, never counted as posted. Dated by the date each PRINTS, which for two of them
     is not the date the agenda lists.
@@ -68,7 +70,7 @@ POLICY = {
     'Copy of 5 Policy Meeting  Minutes 10-2-24.pdf': '2024-10-04',
     'Copy of MINUTES -6  Policy Meeting  11-1-24 (1).pdf': '2024-11-01',
 }
-POLICY_BOARD = {'board': 'School Advisory Councils & Committees', 'board_id': '23',
+POLICY_BOARD = {'board': 'School Committee', 'board_id': '24',
                 'title': 'School Committee Policy Sub-Committee'}
 
 # WARRANT BATCHES ARE HELD, ALL TWELVE. Each is a MUNIS `INVOICE ENTRY PROOF LIST` followed
@@ -104,7 +106,7 @@ def plain(name):
 
 def key_for(name):
     if name in POLICY:
-        return (f'meetings/school-advisory-councils-committees/'
+        return (f'meetings/school-committee/'
                 f'{POLICY[name]}-minutes-{DELIVERY}.pdf')
     m = BATCH_RE.search(name)
     if m:
