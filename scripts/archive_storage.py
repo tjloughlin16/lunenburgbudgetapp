@@ -464,7 +464,10 @@ ORIGINAL_EXTS = {'.pdf', '.xlsx', '.xls', '.docx', '.doc', '.pptx', '.ppt',
                  # The macro-enabled Office formats and a bare image, first held when the
                  # Finance Committee's files arrived (October 2026). Left off, they would
                  # be classed as OURS and the backup gate would not require them.
-                 '.xlsm', '.pptm', '.png'}
+                 '.xlsm', '.pptm', '.png',
+                 # A photograph of a paper document handed over in person, first held
+                 # 24 November 2026 (the FY2026 reclassification form). Same hole as .png.
+                 '.jpg', '.jpeg'}
 OURS_TOP = {'analyses', 'data'}
 OURS_DIRS = {'text', 'ocr', 'pages'}
 

@@ -1118,6 +1118,46 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'fy2026-tuition-reclass-form', 'origin': 'school',
+        'title': 'The FY2026 collaborative tuition reclassification: form, emails and journal',
+        'blurb': 'The district’s signed form moving $333,494.89 of collaborative tuition '
+                 'from the general fund to the special education circuit breaker on 29 June '
+                 '2026, the journal entry that posted it, and the town and school emails of '
+                 '31 August to 1 September 2026 disputing it. Printed copies handed to this '
+                 'project by the Town Manager and photographed on 24 November 2026.',
+        'items': [
+            ('correspondence/2026-11-24-reclassification-collaborative-tuition-fy2026.jpg',
+             'Reclassification of expenses, FY2026', 1,
+             'S5511062 to 2640942, object 535023, $333,494.89, signed by the Superintendent '
+             'and the Director of Finance, 6/29/26. The photograph is turned sideways.'),
+            ('correspondence/2026-11-24-reclassification-collaborative-tuition-fy2026.md',
+             'How it reached us', 3,
+             'The handover, what each page prints, and how each item checks against the '
+             'school journal and the period-13 reports.'),
+            ('correspondence/2026-11-24-journal-692-entry-proof.jpg',
+             'Journal entry proof, journal 692', 1,
+             'The MUNIS proof of the 6/29/26 entry, period 12, ref COLLTU. Turned sideways.'),
+            ('correspondence/2026-11-24-collaborative-tuition-reclass-thread-p1.jpg',
+             'Email thread, page 1 of 6', 2,
+             'Town Manager, 1 Sep 12:53 PM: holding the year-end figures.'),
+            ('correspondence/2026-11-24-collaborative-tuition-reclass-thread-p2.jpg',
+             'Email thread, page 2 of 6', 2,
+             'Town Manager, 1 Sep 12:35 PM: was the journal in error?.'),
+            ('correspondence/2026-11-24-collaborative-tuition-reclass-thread-p3.jpg',
+             'Email thread, page 3 of 6', 2,
+             'The school, 1 Sep: grant 240 and the paraprofessionals.'),
+            ('correspondence/2026-11-24-collaborative-tuition-reclass-thread-p4.jpg',
+             'Email thread, page 4 of 6', 2,
+             'The school: payroll, the reclass, unemployment, tutoring.'),
+            ('correspondence/2026-11-24-collaborative-tuition-reclass-thread-p5.jpg',
+             'Email thread, page 5 of 6', 2,
+             'The school: scholarships and the CFCE grant.'),
+            ('correspondence/2026-11-24-collaborative-tuition-reclass-thread-p6.jpg',
+             'Email thread, page 6 of 6', 2,
+             'Town Manager, 31 Aug: the original questions.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'cpc-final-rankings-2026-11', 'origin': 'request',
         'title': 'The Capital Planning Committee’s final rankings, FY2022 and FY2024-FY2027',
         'blurb': 'Sent to this project by the Chair of the Capital Planning Committee on 20 '
