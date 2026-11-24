@@ -1,0 +1,1 @@
+../../../sources/correspondence/2026-11-20-cpc-rankings.md

@@ -1,1 +1,1 @@
-../../../sources/correspondence/2026-11-20-cpc-rankings.md
+../../../sources/correspondence/2026-11-23-town-hall-check-218995.md

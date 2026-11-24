@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**747 of 6604 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**748 of 6616 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5857 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5868 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -48,7 +48,7 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY24 | 93 |
 | FY25 | 122 |
 | FY26 | 164 |
-| FY27 | 296 |
+| FY27 | 297 |
 | FY28 | 36 |
 | FY29 | 5 |
 | FY30 | 3 |
@@ -267,6 +267,11 @@ Listed so this view cannot look more complete than it is.
 - `correspondence/2026-11-19-school-warrant-batch-5853-2026-06-30.pdf` — Warrant batch 5853, dated 30 June 2026
 - `correspondence/2026-11-20-cpc-rankings-cpc-chair.txt` — The Chair’s reply and the four emails, 20 November 2026
 - `correspondence/2026-11-20-cpc-rankings.md` — How these reached us
+- `correspondence/2026-11-21-check-218995-followup-superintendent.txt` — The follow-up, 19 to 21 November 2026
+- `correspondence/2026-11-23-school-committee-minutes-overview.xlsx` — The district’s own minutes-posted list, 2024-2026
+- `correspondence/2026-11-23-town-hall-check-218995-thread.txt` — The Town Manager’s reply, 22-23 November 2026
+- `correspondence/2026-11-23-town-hall-check-218995.md` — How these reached us
+- `correspondence/2026-11-23-town-vendor-invoice-list-check-218995.pdf` — Vendor invoice list, check 218995
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -458,8 +463,3 @@ Listed so this view cannot look more complete than it is.
 - `data/ocr-minutes.csv` — Scanned minutes read by OCR: which, when, and from which bytes
 - `data/omnibus-history.csv` — The town’s omnibus budget by line, FY1997–FY2026
 - `data/one-big-report-story.csv` — The editor’s spec for /one-big-report
-- `data/ood-tuition-history.csv` — Out-of-district tuition, eleven budgets
-- `data/opeb-valuations.csv` — Retiree health benefit (OPEB) liability, FY2017 and FY2018 valuations
-- `data/org-chart.csv` — Who held which role, in every department, board and school
-- `data/outstanding-debt.csv` — What the town owed on 30 June, by purpose, FY2007–FY2025
-- `data/page-blocked.csv` — Pages that CANNOT be read, and what would change that

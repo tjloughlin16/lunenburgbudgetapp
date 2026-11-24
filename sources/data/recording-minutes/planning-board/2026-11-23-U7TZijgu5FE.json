@@ -1,0 +1,289 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2026-11-23",
+ "video_id": "U7TZijgu5FE",
+ "video_url": "https://www.youtube.com/watch?v=U7TZijgu5FE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2026-11-23-U7TZijgu5FE.json",
+  "sha256": "14f5b5b98d354ed93b33ada7a0011dee9d59f9f90c2d759aeef8eab73f99881a",
+  "caption_lines": 178,
+  "segments": 1216
+ },
+ "recording": {
+  "duration_s": 3874,
+  "duration": "1:04",
+  "spoken_chars": 48076,
+  "words_approx": 8012
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11232026-8151",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-11-23-agenda-8151.txt",
+   "path": "sources/meetings/planning-board/2026-11-23-agenda-8151.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-11-24T12:17:54Z",
+  "cost_usd": 0.2014694
+ },
+ "minutes": {
+  "headline": "Planning Board approved a bus operations site plan at 199 Mass Ave with six conditions, after a de minimis change.",
+  "summary": "The board found and approved a de minimis stormwater permit change at 317 Sunny Hill Road, then held a public hearing on a school bus facility at the former car dealership at 199 Mass Ave, closed it and approved with conditions. It also discussed cell tower and battery storage zoning, heard committee reports, approved prior minutes, and adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Wallace (Steven)",
+    "role": "director of planning and economic development"
+   },
+   {
+    "name_as_heard": "Matt",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Bernie",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Amanda",
+    "role": "staff"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1892,
+    "topic": "Property owner, joining by Zoom, had trouble with audio, then said the old truck bodies on the site are gone.",
+    "stated_role": "owner (Mr. Chapterlain)"
+   },
+   {
+    "t": 2023,
+    "topic": "A Zoom participant (Debbie) confirmed the truck bodies are all gone."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "transportation"
+  ],
+  "votes": [
+   {
+    "t": 713,
+    "motion": "Find the proposed alterations at 317 Sunny Hill Road, PMOD 26-6, to be de minimis.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 733,
+    "motion": "Approve the de minimis change at 317 Sunny Hill Road, PMOD 26-6.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2588,
+    "motion": "Close the public hearing for 199 Mass Ave, PBSA 26-7.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2629,
+    "motion": "Approve the site plan for 199 Mass Ave, PBSA 26-7, with the six conditions as read.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3750,
+    "motion": "Approve the minutes of the 9 November 2026 meeting.",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3833,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2525,
+    "decision": "Six conditions for 199 Mass Ave: label snow storage and review with the conservation agent, get a DOT driveway permit and file it, dark sky lighting if the building commissioner requires it, bus repairs inside the building, hours 6 a.m. to 10 p.m., stripe parking at 60 or more buses."
+   },
+   {
+    "t": 3144,
+    "decision": "Planning director will send the existing battery storage bylaw to members; they will send shortcomings to him for town counsel."
+   },
+   {
+    "t": 3369,
+    "decision": "Director will tell a cell tower caller the 2018 removal was deliberate but the board is open to revisiting it, likely in about two years."
+   },
+   {
+    "t": 3811,
+    "decision": "Next meetings set for December 14, January 11 and January 25; no meeting December 28."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 92,
+    "t_end": 344,
+    "topic": "Director's report: zoning forum, boards' input, subdivisions",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 365,
+    "t_end": 755,
+    "topic": "De minimis change, 317 Sunny Hill Road",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 776,
+    "t_end": 2700,
+    "topic": "Public hearing, site plan for bus facility at 199 Mass Ave",
+    "resolution": "voted, approved with conditions",
+    "tags": [
+     "planning-and-zoning",
+     "transportation",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 2714,
+    "t_end": 3395,
+    "topic": "Cell tower and battery storage zoning",
+    "resolution": "informational, no vote",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3396,
+    "t_end": 3730,
+    "topic": "Notices and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 3750,
+    "t_end": 3860,
+    "topic": "Minutes, schedule, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Individual votes were voice votes; no counts given.",
+   "The bus company's school district was not established."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 1744,
+    "kind": "liability or legal",
+    "about": "Treated snow pushed near a water body could cause problems with the conservation commission.",
+    "who": "a member",
+    "words_as_heard": "if you're pushing treated snow up to the edge of an open body of water, you potentially open your client up to some headaches down the line"
+   },
+   {
+    "t": 2174,
+    "kind": "condition",
+    "about": "A member wants all repairs done inside the building.",
+    "who": "a member",
+    "words_as_heard": "I'd ask for a condition that all repairs be done within the building."
+   },
+   {
+    "t": 2356,
+    "kind": "condition",
+    "about": "Parking to be striped once the site regularly houses a set number of buses.",
+    "who": "a member",
+    "words_as_heard": "at such time as the operation regularly houses. 60 or more buses, um, the parking shall be striped according to the approved site plan."
+   },
+   {
+    "t": 3099,
+    "kind": "safety",
+    "about": "Battery storage thermal runaway and emergency response.",
+    "who": "a member",
+    "words_as_heard": "I'm more concerned about thermal runaway and the impact on residences, the environment"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 365,
+    "name_as_heard": "PMOD 26-6 application on OpenGov",
+    "kind": "application or permit",
+    "words_as_heard": "you're gonna go on to OpenGov and you can get there from the planning board website, and that is PMOD. 266",
+    "shown": true
+   },
+   {
+    "t": 776,
+    "name_as_heard": "PBSA-26-7 site plan application",
+    "kind": "application or permit",
+    "words_as_heard": "This is PBSA-26-7 in OpenGov",
+    "shown": true
+   },
+   {
+    "t": 3750,
+    "name_as_heard": "minutes of November 9th meeting",
+    "kind": "prior minutes",
+    "words_as_heard": "Min's approval for our November 9th meeting.",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board approved the site plan for a school bus facility at 199 Mass Ave, the former car dealership, with six conditions after closing the public hearing.",
+    "t": 2629
+   },
+   {
+    "line": "The conditions cover snow storage, a state driveway permit, lighting, repairs done indoors, operating hours of 6 a.m. to 10 p.m., and parking striped for 60 or more buses.",
+    "t": 2525
+   },
+   {
+    "line": "The board found a stormwater permit change at 317 Sunny Hill Road to be de minimis and approved it.",
+    "t": 733
+   },
+   {
+    "line": "Cell tower and battery storage zoning were discussed with no vote; the director will send the existing battery storage bylaw to members for comments to town counsel.",
+    "t": 3144
+   },
+   {
+    "line": "Next meetings were set for December 14, January 11 and January 25, with no meeting on December 28.",
+    "t": 3811
+   }
+  ],
+  "why_it_matters": [
+   "The approval lets a school bus operation move into a commercial site on Mass Ave, and the conditions on hours, indoor repairs and parking size set what neighbors can expect there.",
+   "Battery storage and cell tower rules are still being drafted, so any zoning change would come later and could reach a Town Meeting vote."
+  ],
+  "watch_next": [
+   "Planning Board meeting on December 14, then January 11 and January 25.",
+   "Members' comments on the battery storage bylaw, which go to the planning director for town counsel."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-11-24T12:18:00Z",
+   "cost_usd": 0.027978000000000003
+  }
+ }
+}
