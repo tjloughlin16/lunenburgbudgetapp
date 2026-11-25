@@ -26,12 +26,12 @@ from datetime import date
 # The same pairing rule the standing check uses. Imported rather than reimplemented: two
 # copies of a tolerance drift, and this one goes in a letter to a public official.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from check_function_crosswalk import pair  # noqa: E402
+from check_function_crosswalk import DEPTS, FY, pair, school_ledger  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
 OUT = os.path.join(ROOT, 'notes', 'generated', 'REQUEST-CODING.md')
-DEPTS, FY = ('300', '301'), '2026'
+# DEPTS and FY come from check_function_crosswalk, so the three readers cannot drift.
 
 LEDGER_DOC = 'sources/town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx'
 LEDGER_NAME = 'FY26 BUDGET YEAR TO DATE REPORT (9-1-2026).xlsx'
@@ -56,9 +56,9 @@ def d(v):
 
 
 def main():
-    led = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
-           if r['dept'] in DEPTS and r['fy'] == FY and r['level'] == 'account'
-           and r['account_type'] == 'expense' and r['function']]
+    # ONE period, through the crosswalk's reader: FY2026 holds p12 and p13 side by side,
+    # and summing both doubled every account in the letter (43 codes off, not 7).
+    led = [r for r in school_ledger() if r['function']]
     if not led:
         print('no function-coded school rows; run scripts/extract_munis_report.py first')
         return 1

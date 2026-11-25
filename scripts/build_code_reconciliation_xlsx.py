@@ -57,7 +57,8 @@ DATA = os.path.join(ROOT, 'sources', 'data')
 OUT = os.path.join(DATA, 'fy26-code-reconciliation.xlsx')
 # Two departments: 301 is SCHOOL NON-RECURRING EXPENSE and holds the $40,000 curriculum
 # adoption account the district's budget book carries under function 2110.
-DEPTS, FY = ('300', '301'), '2026'
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_function_crosswalk import DEPTS, FY, LEDGER, PERIOD, school_ledger  # noqa: E402
 
 INK, MUTED, RULE = '1B1B1B', '6B6B6B', 'D9D3C7'
 GAP_FILL = PatternFill('solid', fgColor='FDF0D5')
@@ -84,10 +85,11 @@ def gap(cell, label):
     cell.alignment = Alignment(horizontal='center')
 
 
-def load():
-    led = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
-           if r['dept'] in DEPTS and r['fy'] == FY and r['level'] == 'account'
-           and r['account_type'] == 'expense']
+def load(ledger_path=None):
+    # ONE period, through the crosswalk check's own reader, so the two can never pick
+    # different reports. FY2026 holds p12 and p13 side by side; summing both doubled
+    # every account.
+    led = school_ledger(ledger_path or LEDGER, FY, PERIOD)
     book = [r for r in csv.DictReader(open(os.path.join(DATA, 'lps-budget-lines.csv')))
             if r['kind'] == 'line']
     return led, book
@@ -151,7 +153,8 @@ def main():
     ws.cell(1, 1, 'LUNENBURG FY2026 SCHOOL BUDGET, BY FUNCTION CODE, WITH THE TOWN '
                   'LEDGER BESIDE IT').font = Font(bold=True, size=12, color=INK)
     ws.cell(2, 1, 'Budget columns are the district\'s FY27 projection workbook. Ledger '
-                  'columns are the Town Accountant\'s MUNIS report for FY2026 period 12.'
+                  'columns are the Town Accountant\'s MUNIS report for FY%s period %s.'
+                  % (FY, PERIOD)
             ).font = Font(size=9, color=MUTED)
     ws.cell(4, 1, 'A row that pairs is not a row that agrees: BUDGET vs APPROP carries '
                   'the gap between the workbook figure and the appropriation, and is '

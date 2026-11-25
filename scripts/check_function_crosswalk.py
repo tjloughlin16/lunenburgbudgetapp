@@ -50,6 +50,36 @@ DATA = os.path.join(ROOT, 'sources', 'data')
 # apart. audit_provenance.py already reconciled "300+301"; this did not.
 DEPTS = ('300', '301')
 FY = '2026'
+# The ledger holds ONE ROW PER ACCOUNT PER REPORT, and FY2026 now has more than one report
+# for the school departments: period 12 (June, before the close, an .xlsx) and period 13
+# (the closed year, a printed .pdf, which also lists 158 zero-budget accounts). Summing
+# both doubled the MUNIS side to $52.6M and made every code look unreconciled -- a defect
+# in this script that read as 43 findings about the documents. The original appropriation
+# is identical in both, account for account, so the period does not change any answer
+# here; it is pinned to 12 because that is the report the reconciliation workbook was
+# built from and labels itself with.
+PERIOD = '12'
+LEDGER = os.path.join(DATA, 'munis-ledger.csv')
+
+
+def school_ledger(path=LEDGER, fy=FY, period=PERIOD):
+    """The account-grain school expense rows for ONE fiscal year and ONE period.
+
+    Refuses (SystemExit) if any account appears twice in what it returns, because a
+    second copy of a report -- or a filter that lets two periods through -- doubles a sum
+    silently and reads exactly like a real disagreement.
+    """
+    rows = [r for r in csv.DictReader(open(path))
+            if r['dept'] in DEPTS and r['fy'] == fy and r['period'] == period
+            and r['level'] == 'account' and r['account_type'] == 'expense']
+    seen = collections.Counter(r['account'] for r in rows if r['account'])
+    dup = sorted(a for a, n in seen.items() if n > 1)
+    if dup:
+        docs = sorted({r['doc_id'] for r in rows if r['account'] in set(dup)})
+        raise SystemExit('REFUSED: %d school account(s) appear more than once in FY%s '
+                         'period %s, so any sum would double them. First: %s. From: %s'
+                         % (len(dup), fy, period, dup[0], '; '.join(docs)))
+    return rows
 
 
 def money(v):
@@ -84,13 +114,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
                     help='exit non-zero if any function code does not reconcile')
+    ap.add_argument('--ledger', default=LEDGER,
+                    help='ledger CSV to read (default: sources/data/munis-ledger.csv)')
     args = ap.parse_args()
-    ledger = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-ledger.csv')))
-              if r['dept'] in DEPTS and r['fy'] == FY and r['level'] == 'account'
-              and r['account_type'] == 'expense']
+    ledger = school_ledger(args.ledger)
     if not ledger:
-        print('no account-grain school rows in the ledger for FY%s' % FY)
+        print('no account-grain school rows in the ledger for FY%s period %s'
+              % (FY, PERIOD))
         return 1
+    print('MUNIS side: FY%s period %s, %d accounts, from %s'
+          % (FY, PERIOD, len(ledger), '; '.join(sorted({r['doc_id'] for r in ledger}))))
     missing = [r for r in ledger if not r['function']]
     if missing:
         # Rule: never let a partly-populated column be summed as if it were complete.
