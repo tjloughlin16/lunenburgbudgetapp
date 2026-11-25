@@ -17,7 +17,9 @@ CATEGORY = dict(
     # Lines over budget folded into Surplus by category, FY2025 school surplus into Surplus by
     # year (fy28/src/routes.ts TOPIC_MERGED).
     groups=[
-        (None, ['fy2026-surplus-by-category', 'surplus-bridge', 'fy2026-circuit-breaker',
+        # 24 November 2026: titled, so the top group reads as the school department's year end
+        # (TJ: "should be going under schools. this suggests its townwide").
+        ('Schools', ['fy2026-surplus-by-category', 'surplus-bridge', 'fy2026-circuit-breaker',
                 'fy2026-tuition-paid-early',
                 'surplus-repeat-lines', 'surplus-suggestions']),
         ('Through the year', ['budget-burndown', 'sped-burndown', 'fy2026-school-transfers']),
@@ -35,7 +37,7 @@ TOPIC_GENERATORS = {'surplus-bridge': 'build_journal_surplus_topics.py',
                     'fy2026-tuition-paid-early': 'build_journal_surplus_topics.py',
                     'fy2026-circuit-breaker': 'build_circuit_breaker_surplus.py'}
 TOPICS = {
-    'fy2026-surplus-by-category': 'Surplus by category',
+    'fy2026-surplus-by-category': 'School surplus by category',
     'fy2026-school-transfers': 'Year-end transfers',
     'fy2026-tuition-lines': 'Tuition at year end',
     'fy2026-paraprofessional-overrun': 'Paraprofessional overrun',

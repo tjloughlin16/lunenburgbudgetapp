@@ -1277,7 +1277,7 @@ def why_it_was_left(L, left26, JS):
         TB.check_row(
             'Therapy, buses and electricity',
             ('%s past budget, net. Contracted therapy and electricity were voted below their '
-             'spending in all four years held (Surplus by category).' % C.usd(-over3),
+             'spending in all four years held (School surplus by category).' % C.usd(-over3),
              {'a': U(-over3)}),
             {1, 2}),
     ]
