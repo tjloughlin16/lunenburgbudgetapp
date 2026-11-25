@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**748 of 6616 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**748 of 6629 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5868 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5881 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -272,6 +272,15 @@ Listed so this view cannot look more complete than it is.
 - `correspondence/2026-11-23-town-hall-check-218995-thread.txt` — The Town Manager’s reply, 22-23 November 2026
 - `correspondence/2026-11-23-town-hall-check-218995.md` — How these reached us
 - `correspondence/2026-11-23-town-vendor-invoice-list-check-218995.pdf` — Vendor invoice list, check 218995
+- `correspondence/2026-11-24-collaborative-tuition-reclass-thread-p1.jpg` — Email thread, page 1 of 6
+- `correspondence/2026-11-24-collaborative-tuition-reclass-thread-p2.jpg` — Email thread, page 2 of 6
+- `correspondence/2026-11-24-collaborative-tuition-reclass-thread-p3.jpg` — Email thread, page 3 of 6
+- `correspondence/2026-11-24-collaborative-tuition-reclass-thread-p4.jpg` — Email thread, page 4 of 6
+- `correspondence/2026-11-24-collaborative-tuition-reclass-thread-p5.jpg` — Email thread, page 5 of 6
+- `correspondence/2026-11-24-collaborative-tuition-reclass-thread-p6.jpg` — Email thread, page 6 of 6
+- `correspondence/2026-11-24-journal-692-entry-proof.jpg` — Journal entry proof, journal 692
+- `correspondence/2026-11-24-reclassification-collaborative-tuition-fy2026.jpg` — Reclassification of expenses, FY2026
+- `correspondence/2026-11-24-reclassification-collaborative-tuition-fy2026.md` — How it reached us
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -454,12 +463,3 @@ Listed so this view cannot look more complete than it is.
 - `data/munis-parks-journal-accounts.csv` — The parks funds’ 18 accounts, FY2026 as the journal report prints them
 - `data/munis-parks-journal.csv` — The parks funds, every posting, FY2023 to FY2026
 - `data/munis-school-journal-accounts.csv` — The school department’s 3,356 accounts, FY2026 as the journal report prints them
-- `data/munis-school-journal-image-pages.csv` — Three pages of the school journal report, read by eye
-- `data/munis-school-journal.csv` — The school department, every posting, FY2023 to FY2026
-- `data/munis-school-ytd.csv` — The school department at year-end, FY2023 to FY2026, every account
-- `data/munis-trial-balance-journal.csv` — Lost books and technology fund, FY2026, every journal line
-- `data/munis-trial-balance.csv` — Lost books and technology fund, FY2026 trial balance by account
-- `data/myths.csv` — Claims heard in town, and what the data says
-- `data/ocr-minutes.csv` — Scanned minutes read by OCR: which, when, and from which bytes
-- `data/omnibus-history.csv` — The town’s omnibus budget by line, FY1997–FY2026
-- `data/one-big-report-story.csv` — The editor’s spec for /one-big-report

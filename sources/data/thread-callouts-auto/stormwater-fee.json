@@ -1,42 +1,34 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-11-21T12:29:29Z",
+ "picked_at": "2026-11-25T12:32:13Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.175,
- "input_sha256": "ff1c5c47b3f3a7a1bbed0effcc11359961ea350b87c89fa46e943da2dea7c7b0",
+ "cost_usd": 0.1764,
+ "input_sha256": "d84359470fed81ae050545d2e8aebe4165598935b9019ece8290fa658e5802ad",
  "callouts": [
   {
    "kind": "fee",
    "value": "$85 a year",
-   "label": "projected stormwater fee for a single-family home, not yet adopted",
-   "hook": "projected stormwater fee",
-   "quote": "we're projecting a single family home would have a a cost of $85 per year",
-   "heard": [
-    "$85 per year",
-    "$100",
-    "$170",
-    "$3,500",
-    "5,288 bill payers"
-   ],
-   "item_date": "2026-11-17",
-   "item_board": "town-meeting",
-   "basis": "heard",
-   "board": "town-meeting",
-   "date": "2026-11-17",
-   "video_id": "_yr_TREvqpg",
-   "t": 6765,
-   "where": "Town Meeting, 17 Nov 2026",
+   "label": "estimated stormwater fee for a single-family home; not to exceed $100 for the first three years",
+   "hook": "estimated yearly stormwater fee",
+   "quote": "current estimate is $85 per eru, not to exceed $100 for the first three years",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "printed",
+   "doc": "meetings/select-board/2026-10-20-minutes-8080.pdf",
+   "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
+   "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "Evidence says 'projecting' $85/yr for single-family home; label says projected, not yet adopted. Later record shows only an advisory vote, no adoption."
+    "why": "$85 estimate, cap $100 for three years, flat single-family rate in minutes; labelled as an estimate; not contradicted."
    }
   },
   {
    "kind": "money",
-   "value": "$480,000/yr",
-   "label": "estimated yearly cost of stormwater compliance, versus about $100,000 spent now",
+   "value": "$480,000",
+   "label": "estimated yearly cost of stormwater permit compliance, against about $100,000 spent now",
    "hook": "",
    "quote": "annual stormwater spending has been roughly $100,000, against an estimated $480,000 per year needed for compliance.",
    "heard": [],
@@ -47,28 +39,30 @@
    "text": "meetings/text/select-board/2026-10-20-minutes-8080.txt",
    "where": "Select Board minutes, 20 Oct 2026",
    "verdict": {
-    "keep": false,
-    "why": "The $480,000 figure comes from Select Board minutes as an estimate, and the label states it as such, so it is supported. But LATER shows Town Meeting 17 Nov budget: a proposed compliance budget 'much larger than the current line' with a new engineer. That does not contradict it directly. Still, the label's 'about $100,000 spent now' is supported. The failure is that the callout has no hook and no date, and the 20 Oct estimate predates the Town Meeting's proposed budget, which was not reconciled with it."
+    "keep": true,
+    "why": "$100k spent vs $480k estimated need is in the minutes; not contradicted."
    }
   },
   {
-   "kind": "warrant",
-   "value": "Non-binding vote",
-   "label": "Town Meeting advised on paying for stormwater by a utility fee or the operating budget",
+   "kind": "money",
+   "value": "about $300,000",
+   "label": "would have to be found elsewhere in the budget to fund stormwater without an override",
    "hook": "",
-   "quote": "non-binding vote on the preferred funding mechanism for storm water maintenance",
-   "heard": [],
-   "item_date": "2026-11-17",
-   "item_board": "town-meeting",
+   "quote": "You have to find about $300,000 and it has to come from somewhere else",
+   "heard": [
+    "$300,000"
+   ],
+   "item_date": "2026-11-24",
+   "item_board": "select-board",
    "basis": "heard",
-   "board": "town-meeting",
-   "date": "2026-11-17",
-   "video_id": "_yr_TREvqpg",
-   "t": 5993,
-   "where": "Town Meeting, 17 Nov 2026",
+   "board": "select-board",
+   "date": "2026-11-24",
+   "video_id": "Y0HnMCc-zks",
+   "t": 3556,
+   "where": "Select Board, 24 Nov 2026",
    "verdict": {
-    "keep": false,
-    "why": "Evidence shows the motion and voting instructions but not the result. The label says Town Meeting 'advised', and the captions show no outcome for Article 8. The result is not stated, so the 'advised' claim is unsupported."
+    "keep": true,
+    "why": "Member said about $300,000 must be found elsewhere without an override; this is the latest record."
    }
   }
  ]
