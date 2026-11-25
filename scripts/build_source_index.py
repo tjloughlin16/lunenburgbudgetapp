@@ -3853,6 +3853,14 @@ GROUPS = [
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
              'printed totals within about $2 for FY25–FY27. Rebuild with '
              'scripts/extract_lps_budget.py.'),
+            ('data/fy26-approved-budget-lines.csv', 'FY26 school budget as approved 12 March 2025', 3,
+             'Every line of FINAL FY26 Town Manager’s Target Budget Approved 3-12-25: section, '
+             'function code, the group heading it sits under, the line as printed, its FY26 '
+             'amount, and the page and height it was read from. The lines tie to the column '
+             'sums the page prints under its totals; the printed TOTAL BUDGET is the rounding '
+             'the page’s own footnote states. Four other copies of that day are compared in '
+             'notes/findings/FY26-BUDGET-THREE-WAYS.md. Rebuild with '
+             'scripts/extract_fy26_approved_budget.py; --check proves it reproduces.'),
             ('town-ledgers/expenses/PROVENANCE-fy2026-p09.md',
              'Provenance for the FY26 period 9 ledgers', 3,
              'Written by us. What the reports say about themselves, quoted from their own '

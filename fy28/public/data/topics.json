@@ -1576,41 +1576,46 @@
    "title": "Harvard and Bromfield"
   },
   {
-   "answer": "The school general fund ended FY2026 with $482,118 unspent, 1.8% of its budget, counting orders still owed. Counted the same way, FY2025 left $554,945. Town departments stood $858,462 under in June.",
+   "answer": "Before FY2025 the schools finished within about $32,000 of their budget. FY2026 left $482,118, the second year in a row far above that. The town’s year is not closed yet.",
    "archive_after": "2027-10-31",
    "area": "special",
    "elsewhere": [],
    "groups": [
     {
      "section": null,
-     "title": "Schools",
+     "title": "Total",
      "topics": [
       "fy2026-surplus-by-category",
-      "surplus-bridge",
-      "fy2026-circuit-breaker",
-      "fy2026-tuition-paid-early",
-      "surplus-repeat-lines",
-      "surplus-suggestions"
+      "surplus-bridge"
      ]
     },
     {
      "section": null,
-     "title": "Through the year",
+     "title": "Year-end entries",
      "topics": [
-      "budget-burndown",
-      "sped-burndown",
+      "fy2026-tuition-paid-early",
       "fy2026-school-transfers"
      ]
     },
     {
      "section": null,
-     "title": "School lines",
+     "title": "By line",
      "topics": [
+      "fy2026-budget-vs-munis",
       "fy2026-tuition-lines",
       "fy2026-paraprofessional-overrun",
       "fy2026-psychologist-line",
       "special-education-transportation",
-      "fy2026-athletics-underspend"
+      "fy2026-athletics-underspend",
+      "surplus-repeat-lines"
+     ]
+    },
+    {
+     "section": null,
+     "title": "Month by month",
+     "topics": [
+      "budget-burndown",
+      "sped-burndown"
      ]
     },
     {
@@ -1621,19 +1626,23 @@
       "fy2026-snow-and-reserve-fund",
       "fy2026-school-retiree-insurance"
      ]
+    },
+    {
+     "section": null,
+     "title": "Uses",
+     "topics": [
+      "surplus-suggestions"
+     ]
     }
    ],
    "id": "fy2026-closeout",
-   "minutes": 2,
+   "minutes": 1,
    "order": 95,
    "path": "/fy2026-closeout",
    "ready": true,
    "related": [],
    "shelf": "FY2026 closeout",
-   "start": [
-    "fy2026-surplus-by-category",
-    "surplus-bridge"
-   ],
+   "start": [],
    "title": "FY2026 year end"
   }
  ],
@@ -2910,19 +2919,19 @@
    ],
    "title": "FY2026 athletics underspend"
   },
-  "fy2026-circuit-breaker": {
-   "finding": "FY2026’s vote counted on $480,204 of circuit breaker for collaborative tuition; $333,495 came, on 29 June.",
-   "generator": "scripts/build_circuit_breaker_surplus.py",
+  "fy2026-budget-vs-munis": {
+   "finding": "MUNIS opened FY2026 with $500,000 more for the schools than the budget approved in March.",
+   "generator": "scripts/build_budget_vs_munis.py",
    "home": "fy2026-closeout",
-   "id": "fy2026-circuit-breaker",
-   "minutes": 1,
-   "path": "/fy2026-closeout/fy2026-circuit-breaker",
+   "id": "fy2026-budget-vs-munis",
+   "minutes": 2,
+   "path": "/fy2026-closeout/fy2026-budget-vs-munis",
    "ready": true,
    "related": [],
    "shelves": [
     "fy2026-closeout"
    ],
-   "title": "Circuit breaker and surplus"
+   "title": "Budget against MUNIS"
   },
   "fy2026-paraprofessional-overrun": {
    "finding": "Paraprofessional accounts ran $208,082 over in FY2026; $99,064 of it was paid against no budget.",
@@ -3006,8 +3015,8 @@
    "title": "Snow and Reserve Fund"
   },
   "fy2026-surplus-by-category": {
-   "finding": "Accounts under budget left $1,683,552 and accounts over used $1,201,434 of it; the net is $482,118.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "finding": "FY2026 left $482,118, the second year running far above the $32,000 that FY2023 and FY2024 each left.",
+   "generator": "scripts/build_fy2026_school_surplus.py",
    "home": "fy2026-closeout",
    "id": "fy2026-surplus-by-category",
    "minutes": 2,
@@ -3017,7 +3026,7 @@
    "shelves": [
     "fy2026-closeout"
    ],
-   "title": "School surplus by category"
+   "title": "FY2026 school surplus"
   },
   "fy2026-town-unspent": {
    "finding": "In June, before the close, town departments stood $858,462 under a $27,647,670 budget.",
@@ -3039,7 +3048,7 @@
    "generator": "scripts/build_fy2026_closeout_topics.py",
    "home": "fy2026-closeout",
    "id": "fy2026-tuition-lines",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/fy2026-closeout/fy2026-tuition-lines",
    "ready": true,
    "related": [
@@ -5519,7 +5528,7 @@
    "title": "Repeat underspending"
   },
   "surplus-suggestions": {
-   "finding": "The surplus came from many small leftovers, year after year, not one line; these options follow from that.",
+   "finding": "FY2025’s surplus was many small leftovers; in FY2026 one tuition account held 31% of them.",
    "generator": "scripts/build_journal_surplus_topics.py",
    "home": "fy2026-closeout",
    "id": "surplus-suggestions",

@@ -60,6 +60,27 @@ FY = '2026'
 # built from and labels itself with.
 PERIOD = '12'
 LEDGER = os.path.join(DATA, 'munis-ledger.csv')
+DESE_CHART = os.path.join(ROOT, 'sources', 'state-dese', 'dese-chart-of-accounts-2022-07.docx')
+
+
+def dese_function_names(path=DESE_CHART):
+    """DESE's name for each four-digit function code, read off the chart of accounts' tables.
+
+    MUNIS prints no name for a function code -- only the code inside the account string and
+    the account's own short name -- so a name for a code is always somebody else's: this is
+    the STATE's. A code the chart does not list (0300, 2310, 2900) is absent, never guessed.
+    """
+    import zipfile
+    xml = zipfile.ZipFile(path).read('word/document.xml').decode('utf-8')
+    cells = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', c)).strip()
+             for c in re.findall(r'<w:tc>.*?</w:tc>', xml, re.S)]
+    out = {}
+    for i, c in enumerate(cells[:-1]):
+        if re.fullmatch(r'\d{4}', c) and c not in out and cells[i + 1]:
+            out[c] = cells[i + 1]
+    if not {'2710', '2800', '9400'} <= set(out):
+        raise SystemExit('REFUSED: the DESE chart no longer reads as code, name rows: %s' % path)
+    return out
 
 
 def school_ledger(path=LEDGER, fy=FY, period=PERIOD):
