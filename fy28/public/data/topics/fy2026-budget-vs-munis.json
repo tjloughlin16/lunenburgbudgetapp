@@ -831,166 +831,43 @@
  },
  "tables": [
   {
-   "caption": "The lines and accounts that changed",
+   "caption": "The same codes, different amounts: line by line",
    "views": [
     {
      "columns": [
       "Code",
-      "Amount"
+      "Approved budget",
+      "MUNIS"
      ],
-     "key": "march",
+     "key": "salaries",
      "kinds": [
+      "ledger",
       "ledger",
       "ledger"
      ],
-     "label": "Budget lines not found in MUNIS",
-     "note": "As the approved budget prints them.",
+     "label": "Salaries",
+     "note": "In each code, the budget lines whose amount no MUNIS account holds, and the accounts whose amount no budget line prints. Budget names as the approved budget prints them; account names as MUNIS does.",
      "rows": [
       {
        "cells": [
         "1410 Business Office Salaries",
-        "$90,000"
+        "$90,000",
+        ""
        ],
        "label": "Business Manager"
       },
       {
        "cells": [
         "1410 Business Office Salaries",
-        "$35,500"
+        "$35,500",
+        ""
        ],
        "label": "Business Office/Clerical"
       },
       {
        "cells": [
-        "1420 Human Resources Salaries",
-        "$71,000"
-       ],
-       "label": "Human Resource Specialist"
-      },
-      {
-       "cells": [
-        "2110 Special Education / System Curriculum Adop",
-        "$6,000"
-       ],
-       "label": "ACE General Supplies"
-      },
-      {
-       "cells": [
-        "2210 Principal Office Salaries",
-        "$164,783"
-       ],
-       "label": "H.S. Principal/Asst. Prin."
-      },
-      {
-       "cells": [
-        "2210 Principal Office Salaries",
-        "$30,690"
-       ],
-       "label": "M.S. Adminstrative Secretary"
-      },
-      {
-       "cells": [
-        "2210 Principal Office Salaries",
-        "$30,690"
-       ],
-       "label": "H.S. Administrative Secretary"
-      },
-      {
-       "cells": [
-        "2305 Teachers - General Education",
-        "$2,623,440"
-       ],
-       "label": "H.S. Teachers/Regular"
-      },
-      {
-       "cells": [
-        "2305 Teachers - General Education",
-        "$1,455,241"
-       ],
-       "label": "E.S. Teachers/Regular"
-      },
-      {
-       "cells": [
-        "2305 Teachers - General Education",
-        "$1,102,737"
-       ],
-       "label": "P.S. Teachers/Regular"
-      },
-      {
-       "cells": [
-        "2310 Teachers Specialists - Special Education",
-        "$548,327"
-       ],
-       "label": "P.S. Special Ed Teachers"
-      },
-      {
-       "cells": [
-        "2310 Teachers Specialists - Special Education",
-        "$317,554"
-       ],
-       "label": "ES Special Ed Teachers"
-      },
-      {
-       "cells": [
-        "2430 General School Supplies",
-        "$6,000"
-       ],
-       "label": "ACE General School Supplies"
-      },
-      {
-       "cells": [
-        "2710 Guidance Salaries",
-        "$42,568"
-       ],
-       "label": "H.S. Guidance Secretary"
-      },
-      {
-       "cells": [
-        "3510 Athletic Expenses",
-        "$102,550"
-       ],
-       "label": "Athletic Transportation"
-      },
-      {
-       "cells": [
-        "5200 Insurance Programs",
-        "$3,692,744"
-       ],
-       "label": "Health Insurance"
-      },
-      {
-       "cells": [
-        "5200 Insurance Programs",
-        "$25,000"
-       ],
-       "label": "Unemployment Compensation"
-      },
-      {
-       "cells": [
-        "",
-        "$10,344,824"
-       ],
-       "label": "All"
-      }
-     ],
-     "total_col": 1
-    },
-    {
-     "columns": [
-      "Code",
-      "Amount"
-     ],
-     "key": "munis",
-     "kinds": [
-      "ledger",
-      "ledger"
-     ],
-     "label": "MUNIS accounts not in the budget",
-     "note": "Names are as MUNIS prints them.",
-     "rows": [
-      {
-       "cells": [
         "1410 Business Office Salaries",
+        "",
         "$110,000"
        ],
        "label": "BUS MAN SA (0100-3-300-1410-01-1-03-1-511001)"
@@ -998,20 +875,47 @@
       {
        "cells": [
         "1410 Business Office Salaries",
+        "",
         "$106,500"
        ],
        "label": "BUS OFF SA (0100-3-300-1410-01-1-03-1-511002)"
       },
       {
        "cells": [
-        "2110 Special Education / System Curriculum Adop",
-        "$12,000"
+        "1420 Human Resources Salaries",
+        "$71,000",
+        ""
        ],
-       "label": "ACESUPPLIE (0100-3-300-2110-51-1-06-2-545001)"
+       "label": "Human Resource Specialist"
       },
       {
        "cells": [
         "2210 Principal Office Salaries",
+        "$164,783",
+        ""
+       ],
+       "label": "H.S. Principal/Asst. Prin."
+      },
+      {
+       "cells": [
+        "2210 Principal Office Salaries",
+        "$30,690",
+        ""
+       ],
+       "label": "M.S. Adminstrative Secretary"
+      },
+      {
+       "cells": [
+        "2210 Principal Office Salaries",
+        "$30,690",
+        ""
+       ],
+       "label": "H.S. Administrative Secretary"
+      },
+      {
+       "cells": [
+        "2210 Principal Office Salaries",
+        "",
         "$187,437"
        ],
        "label": "HS PRINCIP (0100-3-300-2210-01-6-08-1-511001)"
@@ -1019,6 +923,7 @@
       {
        "cells": [
         "2210 Principal Office Salaries",
+        "",
         "$51,973"
        ],
        "label": "MS ADM SEC (0100-3-300-2210-01-5-08-1-511002)"
@@ -1026,6 +931,7 @@
       {
        "cells": [
         "2210 Principal Office Salaries",
+        "",
         "$51,973"
        ],
        "label": "HS ADM SEC (0100-3-300-2210-01-6-08-1-511002)"
@@ -1033,6 +939,31 @@
       {
        "cells": [
         "2305 Teachers - General Education",
+        "$2,623,440",
+        ""
+       ],
+       "label": "H.S. Teachers/Regular"
+      },
+      {
+       "cells": [
+        "2305 Teachers - General Education",
+        "$1,455,241",
+        ""
+       ],
+       "label": "E.S. Teachers/Regular"
+      },
+      {
+       "cells": [
+        "2305 Teachers - General Education",
+        "$1,102,737",
+        ""
+       ],
+       "label": "P.S. Teachers/Regular"
+      },
+      {
+       "cells": [
+        "2305 Teachers - General Education",
+        "",
         "$2,719,099"
        ],
        "label": "HS TEACHER (0100-3-300-2305-06-6-10-1-511001)"
@@ -1040,6 +971,7 @@
       {
        "cells": [
         "2305 Teachers - General Education",
+        "",
         "$1,552,471"
        ],
        "label": "ES TEACHER (0100-3-300-2305-04-4-10-1-511001)"
@@ -1047,6 +979,7 @@
       {
        "cells": [
         "2305 Teachers - General Education",
+        "",
         "$1,172,728"
        ],
        "label": "PS TEACH R (0100-3-300-2305-07-2-10-1-511001)"
@@ -1054,6 +987,23 @@
       {
        "cells": [
         "2310 Teachers Specialists - Special Education",
+        "$548,327",
+        ""
+       ],
+       "label": "P.S. Special Ed Teachers"
+      },
+      {
+       "cells": [
+        "2310 Teachers Specialists - Special Education",
+        "$317,554",
+        ""
+       ],
+       "label": "ES Special Ed Teachers"
+      },
+      {
+       "cells": [
+        "2310 Teachers Specialists - Special Education",
+        "",
         "$635,488"
        ],
        "label": "PS SPED TE (0100-3-300-2310-51-2-06-1-511001)"
@@ -1061,27 +1011,113 @@
       {
        "cells": [
         "2310 Teachers Specialists - Special Education",
+        "",
         "$344,938"
        ],
        "label": "ES SPED RE (0100-3-300-2310-51-4-06-1-511001)"
       },
       {
        "cells": [
-        "3510 Athletic Expenses",
-        "$127,550"
+        "2710 Guidance Salaries",
+        "$42,568",
+        ""
        ],
-       "label": "TRANSPORTA (0100-3-300-3510-06-6-67-2-535016)"
+       "label": "H.S. Guidance Secretary"
       },
       {
        "cells": [
         "3510 Athletics Salaries",
+        "",
         "$20,407"
        ],
        "label": "ATHSEC (0100-3-300-3510-06-6-67-1-511032)"
       },
       {
        "cells": [
+        "",
+        "$6,512,530",
+        "$6,953,014"
+       ],
+       "label": "All"
+      }
+     ],
+     "total_col": -1
+    },
+    {
+     "columns": [
+      "Code",
+      "Approved budget",
+      "MUNIS"
+     ],
+     "key": "expenses",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Expenses",
+     "note": "In each code, the budget lines whose amount no MUNIS account holds, and the accounts whose amount no budget line prints. Budget names as the approved budget prints them; account names as MUNIS does.",
+     "rows": [
+      {
+       "cells": [
+        "2110 Special Education / System Curriculum Adop",
+        "$6,000",
+        ""
+       ],
+       "label": "ACE General Supplies"
+      },
+      {
+       "cells": [
+        "2110 Special Education / System Curriculum Adop",
+        "",
+        "$12,000"
+       ],
+       "label": "ACESUPPLIE (0100-3-300-2110-51-1-06-2-545001)"
+      },
+      {
+       "cells": [
+        "2430 General School Supplies",
+        "$6,000",
+        ""
+       ],
+       "label": "ACE General School Supplies"
+      },
+      {
+       "cells": [
+        "3510 Athletic Expenses",
+        "$102,550",
+        ""
+       ],
+       "label": "Athletic Transportation"
+      },
+      {
+       "cells": [
+        "3510 Athletic Expenses",
+        "",
+        "$127,550"
+       ],
+       "label": "TRANSPORTA (0100-3-300-3510-06-6-67-2-535016)"
+      },
+      {
+       "cells": [
         "5200 Insurance Programs",
+        "$3,692,744",
+        ""
+       ],
+       "label": "Health Insurance"
+      },
+      {
+       "cells": [
+        "5200 Insurance Programs",
+        "$25,000",
+        ""
+       ],
+       "label": "Unemployment Compensation"
+      },
+      {
+       "cells": [
+        "5200 Insurance Programs",
+        "",
         "$3,701,195"
        ],
        "label": "HEALTH INS (0100-3-300-5200-99-1-99-2-570001)"
@@ -1089,6 +1125,7 @@
       {
        "cells": [
         "5200 Insurance Programs",
+        "",
         "$51,063"
        ],
        "label": "UNEMPLOY C (0100-3-300-5200-99-1-99-2-570008)"
@@ -1096,12 +1133,13 @@
       {
        "cells": [
         "",
-        "$10,844,822"
+        "$3,832,294",
+        "$3,891,808"
        ],
        "label": "All"
       }
      ],
-     "total_col": 1
+     "total_col": -1
     }
    ]
   },

@@ -249,22 +249,41 @@ def page(f):
             note='In each code, the budget lines whose amount no MUNIS account holds, and the MUNIS '
                  'accounts whose amount no budget line prints. Code names are the approved budget’s '
                  'headings; MUNIS prints none.')])
+    # ONE TABLE, CODE BY CODE (TJ, 26 November 2026: "there definitely seems to be account codes
+    # in 1410 ... why are they not joining?"). They did join, on the code; only the amounts
+    # differ. Two lists headed "not found" and "not in the budget" said otherwise. Each code's
+    # budget lines and MUNIS accounts now sit together, the budget's amount and MUNIS's in their
+    # own columns, so a reader sees the same code holding different amounts.
+    def changed_view(sec, label):
+        groups = {}
+        for x in M['unlanded']:
+            if x['section'] == sec:
+                groups.setdefault(named(x['code'], {sec}), ([], []))[0].append(x)
+        for a in M['spare']:
+            if section_of(a) == sec:
+                groups.setdefault(named(a['function'], {sec}), ([], []))[1].append(a)
+        rows = []
+        for k in sorted(groups):
+            bl, ma = groups[k]
+            rows += [dict(label=x['line'], cells=[k, U(x['fy26']), ''])
+                     for x in sorted(bl, key=lambda x: -x['fy26'])]
+            rows += [dict(label='%s (%s)' % (a['name'].strip(), a['account']),
+                          cells=[k, '', U(m(a['original']))])
+                     for a in sorted(ma, key=lambda a: -m(a['original']))]
+        bsum = sum(x['fy26'] for x in M['unlanded'] if x['section'] == sec)
+        msum = sum(m(a['original']) for a in M['spare'] if section_of(a) == sec)
+        return dict(key=sec, label=label, total_col=-1, kinds=['ledger'] * 3,
+                    columns=['Code', 'Approved budget', 'MUNIS'],
+                    rows=rows + [dict(label='All', cells=['', U(bsum), U(msum)])],
+                    note='In each code, the budget lines whose amount no MUNIS account holds, and '
+                         'the accounts whose amount no budget line prints. Budget names as the '
+                         'approved budget prints them; account names as MUNIS does.')
+    if {x['section'] for x in M['unlanded']} | {section_of(a) for a in M['spare']} \
+            != {'salaries', 'expenses'}:
+        fail('the changed-amounts table splits into salaries and expenses only')
     lines_table = dict(
-        caption='The lines and accounts that changed',
-        views=[dict(key='march', label='Budget lines not found in MUNIS', total_col=1,
-                    kinds=['ledger'] * 2, columns=['Code', 'Amount'],
-                    rows=[dict(label=x['line'], cells=[named(x['code'], {x['section']}), U(x['fy26'])])
-                          for x in sorted(M['unlanded'], key=lambda x: (x['code'], -x['fy26']))]
-                    + [dict(label='All', cells=['', U(sum(x['fy26'] for x in M['unlanded']))])],
-                    note='As the approved budget prints them.'),
-               dict(key='munis', label='MUNIS accounts not in the budget', total_col=1,
-                    kinds=['ledger'] * 2, columns=['Code', 'Amount'],
-                    rows=[dict(label='%s (%s)' % (a['name'].strip(), a['account']),
-                               cells=[named(a['function'], {section_of(a)}),
-                                      U(m(a['original']))])
-                          for a in sorted(M['spare'], key=lambda a: (a['function'], -m(a['original'])))]
-                    + [dict(label='All', cells=['', U(sum(m(a['original']) for a in M['spare']))])],
-                    note='Names are as MUNIS prints them.')])
+        caption='The same codes, different amounts: line by line',
+        views=[changed_view('salaries', 'Salaries'), changed_view('expenses', 'Expenses')])
 
     # ---- lines under another code, or several lines in one account ---------------------------
     off_table = dict(
