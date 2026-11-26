@@ -23,7 +23,8 @@ CATEGORY = dict(
                                    'town-facilities-grounds', 'town-solid-waste',
                                    'town-library', 'town-smaller-departments']),
         ('People', ['town-payroll', 'town-staff-counts', 'town-headcount-coverage']),
-        ('Related pages', ['fy2026-town-unspent', 'fy2026-snow-and-reserve-fund',
+        # The town (non-school) year end at the close lives under this hub (26 November 2026).
+        ('Related pages', ['fy2026-town-closeout', 'fy2026-town-unspent', 'fy2026-snow-and-reserve-fund',
                            # monty-tech-assessment left 26 October 2026: Monty Tech pages are
                            # listed only on the Monty Tech shelf (TJ).
                            'fy2026-school-retiree-insurance']),

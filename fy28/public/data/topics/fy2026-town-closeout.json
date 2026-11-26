@@ -1,0 +1,364 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$964,030",
+    "unit": "",
+    "value": 964029.52
+   },
+   "r": {
+    "text": "$27,647,670",
+    "unit": "",
+    "value": 27647669.87
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "This is the town (non-school) budget’s year end. Town departments closed FY2026 $964,030 under a $27,647,670 budget; the largest misses, both ways, were in health insurance."
+ },
+ "blocks": [
+  {
+   "alt": "The FY2026 town leftover: the official figure, and the higher figure if every order still owed were released.",
+   "block": "custom",
+   "component": "big-figures",
+   "data": {
+    "figures": [
+     {
+      "kind": "published",
+      "label": "left unspent by town departments, FY2026",
+      "tag": "Official, the Town’s closed-year report",
+      "value": "$964,030"
+     },
+     {
+      "kind": "estimate",
+      "label": "if the $311,773 still owed at the close were released",
+      "tag": "Our sum",
+      "value": "$1,275,802"
+     }
+    ]
+   },
+   "place": "lead",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The official figure is what the year closed on. The higher one is our sum: the same ledger, with orders still owed at the close counted as unspent."
+   },
+   "title": "The town leftover"
+  },
+  {
+   "block": "chart",
+   "place": "lead",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The largest misses run both ways, and three of them sit in one department: insurance."
+   },
+   "spec": {
+    "basis": "published",
+    "decimals": null,
+    "highlight": [],
+    "note": {
+     "figures": {
+      "b": {
+       "text": "$50,000",
+       "unit": "",
+       "value": 50000
+      },
+      "s": {
+       "text": "4%",
+       "unit": "",
+       "value": 4.0
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "literals": [
+      "13"
+     ],
+     "text": "FY2026, period 13. Accounts at least $50,000 and 4% from their budget. Snow overtime, paid below zero, is left out."
+    },
+    "rows": [
+     {
+      "label": "School retirees’ health insurance",
+      "texts": [
+       "$248,202",
+       "$0"
+      ],
+      "total": "$248,202",
+      "values": [
+       248201.59,
+       0
+      ]
+     },
+     {
+      "label": "The Reserve Fund",
+      "texts": [
+       "$185,000",
+       "$0"
+      ],
+      "total": "$185,000",
+      "values": [
+       185000.0,
+       0
+      ]
+     },
+     {
+      "label": "Town retirees’ health insurance",
+      "texts": [
+       "$0",
+       "$139,874"
+      ],
+      "total": "$139,874",
+      "values": [
+       0,
+       139874.18
+      ]
+     },
+     {
+      "label": "Town employees’ health insurance",
+      "texts": [
+       "$0",
+       "$61,287"
+      ],
+      "total": "$61,287",
+      "values": [
+       0,
+       61287.11
+      ]
+     },
+     {
+      "label": "Police sergeants’ salaries",
+      "texts": [
+       "$61,089",
+       "$0"
+      ],
+      "total": "$61,089",
+      "values": [
+       61088.72,
+       0
+      ]
+     },
+     {
+      "label": "Snow and ice supplies",
+      "texts": [
+       "$0",
+       "$58,300"
+      ],
+      "total": "$58,300",
+      "values": [
+       0,
+       58299.75
+      ]
+     },
+     {
+      "label": "Town Medicare contributions",
+      "texts": [
+       "$54,151",
+       "$0"
+      ],
+      "total": "$54,151",
+      "values": [
+       54151.4,
+       0
+      ]
+     },
+     {
+      "label": "Police patrol officers’ salaries",
+      "texts": [
+       "$53,140",
+       "$0"
+      ],
+      "total": "$53,140",
+      "values": [
+       53140.42,
+       0
+      ]
+     }
+    ],
+    "stack": [
+     "Left unspent",
+     "Ran past budget"
+    ],
+    "title": "Accounts furthest from budget",
+    "type": "ranking",
+    "unit": "$"
+   }
+  },
+  {
+   "alt": "The town year’s talking points, each linked to the page that shows it.",
+   "basis": {
+    "kind": "record",
+    "label": "the town’s closed-year general fund reports"
+   },
+   "block": "custom",
+   "component": "talking-points",
+   "data": {
+    "groups": [
+     {
+      "points": [
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Town (non-school) departments closed FY2026 $964,030 under a $27,647,670 budget: 3.5%."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "221 accounts left $1,269,615; 12 ran over by $305,586. No operating department was over as a whole."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "FY2025 left $1,830,644 as printed, with no orders still owed shown, so the two years are not on one footing."
+       }
+      ],
+      "title": "How big"
+     },
+     {
+      "points": [
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Insurance netted $103,777 under: school retirees’ health insurance left $248,202 while town retirees’ ran $139,874 over and active employees’ $61,287 over."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "The $185,000 Reserve Fund was not used; the salary reserve moved $128,954 out to departments."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Police left $157,895, $114,229 of it on two salary accounts."
+       }
+      ],
+      "title": "Where it came from"
+     },
+     {
+      "points": [
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Transfers to capital and stabilization were voted at $1,285,000 and grew to $3,321,257 during the year, all of it moved."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Snow removal’s budget went from $355,571 to $875,571 and closed with nothing left."
+       }
+      ],
+      "title": "During the year"
+     },
+     {
+      "points": [
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "School retirees’ health insurance left $248,202 of its budget unspent, 16%."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "The Reserve Fund left $185,000 of its budget unspent, 100%."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Police sergeants’ salaries left $61,089 of its budget unspent, 19%."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Town Medicare contributions left $54,151 of its budget unspent, 14%."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Police patrol officers’ salaries left $53,140 of its budget unspent, 6%."
+       }
+      ],
+      "title": "Heavily underspent"
+     },
+     {
+      "points": [
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Town retirees’ health insurance ran $139,874 past its budget, 31% over."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Town employees’ health insurance ran $61,287 past its budget, 5% over."
+       },
+       {
+        "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+        "page": "Departments at close",
+        "text": "Snow and ice supplies ran $58,300 past its budget, 17% over."
+       }
+      ],
+      "title": "Heavily overspent"
+     }
+    ]
+   },
+   "place": "lead",
+   "so": {
+    "figures": {
+     "b": {
+      "text": "$50,000",
+      "unit": "",
+      "value": 50000
+     },
+     "s": {
+      "text": "4%",
+      "unit": "",
+      "value": 4.0
+     }
+    },
+    "literals": [],
+    "text": "Heavily means at least $50,000 and at least 4% of the account’s budget, either way. Each point is a measurement; none of them says why."
+   },
+   "title": "What the town year shows"
+  },
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [],
+     "text": "This is the town (non-school) budget’s year end, the counterpart of the school budget’s. It holds what matters most from the closed-year report, a sentence each; every point links to the page with the evidence."
+    }
+   ],
+   "place": "end",
+   "title": "Why this page exists",
+   "tone": "plain"
+  }
+ ],
+ "category": "fy2026-town-closeout",
+ "chains": [],
+ "chart": null,
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "group_figures": {
+  "By department": "$964,030 left",
+  "June readings": "before the close"
+ },
+ "id": "fy2026-town-closeout",
+ "kind": "hub",
+ "ladder": null,
+ "path": "/department-budgets/fy2026-town-closeout",
+ "shelves": [
+  "fy2026-town-closeout"
+ ],
+ "table": null,
+ "title": "FY2026 town year end"
+}
