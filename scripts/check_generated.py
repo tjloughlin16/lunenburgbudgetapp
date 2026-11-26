@@ -187,6 +187,7 @@ CHECKS = [
     ('verify_circuit_breaker_surplus.py', []),
     ('build_year_end_rush.py', ['--check']),
     ('build_budget_vs_munis.py', ['--check']),
+    ('build_two_year_surplus.py', ['--check']),
     ('extract_fy26_approved_budget.py', ['--check']),
     # ORDERS CARRIED FROM ONE SCHOOL YEAR INTO THE NEXT: the topic page, which refuses unless
     # every close's YEC equals the next year's SOY and carry-forward, account by account; and

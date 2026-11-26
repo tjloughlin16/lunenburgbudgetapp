@@ -22,7 +22,7 @@ CATEGORY = dict(
     # each drawn with a figure the hub's generator computes (hub payload `group_figures`).
     # Circuit breaker and surplus folded into FY2026 school surplus (routes.ts TOPIC_MERGED).
     groups=[
-        ('Total', ['fy2026-surplus-by-category', 'surplus-bridge']),
+        ('Total', ['fy2026-surplus-by-category', 'surplus-bridge', 'two-year-surplus']),
         ('Year-end entries', ['fy2026-tuition-paid-early', 'fy2026-school-transfers']),
         ('By line', ['fy2026-budget-vs-munis', 'fy2026-tuition-lines', 'fy2026-paraprofessional-overrun',
                      'fy2026-psychologist-line', 'special-education-transportation',
@@ -34,6 +34,7 @@ CATEGORY = dict(
     ])
 GENERATOR = 'build_fy2026_closeout_topics.py'
 TOPIC_GENERATORS = {'fy2026-surplus-by-category': 'build_fy2026_school_surplus.py',
+                    'two-year-surplus': 'build_two_year_surplus.py',
                     'fy2026-budget-vs-munis': 'build_budget_vs_munis.py',
                     'surplus-bridge': 'build_journal_surplus_topics.py',
                     'surplus-repeat-lines': 'build_journal_surplus_topics.py',
@@ -51,6 +52,7 @@ TOPICS = {
     'fy2026-snow-and-reserve-fund': 'Snow and Reserve Fund',
     'fy2026-school-retiree-insurance': 'School retiree insurance',
     'surplus-bridge': 'Surplus by year',
+    'two-year-surplus': 'Two-year surplus',
     'surplus-repeat-lines': 'Repeat underspending',
     'budget-burndown': 'Budget burndown',
     'surplus-suggestions': 'Surplus suggestions',
