@@ -176,12 +176,220 @@ def sources():
              'closed-year reports'),
             ('d-tot', 'munis-gf-p13-reading-totals.csv',
              'the grand totals those reports print, which the reading ties to'),
-            ('d-ledger', 'munis-ledger.csv', 'the same reading, one row an account')):
+            ('d-ledger', 'munis-ledger.csv', 'the same reading, one row an account'),
+            ('d-reg', 'departments.csv', 'which department codes each office runs, our register')):
         if not os.path.exists(os.path.join(PUB, 'docs', 'data', f)):
             fail('/docs/data/%s is not published' % f)
         out[k] = dict(key=k, label='Lunenburg Budget Project — %s (%s)' % (f, what),
                       href='/docs/data/' + f)
     return out
+
+
+# --------------------------------------------------------------------- the office pages
+# TJ, 26 November 2026, of the every-account pages (/town-lines/<slug>): "the title, context, url
+# do not seem like this is a closeout page ... we need charts to show their biggest
+# misses/overspends", and "thats for all town pages". So every office that closed FY2026 with an
+# account off its budget gets a closeout page under this hub, led by those accounts; the
+# every-account page stays the ledger it links to. Offices whose lines closed exactly (single
+# assessments and transfers) share one page: a chart of misses would be empty.
+MISS = 1.0      # off budget by a dollar or more: TOLERANCES.md's $1 rounding allowance
+TOP = 12
+
+
+def office_pages(src):
+    import build_town_office_pages as OP
+    from topic_registry.fy2026_town_closeout import OFFICES
+    U = lambda v: figure(v, C.usd(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=0: figure(v, C.pct(v, dp))
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    f, con = LD.fact, TP.conclusion
+    offs, nm, town = OP.office_set()
+    pages, link, exact = {}, {}, []
+    for o in offs:
+        rs = [r for r in town[2026] if r['dept'] in o['codes'] and (r['revised'] or r['expended'])]
+        if not rs:
+            continue
+        tid = 'fy2026-close-' + o['slug'].rsplit('-', 1)[0]
+        miss = [r for r in rs if abs(r['available']) >= MISS and r['expended'] >= 0]
+        # a chart of misses needs two bars; an office with fewer goes on Other town lines
+        if len(miss) < 2:
+            exact.append((o, rs))
+            continue
+        if tid not in OFFICES:
+            fail('%s closed with accounts off budget and has no page in the registry' % o['name'])
+        short = OFFICES[tid][:-len(' closeout')]
+        rs25 = [r for r in town[2025] if r['dept'] in o['codes']]
+        pages[tid] = office_page(tid, short, o, rs, rs25, miss, nm, src, U, F, P, N, f, con)
+        for c in o['codes']:
+            link[c] = REG.path(tid)
+    if set(pages) != set(OFFICES):
+        fail('the registry lists offices the ledger does not: %s' % sorted(set(OFFICES) ^ set(pages)))
+    pages['fy2026-town-exact'] = exact_page(exact, nm, src, U, F, N, f, con)
+    for o, _ in exact:
+        for c in o['codes']:
+            link[c] = REG.path('fy2026-town-exact')
+    return pages, link
+
+
+def office_page(tid, short, o, rs, rs25, miss, nm, src, U, F, P, N, f, con):
+    def title(name, r=None):     # the plain name where the hub has one (rule 7b), else MUNIS's
+        return PLAIN.get((r['dept'], r['object'])) if r and (r['dept'], r['object']) in PLAIN \
+            else globals()['title'](name)
+    t = tot(rs)
+    under = [r for r in rs if r['available'] >= MISS]
+    over = [r for r in rs if r['available'] <= -MISS]
+    ua = round(sum(r['available'] for r in under), 2)
+    oa = round(-sum(r['available'] for r in over), 2)
+    # A payment below zero is a correction credited back; its "left" is not underspending, so
+    # it is not drawn as a bar, and the note names it.
+    credit = [r for r in rs if r['expended'] < 0 and abs(r['available']) >= MISS]
+    drawn = sorted((r for r in miss if r['expended'] >= 0), key=lambda r: -abs(r['available']))[:TOP]
+    names = [title(r['name'], r) for r in drawn]
+    # a name two accounts share takes its department's name; if that still repeats, its org (the sub-unit MUNIS splits it by)
+    lab = []
+    for r, n in zip(drawn, names):
+        if names.count(n) > 1:
+            n = '%s, %s' % (n, title(nm[r['dept']]))
+        lab.append(n)
+    lab = [('%s, org %s' % (l_[:34], r['org']) if lab.count(l_) > 1 else l_)[:48]
+           for l_, r in zip(lab, drawn)]
+    if len(set(lab)) != len(lab):
+        fail('%s: two chart rows share a label' % tid)
+    left = t['available']
+    word = 'under' if left >= 0 else 'over'
+    page_ = OP_path(o)
+    bu = max(under, key=lambda r: r['available']) if under else None
+    bo = min(over, key=lambda r: r['available']) if over else None
+    t25 = tot(rs25) if rs25 else None
+    facts = [f('rev', U(t['revised']), 'budget after transfers, %s' % C.fy(2026), 'published',
+               {'y': F(2026)}),
+             f('left', U(abs(left)), 'closed %s budget' % word, 'published'),
+             f('nu', N(len(under), 'accounts'), 'accounts under budget', 'published'),
+             f('ua', U(ua), 'left on those accounts', 'published'),
+             f('no', N(len(over), 'accounts'), 'accounts over budget', 'published'),
+             f('oa', U(oa), 'spent past budget on those', 'published')]
+    cons = [con(('%s accounts closed under budget, leaving %s; %s ran over, by %s.'
+                 % (C.num(len(under)), C.usd(ua), C.num(len(over)), C.usd(oa))) if over else
+                ('%s accounts closed under budget, leaving %s; none ran over.'
+                 % (C.num(len(under)), C.usd(ua))),
+                ['nu', 'ua', 'no', 'oa', 'left', 'rev'] if over else ['nu', 'ua', 'left', 'rev'],
+                {'a': N(len(under)), 'b': U(ua), 'c': N(len(over)), 'd': U(oa)} if over
+                else {'a': N(len(under)), 'b': U(ua)},
+                so=('The office’s total is the leftovers less the overruns; both happened.'
+                    if over else 'Nothing in this office ran past its budget.'))]
+    if bu:
+        sh = 100 * bu['available'] / ua
+        facts.append(f('bu', U(bu['available']), 'left on %s' % title(bu['name'], bu)[:40].lower(),
+                       'published'))
+        facts.append(f('bus', P(sh), 'its share of what the office left', 'published'))
+        cons.append(con('%s left %s of its %s budget, the most of any account here.'
+                        % (title(bu['name'], bu), C.usd(bu['available']), C.usd(bu['revised'])),
+                        ['bu', 'bus'],
+                        {'a': U(bu['available']), 'b': U(bu['revised'])},
+                        so=('That one account is %s of what the office left on accounts under '
+                            'budget.' % C.pct(sh, 0) if len(under) > 1
+                            else 'It is the only account here that left anything.'),
+                        so_figures={'s': P(sh)} if len(under) > 1 else None))
+    if bo:
+        facts.append(f('bo', U(-bo['available']), 'past budget on %s'
+                       % title(bo['name'], bo)[:36].lower(), 'published'))
+        cons.append(con('%s ran %s past its %s budget, the largest overrun here.'
+                        % (title(bo['name'], bo), C.usd(-bo['available']), C.usd(bo['revised'])),
+                        ['bo'], {'a': U(-bo['available']), 'b': U(bo['revised'])},
+                        so='The overrun sits inside the office’s total, which closed %s budget.'
+                           % word))
+    if t25 and (t25['revised'] or t25['expended']):
+        facts.append(f('l25', U(t25['available']), 'left at the %s close, as printed'
+                       % C.fy(2025), 'published', {'y': F(2025)}))
+        facts.append(f('foot', None, 'orders still owed at the FY2025 close', 'gap',
+                       allow=('FY2025',),
+                       closes='the town’s FY2025 encumbrance carry-forward list, by account'))
+        cons.append(con('%s left %s at its %s close, as printed.'
+                        % (short, C.usd(t25['available']), C.fy(2025)), ['l25', 'foot'],
+                        {'a': U(t25['available']), 'y': F(2025)},
+                        so='FY2025’s report shows no orders still owed, so the two years are not '
+                           'on one footing.', so_allow=('FY2025',)))
+    cons = cons[:4]
+    used = {x for c in cons for x in c['rests_on']}
+    facts = [x for x in facts if x['id'] in used]
+    note = '%s, period 13. Accounts off budget by %s or more, the largest %s.' % (
+        C.fy(2026), C.usd(MISS), C.num(len(drawn)))
+    nf = {'y': F(2026), 'm': U(MISS), 'n': N(len(drawn))}
+    if credit:
+        note += ' Paid below zero, left out: %s.' % ', '.join(title(r['name'], r) for r in credit)
+    chart = TP.ranking(
+        'Accounts furthest from budget',
+        [(l_, [max(r['available'], 0), max(-r['available'], 0)]) for l_, r in zip(lab, drawn)],
+        '$', stack=['Left unspent', 'Ran past budget'], note=note[:160], note_figures=nf,
+        note_allow=('13',))
+    srcs = [src['d-p13'], src['d-tot']] + ([src['d-reg']] if len(o['codes']) > 1 else [])
+    every = TB.explain('Every account', [
+        'Every %s account, both years, with what was voted, moved, paid, still owed and left, '
+        'is on its own page.' % short], place='end', tone='plain',
+        links=[('Every %s account' % short, page_)])
+    flow = (['finding', TP.cite(('chart', 0), 'd-p13', 'd-tot')]
+            + [('conclusion', i) for i in range(len(cons))]
+            + [TP.cite(('block', 0), *(['d-p13', 'd-reg'] if len(o['codes']) > 1 else ['d-p13'])),
+               'sources'])
+    return TP.page(
+        tid,
+        '%s closed %s %s %s a %s budget.' % (short, C.fy(2026), C.usd(abs(left)), word,
+                                             C.usd(t['revised'])),
+        facts, cons, chart=chart, sources=srcs,
+        finding_figures={'y': F(2026), 'a': U(abs(left)), 'r': U(t['revised'])},
+        blocks=[every], flow=flow)
+
+
+def OP_path(o):
+    return '/town-lines/' + o['slug']
+
+
+def exact_page(exact, nm, src, U, F, N, f, con):
+    """OTHER TOWN LINES: every office with fewer than two accounts off budget -- assessments,
+    transfers and one-account lines -- on one page. Each bar is the line's budget split into what
+    was spent within it and what was left, with any spending past it drawn beyond."""
+    rows, n_exact, n_left, n_over = [], 0, 0, 0
+    for o, rs in exact:
+        t = tot(rs)
+        a = t['available']
+        spent_in = round(t['revised'] - max(a, 0), 2)
+        rows.append((o['name'][:48], [spent_in, max(a, 0), max(-a, 0)]))
+        if abs(a) < MISS:
+            n_exact += 1
+        elif a > 0:
+            n_left += 1
+        else:
+            n_over += 1
+    rows.sort(key=lambda x: -sum(x[1]))
+    if not 2 <= len(rows) <= 20:
+        fail('Other town lines has %d rows; a ranking draws 2 to 20' % len(rows))
+    total = round(sum(tot(rs)['revised'] for _, rs in exact), 2)
+    left = round(sum(tot(rs)['available'] for _, rs in exact), 2)
+    return TP.page(
+        'fy2026-town-exact',
+        '%s smaller town lines had %s of budget in %s; %s closed exactly on it.'
+        % (C.num(len(rows)), C.usd(total), C.fy(2026), C.num(n_exact)),
+        [f('n', N(len(rows), 'lines'), 'lines on this page', 'published'),
+         f('t', U(total), 'their budgets together, %s' % C.fy(2026), 'published', {'y': F(2026)}),
+         f('x', N(n_exact, 'lines'), 'closed within a dollar of budget', 'published'),
+         f('l', N(n_left, 'lines'), 'left money', 'published'),
+         f('o', N(n_over, 'lines'), 'ran over', 'published'),
+         f('net', U(abs(left)), 'net %s budget, together' % ('under' if left >= 0 else 'over'),
+           'published')],
+        [con('%s of %s lines closed within a dollar of budget; %s left money and %s ran over.'
+             % (C.num(n_exact), C.num(len(rows)), C.num(n_left), C.num(n_over)),
+             ['n', 'x', 'l', 'o', 't', 'net'],
+             {'a': N(n_exact), 'b': N(len(rows)), 'c': N(n_left), 'd': N(n_over)},
+             so='Most are assessments and transfers that spent their budget to the dollar; the '
+                'town’s leftover came from the larger offices.')],
+        chart=TP.ranking('Smaller lines, spent and left', rows, '$',
+                         stack=['Spent within budget', 'Left unspent', 'Ran past budget'],
+                         note='%s, period 13. Lines with fewer than two accounts off budget.'
+                              % C.fy(2026), note_figures={'y': F(2026)}, note_allow=('13',)),
+        sources=[src['d-p13'], src['d-tot']],
+        finding_figures={'n': N(len(rows)), 't': U(total), 'y': F(2026), 'x': N(n_exact)},
+        flow=['finding', TP.cite(('chart', 0), 'd-p13', 'd-tot'), ('conclusion', 0), 'sources'])
 
 
 # --------------------------------------------------------------------- the pages
@@ -297,6 +505,10 @@ def build():
     # every department links to its office's page (build_town_office_pages.py, TJ: "per office")
     import build_town_office_pages as OP
     office = OP.page_of()
+    opages, close_of = office_pages(src)
+    out.update(opages)
+    close_of['650'] = REG.path('parks-spending')
+    office = {d: close_of.get(d, office[d]) for d in office}
     if set(live) - set(office):
         fail('departments with no office page: %s' % sorted(set(live) - set(office)))
     # one view a MUNIS function (the account string's second segment), so no view passes 30 rows
@@ -475,7 +687,7 @@ def build():
     by_office = TB.chart(TP.ranking(
         'Each office, under and over',
         [(n, [u, o]) for n, _, u, o in shown_o], '$', stack=['Left unspent', 'Ran past budget'],
-        hrefs={n: p_ for n, p_, _, _ in shown_o},
+        hrefs={n: close_of.get(p_.rsplit('-', 1)[1], p_) for n, p_, _, _ in shown_o},
         note='%s, period 13. The figure is under and over added, not netted. %s smaller '
              'offices are on Departments at close.' % (C.fy(2026), C.num(rest_o)),
         note_figures={'y': F(2026), 'n': N(rest_o)}, note_allow=('13',)),
@@ -512,6 +724,7 @@ def build():
     out[HUB]['group_figures'] = {
         'By department': '%s left' % C.usd(left26),
         'June readings': 'before the close',
+        'By office': '%s closeout pages' % C.num(len(opages) - 1),
     }
     if set(out[HUB]['group_figures']) != {g for g, _ in REG.category(HUB)['groups']}:
         fail('the section figures no longer name the registry’s sections')
