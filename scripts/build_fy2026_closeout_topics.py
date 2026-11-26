@@ -1157,12 +1157,12 @@ def build():
     upper_ = round(left26 + float(sf['early']), 2)
     groups = [
         dict(title='How big', points=[
-            tp('%s and %s each finished about %s under budget. %s left %s and %s %s: the second '
+            tp('The school budget finished %s and %s about %s under. %s left %s and %s %s: the second '
                'big year in a row.' % (C.fy(2023), C.fy(2024), C.usd(about), C.fy(2025),
                                        C.usd(owed[2025]), C.fy(2026), C.usd(left26)),
                'surplus-bridge', C.usd(about), C.usd(owed[2025]), C.usd(left26))]),
         dict(title='Where the surplus came from', points=[
-            tp('Private tuition left %s, more than the whole %s surplus; everything else together '
+            tp('Private tuition left %s, more than the whole %s school surplus; every other school line together '
                'came out %s short.' % (C.usd(pv_left), C.usd(left26), C.usd(-rest_net)),
                'fy2026-tuition-lines', C.usd(pv_left), C.usd(left26), C.usd(-rest_net)),
             tp('Collaborative tuition charged %s, including %s of next year’s invoices. The '
@@ -1187,18 +1187,18 @@ def build():
                C.usd(pv_all[2025]), C.usd(pv_all[2026]), str(cb_lo), C.pct(cb_hi, 0))]),
         dict(title='The prepayment', points=[
             tp('On 30 June, %s of %s collaborative tuition invoices were charged to %s. Left to '
-               '%s, the surplus would read %s.'
+               '%s, the school surplus would read %s.'
                % (C.usd(float(sf['early'])), C.fy(2027), C.fy(2026), C.fy(2027), C.usd(upper_)),
                'fy2026-tuition-paid-early', C.usd(float(sf['early'])), C.usd(upper_))]),
         dict(title='Heavily underspent', points=[cat_point(c) for c in hunder]),
         dict(title='Heavily overspent', points=[cat_point(c) for c in hover]),
-        dict(title='Still open', points=[
+        dict(title='Town side, still open', points=[
             tp('Town (non-school) departments stood %s under budget in June; their year is not '
                'closed yet.'
                % C.usd(t['available']), 'fy2026-town-unspent', C.usd(t['available']))]),
     ]
     findings = TB.custom(
-        'talking-points', 'What the year shows', dict(groups=groups), place='lead',
+        'talking-points', 'What the school year shows', dict(groups=groups), place='lead',
         figures=tuple(tp_figs) + tuple(C.fy(y) for y in (2023, 2024, 2025, 2026, 2027)),
         allow=tuple({p_['href'] for g in groups for p_ in g['points']}) + ('30 June',),
         basis=('record', 'period-13 reports and the school journal'),
@@ -1234,7 +1234,7 @@ def build():
     upper = round(left26 + float(sf['early']), 2)
     if not near(upper, float(sf['no_prepay'])):
         fail('the upper figure no longer matches the surplus page’s own sum')
-    big_ = TB.custom('big-figures', 'The surplus', dict(figures=[
+    big_ = TB.custom('big-figures', 'The school surplus', dict(figures=[
         dict(value=C.usd(left26), kind='published', tag='Official, the Town’s closed-year report',
              label='left unspent in the school budget, %s' % C.fy(2026)),
         dict(value=C.usd(upper), kind='estimate', tag='Our sum',
@@ -1273,8 +1273,9 @@ def build():
 
     out[HUB] = TP.hub(
         HUB,
-        'Before %s the schools finished within about %s of their budget. %s left %s, the second '
-        'year in a row far above that. The town’s year is not closed yet.'
+        'This is the school budget’s year end. Before %s it finished within about %s of budget; '
+        '%s left %s, the second year in a row far above that. The town (non-school) side is not '
+        'closed yet.'
         % (C.fy(2025), C.usd(about), C.fy(2026), C.usd(left26)),
         None, blocks=[big, four, findings, why_page],
         answer_figures={'z': F(2025), 'b': U(about), 'y': F(2026), 'a': U(left26)})

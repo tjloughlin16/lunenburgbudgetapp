@@ -126,8 +126,8 @@ def sources():
         out.append(dict(key=k, label='%s — %s' % (pub, key.split('/')[-1]), href='/docs/' + key))
     if not os.path.exists(os.path.join(ROOT, 'fy28', 'public', 'docs', 'data', 'fy26-approved-budget-lines.csv')):
         fail('/docs/data/fy26-approved-budget-lines.csv is not published')
-    out += [dict(key='d-mar', label='Lunenburg Budget Project — fy26-approved-budget-lines.csv (the March '
-                                    'budget, line by line)', href='/docs/data/fy26-approved-budget-lines.csv'),
+    out += [dict(key='d-mar', label='Lunenburg Budget Project — fy26-approved-budget-lines.csv (the approved '
+                                    'school budget, line by line)', href='/docs/data/fy26-approved-budget-lines.csv'),
             dict(s['d-ledger'], key='d-ledger'),
             dict(key='dese', label='DESE — Chart of Accounts, Criteria for Financial Reporting, '
                                    'July 2022 (dese-chart-of-accounts-2022-07.docx)',
@@ -136,7 +136,7 @@ def sources():
 
 
 def code_names(off):
-    """{(section, code): [the March budget's headings for that code]}, one heading per school
+    """{(section, code): [the approved budget's headings for that code]}, one heading per school
     collapsed to one ('P.S. Repairs', 'H.S. Repairs' are one name for the code)."""
     out = {}
     for x in off:
@@ -183,53 +183,53 @@ def page(f):
     nch = len(f['changes'])
     gap = f['gap']
     if abs(gap - 500000) > 0.005:
-        fail('the page is built around MUNIS being $500,000 above the March budget; it is %s' % gap)
+        fail('the page is built around MUNIS being $500,000 above the approved budget; it is %s' % gap)
     G = UF(gap)
 
     facts = [
         fact('total', UF(f['total_led']), 'appropriated, MUNIS original budget', 'published'),
         fact('march', UF(f['printed']), 'TOTAL BUDGET, approved %s' % MARCH_DATE, 'published',
              allow=(MARCH_DATE,)),
-        fact('gap', G, 'MUNIS above the March budget', 'published'),
-        fact('landed', UF(part['landed']), 'MUNIS on a March line’s code and amount', 'published'),
+        fact('gap', G, 'MUNIS above the approved budget', 'published'),
+        fact('landed', UF(part['landed']), 'MUNIS on a budget line’s code and amount', 'published'),
         fact('spare', UF(part['spare']), 'MUNIS in accounts whose amount differs', 'published'),
         fact('nch', N(nch, 'codes'), 'codes where an amount changed', 'published'),
-        fact('net', UF(f['net']), 'net of those changes, MUNIS minus March', 'published'),
-        fact('n', N(n, 'lines'), 'March lines with a budget', 'published'),
-        fact('mv', N(nmv, 'lines'), 'March lines under a different code in MUNIS', 'published'),
-        fact('sw', UF(sw_usd), 'four social workers: 2900 in March, 2710 in MUNIS', 'published',
+        fact('net', UF(f['net']), 'net of those changes, MUNIS minus approved', 'published'),
+        fact('n', N(n, 'lines'), 'approved-budget lines with an amount', 'published'),
+        fact('mv', N(nmv, 'lines'), 'approved-budget lines under a different code in MUNIS', 'published'),
+        fact('sw', UF(sw_usd), 'four social workers: 2900 in the budget, 2710 in MUNIS', 'published',
              allow=('2900', '2710')),
         fact('nk', N(len(f['naked']), 'accounts'), 'MUNIS accounts with no budget that spent',
              'published'),
         fact('nku', UF(nk_usd), 'what they spent by June', 'published'),
     ]
     conclusions = [
-        con('MUNIS opened FY2026 with %s more than the school budget approved in March.' % U(gap),
+        con('MUNIS opened FY2026 with %s more than the approved school budget.' % U(gap),
             ['total', 'march', 'gap'], {'g': G}, allow=('FY2026',),
-            so='%s of MUNIS sits on a March line’s code and amount; %s in accounts whose amount differs.'
+            so='%s of MUNIS sits on a budget line’s code and amount; %s in accounts whose amount differs.'
                % (C.pct(pu, 0), U(part['spare'])),
             so_figures={'p': P(pu), 's': UF(part['spare'])}),
-        con('In %s codes an amount changed between March and MUNIS, by %s net.' % (C.num(nch), U(f['net'])),
+        con('In %s codes an amount changed between the approved budget and MUNIS, by %s net.' % (C.num(nch), U(f['net'])),
             ['nch', 'net', 'spare', 'landed'], {'c': N(nch), 'n': UF(f['net'])},
             so='The changes do not say which of them is the %s and which is money moved between lines.'
                % U(gap), so_figures={'g': G}),
-        con('%s of %s March lines sit under another code in MUNIS, at the same amount.'
+        con('%s of %s approved-budget lines sit under another code in MUNIS, at the same amount.'
             % (C.num(nmv), C.num(n)), ['n', 'mv', 'sw'], {'a': N(nmv), 'b': N(n)},
-            so='The four social workers are %s of it: code 2900 in March, 2710 in MUNIS.' % U(sw_usd),
+            so='The four social workers are %s of it: code 2900 in the approved budget, 2710 in MUNIS.' % U(sw_usd),
             so_figures={'s': UF(sw_usd)}, so_allow=('2900', '2710')),
         con('%s MUNIS accounts had no budget and no transfer, and spent %s by June.'
             % (C.num(len(f['naked'])), U(nk_usd)), ['nk', 'nku'],
             {'n': N(len(f['naked'])), 'u': UF(nk_usd)},
-            so='Kindergarten aides are %s of it; the March budget does not budget them.'
+            so='Kindergarten aides are %s of it; the approved budget does not budget them.'
                % U(m(nk_top['expended'])), so_figures={'k': UF(m(nk_top['expended']))}),
     ]
 
     chart = TP.parts(
         'Where MUNIS’s school budget came from',
-        [('On a March line, same code', part['landed']),
-         ('A March amount, another code', part['moved']),
-         ('Several March lines, one account', part['joined']),
-         ('Not an amount March printed', part['spare'])], '$',
+        [('On a budget line, same code', part['landed']),
+         ('A budget amount, another code', part['moved']),
+         ('Several budget lines, one account', part['joined']),
+         ('Not an amount the budget printed', part['spare'])], '$',
         note='MUNIS’s FY2026 original appropriation, period 12, by whether the budget approved on %s '
              'prints the amount.' % MARCH_DATE,
         note_figures={'p': N(12)}, note_allow=(MARCH_DATE, 'FY2026'))
@@ -238,26 +238,26 @@ def page(f):
     change_table = dict(
         caption='Where the amounts changed, code by code',
         views=[dict(
-            key='codes', label='March lines no account holds, against accounts no line claims',
+            key='codes', label='Budget lines no account holds, against accounts no line claims',
             total_col=2, kinds=['ledger'] * 3,
-            columns=['March 2025', 'MUNIS', 'MUNIS minus March'],
+            columns=['Approved budget', 'MUNIS', 'MUNIS minus approved'],
             rows=[dict(label=named(r['code'], r['sections']),
                        cells=[U(r['march']), U(r['munis']), U(r['diff'])])
                   for r in sorted(f['changes'], key=lambda r: -abs(r['diff']))]
             + [dict(label='All', cells=[U(sum(r['march'] for r in f['changes'])),
                                         U(sum(r['munis'] for r in f['changes'])), U(f['net'])])],
-            note='In each code, the March lines whose amount no MUNIS account holds, and the MUNIS '
-                 'accounts whose amount no March line prints. Code names are the March budget’s '
+            note='In each code, the budget lines whose amount no MUNIS account holds, and the MUNIS '
+                 'accounts whose amount no budget line prints. Code names are the approved budget’s '
                  'headings; MUNIS prints none.')])
     lines_table = dict(
         caption='The lines and accounts that changed',
-        views=[dict(key='march', label='March lines not found in MUNIS', total_col=1,
+        views=[dict(key='march', label='Budget lines not found in MUNIS', total_col=1,
                     kinds=['ledger'] * 2, columns=['Code', 'Amount'],
                     rows=[dict(label=x['line'], cells=[named(x['code'], {x['section']}), U(x['fy26'])])
                           for x in sorted(M['unlanded'], key=lambda x: (x['code'], -x['fy26']))]
                     + [dict(label='All', cells=['', U(sum(x['fy26'] for x in M['unlanded']))])],
-                    note='As the March budget prints them.'),
-               dict(key='munis', label='MUNIS accounts not in March', total_col=1,
+                    note='As the approved budget prints them.'),
+               dict(key='munis', label='MUNIS accounts not in the budget', total_col=1,
                     kinds=['ledger'] * 2, columns=['Code', 'Amount'],
                     rows=[dict(label='%s (%s)' % (a['name'].strip(), a['account']),
                                cells=[named(a['function'], {section_of(a)}),
@@ -268,9 +268,9 @@ def page(f):
 
     # ---- lines under another code, or several lines in one account ---------------------------
     off_table = dict(
-        caption='The March lines that land under another code or in one account',
+        caption='The budget lines that land under another code or in one account',
         views=[dict(
-            key='off', label='March line against MUNIS', total_col=2,
+            key='off', label='Budget line against MUNIS', total_col=2,
             kinds=['ledger'] * 3,
             columns=['District budget code', 'MUNIS code and account', 'Amount'],
             rows=[dict(label=x['line'], cells=[named(x['code'], {x['section']}),
@@ -283,7 +283,7 @@ def page(f):
                            'same code, one account: %s' % a['name'].strip(), U(m(a['original']))])
                for hit, a in M['joined']]
             + [dict(label='All', cells=['', '', U(part['moved'] + part['joined'])])],
-            note='A code’s name is the March budget’s heading for it: MUNIS prints no names, only '
+            note='A code’s name is the approved budget’s heading for it: MUNIS prints no names, only '
                  'the code inside the account string. Accounts are named as MUNIS prints them. '
                  '%s are not codes in DESE’s chart of accounts. A line '
                  'matched by amount is not proven to be the same line: amount is not a key, and '
@@ -318,7 +318,7 @@ def page(f):
         for i, x in enumerate(hit):
             figs['l%d' % i] = figure(x['fy26'], U(x['fy26']))
         joined_ps.append((
-            '%s: March prints %s; MUNIS holds one account, %s, at %s.' % (
+            '%s: the approved budget prints %s; MUNIS holds one account, %s, at %s.' % (
                 named(a['function'], {hit[0]['section']}),
                 ' and '.join('%s at %s' % (x['line'], U(x['fy26'])) for x in hit),
                 a['name'].strip(), U(m(a['original']))),
@@ -326,12 +326,12 @@ def page(f):
                         + [n_ for s in (hit[0]['section'],) for n_ in names.get((s, a['function']), [])])))
     define = TB.explain('How to read the lines that do not land', [
         ('**Under another code.** The same amount is in both documents, filed under a different '
-         'function code. The four social workers are filed under %s in March and %s in MUNIS.'
+         'function code. The four social workers are filed under %s in the approved budget and %s in MUNIS.'
          % ('2900', '2710'), None, ('2900', '2710')),
-        ('**Changed.** In the same code, a March line whose amount no MUNIS account holds, and an '
-         'account whose amount no March line prints: the amount changed between March and the '
+        ('**Changed.** In the same code, a budget line whose amount no MUNIS account holds, and an '
+         'account whose amount no budget line prints: the amount changed between the approved budget and the '
          'start of the year.', None, ()),
-        ('**Several lines, one account.** The code agrees, but March prints two lines where MUNIS '
+        ('**Several lines, one account.** The code agrees, but the approved budget prints two lines where MUNIS '
          'holds one account at their sum:', None, ()),
     ] + joined_ps, place='body', tone='define')
     which = TB.explain('Which coding is right', [
@@ -340,7 +340,7 @@ def page(f):
         'district’s budget code their own lines. It lists social workers under '
         'psychological services, and adjustment counselors under guidance.',
     ], place='body', tone='plain')
-    copies = TB.explain('Which March document', [
+    copies = TB.explain('Which budget document', [
         ('The budget approved on %s survives in five copies. All print the same total, and they '
          'print three different salary pages. This page reads the copy whose lines add up to the '
          'sums it prints itself.' % MARCH_DATE, None, (MARCH_DATE,)),
@@ -362,7 +362,7 @@ def page(f):
     ]
     return TP.page(
         ID,
-        'MUNIS opened FY2026 with %s more for the schools than the budget approved in March.' % U(gap),
+        'MUNIS opened FY2026 with %s more for the schools than the approved school budget.' % U(gap),
         facts, conclusions, chart=chart, table=change_table,
         tables=[lines_table, off_table, naked_table],
         sources=sources(), flow=flow,
@@ -372,7 +372,7 @@ def page(f):
 def render():
     p = page(data())
     p['not_established'] = [
-        'Which lines the $500,000 added after the March vote went to.',
+        'Which lines the $500,000 added after the budget vote went to.',
         'That the $500,000 is the free cash article the minutes name.',
         'Which document codes each line correctly.',
         'That a line matched by amount is the same line on both sides.',

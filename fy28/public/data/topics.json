@@ -192,7 +192,9 @@
      "title": "Left unspent",
      "topics": [
       "unspent-by-fund",
-      "carried-over-orders"
+      "carried-over-orders",
+      "fy2026-closeout",
+      "two-year-surplus"
      ]
     },
     {
@@ -1576,7 +1578,7 @@
    "title": "Harvard and Bromfield"
   },
   {
-   "answer": "Before FY2025 the schools finished within about $32,000 of their budget. FY2026 left $482,118, the second year in a row far above that. The town’s year is not closed yet.",
+   "answer": "This is the school budget’s year end. Before FY2025 it finished within about $32,000 of budget; FY2026 left $482,118, the second year in a row far above that. The town (non-school) side is not closed yet.",
    "archive_after": "2027-10-31",
    "area": "special",
    "elsewhere": [],
@@ -1642,9 +1644,9 @@
    "path": "/fy2026-closeout",
    "ready": true,
    "related": [],
-   "shelf": "FY2026 closeout",
+   "shelf": "FY2026 school closeout",
    "start": [],
-   "title": "FY2026 year end"
+   "title": "FY2026 school year end"
   }
  ],
  "generated_by": "scripts/build_topics_index.py",
@@ -2921,7 +2923,7 @@
    "title": "FY2026 athletics underspend"
   },
   "fy2026-budget-vs-munis": {
-   "finding": "MUNIS opened FY2026 with $500,000 more for the schools than the budget approved in March.",
+   "finding": "MUNIS opened FY2026 with $500,000 more for the schools than the approved school budget.",
    "generator": "scripts/build_budget_vs_munis.py",
    "home": "fy2026-closeout",
    "id": "fy2026-budget-vs-munis",
@@ -6087,7 +6089,8 @@
    "ready": true,
    "related": [],
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "school-all-funds"
    ],
    "title": "Two-year surplus"
   },
