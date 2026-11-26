@@ -1217,6 +1217,93 @@ def build():
                'closed yet.'
                % C.usd(t['available']), 'fy2026-town-unspent', C.usd(t['available']))]),
     ]
+    # ---- THE EXECUTIVE SUMMARY, at the top of the hub (TJ, 26 November 2026: "i think we need
+    # an esxecutive summary ... what ARE the top level conclusions people need to know" ...
+    # "top of the hub, not its own page"). Three takeaways, then the five paragraphs he approved
+    # ("yes love this"), the prepayment in the stronger words he asked for. Every figure is the
+    # ledger's or a sum of the ledger's, asserted here; nothing states why a line moved.
+    tu_all = {}
+    for r in csv.DictReader(open(MUNIS, encoding='utf-8')):
+        if (r['period'] == '13' and r['type'] == 'E' and r['obj'] in ('535019', '535022', '535023')
+                and r['fund'] in ('0100', '2640') and r['fiscal_year'] in ('2023', '2024', '2025', '2026')):
+            y = int(r['fiscal_year'])
+            tu_all[y] = tu_all.get(y, 0) + float(r['ytd_expended'] or 0) + float(r['encumbrances'] or 0)
+    tu_all = {y: round(v, 2) for y, v in tu_all.items()}
+    ty = sorted(tu_all)
+    if ty != [2023, 2024, 2025, 2026] or not all(tu_all[a] < tu_all[b] for a, b in zip(ty, ty[1:])):
+        fail('the summary says tuition across both funds rose every year, FY2023-FY2026')
+    if not near(tu_all[2026], pv_all[2026] + w_all, 1):
+        fail('FY2026 tuition across both funds no longer equals private plus collaborative')
+    early_ = float(sf['early'])
+    tu26_own = round(tu_all[2026] - early_, 2)
+    two_days = round(w_cb + early_, 2)
+    if not two_days > left26:
+        fail('the summary says the two year-end entries moved more than the whole surplus')
+    tu27 = round(pv27 + co27, 2)
+    if not near(w_cb, charged):
+        fail('the circuit breaker charge on the hub and the surplus page disagree')
+    bldg, cnsl = cats['buildings']['unspent'], cats['counselors']['unspent']
+    if not (bldg > 0 and cnsl > 0 and {c['key'] for c in hover} >= {'paras', 'sped_services', 'transport'}):
+        fail('the summary names upkeep and counselors under, paras, special-ed services and '
+             'transportation over')
+    D = ('29 June', '30 June', '6 October')
+    takeaways = TB.explain('In short', [
+        ('**This is a budgeting story, not a savings story.** For two years running the school '
+         'budget finished about half a million dollars under, after %s and %s each finished about '
+         '%s under. Most of it sat in one line budgeted far above what it paid: private tuition, '
+         '%s budgeted and %s spent. No document says why that line was set where it was.'
+         % (C.fy(2023), C.fy(2024), C.usd(about), C.usd(pv['revised_budget']), C.usd(pv_spent)),
+         {'a': F(2023), 'b': F(2024), 'c': U(about), 'd': U(pv['revised_budget']), 'e': U(pv_spent)}),
+        ('**Out-of-district tuition costs more every year, even where its line looks under.** '
+         'Counting both funds and both kinds, it rose from %s in %s to %s, %s and %s in %s, %s of '
+         'that being %s bills. The money moved between private and collaborative, and between the '
+         'general fund and the circuit breaker, so each line can look wrong while the total climbs.'
+         % (C.usd(tu_all[2023]), C.fy(2023), C.usd(tu_all[2024]), C.usd(tu_all[2025]),
+            C.usd(tu_all[2026]), C.fy(2026), C.usd(early_), C.fy(2027)),
+         {'a': U(tu_all[2023]), 'b': F(2023), 'c': U(tu_all[2024]), 'd': U(tu_all[2025]),
+          'e': U(tu_all[2026]), 'f': F(2026), 'g': U(early_), 'h': F(2027)}),
+        ('**%s’s final number was shaped in its last two days, and %s starts partly paid.** The '
+         '%s reclassification and the %s prepayment together moved %s, more than the whole surplus. '
+         '%s budgets out-of-district tuition at %s; %s spent %s on it before the prepayment.'
+         % (C.fy(2026), C.fy(2027), '29 June', '30 June', C.usd(two_days), C.fy(2027), C.usd(tu27),
+            C.fy(2026), C.usd(tu26_own)),
+         {'a': F(2026), 'b': F(2027), 'c': U(two_days), 'd': U(tu27), 'e': U(tu26_own)}, D),
+    ], place='lead', tone='callout')
+    summary = TB.explain('The year in five paragraphs', [
+        ('**The school budget finished %s %s under budget, the second year running far above '
+         'normal.** %s and %s each finished about %s under; %s left %s.'
+         % (C.fy(2026), C.usd(left26), C.fy(2023), C.fy(2024), C.usd(about), C.fy(2025),
+            C.usd(owed[2025])),
+         {'a': F(2026), 'b': U(left26), 'c': F(2023), 'd': F(2024), 'e': U(about), 'f': F(2025),
+          'g': U(owed[2025])}),
+        ('**One account explains it.** Private special education tuition was budgeted at %s and '
+         'spent %s, leaving %s, more than the whole surplus. Every other school line together came '
+         'out %s short. Collaborative tuition, the other kind of out-of-district placement, ran %s '
+         'over. Both tuition lines missed by more than %s, in opposite directions.'
+         % (C.usd(pv['revised_budget']), C.usd(pv_spent), C.usd(pv_left), C.usd(-rest_net),
+            C.usd(co_over_), C.usd(400000)),
+         {'a': U(pv['revised_budget']), 'b': U(pv_spent), 'c': U(pv_left), 'd': U(-rest_net),
+          'e': U(co_over_), 'f': U(400000)}),
+        ('**On %s the district prepaid %s of %s tuition out of %s’s budget:** collaborative invoices '
+         'numbered for %s were charged to %s and paid in July. That payment is %s’s cost, not '
+         '%s’s; left to %s, the %s surplus would read %s. The day before, %s of collaborative '
+         'tuition was moved onto the circuit breaker, against %s the budget had planned, and the '
+         'circuit breaker paid none of private tuition, after %s–%s of it in each of the three '
+         'years before.'
+         % ('30 June', C.usd(early_), C.fy(2027), C.fy(2026), C.fy(2027), C.fy(2026), C.fy(2027),
+            C.fy(2026), C.fy(2027), C.fy(2026), C.usd(upper_), C.usd(w_cb), C.usd(plan),
+            str(cb_lo), C.pct(cb_hi, 0)),
+         {'a': U(early_), 'b': F(2027), 'c': F(2026), 'd': U(upper_), 'e': U(w_cb), 'f': U(plan),
+          'g': figure(cb_lo, str(cb_lo)), 'h': figure(cb_hi, C.pct(cb_hi, 0))}, D),
+        ('**Elsewhere, the pattern is mixed.** Building upkeep left %s and counselors and '
+         'psychologists %s; paraprofessionals, special-ed contracted services and transportation '
+         'ran over.' % (C.usd(bldg), C.usd(cnsl)), {'a': U(bldg), 'b': U(cnsl)}),
+        ('**What the record does not say:** why any line came in under or over, or whether the '
+         'district stands by the %s entry, which the Town Manager questioned in writing and which '
+         'still stood on %s. The school budget as a whole stayed under, so there is no deficit; '
+         'what was left returns to the town’s general fund.' % ('29 June', '6 October'), None, D),
+    ], place='lead', tone='plain')
+
     findings = TB.custom(
         'talking-points', 'What the school year shows', dict(groups=groups), place='lead',
         figures=tuple(tp_figs) + tuple(C.fy(y) for y in (2023, 2024, 2025, 2026, 2027)),
@@ -1294,10 +1381,9 @@ def build():
     out[HUB] = TP.hub(
         HUB,
         'This is the school budget’s year end. Before %s it finished within about %s of budget; '
-        '%s left %s, the second year in a row far above that. The town (non-school) side is not '
-        'closed yet.'
+        '%s left %s, the second year in a row far above that.'
         % (C.fy(2025), C.usd(about), C.fy(2026), C.usd(left26)),
-        None, blocks=[big, four, findings, why_page],
+        None, blocks=[takeaways, summary, big, four, findings, why_page],
         answer_figures={'z': F(2025), 'b': U(about), 'y': F(2026), 'a': U(left26)})
     out[HUB]['group_figures'] = group_figures
 
