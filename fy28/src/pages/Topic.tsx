@@ -92,6 +92,9 @@ type HubPayload = {
   blocks?: Block[]
   /** Topics drawn IN the hub, one at a time (scripts/topic.py hub(tabs=)). */
   tabs?: { title: string; topics: string[] }
+  /** A figure beside each section's noun, computed by the hub's generator: TJ, 24 November
+   *  2026, "just dont use sentences forcategories" -- a noun and a number instead. */
+  group_figures?: Record<string, string>
 }
 /** A PAGE OF TABS under a hub (scripts/topic.py tabs_page): the shelf's own topics, one at a
  *  time, the tab strip pinned while scrolling. */
@@ -286,7 +289,7 @@ function StartHere({ ix, cat }: { ix: Index; cat: IndexCategory }) {
 
 /** The cards on a hub: one per topic, grouped as the registry groups them, each drawn as
  *  a TopicLink -- the one shape a topic has wherever it is listed. */
-function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
+function TopicCards({ ix, cat, figures }: { ix: Index; cat: IndexCategory; figures?: Record<string, string> }) {
   const shelfOf = (id: string) => ix.categories.find(c => c.id === id)?.shelf
   return (
     <section className="mt-10 max-w-3xl" id="topics">
@@ -302,7 +305,10 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
           {g.section && g.section !== all[gi - 1]?.section ? (
             <h2 id={anchor(g.section)} className={`text-[22px] font-bold scroll-mt-20 ${gi ? 'mt-10' : ''} mb-3`}>{g.section}</h2>
           ) : null}
-          <h2 id={g.title ? anchor(g.title) : undefined} className={`${eyebrow} scroll-mt-20`} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
+          <h2 id={g.title ? anchor(g.title) : undefined} className={`${eyebrow} scroll-mt-20`} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}
+            {g.title && figures?.[g.title] ? (
+              <span className="normal-case tracking-normal font-semibold tabular-nums ml-2 text-[13px]"
+                style={{ color: 'var(--text-primary)' }}>{figures[g.title]}</span>) : null}</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
             {g.topics.map(id => shelfEntry(ix, id)).filter((t): t is NonNullable<typeof t> => !!t).map(t => (
               <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== cat.id)
@@ -539,7 +545,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           {p.tabs ? <HubTabs tabs={p.tabs} ix={ix} /> : null}
           <RelatedPages ix={ix} rs={ix.categories.find(c => c.id === p.id)?.related} />
           {ix.categories.find(c => c.id === p.id)
-            ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
+            ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} figures={p.group_figures} /> : null}
           {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
           <Blocks blocks={p.blocks} place="end" />
         </>

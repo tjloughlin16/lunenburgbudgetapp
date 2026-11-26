@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Recompute the circuit breaker surplus page by a second route, and fail if a figure differs.
+"""Recompute the circuit breaker facts on FY2026 school surplus by a second route, and fail if a figure differs.
 
     python3 scripts/verify_circuit_breaker_surplus.py
 
-`build_circuit_breaker_surplus.py` reads the journal through `journal.py` and the general fund
+The page is built by build_fy2026_school_surplus.py (24 November 2026; it absorbed Circuit
+breaker and surplus) from `build_circuit_breaker_surplus.data()`, which reads the journal through `journal.py` and the general fund
 lines through `fy_breakdown.model` (verified on its own by verify_fy_breakdown.py). This reads
 the journal CSV with csv and Decimal and the budget book's text directly, shares nothing with
 the generator, and asserts every figure on the page's facts reproduces, to the dollar:
@@ -11,8 +12,8 @@ the generator, and asserts every figure on the page's facts reproduces, to the d
   - the book's FY2026 circuit breaker offset, and that gross less it is the vote;
   - the 29 June 2026 charge, and that it is the only entry moving collaborative tuition onto
     fund 2640 that year;
-  - what fund 2640 drew July to May in FY2025 and FY2026, and received in FY2026;
-  - FY2026's left, and left without the charge.
+  - what fund 2640 drew July to May in FY2026, and the least it drew in FY2023-FY2025;
+  - FY2026's left.
 """
 import csv
 import json
@@ -23,7 +24,7 @@ from decimal import Decimal
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy2026-circuit-breaker.json')
+PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy2026-surplus-by-category.json')
 BOOK = os.path.join(ROOT, 'sources', 'district-budget', 'text', '3-12-25-town-manager-39-s-budget.txt')
 COLLAB = '0100-3-300-9400-51-1-06-2-535023'
 SPENT = {'API', 'APM', 'PRJ', 'PRH', 'GEN', 'GRV', 'CRP', 'POE', 'POL', 'POM', 'SOY', 'GEL'}
@@ -62,12 +63,16 @@ def main():
           'the charge onto fund 2640 is not one 29 June 2026 entry')
     charged = onto[0]['v']
     check(facts['charged'] == usd(charged), 'charged: page %s, journal %s' % (facts['charged'], charged))
-    check(facts['short'] == usd(plan - charged), 'short: page %s' % facts['short'])
     early = lambda y: sum((r['v'] for r in rows if r['y'] == y and r['fund'] == '2640'
                            and r['source'] in ACTUAL   # payments and re-charges; open orders and receipts out
                            and r['effective_date'][5:7] != '06'), Decimal(0))
-    check(facts['early0'] == usd(early(2025)), 'early0: page %s, journal %s' % (facts['early0'], early(2025)))
-    check(facts['early1'] == usd(early(2026)), 'early1: page %s, journal %s' % (facts['early1'], early(2026)))
+    check(facts['may26'] == usd(early(2026)), 'may26: page %s, journal %s' % (facts['may26'], early(2026)))
+    # the third conclusion: FY2023-FY2025 drew at least this much by May
+    prior = min(early(y) for y in (2023, 2024, 2025))
+    claims = ' '.join(c['text']['text'] if isinstance(c.get('text'), dict) else str(c.get('text'))
+                      for c in p['conclusions'])
+    check(usd(prior) in claims, 'least drawn by May, FY2023-FY2025: journal %s, not in the '
+                                'conclusions' % usd(prior))
     # FY2026 left: every surplus-scope line, budget + transfers less spent, orders owed counted
     # (the period-13 report's own footing in the open year, so no close to add back)
     sc = [r for r in rows if r['y'] == 2026 and r['account'].startswith('0100-3-300-')
@@ -76,15 +81,13 @@ def main():
     spent = sum((r['v'] for r in sc if r['source'] in SPENT), Decimal(0))
     left = bud - spent
     check(facts['left'] == usd(left), 'left: page %s, journal %s' % (facts['left'], left))
-    check(facts['without'] == usd(left - charged), 'without: page %s, journal %s'
-          % (facts['without'], left - charged))
     if bad:
         print('verify_circuit_breaker_surplus: %d FAILED' % len(bad))
         for b in bad:
             print('  ' + b)
         return 1
     print('verify_circuit_breaker_surplus: %d facts recomputed from the journal and the budget book'
-          % 9)
+          % 5)
     return 0
 
 

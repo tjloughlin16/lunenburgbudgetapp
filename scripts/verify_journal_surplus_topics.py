@@ -62,11 +62,17 @@ def suggestions(left, cat):
     over26 = -sum(acct[(2026, a)] for a in names if acct[(2026, a)] < 0)
     p = json.load(open(os.path.join(TOPICS, 'surplus-suggestions.json'), encoding='utf-8'))
     facts = {x['id']: x['value']['value'] for x in p['facts'] if x.get('value')}
+    v26 = sorted((acct[(2026, a)] for a in names if acct[(2026, a)] > 0), reverse=True)
     want = {'n25': len(v25), 'top': 100.0 * float(v25[0]) / float(sum(v25)), 'every': len(every),
+
             'mv': moved, 'ov': over26}
     for k, v in want.items():
         if abs(float(facts[k]) - float(v)) > 0.006:
             bad.append('surplus-suggestions %s: page %r, recomputed %r' % (k, facts[k], float(v)))
+    # FY2026's largest leftover, stated in the finding and a note (not a fact: the page is frozen)
+    t26 = '%d%%' % round(100.0 * float(v26[0]) / float(sum(v26)))
+    if t26 not in p['finding']['text']:
+        bad.append('surplus-suggestions finding: %s not in %r' % (t26, p['finding']['text']))
 
 
 def burndowns(col):
@@ -359,8 +365,13 @@ def why_left(cat, acct):
     want = {'$' + format(round(v), ',') for v in want}
     p = json.load(open(os.path.join(TOPICS, 'fy2026-closeout.json'), encoding='utf-8'))
     blk = [b for b in p.get('blocks', []) if b.get('title') == 'Why it was left']
-    if len(blk) != 1:
-        bad.append('fy2026-closeout: no "Why it was left" block')
+    if not blk:
+        # The hub became the conclusions layer on 25 November 2026 (TJ: "it just has to give what
+        # they need to know") and this block moved off it. What it states now is the year's total:
+        # recompute that from the spreadsheet and require it in the hub's answer.
+        total = '$' + format(round(sum(acct[(Y1, a)] for (y, a) in acct if y == Y1)), ',')
+        if total not in p['answer']['text']:
+            bad.append('fy2026-closeout: answer lacks the recomputed FY2026 total %s' % total)
         return
     text = ' '.join([r['why']['text'] for r in blk[0]['rows']] + [blk[0]['note']['text']])
     got = set(re.findall(r'\$[\d,]+', text))

@@ -59,7 +59,53 @@
    "FY2026"
   ]
  },
+ "composed": true,
  "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$1,070,265",
+     "unit": "",
+     "value": 1070265.01
+    },
+    "g": {
+     "text": "$736,770",
+     "unit": "",
+     "value": 736770.12
+    },
+    "o": {
+     "text": "$434,108",
+     "unit": "",
+     "value": 434107.56
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "w-all",
+    "coll-p",
+    "coll-b",
+    "w-over"
+   ],
+   "so": {
+    "figures": {
+     "c": {
+      "text": "$333,495",
+      "unit": "",
+      "value": 333494.89
+     },
+     "e": {
+      "text": "$189,277",
+      "unit": "",
+      "value": 189276.75
+     }
+    },
+    "literals": [
+     "29 June"
+    ],
+    "text": "The circuit breaker took $333,495 of it on 29 June, and $189,277 was next year’s invoices."
+   },
+   "text": "Collaborative tuition charged $1,070,265; the general fund paid $736,770 of it, $434,108 past budget."
+  },
   {
    "figures": {
     "a": {
@@ -266,6 +312,34 @@
    }
   },
   {
+   "id": "w-all",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "collaborative tuition, everything charged to the line"
+   },
+   "value": {
+    "text": "$1,070,265",
+    "unit": "",
+    "value": 1070265.01
+   }
+  },
+  {
+   "id": "w-over",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "collaborative tuition, past its budget"
+   },
+   "value": {
+    "text": "$434,108",
+    "unit": "",
+    "value": 434107.56
+   }
+  },
+  {
    "id": "fy27",
    "kind": "published",
    "label": {
@@ -388,21 +462,49 @@
    "part": "finding"
   },
   {
+   "cites": [
+    0,
+    1,
+    5
+   ],
+   "i": 1,
+   "part": "table"
+  },
+  {
+   "i": 0,
+   "part": "conclusion"
+  },
+  {
+   "i": 1,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    3
+   ],
    "i": 0,
    "part": "chart"
   },
   {
-   "part": "ladder"
+   "i": 3,
+   "part": "conclusion"
   },
   {
-   "part": "related"
-  },
-  {
-   "part": "ledger"
-  },
-  {
+   "cites": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
    "i": 0,
    "part": "table"
+  },
+  {
+   "i": 2,
+   "part": "conclusion"
   },
   {
    "part": "sources"
@@ -423,23 +525,33 @@
  "sources": [
   {
    "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "key": "p13-26",
    "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
   },
   {
    "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx",
+   "key": "sp26",
    "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-special-school.xlsx"
   },
   {
    "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "key": "wb27",
    "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
   },
   {
    "href": "/docs/data/munis-school-ytd.csv",
+   "key": "d-munis",
    "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
   },
   {
    "href": "/docs/data/lps-budget-lines.csv",
+   "key": "d-wb",
    "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY2027 district workbook, line by line)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "key": "journal",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
   }
  ],
  "table": {
@@ -503,5 +615,72 @@
    }
   ]
  },
+ "tables": [
+  {
+   "caption": "Collaborative tuition, from the bills to the budget",
+   "views": [
+    {
+     "columns": [
+      "Amount"
+     ],
+     "key": "walk",
+     "kinds": [
+      "ledger"
+     ],
+     "label": "FY2026, school general fund and fund 2640",
+     "note": "Each step is read from the school journal or the period-13 report, and the arithmetic is checked when the page is built. The budget is the line net of the circuit breaker money the vote counted on.",
+     "note_allow": [
+      "13",
+      "2640"
+     ],
+     "rows": [
+      {
+       "cells": [
+        "$880,988"
+       ],
+       "label": "This year’s collaborative tuition bills"
+      },
+      {
+       "cells": [
+        "$189,277"
+       ],
+       "label": "+ next year’s (FY2027) invoices, charged on 30 June"
+      },
+      {
+       "cells": [
+        "$1,070,265"
+       ],
+       "label": "= everything charged to the line"
+      },
+      {
+       "cells": [
+        "-$333,495"
+       ],
+       "label": "− moved to the circuit breaker, 29 June"
+      },
+      {
+       "cells": [
+        "$736,770"
+       ],
+       "label": "= what the general fund paid"
+      },
+      {
+       "cells": [
+        "$302,663"
+       ],
+       "label": "Budget, the general fund’s share"
+      },
+      {
+       "cells": [
+        "$434,108"
+       ],
+       "label": "Over budget"
+      }
+     ],
+     "total_col": 0
+    }
+   ]
+  }
+ ],
  "title": "Tuition at year end"
 }

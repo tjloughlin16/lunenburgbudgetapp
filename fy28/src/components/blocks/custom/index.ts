@@ -51,6 +51,9 @@ import HomesAgainstInflation from './homes-against-inflation'
 import ParkFundMonths from './park-fund-months'
 import ParkSalesMonths from './park-sales-months'
 import SchoolDraftLines from './school-draft-lines'
+import EntryTrail from './entry-trail'
+import TalkingPoints from './talking-points'
+import BigFigures from './big-figures'
 
 export type CustomProps = { data: unknown; alt: string }
 
@@ -97,4 +100,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'park-fund-months': ParkFundMonths,
   'park-sales-months': ParkSalesMonths,
   'school-draft-lines': SchoolDraftLines,
+  'entry-trail': EntryTrail,
+  'talking-points': TalkingPoints,
+  'big-figures': BigFigures,
 }

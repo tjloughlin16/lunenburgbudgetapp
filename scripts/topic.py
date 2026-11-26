@@ -1356,7 +1356,10 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
     if ladder is None:
         if not signed:
             bad.append('hub %s: no ladder and no block at the top to stand as its signature' % cid)
-        if not any(b.get('claims') for b in blocks):
+        # A TALKING-POINTS block is a hub's conclusions in their own form (TJ, 25 November 2026,
+        # on the FY2026 closeout hub: one sentence each, its figure in it, linked to the page that
+        # proves it -- "this is the information I was expecting to see"), so it counts.
+        if not any(b.get('claims') or b.get('component') == 'talking-points' for b in blocks):
             bad.append('hub %s: no ladder and no block carries conclusions (topic_blocks.claims)' % cid)
         ladder = dict(tiers=[], conclusions=[], _none=True)
     bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED and not signed)

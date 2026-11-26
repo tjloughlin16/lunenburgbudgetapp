@@ -414,7 +414,9 @@ function Terms({ b }: { b: Extract<Block, { block: 'terms' }> }) {
 /** One block. A topic page draws its blocks one at a time, in its `flow` (scripts/topic.py). */
 /** Conclusions placed under the block they explain (scripts/topic_blocks.py claims()): the claim,
  *  what it means, and the facts it rests on as its figures. */
-export type Claim = { text: string; so?: Unit; facts: LadderFact[] }
+/** `link`: the one page that proves the claim -- set on a hub's conclusions (FY2026 closeout, 25
+ *  November 2026: the hub states, the topic page proves). */
+export type Claim = { text: string; so?: Unit; facts: LadderFact[]; link?: { href: string; title: string } }
 export function ClaimCard({ c }: { c: Claim }) {
   return (
     <div className="mt-4 max-w-3xl pl-4 border-l-[3px]" style={{ borderColor: 'var(--series-cost)' }}>
@@ -428,6 +430,11 @@ export function ClaimCard({ c }: { c: Claim }) {
         <div className="mt-1.5 flex flex-wrap gap-x-6 gap-y-1">
           {c.facts.map(f => <div key={f.id} className="min-w-[8rem] max-w-[16rem]"><MatrixFact f={f} lit={null} /></div>)}
         </div>
+      ) : null}
+      {c.link ? (
+        <p className="text-[13.5px] mt-1.5">
+          <a href={c.link.href} className="underline font-semibold" style={{ color: 'var(--series-cost)' }}>
+            Shown on {c.link.title} &rarr;</a></p>
       ) : null}
     </div>
   )

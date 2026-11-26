@@ -624,6 +624,9 @@ def suggestions_page(d):
     every = [a for a in accts if all(al[(y, a)] > Decimal('0.005') for y in J.YEARS)]
     s25 = spread([al[(Y0, a)] for a in accts])
     s26 = spread([al[(Y1, a)] for a in accts])
+    top26 = 100.0 * fl(s26['top']) / fl(s26['total'])
+    if s26['v'][0] != al[(Y1, '0100-3-300-9300-51-1-06-2-535019')]:
+        fail('private tuition is no longer FY2026’s largest leftover; the suggestions say it is')
     over = {y: -sum((al[(y, a)] for a in accts if al[(y, a)] < 0), D0) for y in (Y0, Y1)}
     cl = d['cat_left']
     cats_every = [c for c in CATS if all(cl[(y, c)] > 0 for y in J.YEARS)]
@@ -796,19 +799,22 @@ def suggestions_page(d):
         'surplus-suggestions')
     page = TP.page(
         'surplus-suggestions',
-        'The surplus came from many small leftovers, year after year, not one line; these '
-        'options follow from that.',
+        '%s’s surplus was many small leftovers; in %s one tuition account held %s of them.'
+        % (fy(Y0), fy(Y1), C.pct(top26, 0)),
         list(fx.values()),
         [con('%s’s leftover was spread over %s accounts; the largest held %s of it.'
              % (fy(Y0), C.num(s25['n']), C.pct(100.0 * fl(s25['top']) / fl(s25['total']), 0)),
              ['n25', 'top'],
              {'y': F(Y0), 'n': N(s25['n'], 'accounts'),
               'p': P(100.0 * fl(s25['top']) / fl(s25['total']), 0)},
-             so='No single line explains the surplus, so a remedy aimed at one account would '
+             so='No single line explains that year, so a remedy aimed at one account would '
                 'leave most of it in place.',
              notes=[step('Half of it sat on %s accounts and four fifths on %s.'
                          % (C.num(s25['half']), C.num(s25['most'])), 'measured',
-                         {'a': N(s25['half'], 'accounts'), 'b': N(s25['most'], 'accounts')})]),
+                         {'a': N(s25['half'], 'accounts'), 'b': N(s25['most'], 'accounts')}),
+                    step('%s is different: private tuition alone held %s of what accounts under '
+                         'budget left.' % (fy(Y1), C.pct(top26, 0)), 'measured',
+                         {'y': F(Y1), 'p': P(top26, 0)})]),
          con('%s accounts left money in every year from %s to %s.'
              % (C.num(len(every)), fy(J.YEARS[0]), fy(Y1)), ['every'],
              {'n': N(len(every), 'accounts'), 'a': F(J.YEARS[0]), 'b': F(Y1)},
@@ -839,7 +845,7 @@ def suggestions_page(d):
         sources=sources() + [
             dict(label='Town of Lunenburg — Select Board minutes, 9 September 2025', href=TM_HREF),
             dict(label='Town of Lunenburg — Finance Committee minutes, 11 June 2026', href=FINCOM_JUNE)],
-        finding_figures={})
+        finding_figures={'a': F(Y0), 'b': F(Y1), 'p': P(top26, 0)})
     page['ledger'] = led
     page['not_established'] = [
         'Why the lines are budgeted above what they spend: nothing here tests a cause, and none of '

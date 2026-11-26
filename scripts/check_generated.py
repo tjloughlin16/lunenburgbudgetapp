@@ -180,8 +180,14 @@ CHECKS = [
     ('extract_capital_submissions.py', ['--check']),
     ('ingest_sc_packet.py', ['--check']),
     ('verify_fy_breakdown.py', []),
-    ('build_circuit_breaker_surplus.py', ['--check']),
+    # FY2026 school surplus (24 November 2026): the 29 June entry, the circuit breaker and the
+    # categories on one page, which absorbed Circuit breaker and surplus; its circuit breaker
+    # facts recomputed off the raw journal CSV and the budget book.
+    ('build_fy2026_school_surplus.py', ['--check']),
     ('verify_circuit_breaker_surplus.py', []),
+    ('build_year_end_rush.py', ['--check']),
+    ('build_budget_vs_munis.py', ['--check']),
+    ('extract_fy26_approved_budget.py', ['--check']),
     # ORDERS CARRIED FROM ONE SCHOOL YEAR INTO THE NEXT: the topic page, which refuses unless
     # every close's YEC equals the next year's SOY and carry-forward, account by account; and
     # its figures recomputed in SQL off the database copy of the journal.
@@ -1012,6 +1018,12 @@ def _label(job):
     return script + (' ' + ' '.join(args) if args else '')
 
 
+# THREE AT A TIME, NOT EIGHT (24 November 2026). Eight at once (one job at 1.1 GB) put the Mac at
+# ~89% CPU and held every other project's sessions at the load gate; TJ asked for it throttled.
+# One check must not take the whole machine. -j N still overrides, for an otherwise idle Mac.
+JOBS_DEFAULT = 3
+
+
 def _check_all(jobs, workers=None):
     """{label: (rc, output)} for every job, run concurrently."""
     results = {}
@@ -1020,7 +1032,7 @@ def _check_all(jobs, workers=None):
             label, rc, out = _run(job)
             results[label] = (rc, out)
         return results
-    with cf.ThreadPoolExecutor(max_workers=workers or min(8, (os.cpu_count() or 4))) as p:
+    with cf.ThreadPoolExecutor(max_workers=workers or JOBS_DEFAULT) as p:
         for label, rc, out in p.map(_run, jobs):
             results[label] = (rc, out)
     return results
@@ -1062,8 +1074,8 @@ def _run(job):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('-j', '--jobs', type=int, default=min(8, (os.cpu_count() or 4)),
-                    help='how many checks to run at once (default: CPU count, max 8)')
+    ap.add_argument('-j', '--jobs', type=int, default=JOBS_DEFAULT,
+                    help='how many checks to run at once (default: 3, so one check cannot take the whole Mac)')
     ap.add_argument('--serial', action='store_true',
                     help='one at a time, for debugging a check that misbehaves')
     ap.add_argument('--rebuild', action='store_true',
