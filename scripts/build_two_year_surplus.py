@@ -149,7 +149,8 @@ def page(f):
         fail('the page says private tuition left the most and collaborative went furthest over')
     if not near(priv['both'] + coll['both'], by['tuition']['both']):
         fail('private and collaborative no longer make up the tuition category')
-    priv_share = 100 * priv['both'] / total
+    pv2 = 100 * priv['both'] / f['budget_a'][priv['account']]
+    co2 = -100 * coll['both'] / f['budget_a'][coll['account']]
 
     # Outside tuition: the two largest leftovers, and the teachers' share for comparison.
     rest = [c for c in cats if c['key'] != 'tuition']
@@ -202,9 +203,9 @@ def page(f):
         con('Private tuition left %s over the two years; collaborative ran %s past its budget.'
             % (U(priv['both']), U(-coll['both'])), ['priv', 'coll', 'total'],
             {'p': UF(priv['both']), 'c': UF(-coll['both'])},
-            so='Net, the two left %s; private tuition alone is %s of the two-year total.'
-               % (U(by['tuition']['both']), C.pct(priv_share, 0)),
-            so_figures={'t': UF(by['tuition']['both']), 's': P(priv_share)}),
+            so='Each is its own miss: private finished %s under its two years’ budget, '
+               'collaborative %s over.' % (C.pct(pv2, 0), C.pct(co2, 0)),
+            so_figures={'p': P(pv2), 'c': P(co2)}),
         con('Building upkeep left %s and counselors & psychologists %s, the most outside tuition.'
             % (U(a1['both']), U(a2['both'])), ['bldg', 'cnsl', 'tch'],
             {'a': UF(a1['both']), 'b': UF(a2['both'])},
