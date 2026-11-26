@@ -2,17 +2,17 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-11-25",
+ "as_of": "2026-11-26",
  "window": {
-  "from": "2026-11-11",
-  "to": "2026-12-23"
+  "from": "2026-11-12",
+  "to": "2026-12-24"
  },
  "counts": {
-  "agendas": 40,
+  "agendas": 38,
   "agendas_upcoming": 11,
   "agendas_unreadable": 2,
-  "items": 365,
-  "business_items": 199,
+  "items": 355,
+  "business_items": 196,
   "matched_items": 5,
   "upcoming_business_items": 56,
   "upcoming_matched_items": 1,
@@ -33,102 +33,6 @@
   }
  ],
  "meetings": [
-  {
-   "board": "Cultural Council",
-   "board_slug": "cultural-council",
-   "date": "2026-11-11",
-   "file_id": "8122",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11112026-8122",
-   "agenda_doc": "/docs/meetings/cultural-council/2026-11-11-agenda-8122.pdf",
-   "items": [
-    {
-     "line": "Ritter Memorial Building DATE/TIME: 11/11/2026, 6:45pm AGENDA CALL MEETING TO ORDER PUBLIC COMMENT WELCOME VISITORS/POTENTIAL NEW MEMBERS APPROVE PREVIOUS MINUTES TREASURER’S REPORT REVIEW & VOTE ON GRANT APPLICATIONS FOR 2027 COUNCIL MEMBER ASSIGNMENTS - Annual Report - Sending Grant Rejections Through SmartSimple - Processing Grant Approvals Through SmartSimple - Sending Informational Emails to Grant Recipients ADJOURN",
-     "parent": "",
-     "n": 1,
-     "procedural": false,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
-  {
-   "board": "Open Space Committee",
-   "board_slug": "open-space-committee",
-   "date": "2026-11-11",
-   "file_id": "8125",
-   "body_as_printed": "",
-   "upcoming": false,
-   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11112026-8125",
-   "agenda_doc": "/docs/meetings/open-space-committee/2026-11-11-agenda-8125.pdf",
-   "items": [
-    {
-     "line": "CALL TO ORDER",
-     "parent": "",
-     "n": 1,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "WELCOME NEW MEMBER DAN BURNS",
-     "parent": "",
-     "n": 2,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "MINUTES APPROVAL FROM 9/9/26",
-     "parent": "",
-     "n": 3,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "REPORTS FROM OTHER BOARDS",
-     "parent": "",
-     "n": 4,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "DISCUSSION REGARDING REVISIONS TO THE OPEN",
-     "parent": "",
-     "n": 5,
-     "procedural": false,
-     "threads": []
-    },
-    {
-     "line": "OTHER ITEMS NOT ANTICIPATED AT THE TIME OF",
-     "parent": "",
-     "n": 6,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "CITIZEN COMMENTS",
-     "parent": "",
-     "n": 7,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "MEETING SCHEDULE - SECOND WEDNESDAY OF",
-     "parent": "",
-     "n": 8,
-     "procedural": true,
-     "threads": []
-    },
-    {
-     "line": "ADJOURNMENT",
-     "parent": "",
-     "n": 9,
-     "procedural": true,
-     "threads": []
-    }
-   ],
-   "threads": []
-  },
   {
    "board": "Finance Committee",
    "board_slug": "finance-committee",

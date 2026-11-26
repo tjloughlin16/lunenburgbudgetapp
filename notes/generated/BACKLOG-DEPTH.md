@@ -94,7 +94,7 @@ Open = meetings with anything still to process, of the meetings with a record to
 | FY2024 | 41 | 0 | 0% | 0 | 0 | 0 | 0 |
 | FY2025 | 47 | 4 | 8% | 4 | 0 | 0 | 0 |
 | FY2026 | 48 | 0 | 0% | 0 | 0 | 0 | 0 |
-| FY2027 | 17 | 0 | 0% | 0 | 0 | 0 | 0 |
+| FY2027 | 18 | 0 | 0% | 0 | 0 | 0 | 0 |
 
 **Missing records (not backlog):**
 
@@ -116,7 +116,7 @@ Open = meetings with anything still to process, of the meetings with a record to
 | FY2024 | 4 | 5 | 0 | **9** |
 | FY2025 | 14 | 4 | 1 | **19** |
 | FY2026 | 11 | 10 | 8 | **29** |
-| FY2027 | 4 | 1 | 0 | **5** |
+| FY2027 | 3 | 1 | 0 | **4** |
 
 ## School Committee, by fiscal year
 

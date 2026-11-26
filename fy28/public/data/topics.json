@@ -1115,6 +1115,7 @@
      "section": null,
      "title": "Related pages",
      "topics": [
+      "fy2026-town-closeout",
       "fy2026-town-unspent",
       "fy2026-snow-and-reserve-fund",
       "fy2026-school-retiree-insurance"
@@ -1578,7 +1579,7 @@
    "title": "Harvard and Bromfield"
   },
   {
-   "answer": "This is the school budget’s year end. Before FY2025 it finished within about $32,000 of budget; FY2026 left $482,118, the second year in a row far above that. The town (non-school) side is not closed yet.",
+   "answer": "This is the school budget’s year end. Before FY2025 it finished within about $32,000 of budget; FY2026 left $482,118, the second year in a row far above that.",
    "archive_after": "2027-10-31",
    "area": "special",
    "elsewhere": [],
@@ -1647,6 +1648,39 @@
    "shelf": "FY2026 school closeout",
    "start": [],
    "title": "FY2026 school year end"
+  },
+  {
+   "answer": "This is the town (non-school) budget’s year end. Town departments closed FY2026 $964,030 under a $27,647,670 budget; the largest misses, both ways, were in health insurance.",
+   "archive_after": "2027-10-31",
+   "area": "special",
+   "elsewhere": [],
+   "groups": [
+    {
+     "section": null,
+     "title": "By department",
+     "topics": [
+      "fy2026-town-departments"
+     ]
+    },
+    {
+     "section": null,
+     "title": "June readings",
+     "topics": [
+      "fy2026-town-unspent",
+      "fy2026-snow-and-reserve-fund",
+      "fy2026-school-retiree-insurance"
+     ]
+    }
+   ],
+   "id": "fy2026-town-closeout",
+   "minutes": 1,
+   "order": 96,
+   "path": "/department-budgets/fy2026-town-closeout",
+   "ready": true,
+   "related": [],
+   "shelf": "FY2026 town closeout",
+   "start": [],
+   "title": "FY2026 town year end"
   }
  ],
  "generated_by": "scripts/build_topics_index.py",
@@ -2977,7 +3011,8 @@
    "shelves": [
     "fy2026-closeout",
     "department-budgets",
-    "health-insurance"
+    "health-insurance",
+    "fy2026-town-closeout"
    ],
    "title": "School retiree insurance"
   },
@@ -3013,7 +3048,8 @@
    ],
    "shelves": [
     "fy2026-closeout",
-    "department-budgets"
+    "department-budgets",
+    "fy2026-town-closeout"
    ],
    "title": "Snow and Reserve Fund"
   },
@@ -3031,6 +3067,20 @@
    ],
    "title": "FY2026 school surplus"
   },
+  "fy2026-town-departments": {
+   "finding": "Town departments closed FY2026 $964,030 under a $27,647,670 budget, 3.5% of it.",
+   "generator": "scripts/build_fy2026_town_closeout.py",
+   "home": "fy2026-town-closeout",
+   "id": "fy2026-town-departments",
+   "minutes": 2,
+   "path": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "fy2026-town-closeout"
+   ],
+   "title": "Departments at close"
+  },
   "fy2026-town-unspent": {
    "finding": "In June, before the close, town departments stood $858,462 under a $27,647,670 budget.",
    "generator": "scripts/build_fy2026_closeout_topics.py",
@@ -3042,7 +3092,8 @@
    "related": [],
    "shelves": [
     "fy2026-closeout",
-    "department-budgets"
+    "department-budgets",
+    "fy2026-town-closeout"
    ],
    "title": "Town unspent balance"
   },
@@ -4153,11 +4204,11 @@
    "title": "Out-of-district placements"
   },
   "out-of-district-tuition": {
-   "finding": "$1,205,949 went to out-of-district tuition in FY2025; 39.3% of it was paid outside the general fund.",
+   "finding": "Paid to collaboratives: $208,195 in FY2023, $880,988 in FY2026, now more than to private schools.",
    "generator": "scripts/build_special_education_topics.py",
    "home": "special-education",
    "id": "out-of-district-tuition",
-   "minutes": 2,
+   "minutes": 1,
    "path": "/special-education/out-of-district-tuition",
    "ready": true,
    "related": [],
