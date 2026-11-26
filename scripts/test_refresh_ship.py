@@ -623,7 +623,9 @@ def a_stale_generator_is_repaired_and_one_that_stays_stale_stops_the_deploy():
     try:
         ctx = flow_setup(tree, f)
         R.RAN.add('build_notices.py')
-        f.check_results = [[('build_notices.py', '--check')], [('build_notices.py', '--check')], []]
+        # Stale on the first look and after EVERY repair pass (REPAIR_PASSES, 12 November 2026):
+        # with only two stale answers the stub went clean on pass two and the deploy proceeded.
+        f.check_results = [[('build_notices.py', '--check')]] * (1 + R.REPAIR_PASSES)
         assert run_ship(tree, f, ctx, args(), []) is False
         assert 'after a repair: build_notices.py' in row(tree)['notes']
         assert not any('build:site' in c for c in f.commands)
