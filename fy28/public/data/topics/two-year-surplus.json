@@ -22,6 +22,15 @@
   },
   "rows": [
    {
+    "href": "/fy2026-closeout/fy2026-tuition-lines",
+    "label": "Private tuition",
+    "texts": [
+     "$523,160"
+    ],
+    "total": "$523,160",
+    "value": 523159.92
+   },
+   {
     "label": "Building & grounds upkeep",
     "texts": [
      "$207,054"
@@ -61,15 +70,6 @@
     ],
     "total": "$125,181",
     "value": 125181.05
-   },
-   {
-    "href": "/fy2026-closeout/fy2026-tuition-lines",
-    "label": "Out-of-district tuition",
-    "texts": [
-     "$118,467"
-    ],
-    "total": "$118,467",
-    "value": 118467.36
    },
    {
     "label": "Health insurance & benefits",
@@ -168,6 +168,15 @@
     ],
     "total": "-$87,512",
     "value": -87511.63
+   },
+   {
+    "href": "/fy2026-closeout/fy2026-tuition-lines",
+    "label": "Collaborative tuition",
+    "texts": [
+     "-$404,693"
+    ],
+    "total": "-$404,693",
+    "value": -404692.56
    }
   ],
   "stack": null,
@@ -642,8 +651,17 @@
      "estimate"
     ],
     "label": "School general fund, period 13",
-    "note": "Categories are ours, each account placed by its DESE function and object code. FY2025 is the closed year less the $72,172 of orders it still owed at the close, which FY2026 paid from carried-forward budget.",
+    "note": "Categories are ours, each account placed by its DESE function and object code; out-of-district tuition is shown as its two accounts. FY2025 is the closed year less the $72,172 of orders it still owed at the close, which FY2026 paid from carried-forward budget.",
     "rows": [
+     {
+      "cells": [
+       "$531",
+       "$522,629",
+       "$523,160",
+       "30.9%"
+      ],
+      "label": "Private tuition"
+     },
      {
       "cells": [
        "$11,120",
@@ -688,15 +706,6 @@
        "8.1%"
       ],
       "label": "Custodians"
-     },
-     {
-      "cells": [
-       "$29,946",
-       "$88,522",
-       "$118,467",
-       "5.8%"
-      ],
-      "label": "Out-of-district tuition"
      },
      {
       "cells": [
@@ -805,6 +814,15 @@
        "-30.4%"
       ],
       "label": "Special-ed contracted services"
+     },
+     {
+      "cells": [
+       "$29,415",
+       "-$434,108",
+       "-$404,693",
+       "-112.1%"
+      ],
+      "label": "Collaborative tuition"
      },
      {
       "cells": [

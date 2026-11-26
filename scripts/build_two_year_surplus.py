@@ -114,7 +114,11 @@ def data():
     lines.sort(key=lambda r: -r['both'])
     import build_fy2026_school_surplus as SP
     early = fl(SP.data()['early'])
-    return dict(early=early, total=fl(total), owed={y: fl(owed[y]) for y in YEARS}, cats=cats, lines=lines,
+    budget_a = defaultdict(float)
+    for y in YEARS:
+        for r in CT.school(y):
+            budget_a[r['account']] += r['revised_budget']
+    return dict(budget_a=dict(budget_a), early=early, total=fl(total), owed={y: fl(owed[y]) for y in YEARS}, cats=cats, lines=lines,
                 closed25=fl(d['closed'][2025]))
 
 
@@ -217,10 +221,21 @@ def page(f):
                % (C.num(TOP), U(top)), so_figures={'n': N(TOP), 't': UF(top)}),
     ]
 
-    hrefs = {by[k]['label']: REG.path(t) for k, t in PAGE_OF.items() if k in by}
+    # THE TUITION CATEGORY IS SHOWN AS ITS TWO ACCOUNTS (TJ, 26 November 2026: "'private
+    # tuition alone left $523,160 of it'. but [the chart] doesnt show private tuitions?"). One
+    # netted row hid the page's own finding; the two rows sum to it, asserted above.
+    tu_rows = [dict(key='private', label='Private tuition', y25=priv['y25'], y26=priv['y26'],
+                    both=priv['both'], budget=round(f['budget_a'][priv['account']], 2)),
+               dict(key='collab', label='Collaborative tuition', y25=coll['y25'], y26=coll['y26'],
+                    both=coll['both'], budget=round(f['budget_a'][coll['account']], 2))]
+    if not near(tu_rows[0]['budget'] + tu_rows[1]['budget'], by['tuition']['budget'], 1):
+        fail('the two tuition accounts no longer hold the tuition category’s budget')
+    shown = sorted([c for c in cats if c['key'] != 'tuition'] + tu_rows, key=lambda c: -c['both'])
+    hrefs = {by[k]['label']: REG.path(t) for k, t in PAGE_OF.items() if k in by and k != 'tuition'}
+    hrefs.update({r['label']: REG.path('fy2026-tuition-lines') for r in tu_rows})
     chart = TP.ranking(
         'Left unspent over two years, by category',
-        [(c['label'], c['both']) for c in cats], '$', hrefs=hrefs,
+        [(c['label'], c['both']) for c in shown], '$', hrefs=hrefs,
         note='%s and %s added, school general fund. %s counts orders owed at its close as spent, '
              'as %s does. Below zero is past budget.'
              % (C.fy(2025), C.fy(2026), C.fy(2025), C.fy(2026)),
@@ -234,10 +249,11 @@ def page(f):
             columns=[C.fy(2025), C.fy(2026), 'Two years', 'Share of two years’ budget'],
             rows=[dict(label=c['label'], cells=[C.usd(c['y25']), C.usd(c['y26']), C.usd(c['both']),
                                                C.pct(pct(c), 1) if c['budget'] else '—'])
-                  for c in cats]
+                  for c in shown]
             + [dict(label='All categories', cells=[
                 C.usd(f['owed'][2025]), C.usd(f['owed'][2026]), C.usd(total), '—'])],
-            note='Categories are ours, each account placed by its DESE function and object code. '
+            note='Categories are ours, each account placed by its DESE function and object code; '
+                 'out-of-district tuition is shown as its two accounts. '
                  '%s is the closed year less the %s of orders it still owed at the close, which '
                  '%s paid from carried-forward budget.'
                  % (C.fy(2025), C.usd(f['closed25']), C.fy(2026)))])
