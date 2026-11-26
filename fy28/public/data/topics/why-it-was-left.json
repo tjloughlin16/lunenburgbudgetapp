@@ -1,0 +1,1419 @@
+{
+ "blocks": [
+  {
+   "block": "timeline",
+   "event_label": "the event",
+   "groups": [
+    {
+     "heading": "Social Workers Salaries · 2710-06",
+     "tracks": [
+      {
+       "cut": false,
+       "event": null,
+       "label": "FY2025",
+       "states": [
+        "none",
+        "none",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid"
+       ],
+       "tags": []
+      },
+      {
+       "cut": false,
+       "event": null,
+       "label": "FY2026",
+       "states": [
+        "none",
+        "none",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+       ],
+       "tags": []
+      }
+     ]
+    },
+    {
+     "heading": "Psychologists Salaries · 2800-07",
+     "tracks": [
+      {
+       "cut": false,
+       "event": null,
+       "label": "FY2025",
+       "states": [
+        "none",
+        "none",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid",
+        "paid"
+       ],
+       "tags": []
+      },
+      {
+       "cut": false,
+       "event": null,
+       "label": "FY2026",
+       "states": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+       ],
+       "tags": []
+      }
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "key": "paid",
+     "label": "Payroll posted",
+     "tone": "good"
+    },
+    {
+     "key": "none",
+     "label": "No payroll posted",
+     "tone": "muted"
+    }
+   ],
+   "note": {
+    "figures": {
+     "a": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "b": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "k": {
+      "text": "3",
+      "unit": "months",
+      "value": 3
+     }
+    },
+    "literals": [],
+    "text": "Salary accounts in these categories with payroll in 3 or more months of FY2025 and none in those months of FY2026. A payroll line names no person."
+   },
+   "periods": [
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun"
+   ],
+   "place": "body",
+   "title": "Payroll posted, month by month",
+   "verdicts": []
+  }
+ ],
+ "category": "fy2026-closeout",
+ "chart": {
+  "decimals": 1,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "School general fund. The gap between the two bars is what each category left in FY2026."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "FY2026 budget, change on FY2025 spending",
+    "texts": [
+     "33.9%",
+     "3.6%",
+     "1.6%",
+     "14.7%",
+     "5.6%"
+    ],
+    "values": [
+     33.9,
+     3.6,
+     1.6,
+     14.7,
+     5.6
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "FY2026 spending, change on FY2025 spending",
+    "texts": [
+     "-4.0%",
+     "-15.1%",
+     "0.0%",
+     "11.5%",
+     "-9.6%"
+    ],
+    "values": [
+     -4.0,
+     -15.1,
+     0.0,
+     11.5,
+     -9.6
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Budget and spending against last year",
+  "type": "series",
+  "unit": "%",
+  "x": [
+   "Building & grounds upkeep",
+   "Counselors & psychologists",
+   "Teachers & substitutes",
+   "Health insurance & benefits",
+   "Supplies, services & everything else"
+  ]
+ },
+ "composed": true,
+ "conclusions": [
+  {
+   "figures": {
+    "f": {
+     "text": "3",
+     "unit": "categories",
+     "value": 3
+    },
+    "n": {
+     "text": "5",
+     "unit": "categories",
+     "value": 5
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "left5",
+    "above",
+    "fell"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The budget carried last year’s needs forward and more; the spending did not follow."
+   },
+   "text": "All 5 were budgeted above what they spent in FY2025; 3 of them then spent less than that."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "33.9%",
+     "unit": "percent",
+     "value": 33.9
+    },
+    "b": {
+     "text": "4.0%",
+     "unit": "percent",
+     "value": 4.0
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "upk"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The widest gap of the five: the budget grew while the bills fell."
+   },
+   "text": "Building upkeep was budgeted 33.9% above its FY2025 spending and spent 4.0% less."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$142,423",
+     "unit": "",
+     "value": 142423.45
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "silent",
+    "lost",
+    "moved"
+   ],
+   "so": {
+    "figures": {
+     "m": {
+      "text": "$27,862",
+      "unit": "",
+      "value": 27862.35
+     }
+    },
+    "literals": [],
+    "text": "Like accounts rose $27,862 in those months. A silent account may be a vacancy, a leave or a grant."
+   },
+   "text": "A social worker and a psychologist account posted no payroll in months that paid $142,423 in FY2025."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "b": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "c": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "d": {
+     "text": "$1,319,205",
+     "unit": "",
+     "value": 1319204.84
+    },
+    "e": {
+     "text": "$361,639",
+     "unit": "",
+     "value": 361639.07
+    },
+    "n": {
+     "text": "29",
+     "unit": "vendors",
+     "value": 29
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "nstop",
+    "dropall",
+    "dropnet",
+    "nnet"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The purchases the budget assumed would recur; why each did not is not in the ledger."
+   },
+   "text": "29 vendors paid in FY2024 and FY2025 got $1,319,205 less in FY2026, $361,639 after every other route."
+  }
+ ],
+ "facts": [
+  {
+   "id": "left5",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "left by these five categories in FY2026"
+   },
+   "value": {
+    "text": "$733,953",
+    "unit": "",
+    "value": 733953.45
+   }
+  },
+  {
+   "id": "above",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "categories budgeted above last year’s spending"
+   },
+   "value": {
+    "text": "5 of 5",
+    "unit": "categories",
+    "value": 5
+   }
+  },
+  {
+   "id": "fell",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "categories that spent less than the year before"
+   },
+   "value": {
+    "text": "3 of 5",
+    "unit": "categories",
+    "value": 3
+   }
+  },
+  {
+   "id": "upk",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "building upkeep budget, above FY2025 spending"
+   },
+   "value": {
+    "text": "33.9%",
+    "unit": "percent",
+    "value": 33.9
+   }
+  },
+  {
+   "id": "silent",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "salary accounts with months of no payroll"
+   },
+   "value": {
+    "text": "2",
+    "unit": "salary accounts",
+    "value": 2
+   }
+  },
+  {
+   "id": "lost",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "paid in FY2025 in the months that went silent"
+   },
+   "value": {
+    "text": "$142,423",
+    "unit": "",
+    "value": 142423.45
+   }
+  },
+  {
+   "id": "moved",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "rise in those months on like accounts"
+   },
+   "value": {
+    "text": "$27,862",
+    "unit": "",
+    "value": 27862.35
+   }
+  },
+  {
+   "id": "nstop",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "recurring vendors paid far less in FY2026"
+   },
+   "value": {
+    "text": "29",
+    "unit": "vendors",
+    "value": 29
+   }
+  },
+  {
+   "id": "dropall",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "less paid to them than in FY2025"
+   },
+   "value": {
+    "text": "$1,319,205",
+    "unit": "",
+    "value": 1319204.84
+   }
+  },
+  {
+   "id": "dropnet",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it after every other route found"
+   },
+   "value": {
+    "text": "$361,639",
+    "unit": "",
+    "value": 361639.07
+   }
+  },
+  {
+   "id": "nnet",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "vendors still short after other routes"
+   },
+   "value": {
+    "text": "25",
+    "unit": "vendors",
+    "value": 25
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$733,953",
+    "unit": "",
+    "value": 733953.45
+   },
+   "d": {
+    "text": "$361,639",
+    "unit": "",
+    "value": 361639.07
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Five categories left $733,953 in FY2026; $361,639 of recurring vendor payments did not recur."
+ },
+ "flow": [
+  {
+   "part": "finding"
+  },
+  {
+   "cites": [
+    0,
+    1
+   ],
+   "i": 0,
+   "part": "chart"
+  },
+  {
+   "i": 0,
+   "part": "conclusion"
+  },
+  {
+   "i": 1,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    0,
+    1
+   ],
+   "i": 1,
+   "part": "table"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 0,
+   "part": "block"
+  },
+  {
+   "i": 2,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    0,
+    1,
+    2
+   ],
+   "i": 0,
+   "part": "table"
+  },
+  {
+   "i": 3,
+   "part": "conclusion"
+  },
+  {
+   "part": "related"
+  },
+  {
+   "part": "sources"
+  }
+ ],
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "why-it-was-left",
+ "kind": "topic",
+ "not_established": [
+  "Why any payment stopped: a contract ended, the work moved, the need fell away, or a bill was not yet sent all post the same way.",
+  "Whether a salary account with no payroll was a vacancy, a leave, or pay charged elsewhere.",
+  "Whether the FY2026 budget was built by carrying FY2025’s forward; the ledger shows the two figures, not how one was set."
+ ],
+ "path": "/school-all-funds/fy2026-closeout/why-it-was-left",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "key": "journal",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "key": "accounts",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account)"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "key": "provenance",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  }
+ ],
+ "table": {
+  "caption": "Vendors paid every year until FY2026, and the reverse",
+  "views": [
+   {
+    "columns": [
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "Other route in FY2026",
+     "What was bought"
+    ],
+    "key": "stopped",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Paid in FY2024 and FY2025, far less in FY2026",
+    "note": "School general fund, invoices and orders open at the close, by vendor. What was bought: the largest invoices, FY2025 then FY2026, cut short by the ledger. Entries with no payee count for every vendor on that account.",
+    "rows": [
+     {
+      "cells": [
+       "$3,289,399",
+       "$3,285,735",
+       "$2,449,318",
+       "Another school fund paid $123,368; Entries with no payee on its accounts, $1,173,563",
+       "OCTOBER 2024; DECEMBER 2024; JANUARY 2025 → MIIA TEACHERS 2/10; JULY 2025; SCHOOLS - HI - MAR"
+      ],
+      "label": "MIIA HEALTH BENEFITS · Health insurance & benefits"
+     },
+     {
+      "cells": [
+       "$2,639",
+       "$68,236",
+       "$524",
+       "None found",
+       "911 COMPLIANCE; VIDEO INTERCOM & S; TRANSFER OF PHONES → REMOTE ASSISTANCE"
+      ],
+      "label": "VALLEY COMMUNICATION · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$5,024",
+       "$44,694",
+       "$0",
+       "Another school fund paid $11,566",
+       "ELA AND MATH K-8; TOTAL BUILDING ENR"
+      ],
+      "label": "CURRICULUM ASSOCIATE · Equipment & technology"
+     },
+     {
+      "cells": [
+       "$78,410",
+       "$53,678",
+       "$9,307",
+       "Paid under a later name $36,449; Another school fund paid $5,427",
+       "STUDENT SYSTEM *&; SCHOOL SPRING 2024; SUBSCRIPTION: NAVI → SPECIAL PROGRAMS L; NAVIANCE SUBSCRIPT"
+      ],
+      "label": "POWERSCHOOL GROUP LL · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$38,337",
+       "$41,366",
+       "$0",
+       "Another school fund paid $5,736",
+       "K IPADS; THES IPADS (STEM); HEADPHONE JACK ADA"
+      ],
+      "label": "APPLE COMPUTER · Equipment & technology"
+     },
+     {
+      "cells": [
+       "$65,632",
+       "$53,390",
+       "$18,684",
+       "Another school fund paid $349,930; Entries with no payee on its accounts, $45,000",
+       "HS-RTU UNIT REPAIR; QUARTERLY BILLING; APRIL 1 2025 TO JU → SERVICE AGREE HIGH; QUARTELY BILLING O; JAN 1, 2026 TO MAR"
+      ],
+      "label": "DAIKIN APPLIED · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$30,386",
+       "$29,438",
+       "$8,862",
+       "None found",
+       "LMHS - Fire Panel; District Elevator; ALARM DETECTION AN → ELEVATOR INSPECTIO; LMHS SERVICE CALL"
+      ],
+      "label": "JOHNSON CONTROLS · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$33,679",
+       "$39,990",
+       "$20,027",
+       "None found",
+       "BACNET CARD REPLAC; LMHS - Automatic T; LMHS SERVICE LABOR → TRIP OF BREAKER AN; HOST OF NEW VIRTUA; LMHS RTU6 OFFLINE"
+      ],
+      "label": "CONTROL TECHNOLOGIES · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$17,435",
+       "$17,435",
+       "$296",
+       "Another school fund paid $8,326",
+       "ELA LICENSES → MS ELA AND WRITING"
+      ],
+      "label": "AMPLIFY EDUCATION IN · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$27,338",
+       "$39,075",
+       "$23,397",
+       "None found",
+       "District Sewer Bil; ACCOUNT 1102 LAST; ACCOUNT 2153 LAST → BLANKET PO FY25-26"
+      ],
+      "label": "LUNENBURG SEWER DEPT · Heat, electricity & utilities"
+     },
+     {
+      "cells": [
+       "$60,942",
+       "$49,681",
+       "$35,330",
+       "None found",
+       "LMHS Elevator Hydr; MIDDLE HIGH SCHOOL; LMHS 50% DOWNPAYME → PRIMARY SCH SERVIC; LMHS PLAC REM & FL; STATE TESTING THES"
+      ],
+      "label": "DELTA BECKWITH · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$426",
+       "$16,932",
+       "$2,802",
+       "None found",
+       "AUDITORIUM RIGGING; LMHS AUDITORIUM FL; MHS AUDITORIUM AUD → PROAV SERVICE CONT; AUDITORIUM SOUND I; AUDITORIUM REPAIR"
+      ],
+      "label": "PRO AV SYSTEMS INC · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$11,907",
+       "$27,500",
+       "$13,986",
+       "None found",
+       "LMHS Solar Energy → SOLAR JULY 2025; LMHS Solar Energy; SOLAR"
+      ],
+      "label": "TC RENEWABLE HOLDCO · Heat, electricity & utilities"
+     },
+     {
+      "cells": [
+       "$108,543",
+       "$12,982",
+       "$0",
+       "None found",
+       "DAY PLACEMENT FOR"
+      ],
+      "label": "HORACE MANN EDUCATIO · Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$5,463",
+       "$12,900",
+       "$0",
+       "None found",
+       "IXL SOFTWARE ANNUA"
+      ],
+      "label": "IXL LEARNING INC · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$39,536",
+       "$11,398",
+       "$0",
+       "None found",
+       "LEGAL SERVICES FOR; MARCH 2025 SERVICE; LEGAL SERVICES JAN"
+      ],
+      "label": "NORRIS, MURRAY & PEL · Legal services"
+     },
+     {
+      "cells": [
+       "$13,497",
+       "$59,920",
+       "$50,443",
+       "None found",
+       "NEW CABLING PROJEC → TOUCHVIEW SCREENS; 2 TOUCH VIEWS; TOUCHSCREEN REPAIR"
+      ],
+      "label": "OCKERS COMPANY · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$8,795",
+       "$9,445",
+       "$0",
+       "None found",
+       "ANNUAL FEE FOR 50; AP COURSES; SEATS UTILIZED ABO"
+      ],
+      "label": "VIRTUAL HIGH SCHOOL · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$11,612",
+       "$10,869",
+       "$1,710",
+       "Another school fund paid $25,421",
+       "GIRLS BASKETBALL U; SOCCER AND FIELD H; BASKETBALLS → BASKETBALLS; SOCCER BALLS AND B; SOCCER BALLS"
+      ],
+      "label": "PRIME TIME SPORTS · Athletics & activities expenses"
+     },
+     {
+      "cells": [
+       "$8,980",
+       "$8,980",
+       "$0",
+       "None found",
+       "STUDENT ACCIDENT I"
+      ],
+      "label": "BOLLINGER INC · Athletics & activities expenses"
+     },
+     {
+      "cells": [
+       "$8,621",
+       "$7,939",
+       "$0",
+       "None found",
+       "GENETEC SOFTWARE M; TCP - Central Moni"
+      ],
+      "label": "SIGNET ELECTRONIC SY · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$114,068",
+       "$119,419",
+       "$111,697",
+       "None found",
+       "DAY PLACEMENT FOR → DAY PLACEMENT FOR"
+      ],
+      "label": "CENTER FOR APPLIED · Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$5,067",
+       "$7,677",
+       "$0",
+       "None found",
+       "HS LIBRARY BOOK OR; MIDDLE SCHOOL BOOK"
+      ],
+      "label": "FOLLETT CONTENT · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$6,132",
+       "$7,190",
+       "$0",
+       "None found",
+       "FOOTBALL HELMET RE"
+      ],
+      "label": "RIDDELL/ALL AMERICAN · Athletics & activities expenses"
+     },
+     {
+      "cells": [
+       "$5,416",
+       "$7,469",
+       "$721",
+       "Another school fund paid $213",
+       "MUSIC EQUIPMENT; BAND MUSIC SUPPLIE; MUSIC SUPPLIES → MUSIC SUPPLIES"
+      ],
+      "label": "MUSIC & ARTS CENTER · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$5,971",
+       "$6,240",
+       "$0",
+       "Another school fund paid $6,275",
+       "BUSINESS MANAGER M; MASBO MEMBERSHIP 7"
+      ],
+      "label": "MASS ASSOC OF SCHOOL · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$1,915",
+       "$6,731",
+       "$573",
+       "Another school fund paid $2,067",
+       "SHEET MUSIC FOR EN; MARCHING BAND MUSI; BAND AND MUSIC SUP → VARIOUS SHEET MUSI"
+      ],
+      "label": "PEPPER J W & SONS · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$96,457",
+       "$101,108",
+       "$95,768",
+       "Another school fund paid $1,260",
+       "District Electrici; NET  METERING CRED; Electricity Charge → SOLAR FY25-26; MAY AND JUNE BILLS"
+      ],
+      "label": "NEXAMP INC · Heat, electricity & utilities"
+     },
+     {
+      "cells": [
+       "$22,758",
+       "$5,236",
+       "$0",
+       "None found",
+       "FY25 SOLID WASTE/R"
+      ],
+      "label": "E L HARVEY · Heat, electricity & utilities"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "Other route in FY2026",
+     "What was bought"
+    ],
+    "key": "grew",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Up the most in FY2026",
+    "note": "The 15 vendors whose FY2026 payments rose most on FY2025.",
+    "rows": [
+     {
+      "cells": [
+       "$256,010",
+       "$100,856",
+       "$1,128,425",
+       "—",
+       "TUITION FOR KEYSTO; COLLABORATIVE TUIT; TUITION FOR COLLAB"
+      ],
+      "label": "FLLAC (KEYSTONE) · Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$355,790",
+       "$395,477",
+       "$591,490",
+       "—",
+       "SPED TRANSPORTATIO"
+      ],
+      "label": "VAN POOL · Transportation"
+     },
+     {
+      "cells": [
+       "$911,805",
+       "$950,084",
+       "$1,091,237",
+       "—",
+       "REGULAR BUS TRANSP; TRANSPORTATION FOR; TRANSPORATION FOR"
+      ],
+      "label": "DEE BUS SERVICE INC · Transportation"
+     },
+     {
+      "cells": [
+       "$107,329",
+       "$94,734",
+       "$220,435",
+       "—",
+       "ELECTRICITY; LMHS 12-26-25-1-26; ACCOUNT 3152325001"
+      ],
+      "label": "UNITIL · Heat, electricity & utilities"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$73,594",
+       "—",
+       "CONTRACTED TEACHER; CONTRACTED PARA FO; CONTR TCHR FOR THE"
+      ],
+      "label": "PRECISION HUMAN RES · Special-ed contracted services"
+     },
+     {
+      "cells": [
+       "$0",
+       "$786",
+       "$42,964",
+       "—",
+       "LHS SENSOR DUE TO; PRIMARY SCHOOL UNI; MINI SPLIT LOW REF"
+      ],
+      "label": "RENAUD HVAC & CONTRO · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$41,936",
+       "—",
+       "TUITION FOR AND; TUITION FOR    AND; [redacted] TUITION FOR"
+      ],
+      "label": "CAPS COLLABORATIVE · Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$0",
+       "$3,900",
+       "$40,376",
+       "—",
+       "READING K-5 V3; MS SOCIAL STUDIES"
+      ],
+      "label": "HARCOURT INC · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$33,198",
+       "—",
+       "CONTRACTED TEAM CH; CONTRACT TEAM CHAI; CONTR TEAM CHAIR L"
+      ],
+      "label": "KIMBERLY A WOODFORD · Special-ed contracted services"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$21,382",
+       "—",
+       "BLANKET PO FOR LEG; LEGAL COUNC-(INV 7; LEGAL COUNCIL - MA"
+      ],
+      "label": "VALERIO DOMINELLO · Legal services"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$19,983",
+       "—",
+       "OOD TUITION FOR"
+      ],
+      "label": "COMMUNITY PROVIDERS · Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$11,687",
+       "$0",
+       "$17,854",
+       "—",
+       "FILTERS FOR ALL SC; FILTERS FOR SCHOOL; SUPPLIES AND SHIPP"
+      ],
+      "label": "AIREX CORPORATION · Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$17,521",
+       "—",
+       "E-RATE CONSULTANTS; E-RATE PROGRAM YEA"
+      ],
+      "label": "O'NEAL CONSULTING, I · Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$1,625",
+       "$5,310",
+       "$22,153",
+       "—",
+       "ZTRAK MOWER; SPREADER; AUGER HOUSING SHOE"
+      ],
+      "label": "UNITED AG · Equipment & technology"
+     },
+     {
+      "cells": [
+       "$10,296",
+       "$2,008",
+       "$17,447",
+       "—",
+       "ELECTRICAL WORK AT; HS GYM BAY FIXTURE; LIGHTING CONTROL L"
+      ],
+      "label": "DI-ROCK ELECTRIC CO · Building & grounds upkeep"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "tables": [
+  {
+   "caption": "Budget, spending and what was left, four years",
+   "views": [
+    {
+     "columns": [
+      "Budget",
+      "Spent",
+      "Left",
+      "Budget against last year’s spending"
+     ],
+     "key": "fy2026",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2026",
+     "note": "Budget includes orders carried in and every transfer; spent includes orders open at the close.",
+     "rows": [
+      {
+       "cells": [
+        "$690,983",
+        "$495,049",
+        "$195,934",
+        "33.9%"
+       ],
+       "label": "Building & grounds upkeep"
+      },
+      {
+       "cells": [
+        "$1,056,014",
+        "$864,852",
+        "$191,162",
+        "3.6%"
+       ],
+       "label": "Counselors & psychologists"
+      },
+      {
+       "cells": [
+        "$11,009,404",
+        "$10,841,411",
+        "$167,992",
+        "1.6%"
+       ],
+       "label": "Teachers & substitutes"
+      },
+      {
+       "cells": [
+        "$3,752,258",
+        "$3,645,255",
+        "$107,003",
+        "14.7%"
+       ],
+       "label": "Health insurance & benefits"
+      },
+      {
+       "cells": [
+        "$501,354",
+        "$429,493",
+        "$71,861",
+        "5.6%"
+       ],
+       "label": "Supplies, services & everything else"
+      }
+     ],
+     "total_col": null
+    },
+    {
+     "columns": [
+      "Budget",
+      "Spent",
+      "Left",
+      "Budget against last year’s spending"
+     ],
+     "key": "fy2025",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2025",
+     "note": "Budget includes orders carried in and every transfer; spent includes orders open at the close.",
+     "rows": [
+      {
+       "cells": [
+        "$566,051",
+        "$515,876",
+        "$50,175",
+        "44.6%"
+       ],
+       "label": "Building & grounds upkeep"
+      },
+      {
+       "cells": [
+        "$1,021,615",
+        "$1,018,920",
+        "$2,695",
+        "62.9%"
+       ],
+       "label": "Counselors & psychologists"
+      },
+      {
+       "cells": [
+        "$10,851,937",
+        "$10,840,407",
+        "$11,529",
+        "2.3%"
+       ],
+       "label": "Teachers & substitutes"
+      },
+      {
+       "cells": [
+        "$3,275,744",
+        "$3,270,115",
+        "$5,629",
+        "1.6%"
+       ],
+       "label": "Health insurance & benefits"
+      },
+      {
+       "cells": [
+        "$583,792",
+        "$474,862",
+        "$108,930",
+        "8.3%"
+       ],
+       "label": "Supplies, services & everything else"
+      }
+     ],
+     "total_col": null
+    },
+    {
+     "columns": [
+      "Budget",
+      "Spent",
+      "Left",
+      "Budget against last year’s spending"
+     ],
+     "key": "fy2024",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2024",
+     "note": "Budget includes orders carried in and every transfer; spent includes orders open at the close.",
+     "rows": [
+      {
+       "cells": [
+        "$410,005",
+        "$391,355",
+        "$18,650",
+        "17.6%"
+       ],
+       "label": "Building & grounds upkeep"
+      },
+      {
+       "cells": [
+        "$743,246",
+        "$626,952",
+        "$116,294",
+        "3.5%"
+       ],
+       "label": "Counselors & psychologists"
+      },
+      {
+       "cells": [
+        "$10,735,918",
+        "$10,613,060",
+        "$122,858",
+        "1.4%"
+       ],
+       "label": "Teachers & substitutes"
+      },
+      {
+       "cells": [
+        "$3,099,944",
+        "$3,223,251",
+        "-$123,307",
+        "0.7%"
+       ],
+       "label": "Health insurance & benefits"
+      },
+      {
+       "cells": [
+        "$597,176",
+        "$539,024",
+        "$58,152",
+        "8.1%"
+       ],
+       "label": "Supplies, services & everything else"
+      }
+     ],
+     "total_col": null
+    },
+    {
+     "columns": [
+      "Budget",
+      "Spent",
+      "Left",
+      "Budget against last year’s spending"
+     ],
+     "key": "fy2023",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2023",
+     "note": "Budget includes orders carried in and every transfer; spent includes orders open at the close.",
+     "rows": [
+      {
+       "cells": [
+        "$348,972",
+        "$348,533",
+        "$439",
+        "—"
+       ],
+       "label": "Building & grounds upkeep"
+      },
+      {
+       "cells": [
+        "$728,847",
+        "$717,887",
+        "$10,960",
+        "—"
+       ],
+       "label": "Counselors & psychologists"
+      },
+      {
+       "cells": [
+        "$10,796,023",
+        "$10,585,850",
+        "$210,173",
+        "—"
+       ],
+       "label": "Teachers & substitutes"
+      },
+      {
+       "cells": [
+        "$2,880,844",
+        "$3,078,071",
+        "-$197,227",
+        "—"
+       ],
+       "label": "Health insurance & benefits"
+      },
+      {
+       "cells": [
+        "$566,084",
+        "$552,433",
+        "$13,651",
+        "—"
+       ],
+       "label": "Supplies, services & everything else"
+      }
+     ],
+     "total_col": null
+    }
+   ]
+  }
+ ],
+ "title": "Spending that stopped"
+}

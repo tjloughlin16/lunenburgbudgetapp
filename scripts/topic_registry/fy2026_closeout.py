@@ -25,7 +25,8 @@ CATEGORY = dict(
     # each drawn with a figure the hub's generator computes (hub payload `group_figures`).
     # Circuit breaker and surplus folded into FY2026 school surplus (routes.ts TOPIC_MERGED).
     groups=[
-        ('Total', ['fy2026-surplus-by-category', 'surplus-bridge', 'two-year-surplus']),
+        ('Total', ['fy2026-surplus-by-category', 'surplus-bridge', 'two-year-surplus',
+                   'why-it-was-left']),
         ('Year-end entries', ['fy2026-tuition-paid-early', 'fy2026-school-transfers']),
         ('By line', ['fy2026-budget-vs-munis', 'fy2026-tuition-lines', 'fy2026-paraprofessional-overrun',
                      'fy2026-psychologist-line', 'special-education-transportation',
@@ -41,7 +42,8 @@ TOPIC_GENERATORS = {'fy2026-surplus-by-category': 'build_fy2026_school_surplus.p
                     'surplus-repeat-lines': 'build_journal_surplus_topics.py',
                     'budget-burndown': 'build_journal_surplus_topics.py',
                     'surplus-suggestions': 'build_journal_surplus_topics.py',
-                    'fy2026-tuition-paid-early': 'build_journal_surplus_topics.py'}
+                    'fy2026-tuition-paid-early': 'build_journal_surplus_topics.py',
+                    'why-it-was-left': 'build_why_it_was_left.py'}
 TOPICS = {
     'fy2026-budget-vs-munis': 'Budget against MUNIS',
     'fy2026-surplus-by-category': 'FY2026 school surplus',
@@ -55,4 +57,7 @@ TOPICS = {
     'budget-burndown': 'Budget burndown',
     'surplus-suggestions': 'Surplus suggestions',
     'fy2026-tuition-paid-early': 'Year-end tuition payment',
+    # TJ, 26 November 2026: "can we answer WHAT wasn't paid for that WAS paid for in previous
+    # years?!" The id is the ticket's; the title is the noun the page answers.
+    'why-it-was-left': 'Spending that stopped',
 }

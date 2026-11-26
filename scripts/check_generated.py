@@ -188,6 +188,9 @@ CHECKS = [
     ('build_year_end_rush.py', ['--check']),
     ('build_budget_vs_munis.py', ['--check']),
     ('build_two_year_surplus.py', ['--check']),
+    # Spending that stopped (26 November 2026): FY2026 school budget against FY2025 spending, payroll
+    # by month, and recurring vendors; refuses unless vendors foot to the scope's spending.
+    ('build_why_it_was_left.py', ['--check']),
     ('extract_fy26_approved_budget.py', ['--check']),
     # ORDERS CARRIED FROM ONE SCHOOL YEAR INTO THE NEXT: the topic page, which refuses unless
     # every close's YEC equals the next year's SOY and carry-forward, account by account; and
