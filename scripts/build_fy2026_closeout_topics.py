@@ -1261,6 +1261,12 @@ def build():
         fail('the summary names upkeep and counselors under, paras, special-ed services and '
              'transportation over')
     D = ('29 June', '30 June', '6 October')
+    # WHAT THE LEDGER SHOWS ABOUT WHY (the Spending that stopped page, build_why_it_was_left.py):
+    # its figures read from its payload, the page that computes and asserts them.
+    wl = {x['id']: x['value'] for x in load('topics/why-it-was-left.json')['facts']}
+    wf = lambda k: figure(wl[k]['value'], wl[k]['text'])
+    if not (wl['above']['text'] == '5 of 5' and wl['fell']['text'] == '3 of 5'):
+        fail('the summary says all five were budgeted above last year’s spending, three spent less')
     # FOUR PIECES, NEVER NETTED (TJ, 26 November 2026: "i dont wnt to see those 2 as 1 thing
     # that 'cancel'. each has to sit on its own merit"). Private under, collaborative over, the
     # other kinds of spending that finished under, and those that ran over, each stated alone.
@@ -1289,11 +1295,18 @@ def build():
          {'a': U(pv['revised_budget']), 'b': U(pv_spent), 'c': U(pv_left), 'd': P(pv_pct, 0),
           'e': U(co['revised_budget']), 'f': U(co_spent), 'g': U(co_over_), 'h': P(co_pct, 0)}),
         ('**Outside tuition, the kinds of spending that finished under left %s, and the ones that '
-         'ran over took %s.** Under: building upkeep %s, counselors and psychologists %s, teachers '
-         '%s. Over: paraprofessionals, special education contracted services and transportation. '
-         '**Why they came in under is an open question.** What would answer it: %s.'
-         % (C.usd(oth_under), C.usd(oth_over), C.usd(bldg), C.usd(cnsl), C.usd(tch), why),
-         {'a': U(oth_under), 'b': U(oth_over), 'c': U(bldg), 'd': U(cnsl), 'e': U(tch)}),
+         'ran over took %s.** All five of the kinds '
+         'that left the most were budgeted above what they had spent the year before, and three '
+         'of them then spent less again. Building upkeep was budgeted %s above its %s spending. '
+         'Over: paraprofessionals, special education contracted services and transportation.'
+         % (C.usd(oth_under), C.usd(oth_over), wl['upk']['text'], C.fy(2025)),
+         {'a': U(oth_under), 'b': U(oth_over), 'u': wf('upk'), 'y': F(2025)}),
+        ('**What stopped being paid.** A psychologist account and a social worker account posted '
+         'no payroll in months that paid %s the year before. %s vendors paid in both of the two '
+         'years before were paid %s less in %s, after every other route the money could have '
+         'taken. Why each stopped is an open question; what would answer it: %s.'
+         % (wl['lost']['text'], wl['nstop']['text'], wl['dropnet']['text'], C.fy(2026), why),
+         {'l': wf('lost'), 'n': wf('nstop'), 'd': wf('dropnet'), 'y': F(2026)}),
         ('**Tuition for students placed outside Lunenburg’s schools costs more every year.** It is '
          'paid from two places: the school budget, and the circuit breaker, the state’s '
          'reimbursement for high-cost special education. Counting both, it rose from %s in %s to '
@@ -1311,7 +1324,8 @@ def build():
             C.fy(2027), C.usd(tu27), C.fy(2026), C.usd(tu26_own)),
          {'b': U(w_cb), 'p': U(plan), 'c': U(early_), 'd': F(2027), 'e': F(2026), 'f': U(tu27),
           'g': U(tu26_own)}, D),
-    ], place='lead', tone='callout')
+    ], place='lead', tone='callout', links=[(REG.TOPICS['why-it-was-left'][0],
+                                              REG.path('why-it-was-left'))])
     summary = TB.explain('The year in five paragraphs', [
         ('**The school budget finished %s %s under budget, the second year running far above '
          'normal.** %s and %s each finished about %s under; %s left %s. What is left at year end '
