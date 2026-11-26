@@ -739,7 +739,7 @@ def relink(path, docs):
         return 'current'
     had = len(m.get('town_published') or [])
     m['town_published'] = want
-    atomic_json(path, m, indent=2)
+    atomic_json(path, m)   # indent=1, every minutes file's own; indent=2 rewrote all of each file
     return 'relinked (%d -> %d document(s))' % (had, len(want))
 
 
