@@ -6744,9 +6744,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 180461,
+     "bytes": 181941,
      "url": "/docs/data/table-semantics.csv",
-     "count": 262,
+     "count": 265,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -9379,7 +9379,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 137715712,
+     "bytes": 137719808,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -10567,7 +10567,7 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 271051,
+     "bytes": 271674,
      "url": "/docs/data/refresh-runs.csv",
      "count": 75,
      "unit": "rows",
@@ -74091,7 +74091,7 @@
  "totals": {
   "documents": 6631,
   "groups": 38,
-  "bytes": 7712261448,
+  "bytes": 7712267647,
   "loadBearing": 228
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 52 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 1028 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
