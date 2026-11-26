@@ -45,6 +45,7 @@ RULE 13a. Where two published counts or two of our own divisions disagree they a
 by side as separate facts and never averaged.
 """
 import argparse
+import collections
 import csv
 import json
 import os
@@ -174,6 +175,527 @@ def _indexed(title, tracks, base, note):
 
 # --------------------------------------------------------------------- the pages
 
+# ---------------------------------------------------------------- out-of-district tuition
+# TJ, 26 November 2026: "do we have a report of out-of-district that breaks this down? Id like to
+# see the funding sources over time, as well as the budget vs actual for this, and to see if theres
+# a shift between private/collab. all the data that muddies the water gets very confusing" -- and,
+# the same day, "you must not use the standard template for this too". So the page is composed:
+# a signature drawn for it (each year, private and collaborative, by who was paid and who paid),
+# the long view from the state's return with its one known misreading marked, what muddies it as
+# a table of marks, then budget against spending on the two general fund lines.
+#
+# THE GRAIN IS THE PAYEE. fy_breakdown.model() places money from other funds on a general fund
+# line by who received it (its rule a), and marks invoices numbered for a later year as prepaid.
+# That is the reading the year-end pages use, and the only one under which FY2025 reads right:
+# money paid to a collaborative was charged to the circuit breaker's PRIVATE account, and the
+# state's End of Year return follows the account, so it shows the shift backwards.
+PRIV_ACCT = '0100-3-300-9300-51-1-06-2-535019'
+COLL_ACCT = '0100-3-300-9400-51-1-06-2-535023'
+JOURNAL = os.path.join(ROOT, 'sources', 'data', 'munis-school-journal.csv')
+YTD = os.path.join(ROOT, 'sources', 'data', 'munis-school-ytd.csv')
+PLACEMENTS = os.path.join(ROOT, 'sources', 'data', 'placement-counts.csv')
+# Colours: 1-3 are the site's thread hues for WHO PAID; 0 is muted, for the two minor items.
+# Threads 4 and 5 are kept for the KIND OF SCHOOL (KIND_COLOUR), on every chart that splits by
+# it, so no hue on this page means two things.
+PAYERS = [('gf', 'General fund', 1), ('cb', 'Circuit breaker', 2), ('idea', 'IDEA grant', 3),
+          ('rev', 'Revolving fund', 0)]
+KIND_COLOUR = {'priv': 3, 'coll': 4}   # TopicCharts indexes from zero: threads 4 and 5
+PAYER_OF = {'Circuit breaker': 'cb', 'IDEA (special education)': 'idea',
+            'Revolving funds and lunch': 'rev'}
+
+
+def ood_ledger():
+    """Private and collaborative tuition by year and payer (the shared model), the general fund
+    budget and its moves (the period-13 report and the journal), each asserted against the other."""
+    import fy_breakdown as FB
+    m = FB.model()
+    rows = {(r['fy'], r['account']): r for r in m['rows'] if r['account'] in (PRIV_ACCT, COLL_ACCT)}
+    years = sorted({fy for fy, _ in rows})
+    ytd = {(int(r['fiscal_year']), r['account']): r
+           for r in csv.DictReader(open(YTD, encoding='utf-8'))}
+    jr = list(csv.DictReader(open(JOURNAL, encoding='utf-8')))
+    out = {}
+    for y in years:
+        for k, acct in (('priv', PRIV_ACCT), ('coll', COLL_ACCT)):
+            r, t = rows[(y, acct)], ytd[(y, acct)]
+            paid = {'gf': float(r['gf_cost'])}
+            for (_, who), v in r['payers'].items():
+                if who not in PAYER_OF:
+                    fail('%s FY%d: a payer the page has no name for: %r' % (k, y, who))
+                paid[PAYER_OF[who]] = paid.get(PAYER_OF[who], 0.0) + float(v)
+            early = float(r['prepaid'])
+            if abs(sum(paid.values()) - float(r['all_funds_cost'])) > 0.01:
+                fail('%s FY%d: the payers no longer sum to the all-funds cost' % (k, y))
+            printed = float(t['ytd_expended']) + float(t['encumbrances'])
+            if abs(float(r['gf_spent']) - printed) > 0.01 or abs(paid['gf'] + early - printed) > 0.01:
+                fail('%s FY%d: the shared model and the period-13 report no longer agree on what '
+                     'the general fund paid (%s)' % (k, y, printed))
+            moves = [dict(date=x['effective_date'], amt=float(x['amount']), memo=x['description'])
+                     for x in jr if x['account'] == acct and x['posts_to'] == 'transfer'
+                     and int(x['fiscal_year']) == y]
+            if abs(sum(x['amt'] for x in moves) - float(t['transfers_adjustments'])) > 0.01:
+                fail('%s FY%d: the journal’s budget moves do not sum to the report’s' % (k, y))
+            out[(y, k)] = dict(paid=paid, early=early, all=float(r['all_funds_cost']),
+                               printed=printed, original=float(t['original_approp']),
+                               revised=float(t['revised_budget']), moves=moves)
+    # WHICH PAYEES ARE COLLABORATIVES: every vendor ever paid on a collaborative tuition account,
+    # read off the journal rather than typed here. Money to one of them charged to a PRIVATE
+    # account is where the account and the payee part company.
+    coll_vendors = {x['vendor'] for x in jr if x['object'] == '535023' and x['vendor']
+                    and x['posts_to'] == 'actual'}
+    cross = collections.defaultdict(float)
+    for x in jr:
+        if x['object'] == '535019' and x['posts_to'] == 'actual' and x['vendor'] in coll_vendors:
+            cross[int(x['fiscal_year'])] += float(x['amount'])
+    # The 29 June reclass: one entry, general fund collaborative onto the circuit breaker.
+    recl = [x for x in jr if x['source'] == 'GEN' and x['object'] == '535023'
+            and x['posts_to'] == 'actual' and x['fund'] == '0100']
+    if len(recl) != 1 or recl[0]['effective_date'] != '2026-06-29':
+        fail('the page assumes one 29 June 2026 entry moved collaborative tuition to the fund')
+    return out, years, dict(cross), -float(recl[0]['amount'])
+
+
+def placement_counts():
+    """The town's 1 March counts, where collaborative is printed as its own category and the
+    parts tie to the total the report states."""
+    out = {}
+    for r in csv.DictReader(open(PLACEMENTS, encoding='utf-8')):
+        if r['collaborative_basis'] == 'parallel category' and r['parts_tie'] == 'yes':
+            out[int(r['fy'])] = dict(coll=int(r['collaborative']),
+                                     priv=int(r['day']) + int(r['residential']),
+                                     total=int(r['total']))
+    return out
+
+
+BOOK_TEXT = os.path.join(ROOT, 'sources', 'district-budget', 'text',
+                         '3-12-25-town-manager-39-s-budget.txt')
+BOOK_HREF = '/docs/district-budget/docs/3-12-25-town-manager-39-s-budget.pdf'
+
+
+def book_offsets():
+    """The circuit breaker the vote counted on: the FY2026 budget book prints it as a negative
+    line under the collaborative tuitions, one column for FY2025 and one for FY2026."""
+    book = ' '.join(open(BOOK_TEXT, encoding='utf-8').read().split())
+    m = re.search(r'Circuit Breaker \(70% = \$[\d,]+\) \(75% = [\d,]+\)(-[\d,]+) (-[\d,]+)', book)
+    if not m:
+        fail('the circuit breaker offset is no longer printed in %s' % BOOK_TEXT)
+    return {2025: -float(m.group(1).replace(',', '')), 2026: -float(m.group(2).replace(',', ''))}
+
+
+def ood_page(CO, src, U, F, P, N, said_):
+    import topic_blocks as TB
+    L, years, cross, recl = ood_ledger()
+    kids = placement_counts()
+    off = book_offsets()
+    y0, y1 = years[0], years[-1]
+    f, con = LD.fact, TP.conclusion
+    pc = {r['fy']: r for r in CO['per_code']}
+    dese = sorted(pc)
+    # ---- asserted, or nothing is written
+    if not cross or set(cross) != {2025}:
+        fail('the page says one year, FY2025, paid a collaborative from a private account')
+    coll25_acct = pc[2025]['9400']['total']
+    if abs(L[(2025, 'coll')]['all'] - cross[2025] - coll25_acct) > 2:
+        fail('FY2025: by payee less the cross-charged sum is no longer the state’s 9400 figure')
+    if abs(L[(2025, 'coll')]['original'] - off[2025] - L[(2025, 'coll')]['revised']
+           + sum(x['amt'] for x in L[(2025, 'coll')]['moves'] if x['amt'] > 0)) > 0.01:
+        fail('FY2025: the day-one cut is no longer the book’s circuit breaker offset')
+    if L[(y1, 'priv')]['paid'].get('cb', 0) or L[(y0, 'priv')]['paid'].get('idea', 0):
+        fail('the page says the circuit breaker paid no private tuition in FY%d' % y1)
+    cbp = {y: L[(y, 'priv')]['paid'].get('cb', 0.0) for y in years}
+    cbc = {y: L[(y, 'coll')]['paid'].get('cb', 0.0) for y in years}
+    allp = {y: L[(y, 'priv')]['all'] for y in years}
+    allc = {y: L[(y, 'coll')]['all'] for y in years}
+    if not (all(allc[a] < allc[b] for a, b in zip(years, years[1:]))
+            and all(allc[y] < allp[y] for y in years[:-1]) and allc[y1] > allp[y1]
+            and allc[y1] - allc[y0] > allp[y1] - allp[y0]):
+        fail('the page says collaborative tuition rose every year, passed private in the last '
+             'year, and grew by more')
+    if not (kids[max(kids)]['coll'] > kids[max(kids)]['priv']
+            and all(v['coll'] <= v['priv'] for y, v in kids.items() if y < max(kids))):
+        fail('the page says the last count is the first with more children in collaboratives')
+    if [r['fy'] for r in CO['spend']] != dese:
+        fail('sped-cost.json: spend and per_code no longer cover the same years')
+    k14, k25 = kids[min(kids)], kids[max(kids)]
+    early = L[(y1, 'coll')]['early']
+    idea = L[(y1, 'priv')]['paid']['idea']
+    dese24, led24 = CO['spend'][[r['fy'] for r in CO['spend']].index(2024)]['total'], allp[2024] + allc[2024]
+
+    # ---- the signature: each year, by payee, split by payer
+    figs = set()
+
+    def usd(v):
+        s = C.usd(v)
+        figs.add(s)
+        return s
+    payer_name = {k: n for k, n, _ in PAYERS}
+    ylines = []
+    for y in years:
+        figs.add(C.fy(y))
+        ls = []
+        for k, name, kk in (('priv', 'Paid to private schools', 'priv'),
+                            ('coll', 'Paid to collaboratives', 'coll')):
+            v = L[(y, k)]
+            parts = [dict(payer=p, amt=round(v['paid'][p], 2), text=usd(v['paid'][p]))
+                     for p, _, _ in PAYERS if v['paid'].get(p)]
+            if y in kids:
+                n = kids[y][kk]
+                figs.add(C.num(n))
+                kt = '%s %s in %s, 1 March' % (C.num(n), 'child' if n == 1 else 'children',
+                                               'collaboratives' if kk == 'coll'
+                                               else 'day or residential schools')
+            else:
+                kt = 'count for 1 March not yet published'
+            ls.append(dict(name=name, total_text=usd(v['all']), kids_text=kt, parts=parts,
+                           early=dict(payer='early', amt=round(v['early'], 2), text=usd(v['early']))
+                           if v['early'] else None))
+        ylines.append(dict(fy=C.fy(y), lines=ls))
+    figs.add(C.fy(y1 + 1))
+    sig = TB.custom(
+        'ood-who-paid', 'Tuition by who was paid, and who paid it',
+        dict(years=ylines,
+             payers=[dict(key=k, label=n, colour=c) for k, n, c in PAYERS]
+             + [dict(key='early', label='%s invoices paid early' % C.fy(y1 + 1), colour=0, hollow=True)],
+             max=max(L[(y, k)]['all'] + L[(y, k)]['early'] for y in years for k in ('priv', 'coll')),
+             note='Every fund, %s to %s, sorted by who received each payment, not by the account it '
+                  'was charged to. Spent plus still owed at the close. The counts are children '
+                  'placed on 1 March; they are not divided into the dollars.' % (C.fy(y0), C.fy(y1))),
+        place='lead', figures=sorted(figs), allow=('1 March',),
+        basis=('record', 'Town ledger, school journal, period 13'),
+        alt='For each fiscal year, two bars: tuition paid to private schools and to collaboratives, '
+            'each split into the general fund, the circuit breaker, the IDEA grant and a revolving fund.',
+        so=('Collaborative tuition grew every year and passed private tuition in %s; the circuit '
+            'breaker moved from the private bar to the collaborative one.' % C.fy(y1), {'y': F(y1)}))
+
+    # ---- the overview above it: every year on one scale (TJ, 26 November 2026: "can we also
+    # have a top chart that puts that all on 1 horizontal chart? i want to see scale easily")
+    # TJ, the same day: "we neeed [it] to go more than 3 years back. it clearly shows an upward
+    # trend but looking forther, actually, the trend is relatively stable" -- and then, of the
+    # children: "our student counts Dropped over the years?!". So the overview runs from the
+    # state's first year. Before the ledger it is the state's return, by the account charged;
+    # from the ledger's first year it is the town's ledger, by payee. The change of source is a
+    # marked line on the chart, never a silent splice. The children counted on 1 March ride on a
+    # second axis, beside the dollars and never divided into them (rule 7).
+    pre = [y for y in dese if y < y0]
+    ov_years = pre + years
+    ov_p = {**{y: pc[y]['9300']['total'] for y in pre}, **allp}
+    ov_c = {**{y: pc[y]['9400']['total'] for y in pre}, **allc}
+    ov_t = {y: ov_p[y] + ov_c[y] for y in ov_years}
+    if not (all(ov_c[y] < ov_p[y] for y in ov_years[:-1]) and ov_c[y1] > ov_p[y1]):
+        fail('the overview says collaborative tuition was the smaller part every year until the last')
+    if abs(pc[2025]['9300']['total'] + pc[2025]['9400']['total'] - ov_t[2025]) > 2:
+        fail('FY2025: the state’s every-fund total and the ledger’s no longer agree; the overview '
+             'joins the two sources and says they agree where they overlap')
+    pk = max(ov_years, key=lambda y: ov_t[y])
+    kpk = max(kids, key=lambda y: kids[y]['total'])
+    kl = max(kids)
+    if not (ov_t[y1] < ov_t[pk] and kids[kl]['total'] < kids[kpk]['total']):
+        fail('the overview says tuition is below its peak while the children counted fell')
+    over = TB.chart(TP.series(
+        'Out-of-district tuition, every fund, by kind of school', [C.fy(y) for y in ov_years],
+        [TP.track('Private schools', [round(ov_p[y], 2) for y in ov_years], colour=KIND_COLOUR['priv']),
+         TP.track('Collaboratives', [round(ov_c[y], 2) for y in ov_years], colour=KIND_COLOUR['coll'])],
+        '$', kind='bar', stacked=True,
+        secondary=dict(name='Children placed, 1 March', unit='children',
+                       values=[kids[y]['total'] if y in kids else None for y in ov_years]),
+        events=[(C.fy(y0), 'Town ledger from here')],
+        note='To %s the state’s return, by account; from %s the town’s ledger, by who was paid. '
+             'The line is children placed on 1 March, not divided into the dollars.'
+             % (C.fy(pre[-1]), C.fy(y0)),
+        note_figures={'a': F(pre[-1]), 'b': F(y0)}, note_allow=('1 March',)),
+        so=('Tuition was %s in %s, below its %s peak of %s; the children counted fell from %s to %s.'
+            % (C.usd(ov_t[y1]), C.fy(y1), C.fy(pk), C.usd(ov_t[pk]), C.num(kids[kpk]['total']),
+               C.num(kids[kl]['total'])),
+            {'a': U(ov_t[y1]), 'y': F(y1), 'z': F(pk), 'b': U(ov_t[pk]),
+             'm': N(kids[kpk]['total']), 'n': N(kids[kl]['total'])}))
+
+    # ---- tuition per child counted: OUR DIVISION, by TJ's decision of 26 November 2026, which
+    # relaxes rule 7 for this one chart: "Add it, and you can even quote shcool committee members
+    # from recent meetings doing the same math themselves publicly". The committee did, on
+    # 7 October 2026 (the quotation below the chart). It is drawn as an estimate, and the note
+    # says why it is not a price: the count is one day, the dollars a whole year.
+    pcy = [y for y in ov_years if y in kids]
+    per = {y: dict(all=ov_t[y] / kids[y]['total'], priv=ov_p[y] / kids[y]['priv'],
+                   coll=ov_c[y] / kids[y]['coll']) for y in pcy}
+    if any(kids[y]['priv'] + kids[y]['coll'] != kids[y]['total'] for y in pcy):
+        fail('the per-child chart assumes the two kinds add to the count the report states')
+    xs_k = list(range(pcy[0], pcy[-1] + 1))
+    q0, q1 = pcy[0], pcy[-1]
+    per_chart = TB.chart(TP.series(
+        'Tuition per child counted, our estimate', [C.fy(y) for y in xs_k],
+        [TP.track('Every child', [round(per[y]['all']) if y in per else None for y in xs_k], 'estimate'),
+         TP.track('Private schools', [round(per[y]['priv']) if y in per else None for y in xs_k],
+                  'estimate', colour=KIND_COLOUR['priv']),
+         TP.track('Collaboratives', [round(per[y]['coll']) if y in per else None for y in xs_k],
+                  'estimate', colour=KIND_COLOUR['coll'])],
+        '$', kind='line',
+        events=[(C.fy(y0), 'Town ledger from here')] if y0 in xs_k else None,
+        note='Our division: a year’s tuition over the children counted on 1 March, one day. A '
+             'child placed for part of a year counts as one or none, so this is not a price.',
+        note_allow=('1 March',)),
+        so=('By our division, tuition per child counted went from %s in %s to %s in %s.'
+            % (C.usd(round(per[q0]['all'])), C.fy(q0), C.usd(round(per[q1]['all'])), C.fy(q1)),
+            {'a': U(round(per[q0]['all'])), 'y': F(q0), 'b': U(round(per[q1]['all'])), 'z': F(q1)}))
+    # The committee doing the same arithmetic in public, verbatim from our copy of its minutes.
+    SC_MIN = 'sources/meetings/text/school-committee/2026-10-07-minutes-8058.txt'
+    sc_quote = ('Using an illustrative average of $150,000 per placement, members noted that 15 '
+                'placements could cost approximately $2.25 million.')
+    if not TP.verbatim_in(sc_quote, open(os.path.join(ROOT, SC_MIN), encoding='utf-8').read()):
+        fail('the School Committee quotation is no longer verbatim in %s' % SC_MIN)
+    sc_said = dict(quote=sc_quote, board='School Committee', date='2026-10-07',
+                   href='/docs/minutes/text/school-committee/2026-10-07-minutes-8058.txt',
+                   label='School Committee minutes, 2026-10-07')
+    # And the Select Board, three weeks later, using the same average (TJ: "you can use the one
+    # you found in oct"). Only our machine captions hold it: the video at its second, a finding aid.
+    OCT27 = 'sources/data/youtube-transcripts/select-board/2026-10-27-EEjHeG_q7gY.json'
+    oct_quote = 'that 300,000 number was based on the average. A special ed placement of 150,000.'
+    if not TP.verbatim_in(oct_quote, ' '.join(
+            x['text'] for x in json.load(open(os.path.join(ROOT, OCT27), encoding='utf-8'))['segments'])):
+        fail('the 27 October quotation is no longer verbatim in %s' % OCT27)
+    oct_said = dict(quote=oct_quote, board='Select Board', date='2026-10-27',
+                    href='https://www.youtube.com/watch?v=EEjHeG_q7gY&t=3583s',
+                    label='Select Board recording (machine captions)')
+
+    # ---- composition: each kind of school, each year, by who paid (TJ, 26 November 2026: "i
+    # want another chart that shows the composition of each as well in 1 chart, over time, split
+    # by private/collab"). A GROUPED stacked column chart, drawn by its own component
+    # (ood-composition): the stock series chart collides eight labels and, on a phone, thins the
+    # axis to every other one, dropping every collaborative bar's name. Payer colours are the
+    # breakdown's below, so the two charts read as one key.
+    if not (cbp[y0] > allp[y0] / 2 and cbc[2025] > allc[2025] / 2):
+        fail('the composition chart says the circuit breaker paid most of private tuition in the '
+             'first year and most of collaborative tuition in FY2025')
+    cfigs = set()
+
+    def cu(v):
+        t = C.usd(v)
+        cfigs.add(t)
+        return t
+    groups = []
+    for y in years:
+        cfigs.add(C.fy(y))
+        bars = []
+        for k, kind, short in (('priv', 'Private', 'Private'), ('coll', 'Collaborative', 'Collab.')):
+            v = L[(y, k)]
+            bars.append(dict(kind=kind, short=short, total=round(v['all'], 2), total_text=cu(v['all']),
+                             parts=[dict(payer=p, amt=round(v['paid'][p], 2), text=cu(v['paid'][p]))
+                                    for p, _, _ in PAYERS if v['paid'].get(p)]))
+        groups.append(dict(fy=C.fy(y), bars=bars))
+    step = 250000
+    top = step * int(-(-max(max(allp.values()), max(allc.values())) // step))
+    ticks = []
+    for i in range(int(top // step) + 1):
+        v = i * step
+        t = '$0' if not v else ('$%gM' % (v / 1e6) if v >= 1e6 else '$%dk' % (v // 1000))
+        cfigs.add(t)
+        ticks.append(dict(v=v, text=t))
+    compo = TB.custom(
+        'ood-composition', 'Who paid, by kind of school and year',
+        dict(groups=groups, payers=[dict(key=k, label=n, colour=c) for k, n, c in PAYERS],
+             ticks=ticks,
+             note='By who received each payment, spent plus still owed at the close. Next year’s '
+                  'invoices paid early are left out.'),
+        place='body', figures=sorted(cfigs),
+        basis=('record', 'Town ledger, school journal, period 13'),
+        alt='For each fiscal year, a private bar and a collaborative bar side by side, each split '
+            'into the general fund, the circuit breaker, the IDEA grant and a revolving fund.',
+        so=('The circuit breaker paid most of private tuition in %s and most of collaborative '
+            'tuition in %s.' % (C.fy(y0), C.fy(2025)), {'a': F(y0), 'b': F(2025)}))
+
+    # ---- what muddies it
+    atm = next(x for x in L[(2025, 'coll')]['moves'] if x['amt'] > 0)
+    muddy = TB.checks(
+        'What makes the accounts hard to read',
+        ['Private, by account', 'Collaborative, by account', 'The state’s return',
+         'General fund budget against spending'],
+        [TB.check_row('A collaborative paid from the private account',
+                      ('%s: %s paid to a collaborative was charged to the circuit breaker’s private '
+                       'tuition account.' % (C.fy(2025), C.usd(cross[2025])),
+                       {'y': F(2025), 'a': U(cross[2025])}), [0, 1, 2]),
+         TB.check_row('The budget cut to its net on the first day',
+                      ('%s: the collaborative budget fell by %s on 1 July, the circuit breaker the '
+                       'budget book expected; Town Meeting added %s in May.'
+                       % (C.fy(2025), C.usd(off[2025]), C.usd(atm['amt'])),
+                       {'y': F(2025), 'a': U(off[2025]), 'b': U(atm['amt'])}, ('1 July',)), [3]),
+         TB.check_row('A grant paid a private school as contracted services',
+                      ('%s: %s from the IDEA grant went to a private school, booked as contracted '
+                       'services, not tuition.' % (C.fy(y1), C.usd(idea)),
+                       {'y': F(y1), 'a': U(idea)}), [0]),
+         TB.check_row('Circuit breaker money by journal entry',
+                      ('%s: %s of collaborative tuition the general fund had paid was moved onto the '
+                       'circuit breaker on 29 June.' % (C.fy(y1), C.usd(recl)),
+                       {'y': F(y1), 'a': U(recl)}, ('29 June',)), [1, 3]),
+         TB.check_row('Next year’s invoices paid in June',
+                      ('%s: %s of collaborative invoices numbered for %s were charged on 30 June.'
+                       % (C.fy(y1), C.usd(early), C.fy(y1 + 1)),
+                       {'y': F(y1), 'a': U(early), 'z': F(y1 + 1)}, ('30 June',)), [1, 3]),
+         TB.check_row('The state and the ledger disagree',
+                      ('%s: the state’s return says %s, every fund; the ledger %s.'
+                       % (C.fy(2024), C.usd(dese24), C.usd(led24)),
+                       {'y': F(2024), 'a': U(dese24), 'b': U(led24)}), [2])],
+        place='body', first='What it is', second='When, and how much',
+        so='Each one moves a figure a reader would quote; the bars above are drawn after all of them.')
+
+    # ---- planned against paid, by payer (the two years the book prints its offset)
+    def card(y, title):
+        v = L[(y, 'coll')]
+        rows = [('Circuit breaker, expected', C.usd(off[y]), None),
+                ('Circuit breaker, paid', C.usd(v['paid'].get('cb', 0)),
+                 'bad' if v['paid'].get('cb', 0) < off[y] else None),
+                ('General fund, budget', C.usd(v['revised']), None),
+                ('General fund, paid', C.usd(v['paid']['gf']),
+                 'bad' if v['paid']['gf'] > v['revised'] else 'good')]
+        if v['early']:
+            rows.append(('Next year’s invoices, paid early', C.usd(v['early']), 'muted'))
+        return TB.panel(title, rows, sub=('Fiscal year %s' % C.fy(y), {'y': F(y)}))
+    plan = TB.panels('Collaborative tuition, planned and paid',
+                     [card(2025, 'The first year budgeted net'), card(y1, 'The latest closed year')],
+                     place='body',
+                     so='The budget counted on the circuit breaker; when it paid less, the general '
+                        'fund paid the rest.')
+
+    # ---- budget against spending, both lines, every year (the walk, as a table)
+    def walk(k):
+        rows = []
+        for y in reversed(years):
+            v = L[(y, k)]
+            mv = sum(x['amt'] for x in v['moves'])
+            rows.append(dict(label=C.fy(y), cells=[
+                C.usd(v['original']), C.usd(mv) if mv else '—', C.usd(v['revised']),
+                C.usd(v['printed']), C.usd(v['revised'] - v['printed'])]))
+        return rows
+    bva = dict(caption='General fund budget against spending', views=[
+        dict(key=k, label=lab, total_col=None, kinds=['budget', 'budget', 'budget', 'ledger', 'ledger'],
+             columns=['Original', 'Moved', 'Budget', 'Paid', 'Left'], rows=walk(k),
+             note='Period-13 report: paid is spent plus still owed, after any amount moved to '
+                  'another fund. Left below zero is past the budget.', note_allow=('13',))
+        for k, lab in (('coll', 'Collaborative tuition'), ('priv', 'Private tuition'))])
+
+    # ---- the long view, from the state's return
+    xs = [C.fy(y) for y in dese]
+    long_kind = TP.series(
+        'Private and collaborative tuition, every fund', xs,
+        [TP.track('Private schools', [pc[y]['9300']['total'] for y in dese], 'published',
+                  colour=KIND_COLOUR['priv']),
+         TP.track('Collaboratives', [pc[y]['9400']['total'] for y in dese], 'published',
+                  colour=KIND_COLOUR['coll'],
+                  labels={len(dese) - 1: 'charged to the private account, not the payee'})],
+        '$', kind='line',
+        note='DESE End of Year Financial Report, functions 9300 and 9400, by the account each '
+             'payment was charged to.', note_allow=('9300', '9400'))
+    ks = list(range(min(kids), max(kids) + 1))
+    long_kids = TP.series(
+        'Children placed, by kind of school', [C.fy(y) for y in ks],
+        [TP.track('Day or residential schools', [kids[y]['priv'] if y in kids else None for y in ks],
+                  colour=KIND_COLOUR['priv']),
+         TP.track('Collaboratives', [kids[y]['coll'] if y in kids else None for y in ks],
+                  colour=KIND_COLOUR['coll'])],
+        'children', kind='line',
+        note='The annual town report’s count on 1 March. No split is printed for %s.' % C.fy(2021),
+        note_figures={'y': F(2021)}, note_allow=('1 March',))
+    long_fund = TP.series(
+        'Who paid, as the state reports it', xs,
+        [TP.track('General fund', [CO['spend'][i]['gen_fund'] for i in range(len(dese))]),
+         TP.track('Every other fund', [CO['spend'][i]['grants'] for i in range(len(dese))])],
+        '$', kind='bar', stacked=True,
+        note='DESE End of Year Financial Report. Other funds include the circuit breaker and '
+             'grants; the return does not name them.')
+    # Third on the page, under the two ledger charts (TJ, 26 November 2026: "bump it up to the top
+    # third part"): whether the general fund has come to pay more, over every year the state reports.
+    fund_chart = TB.chart(long_fund, so='Money outside the general fund has paid part of tuition '
+                                        'in every year the state reports.')
+
+    # ---- facts and conclusions
+    fx = [
+        f('c23', U(allc[y0]), 'paid to collaboratives, %s' % C.fy(y0), 'published', {'y': F(y0)}),
+        f('c26', U(allc[y1]), 'paid to collaboratives, %s' % C.fy(y1), 'published', {'y': F(y1)}),
+        f('p23', U(allp[y0]), 'paid to private schools, %s' % C.fy(y0), 'published', {'y': F(y0)}),
+        f('p26', U(allp[y1]), 'paid to private schools, %s' % C.fy(y1), 'published', {'y': F(y1)}),
+        f('cbp23', U(cbp[y0]), 'circuit breaker on private tuition, %s' % C.fy(y0), 'published',
+          {'y': F(y0)}),
+        f('cbc25', U(cbc[2025]), 'circuit breaker on collaborative tuition, %s' % C.fy(2025),
+          'published', {'y': F(2025)}),
+        f('off26', U(off[y1]), 'circuit breaker the approved budget counted on, %s' % C.fy(y1), 'published',
+          {'y': F(y1)}),
+        f('cbc26', U(cbc[y1]), 'circuit breaker paid, collaborative, %s' % C.fy(y1), 'published',
+          {'y': F(y1)}),
+        f('gf26', U(L[(y1, 'coll')]['printed']), 'general fund paid, collaborative, %s' % C.fy(y1),
+          'published', {'y': F(y1)}),
+        f('k14', N(k14['coll'], 'children'), 'in collaboratives of %s placed, %s'
+          % (C.num(k14['total']), C.fy(min(kids))), 'published',
+          {'n': N(k14['total']), 'y': F(min(kids))}),
+        f('k25', N(k25['coll'], 'children'), 'in collaboratives of %s placed, %s'
+          % (C.num(k25['total']), C.fy(max(kids))), 'published',
+          {'n': N(k25['total']), 'y': F(max(kids))}),
+        f('d25', U(coll25_acct), 'collaborative, the state’s return, %s' % C.fy(2025), 'published',
+          {'y': F(2025)}),
+    ]
+    cons = [
+        con('Tuition paid to collaboratives rose from %s in %s to %s in %s.'
+            % (C.usd(allc[y0]), C.fy(y0), C.usd(allc[y1]), C.fy(y1)), ['c23', 'c26', 'p23', 'p26'],
+            {'a': U(allc[y0]), 'y': F(y0), 'b': U(allc[y1]), 'z': F(y1)},
+            so='Private tuition went from %s to %s over the same years, so most of the growth is '
+               'collaborative.' % (C.usd(allp[y0]), C.usd(allp[y1])),
+            so_figures={'a': U(allp[y0]), 'b': U(allp[y1])}),
+        con('The circuit breaker paid %s of private tuition in %s and none in %s.'
+            % (C.usd(cbp[y0]), C.fy(y0), C.fy(y1)), ['cbp23', 'cbc25'],
+            {'a': U(cbp[y0]), 'y': F(y0), 'z': F(y1)},
+            so='It paid %s of collaborative tuition in %s; a general fund line can rise simply '
+               'because the repayment moved.' % (C.usd(cbc[2025]), C.fy(2025)),
+            so_figures={'a': U(cbc[2025]), 'y': F(2025)}),
+        con('The approved budget counted on %s of circuit breaker for collaboratives in %s; %s came.'
+            % (C.usd(off[y1]), C.fy(y1), C.usd(cbc[y1])), ['off26', 'cbc26', 'gf26'],
+            {'a': U(off[y1]), 'y': F(y1), 'b': U(cbc[y1])},
+            so='The general fund line, budgeted net of it, paid %s, %s of it next year’s invoices.'
+               % (C.usd(L[(y1, 'coll')]['printed']), C.usd(early)),
+            so_figures={'a': U(L[(y1, 'coll')]['printed']), 'b': U(early)}),
+        con('Children in collaboratives went from %s of %s placed in %s to %s of %s in %s.'
+            % (C.num(k14['coll']), C.num(k14['total']), C.fy(min(kids)), C.num(k25['coll']),
+               C.num(k25['total']), C.fy(max(kids))), ['k14', 'k25', 'd25'],
+            {'a': N(k14['coll']), 'n': N(k14['total']), 'y': F(min(kids)), 'b': N(k25['coll']),
+             'm': N(k25['total']), 'z': F(max(kids))},
+            so='The state’s return, which follows the account, puts %s collaborative tuition '
+               'at %s and shows the shift backwards.'
+               % (C.fy(2025), C.usd(coll25_acct)),
+            so_figures={'a': U(coll25_acct), 'y': F(2025)}),
+    ]
+    sources = [
+        dict(src['glytdbud-expense-fy2026-p13-gf-school.xlsx'], key='gf'),
+        dict(src['glytdbud-expense-fy2026-p13-special-school.xlsx'], key='special'),
+        dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school journal '
+                   'line, FY2023–FY2026, our redacted reading of the Town’s Report 1)',
+             href='/docs/data/munis-school-journal.csv', key='journal'),
+        dict(label='Lunenburg Public Schools — FY2026 approved budget, 12 March 2025 (the circuit '
+                   'breaker line under the tuitions)', href=BOOK_HREF, key='book'),
+        dict(src['district-expenditures-by-function.xlsx'], key='dese'),
+        dict(src['placement-counts.csv'], key='kids'),
+    ]
+    cite = TP.cite
+    return TP.page(
+        'out-of-district-tuition',
+        'Paid to collaboratives: %s in %s, %s in %s, now more than to private schools.'
+        % (C.usd(allc[y0]), C.fy(y0), C.usd(allc[y1]), C.fy(y1)),
+        fx, cons, sources=sources, said=[sc_said, oct_said, said_],
+        finding_figures={'a': U(allc[y0]), 'y': F(y0), 'b': U(allc[y1]), 'z': F(y1)},
+        tables=[bva],
+        flow=['finding',
+              cite(over, 'dese', 'gf', 'special', 'journal', 'kids'),
+              cite(per_chart, 'dese', 'gf', 'special', 'journal', 'kids'), 'said',
+              cite(compo, 'gf', 'special', 'journal'),
+              cite(fund_chart, 'dese'),
+              cite(sig, 'gf', 'special', 'journal', 'kids'), ('conclusion', 0), ('conclusion', 1),
+              cite(muddy, 'journal', 'gf', 'special', 'dese', 'book'),
+              cite(plan, 'book', 'gf', 'special', 'journal'), ('conclusion', 2),
+              cite(('table', 0), 'gf', 'journal'),
+              cite(TB.chart(long_kind, so='Drawn by account, the last year turns the trend over.'),
+                   'dese'),
+              cite(TB.chart(long_kids, so=('%s is the first count with more children in '
+                                            'collaboratives than in day or residential schools.'
+                                            % C.fy(max(kids)), {'y': F(max(kids))})), 'kids'),
+              ('conclusion', 3),
+              'related', 'sources'])
+
+
 def build():
     SC = load('special-education-costs.json')
     CO = load('sped-cost.json')
@@ -219,6 +741,7 @@ def build():
     fx['share25'] = f('share25', P(last['outside_share_pct']),
                       'of it paid outside the general fund, %s' % C.fy(y25), 'published',
                       {'y': F(y25)})
+    # The hub draws this table; the tuition page is composed below (ood_page).
     tuition_table = dict(caption='Out-of-district tuition by fund, by year', views=[dict(
         key='funds', label='DESE End of Year Financial Report', total_col=2,
         kinds=['ledger'] * 4,
@@ -230,68 +753,7 @@ def build():
         note='Functions 9300 and 9400 on the district’s statutory return, closed years. The '
              'general fund column equals the district’s own restated budget figure in most '
              'years; the other column holds every non-general fund together.')])
-    out['out-of-district-tuition'] = TP.page(
-        'out-of-district-tuition',
-        '%s went to out-of-district tuition in %s; %s of it was paid outside the general fund.'
-        % (C.usd(last['total']), C.fy(y25), C.pct(last['outside_share_pct'])),
-        [fx['total25'], fx['gf25'],
-         f('out25', U(last['grants']), 'of it from grants and revolving funds, %s' % C.fy(y25),
-           'published', {'y': F(y25)}),
-         fx['share25'],
-         f('ties', N(CO['ties_count'], 'years'),
-           'years of %s the district’s restated figure is DESE’s' % C.num(CO['compared_count']),
-           'published', {'n': N(CO['compared_count'])}),
-         f('peak', U(peak['total']), 'every fund, %s, the highest year' % C.fy(peak['fy']),
-           'published', {'y': F(peak['fy'])}),
-         f('low', U(low['total']), 'every fund, %s, the lowest year' % C.fy(low['fy']),
-           'published', {'y': F(low['fy'])}),
-         f('sharehi', P(shi['outside_share_pct']), 'outside the general fund, %s' % C.fy(shi['fy']),
-           'published', {'y': F(shi['fy'])}),
-         f('sharelo', P(slo['outside_share_pct']), 'outside the general fund, %s' % C.fy(slo['fy']),
-           'published', {'y': F(slo['fy'])}),
-         f('dese24', U(dese24), 'every fund, %s, the state’s return' % C.fy(2024), 'published',
-           {'y': F(2024)}),
-         f('munis24', U(munis24), 'every fund, %s, the town’s ledger' % C.fy(2024), 'published',
-           {'y': F(2024)})],
-        [con('The general fund paid %s; another %s came from grants and revolving funds in %s.'
-             % (C.usd(last['gen_fund']), C.usd(last['grants']), C.fy(y25)),
-             ['gf25', 'out25', 'share25', 'ties'],
-             {'a': U(last['gen_fund']), 'b': U(last['grants']), 'y': F(y25)},
-             notes=[step('Which grant or revolving fund paid it is not split in the state’s '
-                         'return, so it is not established that it was the circuit breaker.',
-                         'gap', allow=('Schedule 19',), closes='Schedule 19 of the district’s End of Year Financial '
-                                       'Report as filed, listing each grant and revolving fund')]),
-         con('Every-fund tuition peaked at %s in %s and was %s at its lowest, in %s.'
-             % (C.usd(peak['total']), C.fy(peak['fy']), C.usd(low['total']), C.fy(low['fy'])),
-             ['peak', 'low', 'total25'],
-             {'a': U(peak['total']), 'y': F(peak['fy']), 'b': U(low['total']),
-              'z': F(low['fy'])}),
-         con('The share paid outside the general fund has run from %s to %s across the years.'
-             % (C.pct(slo['outside_share_pct']), C.pct(shi['outside_share_pct'])),
-             ['sharelo', 'sharehi'],
-             {'a': P(slo['outside_share_pct']), 'b': P(shi['outside_share_pct'])}),
-         con('For %s the state’s return says %s and the town’s ledger %s.'
-             % (C.fy(2024), C.usd(dese24), C.usd(munis24)), ['dese24', 'munis24'],
-             {'y': F(2024), 'a': U(dese24), 'b': U(munis24)},
-             notes=[step('The difference is exactly the circuit breaker payment the state lists '
-                         'for %s, %s. Why is not published.'
-                         % (C.fy(2024), C.usd(af[2024]['dese_paid'])), 'gap',
-                         {'y': F(2024), 'p': U(af[2024]['dese_paid'])},
-                         closes='a reconciliation by the district of its End of Year Financial '
-                                'Report to the town’s ledger, fund by fund')])],
-        # THE SIGNATURE: the finding is a split of one total by who paid it, so the two funds
-        # stack into every-fund tuition, year by year, as the state's return prints them.
-        chart=TP.series('Out-of-district tuition by fund', [C.fy(y) for y in sorted(spend)], [
-            TP.track('General fund', [spend[y]['gen_fund'] for y in sorted(spend)], 'published'),
-            TP.track('Grants and revolving funds', [spend[y]['grants'] for y in sorted(spend)],
-                     'published')], '$', kind='bar', stacked=True,
-            note='DESE’s End of Year Financial Report, closed years. Each bar is every fund, '
-                 'split into the general fund and everything else.'),
-        table=tuition_table,
-        said=[said(CO, 'skyrocket')],
-        sources=S('district-expenditures-by-function.xlsx', 'glytdbud-expense-fy2026-p13-gf-school.xlsx',
-                  'glytdbud-expense-fy2026-p13-special-school.xlsx'),
-        finding_figures={'a': U(last['total']), 'y': F(y25), 'p': P(last['outside_share_pct'])})
+    out['out-of-district-tuition'] = ood_page(CO, src, U, F, P, N, said(CO, 'skyrocket'))
 
     # ------------------------------------------------ cost per placement (OUR divisions)
     pc = SC['per_child']

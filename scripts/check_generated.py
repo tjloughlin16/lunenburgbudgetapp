@@ -627,6 +627,10 @@ CHECKS = [
     # still in the extracted minutes. Any one of those going quiet would leave every
     # figure on the pages a faithful copy of the source and a sentence beside it wrong.
     ('build_special_education.py', ['--check']),
+    # The special education topic pages (eleven and the hub). Out-of-district tuition reads the
+    # shared fy_breakdown model, the school journal and the FY2026 budget book, and refuses to
+    # write if the payee split, the period-13 report and the state's return stop agreeing.
+    ('build_special_education_topics.py', ['--check']),
     # The class-size rule. This entry catches far more than a stale payload, because the
     # generator refuses to write unless the REGULATION still says what the page quotes it
     # as saying: every clause is located by its own opening words and found exactly once;

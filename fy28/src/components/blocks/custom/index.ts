@@ -54,6 +54,8 @@ import SchoolDraftLines from './school-draft-lines'
 import EntryTrail from './entry-trail'
 import TalkingPoints from './talking-points'
 import BigFigures from './big-figures'
+import OodWhoPaid from './ood-who-paid'
+import OodComposition from './ood-composition'
 
 export type CustomProps = { data: unknown; alt: string }
 
@@ -103,4 +105,6 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'entry-trail': EntryTrail,
   'talking-points': TalkingPoints,
   'big-figures': BigFigures,
+  'ood-who-paid': OodWhoPaid,
+  'ood-composition': OodComposition,
 }
