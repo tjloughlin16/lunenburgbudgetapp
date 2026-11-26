@@ -294,6 +294,11 @@ def build():
     if not 5 <= len(shown) <= 20:
         fail('%d departments left $10,000 or more; the chart is sized for 5 to 20' % len(shown))
     top_share = round(100 * sum(live[d]['available'] for d in shown) / under_amt)
+    # every department links to its office's page (build_town_office_pages.py, TJ: "per office")
+    import build_town_office_pages as OP
+    office = OP.page_of()
+    if set(live) - set(office):
+        fail('departments with no office page: %s' % sorted(set(live) - set(office)))
     # one view a MUNIS function (the account string's second segment), so no view passes 30 rows
     fn_of = {}
     for d in live:
@@ -305,8 +310,11 @@ def build():
     for fn in sorted(set(fn_of.values())):
         ds = sorted((d for d in live if fn_of[d] == fn), key=lambda d: -live[d]['revised'])
         ft = {k: round(sum(live[d][k] for d in ds), 2) for k in K}
-        rows = [dict(label='%s (%s)' % (dn[d], d), cells=[usd2(live[d][k]) for k in
-                     ('revised', 'expended', 'encumbered', 'available')]) for d in ds]
+        rows = []
+        for d in ds:
+            cells = [usd2(live[d][k]) for k in ('revised', 'expended', 'encumbered', 'available')]
+            rows.append(dict(label='%s (%s)' % (dn[d], d), cells=cells,
+                             links=[[dict(t=cells[0], href=office[d])], None, None, None]))
         if len(ds) > 1:
             rows.append(dict(label='Total', cells=[usd2(ft[k]) for k in
                              ('revised', 'expended', 'encumbered', 'available')]))
@@ -314,7 +322,7 @@ def build():
                           kinds=['ledger'] * 4, columns=['Budget', 'Paid', 'Still owed', 'Left'],
                           rows=rows,
                           note='Departments in this function, largest budget first. Budget is '
-                               'after transfers.'))
+                               'after transfers; each budget opens its office’s page.'))
         if len(rows) > 30:
             fail('function %s has %d rows; a table view holds 30' % (fn, len(rows)))
     if not near(sum(live[d]['available'] for d in live), left26):
@@ -367,7 +375,8 @@ def build():
             [(dn[d], live[d]['available']) for d in shown], '$',
             note='%s, period 13, the closed year. Departments that left at least %s.'
                  % (C.fy(2026), C.usd(10000)),
-            note_figures={'y': F(2026), 'b': U(10000)}, note_allow=('13',)),
+            note_figures={'y': F(2026), 'b': U(10000)}, note_allow=('13',),
+            hrefs={dn[d]: office[d] for d in shown}),
         table=dict(caption='Every town department at the %s close' % C.fy(2026), views=views),
 
         sources=[src['d-p13'], src['d-tot'], src['d-ledger']],

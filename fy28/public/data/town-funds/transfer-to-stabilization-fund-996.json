@@ -1,0 +1,207 @@
+{
+ "about": "What Town Meeting voted the Transfer to Stabilization Fund from the general fund, mostly taxes, and how it closed, account by account.",
+ "accounts": {
+  "columns": [
+   {
+    "id": "original",
+    "label": "Voted",
+    "means": "what Town Meeting voted"
+   },
+   {
+    "id": "transfers",
+    "label": "Transfers",
+    "means": "moved in or out during the year"
+   },
+   {
+    "id": "revised",
+    "label": "Budget",
+    "means": "voted plus transfers"
+   },
+   {
+    "id": "expended",
+    "label": "Spent",
+    "means": "paid by the close"
+   },
+   {
+    "id": "encumbered",
+    "label": "Owed at the close",
+    "means": "ordered and not yet paid"
+   },
+   {
+    "id": "available",
+    "label": "Left",
+    "means": "budget less spent and owed"
+   }
+  ],
+  "years": {
+   "FY2025": {
+    "rows": [
+     {
+      "code": "570013",
+      "key": "0100-9-996-0000-00-0-00-2-570013",
+      "name": "Transfer to Stabilization Fund",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$537,061.00",
+       "original": "$717,595.25",
+       "revised": "$537,061.00",
+       "transfers": "-$180,534.25"
+      },
+      "zero": false
+     }
+    ],
+    "total": {
+     "name": "Transfer to Stabilization Fund",
+     "t": {
+      "available": "$0.00",
+      "encumbered": "$0.00",
+      "expended": "$537,061.00",
+      "original": "$717,595.25",
+      "revised": "$537,061.00",
+      "transfers": "-$180,534.25"
+     }
+    }
+   },
+   "FY2026": {
+    "rows": [
+     {
+      "code": "570013",
+      "key": "0100-9-996-0000-00-0-00-2-570013",
+      "name": "Transfer to Stabilization Fund",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$1,027,937.00",
+       "original": "$232,500.00",
+       "revised": "$1,027,937.00",
+       "transfers": "$795,437.00"
+      },
+      "zero": false
+     }
+    ],
+    "total": {
+     "name": "Transfer to Stabilization Fund",
+     "t": {
+      "available": "$0.00",
+      "encumbered": "$0.00",
+      "expended": "$1,027,937.00",
+      "original": "$232,500.00",
+      "revised": "$1,027,937.00",
+      "transfers": "$795,437.00"
+     }
+    }
+   }
+  }
+ },
+ "across": null,
+ "as_of": "The Town’s general fund budget report at the close (period 13), unaudited.",
+ "code": "996",
+ "gaps": [
+  {
+   "href": "/what-we-cannot-answer",
+   "label": "Which payments make up these accounts"
+  }
+ ],
+ "generated_by": "scripts/build_town_office_pages.py",
+ "kicker": "General fund · department 996 · voted by Town Meeting",
+ "name": "Transfer to Stabilization Fund",
+ "owner": {
+  "href": "/department-budgets/fy2026-town-closeout",
+  "name": "Transfer to Stabilization Fund"
+ },
+ "path": "/town-lines/transfer-to-stabilization-fund-996",
+ "postings": null,
+ "postings_none": "The report at the close prints each account’s totals, not the payments behind them, so this page stops at the account.",
+ "read": [
+  {
+   "h": "One row is one account",
+   "p": "Salaries and expenses as the Town numbers them. Voted plus transfers is the budget; the budget less what was spent and what was still owed is what was left."
+  },
+  {
+   "h": "Why this code stands alone",
+   "p": "Our department register does not yet place this code under an office, so it has a page of its own rather than a guessed home."
+  },
+  {
+   "h": "The two years are counted differently",
+   "p": "FY2026’s report counts orders still owed at the close as spent. FY2025’s prints none, so a difference between the years is partly a difference in counting."
+  },
+  {
+   "h": "A budget line is the town’s share",
+   "p": "Grants, fees and revolving funds that also pay for this office are not in the general fund, and are not on this page."
+  }
+ ],
+ "related": [
+  {
+   "href": "/department-budgets/fy2026-town-closeout",
+   "label": "FY2026 town year end"
+  },
+  {
+   "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+   "label": "Departments at close"
+  },
+  {
+   "href": "/department-budgets",
+   "label": "Town departments"
+  }
+ ],
+ "slug": "transfer-to-stabilization-fund-996",
+ "sources": [
+  {
+   "href": "/docs/data/munis-gf-p13-reading.csv",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading.csv (the general fund at the close, FY2025 and FY2026, our reading)"
+  },
+  {
+   "href": "/docs/data/departments.csv",
+   "label": "Lunenburg Budget Project — departments.csv (which codes each office runs, our register)"
+  }
+ ],
+ "spans": {
+  "FY2025": "1 July 2024 to 30 June 2025",
+  "FY2026": "1 July 2025 to 30 June 2026"
+ },
+ "stats": {
+  "FY2025": [
+   {
+    "label": "voted by Town Meeting",
+    "value": "$717,595.25"
+   },
+   {
+    "label": "budget after transfers",
+    "value": "$537,061.00"
+   },
+   {
+    "label": "spent, counting what was owed",
+    "value": "$537,061.00"
+   },
+   {
+    "label": "left at the close",
+    "value": "$0.00"
+   }
+  ],
+  "FY2026": [
+   {
+    "label": "voted by Town Meeting",
+    "value": "$232,500.00"
+   },
+   {
+    "label": "budget after transfers",
+    "value": "$1,027,937.00"
+   },
+   {
+    "label": "spent, counting what was owed",
+    "value": "$1,027,937.00"
+   },
+   {
+    "label": "left at the close",
+    "value": "$0.00"
+   }
+  ]
+ },
+ "years": [
+  "FY2025",
+  "FY2026"
+ ]
+}

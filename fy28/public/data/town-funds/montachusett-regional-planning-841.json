@@ -1,0 +1,203 @@
+{
+ "about": "What the town budgeted for Montachusett Regional Planning Commission, an assessment it pays from the general fund, and how it closed, account by account.",
+ "accounts": {
+  "columns": [
+   {
+    "id": "original",
+    "label": "Voted",
+    "means": "what Town Meeting voted"
+   },
+   {
+    "id": "transfers",
+    "label": "Transfers",
+    "means": "moved in or out during the year"
+   },
+   {
+    "id": "revised",
+    "label": "Budget",
+    "means": "voted plus transfers"
+   },
+   {
+    "id": "expended",
+    "label": "Spent",
+    "means": "paid by the close"
+   },
+   {
+    "id": "encumbered",
+    "label": "Owed at the close",
+    "means": "ordered and not yet paid"
+   },
+   {
+    "id": "available",
+    "label": "Left",
+    "means": "budget less spent and owed"
+   }
+  ],
+  "years": {
+   "FY2025": {
+    "rows": [
+     {
+      "code": "570007",
+      "key": "0100-8-841-0000-00-0-00-2-570007",
+      "name": "Montachusett Planning Comm",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$4,368.76",
+       "original": "$4,368.76",
+       "revised": "$4,368.76",
+       "transfers": "$0.00"
+      },
+      "zero": false
+     }
+    ],
+    "total": {
+     "name": "Montachusett Regional Planning Commission",
+     "t": {
+      "available": "$0.00",
+      "encumbered": "$0.00",
+      "expended": "$4,368.76",
+      "original": "$4,368.76",
+      "revised": "$4,368.76",
+      "transfers": "$0.00"
+     }
+    }
+   },
+   "FY2026": {
+    "rows": [
+     {
+      "code": "570007",
+      "key": "0100-8-841-0000-00-0-00-2-570007",
+      "name": "Montachusett Planning Comm",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$4,477.98",
+       "original": "$4,477.98",
+       "revised": "$4,477.98",
+       "transfers": "$0.00"
+      },
+      "zero": false
+     }
+    ],
+    "total": {
+     "name": "Montachusett Regional Planning Commission",
+     "t": {
+      "available": "$0.00",
+      "encumbered": "$0.00",
+      "expended": "$4,477.98",
+      "original": "$4,477.98",
+      "revised": "$4,477.98",
+      "transfers": "$0.00"
+     }
+    }
+   }
+  }
+ },
+ "across": null,
+ "as_of": "The Town’s general fund budget report at the close (period 13), unaudited.",
+ "code": "841",
+ "gaps": [
+  {
+   "href": "/what-we-cannot-answer",
+   "label": "Which payments make up these accounts"
+  }
+ ],
+ "generated_by": "scripts/build_town_office_pages.py",
+ "kicker": "General fund · department 841 · an assessment the town pays",
+ "name": "Montachusett Regional Planning Commission",
+ "owner": {
+  "href": "/department-budgets/fy2026-town-closeout",
+  "name": "Montachusett Regional Planning Commission"
+ },
+ "path": "/town-lines/montachusett-regional-planning-841",
+ "postings": null,
+ "postings_none": "The report at the close prints each account’s totals, not the payments behind them, so this page stops at the account.",
+ "read": [
+  {
+   "h": "One row is one account",
+   "p": "Salaries and expenses as the Town numbers them. Voted plus transfers is the budget; the budget less what was spent and what was still owed is what was left."
+  },
+  {
+   "h": "The two years are counted differently",
+   "p": "FY2026’s report counts orders still owed at the close as spent. FY2025’s prints none, so a difference between the years is partly a difference in counting."
+  },
+  {
+   "h": "A budget line is the town’s share",
+   "p": "Grants, fees and revolving funds that also pay for this office are not in the general fund, and are not on this page."
+  }
+ ],
+ "related": [
+  {
+   "href": "/department-budgets/fy2026-town-closeout",
+   "label": "FY2026 town year end"
+  },
+  {
+   "href": "/department-budgets/fy2026-town-closeout/fy2026-town-departments",
+   "label": "Departments at close"
+  },
+  {
+   "href": "/department-budgets",
+   "label": "Town departments"
+  }
+ ],
+ "slug": "montachusett-regional-planning-841",
+ "sources": [
+  {
+   "href": "/docs/data/munis-gf-p13-reading.csv",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading.csv (the general fund at the close, FY2025 and FY2026, our reading)"
+  },
+  {
+   "href": "/docs/data/departments.csv",
+   "label": "Lunenburg Budget Project — departments.csv (which codes each office runs, our register)"
+  }
+ ],
+ "spans": {
+  "FY2025": "1 July 2024 to 30 June 2025",
+  "FY2026": "1 July 2025 to 30 June 2026"
+ },
+ "stats": {
+  "FY2025": [
+   {
+    "label": "voted by Town Meeting",
+    "value": "$4,368.76"
+   },
+   {
+    "label": "budget after transfers",
+    "value": "$4,368.76"
+   },
+   {
+    "label": "spent, counting what was owed",
+    "value": "$4,368.76"
+   },
+   {
+    "label": "left at the close",
+    "value": "$0.00"
+   }
+  ],
+  "FY2026": [
+   {
+    "label": "voted by Town Meeting",
+    "value": "$4,477.98"
+   },
+   {
+    "label": "budget after transfers",
+    "value": "$4,477.98"
+   },
+   {
+    "label": "spent, counting what was owed",
+    "value": "$4,477.98"
+   },
+   {
+    "label": "left at the close",
+    "value": "$0.00"
+   }
+  ]
+ },
+ "years": [
+  "FY2025",
+  "FY2026"
+ ]
+}
