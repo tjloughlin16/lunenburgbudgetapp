@@ -86,7 +86,8 @@ def offices(live, nm):
     return out
 
 
-def build():
+def office_set():
+    """(offices, code names, {fy: town rows}): the one grouping every page reads."""
     L = TC.ledger()
     nm = TC.names()
     town = {fy: [r for r in rs if r['dept'] not in TC.SCHOOL] for fy, rs in L.items()}
@@ -98,7 +99,11 @@ def build():
             if len(rs) != 1:
                 fail('code %s has no name and more than one account' % c)
             nm[c] = rs.pop()
-    offs = offices(live, nm)
+    return offices(live, nm), nm, town
+
+
+def build():
+    offs, nm, town = office_set()
     hub = REG.path(TC.HUB)
     dep_page = REG.path('fy2026-town-departments')
     out, left26 = {}, 0.0
