@@ -1,0 +1,391 @@
+{
+ "blocks": [
+  {
+   "block": "explain",
+   "links": [
+    {
+     "href": "/town-lines/cemetery-department-491",
+     "label": "Every Cemetery account"
+    }
+   ],
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [],
+     "text": "Every Cemetery account, both years, with what was voted, moved, paid, still owed and left, is on its own page."
+    }
+   ],
+   "place": "end",
+   "title": "Every account",
+   "tone": "plain"
+  }
+ ],
+ "category": "fy2026-town-closeout",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [],
+  "note": {
+   "figures": {
+    "m": {
+     "text": "$1",
+     "unit": "",
+     "value": 1.0
+    },
+    "n": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "13"
+   ],
+   "text": "FY2026, period 13. Accounts off budget by $1 or more, the largest 3."
+  },
+  "rows": [
+   {
+    "label": "Cemetery Supervisor Salary",
+    "texts": [
+     "$4,086",
+     "$0"
+    ],
+    "total": "$4,086",
+    "values": [
+     4085.78,
+     0
+    ]
+   },
+   {
+    "label": "Overtime Cemetery Supervisor",
+    "texts": [
+     "$373",
+     "$0"
+    ],
+    "total": "$373",
+    "values": [
+     372.76,
+     0
+    ]
+   },
+   {
+    "label": "Seasonal Salaries",
+    "texts": [
+     "$62",
+     "$0"
+    ],
+    "total": "$62",
+    "values": [
+     62.46,
+     0
+    ]
+   }
+  ],
+  "stack": [
+   "Left unspent",
+   "Ran past budget"
+  ],
+  "title": "Accounts furthest from budget",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "composed": true,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "3",
+     "unit": "",
+     "value": 3
+    },
+    "b": {
+     "text": "$4,521",
+     "unit": "",
+     "value": 4521.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "nu",
+    "ua",
+    "left",
+    "rev"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Nothing in this office ran past its budget."
+   },
+   "text": "3 accounts closed under budget, leaving $4,521; none ran over."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$4,086",
+     "unit": "",
+     "value": 4085.78
+    },
+    "b": {
+     "text": "$73,052",
+     "unit": "",
+     "value": 73051.91
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "bu",
+    "bus"
+   ],
+   "so": {
+    "figures": {
+     "s": {
+      "text": "90%",
+      "unit": "",
+      "value": 90.37336872373369
+     }
+    },
+    "literals": [],
+    "text": "That one account is 90% of what the office left on accounts under budget."
+   },
+   "text": "Cemetery Supervisor Salary left $4,086 of its $73,052 budget, the most of any account here."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$11,136",
+     "unit": "",
+     "value": 11136.49
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "l25",
+    "foot"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "FY2025’s report shows no orders still owed, so the two years are not on one footing."
+   },
+   "text": "Cemetery left $11,136 at its FY2025 close, as printed."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rev",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "budget after transfers, FY2026"
+   },
+   "value": {
+    "text": "$127,757",
+    "unit": "",
+    "value": 127756.57
+   }
+  },
+  {
+   "id": "left",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "closed under budget"
+   },
+   "value": {
+    "text": "$4,521",
+    "unit": "",
+    "value": 4521.0
+   }
+  },
+  {
+   "id": "nu",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "accounts under budget"
+   },
+   "value": {
+    "text": "3",
+    "unit": "accounts",
+    "value": 3
+   }
+  },
+  {
+   "id": "ua",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on those accounts"
+   },
+   "value": {
+    "text": "$4,521",
+    "unit": "",
+    "value": 4521.0
+   }
+  },
+  {
+   "id": "bu",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on cemetery supervisor salary"
+   },
+   "value": {
+    "text": "$4,086",
+    "unit": "",
+    "value": 4085.78
+   }
+  },
+  {
+   "id": "bus",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its share of what the office left"
+   },
+   "value": {
+    "text": "90%",
+    "unit": "",
+    "value": 90.37336872373369
+   }
+  },
+  {
+   "id": "l25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "left at the FY2025 close, as printed"
+   },
+   "value": {
+    "text": "$11,136",
+    "unit": "",
+    "value": 11136.49
+   }
+  },
+  {
+   "closes": "the town’s FY2025 encumbrance carry-forward list, by account",
+   "id": "foot",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "orders still owed at the FY2025 close"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$4,521",
+    "unit": "",
+    "value": 4521.0
+   },
+   "r": {
+    "text": "$127,757",
+    "unit": "",
+    "value": 127756.57
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Cemetery closed FY2026 $4,521 under a $127,757 budget."
+ },
+ "flow": [
+  {
+   "part": "finding"
+  },
+  {
+   "cites": [
+    0,
+    1
+   ],
+   "i": 0,
+   "part": "chart"
+  },
+  {
+   "i": 0,
+   "part": "conclusion"
+  },
+  {
+   "i": 1,
+   "part": "conclusion"
+  },
+  {
+   "i": 2,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    0
+   ],
+   "i": 0,
+   "part": "block"
+  },
+  {
+   "part": "sources"
+  }
+ ],
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-close-cemetery-department",
+ "kind": "topic",
+ "path": "/department-budgets/fy2026-town-closeout/fy2026-close-cemetery-department",
+ "said": [],
+ "shelves": [
+  "fy2026-town-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-gf-p13-reading.csv",
+   "key": "d-p13",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading.csv (the general fund at the close, FY2025 and FY2026, our reading of the Town’s closed-year reports)"
+  },
+  {
+   "href": "/docs/data/munis-gf-p13-reading-totals.csv",
+   "key": "d-tot",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading-totals.csv (the grand totals those reports print, which the reading ties to)"
+  }
+ ],
+ "table": null,
+ "title": "Cemetery closeout"
+}

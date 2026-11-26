@@ -1,0 +1,427 @@
+{
+ "blocks": [
+  {
+   "block": "explain",
+   "links": [
+    {
+     "href": "/town-lines/general-health-expense-512",
+     "label": "Every Health expense account"
+    }
+   ],
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [],
+     "text": "Every Health expense account, both years, with what was voted, moved, paid, still owed and left, is on its own page."
+    }
+   ],
+   "place": "end",
+   "title": "Every account",
+   "tone": "plain"
+  }
+ ],
+ "category": "fy2026-town-closeout",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [],
+  "note": {
+   "figures": {
+    "m": {
+     "text": "$1",
+     "unit": "",
+     "value": 1.0
+    },
+    "n": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "13"
+   ],
+   "text": "FY2026, period 13. Accounts off budget by $1 or more, the largest 6."
+  },
+  "rows": [
+   {
+    "label": "Office Supplies",
+    "texts": [
+     "$507",
+     "$0"
+    ],
+    "total": "$507",
+    "values": [
+     507.01,
+     0
+    ]
+   },
+   {
+    "label": "Emer Preparedness Supplies",
+    "texts": [
+     "$500",
+     "$0"
+    ],
+    "total": "$500",
+    "values": [
+     500.0,
+     0
+    ]
+   },
+   {
+    "label": "Meetings/School",
+    "texts": [
+     "$500",
+     "$0"
+    ],
+    "total": "$500",
+    "values": [
+     500.0,
+     0
+    ]
+   },
+   {
+    "label": "Rabid Animal Control",
+    "texts": [
+     "$400",
+     "$0"
+    ],
+    "total": "$400",
+    "values": [
+     400.0,
+     0
+    ]
+   },
+   {
+    "label": "Purchase of Service",
+    "texts": [
+     "$75",
+     "$0"
+    ],
+    "total": "$75",
+    "values": [
+     75.0,
+     0
+    ]
+   },
+   {
+    "label": "Mileage Reimbursement",
+    "texts": [
+     "$25",
+     "$0"
+    ],
+    "total": "$25",
+    "values": [
+     25.0,
+     0
+    ]
+   }
+  ],
+  "stack": [
+   "Left unspent",
+   "Ran past budget"
+  ],
+  "title": "Accounts furthest from budget",
+  "type": "ranking",
+  "unit": "$"
+ },
+ "composed": true,
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "6",
+     "unit": "",
+     "value": 6
+    },
+    "b": {
+     "text": "$2,007",
+     "unit": "",
+     "value": 2007.01
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "nu",
+    "ua",
+    "left",
+    "rev"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Nothing in this office ran past its budget."
+   },
+   "text": "6 accounts closed under budget, leaving $2,007; none ran over."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$507",
+     "unit": "",
+     "value": 507.01
+    },
+    "b": {
+     "text": "$650",
+     "unit": "",
+     "value": 650.0
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "bu",
+    "bus"
+   ],
+   "so": {
+    "figures": {
+     "s": {
+      "text": "25%",
+      "unit": "",
+      "value": 25.261956841271346
+     }
+    },
+    "literals": [],
+    "text": "That one account is 25% of what the office left on accounts under budget."
+   },
+   "text": "Office Supplies left $507 of its $650 budget, the most of any account here."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,628",
+     "unit": "",
+     "value": 1628.06
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "l25",
+    "foot"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "FY2025’s report shows no orders still owed, so the two years are not on one footing."
+   },
+   "text": "Health expense left $1,628 at its FY2025 close, as printed."
+  }
+ ],
+ "facts": [
+  {
+   "id": "rev",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "budget after transfers, FY2026"
+   },
+   "value": {
+    "text": "$56,631",
+    "unit": "",
+    "value": 56630.56
+   }
+  },
+  {
+   "id": "left",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "closed under budget"
+   },
+   "value": {
+    "text": "$2,007",
+    "unit": "",
+    "value": 2007.01
+   }
+  },
+  {
+   "id": "nu",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "accounts under budget"
+   },
+   "value": {
+    "text": "6",
+    "unit": "accounts",
+    "value": 6
+   }
+  },
+  {
+   "id": "ua",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on those accounts"
+   },
+   "value": {
+    "text": "$2,007",
+    "unit": "",
+    "value": 2007.01
+   }
+  },
+  {
+   "id": "bu",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "left on office supplies"
+   },
+   "value": {
+    "text": "$507",
+    "unit": "",
+    "value": 507.01
+   }
+  },
+  {
+   "id": "bus",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "its share of what the office left"
+   },
+   "value": {
+    "text": "25%",
+    "unit": "",
+    "value": 25.261956841271346
+   }
+  },
+  {
+   "id": "l25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "left at the FY2025 close, as printed"
+   },
+   "value": {
+    "text": "$1,628",
+    "unit": "",
+    "value": 1628.06
+   }
+  },
+  {
+   "closes": "the town’s FY2025 encumbrance carry-forward list, by account",
+   "id": "foot",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2025"
+    ],
+    "text": "orders still owed at the FY2025 close"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$2,007",
+    "unit": "",
+    "value": 2007.01
+   },
+   "r": {
+    "text": "$56,631",
+    "unit": "",
+    "value": 56630.56
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Health expense closed FY2026 $2,007 under a $56,631 budget."
+ },
+ "flow": [
+  {
+   "part": "finding"
+  },
+  {
+   "cites": [
+    0,
+    1
+   ],
+   "i": 0,
+   "part": "chart"
+  },
+  {
+   "i": 0,
+   "part": "conclusion"
+  },
+  {
+   "i": 1,
+   "part": "conclusion"
+  },
+  {
+   "i": 2,
+   "part": "conclusion"
+  },
+  {
+   "cites": [
+    0
+   ],
+   "i": 0,
+   "part": "block"
+  },
+  {
+   "part": "sources"
+  }
+ ],
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-close-general-health-expense",
+ "kind": "topic",
+ "path": "/department-budgets/fy2026-town-closeout/fy2026-close-general-health-expense",
+ "said": [],
+ "shelves": [
+  "fy2026-town-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-gf-p13-reading.csv",
+   "key": "d-p13",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading.csv (the general fund at the close, FY2025 and FY2026, our reading of the Town’s closed-year reports)"
+  },
+  {
+   "href": "/docs/data/munis-gf-p13-reading-totals.csv",
+   "key": "d-tot",
+   "label": "Lunenburg Budget Project — munis-gf-p13-reading-totals.csv (the grand totals those reports print, which the reading ties to)"
+  }
+ ],
+ "table": null,
+ "title": "Health expense closeout"
+}
