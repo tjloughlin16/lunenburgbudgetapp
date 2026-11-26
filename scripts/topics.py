@@ -93,7 +93,20 @@ def base(c):
     """Where a shelf lives. A shelf that IS one board's reports sets `under_board` and lives at
     /boards/<slug>/reports; its old /<id> addresses still route, and Topic.tsx moves the address
     bar. routes.ts reads the same mapping from src/data/board-shelves.json."""
-    return '/boards/%s/reports' % c['board'] if c.get('under_board') else '/' + c['id']
+    if c.get('under_board'):
+        return '/boards/%s/reports' % c['board']
+    # A SHELF NESTED UNDER ANOTHER HUB lives at /<parent>/<id>, its pages one level further down.
+    # TJ, 26 November 2026, on the FY2026 closeout: "i like /school-all-funds/fy2026-closeout
+    # better". Its old /<id> addresses still route; Topic.tsx moves the address bar.
+    # routes.ts reads the mapping from src/data/nested-shelves.json.
+    if c.get('under'):
+        return '/%s/%s' % (c['under'], c['id'])
+    return '/' + c['id']
+
+
+def nested_shelves():
+    """{shelf id: the hub it lives under} for the shelves nested under another hub."""
+    return {c['id']: c['under'] for c in CATEGORIES if c.get('under')}
 
 
 def board_shelves():
@@ -159,6 +172,13 @@ def check():
                 lost = [t for t, (_, h, _) in TOPICS.items() if h == c['id'] and t not in listed]
                 if lost:
                     bad.append('%s is merged into %s, which does not list %s' % (c['id'], into, lost))
+    ids = {x['id'] for x in CATEGORIES}
+    for c in CATEGORIES:
+        u = c.get('under')
+        if u and (u not in ids or u == c['id'] or category(u).get('under') or c.get('under_board')):
+            bad.append('%s: under %r must name another top-level hub' % (c['id'], u))
+        if u and c['id'] not in {t for _, ts in category(u)['groups'] for t in ts}:
+            bad.append('%s lives under %s, which does not list it' % (c['id'], u))
     titles = {}
     for c in CATEGORIES:
         if c.get('area') not in dict(AREAS):

@@ -1,5 +1,6 @@
 import TOPIC_CATEGORIES from './data/topic-categories.json'
 import BOARD_SHELVES_JSON from './data/board-shelves.json'
+import NESTED_SHELVES_JSON from './data/nested-shelves.json'
 /** Which tab a URL means, and which URL a tab has.
  *
  *  Split out of App so it can be tested without a browser: the whole point of shareable
@@ -1061,11 +1062,23 @@ function boardShelfTopic(pathname: string): string | null {
   return m[2] ? (TOPIC_MERGED[m[2]] ?? m[2]) : shelf
 }
 
+/** A SHELF NESTED UNDER ANOTHER HUB: /<parent>/<shelf>[/<id>] (scripts/topics.py, `under`). TJ,
+ *  26 November 2026: "i like /school-all-funds/fy2026-closeout better". The shelf's old
+ *  /<shelf>[/<id>] addresses still route below, and Topic.tsx moves the address bar. */
+const NESTED_SHELVES: Record<string, string> = NESTED_SHELVES_JSON
+function nestedShelfTopic(pathname: string): string | null {
+  const m = /^\/([a-z0-9-]+)\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
+  if (!m || NESTED_SHELVES[m[2]] !== m[1]) return null
+  return m[3] ? (TOPIC_MERGED[m[3]] ?? m[3]) : m[2]
+}
+
 /** The topic page or hub a `/transportation[/<id>]` or `/athletics[/<id>]` address names:
  *  the topic id, or the category id for a hub. scripts/topics.py is the registry. */
 export function topicIdFromPath(pathname: string): string | null {
   const shelved = boardShelfTopic(pathname)
   if (shelved) return shelved
+  const nested = nestedShelfTopic(pathname)
+  if (nested) return nested
   const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
   if (m && m[2] && TOPIC_PATHS[`${m[1]}/${m[2]}`]) return TOPIC_PATHS[`${m[1]}/${m[2]}`]
   if (m && !m[2] && TOPIC_ALIASES[m[1]]) return TOPIC_ALIASES[m[1]]

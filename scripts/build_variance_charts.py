@@ -463,7 +463,7 @@ def build():
         ('/athletics/town-budget-and-fee-fund',
          'Where a general-fund line is net of what fees already paid for, read against the '
          'revolving fund that paid it.'),
-        ('/fy2026-closeout',
+        ('/school-all-funds/fy2026-closeout',
          'The one year the town\'s own ledger can be read line by line — including the '
          'transfers a budget document cannot show.'),
         ('connecting-the-budget',

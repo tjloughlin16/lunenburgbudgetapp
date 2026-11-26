@@ -44,6 +44,7 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 import topic_blocks as TB  # noqa: E402
 import journal as J  # noqa: E402
+import topics as REG  # noqa: E402
 import build_circuit_breaker_surplus as CB  # noqa: E402
 import build_journal_surplus_topics as JS  # noqa: E402
 import build_fy2026_closeout_topics as CT  # noqa: E402
@@ -264,7 +265,7 @@ def trail(f, q):
         dict(when='30 June 2026', who='School department',
              what='%s FLLAC invoices numbered for %s, %s, are charged to the same line.'
                   % (C.num(f['n_early']), C.fy(2027), U2(f['early'])),
-             links=[dict(label='Year-end tuition payment', href='/fy2026-closeout/fy2026-tuition-paid-early'),
+             links=[dict(label='Year-end tuition payment', href=REG.path('fy2026-tuition-paid-early')),
                     dict(label='Check %s' % JS.CHECK['no'], href=CORR + INVOICES)]),
         dict(when='29 July 2026', who='School Committee',
              what='Told the year would close “well below” the year before. Neither entry is '
@@ -286,7 +287,7 @@ def trail(f, q):
         dict(when='2 and 9 September', who='School Committee',
              what='The year-end budget review is on the agenda: not recorded or minuted on the '
                   '2nd, passed over on the 9th.',
-             links=[dict(label='The meeting record', href='/fy2026-closeout/fy2026-tuition-paid-early')]),
+             links=[dict(label='The meeting record', href=REG.path('fy2026-tuition-paid-early'))]),
         dict(when='6 October 2026', who='Town Accountant',
              what='The period-13 reports are run. The entry stands; the school fund shows %s left.'
                   % U2(f['left']), links=[dict(label='Period-13 report', href=CT.sources()['p13-26']['href'])]),

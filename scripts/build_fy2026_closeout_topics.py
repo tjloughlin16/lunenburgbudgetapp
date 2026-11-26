@@ -1102,7 +1102,8 @@ def build():
         fail('the tuition points say private rose each year and collaborative dipped in FY2025')
     swing = round(pv_left + co_over_, -3)
     # "HEAVILY", as a rule and not a choice: a category at least $50,000 AND at least 4% of its
-    # budget away from it. Out-of-district tuition is left out: the tuition points cover it.
+    # budget away from it. The tuition CATEGORY is left out here: its two accounts go in by name
+    # (tu_point below), because they miss in opposite directions and the category nets them.
     BIG, SHARE = 50000, 4.0
     heavy = [c for k, c in cats.items() if k != 'tuition' and c['pct_of_revised'] is not None
              and abs(c['unspent']) >= BIG and abs(c['pct_of_revised']) >= SHARE]
@@ -1124,6 +1125,23 @@ def build():
         else:
             text = '%s left %s of its budget unspent, %s.' % (c['label'], u, pc)
         return tp(text, page_of.get(c['key'], 'fy2026-surplus-by-category'), u, pc)
+
+    # THE TWO TUITION LINES ARE IN THE LISTS TOO (TJ, 26 November 2026: "why arent either of the
+    # out of district items on the 'heavily underspent' or 'heavily overspent' sections too").
+    # They had been left out because the tuition points cover them; measured by the same bar
+    # they are the largest entry in each list, so leaving them out made the lists read tidier
+    # than the year. Each is one account, placed by its own sign and tested against the bar.
+    def tu_point(r, name):
+        u = r['available_budget']
+        pc_ = 100 * abs(u) / r['revised_budget']
+        if not (abs(u) >= BIG and pc_ >= SHARE):
+            fail('%s no longer clears the heavily bar' % name)
+        if not all(abs(u) > abs(c['unspent']) for c in heavy):
+            fail('%s is no longer the largest entry in its list' % name)
+        U_, P_ = C.usd(abs(u)), C.pct(pc_, 0)
+        text = ('%s left %s of its budget unspent, %s.' % (name, U_, P_) if u > 0
+                else '%s ran %s past its budget, %s over.' % (name, U_, P_))
+        return tp(text, 'fy2026-tuition-lines', U_, P_)
 
     if abs(pv['transfers_adjustments']) > 0.004 or abs(co['transfers_adjustments']) > 0.004:
         fail('a tuition line now carries a transfer; the hub says neither does')
@@ -1190,8 +1208,10 @@ def build():
                '%s, the school surplus would read %s.'
                % (C.usd(float(sf['early'])), C.fy(2027), C.fy(2026), C.fy(2027), C.usd(upper_)),
                'fy2026-tuition-paid-early', C.usd(float(sf['early'])), C.usd(upper_))]),
-        dict(title='Heavily underspent', points=[cat_point(c) for c in hunder]),
-        dict(title='Heavily overspent', points=[cat_point(c) for c in hover]),
+        dict(title='Heavily underspent', points=[tu_point(pv, 'Private tuition')]
+             + [cat_point(c) for c in hunder]),
+        dict(title='Heavily overspent', points=[tu_point(co, 'Collaborative tuition')]
+             + [cat_point(c) for c in hover]),
         dict(title='Town side, still open', points=[
             tp('Town (non-school) departments stood %s under budget in June; their year is not '
                'closed yet.'

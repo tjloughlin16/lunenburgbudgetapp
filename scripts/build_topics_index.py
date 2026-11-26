@@ -36,6 +36,8 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics.json')
 ROUTES_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'topic-categories.json')
 # Board slug -> the shelf that lives at /boards/<slug>/reports, read by routes.ts.
 BOARDS_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'board-shelves.json')
+# Shelf id -> the hub it lives under, at /<parent>/<id>, read by routes.ts.
+NESTED_OUT = os.path.join(ROOT, 'fy28', 'src', 'data', 'nested-shelves.json')
 
 
 def words(p):
@@ -69,6 +71,10 @@ def app_routes():
 
 def boards_json():
     return json.dumps(REG.board_shelves(), indent=1, sort_keys=True) + '\n'
+
+
+def nested_json():
+    return json.dumps(REG.nested_shelves(), indent=1, sort_keys=True) + '\n'
 
 
 def related():
@@ -238,13 +244,13 @@ def main():
         return 1
     text, routes, bad = build(strict=a.check)
     if a.check:
-        for path, want in ((OUT, text), (ROUTES_OUT, routes), (BOARDS_OUT, boards_json())):
+        for path, want in ((OUT, text), (ROUTES_OUT, routes), (BOARDS_OUT, boards_json()), (NESTED_OUT, nested_json())):
             cur = open(path, encoding='utf-8').read() if os.path.exists(path) else None
             if cur != want:
                 bad.append('%s is stale' % os.path.relpath(path, ROOT))
         print('\n'.join(bad) or 'topics.json current')
         return 1 if bad else 0
-    for path, body in ((OUT, text), (ROUTES_OUT, routes), (BOARDS_OUT, boards_json())):
+    for path, body in ((OUT, text), (ROUTES_OUT, routes), (BOARDS_OUT, boards_json()), (NESTED_OUT, nested_json())):
         with open(path, 'w', encoding='utf-8', newline='\n') as fh:
             fh.write(body)
     print('wrote %s%s' % (os.path.relpath(OUT, ROOT), ('; ' + '; '.join(bad)) if bad else ''))

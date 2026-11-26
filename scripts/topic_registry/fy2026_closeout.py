@@ -11,6 +11,9 @@ CATEGORY = dict(
     # 24 November 2026: no start list. Its two pages are the whole Total section, which Start here
     # would swallow, dropping that section's figure; Total is the first section instead.
     id='fy2026-closeout', shelf='FY2026 school closeout', title='FY2026 school year end', area='special',
+    # Lives under the whole school budget (TJ, 26 November 2026: "i like
+    # /school-all-funds/fy2026-closeout better"); /fy2026-closeout still routes.
+    under='school-all-funds',
     # A special report (TJ, 24 Oct 2026): off the menu once FY2027's close replaces it.
     archive_after='2027-10-31', order=95,
     # 26 October 2026, regrouped by the question a reader brings, not by which ledger answered
