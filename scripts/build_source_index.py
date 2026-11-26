@@ -1278,6 +1278,14 @@ GROUPS = [
              'Lunenburg free cash proof, 2021–2025', 3,
              'Certified free cash rose from $2,666,962 to $3,354,370 over the five years. '
              'Two thirds of the 2025 figure is money appropriated and not spent.'),
+            ('state-dls/Lunenburg_Financial_Policy_Manual_April_2024.pdf',
+             'Town of Lunenburg Financial Policies Manual, April 2024', 2,
+             'Twenty model financial policies the Division of Local Services drafted for the '
+             'town under a Community Compact grant -- reserves, OPEB, capital, debt, free cash, '
+             'forecasting and the rest. Shown to the Select Board in June 2024 and not adopted; '
+             'the same twenty titles are on the Finance Committee agenda of 3 December 2026. '
+             'A recommendation, not the town’s policy: the policies in force are Chapter 3 of '
+             'the Select Board Policies and Procedures.'),
             ('state-dls/free-cash-worksheet-lunenburg-2014-07-01.pdf',
              'Lunenburg free cash worksheet, as of 1 July 2014', 2,
              'The Division of Local Services field review of the town’s free cash: fund balance, '
