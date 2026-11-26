@@ -75,8 +75,10 @@ MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text')
 SRC26 = '/data/fy26-school-surplus.json'
 HUB = 'fy2026-closeout'
 
+# Every page this script writes, wherever it is homed: the three June town pages moved to the
+# town year end (TJ, 26 November 2026) and are still written here.
 MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
-        if home == HUB and gen == 'build_fy2026_closeout_topics.py']
+        if gen == 'build_fy2026_closeout_topics.py']
 
 
 def fail(msg):
@@ -1396,7 +1398,6 @@ def build():
         'Year-end entries': '%s reclassified' % C.usd(float(charged)),
         'By line': '%s accounts past budget' % C.num(over[2026][0]),
         'Month by month': '%s left at the end of March' % burn['value']['text'],
-        'Town side': '%s under in June' % C.usd(t['available']),
         'Uses': '%s back to the town' % C.usd(left26),
     }
     if set(group_figures) != {g for g, _ in REG.category(HUB)['groups']}:

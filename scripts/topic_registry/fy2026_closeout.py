@@ -31,8 +31,6 @@ CATEGORY = dict(
                      'fy2026-psychologist-line', 'special-education-transportation',
                      'fy2026-athletics-underspend', 'surplus-repeat-lines']),
         ('Month by month', ['budget-burndown', 'sped-burndown']),
-        ('Town side', ['fy2026-town-unspent', 'fy2026-snow-and-reserve-fund',
-                       'fy2026-school-retiree-insurance']),
         ('Uses', ['surplus-suggestions']),
     ])
 GENERATOR = 'build_fy2026_closeout_topics.py'
@@ -51,9 +49,6 @@ TOPICS = {
     'fy2026-tuition-lines': 'Tuition at year end',
     'fy2026-paraprofessional-overrun': 'Paraprofessional overrun',
     'fy2026-psychologist-line': 'Psychologist line',
-    'fy2026-town-unspent': 'Town unspent balance',
-    'fy2026-snow-and-reserve-fund': 'Snow and Reserve Fund',
-    'fy2026-school-retiree-insurance': 'School retiree insurance',
     'surplus-bridge': 'Surplus by year',
     'two-year-surplus': 'Two-year surplus',
     'surplus-repeat-lines': 'Repeat underspending',
