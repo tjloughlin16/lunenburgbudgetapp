@@ -262,6 +262,21 @@
       "zero": false
      },
      {
+      "code": "Reserve Fund 132 · 578000",
+      "key": "0100-1-132-0000-00-0-00-2-578000",
+      "name": "Reserve Fund Transfers",
+      "side": "out",
+      "t": {
+       "available": "$107,425.35",
+       "encumbered": "$0.00",
+       "expended": "$0.00",
+       "original": "$200,000.00",
+       "revised": "$107,425.35",
+       "transfers": "-$92,574.65"
+      },
+      "zero": false
+     },
+     {
       "code": "Salary Reserve 133 · 517000",
       "key": "0100-1-133-0000-00-0-00-2-517000",
       "name": "Retirement Buybacks",
@@ -730,12 +745,12 @@
     "total": {
      "name": "Town Manager",
      "t": {
-      "available": "$618,577.81",
+      "available": "$726,003.16",
       "encumbered": "$0.00",
       "expended": "$3,777,704.74",
-      "original": "$4,395,297.81",
-      "revised": "$4,396,282.55",
-      "transfers": "$984.74"
+      "original": "$4,595,297.81",
+      "revised": "$4,503,707.90",
+      "transfers": "-$91,589.91"
      }
     }
    },
@@ -963,6 +978,21 @@
        "original": "$2,500.00",
        "revised": "$1,750.00",
        "transfers": "-$750.00"
+      },
+      "zero": false
+     },
+     {
+      "code": "Reserve Fund 132 · 578000",
+      "key": "0100-1-132-0000-00-0-00-2-578000",
+      "name": "Reserve Fund Transfers",
+      "side": "out",
+      "t": {
+       "available": "$185,000.00",
+       "encumbered": "$0.00",
+       "expended": "$0.00",
+       "original": "$185,000.00",
+       "revised": "$185,000.00",
+       "transfers": "$0.00"
       },
       "zero": false
      },
@@ -1435,11 +1465,11 @@
     "total": {
      "name": "Town Manager",
      "t": {
-      "available": "$173,575.17",
+      "available": "$358,575.17",
       "encumbered": "$27,355.89",
       "expended": "$4,421,195.81",
-      "original": "$4,729,034.13",
-      "revised": "$4,622,126.87",
+      "original": "$4,914,034.13",
+      "revised": "$4,807,126.87",
       "transfers": "-$106,907.26"
      }
     }
@@ -1460,6 +1490,14 @@
      "$319,126.45"
     ],
     "name": "Town Manager (126)",
+    "side": "out"
+   },
+   {
+    "cells": [
+     "$0.00",
+     "$0.00"
+    ],
+    "name": "Reserve Fund (132)",
     "side": "out"
    },
    {
@@ -1537,7 +1575,7 @@
   ]
  },
  "as_of": "The Town’s general fund budget report at the close (period 13), unaudited.",
- "code": "126, 133, 195, 199, 524, 525, 912, 913, 914, 945",
+ "code": "126, 132, 133, 195, 199, 524, 525, 912, 913, 914, 945",
  "gaps": [
   {
    "href": "/what-we-cannot-answer",
@@ -1545,7 +1583,7 @@
   }
  ],
  "generated_by": "scripts/build_town_office_pages.py",
- "kicker": "General fund · codes 126, 133, 195, 199, 524, 525, 912, 913, 914, 945 · voted by Town Meeting",
+ "kicker": "General fund · codes 126, 132, 133, 195, 199, 524, 525, 912, 913, 914, 945 · voted by Town Meeting",
  "name": "Town Manager",
  "owner": {
   "href": "/boards/select-board",
@@ -1605,11 +1643,11 @@
   "FY2025": [
    {
     "label": "voted by Town Meeting",
-    "value": "$4,395,297.81"
+    "value": "$4,595,297.81"
    },
    {
     "label": "budget after transfers",
-    "value": "$4,396,282.55"
+    "value": "$4,503,707.90"
    },
    {
     "label": "spent, counting what was owed",
@@ -1617,17 +1655,17 @@
    },
    {
     "label": "left at the close",
-    "value": "$618,577.81"
+    "value": "$726,003.16"
    }
   ],
   "FY2026": [
    {
     "label": "voted by Town Meeting",
-    "value": "$4,729,034.13"
+    "value": "$4,914,034.13"
    },
    {
     "label": "budget after transfers",
-    "value": "$4,622,126.87"
+    "value": "$4,807,126.87"
    },
    {
     "label": "spent, counting what was owed",
@@ -1635,7 +1673,7 @@
    },
    {
     "label": "left at the close",
-    "value": "$173,575.17"
+    "value": "$358,575.17"
    }
   ]
  },

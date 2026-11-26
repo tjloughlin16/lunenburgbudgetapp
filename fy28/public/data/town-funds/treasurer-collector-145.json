@@ -607,6 +607,21 @@
       "zero": false
      },
      {
+      "code": "Interest Temporary Loans 752 · 590003",
+      "key": "0100-7-752-0000-00-0-00-2-590003",
+      "name": "Temporary Loan Interest",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$5,986.48",
+       "original": "$5,986.48",
+       "revised": "$5,986.48",
+       "transfers": "$0.00"
+      },
+      "zero": false
+     },
+     {
       "code": "Loan Administrative Fees 754 · 531040",
       "key": "0100-7-754-0000-00-0-00-2-531040",
       "name": "Loan Administrative Fees",
@@ -627,9 +642,9 @@
      "t": {
       "available": "$48,199.80",
       "encumbered": "$0.00",
-      "expended": "$3,178,291.47",
-      "original": "$3,206,728.38",
-      "revised": "$3,226,491.27",
+      "expended": "$3,184,277.95",
+      "original": "$3,212,714.86",
+      "revised": "$3,232,477.75",
       "transfers": "$19,762.89"
      }
     }
@@ -1207,6 +1222,21 @@
       "zero": false
      },
      {
+      "code": "Interest Temporary Loans 752 · 590003",
+      "key": "0100-7-752-0000-00-0-00-2-590003",
+      "name": "Temporary Loan Interest",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$0.00",
+       "original": "$0.00",
+       "revised": "$0.00",
+       "transfers": "$0.00"
+      },
+      "zero": true
+     },
+     {
       "code": "Loan Administrative Fees 754 · 531040",
       "key": "0100-7-754-0000-00-0-00-2-531040",
       "name": "Loan Administrative Fees",
@@ -1286,6 +1316,14 @@
    },
    {
     "cells": [
+     "$5,986.48",
+     "$0.00"
+    ],
+    "name": "Interest Temporary Loans (752)",
+    "side": "out"
+   },
+   {
+    "cells": [
      "$1,365.38",
      "$1,230.47"
     ],
@@ -1295,7 +1333,7 @@
   ]
  },
  "as_of": "The Town’s general fund budget report at the close (period 13), unaudited.",
- "code": "145, 146, 158, 710, 751, 754",
+ "code": "145, 146, 158, 710, 751, 752, 754",
  "gaps": [
   {
    "href": "/what-we-cannot-answer",
@@ -1303,7 +1341,7 @@
   }
  ],
  "generated_by": "scripts/build_town_office_pages.py",
- "kicker": "General fund · codes 145, 146, 158, 710, 751, 754 · voted by Town Meeting",
+ "kicker": "General fund · codes 145, 146, 158, 710, 751, 752, 754 · voted by Town Meeting",
  "name": "Treasurer/Collector",
  "owner": {
   "href": "/department-budgets/fy2026-town-closeout",
@@ -1363,15 +1401,15 @@
   "FY2025": [
    {
     "label": "voted by Town Meeting",
-    "value": "$3,206,728.38"
+    "value": "$3,212,714.86"
    },
    {
     "label": "budget after transfers",
-    "value": "$3,226,491.27"
+    "value": "$3,232,477.75"
    },
    {
     "label": "spent, counting what was owed",
-    "value": "$3,178,291.47"
+    "value": "$3,184,277.95"
    },
    {
     "label": "left at the close",

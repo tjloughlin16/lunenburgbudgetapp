@@ -150,10 +150,10 @@ def names():
     for r in csv.DictReader(open(DEPTS, encoding='utf-8')):
         codes = r['dept_codes'].split(';')
         for c in codes:
-            # MUNIS's name field holds 30 characters; a name that fills it was cut short
-            if len(codes) == 1 or len(n.get(c, '')) >= 30:
-                if c not in n or len(n[c]) >= 30:
-                    n[c] = r['name']
+            # a code MUNIS gives no name takes its office's; and MUNIS's name field holds 30
+            # characters, so a name that fills it was cut short and the register's is used
+            if c not in n or len(n[c]) >= 30:
+                n[c] = r['name']
     return n
 
 
@@ -461,6 +461,29 @@ def build():
         so=('The largest misses run both ways, and three of them sit in one department: '
             'insurance.', None, ()))
 
+    # BY OFFICE (TJ, 26 November 2026: "i was expecting a per-dept chart" on this hub; offices as
+    # he chose for the department pages). Each bar splits what the office left on accounts under
+    # budget from what it spent past budget on the rest, so a miss both ways is not netted away.
+    BO = OP.by_office()
+    shown_o = sorted((x for x in BO if x[2] + x[3] >= 10000), key=lambda x: -(x[2] + x[3]))
+    if not 5 <= len(shown_o) <= 20:
+        fail('%d offices moved $10,000 or more; the chart is sized for 5 to 20' % len(shown_o))
+    rest_o = len(BO) - len(shown_o)
+    top_o = max(BO, key=lambda x: x[2])
+    if not (top_o[3] > 0 and top_o is max(BO, key=lambda x: x[2] + x[3])):
+        fail('the meaning says the office that left the most also ran over, and is the largest bar')
+    by_office = TB.chart(TP.ranking(
+        'Each office, under and over',
+        [(n, [u, o]) for n, _, u, o in shown_o], '$', stack=['Left unspent', 'Ran past budget'],
+        hrefs={n: p_ for n, p_, _, _ in shown_o},
+        note='%s, period 13. The figure is under and over added, not netted. %s smaller '
+             'offices are on Departments at close.' % (C.fy(2026), C.num(rest_o)),
+        note_figures={'y': F(2026), 'n': N(rest_o)}, note_allow=('13',)),
+        place='lead',
+        so=('%s left the most, %s, and also ran %s over on other accounts: an office can miss '
+            'both ways in one year.' % (top_o[0], C.usd(top_o[2]), C.usd(top_o[3])),
+            {'a': U(top_o[2]), 'b': U(top_o[3])}, ()))
+
     big = TB.custom('big-figures', 'The town leftover', dict(figures=[
         dict(value=C.usd(left26), kind='published', tag='Official, the Town’s closed-year report',
              label='left unspent by town departments, %s' % C.fy(2026)),
@@ -484,7 +507,7 @@ def build():
         'This is the town (non-school) budget’s year end. Town departments closed %s %s under a '
         '%s budget; the largest misses, both ways, were in health insurance.'
         % (C.fy(2026), C.usd(left26), C.usd(rev26)),
-        None, blocks=[big, chart, points, why],
+        None, blocks=[big, by_office, chart, points, why],
         answer_figures={'y': F(2026), 'a': U(left26), 'r': U(rev26)})
     out[HUB]['group_figures'] = {
         'By department': '%s left' % C.usd(left26),

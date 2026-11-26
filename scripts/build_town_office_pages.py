@@ -205,6 +205,26 @@ def TC_span(fy):
     return '1 July %d to 30 June %d' % (fy - 1, fy)
 
 
+def by_office(fy=2026):
+    """[(office name, its page, left on accounts under budget, spent past budget on the rest)],
+    every office, Parks included: the hub's chart. Under and over are kept apart, never netted,
+    because an office can miss both ways at once (the Town Manager's insurance does)."""
+    L = TC.ledger()
+    nm = TC.names()
+    town = [r for r in L[fy] if r['dept'] not in TC.SCHOOL]
+    pages = build()
+    groups = [(p['name'], p['path'], p['code'].split(', ')) for p in pages.values()]
+    groups.append(('Parks and Recreation', '/town-lines/' + PARKS[1], [PARKS[0]]))
+    out = []
+    for name, path, codes in groups:
+        rs = [r for r in town if r['dept'] in codes]
+        out.append((name, path, round(sum(r['available'] for r in rs if r['available'] > 0), 2),
+                    round(-sum(r['available'] for r in rs if r['available'] < 0), 2)))
+    if not TC.near(sum(u - o for _, _, u, o in out), sum(r['available'] for r in town)):
+        fail('the offices do not add to the town total')
+    return out
+
+
 def page_of():
     """{department code: its page's address}, for the pages that link to them."""
     out = {PARKS[0]: '/town-lines/' + PARKS[1]}
@@ -220,14 +240,31 @@ def outputs():
             for s, p in build().items()}
 
 
+def orphans(outs):
+    """Pages this script wrote before and no longer writes (a code moved into an office)."""
+    me = 'scripts/build_town_office_pages.py'
+    out = []
+    for f in sorted(os.listdir(OUT)):
+        p = os.path.join(OUT, f)
+        if f.endswith('.json') and p not in outs:
+            try:
+                if json.load(open(p, encoding='utf-8')).get('generated_by') == me:
+                    out.append(p)
+            except (ValueError, AttributeError):
+                pass
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
     outs = outputs()
+    gone = orphans(outs)
     if a.check:
         stale = [os.path.relpath(p, ROOT) for p, t in outs.items()
                  if not os.path.exists(p) or open(p, encoding='utf-8').read() != t]
+        stale += ['%s (no longer written)' % os.path.relpath(p, ROOT) for p in gone]
         if stale:
             print('STALE %s' % ', '.join(stale), file=sys.stderr)
             return 1
@@ -236,6 +273,9 @@ def main():
     for p, t in outs.items():
         with open(p, 'w', encoding='utf-8', newline='\n') as fh:
             fh.write(t)
+    for p in gone:
+        os.remove(p)
+        print('removed %s' % os.path.relpath(p, ROOT))
     print('wrote %d office pages to %s' % (len(outs), os.path.relpath(OUT, ROOT)))
     return 0
 

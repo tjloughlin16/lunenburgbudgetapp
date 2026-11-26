@@ -605,6 +605,21 @@
        "transfers": "-$120.00"
       },
       "zero": false
+     },
+     {
+      "code": "Town Clerk's Salary 164 · 512000",
+      "key": "0100-1-164-0000-00-0-00-1-512000",
+      "name": "Town Clerk's Salary",
+      "side": "out",
+      "t": {
+       "available": "$0.00",
+       "encumbered": "$0.00",
+       "expended": "$79,437.50",
+       "original": "$79,437.50",
+       "revised": "$79,437.50",
+       "transfers": "$0.00"
+      },
+      "zero": false
      }
     ],
     "total": {
@@ -612,9 +627,9 @@
      "t": {
       "available": "$5,146.85",
       "encumbered": "$0.00",
-      "expended": "$98,665.92",
-      "original": "$105,434.80",
-      "revised": "$103,812.77",
+      "expended": "$178,103.42",
+      "original": "$184,872.30",
+      "revised": "$183,250.27",
       "transfers": "-$1,622.03"
      }
     }
@@ -1190,17 +1205,32 @@
        "transfers": "-$200.00"
       },
       "zero": false
+     },
+     {
+      "code": "Town Clerk's Salary 164 · 512000",
+      "key": "0100-1-164-0000-00-0-00-1-512000",
+      "name": "Town Clerk's Salary",
+      "side": "out",
+      "t": {
+       "available": "$2,162.56",
+       "encumbered": "$0.00",
+       "expended": "$78,466.44",
+       "original": "$0.00",
+       "revised": "$80,629.00",
+       "transfers": "$80,629.00"
+      },
+      "zero": false
      }
     ],
     "total": {
      "name": "Town Clerk",
      "t": {
-      "available": "$5,155.70",
+      "available": "$7,318.26",
       "encumbered": "$1,576.40",
-      "expended": "$89,190.98",
+      "expended": "$167,657.42",
       "original": "$175,652.08",
-      "revised": "$95,923.08",
-      "transfers": "-$79,729.00"
+      "revised": "$176,552.08",
+      "transfers": "$900.00"
      }
     }
    }
@@ -1237,11 +1267,19 @@
     ],
     "name": "Registration & Census (163)",
     "side": "out"
+   },
+   {
+    "cells": [
+     "$79,437.50",
+     "$78,466.44"
+    ],
+    "name": "Town Clerk's Salary (164)",
+    "side": "out"
    }
   ]
  },
  "as_of": "The Town’s general fund budget report at the close (period 13), unaudited.",
- "code": "161, 162, 163",
+ "code": "161, 162, 163, 164",
  "gaps": [
   {
    "href": "/what-we-cannot-answer",
@@ -1249,7 +1287,7 @@
   }
  ],
  "generated_by": "scripts/build_town_office_pages.py",
- "kicker": "General fund · codes 161, 162, 163 · voted by Town Meeting",
+ "kicker": "General fund · codes 161, 162, 163, 164 · voted by Town Meeting",
  "name": "Town Clerk",
  "owner": {
   "href": "/boards/board-of-registrars",
@@ -1309,15 +1347,15 @@
   "FY2025": [
    {
     "label": "voted by Town Meeting",
-    "value": "$105,434.80"
+    "value": "$184,872.30"
    },
    {
     "label": "budget after transfers",
-    "value": "$103,812.77"
+    "value": "$183,250.27"
    },
    {
     "label": "spent, counting what was owed",
-    "value": "$98,665.92"
+    "value": "$178,103.42"
    },
    {
     "label": "left at the close",
@@ -1331,15 +1369,15 @@
    },
    {
     "label": "budget after transfers",
-    "value": "$95,923.08"
+    "value": "$176,552.08"
    },
    {
     "label": "spent, counting what was owed",
-    "value": "$90,767.38"
+    "value": "$169,233.82"
    },
    {
     "label": "left at the close",
-    "value": "$5,155.70"
+    "value": "$7,318.26"
    }
   ]
  },

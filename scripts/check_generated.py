@@ -207,6 +207,11 @@ CHECKS = [
     # need stops recomputing from its ledger rows, or a quotation stops being verbatim.
     ('build_serf_topics.py', ['--check']),
     ('build_pay_by_fund_topics.py', ['--check']),
+    # 26 November 2026: the FY2026 town year end hub and one page per town office at the close.
+    # Both refuse unless the period-13 reading ties to the report's printed grand totals, and the
+    # office pages refuse unless every live code is on exactly one page.
+    ('build_town_office_pages.py', ['--check']),
+    ('build_fy2026_town_closeout.py', ['--check']),
     # 31 October 2026: the Town general fund, the school receipts it books, the preschool page
     # that shares their reader, and Monty Tech's history (which the Monty Tech hub reads).
     ('build_town_general_fund.py', ['--check']),
