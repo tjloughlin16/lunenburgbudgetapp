@@ -1173,6 +1173,16 @@ def build():
     if not cb_lo > 0:
         fail('the hub says the circuit breaker paid part of private tuition in each of FY2023-FY2025')
     upper_ = round(left26 + float(sf['early']), 2)
+    # THE TOWN SIDE HAS ITS OWN YEAR END NOW (26 November 2026, the town hub's session): the
+    # closed year, period 13, read by that hub's generator and tied to the report's printed grand
+    # total. One definition of 'town': its ledger() less its SCHOOL departments.
+    import build_fy2026_town_closeout as TC
+    town_left = round(sum(r['available'] for r in TC.ledger()[2026] if r['dept'] not in TC.SCHOOL), 2)
+    town_hub = REG.path('fy2026-town-closeout')
+    tp_figs.append(C.usd(town_left))
+    town_point = dict(text='Town (non-school) departments closed %s %s under budget; they have '
+                           'their own year-end page.' % (C.fy(2026), C.usd(town_left)),
+                      href=town_hub, page=REG.category('fy2026-town-closeout')['title'])
     groups = [
         dict(title='How big', points=[
             tp('The school budget finished %s and %s about %s under. %s left %s and %s %s: the second '
@@ -1212,10 +1222,7 @@ def build():
              + [cat_point(c) for c in hunder]),
         dict(title='Heavily overspent', points=[tu_point(co, 'Collaborative tuition')]
              + [cat_point(c) for c in hover]),
-        dict(title='Town side, still open', points=[
-            tp('Town (non-school) departments stood %s under budget in June; their year is not '
-               'closed yet.'
-               % C.usd(t['available']), 'fy2026-town-unspent', C.usd(t['available']))]),
+        dict(title='Town side', points=[town_point]),
     ]
     # ---- THE EXECUTIVE SUMMARY, at the top of the hub (TJ, 26 November 2026: "i think we need
     # an esxecutive summary ... what ARE the top level conclusions people need to know" ...
@@ -1247,61 +1254,78 @@ def build():
         fail('the summary names upkeep and counselors under, paras, special-ed services and '
              'transportation over')
     D = ('29 June', '30 June', '6 October')
+    # WRITTEN FOR A READER WITH NO CONTEXT (TJ, 26 November 2026: "the summary needs to assume
+    # people have no context...'the 30 June prepayment together' 'the reclasiification'"). Every
+    # term is said in plain words where it first appears: out-of-district, private, collaborative,
+    # the circuit breaker, and each year-end entry by what it did.
     takeaways = TB.explain('In short', [
-        ('**This is a budgeting story, not a savings story.** For two years running the school '
-         'budget finished about half a million dollars under, after %s and %s each finished about '
-         '%s under. Most of it sat in one line budgeted far above what it paid: private tuition, '
-         '%s budgeted and %s spent. No document says why that line was set where it was.'
-         % (C.fy(2023), C.fy(2024), C.usd(about), C.usd(pv['revised_budget']), C.usd(pv_spent)),
-         {'a': F(2023), 'b': F(2024), 'c': U(about), 'd': U(pv['revised_budget']), 'e': U(pv_spent)}),
-        ('**Out-of-district tuition costs more every year, even where its line looks under.** '
-         'Counting both funds and both kinds, it rose from %s in %s to %s, %s and %s in %s, %s of '
-         'that being %s bills. The money moved between private and collaborative, and between the '
-         'general fund and the circuit breaker, so each line can look wrong while the total climbs.'
+        ('**This is a budgeting story, not a savings story.** In %s and %s the school budget '
+         'finished about %s under. In %s and %s it finished about half a million dollars under '
+         'each year. Most of that sat in one line budgeted far above what it paid: tuition for '
+         'Lunenburg students placed in private special education schools, %s budgeted and %s '
+         'spent. No document says why that line was set where it was.'
+         % (C.fy(2023), C.fy(2024), C.usd(about), C.fy(2025), C.fy(2026),
+            C.usd(pv['revised_budget']), C.usd(pv_spent)),
+         {'a': F(2023), 'b': F(2024), 'c': U(about), 'f': F(2025), 'g': F(2026),
+          'd': U(pv['revised_budget']), 'e': U(pv_spent)}),
+        ('**Tuition for students placed outside Lunenburg’s schools costs more every year, even '
+         'where its budget line looks under.** That tuition comes in two kinds, private special '
+         'education schools and collaboratives (programs run jointly by several districts), and is '
+         'paid from two places: the school budget, and the circuit breaker, the state’s '
+         'reimbursement for high-cost special education. Counting all of it, it rose from %s in '
+         '%s to %s, %s and %s in %s, %s of that being %s’s bills paid early. Because the money '
+         'moved between the two kinds and the two payers, each line can look wrong while the '
+         'total climbs.'
          % (C.usd(tu_all[2023]), C.fy(2023), C.usd(tu_all[2024]), C.usd(tu_all[2025]),
             C.usd(tu_all[2026]), C.fy(2026), C.usd(early_), C.fy(2027)),
          {'a': U(tu_all[2023]), 'b': F(2023), 'c': U(tu_all[2024]), 'd': U(tu_all[2025]),
           'e': U(tu_all[2026]), 'f': F(2026), 'g': U(early_), 'h': F(2027)}),
-        ('**%s’s final number was shaped in its last two days, and %s starts partly paid.** The '
-         '%s reclassification and the %s prepayment together moved %s, more than the whole surplus. '
-         '%s budgets out-of-district tuition at %s; %s spent %s on it before the prepayment.'
-         % (C.fy(2026), C.fy(2027), '29 June', '30 June', C.usd(two_days), C.fy(2027), C.usd(tu27),
-            C.fy(2026), C.usd(tu26_own)),
-         {'a': F(2026), 'b': F(2027), 'c': U(two_days), 'd': U(tu27), 'e': U(tu26_own)}, D),
+        ('**Two accounting entries in the year’s last two days moved %s, more than the whole '
+         'surplus.** On %s, %s of collaborative tuition already charged to the school budget was '
+         'moved off it and onto the circuit breaker. On %s, %s of next year’s (%s) tuition bills '
+         'were paid early out of %s’s budget. %s budgets this tuition at %s; %s spent %s on it, '
+         'not counting the bills paid early.'
+         % (C.usd(two_days), '29 June', C.usd(w_cb), '30 June', C.usd(early_), C.fy(2027),
+            C.fy(2026), C.fy(2027), C.usd(tu27), C.fy(2026), C.usd(tu26_own)),
+         {'a': U(two_days), 'b': U(w_cb), 'c': U(early_), 'd': F(2027), 'e': F(2026),
+          'f': U(tu27), 'g': U(tu26_own)}, D),
     ], place='lead', tone='callout')
     summary = TB.explain('The year in five paragraphs', [
         ('**The school budget finished %s %s under budget, the second year running far above '
-         'normal.** %s and %s each finished about %s under; %s left %s.'
+         'normal.** %s and %s each finished about %s under; %s left %s. What is left at year end '
+         'is called the surplus.'
          % (C.fy(2026), C.usd(left26), C.fy(2023), C.fy(2024), C.usd(about), C.fy(2025),
             C.usd(owed[2025])),
          {'a': F(2026), 'b': U(left26), 'c': F(2023), 'd': F(2024), 'e': U(about), 'f': F(2025),
           'g': U(owed[2025])}),
-        ('**One account explains it.** Private special education tuition was budgeted at %s and '
-         'spent %s, leaving %s, more than the whole surplus. Every other school line together came '
-         'out %s short. Collaborative tuition, the other kind of out-of-district placement, ran %s '
-         'over. Both tuition lines missed by more than %s, in opposite directions.'
+        ('**One account explains it.** Tuition for students in private special education schools '
+         'was budgeted at %s and spent %s, leaving %s, more than the whole surplus. Every other '
+         'school line together came out %s short. Tuition for students in collaboratives, the '
+         'other kind of placement outside Lunenburg’s schools, ran %s over its budget. Both lines '
+         'missed by more than %s, in opposite directions, so together they nearly cancel.'
          % (C.usd(pv['revised_budget']), C.usd(pv_spent), C.usd(pv_left), C.usd(-rest_net),
             C.usd(co_over_), C.usd(400000)),
          {'a': U(pv['revised_budget']), 'b': U(pv_spent), 'c': U(pv_left), 'd': U(-rest_net),
           'e': U(co_over_), 'f': U(400000)}),
-        ('**On %s the district prepaid %s of %s tuition out of %s’s budget:** collaborative invoices '
-         'numbered for %s were charged to %s and paid in July. That payment is %s’s cost, not '
-         '%s’s; left to %s, the %s surplus would read %s. The day before, %s of collaborative '
-         'tuition was moved onto the circuit breaker, against %s the budget had planned, and the '
-         'circuit breaker paid none of private tuition, after %s–%s of it in each of the three '
-         'years before.'
+        ('**On %s the district prepaid %s of %s tuition out of %s’s budget:** collaborative bills '
+         'dated for %s were charged to %s and paid in July. That payment is %s’s cost, not %s’s; '
+         'left to %s, the %s surplus would read %s. The day before, %s of collaborative tuition '
+         'was moved off the school budget onto the circuit breaker (the state’s special education '
+         'reimbursement), where the budget had planned %s. The circuit breaker paid none of the '
+         'private school tuition, after paying %s–%s of it in each of the three years before.'
          % ('30 June', C.usd(early_), C.fy(2027), C.fy(2026), C.fy(2027), C.fy(2026), C.fy(2027),
             C.fy(2026), C.fy(2027), C.fy(2026), C.usd(upper_), C.usd(w_cb), C.usd(plan),
             str(cb_lo), C.pct(cb_hi, 0)),
          {'a': U(early_), 'b': F(2027), 'c': F(2026), 'd': U(upper_), 'e': U(w_cb), 'f': U(plan),
           'g': figure(cb_lo, str(cb_lo)), 'h': figure(cb_hi, C.pct(cb_hi, 0))}, D),
         ('**Elsewhere, the pattern is mixed.** Building upkeep left %s and counselors and '
-         'psychologists %s; paraprofessionals, special-ed contracted services and transportation '
-         'ran over.' % (C.usd(bldg), C.usd(cnsl)), {'a': U(bldg), 'b': U(cnsl)}),
+         'psychologists %s; paraprofessionals, special education contracted services and '
+         'transportation ran over.' % (C.usd(bldg), C.usd(cnsl)), {'a': U(bldg), 'b': U(cnsl)}),
         ('**What the record does not say:** why any line came in under or over, or whether the '
-         'district stands by the %s entry, which the Town Manager questioned in writing and which '
-         'still stood on %s. The school budget as a whole stayed under, so there is no deficit; '
-         'what was left returns to the town’s general fund.' % ('29 June', '6 October'), None, D),
+         'district stands by the %s entry that moved tuition onto the circuit breaker. The Town '
+         'Manager questioned it in writing, and it still stood on %s. The school budget as a '
+         'whole stayed under, so there is no deficit; what was left returns to the town’s general '
+         'fund.' % ('29 June', '6 October'), None, D),
     ], place='lead', tone='plain')
 
     findings = TB.custom(
