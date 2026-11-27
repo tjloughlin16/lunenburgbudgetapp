@@ -84,6 +84,48 @@ def ordinal(n):
     return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
 
 
+
+def inline(pid, flow, facts, cons, links=None):
+    """CONCLUSIONS UNDER THE VISUAL THEY EXPLAIN, WITH A LINK WHERE ANOTHER PAGE HOLDS THE DETAIL.
+    TJ, 27 November 2026: the four pages are linked "directly in the above sections when its related
+    to whats there", not only in a list at the foot. A placed ('conclusion', i) is drawn without a
+    link, so each one is attached to the block before it (topic_blocks.claims), which draws
+    "Shown on <page>". page() does not re-check claims on a topic page, so rule 2 is checked here."""
+    import brief
+    links = links or {}
+    bad = []
+    for i, c in enumerate(cons):
+        bad += brief.check_unit(c, '%s conclusion %d' % (pid, i + 1))
+        if c.get('so'):
+            bad += brief.check_unit(c['so'], '%s conclusion %d means' % (pid, i + 1))
+    for f in facts:
+        bad += brief.check_unit(f['label'], '%s fact %s label' % (pid, f['id']))
+    if bad:
+        FP.fail('\n  '.join(bad))
+    by = {f['id']: f for f in facts}
+    out, attach = [], {}
+    last = None
+    for x in flow:
+        if isinstance(x, tuple) and x[0] == 'conclusion':
+            if last is None:
+                FP.fail('%s: conclusion %d has no block before it' % (pid, x[1] + 1))
+            c = dict(cons[x[1]])
+            if x[1] in links:
+                c['link'] = dict(href=path(links[x[1]]), title=PAGES[links[x[1]]])
+            attach.setdefault(last, []).append(c)
+            continue
+        if isinstance(x, dict) and 'cite' in x and isinstance(x['cite'], dict) and 'block' in x['cite']:
+            last = len(out)
+        out.append(x)
+    for i, cs in attach.items():
+        rested = [by[r] for r in dict.fromkeys(r for c in cs for r in c['rests_on'])]
+        out[i] = dict(out[i], cite=TB.claims(out[i]['cite'], cs, rested))
+    used = {r for cs in attach.values() for c in cs for r in c['rests_on']}
+    if set(by) - used:
+        FP.fail('%s: facts %s rest under no conclusion' % (pid, sorted(set(by) - used)))
+    return out
+
+
 # ------------------------------------------------------------------------------ sources
 
 def src_manual(key='manual'):
@@ -248,7 +290,8 @@ def page_rules(b):
         'This project recommends neither direction: not to save more, and not to spend more. It shows what '
         'each setting would do to figures the town has already published. The boards decide.'),
         L('The draft itself says its targets are recommended for towns like Lunenburg, and that the town '
-          'is to test them against its own finances before adopting them.')], place='lead', tone='define')
+          'is to test them against its own finances before adopting them.')], place='lead', tone='define',
+        links=[('Who has argued for each direction, meeting by meeting', path('financial-policy-debate'))])
 
     f = LD.fact
     facts = [
@@ -294,8 +337,9 @@ def page_rules(b):
             cite(links, 'manual'), 'sources']
     finding = 'On %s of free cash, the draft would fix a use for %s; today’s rules fix one for %s.' % (
         C.usd(fc), C.usd(claimed), C.usd(fixed))
-    page = TP.page(pid, finding, facts, cons, sources=sources,
-                   finding_figures={'a': U(fc), 'b': U(claimed), 'c': U(fixed)}, flow=flow,
+    page = TP.page(pid, finding, [], [], sources=sources,
+                   finding_figures={'a': U(fc), 'b': U(claimed), 'c': U(fixed)},
+                   flow=inline(pid, flow, facts, cons, {2: 'retiree-health-liability', 3: 'reserves-against-targets'}),
                    draft=dict(title=PAGES[pid], home=HOME))
     return page, dict(set_by_draft=set_by_draft, n_dials=n_dials, on_in=on_in, n_rows=n_rows, share=share, s26=s26)
 
@@ -418,8 +462,9 @@ def page_targets(b):
     sources = [SRC_DLS_ST, SRC_ARS, SRC_AR25, SRC_AUDIT, src_manual(), SRC_FACT, SRC_DLS_FC, SRC_DLS_DEBT]
     finding = 'General stabilization held %s of the %s budget; the draft’s range is five to eight percent.' % (
         pc(sp[years[-1]]), C.fy(years[-1]))
-    page = TP.page(pid, finding, facts, cons, sources=sources,
-                   finding_figures={'a': P(sp[years[-1]]), 'y': F(years[-1])}, flow=flow,
+    page = TP.page(pid, finding, [], [], sources=sources,
+                   finding_figures={'a': P(sp[years[-1]]), 'y': F(years[-1])},
+                   flow=inline(pid, flow, facts, cons, {0: 'financial-policy-rules', 1: 'financial-policy-rules'}),
                    draft=dict(title=PAGES[pid], home=HOME))
     return page, dict(in_range=in_range, fyears=fyears, rk_s=rk_s, rk_f=rk_f, rk_d=rk_d, n=n, above_since=above_since,
                       lo_t=lo_t, hi_t=hi_t, diff=diff)
@@ -508,12 +553,14 @@ def page_opeb(b):
     sources[-1]['key'] = 'today'
     flow.insert(-1, cite(TB.explain('Today’s rule', [L(
         'Section 3.07, approved in January 2018: at least 10% of certified free cash to the trust each year; '
-        'current retirees paid as they go.', '3.07', '2018', '10%')], place='end', tone='plain'), 'today'))
+        'current retirees paid as they go.', '3.07', '2018', '10%')], place='end', tone='plain',
+        links=[('Today\u2019s rule against the draft, policy by policy', path('financial-policy-rules'))]), 'today'))
     finding = 'At 30 June 2025 the retiree health trust held %s of a %s liability: %s funded.' % (
         C.usd(trust[ys[-1]]), C.usd(total[ys[-1]]), pc(o['funded'][ys[-1]]))
-    page = TP.page(pid, finding, facts, cons, sources=sources,
+    page = TP.page(pid, finding, [], [], sources=sources,
                    finding_figures={'a': U(trust[ys[-1]]), 'b': U(total[ys[-1]]), 'c': P(o['funded'][ys[-1]])},
-                   finding_allow=('30', '2025'), flow=flow, draft=dict(title=PAGES[pid], home=HOME))
+                   finding_allow=('30', '2025'), flow=inline(pid, flow, facts, cons, {2: 'financial-policy-rules'}),
+                   draft=dict(title=PAGES[pid], home=HOME))
     return page, dict(swamped=swamped)
 
 
@@ -617,7 +664,8 @@ def page_debate(b):
             cite(checks, *allkeys), ('conclusion', 1), 'sources']
     sources = srcs
     finding = 'The town’s financial policies date from 2014; the state’s replacement draft has waited since June 2024.'
-    page = TP.page(pid, finding, facts, cons, sources=sources, finding_allow=('2014', '2024'), flow=flow,
+    page = TP.page(pid, finding, [], [], sources=sources, finding_allow=('2014', '2024'),
+                   flow=inline(pid, flow, facts, cons, {0: 'financial-policy-rules'}),
                    draft=dict(title=PAGES[pid], home=HOME))
     return page, dict(titles=titles, n_cap=n_cap, n_rows=len(rows), rows=rows)
 
