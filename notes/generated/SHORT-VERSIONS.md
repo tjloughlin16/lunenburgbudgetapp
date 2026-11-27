@@ -156,6 +156,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Leaving and arriving](/enrolment/leaving-and-arriving) | page | — / 6.5 min | *(none declared)* |
 | [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.2 min | *(none declared)* |
 | [School choice flows](/enrolment/school-choice-flows) | page | — / 7.2 min | *(none declared)* |
+| [New financial policies](/financial-policies) | page | — / 20.0 min | *(none declared)* |
+| [The policy debate](/financial-policies/financial-policy-debate) | page | — / 10.2 min | *(none declared)* |
+| [Financial policy rules](/financial-policies/financial-policy-rules) | page | — / 19.1 min | *(none declared)* |
+| [The rules in practice](/financial-policies/policies-in-practice) | page | — / 11.2 min | *(none declared)* |
+| [Policy calculator](/financial-policies/policy-calculator) | page | — / 14.5 min | *(none declared)* |
+| [Retiree health liability](/financial-policies/retiree-health-liability) | page | — / 8.1 min | *(none declared)* |
 | [Free cash](/free-cash) | page | — / 7.6 min | *(none declared)* |
 | [Free cash calculator](/free-cash-calculator) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
 | [Free cash and capital](/free-cash/free-cash-and-capital) | page | — / 7.0 min | *(none declared)* |
@@ -3476,7 +3482,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 13.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 28, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-28-vBdjYw_h64M) | reference | — / 9.7 min | *(none declared)* |
-| [New reports](/new-reports) | reference | — / 36.3 min | *(none declared)* |
+| [New reports](/new-reports) | reference | — / 36.9 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 19.4 min | *(none declared)* |
 | [Adam Burney](/people/adam-burney) | reference | — / 10.6 min | *(none declared)* |
 | [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 8.9 min | *(none declared)* |
@@ -3920,7 +3926,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.6 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 54.6 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 55.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 21.5 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.9 min | *(none declared)* |
