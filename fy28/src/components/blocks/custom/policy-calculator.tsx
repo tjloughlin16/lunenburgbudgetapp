@@ -38,7 +38,21 @@ type Data = {
   rules: { today: { floor: number; cap: number }; draft: { cap: number; stab_annual: [number, number] } }
   bands: { general_draft: [number, number]; special_draft: [number, number]; fc_draft: [number, number]; general_today: number }
   defaults: Inputs
-  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note', string>
+  kinds: Record<RuleKind, { label: string; text: string }>
+  targets: { key: string; chart: string; source: string; quote: string }[]
+  moves_other: { key: string; label: string; source: string; quote: string }[]
+  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note' | 'kinds_note', string>
+}
+type RuleKind = 'moves' | 'target'
+
+/** WHICH KIND OF RULE: one that moves money, or a planning target (TJ, 27 November 2026: "some have
+ *  direct 'savings' impact and some have more guideline impact"). Our reading, said on the page. Both
+ *  neutral: a solid edge for money moved, a dashed one for a range measured against. */
+function KindTag({ k, kinds }: { k: RuleKind; kinds: Data['kinds'] }) {
+  return (
+    <span title={kinds[k].text} className="inline-block text-[10.5px] leading-tight px-1.5 py-0.5 rounded-sm whitespace-nowrap align-middle font-semibold"
+      style={{ color: 'var(--text-primary)', border: `1.5px ${k === 'moves' ? 'solid' : 'dashed'} var(--text-secondary)` }}>{kinds[k].label}</span>
+  )
 }
 
 // No thread-1: it is the site's coral, and a coral beside a rule reads as a warning (rule 8).
@@ -136,8 +150,8 @@ function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; a
 
 /** A BULLET CHART: the balance before and this year's deposit as a bar, against the draft's range
  *  (shaded) and today's line, every part labelled on the chart. */
-function Bullet({ title, before, after: a, deposit, band, line, verdict }: {
-  title: string; before: number; after: number; deposit: number
+function Bullet({ title, before, after: a, deposit, band, line, verdict, kinds }: {
+  kinds: Data['kinds']; title: string; before: number; after: number; deposit: number
   band?: { lo: number; hi: number; label: string }; line?: { at: number; label: string }; verdict: string
 }) {
   const W = 320, top = 34, bh = 16
@@ -179,6 +193,7 @@ function Bullet({ title, before, after: a, deposit, band, line, verdict }: {
         ))}
       </svg>
       <p className="mt-1 text-[13px] leading-snug" style={{ color: 'var(--text-primary)' }}>{verdict}</p>
+      <p className="mt-2 text-[11.5px]" style={muted}><KindTag k="target" kinds={kinds} /> the shaded range and the line</p>
     </div>
   )
 }
@@ -199,17 +214,43 @@ function Figure({ title, value, sub }: { title: string; value: string; sub: stri
 const against = (v: number, lo: number, hi?: number) =>
   hi === undefined ? (v >= lo ? 'above' : 'below') : v < lo ? 'below' : v > hi ? 'above' : 'inside'
 
+type Mode = 'today' | 'draft' | 'mine'
+type Mine = { dials: Dials; from: 'today' | 'draft' }
+const STORE = 'policy-calculator:your-settings'
+
+/** Your settings from this browser, if they are whole and every dial is a number; otherwise none. */
+function loadMine(d: Data): Mine | null {
+  try {
+    const m = JSON.parse(localStorage.getItem(STORE) ?? 'null') as Mine | null
+    if (!m || (m.from !== 'today' && m.from !== 'draft')) return null
+    return d.dials.every(q => Number.isFinite(m.dials?.[q.key])) ? m : null
+  } catch { return null }
+}
+function saveMine(m: Mine | null) {
+  try { if (m) localStorage.setItem(STORE, JSON.stringify(m)); else localStorage.removeItem(STORE) } catch { /* a convenience */ }
+}
+
 export default function PolicyCalculator({ data, alt }: CustomProps) {
   const d = data as Data
   const [x, setX] = useState<Inputs>(d.defaults)
-  const [from, setFrom] = useState<Preset['key']>('today')
-  const [dials, setDials] = useState<Dials>(d.presets[0].settings)
+  // YOUR SETTINGS ARE A SLOT, NOT A STATE OF THE DIALS (TJ, 27 November 2026: "if i adjust, i want
+  // to click the draft, etc but be able to pop back to what i set"). Moving a dial saves the dials as
+  // they then stand; choosing a rule set shows it without discarding them; Clear discards them. Kept
+  // in this browser so a reload keeps them -- a convenience, so storage that fails costs nothing.
+  const [mine, setMine] = useState<Mine | null>(() => loadMine(d))
+  const [mode, setMode] = useState<Mode>(() => (loadMine(d) ? 'mine' : 'today'))
   const names = useMemo(() => Object.fromEntries(d.uses.map(u => [u.key, u.label])) as Record<UseKey, string>, [d.uses])
 
   // A preset's "no cap" is the whole free cash, so it follows the free cash the reader types.
   const settingsOf = (p: Preset): Dials => ({ ...p.settings, other_cap: p.settings.other_cap >= d.defaults.fc ? Math.max(x.fc, p.settings.other_cap) : p.settings.other_cap })
-  const preset = d.presets.find(p => p.key === from)!
-  const mine = (Object.keys(dials) as DialKey[]).some(k => Math.abs(dials[k] - settingsOf(preset)[k]) > 1e-9)
+  const base = mode === 'mine' ? (mine?.from ?? 'today') : mode
+  const preset = d.presets.find(p => p.key === base)!
+  const dials: Dials = mode === 'mine' && mine ? mine.dials : settingsOf(preset)
+  const keep = (m: Mine | null) => { setMine(m); saveMine(m) }
+  const move = (k: DialKey, v: number) => {
+    keep({ dials: { ...dials, [k]: v }, from: base }); setMode('mine')
+  }
+  const clear = () => { keep(null); setMode(base) }
   const today = allocate(x, settingsOf(d.presets[0])), draft = allocate(x, settingsOf(d.presets[1]))
   const u = allocate(x, dials)
   const a = after(x, u)
@@ -217,8 +258,10 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   const changed = (k: keyof Inputs) => x[k] !== d.defaults[k]
   const anyChanged = (Object.keys(d.defaults) as (keyof Inputs)[]).some(changed)
   const setInput = (k: keyof Inputs, v: number) => setX(o => ({ ...o, [k]: Number.isFinite(v) ? v : 0 }))
-  const choose = (p: Preset) => { setFrom(p.key); setDials(settingsOf(p)) }
-  const label = mine ? `Your settings (from ${preset.label.toLowerCase()})` : preset.label
+  const label = mode === 'mine' ? `Your settings (from ${preset.label.toLowerCase()})` : preset.label
+  const btn = (on: boolean) => on
+    ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
+    : { background: 'var(--surface-2)', color: 'var(--text-primary)' }
 
   const b = d.bands, r = d.rules
   const gVerdict = `${a.general_pct >= b.general_today ? 'At or above' : 'Below'} today's ${pctTrim(b.general_today)} minimum; ${against(a.general_pct, b.general_draft[0], b.general_draft[1])} the draft's ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])} range.`
@@ -227,19 +270,41 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
 
   return (
     <div className="w-full max-w-5xl min-w-0" aria-label={alt}>
-      {/* THE STARTING POSITIONS */}
-      <div className="flex flex-wrap items-center gap-1.5">
-        <span className="text-[13px] mr-1" style={secondary}>Set the dials to</span>
-        {d.presets.map(p => (
-          <button key={p.key} type="button" aria-pressed={!mine && from === p.key} onClick={() => choose(p)}
-            className="px-3 py-1.5 rounded-md text-[14px] font-medium"
-            style={!mine && from === p.key
-              ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
-              : { background: 'var(--surface-2)', color: 'var(--text-primary)' }}>{p.label}</button>
-        ))}
-        {mine ? <span className="ml-1 px-2 py-1 rounded-md text-[13px]" style={{ border: '1px dashed var(--text-muted)', color: 'var(--text-primary)' }}>Your settings</span> : null}
+      {/* PINNED WHILE THE CALCULATOR IS ON SCREEN: which setting is showing, the switch between them,
+          and what the dials leave for Town Meeting (TJ: "a pinned header ... that shows the amount of
+          money left for town meeting appropriation from the dials set"). */}
+      <div className="sticky z-20 -mx-4 px-4 sm:mx-0 sm:px-3 py-2 sm:rounded-b-md border-b"
+        style={{ top: 'var(--header-h)', background: 'var(--surface-2)', borderColor: 'var(--grid)' }}>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {d.presets.map(p => (
+            <button key={p.key} type="button" aria-pressed={mode === p.key} onClick={() => setMode(p.key)}
+              className="px-2.5 py-1 rounded-md text-[13.5px] font-medium" style={btn(mode === p.key)}>{p.label}</button>
+          ))}
+          {mine ? <>
+            <button type="button" aria-pressed={mode === 'mine'} onClick={() => setMode('mine')}
+              className="px-2.5 py-1 rounded-md text-[13.5px] font-medium"
+              style={{ ...btn(mode === 'mine'), outline: mode === 'mine' ? undefined : '1px dashed var(--text-muted)' }}>Your settings</button>
+            <button type="button" onClick={clear} className="px-2 py-1 rounded-md text-[12.5px] underline"
+              style={{ color: 'var(--text-secondary)' }} aria-label="Clear your settings">Clear</button>
+          </> : null}
+          <span className="ml-auto text-right leading-tight">
+            <span className="block text-[11.5px]" style={muted}>Left for Town Meeting</span>
+            <span className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}</span>
+            <span className="ml-1.5 text-[12px] tabular-nums" style={secondary}>{pct(u.left / x.fc, 0)}</span>
+          </span>
+        </div>
       </div>
-      <p className="mt-1.5 text-[12.5px]" style={muted}>{mine ? 'Moved from ' + preset.label.toLowerCase() + ': ' + preset.source : preset.source}</p>
+      <p className="mt-2 text-[12.5px]" style={muted}>{mode === 'mine' ? 'Your settings, moved from ' + preset.label.toLowerCase() + ': ' + preset.source : preset.source}.
+        {mine && mode !== 'mine' ? ' Your settings are kept; moving a dial here starts them again from this rule set.' : ''}
+        {!mine ? ' Move any dial to save your own settings.' : ''}</p>
+
+      {/* THE TWO KINDS OF RULE, defined once where a reader first meets them */}
+      <div className="mt-3 grid gap-2 sm:grid-cols-2 text-[12.5px]" style={secondary}>
+        {(['moves', 'target'] as const).map(k => (
+          <p key={k}><KindTag k={k} kinds={d.kinds} /> {d.kinds[k].text}</p>
+        ))}
+      </div>
+      <p className="mt-1 text-[11.5px]" style={muted}>{d.text.kinds_note}</p>
 
       {/* THE SIGNATURE: what each setting does with the same free cash */}
       <div className="mt-3 rounded-md p-3" style={card}>
@@ -247,9 +312,9 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <span className="text-[13.5px]" style={secondary}>Where {usd(x.fc)} of free cash goes</span>
           <Tag k="ours" />
         </div>
-        <SplitBar label={d.presets[0].label} u={today} fc={x.fc} strong={!mine && from === 'today'} names={names} />
-        <SplitBar label={d.presets[1].label} u={draft} fc={x.fc} strong={!mine && from === 'draft'} names={names} />
-        {mine ? <SplitBar label="Your settings" u={u} fc={x.fc} strong names={names} /> : null}
+        <SplitBar label={d.presets[0].label} u={today} fc={x.fc} strong={mode === 'today'} names={names} />
+        <SplitBar label={d.presets[1].label} u={draft} fc={x.fc} strong={mode === 'draft'} names={names} />
+        {mine ? <SplitBar label="Your settings" u={allocate(x, mine.dials)} fc={x.fc} strong={mode === 'mine'} names={names} /> : null}
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
             <li key={q.key}><span className="inline-block w-2.5 h-2.5 mr-1.5 align-middle rounded-sm"
@@ -259,13 +324,13 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       </div>
 
       {/* THE DIALS */}
-      <h3 className="mt-6 text-[16px] font-semibold">The dials <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
+      <h3 className="mt-6 text-[16px] font-semibold">The dials <KindTag k="moves" kinds={d.kinds} /> <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
       <p className="mt-0.5 text-[12.5px]" style={muted}>{d.text.order_note} {d.text.floors_note}</p>
       <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {d.dials.map(q => (
           <DialCard key={q.key} d={q} v={dials[q.key]} fc={x.fc} amount={q.key === 'other_cap' ? undefined : u.by[q.key]}
             range={q.key === 'capital' ? d.capital_range : undefined}
-            onChange={v => setDials(o => ({ ...o, [q.key]: v }))} />
+            onChange={v => move(q.key, v)} />
         ))}
       </div>
       <div className="mt-3 rounded-md p-3 flex flex-wrap items-baseline justify-between gap-2" style={{ ...card, background: 'var(--surface-2)' }}>
@@ -276,14 +341,15 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       </div>
 
       {/* THE OUTCOMES */}
-      <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances</h3>
+      <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances <KindTag k="target" kinds={d.kinds} /></h3>
+      <p className="mt-0.5 text-[12.5px]" style={muted}>The bars move with the dials. The ranges and lines they are measured against are planning targets: they set no deposit.</p>
       <div className="mt-2 grid gap-3 lg:grid-cols-3">
-        <Bullet title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
+        <Bullet kinds={d.kinds} title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
           band={{ lo: b.general_draft[0], hi: b.general_draft[1], label: `Draft: ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])}` }}
           line={{ at: b.general_today, label: `Today: at least ${pctTrim(b.general_today)}` }} verdict={gVerdict} />
-        <Bullet title="Special purpose stabilization" before={before.special_pct} after={a.special_pct} deposit={u.special}
+        <Bullet kinds={d.kinds} title="Special purpose stabilization" before={before.special_pct} after={a.special_pct} deposit={u.special}
           band={{ lo: b.special_draft[0], hi: b.special_draft[1], label: `Draft: ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])}` }} verdict={sVerdict} />
-        <Bullet title="All stabilization funds" before={before.all_pct} after={a.all_pct} deposit={u.general + u.special}
+        <Bullet kinds={d.kinds} title="All stabilization funds" before={before.all_pct} after={a.all_pct} deposit={u.general + u.special}
           line={{ at: r.today.cap, label: `Today: at most ${pctTrim(r.today.cap)}` }} verdict={aVerdict} />
       </div>
       <p className="mt-2 text-[12px]" style={muted}>{d.text.cap_reading}</p>
@@ -314,7 +380,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <ul className="mt-3 space-y-1 text-[12.5px]" style={muted}>
             <li>{d.text.audit_note}</li>
             <li>{d.text.budget_note}</li>
-            <li>{d.text.annual_note} At this budget that is {usd(r.draft.stab_annual[0] * x.budget)} or {usd(r.draft.stab_annual[1] * x.budget)} a year.</li>
+            <li><KindTag k="moves" kinds={d.kinds} /> {d.text.annual_note} At this budget that is {usd(r.draft.stab_annual[0] * x.budget)} or {usd(r.draft.stab_annual[1] * x.budget)} a year.</li>
           </ul>
         </div>
       </details>
@@ -325,12 +391,15 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
         <ul className="px-3 pb-3 space-y-2">
           {d.dials.flatMap(q => ([['Today', q.today], ['Draft', q.draft]] as const)
             .filter(([, s]) => s.quote)
-            .map(([n, s]) => (
-              <li key={q.key + n} className="text-[13px]">
-                <span className="font-semibold">{q.label}, {n.toLowerCase()}: </span>
-                <q style={{ color: 'var(--text-primary)' }}>{s.quote}</q>
-                <span className="block text-[12px]" style={muted}>{s.source}</span>
-              </li>)))}
+            .map(([n, s]) => ({ id: q.key + n, kind: 'moves' as RuleKind, head: `${q.label}, ${n.toLowerCase()}`, quote: s.quote!, source: s.source! })))
+            .concat(d.moves_other.map(m => ({ id: m.key, kind: 'moves' as RuleKind, head: `${m.label}, draft`, quote: m.quote, source: m.source })))
+            .concat(d.targets.map(t => ({ id: t.key, kind: 'target' as RuleKind, head: t.chart, quote: t.quote, source: t.source })))
+            .map(r => (
+              <li key={r.id} className="text-[13px]">
+                <KindTag k={r.kind} kinds={d.kinds} /> <span className="font-semibold">{r.head}: </span>
+                <q style={{ color: 'var(--text-primary)' }}>{r.quote}</q>
+                <span className="block text-[12px]" style={muted}>{r.source}</span>
+              </li>))}
         </ul>
       </details>
     </div>

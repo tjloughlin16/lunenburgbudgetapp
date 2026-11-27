@@ -136,6 +136,29 @@ for key, _, share in FP.SPLIT:
         FP.fail('policy calculator: the pages apply %s at %s, the calculator at %s' % (key, share, _dr[want]))
 _tr = {k: v for k, v, _, _ in TODAY}
 
+# TWO KINDS OF RULE (TJ, 27 November 2026: "some have direct 'savings' impact and some have more
+# guideline impact"). OUR READING, labelled as such on the page:
+#   moves  -- a rule that decides where money goes: each dial, the draft's yearly deposit, a cap on
+#             what may be deposited. Changing it changes what is left for Town Meeting.
+#   target -- a range a balance is measured against. It moves no money by itself; the dials are what
+#             reach it or not. The shaded ranges and lines on the balance charts.
+KINDS = dict(
+    moves=dict(label='Moves money', text='Decides where this year\'s free cash goes, so it changes what is left for Town Meeting.'),
+    target=dict(label='Planning target', text='A range a balance is measured against. It moves no money by itself; the dials reach it or do not.'),
+)
+TARGETS = [
+    # key, chart it is drawn on, the rule's words
+    ('general_today', 'General stabilization',
+     rule_today('Section 3.04', 'A minimum balance equal to five percent of the current omnibus budget should be maintained in the aggregate of the general stabilization fund')),
+    ('general_draft', 'General stabilization',
+     rule_draft(30, 'minimum balance of five to eight percent of the current year annual general fund operating budget')),
+    ('special_draft', 'Special purpose stabilization',
+     rule_draft(30, 'minimum target balance total in the range of three to five percent')),
+    ('all_today', 'All stabilization funds', TODAY[5][3]),
+    ('fc_draft', 'Next year\'s starting free cash',
+     rule_draft(29, 'free cash certifications equal to f ive to seven percent of the current year annual general fund budget')),
+]
+
 # THE BANDS drawn beside each result: the pages' own BANDS, as fractions.
 BANDS = dict(general_draft=[FP.BANDS['stab'][0] / 100, FP.BANDS['stab'][1] / 100],
              special_draft=[FP.BANDS['special'][0] / 100, FP.BANDS['special'][1] / 100],
@@ -285,6 +308,8 @@ def build():
         for _, _, _, r in rs:
             allow.add(r['quote'])
             allow.add(r['source'])
+    for _, _, r in TARGETS:
+        allow.update((r['quote'], r['source']))
     allow.update(('3.03', '3.04', '3.07', 'April 2024', 'pdf pages 28-30'))
 
     # THE DIALS' RANGES are where a slider stops, not figures about the town: a share up to half the
@@ -301,7 +326,12 @@ def build():
 
     inp = {i['key']: i['value'] for i in inputs}
     data = dict(
-        inputs=inputs, dials=dials, order=ORDER, capital_range=capital_range,
+        inputs=inputs, dials=dials, order=ORDER, capital_range=capital_range, kinds=KINDS,
+        targets=[dict(key=k, chart=c, **r) for k, c, r in TARGETS],
+        # Not a dial, but money-moving: the draft's yearly deposit from the operating budget, and its
+        # cap on what may be deposited into all stabilization funds in a year.
+        moves_other=[dict(key='stab_annual', label='Yearly stabilization deposit, from the operating budget', **DRAFT[9][3]),
+                     dict(key='deposit_cap', label='Cap on a year\'s stabilization deposits', **DRAFT[3][3])],
         uses=[dict(key=k, label=l) for k, l in USES],
         presets=[
             dict(key='today', label="Today's rules", source='Select Board policy, sections 3.03, 3.04 and 3.07',
@@ -324,6 +354,7 @@ def build():
                          'budget, not from free cash: %s in its summary table, %s in its text.'
                          % (P(float(_dr['stab_annual_summary']) * 100, 2), P(float(_dr['stab_annual_text']) * 100, 1))),
             floors_note='The draft\'s shares are floors ("at least"); its setting puts each dial at its floor.',
+            kinds_note='Which kind each rule is, is our reading of the two documents.',
             order_note=('The dials are applied in the order shown, each from what is left: today\'s policy '
                         'is written as a priority list.'),
         ),
