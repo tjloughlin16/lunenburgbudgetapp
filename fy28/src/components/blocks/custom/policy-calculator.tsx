@@ -86,7 +86,6 @@ function settingText(d: Dial, s: Setting, voted = false) {
 // the discretionary part is drawn split into how Town Meeting actually used it, in lighter shades.
 const DISCRETIONARY = 'Discretionary'
 type Disc = { key: 'capital' | 'other' | 'stayed'; label: string; share: number }
-const DISC_COLOR: Record<Disc['key'], string> = { capital: 'var(--text-secondary)', other: 'var(--text-muted)', stayed: 'var(--surface-3)' }
 
 /** One setting's split of the pot: off the top, then DISCRETIONARY -- the part drawn as the focus
  *  (TJ, 27 November 2026: "the discretionary portion in the chart to be highlighted somehow, as THAT is
