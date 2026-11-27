@@ -439,6 +439,7 @@ async function keepBlob(path, h) {
  *  neither `shell` nor `format`. They are adopted only on request (PRERENDER_ADOPT_LEGACY),
  *  and only after main() has proved the shell source is unchanged since they were made. */
 let adoptLegacy = false
+let gitRepo = null
 
 /** null when the cached page can be reused; otherwise WHY NOT, as a short stable key. The
  *  key is what the build gate below counts, so it names a cause, never a route.
@@ -650,7 +651,11 @@ async function main() {
   // (fy28/index.html, from <html on) must be byte-identical at the commit named and now.
   if (process.env.PRERENDER_ADOPT_LEGACY) {
     const at = process.env.PRERENDER_ADOPT_LEGACY
-    const { stdout: then } = await execFileAsync('git', ['show', `${at}:fy28/index.html`], { cwd: APP, maxBuffer: 1 << 24 })
+    // The repository to read that commit from. A ship builds in an export whose own repository
+    // is empty, so it is named: PRERENDER_ADOPT_REPO, used for these two git calls only.
+    const repo = process.env.PRERENDER_ADOPT_REPO || join(APP, '..')
+    gitRepo = repo
+    const { stdout: then } = await execFileAsync('git', ['-C', repo, 'show', `${at}:fy28/index.html`], { maxBuffer: 1 << 24 })
     const nowShell = await readFile(join(APP, 'index.html'), 'utf8')
     // From <html on, as the key reads it: the preamble before it is spliced fresh onto every page.
     const body = t => t.slice(t.indexOf('<html'))
@@ -1376,7 +1381,7 @@ class CdpBrowser {
 /** Many files at one commit, in one `git cat-file --batch`. Missing paths are left out. */
 function gitObjects(commit, paths) {
   return new Promise((resolve, reject) => {
-    const p = spawn('git', ['cat-file', '--batch'], { cwd: APP, stdio: ['pipe', 'pipe', 'inherit'] })
+    const p = spawn('git', ['-C', gitRepo, 'cat-file', '--batch'], { stdio: ['pipe', 'pipe', 'inherit'] })
     const chunks = []
     p.stdout.on('data', c => chunks.push(c))
     p.on('error', reject)
