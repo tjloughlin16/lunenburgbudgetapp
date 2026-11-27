@@ -642,7 +642,27 @@ async function main() {
   // gets TODAY's preamble below instead of the one it was cached with.
   // THE SHELL KEY, without the bundle's names: a new bundle is not a new shell, and a reused
   // page is relinked to it below. Nor is this script's text in it any more: RENDER_FORMAT is.
-  const global = sha256(shellKey(shell) + PROBE + READ_PROBE + RENDER_FORMAT)
+  //
+  // NOR ARE THE PROBES. They are stripped from every page, so their text never reaches the
+  // output, and keying on it re-rendered all 3,913 pages for a one-line fix to the read probe
+  // (27 November 2026). A probe change that makes earlier records wrong is a RENDER_FORMAT bump.
+  const global = sha256(shellKey(shell) + 'format ' + RENDER_FORMAT)
+  // ADOPTING ENTRIES KEYED THE EARLIER WAY (shell + both probes + format), once: an entry is
+  // carried over only if its key is exactly that formula on TODAY's shell, with the probe as
+  // the named commit printed it -- which proves the shell is unchanged.
+  let adoptKey = null
+  if (process.env.PRERENDER_ADOPT_PROBE_FROM) {
+    const at = process.env.PRERENDER_ADOPT_PROBE_FROM
+    const repo = process.env.PRERENDER_ADOPT_REPO || join(APP, '..')
+    const { stdout: src } = await execFileAsync('git', ['-C', repo, 'show', `${at}:fy28/scripts/prerender-incremental.mjs`], { maxBuffer: 1 << 24 })
+    const tmp = join(CACHE, `probe-${at}.mjs`)
+    await mkdir(CACHE, { recursive: true })
+    await writeFile(tmp, src)
+    const old = await import(tmp)
+    adoptKey = sha256(old.shellKey(shell) + PROBE + old.READ_PROBE + RENDER_FORMAT)
+    await rm(tmp, { force: true })
+    console.log(`adopting entries keyed with the probe of ${at}: key ${adoptKey.slice(0, 10)}`)
+  }
   const assets = shellAssets(shell)
   if (!assets.js) throw new Error('dist/index.html: no /assets/*.js entry script to relink pages to')
   const manifest = JSON.parse(await readFile(join(APP, 'src', 'data', 'agent-manifest.json'), 'utf8'))
@@ -687,6 +707,11 @@ async function main() {
   }
   let deps = {}
   try { deps = JSON.parse(await readFile(CACHE_DEPS, 'utf8')) } catch { /* first run */ }
+  if (adoptKey) {
+    let n = 0
+    for (const e of Object.values(deps)) if (e.shell === adoptKey) { e.shell = global; n++ }
+    console.log(`  ${n} entries carried over to the new key`)
+  }
   const full = !!process.env.FULL || only.length > 0
   // RENDER_ALSO=/a,/b: render these as well as whatever changed, reusing everything else.
   // For pages whose COMPONENT changed in this deploy, which a relink would leave in the
