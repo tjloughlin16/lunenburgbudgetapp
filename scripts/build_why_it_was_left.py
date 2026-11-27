@@ -364,23 +364,30 @@ def page(d):
     drop_all = sum((x['drop'] for x in st), D0)
     drop_net = sum((x['net'] for x in st), D0)
     yrs = (2024, Y0, Y1)    # the test reads these three; FY2023 is in the journal CSV
-    cols = [C.fy(y) for y in yrs] + ['Other route in %s' % fy1, 'What was bought']
-    kinds = ['ledger'] * len(yrs) + ['ledger', 'ledger']
+    # THE DIFFERENCE IS PRINTED, not left to the reader. TJ, 27 November 2026: "i want to see the
+    # DIFFs too. i am mentally doing the math constantly to find the problem lines."
+    chg = 'Change on %s' % fy0
+    cols = [C.fy(y) for y in yrs] + [chg, 'Still short', 'Other route in %s' % fy1,
+                                     'What was bought']
+    kinds = ['ledger'] * len(cols)
     stop_rows = [dict(label='%s · %s' % (x['payee'], label[x['cat']]),
                       cells=[C.usd(fl(x['s'][y])) for y in yrs]
-                      + [route_text(x['routes']),
+                      + [C.usd(-fl(x['drop'])), C.usd(fl(x['net'])), route_text(x['routes']),
                          '; '.join(x['was']) + ((' → ' + '; '.join(x['now'])) if x['now'] else '')])
                  for x in st]
+    gcols = [C.fy(y) for y in yrs] + [chg, 'What was bought']
     new_rows = [dict(label='%s · %s' % (x['payee'], label[x['cat']]),
-                     cells=[C.usd(fl(x['s'][y])) for y in yrs] + ['—', '; '.join(x['now'])])
+                     cells=[C.usd(fl(x['s'][y])) for y in yrs] + ['+' + C.usd(fl(x['rise'])), '; '.join(x['now'])])
                 for x in d['grew'][:NEW_ROWS]]
     table = dict(caption='Vendors paid every year until %s, and the reverse' % fy1, views=[
         dict(key='stopped', label='Paid in %s and %s, far less in %s' % (C.fy(2024), fy0, fy1),
              total_col=None, kinds=kinds, columns=cols, rows=stop_rows,
              note='School general fund, invoices and orders open at the close, by vendor. What was '
                   'bought: the largest invoices, %s then %s, cut short by the ledger. Entries with no '
-                  'payee count for every vendor on that account.' % (fy0, fy1)),
-        dict(key='grew', label='Up the most in %s' % fy1, total_col=None, kinds=kinds, columns=cols,
+                  'payee count for every vendor on that account. Still short: the fall less every other '
+                  'route found.' % (fy0, fy1)),
+        dict(key='grew', label='Up the most in %s' % fy1, total_col=None, kinds=['ledger'] * len(gcols),
+             columns=gcols,
              rows=new_rows,
              note='The %s vendors whose %s payments rose most on %s.' % (C.num(NEW_ROWS), fy1, fy0))])
     facts += [
