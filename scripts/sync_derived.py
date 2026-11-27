@@ -96,6 +96,15 @@ def stage(dest):
     if os.path.exists(dest):
         shutil.rmtree(dest)
     skip = os.path.join('docs', 'minutes', 'text') + os.sep
+    # PAGES REFUSES ANY FILE OVER 25 MiB, and the whole upload with it (27 November 2026: three
+    # DESE workbooks of 26-95 MB). An archive document is served from the archive bucket when the
+    # deployment lacks it (functions/docs/[[path]].js), so one the manifest lists is left out of
+    # the stage and named. Anything else that large stops the deploy: nothing would serve it.
+    LIMIT = 25 * 1024 * 1024
+    import csv
+    with open(os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv'), newline='') as fh:
+        archived = {row['key'] for row in csv.DictReader(fh)}
+    too_big, bucket_served = [], []
     n = 0
     for d, _, names in os.walk(DIST):
         rel = os.path.relpath(d, DIST)
@@ -103,9 +112,18 @@ def stage(dest):
             r = os.path.normpath(os.path.join(rel, name))
             if r.startswith(skip) and name.endswith('.txt'):
                 continue
+            if os.path.getsize(os.path.join(d, name)) > LIMIT:
+                key = r[len('docs' + os.sep):].replace(os.sep, '/') if r.startswith('docs' + os.sep) else None
+                (bucket_served if key in archived else too_big).append(r)
+                continue
             os.makedirs(os.path.join(dest, rel), exist_ok=True)
             os.link(os.path.join(d, name), os.path.join(dest, r))
             n += 1
+    for r in bucket_served:
+        print('  over 25 MiB, left to the archive bucket: %s' % r)
+    if too_big:
+        sys.exit('NOT DEPLOYABLE: over 25 MiB and not in the archive, so nothing would serve them: '
+                 + ', '.join(too_big))
     print('staged %d files in %s (Pages allows 20,000)' % (n, dest))
     if n > 20000:
         sys.exit('NOT DEPLOYABLE: %d files is past the limit' % n)
