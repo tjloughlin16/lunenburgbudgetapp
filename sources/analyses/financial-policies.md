@@ -12,7 +12,7 @@
 
 **This project recommends neither direction**: not to save more and not to spend more. It shows what each setting would do to figures the town has already published. The boards decide.
 
-The pages: [Financial policy rules](/town-reserves/financial-policy-rules), [Reserves against targets](/town-reserves/reserves-against-targets), [Retiree health liability](/town-reserves/retiree-health-liability), [The policy debate](/town-reserves/financial-policy-debate).
+The pages: [Financial policy rules](/town-reserves/financial-policy-rules), [The rules in practice](/town-reserves/policies-in-practice), [Retiree health liability](/town-reserves/retiree-health-liability), [The policy debate](/town-reserves/financial-policy-debate).
 
 ## The free cash split
 
@@ -46,7 +46,7 @@ Today’s stabilization section still quotes two caps (ten percent of the prior 
 
 What the law allows and what the state recommends are kept apart here. The statute sets the limits in the last column. The draft’s targets are what the Division of Local Services recommends **for towns like Lunenburg**, and the draft itself says the Town is to test them against its own finances before adopting them (pdf page 3). The Government Finance Officers Association recommends unrestricted general fund balance of no less than two months of regular revenues or expenditures ([GFOA, 2015](https://www.gfoa.org/materials/fund-balance-guidelines-for-the-general-fund)); that counts free cash and stabilization together. The FY2025 audit puts total general fund balance at $12,373,908, 25% of general fund expenditures.
 
-## Reserves against the targets
+## The rules in practice
 
 | Year | General stabilization, share of budget | Free cash available that year, share of prior budget |
 |---|---:|---:|
@@ -61,6 +61,18 @@ What the law allows and what the state recommends are kept apart here. The statu
 | FY2024 | 5.84% | 3.93% |
 | FY2025 | 6.24% | 4.57% |
 | FY2026 |  | 6.65% |
+
+| Year | Special funds, share of budget | Capital funded, share of budget less debt | Debt service, share of budget | Into the OPEB trust | Ten percent of that year’s free cash |
+|---|---:|---:|---:|---:|---:|
+| FY2017 | 0.69% | 1.94% | 13.17% | $0 | $88,894 |
+| FY2018 | 1.26% | 1.84% | 12.21% | $100,000 | $81,889 |
+| FY2019 | 2.32% | 4.07% | 11.74% | $100,656 | $151,248 |
+| FY2020 | 2.98% | 4.45% | 11.00% | $150,656 | $110,769 |
+| FY2021 | 3.74% | 3.00% | 10.98% | $110,656 | $180,418 |
+| FY2022 | 4.16% | 3.98% | 10.19% | $181,074 | $266,696 |
+| FY2023 | 4.95% | 5.02% | 9.45% | $267,352 | $292,329 |
+| FY2024 | 5.66% | 2.25% | 7.08% | $283,855 | $187,061 |
+| FY2025 | 6.06% | 2.77% | 5.83% | $188,561 | $227,006 |
 
 Free cash landed inside the draft’s five to seven percent in 3 of 11 certifications. Stabilization is shown from FY2017, the first year the state databank’s general fund figure equals the annual report’s to the dollar; before it the databank’s figure includes the zoning incentive fund.
 

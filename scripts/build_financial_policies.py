@@ -47,7 +47,7 @@ import financial_policies_data as FP  # noqa: E402
 HOME = 'town-reserves'
 PAGES = {
     'financial-policy-rules': 'Financial policy rules',
-    'reserves-against-targets': 'Reserves against targets',
+    'policies-in-practice': 'The rules in practice',
     'retiree-health-liability': 'Retiree health liability',
     'financial-policy-debate': 'The policy debate',
 }
@@ -341,6 +341,9 @@ def page_rules(b):
         'How the reserves have moved against these targets, and where Lunenburg sits among peer towns; the '
         'retiree health liability; and the public argument, meeting by meeting.')], place='end', tone='plain',
         links=[(PAGES[k], path(k)) for k in PAGES if k != pid])
+    practice_link = TB.explain('Each figure in practice, year by year', [L(
+        'The in-practice lines above, drawn over the years against today\u2019s rule and the draft\u2019s.')],
+        place='lead', tone='plain', links=[('The rules in practice', path('policies-in-practice'))])
     stance = TB.explain('What this page does not say', [L(
         'This project recommends neither direction: not to save more, and not to spend more. It shows what '
         'each setting would do to figures the town has already published. The boards decide.'),
@@ -383,7 +386,7 @@ def page_rules(b):
     ]
     cite = TP.cite
     flow = ['finding', cite(m, 'manual', 'today', 'law5B', 'law6', 'law32B'), ('conclusion', 0),
-            cite(stance, 'manual'),
+            cite(practice_link, 'dlsst'), cite(stance, 'manual'),
             cite(TB.chart(bridge, place='body', so=T('Under today’s rules only {x} of the same free cash is spoken '
                                                     'for; Town Meeting decides the rest.', x=U(fixed))),
                  'factsheet', 'manual'),
@@ -398,7 +401,7 @@ def page_rules(b):
         C.usd(fc), C.usd(keep), C.usd(save), C.usd(spend))
     page = TP.page(pid, finding, [], [], sources=sources,
                    finding_figures={'a': U(fc), 'b': U(keep), 'c': U(save), 'd': U(spend)},
-                   flow=inline(pid, flow, facts, cons, {2: 'retiree-health-liability', 3: 'reserves-against-targets'}),
+                   flow=inline(pid, flow, facts, cons, {2: 'retiree-health-liability', 3: 'policies-in-practice'}),
                    draft=dict(title=PAGES[pid], home=HOME))
     return page, dict(keep=keep, save=save, spend=spend, set_by_draft=set_by_draft, n_dials=n_dials, on_in=on_in, n_rows=n_rows, share=share, s26=s26)
 
@@ -406,7 +409,7 @@ def page_rules(b):
 # ------------------------------------------------------------------------------ page 2
 
 def page_targets(b):
-    pid = 'reserves-against-targets'
+    pid = 'policies-in-practice'
     years = sorted(b['stab_pct'])
     sp = b['stab_pct']
     chart_s = TP.series('General stabilization, share of the budget', [C.fy(y) for y in years],
@@ -496,6 +499,65 @@ def page_targets(b):
                % (pc(fp[b['latest'] - 2]), pc(fp[b['latest'] - 1])),
             so_figures={'a': P(fp[b['latest'] - 2]), 'b': P(fp[b['latest'] - 1])}),
     ]
+    # THE OTHER DIALS IN PRACTICE (TJ, 27 November 2026: "we'll need charts to show the
+    # in-practice realities too"). Each is drawn against the rule it sits beside in the matrix.
+    st_all, dt_all, cap_all = FP.dls_stabilization(), FP.dls_debt(), b['capital']
+    py = [y for y in range(FP.TREND_FROM, 2026)]
+    bud = {y: D(str(st_all[('Lunenburg', y)]['budget'])) for y in py}
+    spec = {y: D(str(st_all[('Lunenburg', y)]['special'])) / bud[y] * 100 for y in py}
+    dsv = {y: D(str(dt_all[('Lunenburg', y)]['service'])) for y in py}
+    debt_pct = {y: dsv[y] / D(str(dt_all[('Lunenburg', y)]['budget'])) * 100 for y in py}
+    cap_pct = {y: cap_all[y]['total'] / (bud[y] - dsv[y]) * 100 for y in py if y in cap_all}
+    xs = [C.fy(y) for y in py]
+    span = {'a': F(py[0]), 'b': F(py[-1])}
+    c_spec = TP.series('Special purpose stabilization, share of budget', xs,
+                       [TP.track('Lunenburg', [fl(spec[y]) for y in py])], '%', decimals=2,
+                       reference=(3, 'The draft\u2019s floor for the special funds'),
+                       note='Every special fund the state counts, sewer funds included, %s to %s.' % (C.fy(py[0]), C.fy(py[-1])),
+                       note_figures=span)
+    c_cap = TP.series('Capital funded, share of budget less debt', [C.fy(y) for y in py if y in cap_pct],
+                      [TP.track('Lunenburg', [fl(cap_pct[y]) for y in py if y in cap_pct])], '%', decimals=2,
+                      reference=(2, 'The draft\u2019s floor for cash capital'),
+                      note='Every source the capital plan lists, %s to %s; the draft counts cash only.' % (C.fy(py[0]), C.fy(py[-1])),
+                      note_figures=span)
+    c_debt = TP.series('General fund debt service, share of the budget', xs,
+                       [TP.track('Lunenburg', [fl(debt_pct[y]) for y in py])], '%', decimals=2,
+                       reference=(11, 'The draft\u2019s ceiling for all debt'),
+                       note='Voter-approved debt included. The draft measures against operating revenues.')
+    fc_av = b['fact_sheet']
+    oy = [y for y in py if y >= 2018]
+    c_opeb = TP.series('Trust deposits against today\u2019s ten percent', [C.fy(y) for y in oy],
+                       [TP.track('Deposited into the trust', [fl(b['opeb']['rows']['contrib'][y]) for y in oy], 'published', 'bar'),
+                        TP.track('Ten percent of that year\u2019s free cash', [fl(fc_av[y][0] / 10) for y in oy], 'estimate', 'line')],
+                       '$', kind='bar',
+                       note='Free cash by the year it is available. Nothing held ties a deposit to one certification.')
+    above_debt = [y for y in py if debt_pct[y] > 11]
+    in_cap = [y for y in cap_pct if 2 <= round(cap_pct[y], 2) <= 3]   # as printed, so 3.00% counts
+    over10 = [y for y in oy if b['opeb']['rows']['contrib'][y] >= fc_av[y][0] / 10]
+    import re as _re
+    _pcts = _re.findall(r'Percentage to GF Budget ([\d.]+%) ([\d.]+%) ([\d.]+%) ([\d.]+%)', FP.manual_page(31))
+    if len(_pcts) != 2:
+        FP.fail('the draft\u2019s page 31 no longer prints two percentage rows')
+    draft_spec = figure(float(_pcts[1][3].rstrip('%')), _pcts[1][3], 'percent')   # special funds, FY2024 column
+    cite = TP.cite
+    practice_parts = [
+        cite(TB.chart(c_spec, place='body', so=T('The state\u2019s count rose from {a} to {b}; the draft\u2019s own table, '
+                                                 'leaving out the sewer funds, put {c} at {d}.',
+                                                 a=P(spec[py[0]]), b=P(spec[py[-1]]), c=F(2024),
+                                                 d=draft_spec)), 'dlsst', 'manual'),
+        cite(TB.chart(c_cap, place='body', so=T('Capital funded landed inside the draft\u2019s two to three percent in '
+                                                '{n} years, counting every source.',
+                                                n=figure(len(in_cap), '%d of %d' % (len(in_cap), len(cap_pct)), 'years'))),
+             'capital', 'dlsst', 'dlsdebt'),
+        cite(TB.chart(c_debt, place='body', so=T('Debt service was above the draft\u2019s ceiling in {n}; by {y} it was {p}.',
+                                                 n=figure(len(above_debt), (C.fyspan(above_debt[0], above_debt[-1]) if len(above_debt) > 1 else C.fy(above_debt[0]))
+                                                          if above_debt else 'no year', 'years'), y=F(py[-1]),
+                                                 p=P(debt_pct[py[-1]]))), 'dlsdebt'),
+        cite(TB.chart(c_opeb, place='body', so=T('The deposit met ten percent of that year\u2019s free cash in {n} years; '
+                                                 'the timing between the two is not established.',
+                                                 n=figure(len(over10), '%d of %d' % (len(over10), len(oy)), 'years'))),
+             'audit', 'factsheet'),
+    ]
     peers_note = TB.explain('Which towns', [L(
         'The eight towns this project already compares on free cash: Ayer, Groton, Littleton, Shirley, '
         'Townsend, Upton, Uxbridge and Westford. Each is measured against its own budget, by the state’s figures. '
@@ -507,10 +569,10 @@ def page_targets(b):
             ('conclusion', 0),
             cite(two, 'ar25', 'audit', 'dlsst'),
             cite(draft_note, 'manual', 'ars'),
-            cite(TB.chart(chart_f, place='body', so=L('A higher share leaves more for one-time uses and savings; a '
-                                                      'lower one means more of the year’s money went to the budget.')),
+            cite(TB.chart(chart_f, place='body', so=L('Free cash is what the year left over; a higher share leaves more for one-time uses and savings.')),
                  'factsheet', 'dlsfc'),
             ('conclusion', 1),
+            *practice_parts,
             cite(peers_note, 'dlsst'),
             cite(TB.chart(r_s, place='body', so=L('Lunenburg sits in the middle of the group.')), 'dlsst'), ('conclusion', 2),
             cite(TB.chart(r_f, place='body', so=L('One year’s free cash moves with one year’s turnbacks and receipts.')),
@@ -518,7 +580,7 @@ def page_targets(b):
             cite(TB.chart(r_d, place='body', so=T('Lunenburg ranks {r} on debt service, a share that has been falling.',
                                                   r=figure(rk_d, '%s of %d' % (ordinal(rk_d), n), 'rank'))), 'dlsdebt'),
             'sources']
-    sources = [SRC_DLS_ST, SRC_ARS, SRC_AR25, SRC_AUDIT, src_manual(), SRC_FACT, SRC_DLS_FC, SRC_DLS_DEBT]
+    sources = [SRC_DLS_ST, SRC_ARS, SRC_AR25, SRC_AUDIT, src_manual(), SRC_FACT, SRC_DLS_FC, SRC_DLS_DEBT, SRC_CAP]
     finding = 'General stabilization held %s of the %s budget; the draft’s range is five to eight percent.' % (
         pc(sp[years[-1]]), C.fy(years[-1]))
     page = TP.page(pid, finding, [], [], sources=sources,
@@ -807,12 +869,23 @@ def report(b, x1, x2, x3, x4):
       'The FY2025 audit puts total general fund balance at %s, 25%% of general fund expenditures.\n'
       % (FP.LAW['gfoa'], C.usd(b['fund_balance']['total'])))
 
-    a('## Reserves against the targets\n')
+    a('## The rules in practice\n')
     a('| Year | General stabilization, share of budget | Free cash available that year, share of prior budget |')
     a('|---|---:|---:|')
     for y in range(2016, b['latest'] + 1):
         a('| %s | %s | %s |' % (C.fy(y), pc(b['stab_pct'][y], 2) if y in b['stab_pct'] else '', pc(b['fc_pct'][y], 2)
                                if y in b['fc_pct'] else ''))
+    st_all, dt_all = FP.dls_stabilization(), FP.dls_debt()
+    a('\n| Year | Special funds, share of budget | Capital funded, share of budget less debt | Debt service, share of budget | Into the OPEB trust | Ten percent of that year\u2019s free cash |')
+    a('|---|---:|---:|---:|---:|---:|')
+    for y in range(FP.TREND_FROM, 2026):
+        bd = D(str(st_all[('Lunenburg', y)]['budget']))
+        sv = D(str(dt_all[('Lunenburg', y)]['service']))
+        cp = b['capital'].get(y)
+        a('| %s | %s | %s | %s | %s | %s |' % (
+            C.fy(y), pc(D(str(st_all[('Lunenburg', y)]['special'])) / bd * 100),
+            pc(cp['total'] / (bd - sv) * 100) if cp else '', pc(sv / D(str(dt_all[('Lunenburg', y)]['budget'])) * 100),
+            C.usd(b['opeb']['rows']['contrib'][y]), C.usd(b['fact_sheet'][y][0] / 10)))
     a('\nFree cash landed inside the draft’s five to seven percent in %d of %d certifications. Stabilization is '
       'shown from %s, the first year the state databank’s general fund figure equals the annual report’s to '
       'the dollar; before it the databank’s figure includes the zoning incentive fund.\n'

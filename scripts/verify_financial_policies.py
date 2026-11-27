@@ -71,7 +71,7 @@ st = {r[h.index('Municipality')]: r[h.index('Stabilization Fund Balance')] / r[h
       for r in rows[1:] if r[h.index('Municipality')] in peers and r[h.index('Schedule A Fiscal Year')] == 2025}
 order = sorted(st, key=lambda t: -st[t])
 rank = order.index('Lunenburg') + 1
-p2 = page('reserves-against-targets')
+p2 = page('policies-in-practice')
 expect('targets: stabilization share', '%.2f%%' % (st['Lunenburg'] * 100), p2)
 expect('targets: rank', '%dth of %d' % (rank, len(order)) if rank > 3 else '%d' % rank, p2)
 
@@ -105,7 +105,7 @@ for r in rec:
         bad.append('debate: %s not cited' % r['url'])
 
 # 5. Privacy: no names of people in the public pages beyond what the record is about.
-for pid in ('financial-policy-rules', 'reserves-against-targets', 'retiree-health-liability', 'financial-policy-debate'):
+for pid in ('financial-policy-rules', 'policies-in-practice', 'retiree-health-liability', 'financial-policy-debate'):
     t = blob(page(pid))
     for word in ('email', 'e-mail', 'asked us', 'requested by'):
         if word in t.lower():
