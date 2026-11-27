@@ -1,0 +1,806 @@
+#!/usr/bin/env python3
+"""FINANCIAL POLICIES: the Town's rules in force, the state's draft that would replace them, and
+what each setting does to today's figures. Four topic pages and one markdown report.
+
+    python3.11 scripts/build_financial_policies.py           # write the payloads and the report
+    python3.11 scripts/build_financial_policies.py --check   # fail if any output would change
+
+UNLISTED UNTIL TJ REVIEWS IT (27 November 2026). The four pages are DRAFTS (topic.page(draft=)):
+not in scripts/topics.py, so not in topics.json, so not on any shelf, not in the sitemap and not
+prerendered. They are served at /town-reserves/<id> to whoever is given the address. The report
+is in sources/analyses/UNLISTED. Registering the four ids in scripts/topic_registry/
+town_reserves.py and deleting the UNLISTED line is how they join the site.
+
+NO NEW COMPONENT: every part is an existing topic block or chart (matrix, bridge, series,
+ranking, panels, timeline, checks, explain), so the bundle does not change and nothing forces a
+full render (notes/plans/NO-FULL-RENDERS.md).
+
+RULE 8. The project recommends neither direction -- neither saving more nor spending more. The
+pages show what each setting would do to today's figures and stop there.
+
+THE TWO DIALS. Every rule here turns one of two dials: MONEY IN (how much must be set aside, and
+from where) and MONEY OUT (what a fund may pay for, and what vote spending it takes). The
+signature matrix is those two dials, policy by policy: today's rule against the draft, with the
+statute beside where the law sets a limit. Its verdicts are OUR reading of two documents and are
+drawn as such.
+
+Every figure is in financial_policies_data.py, which asserts each rule verbatim on the page that
+prints it and refuses to write if two records of the same money disagree where they should not.
+"""
+import argparse
+import csv
+import io
+import json
+import os
+import sys
+from decimal import Decimal as D
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import conclusions as C  # noqa: E402
+from conclusions import figure  # noqa: E402
+import ladder as LD  # noqa: E402
+import topic as TP  # noqa: E402
+import topic_blocks as TB  # noqa: E402
+import financial_policies_data as FP  # noqa: E402
+
+HOME = 'town-reserves'
+PAGES = {
+    'financial-policy-rules': 'Financial policy rules',
+    'reserves-against-targets': 'Reserves against targets',
+    'retiree-health-liability': 'Retiree health liability',
+    'financial-policy-debate': 'The policy debate',
+}
+TOPICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
+REPORT_ID = 'financial-policies'
+REPORT = os.path.join(ROOT, 'sources', 'analyses', REPORT_ID + '.md')
+RECORD = os.path.join(ROOT, 'sources', 'data', 'financial-policy-record.csv')
+
+fl = float
+U = lambda v: figure(fl(v), C.usd(v), 'dollars')
+pc = lambda v, dp=2: C.pct(v, dp)
+P = lambda v, dp=2: figure(fl(v), pc(v, dp), 'percent')
+F = lambda y: figure(int(y), C.fy(y), 'fiscal year')
+N = lambda n, unit: figure(n, C.num(n), unit)
+Y = lambda y: figure(int(y), str(int(y)), 'year')
+RULE = lambda v, text: figure(fl(v), text, 'percent')      # a rule's own figure, as printed
+
+
+def path(pid):
+    return '/%s/%s' % (HOME, pid)
+
+
+def T(fmt, _allow=(), **figs):
+    """A block's prose: (text, figures, allow). `fmt` names figures as {key}; `_allow` are literals."""
+    return (fmt.format(**{k: v['text'] for k, v in figs.items()}), figs, tuple(_allow))
+
+
+def L(text, *lits):
+    """Prose whose only digits are literals quoted from a record (a date, a vote, a section)."""
+    return (text, None, tuple(lits))
+
+
+def ordinal(n):
+    return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
+
+
+# ------------------------------------------------------------------------------ sources
+
+def src_manual(key='manual'):
+    return dict(key=key, label='Division of Local Services, Town of Lunenburg Financial Policies Manual '
+                '(draft, April 2024), pdf pages 21-47', href='/docs/' + FP.MANUAL)
+
+
+def src_sb(key='today'):
+    return dict(key=key, label='Select Board Policies and Procedures, Article III, sections 3.01-3.07 '
+                '(the rules in force)', href='/docs/' + FP.SBPOL)
+
+
+def src_law(k, label):
+    return dict(key='law' + k, label=label, href=FP.LAW[k])
+
+
+SRC_FACT = dict(key='factsheet', label='Town of Lunenburg, Free Cash Fact Sheet (FY27 warrant packet), '
+                'certified free cash FY2016-FY2026',
+                href='/docs/budget-workbooks/finance-committee/fy27-budget/tm-warrant/free-cash-fact-sheet.docx')
+SRC_DLS_FC = dict(key='dlsfc', label='Division of Local Services, Municipal Databank: Certified Free Cash as a '
+                  '% of the Budget (export of 25 November 2026)', href='/docs/' + FP.DLS_FC)
+SRC_DLS_ST = dict(key='dlsst', label='Division of Local Services, Municipal Databank: Stabilization Fund '
+                  'Balances as a % of Budget (export of 25 November 2026)', href='/docs/' + FP.DLS_STAB)
+SRC_DLS_DEBT = dict(key='dlsdebt', label='Division of Local Services, Municipal Databank: General Fund Debt '
+                    'Service as a % of Budget (export of 25 November 2026)', href='/docs/' + FP.DLS_DEBT)
+SRC_AUDIT = dict(key='audit', label='Town of Lunenburg, FY2025 audited financial statements: fund balance '
+                 '(pdf p. 67), stabilization note, OPEB schedules (pdf pp. 78-79)', href='/docs/' + FP.AUDIT)
+SRC_AR25 = dict(key='ar25', label='Town of Lunenburg, FY2025 annual town report: trust fund balances at '
+                '30 June 2025, unaudited (p. 30), and treasurer’s cash', href='/docs/' + FP.AR25)
+SRC_ARS = dict(key='ars', label='Town annual reports, trust fund tables FY2017-FY2024, as extracted '
+               '(general stabilization ending cash)', href='/docs/data/stabilization-balances.csv')
+SRC_CAP = dict(key='capital', label='FY27 capital plan, ten-year funding table FY2017-FY2026',
+               href='/docs/data/capital-funding-history.csv')
+
+
+# ------------------------------------------------------------------------------ page 1
+
+def dials_matrix(b):
+    """The two dials, policy by policy. Verdicts are our reading of today's rule against the draft."""
+    fs = '{fc}'
+    rows = ['Free cash', 'General stabilization', 'Special purpose funds', 'Reserve fund',
+            'Retiree health (OPEB)', 'Capital', 'Debt', 'Revenue estimates']
+    cols = ['Money in: what is set aside', 'Money out: what may be spent, by what vote']
+    R = ('reading', 'Our reading of both documents')
+    W = ('law', 'Statute: M.G.L. c. 40, §5B')
+    W6 = ('law', 'Statute: M.G.L. c. 40, §6')
+    cells = {
+        (0, 0): TB.cell('new', 'The draft sets a target for free cash itself', L(
+            'Today: no target for free cash. Draft: certifications of five to seven percent of the budget '
+            'each year, reached through conservative revenue estimates and budget turnbacks.'), R),
+        (0, 1): TB.cell('more', 'The draft splits every year’s free cash by rule', L(
+            'Today: top up general stabilization to five percent, then at least 10% to the OPEB trust, then '
+            'the special purpose fund, then any one-time use. Draft: fixed minimum shares for six uses.', '10%'), R),
+        (1, 0): TB.cell('more', 'A wider band and a yearly deposit', L(
+            'Today: at least five percent of the budget, all stabilization funds together no more than ten '
+            'percent. Draft: five to eight percent, plus a set deposit every year.'), R),
+        (1, 1): TB.cell('more', 'Harder to draw, sooner to refill', L(
+            'Both: emergencies, ideally only above five percent, by a two-thirds vote. Draft adds: below it, '
+            'take no more than one third, and refill within two years, not three.'), W),
+        (2, 0): TB.cell('new', 'A target for the special funds together', L(
+            'Today: a deposit sized in each year’s capital planning. Draft: three to five percent of the '
+            'budget across the funds, and at least 10% of free cash.', '10%'), R),
+        (2, 1): TB.cell('same', 'Town Meeting sets each fund’s purpose', L(
+            'Today’s rule asks two thirds to spend from any stabilization fund. State law asks a majority '
+            'for a special purpose fund. The draft sets no vote.'), W),
+        (3, 0): TB.cell('none', 'The draft sets no size', L(
+            'Today: $50,000, and no more than one half of one percent of the budget. The draft does not '
+            'size the Finance Committee’s reserve fund at all.', '$50,000'), R),
+        (3, 1): TB.cell('none', 'Transfers stay with the Finance Committee', L(
+            'State law: up to five percent of last year’s levy, for extraordinary or unforeseen costs, '
+            'transferred by the Finance Committee. The draft adds nothing.'), W6),
+        (4, 0): TB.cell('more', 'Ten percent becomes a step toward full funding', L(
+            'Today: at least 10% of certified free cash each year. Draft: keeps the 10% as one option, and '
+            'states an intention to pay the full actuarially determined contribution.', '10%'), R),
+        (4, 1): TB.cell('same', 'Current retirees stay on the budget', L(
+            'Today: the trust does not pay current retirees, and moving money in or out takes a Town Meeting '
+            'vote. The draft adds a valuation every two years.'), ('law', 'Statute: M.G.L. c. 32B, §20')),
+        (5, 0): TB.cell('new', 'A yearly amount for capital in cash', L(
+            'Today: a project is anything over $20,000; no spending level. Draft: two to three percent of '
+            'the budget, net of debt, in cash each year, and 20% to 30% of free cash.', '$20,000', '20%', '30%'), R),
+        (5, 1): TB.cell('same', 'Borrow only for large, long-lived projects', L(
+            'Both: long-term debt only for projects over $100,000 with at least ten years of life.',
+            '$100,000'), R),
+        (6, 0): TB.cell('new', 'Maturing debt keeps its place in the budget', L(
+            'Draft: when a non-excluded bond is paid off and not replaced, its yearly payment goes to a '
+            'special purpose fund. Today’s rule has no such step.'), R),
+        (6, 1): TB.cell('other', 'A different base for the limits', L(
+            'Today: limits as a share of the tax levy (4% regular, 14% all). Draft: of the general fund '
+            'budget (2% to 4% within the levy, 5% to 11% all, of operating revenues).',
+            '4%', '14%', '2%', '5%', '11%'), R),
+        (7, 0): TB.cell('new', 'Receipts capped at last year’s collections', L(
+            'Today: no written rule. Draft: local receipts estimated at no more than 90% of last year’s '
+            'collections without firm evidence, and each forecast checked against the year that followed.',
+            '90%'), R),
+        (7, 1): TB.cell('none', 'Not a spending rule', L(
+            'The draft says estimates set too low leave excess revenue that cannot help the public in the '
+            'year it comes in.'), R),
+    }
+    legend = [('new', 'Draft sets what today’s rules do not', 'other'),
+              ('more', 'Draft sets more by rule', 'other'),
+              ('same', 'Much the same', 'neutral'),
+              ('other', 'Measured another way', 'neutral'),
+              ('none', 'Draft is silent', 'muted')]
+    m = TB.matrix('Two dials, policy by policy', rows, cols, cells, legend, place='lead',
+                  row_label='Policy', col_label='Dial',
+                  note=L('Money in is what is set aside before a budget is drawn up. Money out is what a '
+                         'fund may pay for, and the vote it takes. The verdicts are our reading of the two '
+                         'documents.'))
+    verdicts = [cells[(r, c)]['verdict'] for r in range(len(rows)) for c in range(2)]
+    set_by_draft = sum(1 for v in verdicts if v in ('new', 'more'))
+    on_in = sum(1 for r in range(len(rows)) if cells[(r, 0)]['verdict'] in ('new', 'more'))
+    return m, set_by_draft, on_in, len(verdicts), len(rows)
+
+
+def page_rules(b):
+    pid = 'financial-policy-rules'
+    fc, claimed, fixed = b['fc'], b['claimed'], b['today_fixed']
+    share = claimed / fc * 100
+    s26 = b['stab25']['report'] / b['budget26'] * 100
+    sources = [SRC_FACT, src_manual(), src_sb(), src_law('5B', 'M.G.L. c. 40, §5B (stabilization funds)'),
+               src_law('6', 'M.G.L. c. 40, §6 (reserve fund)'), src_law('32B', 'M.G.L. c. 32B, §20 (OPEB trust)'),
+               SRC_DLS_ST, SRC_AUDIT, SRC_DLS_DEBT, SRC_CAP]
+    m, set_by_draft, on_in, n_dials, n_rows = dials_matrix(b)
+
+    steps = [(lab, -fl(a)) for _, lab, a in b['split']]
+    bridge = TP.bridge('The draft’s minimums on the latest free cash', ('Certified free cash', fl(fc)),
+                       steps, ('No set use', fl(b['unclaimed'])), '$',
+                       note='Certified %s, available in %s. The capital share is a floor of 20%%.'
+                            % (C.usd(fc), C.fy(b['latest'])),
+                       note_figures={'a': U(fc), 'y': F(b['latest'])}, note_allow=('20%',))
+
+    lo, hi = b['stab_deposit']
+    rlo, rhi = b['reserves_band']
+    clo, chi = b['capital_band']
+    c25 = b['capital'][2025]['total']
+    panels = TB.panels('Three more figures the draft would set', [
+        TB.panel('Yearly stabilization deposit', [
+            ('At the summary’s rate', C.usd(lo), None), ('At the text’s rate', C.usd(hi), None)],
+            sub=(T('0.25% and 0.3% of the {y} budget of {b}.', y=F(2025), b=U(b['budget25']))[0],
+                 {'y': F(2025), 'b': U(b['budget25'])}, ('0.25%', '0.3%'))),
+        TB.panel('All reserves together', [
+            ('The draft’s band', '%s to %s' % (C.usd(rlo), C.usd(rhi)), None),
+            ('General fund balance, audited', C.usd(b['fund_balance']['total']), None)],
+            sub=(T('13% to 20% of {b}; the audit counts {s} of stabilization inside the fund balance.',
+                   b=U(b['fc_budget']), s=figure(6.3, '$6.3 million', 'dollars'))[0],
+                 {'b': U(b['fc_budget']), 's': figure(6.3, '$6.3 million', 'dollars')}, ('13%', '20%'))),
+        TB.panel('Cash capital each year', [
+            ('The draft’s range', '%s to %s' % (C.usd(clo), C.usd(chi)), None),
+            ('Capital funded that year', C.usd(c25), None)],
+            sub=(T('2% to 3% of the {y} budget less {d} of general fund debt service.', y=F(2025), d=U(b['debt25']))[0],
+                 {'y': F(2025), 'd': U(b['debt25'])}, ('2%', '3%'))),
+    ], note=L('Each figure applies a draft percentage to a budget the town has already passed. The draft '
+              'would apply it to the budget of the year in question.'),
+        so=T('On these figures the town already holds more than the draft’s reserve band, and funded '
+             'capital inside its cash range in {y}.', y=F(2025)))
+
+    links = TB.explain('The rest of this report', [L(
+        'How the reserves have moved against these targets, and where Lunenburg sits among peer towns; the '
+        'retiree health liability; and the public argument, meeting by meeting.')], place='end', tone='plain',
+        links=[(PAGES[k], path(k)) for k in PAGES if k != pid])
+    stance = TB.explain('What this page does not say', [L(
+        'This project recommends neither direction: not to save more, and not to spend more. It shows what '
+        'each setting would do to figures the town has already published. The boards decide.'),
+        L('The draft itself says its targets are recommended for towns like Lunenburg, and that the town '
+          'is to test them against its own finances before adopting them.')], place='lead', tone='define')
+
+    f = LD.fact
+    facts = [
+        f('dials', N(set_by_draft, 'dials'), 'dials of %d the draft sets by rule where today’s do not'
+          % n_dials, 'estimate', label_figures={'n': N(n_dials, 'dials')}),
+        f('fc', U(fc), 'certified free cash, available in %s' % C.fy(b['latest']), 'published',
+          label_figures={'y': F(b['latest'])}),
+        f('claimed', U(claimed), 'claimed by the draft’s minimum shares', 'estimate'),
+        f('fixed', U(fixed), 'fixed by today’s rules: the retiree health share', 'estimate'),
+        f('s26', P(s26), 'general stabilization, as a share of the %s budget' % C.fy(2026), 'estimate',
+          label_figures={'y': F(2026)}),
+        f('lo', U(lo), 'deposit at the summary’s 0.25%', 'estimate', allow=('0.25%',)),
+        f('hi', U(hi), 'deposit at the text’s 0.3%', 'estimate', allow=('0.3%',)),
+    ]
+    con = TP.conclusion
+    cons = [
+        con('The draft sets %s of %s dials by rule that today’s policies leave open or set lower.'
+            % (C.num(set_by_draft), C.num(n_dials)), ['dials'],
+            {'a': N(set_by_draft, 'dials'), 'b': N(n_dials, 'dials')},
+            so='%s of the %s policies move on the money-in dial: more is set aside before a budget is drawn up.'
+               % (C.num(on_in), C.num(n_rows)),
+            so_figures={'a': N(on_in, 'policies'), 'b': N(n_rows, 'policies')}),
+        con('The draft’s minimums claim %s of %s in free cash, %s of it.' % (C.usd(claimed), C.usd(fc), pc(share, 0)),
+            ['fc', 'claimed'], {'a': U(claimed), 'b': U(fc), 'c': P(share, 0)},
+            so='That leaves %s with no set use. Every point of a share moves %s.' % (C.usd(b['unclaimed']), C.usd(b['point'])),
+            so_figures={'a': U(b['unclaimed']), 'b': U(b['point'])}),
+        con('Today’s rules fix only the retiree health share, %s, with stabilization at %s of the budget.'
+            % (C.usd(fixed), pc(s26)), ['fixed', 's26'], {'a': U(fixed), 'b': P(s26)},
+            so='Stabilization is above today’s five percent floor, so its first priority requires no deposit.'),
+        con('The draft gives the yearly stabilization deposit as 0.25% in one place and 0.3% in another.',
+            ['lo', 'hi'], allow=('0.25%', '0.3%'),
+            so='On the %s budget the two readings are %s and %s a year.' % (C.fy(2025), C.usd(lo), C.usd(hi)),
+            so_figures={'y': F(2025), 'a': U(lo), 'b': U(hi)}),
+    ]
+    cite = TP.cite
+    flow = ['finding', cite(m, 'manual', 'today', 'law5B', 'law6', 'law32B'), ('conclusion', 0),
+            cite(stance, 'manual'),
+            cite(TB.chart(bridge, place='body', so=T('Under today’s rules the same free cash has one fixed '
+                                                    'use, {x}; the rest goes to Town Meeting.', x=U(fixed))),
+                 'factsheet', 'manual'),
+            ('conclusion', 1), ('conclusion', 2),
+            cite(panels, 'manual', 'dlsst', 'audit', 'dlsdebt', 'capital'), ('conclusion', 3),
+            cite(links, 'manual'), 'sources']
+    finding = 'On %s of free cash, the draft would fix a use for %s; today’s rules fix one for %s.' % (
+        C.usd(fc), C.usd(claimed), C.usd(fixed))
+    page = TP.page(pid, finding, facts, cons, sources=sources,
+                   finding_figures={'a': U(fc), 'b': U(claimed), 'c': U(fixed)}, flow=flow,
+                   draft=dict(title=PAGES[pid], home=HOME))
+    return page, dict(set_by_draft=set_by_draft, n_dials=n_dials, on_in=on_in, n_rows=n_rows, share=share, s26=s26)
+
+
+# ------------------------------------------------------------------------------ page 2
+
+def page_targets(b):
+    pid = 'reserves-against-targets'
+    years = sorted(b['stab_pct'])
+    sp = b['stab_pct']
+    chart_s = TP.series('General stabilization, share of the budget', [C.fy(y) for y in years],
+                        [TP.track('Lunenburg', [fl(sp[y]) for y in years])], '%', decimals=2,
+                        reference=(5, 'Today’s floor and the draft’s'), from_zero=True,
+                        note='Year-end balance over that year’s operating budget, %s to %s.'
+                             % (C.fy(years[0]), C.fy(years[-1])),
+                        note_figures={'a': F(years[0]), 'b': F(years[-1])})
+    fyears = sorted(b['fc_pct'])
+    fp = b['fc_pct']
+    chart_f = TP.series('Certified free cash, share of the budget', [C.fy(y) for y in fyears],
+                        [TP.track('Lunenburg', [fl(fp[y]) for y in fyears])], '%', decimals=2,
+                        reference=(5, 'The draft’s target floor'),
+                        note='By the year it is available, over the year before’s budget, %s to %s.'
+                             % (C.fy(fyears[0]), C.fy(fyears[-1])),
+                        note_figures={'a': F(fyears[0]), 'b': F(fyears[-1])})
+    in_range = [y for y in fyears if 5 <= fp[y] <= 7]
+    above_since = min(y for y in years if all(sp[z] >= 5 for z in years if z >= y))
+
+    rank = lambda d: sorted(d, key=lambda t: -d[t]).index('Lunenburg') + 1
+    ps, pf, pd = b['peer_stab'], b['peer_fc'], b['peer_debt']
+    rk_s, rk_f, rk_d = rank(ps), rank(pf), rank(pd)
+    n = len(b['peers'])
+    r_s = TP.ranking('General stabilization, %s, nine towns' % C.fy(2025) if False else 'General stabilization by town',
+                     sorted([(t, fl(v)) for t, v in ps.items()], key=lambda r: -r[1]), '%', highlight='Lunenburg',
+                     decimals=2, note='Share of each town’s own %s operating budget.' % C.fy(2025),
+                     note_figures={'y': F(2025)})
+    r_f = TP.ranking('Certified free cash by town', sorted([(t, fl(v)) for t, v in pf.items()], key=lambda r: -r[1]),
+                     '%', highlight='Lunenburg', decimals=2,
+                     note='Available in %s, over each town’s prior-year budget.' % C.fy(b['latest']),
+                     note_figures={'y': F(b['latest'])})
+    r_d = TP.ranking('General fund debt service by town', sorted([(t, fl(v)) for t, v in pd.items()], key=lambda r: -r[1]),
+                     '%', highlight='Lunenburg', decimals=2,
+                     note='%s, over each town’s total budget.' % C.fy(2025), note_figures={'y': F(2025)})
+
+    s = b['stab25']
+    diff = s['audit'] - s['report']
+    db = b['draft_bal']
+    two = TB.panels('One balance, two figures', [
+        TB.panel('Annual town report', [('Fund balance at year-end', '$' + format(s['report'], ',.2f'), None)],
+                 sub=L('Trust fund table, marked unaudited; the treasurer’s cash list prints the same figure.')),
+        TB.panel('Audited statements', [('General stabilization at year-end', C.usd(s['audit']), None)],
+                 sub=T('Higher by {d}; the state’s databank carries the annual report’s figure.', d=U(diff))),
+    ], note=L('The chart uses the annual report’s figure, as the state’s databank does.', ),
+        so=T('Nothing we hold reconciles the two; the share for {y} moves by under a fifth of a point either way.',
+             y=F(2025)))
+    draft_note = TB.explain('The draft’s own table', [T(
+        'The draft prints a general stabilization balance for each year, and each is the balance at the '
+        'previous 30 June: its {y} figure, {v}, is the {p} year-end.', _allow=('30',), y=F(2024), v=U(db[2024]), p=F(2023))],
+        place='body', tone='plain')
+
+    f = LD.fact
+    facts = [
+        f('s0', P(sp[years[0]]), 'general stabilization, %s' % C.fy(years[0]), 'published', label_figures={'y': F(years[0])}),
+        f('s1', P(sp[years[-1]]), 'general stabilization, %s' % C.fy(years[-1]), 'published', label_figures={'y': F(years[-1])}),
+        f('inr', figure(len(in_range), '%d of %d' % (len(in_range), len(fyears)), 'certifications'),
+          'certifications inside the draft’s five to seven percent', 'published'),
+        f('rks', figure(rk_s, '%s of %d' % (ordinal(rk_s), n), 'rank'), 'Lunenburg’s place for general stabilization, %s'
+          % C.fy(2025), 'published', label_figures={'y': F(2025)}),
+        f('rkf', figure(rk_f, '%s of %d' % (ordinal(rk_f), n), 'rank'), 'Lunenburg’s place for free cash, %s'
+          % C.fy(b['latest']), 'published', label_figures={'y': F(b['latest'])}),
+        f('fcl', P(fp[b['latest']]), 'free cash, share of the budget, %s' % C.fy(b['latest']), 'published',
+          label_figures={'y': F(b['latest'])}),
+    ]
+    lo_t = min(ps, key=ps.get)
+    hi_t = max(ps, key=ps.get)
+    con = TP.conclusion
+    cons = [
+        con('General stabilization rose from %s of the budget in %s to %s in %s.'
+            % (pc(sp[years[0]]), C.fy(years[0]), pc(sp[years[-1]]), C.fy(years[-1])), ['s0', 's1'],
+            {'a': P(sp[years[0]]), 'y': F(years[0]), 'b': P(sp[years[-1]]), 'z': F(years[-1])},
+            so='It has stayed above five percent since %s, so today’s first free cash priority has required no deposit.'
+               % C.fy(above_since), so_figures={'y': F(above_since)}),
+        con('Free cash landed inside the draft’s five to seven percent in %d of %d certifications.'
+            % (len(in_range), len(fyears)), ['inr'],
+            {'a': figure(len(in_range), '%d of %d' % (len(in_range), len(fyears)), 'certifications')},
+            so='The draft would make that range a yearly aim, met through cautious revenue estimates.'),
+        con('Lunenburg ranked %s of %d towns compared on general stabilization in %s.' % (ordinal(rk_s), n, C.fy(2025)),
+            ['rks'], {'a': figure(rk_s, '%s of %d' % (ordinal(rk_s), n), 'rank'), 'y': F(2025)},
+            so='The towns ran from %s in %s to %s in %s; the draft’s band sits inside that spread.'
+               % (pc(ps[lo_t]), lo_t, pc(ps[hi_t]), hi_t),
+            so_figures={'a': P(ps[lo_t]), 'b': P(ps[hi_t])}),
+        con('Lunenburg’s latest free cash, %s of its budget, ranked %s of %d.'
+            % (pc(fp[b['latest']]), ordinal(rk_f), n), ['fcl', 'rkf'],
+            {'a': P(fp[b['latest']]), 'b': figure(rk_f, '%s of %d' % (ordinal(rk_f), n), 'rank')},
+            so='The two certifications before it were %s and %s: high for Lunenburg, middling for the group.'
+               % (pc(fp[b['latest'] - 2]), pc(fp[b['latest'] - 1])),
+            so_figures={'a': P(fp[b['latest'] - 2]), 'b': P(fp[b['latest'] - 1])}),
+    ]
+    peers_note = TB.explain('Which towns', [L(
+        'The eight towns this project already compares on free cash: Ayer, Groton, Littleton, Shirley, '
+        'Townsend, Upton, Uxbridge and Westford. Each is measured against its own budget, by the state’s figures. '
+        'This is where Lunenburg sits, not a ranking of better or worse.')], place='body', tone='define')
+    cite = TP.cite
+    flow = ['finding',
+            cite(TB.chart(chart_s, place='lead', so=T('The draft’s band runs five to eight percent; {y} sits in it.',
+                                                       y=F(years[-1]))), 'dlsst', 'ars'),
+            ('conclusion', 0),
+            cite(two, 'ar25', 'audit', 'dlsst'),
+            cite(draft_note, 'manual', 'ars'),
+            cite(TB.chart(chart_f, place='body', so=L('A higher share leaves more for one-time uses and savings; a '
+                                                      'lower one means more of the year’s money went to the budget.')),
+                 'factsheet', 'dlsfc'),
+            ('conclusion', 1),
+            cite(peers_note, 'dlsst'),
+            cite(TB.chart(r_s, place='body', so=L('Lunenburg sits in the middle of the group.')), 'dlsst'), ('conclusion', 2),
+            cite(TB.chart(r_f, place='body', so=L('One year’s free cash moves with one year’s turnbacks and receipts.')),
+                 'dlsfc'), ('conclusion', 3),
+            cite(TB.chart(r_d, place='body', so=T('Lunenburg ranks {r} on debt service, a share that has been falling.',
+                                                  r=figure(rk_d, '%s of %d' % (ordinal(rk_d), n), 'rank'))), 'dlsdebt'),
+            'sources']
+    sources = [SRC_DLS_ST, SRC_ARS, SRC_AR25, SRC_AUDIT, src_manual(), SRC_FACT, SRC_DLS_FC, SRC_DLS_DEBT]
+    finding = 'General stabilization held %s of the %s budget; the draft’s range is five to eight percent.' % (
+        pc(sp[years[-1]]), C.fy(years[-1]))
+    page = TP.page(pid, finding, facts, cons, sources=sources,
+                   finding_figures={'a': P(sp[years[-1]]), 'y': F(years[-1])}, flow=flow,
+                   draft=dict(title=PAGES[pid], home=HOME))
+    return page, dict(in_range=in_range, fyears=fyears, rk_s=rk_s, rk_f=rk_f, rk_d=rk_d, n=n, above_since=above_since,
+                      lo_t=lo_t, hi_t=hi_t, diff=diff)
+
+
+# ------------------------------------------------------------------------------ page 3
+
+def page_opeb(b):
+    pid = 'retiree-health-liability'
+    o = b['opeb']
+    ys = o['years']
+    R = o['rows']
+    total, trust = R['total'], R['trust']
+    grew = all(trust[ys[i]] > trust[ys[i - 1]] for i in range(1, len(ys)))
+    if not grew:
+        FP.fail('the trust did not grow every year; rewrite the first conclusion')
+    swamped = [y for y in ys if abs(R['assumptions'][y]) > trust[y]]
+    chart = TP.series('The liability and the trust', [C.fy(y) for y in ys],
+                      [TP.track('Total liability', [fl(total[y]) for y in ys]),
+                       TP.track('Held in the trust', [fl(trust[y]) for y in ys])], '$',
+                      secondary=dict(name='Funded', values=[fl(o['funded'][y]) for y in ys], unit='%', decimals=2),
+                      note='At each 30 June, %s to %s, as the audit’s schedule prints them.' % (C.fy(ys[0]), C.fy(ys[-1])),
+                      note_figures={'a': F(ys[0]), 'b': F(ys[-1])}, note_allow=('30',))
+    paid = TP.series('What the Town paid each year', [C.fy(y) for y in ys],
+                     [TP.track('Current retirees’ health care', [fl(R['contrib_payg'][y]) for y in ys], 'published', 'bar'),
+                      TP.track('Deposits into the trust', [fl(R['contrib'][y]) for y in ys], 'published', 'bar')],
+                     '$', kind='bar', stacked=True, totals=True,
+                     note='Employer contributions, %s to %s.' % (C.fy(ys[0]), C.fy(ys[-1])),
+                     note_figures={'a': F(ys[0]), 'b': F(ys[-1])})
+    fc10 = b['today_fixed']
+    adc = TB.panels('The draft’s goal against the last year', [
+        TB.panel('Actuarially determined contribution', [('The last year', C.usd(o['adc']), None)],
+                 sub=L('What the actuary says would fund the promise over time.')),
+        TB.panel('What the Town put in', [('Retirees and trust together', C.usd(o['contributed']), None)],
+                 sub=L('Pay-as-you-go health care for current retirees, plus the trust deposit.')),
+        TB.panel('The difference', [('Short of the contribution', C.usd(o['deficiency']), None),
+                                    ('Today’s share of the latest free cash', C.usd(fc10), None)],
+                 sub=L('The audit’s own schedule of contributions.')),
+    ], so=T('Today’s ten percent of free cash covers about {s} of the difference.',
+            s=P(fc10 / o['deficiency'] * 100, 0)))
+    f = LD.fact
+    facts = [
+        f('trust', U(trust[ys[-1]]), 'held in the trust, 30 June 2025', 'published', allow=('30', '2025')),
+        f('total', U(total[ys[-1]]), 'total retiree health liability, 30 June 2025', 'published', allow=('30', '2025')),
+        f('payg', U(R['contrib_payg'][ys[-1]]), 'paid for current retirees, %s' % C.fy(ys[-1]), 'published',
+          label_figures={'y': F(ys[-1])}),
+        f('dep', U(R['contrib'][ys[-1]]), 'deposited into the trust, %s' % C.fy(ys[-1]), 'published',
+          label_figures={'y': F(ys[-1])}),
+        f('short', U(o['deficiency']), 'short of the actuarially determined contribution, %s' % C.fy(ys[-1]),
+          'published', label_figures={'y': F(ys[-1])}),
+        f('val', None, 'a valuation after the two held, 2017 and 2018', 'gap', allow=('2017', '2018'),
+          closes='The Town’s most recent OPEB actuarial valuation report'),
+    ]
+    con = TP.conclusion
+    cons = [
+        con('The trust has grown every year since %s, to %s against a liability of %s.'
+            % (C.fy(ys[0]), C.usd(trust[ys[-1]]), C.usd(total[ys[-1]])), ['trust', 'total'],
+            {'y': F(ys[0]), 'a': U(trust[ys[-1]]), 'b': U(total[ys[-1]])},
+            so='In %d of %d years, changed assumptions alone moved the liability by more than the trust held.'
+               % (len(swamped), len(ys)),
+            so_figures={'a': figure(len(swamped), '%d of %d' % (len(swamped), len(ys)), 'years')}),
+        con('In %s the Town paid %s for current retirees and put %s into the trust.'
+            % (C.fy(ys[-1]), C.usd(R['contrib_payg'][ys[-1]]), C.usd(R['contrib'][ys[-1]])), ['payg', 'dep'],
+            {'y': F(ys[-1]), 'a': U(R['contrib_payg'][ys[-1]]), 'b': U(R['contrib'][ys[-1]])},
+            so='Current retirees are paid from the budget each year; the trust is for those still working.'),
+        con('Paying the full actuarially determined contribution would have taken %s more in %s.'
+            % (C.usd(o['deficiency']), C.fy(ys[-1])), ['short'], {'a': U(o['deficiency']), 'y': F(ys[-1])},
+            so='The draft names full funding as its intention; we find no date in it by which to reach it.'),
+        con('The archive holds actuarial reports for 2017 and 2018; the draft sets one every two years.',
+            ['val'], allow=('2017', '2018'),
+            so='The audit carries the totals each year, but not the valuation behind them.'),
+    ]
+    cite = TP.cite
+    flow = ['finding', cite(TB.chart(chart, place='lead', so=T('The trust covered {a} of the promise at the last count.',
+                                                                 a=P(o['funded'][ys[-1]]))), 'audit'),
+            ('conclusion', 0),
+            cite(TB.chart(paid, place='body', so=L('Nearly all of what the Town pays goes to retirees now, not to the trust.')), 'audit'),
+            ('conclusion', 1),
+            cite(adc, 'audit', 'factsheet', 'manual'), ('conclusion', 2), ('conclusion', 3),
+            cite(TB.explain('Why peer towns are not compared here', [L(
+                'Many nearby towns send their pupils to regional school districts, which carry the teachers’ '
+                'retiree health costs. Lunenburg carries its own school staff, so a funded share against those towns '
+                'compares unlike liabilities.')], place='end', tone='plain'), 'audit'),
+            'sources']
+    sources = [SRC_AUDIT, SRC_FACT, src_manual(), src_sb()]
+    sources[-1]['key'] = 'today'
+    flow.insert(-1, cite(TB.explain('Today’s rule', [L(
+        'Section 3.07, approved in January 2018: at least 10% of certified free cash to the trust each year; '
+        'current retirees paid as they go.', '3.07', '2018', '10%')], place='end', tone='plain'), 'today'))
+    finding = 'At 30 June 2025 the retiree health trust held %s of a %s liability: %s funded.' % (
+        C.usd(trust[ys[-1]]), C.usd(total[ys[-1]]), pc(o['funded'][ys[-1]]))
+    page = TP.page(pid, finding, facts, cons, sources=sources,
+                   finding_figures={'a': U(trust[ys[-1]]), 'b': U(total[ys[-1]]), 'c': P(o['funded'][ys[-1]])},
+                   finding_allow=('30', '2025'), flow=flow, draft=dict(title=PAGES[pid], home=HOME))
+    return page, dict(swamped=swamped)
+
+
+# ------------------------------------------------------------------------------ page 4
+
+def record():
+    rows = list(csv.DictReader(io.open(RECORD, encoding='utf-8')))
+    for r in rows:
+        if r['evidence'] not in ('minutes', 'captions', 'both', 'agenda'):
+            FP.fail('record %s: evidence %r' % (r['date'], r['evidence']))
+        if r['thread'] not in ('rules', 'draft', 'argument') or r['dial'] not in ('in', 'out', 'none'):
+            FP.fail('record %s: thread or dial' % r['date'])
+    return rows
+
+
+def agenda_titles():
+    import re
+    t = io.open(os.path.join(ROOT, 'sources', 'meetings', 'text', 'finance-committee', '2026-12-03-agenda-8154.txt'),
+                encoding='utf-8').read()
+    got = [x.strip() for x in re.findall(r'^\s*\d+\.\s+([A-Z][^\n]*?)\s*$', t.split('Financial Planning Policies')[1], re.M)]
+    import pypdf
+    r = pypdf.PdfReader(os.path.join(FP.SRC, FP.MANUAL))
+    toc = r.pages[8].extract_text() + r.pages[9].extract_text()
+    titles = [re.sub(r'\s*\.{3,}.*', '', l).strip() for l in toc.split('\n') if '....' in l]
+    titles = [x for x in titles if x not in ('FINANCIAL PLANNING', 'FINANCIAL OPERATION', 'POLICY LOG')]
+    canon = lambda s: s.upper().replace('OTHER POSTEMPLOYMENT BENEFITS', 'OPEB')
+    if [canon(x) for x in got] != [canon(x) for x in titles]:
+        FP.fail('the 3 December agenda titles no longer match the draft, title for title:\n%s\n%s' % (got, titles))
+    return got
+
+
+def page_debate(b):
+    pid = 'financial-policy-debate'
+    rows = record()
+    titles = agenda_titles()
+    years = list(range(2013, 2027))
+    state = {}
+    for r in rows:
+        y = int(r['date'][:4])
+        key = {'rules': 'rules', 'draft': 'draft'}.get(r['thread'])
+        if r['thread'] == 'argument':
+            key = 'in' if r['dial'] == 'in' else 'out' if r['dial'] == 'out' else 'said'
+        state.setdefault(key, {})[y] = key
+    lab = lambda k: [state.get(k, {}).get(y) for y in years]
+    timeline = TB.timeline('Twelve years of the same rules', [str(y)[2:] if i else str(y) for i, y in enumerate(years)],
+                           [('The rules', [TB.track('Today’s rules adopted or amended', lab('rules')),
+                                           TB.track('The state’s draft before a board', lab('draft'))]),
+                            ('The argument', [TB.track('Money in: how much to set aside', lab('in')),
+                                              TB.track('Money out: what reserves may pay for', lab('out')),
+                                              TB.track('The town’s reserves described', lab('said'))])],
+                           [('rules', 'A vote on today’s rules', 'neutral'), ('draft', 'The draft discussed', 'other'),
+                            ('in', 'Raised at a meeting', 'other'), ('out', 'Raised at a meeting', 'other'),
+                            ('said', 'Reported at a meeting', 'muted')],
+                           place='lead', note=L('Each mark is a dated meeting in the list below; years run 2013 to 2026.',
+                                                '2013', '2026'))
+    long_date = lambda d: '%d %s %s' % (int(d[8:]), ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                                                       'August', 'September', 'October', 'November', 'December'][int(d[5:7]) - 1], d[:4])
+    kind = {'minutes': 'minutes', 'captions': 'our machine captions only', 'both': 'minutes, part in captions only',
+            'agenda': 'the agenda'}
+    srcs, crow = [], []
+    for i, r in enumerate(rows):
+        key = 'm%d' % i
+        srcs.append(dict(key=key, label='%s, %s: %s%s' % (r['board'], long_date(r['date']),
+                                                            'video at ' if r['evidence'] == 'captions' else '',
+                                                            r['where']), href=r['url']))
+        import re
+        why = '%s, %s (%s): %s' % (r['board'], long_date(r['date']), kind[r['evidence']], r['what'])
+        crow.append(TB.check_row(('%s, %s' % (r['who'][0].upper() + r['who'][1:], long_date(r['date'])), None,
+                                  tuple(re.findall(r'\d[\d,.]*', long_date(r['date'])))),
+                                 (why, None, tuple(sorted(set(re.findall(r'\$?\d[\d,.]*%?', why))))),
+                                 {'rules': {0}, 'draft': {1}, 'argument': {2}}[r['thread']],
+                                 contrast=r['evidence'] == 'captions'))
+    checks = TB.checks('Meeting by meeting', ['Today’s rules', 'The draft', 'The argument'], crow,
+                       place='body', first='Who, when', second='What the record shows', tone='good',
+                       note=L('A row drawn apart rests on our machine captions alone: a caption locates a moment, and '
+                              'no figure heard in one is given here.'),
+                       so=L('Arguments on both dials have been made for years; the draft has been before the boards '
+                            'since June 2024 without a vote on it.', '2024'))
+    n_cap = sum(1 for r in rows if r['evidence'] == 'captions')
+    f = LD.fact
+    facts = [
+        f('titles', N(len(titles), 'titles'), 'policy titles on the 3 December 2026 agenda', 'published',
+          allow=('3', '2026')),
+        f('nodraft', None, 'the draft text the committee will review', 'gap',
+          closes='The draft policies as attached to the Finance Committee’s 3 December 2026 packet'),
+        f('rows', N(len(rows), 'meetings'), 'dated meetings in the record below', 'published'),
+        f('cap', N(n_cap, 'meetings'), 'of them heard only in our machine captions', 'published'),
+    ]
+    con = TP.conclusion
+    cons = [
+        con('The %d titles on the 3 December 2026 agenda match the April 2024 draft’s, title for title.' % len(titles),
+            ['titles', 'nodraft'], {'a': N(len(titles), 'titles')}, allow=('3', '2026', '2024'),
+            so='No policy text is attached, so whether the draft has been edited since is not established.'),
+        con('%d of the %d dated meetings here are known only from our machine captions.' % (n_cap, len(rows)),
+            ['rows', 'cap'], {'a': N(n_cap, 'meetings'), 'b': N(len(rows), 'meetings')},
+            so='Those mark where something was said; the minutes, where they exist, are what the town recorded.'),
+    ]
+    cite = TP.cite
+    allkeys = [s['key'] for s in srcs]
+    flow = ['finding', cite(timeline, *allkeys[:1] + allkeys[1:]), ('conclusion', 0),
+            cite(checks, *allkeys), ('conclusion', 1), 'sources']
+    sources = srcs
+    finding = 'The town’s financial policies date from 2014; the state’s replacement draft has waited since June 2024.'
+    page = TP.page(pid, finding, facts, cons, sources=sources, finding_allow=('2014', '2024'), flow=flow,
+                   draft=dict(title=PAGES[pid], home=HOME))
+    return page, dict(titles=titles, n_cap=n_cap, n_rows=len(rows), rows=rows)
+
+
+# ------------------------------------------------------------------------------ the report
+
+def report(b, x1, x2, x3, x4):
+    """The markdown twin: what /docs serves, the PDF is made from, and an agent without JavaScript
+    reads. Every figure comes from the same build() the pages use."""
+    o = b['opeb']
+    s = b['stab25']
+    L_ = []
+    a = L_.append
+    a('# Financial policies: the rules, the draft, and the figures\n')
+    a('*An analysis written by this project. Unlisted while it is reviewed. Built by '
+      '`scripts/build_financial_policies.py`; every figure is recomputed by `scripts/verify_financial_policies.py`.*\n')
+    a('## The short version\n')
+    a('- On the latest certified free cash, **%s** (certified %s, available in %s), the state’s draft policies '
+      'would fix a use for at least **%s**, %s of it. Today’s rules fix one: **%s** to the retiree health trust. '
+      'Each point of a share is worth %s.' % (C.usd(b['fc']), b['fc_date'], C.fy(b['latest']), C.usd(b['claimed']),
+                                              pc(x1['share'], 0), C.usd(b['today_fixed']), C.usd(b['point'])))
+    a('- The draft sets **%d of %d** dials by rule that today’s policies leave open or set lower (our reading of '
+      'the two documents).' % (x1['set_by_draft'], x1['n_dials']))
+    a('- General stabilization was **%s** of the %s budget, inside the draft’s five to eight percent, and %s of %d '
+      'among the towns compared.' % (pc(b['stab_pct'][2025]), C.fy(2025), ordinal(x2['rk_s']), x2['n']))
+    a('- The retiree health trust held **%s** against a liability of **%s** at 30 June 2025: **%s** funded. Paying the full '
+      'actuarially determined contribution would have taken %s more in %s.' % (
+          C.usd(o['rows']['trust'][2025]), C.usd(o['rows']['total'][2025]), pc(o['funded'][2025]),
+          C.usd(o['deficiency']), C.fy(2025)))
+    a('- The %d policy titles on the Finance Committee’s 3 December 2026 agenda match the April 2024 draft title '
+      'for title. No policy text is attached to the agenda.\n' % len(x4['titles']))
+    a('**This project recommends neither direction**: not to save more and not to spend more. It shows what each '
+      'setting would do to figures the town has already published. The boards decide.\n')
+    a('The pages: ' + ', '.join('[%s](%s)' % (PAGES[k], path(k)) for k in PAGES) + '.\n')
+
+    a('## The free cash split\n')
+    a('| Share (the draft’s minimum) | On %s |' % C.usd(b['fc']))
+    a('|---|---:|')
+    for _, lab, amt in b['split']:
+        a('| %s | %s |' % (lab, C.usd(amt)))
+    a('| **Claimed by the minimums** | **%s** |' % C.usd(b['claimed']))
+    a('| No set use | %s |\n' % C.usd(b['unclaimed']))
+    a('Source: the draft, pdf pages 29-30 ([%s](/docs/%s)); certified free cash from the Town’s fact sheet, equal to '
+      'the state databank. Capital is a floor of 20%%, up to 30%%; other one-time costs are the lesser of 10%% or '
+      '$250,000. Most of this free cash was already appropriated at Town Meeting: this shows how the rule would work, '
+      'not what happened.\n' % ('DLS manual', FP.MANUAL))
+
+    a('## Today’s rules against the draft\n')
+    a('| Policy | Today (Select Board policies, Article III) | The draft (DLS, April 2024) | State law |')
+    a('|---|---|---|---|')
+    a('| Free cash | Stabilization to five percent, then at least 10% to OPEB, then special funds, then one-time uses | '
+      'Target of five to seven percent of the budget; fixed minimum shares (table above) | Spent by Town Meeting '
+      'once the state certifies it |')
+    a('| General stabilization | At least five percent of the budget; all funds no more than ten percent; refill '
+      'within about three years | Five to eight percent; a yearly deposit of 0.25% (summary) or 0.3% (text) of the '
+      'budget; below five percent take at most one third and refill within two years | Any amount may go in; '
+      'spending takes two thirds (c. 40, §5B) |')
+    a('| Special purpose funds | Deposit sized in capital planning; two thirds to spend | Three to five percent of the '
+      'budget together; at least 10% of free cash | Spending takes a majority (c. 40, §5B) |')
+    a('| Reserve fund | $50,000, at most one half of one percent of the budget | No size set | Up to five percent of '
+      'last year’s levy; the Finance Committee votes transfers (c. 40, §6) |')
+    a('| OPEB | At least 10% of certified free cash | Keeps the 10% as one option; intends to pay the full '
+      'actuarially determined contribution; a valuation every two years | Funding allowed, not required (c. 32B, §20) |')
+    a('| Capital | A project is anything over $20,000 | Two to three percent of the budget, net of debt, in cash; '
+      '20% to 30% of free cash | |')
+    a('| Debt | Regular debt service at most 4% of the regular levy; all at most 14% of the total levy | Within the levy '
+      '2% to 4% of the budget; all debt 5% to 11% of operating revenues | |')
+    a('| Revenue estimates | No written rule | Local receipts at most 90% of last year’s collections without firm '
+      'evidence; check each forecast against the year that followed | |\n')
+    a('Today’s stabilization section still quotes two caps (ten percent of the prior year’s tax levy for a '
+      'deposit, ten percent of equalized value in total) that the current text of c. 40, §5B does not contain. It '
+      'also asks two thirds to spend from any stabilization fund, where the statute asks a majority for a special '
+      'purpose fund.\n')
+    a('What the law allows and what the state recommends are kept apart here. The statute sets the limits in the last '
+      'column. The draft’s targets are what the Division of Local Services recommends **for towns like Lunenburg**, '
+      'and the draft itself says the Town is to test them against its own finances before adopting them (pdf page 3). '
+      'The Government Finance Officers Association recommends unrestricted general fund balance of no less than two '
+      'months of regular revenues or expenditures ([GFOA, 2015](%s)); that counts free cash and stabilization together. '
+      'The FY2025 audit puts total general fund balance at %s, 25%% of general fund expenditures.\n'
+      % (FP.LAW['gfoa'], C.usd(b['fund_balance']['total'])))
+
+    a('## Reserves against the targets\n')
+    a('| Year | General stabilization, share of budget | Free cash available that year, share of prior budget |')
+    a('|---|---:|---:|')
+    for y in range(2016, b['latest'] + 1):
+        a('| %s | %s | %s |' % (C.fy(y), pc(b['stab_pct'][y], 2) if y in b['stab_pct'] else '', pc(b['fc_pct'][y], 2)
+                               if y in b['fc_pct'] else ''))
+    a('\nFree cash landed inside the draft’s five to seven percent in %d of %d certifications. Stabilization is '
+      'shown from %s, the first year the state databank’s general fund figure equals the annual report’s to '
+      'the dollar; before it the databank’s figure includes the zoning incentive fund.\n'
+      % (len(x2['in_range']), len(x2['fyears']), C.fy(FP.TREND_FROM)))
+    a('**One balance, two figures.** At 30 June 2025 the annual report prints general stabilization at $%s (unaudited) '
+      'and the audit at %s, %s higher. Nothing held reconciles them.\n' % (format(s['report'], ',.2f'),
+                                                                         C.usd(s['audit']), C.usd(x2['diff'])))
+    a('**The draft’s table.** Each general stabilization balance in the '
+      'draft’s table (pdf page 31) is the balance at the previous 30 June, to the dollar: its %s figure, %s, is '
+      'the %s year-end.\n' % (C.fy(2024), C.usd(b['draft_bal'][2024]), C.fy(2023)))
+    a('### Peer towns\n')
+    a('| Town | General stabilization %s | Free cash %s | Debt service %s |' % (C.fy(2025), C.fy(b['latest']), C.fy(2025)))
+    a('|---|---:|---:|---:|')
+    for t in sorted(b['peers'], key=lambda t: -b['peer_stab'][t]):
+        a('| %s | %s | %s | %s |' % ('**%s**' % t if t == 'Lunenburg' else t, pc(b['peer_stab'][t], 2),
+                                     pc(b['peer_fc'][t], 2), pc(b['peer_debt'][t], 2)))
+    a('\nEach town against its own budget, from the state’s Municipal Databank. This is where Lunenburg sits, not '
+      'a ranking of better or worse.\n')
+
+    a('## Retiree health (OPEB)\n')
+    a('| 30 June | Total liability | Trust | Funded | Paid for current retirees | Into the trust |')
+    a('|---|---:|---:|---:|---:|---:|')
+    for y in o['years']:
+        R = o['rows']
+        a('| %d | %s | %s | %s | %s | %s |' % (y, C.usd(R['total'][y]), C.usd(R['trust'][y]), pc(o['funded'][y], 2),
+                                              C.usd(R['contrib_payg'][y]), C.usd(R['contrib'][y])))
+    a('\nFrom the FY2025 audit’s schedule (pdf page 78); every identity it prints re-adds. In FY2025 the actuarially '
+      'determined contribution was %s; the Town contributed %s, %s short. Peer towns are not compared, because many '
+      'send pupils to regional districts that carry those retirees.\n' % (C.usd(o['adc']), C.usd(o['contributed']),
+                                                                         C.usd(o['deficiency'])))
+
+    a('## The record, meeting by meeting\n')
+    a('Speakers are named by role. *Captions* means our machine captions of the recording, which locate a moment and '
+      'are not a record; no figure heard only in captions is given.\n')
+    for r in x4['rows']:
+        a('- **%s, %s** (%s), %s: %s [source](%s)' % (r['board'], r['date'], r['evidence'], r['who'], r['what'], r['url']))
+    a('')
+    a('## What this does not establish\n')
+    a('- Whether the draft the Finance Committee will review is the April 2024 manual unchanged. The agenda lists the '
+      'same titles and attaches no text.')
+    a('- Which FY2025 general stabilization figure is right: the annual report’s or the audit’s.')
+    a('- What the liability looks like in any actuarial valuation after the two held (2017 and 2018).')
+    a('- Where the reserve fund’s $50,000 figure came from; no record found gives its origin.')
+    a('- What the FY2028 figures will be. The worked example uses the latest certification; the next (as of 1 July '
+      '2026) was not in the state databank on 25 November 2026.\n')
+    a('## Sources\n')
+    for sname, href in [('DLS, Town of Lunenburg Financial Policies Manual, April 2024 (draft)', '/docs/' + FP.MANUAL),
+                        ('Select Board Policies and Procedures (in force)', '/docs/' + FP.SBPOL),
+                        ('FY2025 audited financial statements', '/docs/' + FP.AUDIT),
+                        ('FY2025 annual town report', '/docs/' + FP.AR25),
+                        ('Free Cash Fact Sheet', SRC_FACT['href']),
+                        ('DLS Municipal Databank exports, 25 November 2026', '/docs/' + FP.DLS_STAB),
+                        ('M.G.L. c. 40, §5B', FP.LAW['5B']), ('M.G.L. c. 40, §6', FP.LAW['6']),
+                        ('M.G.L. c. 32B, §20', FP.LAW['32B']), ('GFOA, Fund Balance Guidelines', FP.LAW['gfoa']),
+                        ('The meeting record (our dataset)', '/docs/data/financial-policy-record.csv')]:
+        a('- [%s](%s)' % (sname, href))
+    return '\n'.join(L_) + '\n'
+
+
+def outputs():
+    b = FP.build()
+    import financial_policies_data as _  # noqa
+    s = FP.dls_stabilization()
+    b['budget26'] = D(str(s[('Lunenburg', 2025)]['budget']))
+    # The FY2026 operating budget, for today's five-percent test, from the databank's FY2026 row.
+    for r in FP._xlsx(FP.DLS_STAB):
+        if r['Municipality'] == 'Lunenburg' and int(r['Schedule A Fiscal Year']) == 2026:
+            b['budget26'] = D(str(r['Operating Budget']))
+    p1, x1 = page_rules(b)
+    p2, x2 = page_targets(b)
+    p3, x3 = page_opeb(b)
+    p4, x4 = page_debate(b)
+    out = {os.path.join(TOPICS, '%s.json' % p['id']): json.dumps(p, ensure_ascii=False, sort_keys=True,
+                                                                 separators=(',', ':')) + '\n'
+           for p in (p1, p2, p3, p4)}
+    out[REPORT] = report(b, x1, x2, x3, x4)
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--check', action='store_true')
+    a = ap.parse_args()
+    out = outputs()
+    stale = [k for k, v in out.items() if not os.path.exists(k) or io.open(k, encoding='utf-8').read() != v]
+    if a.check:
+        if stale:
+            raise SystemExit('build_financial_policies: stale: %s' % ', '.join(os.path.relpath(k, ROOT) for k in stale))
+        print('build_financial_policies: %d outputs current' % len(out))
+        return
+    for k, v in out.items():
+        with io.open(k + '.tmp', 'w', encoding='utf-8', newline='\n') as f:
+            f.write(v)
+        os.replace(k + '.tmp', k)
+    print('build_financial_policies: wrote %d outputs (%d changed)' % (len(out), len(stale)))
+
+
+if __name__ == '__main__':
+    main()

@@ -223,6 +223,10 @@ CHECKS = [
     ('build_town_payroll.py', ['--check']),
     ('build_school_scholarships.py', ['--check']),
     ('build_preschool.py', ['--check']),
+    # 27 November 2026: financial policies, four draft (unlisted) pages and their markdown twin,
+    # and the verifier that recomputes their figures from the raw documents by its own route.
+    ('build_financial_policies.py', ['--check']),
+    ('verify_financial_policies.py', []),
     ('build_monty_tech_history.py', ['--check']),
     ('build_monty_tech_topics.py', ['--check']),
     # Growth and the tax rate: three state files and the CPI (topic_registry/homes_and_taxes.py)
