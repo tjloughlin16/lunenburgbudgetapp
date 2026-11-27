@@ -56,6 +56,7 @@ import TalkingPoints from './talking-points'
 import BigFigures from './big-figures'
 import OodWhoPaid from './ood-who-paid'
 import OodComposition from './ood-composition'
+import PolicyCalculator from './policy-calculator'
 
 export type CustomProps = { data: unknown; alt: string }
 
@@ -107,4 +108,5 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'big-figures': BigFigures,
   'ood-who-paid': OodWhoPaid,
   'ood-composition': OodComposition,
+  'policy-calculator': PolicyCalculator,
 }
