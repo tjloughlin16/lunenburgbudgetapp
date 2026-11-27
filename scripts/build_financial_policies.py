@@ -192,9 +192,9 @@ def dials_matrix(b):
         (0, 0): TB.cell('new', 'The draft sets a target for free cash itself', L(
             'Today: no target for free cash. Draft: certifications of five to seven percent of the budget '
             'each year, reached through conservative revenue estimates and budget turnbacks.'), R),
-        (0, 1): TB.cell('more', 'The draft splits every year’s free cash by rule', L(
+        (0, 1): TB.cell('more', 'The draft splits every year’s free cash by rule', L((
             'Today: top up general stabilization to five percent, then at least 10% to the OPEB trust, then '
-            'the special purpose fund, then any one-time use. Draft: a minimum share for each of %s uses.' % WORD[len(FP.SPLIT)], '10%'), R),
+            'the special purpose fund, then any one-time use. Draft: a minimum share for each of ' + WORD[len(FP.SPLIT)] + ' uses.'), '10%'), R),
         (1, 0): TB.cell('more', 'A wider band and a yearly deposit', L(
             'Today: at least five percent of the budget, all stabilization funds together no more than ten '
             'percent. Draft: five to eight percent, plus a set deposit every year.'), R),
