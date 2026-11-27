@@ -148,3 +148,37 @@ any of this existed. The first build after this lands has to learn them, and lea
 means rendering it once. That pass runs at low priority in daily batches while every other
 page is relinked; until a page has been seeded, a change to any file in its route's static import
 closure re-renders it. Nothing renders the whole site in one build.
+
+## 27 November 2026: what was built
+
+In `fy28/scripts/prerender-incremental.mjs`, wired into `prerender.mjs`, tested by
+`fy28/scripts/test_prerender_incremental.mjs`:
+
+- **The shell is keyed without its asset names**, and `RENDER_FORMAT` replaces the script's own
+  text. A new bundle relinks every reused page (asset names rewritten one to one, or the page is
+  rendered instead). Steps 1 and 4 above.
+- **Live figures.** The footer's meeting-document count and each person's documents-searched
+  count are `<span data-live>`, spliced with today's value into every shipped page; a rendered
+  page must already carry today's value or the build fails, which proves the two formats agree.
+  Pages cached before the spans existed are marked by their own sentences (`legacyLiveSpans`).
+- **Read paths.** Each render records which values of each JSON file it read (a Proxy on
+  `Response.json`), proved by recomputing every value from the file; the page re-renders only when
+  one of those values changes. A write through the data, or over 20,000 reads, keys it on the
+  whole file. Measured: a board page reads 2,554 values of `boards.json`, not the file.
+- **Blobs.** The bytes of every JSON input, by sha256, so a page with no read record still counts a
+  file whose only change is a live path as unchanged.
+- **Legacy adoption**, once: `PRERENDER_ADOPT_LEGACY=<commit> PRERENDER_ADOPT_REPO=<repo>` adopts
+  entries made before the new key, only if `fy28/index.html` from `<html` on is identical at that
+  commit and now, and seeds blobs from that commit where each sha256 matches.
+- **`searchable-pdfs.json` gains `has`**, so `SearchableLinks` looks up the PDFs a page links
+  instead of reading the whole list.
+- **The gate does not count up to 400 clock-reading pages** (they say "in 3 days" and change
+  daily), and counts them again past that.
+
+**Not built yet: code coverage per page** (requirement 4 of *incremental render*). Until it is, a
+component change relinks the pages that use it, and a reader without JavaScript sees the previous
+layout of those pages until they next render; `RENDER_ALSO=/a,/b` renders named pages as well.
+
+Measured on main (`19a328f7f`, ship-shaped export, the 23 November cache): 2,587 of 3,963 pages
+relinked with no render; 1,376 render once, because they were cached before pages recorded their
+reads and a file each reads really changed in four days of refreshes.
