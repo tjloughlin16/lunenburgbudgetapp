@@ -1199,6 +1199,11 @@ REFERENCE = [
     # which planning documents are held for each capital cycle, FY1999-FY2028 (the /capital-planning table)
     'capital-coverage',
     'free-cash-proof', 'fund-1301-cash-journal', 'ood-tuition-history',
+    # Local receipts, estimated against collected, by year and receipt type: MUNIS printouts, the
+    # audited FY2023 budgetary comparison and the Town Manager's budget messages and decks. Every
+    # estimate row names its STAGE (original, revised, preliminary...); never add two stages.
+    # Built by scripts/extract_local_receipts.py, which ties each table to its printed total.
+    'local-receipts-estimates',
     'line-history-disagreements', 'rate-register', 'sped-para-history',
     'sped-teacher-history', 'sped-transport-history', 'total-expenses-history',
     'total-salaries-history', 'variance-by-group',

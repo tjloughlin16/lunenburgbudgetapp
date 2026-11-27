@@ -175,6 +175,8 @@ CHECKS = [
     ('build_function_pages.py', ['--check']),
     # the state's free cash certifications, every line, each year's arithmetic proved (2 November 2026)
     ('extract_free_cash_certifications.py', ['--check']),
+    # local receipts, estimated against collected, by year and type; each table tied to its printed total
+    ('extract_local_receipts.py', ['--check']),
     # the school FY28-FY37 capital request forms and the Superintendent's narrative, tied to
     # the narrative's printed year totals (21 October 2026 School Committee packet)
     ('extract_capital_submissions.py', ['--check']),

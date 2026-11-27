@@ -4255,6 +4255,14 @@ GROUPS = [
             ('data/fincom-presentation-survey.csv',
              'Every Finance Committee presentation, surveyed for tables', 1,
              'Written by us: one row per presentation, memo and Q&A, saying whether it holds a table no dataset has captured yet. Built by scripts/survey_fincom_presentations.py.'),
+            ('data/local-receipts-estimates.csv',
+             'Local receipts: what the town estimated, against what it collected', 2,
+             'Written by us: one row per fiscal year, receipt type, estimate or actual and stage, '
+             'read from the MUNIS printouts, the audited FY2023 statement and the Town Manager’s '
+             'budget messages and decks, each table tied to the total it prints. An estimate row '
+             'names its stage, because the original, revised and presented estimates differ. '
+             'Built by scripts/extract_local_receipts.py; --proof sets it against the state’s '
+             'free cash proof.'),
             ('data/fincom-presentation-tables.csv',
              'Tables read from Finance Committee presentations', 2,
              'Written by us: the tables extracted so far from slides and PDFs, each tied to the total it prints.'),
