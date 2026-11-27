@@ -31,8 +31,9 @@ import { after, allocate, type DialKey, type Dials, type Inputs, type UseKey, ty
 
 type Input = { key: keyof Inputs; label: string; value: number; text: string; source: string }
 type Setting = { value: number | null; source: string | null; quote: string | null }
-type Dial = { key: DialKey; label: string; unit: 'fc' | 'budget' | 'usd'; feeds: UseKey; min: number; max: number; step: number; today: Setting; draft: Setting }
-type Preset = { key: 'today' | 'draft'; label: string; source: string; settings: Dials }
+type Dial = { key: DialKey; label: string; unit: 'fc' | 'budget' | 'usd'; feeds: UseKey; min: number; max: number; step: number; today: Setting; draft: Setting; practice: Setting }
+type PresetKey = 'today' | 'practice' | 'draft'
+type Preset = { key: PresetKey; label: string; source: string; settings: Dials }
 type Data = {
   inputs: Input[]; dials: Dial[]; capital_range: [number, number]; uses: { key: UseKey; label: string }[]; presets: Preset[]
   rules: { today: { floor: number; cap: number }; draft: { cap: number; stab_annual: [number, number] } }
@@ -45,7 +46,7 @@ const COLOR: Record<UseKey, string> = {
   keep: 'var(--thread-3)', general: 'var(--thread-2)', special: 'var(--thread-4)', opeb: 'var(--thread-5)',
   capital: 'var(--text-secondary)', other: 'var(--text-muted)', left: 'var(--surface-3)',
 }
-const TODAY = 'var(--text-primary)', DRAFT = 'var(--text-muted)'
+const TODAY = 'var(--text-primary)', DRAFT = 'var(--text-muted)', PRACTICE = 'var(--text-secondary)'
 
 const usd = (n: number) => (n < 0 ? '-' : '') + '$' + Math.abs(Math.round(n)).toLocaleString('en-US')
 const pct = (x: number, dp = 1) => (x * 100).toFixed(dp) + '%'
@@ -72,9 +73,9 @@ function dialText(d: Dial, v: number, fc: number) {
   if (d.unit === 'usd') return d.key === 'other_cap' && v >= fc ? 'No cap' : usd(v)
   return pctTrim(v) + (d.unit === 'budget' ? ' of the budget' : ' of free cash')
 }
-function settingText(d: Dial, s: Setting) {
-  if (s.value === null) return d.key === 'other_cap' ? 'no cap' : 'no rule'
-  if (!s.quote) return 'no rule'
+function settingText(d: Dial, s: Setting, voted = false) {
+  if (s.value === null) return d.key === 'other_cap' ? 'no cap' : voted ? 'none voted' : 'no rule'
+  if (!s.quote) return voted ? 'none voted' : 'no rule'
   return d.unit === 'usd' ? (d.key === 'special_dollars' ? 'set in capital planning' : usd(s.value)) : pctTrim(s.value)
 }
 
@@ -104,7 +105,7 @@ function SplitBar({ label, u, fc, strong, names }: { label: string; u: Uses; fc:
 function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; amount?: number; fc: number; onChange: (v: number) => void; range?: [number, number] }) {
   const max = d.unit === 'usd' ? Math.max(d.max, fc) : d.max
   const X = (n: number) => `${Math.max(0, Math.min(100, (100 * (n - d.min)) / (max - d.min)))}%`
-  const marks = ([['Today', d.today, TODAY], ['Draft', d.draft, DRAFT]] as const)
+  const marks = ([['Today', d.today, TODAY], ['In practice', d.practice, PRACTICE], ['Draft', d.draft, DRAFT]] as const)
     .filter(([, s]) => s.quote && s.value !== null && !(d.key === 'special_dollars'))
   return (
     <div className="rounded-md p-3 flex flex-col" style={card}>
@@ -119,7 +120,7 @@ function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; a
           style={{ left: X(range[0]), width: `calc(${X(range[1])} - ${X(range[0])})`, background: DRAFT, opacity: 0.45 }} /> : null}
         {marks.map(([n, s, c]) => (
           <div key={n} className="absolute top-0 h-8 pointer-events-none" style={{ left: X(s.value!) }}>
-            <div className="h-2.5 w-0 -ml-px" style={{ borderLeft: `2px solid ${c}` }} />
+            <div className="h-2.5 w-0 -ml-px" style={{ borderLeft: `2px ${n === 'In practice' ? 'dotted' : 'solid'} ${c}` }} />
           </div>
         ))}
         <input type="range" className="absolute inset-x-0 top-[6px] w-full" min={d.min} max={max} step={d.step}
@@ -127,6 +128,7 @@ function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; a
       </div>
       <div className="mt-auto pt-1 flex flex-wrap gap-x-3 text-[11.5px]" style={muted}>
         <span title={d.today.quote ?? undefined}><span className="inline-block w-2 h-0.5 mr-1 align-middle" style={{ background: TODAY }} />Today: {settingText(d, d.today)}</span>
+        <span title={d.practice.quote ?? undefined}><span className="inline-block w-2 h-0 mr-1 align-middle" style={{ borderTop: `2px dotted ${PRACTICE}` }} />In practice: {settingText(d, d.practice, true)}</span>
         <span title={d.draft.quote ?? undefined}><span className="inline-block w-2 h-0.5 mr-1 align-middle" style={{ background: DRAFT }} />Draft: {settingText(d, d.draft)}{range ? ` (${pctTrim(range[0])} to ${pctTrim(range[1])})` : ''}</span>
       </div>
     </div>
@@ -198,15 +200,15 @@ function Figure({ title, value, sub }: { title: string; value: string; sub: stri
 const against = (v: number, lo: number, hi?: number) =>
   hi === undefined ? (v >= lo ? 'above' : 'below') : v < lo ? 'below' : v > hi ? 'above' : 'inside'
 
-type Mode = 'today' | 'draft' | 'mine'
-type Mine = { dials: Dials; from: 'today' | 'draft' }
+type Mode = PresetKey | 'mine'
+type Mine = { dials: Dials; from: PresetKey }
 const STORE = 'policy-calculator:your-settings'
 
 /** Your settings from this browser, if they are whole and every dial is a number; otherwise none. */
 function loadMine(d: Data): Mine | null {
   try {
     const m = JSON.parse(localStorage.getItem(STORE) ?? 'null') as Mine | null
-    if (!m || (m.from !== 'today' && m.from !== 'draft')) return null
+    if (!m || !d.presets.some(p => p.key === m.from)) return null
     return d.dials.every(q => Number.isFinite(m.dials?.[q.key])) ? m : null
   } catch { return null }
 }
@@ -235,7 +237,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
     keep({ dials: { ...dials, [k]: v }, from: base }); setMode('mine')
   }
   const clear = () => { keep(null); setMode(base) }
-  const today = allocate(x, settingsOf(d.presets[0])), draft = allocate(x, settingsOf(d.presets[1]))
+  const split = (k: PresetKey) => allocate(x, settingsOf(d.presets.find(p => p.key === k)!))
   const u = allocate(x, dials)
   const a = after(x, u)
   const before = after(x, allocate(x, { ...dials, general_target: 0, opeb: 0, special_dollars: 0, general: 0, special: 0, keep: 0, capital: 0, other: 0 }))
@@ -288,8 +290,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <span className="text-[13.5px]" style={secondary}>Where {usd(x.fc)} of free cash goes</span>
           <Tag k="ours" />
         </div>
-        <SplitBar label={d.presets[0].label} u={today} fc={x.fc} strong={mode === 'today'} names={names} />
-        <SplitBar label={d.presets[1].label} u={draft} fc={x.fc} strong={mode === 'draft'} names={names} />
+        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} />)}
         {mine ? <SplitBar label="Your settings" u={allocate(x, mine.dials)} fc={x.fc} strong={mode === 'mine'} names={names} /> : null}
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
@@ -364,7 +365,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       <details className="mt-3 rounded-md" style={{ border: '1px solid var(--grid)' }}>
         <summary className="cursor-pointer px-3 py-2 text-[14px] font-semibold">The rules behind each dial, as printed</summary>
         <ul className="px-3 pb-3 space-y-2">
-          {d.dials.flatMap(q => ([['Today', q.today], ['Draft', q.draft]] as const)
+          {d.dials.flatMap(q => ([['Today', q.today], ['In practice', q.practice], ['Draft', q.draft]] as const)
             .filter(([, s]) => s.quote)
             .map(([n, s]) => (
               <li key={q.key + n} className="text-[13px]">

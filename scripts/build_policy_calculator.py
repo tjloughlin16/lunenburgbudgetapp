@@ -181,8 +181,74 @@ DIALS = [
 ORDER = [k for k, *_ in DIALS]
 
 
+# ---------------------------------------------------------------- today in practice
+
+# TODAY IN PRACTICE (TJ, 27 November 2026: "i wanted 'Today in practice' as a setting"): the dials
+# set to what Town Meeting actually voted from one year's free cash, as shares of that year's
+# certification, so the setting can be applied to any free cash like the two rule sets. The latest
+# Annual Town Meeting whose votes are held is the one below (sources/data/town-meeting-votes.csv,
+# read off the annual town report); the May 2026 votes are not held as votes, only as the Select
+# Board's recommendations. Every amount is asserted in the vote's printed words.
+PRACTICE_MEETING = ('annual', '2025-05-03')
+PRACTICE_FC_YEAR = 2025          # the certification that meeting spent: available in FY2025
+PRACTICE_VOTES = [
+    # article, the amount as printed, the dial it feeds
+    ('7', '$50,000.00', 'other'),        # to the FY2025 School Department line
+    ('7', '$408,966.86', 'other'),       # to FY2025 snow and ice
+    ('8', '$655,424', 'capital'),        # the FY2026 capital program, the free cash part
+    ('9', '$152,500', 'other'),          # a programme of special projects
+    ('12', '$500,000', 'other'),         # to the schools if no override passed by 15 November 2025
+    ('18', '$222,500', 'opeb'),
+]
+# Article 20 reads "raise and appropriate or transfer from Free Cash the sum of $10,000": the vote
+# does not say which, so it is left out and the setting says so.
+PRACTICE_LEFT_OUT = ('20', '$10,000')
+VOTES = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
+
+
+def practice():
+    """The votes, checked: {dial: dollars}, the year's free cash, and the rows they came from."""
+    import csv
+    rows = [r for r in csv.DictReader(io.open(VOTES, encoding='utf-8'))
+            if (r['meeting'], r['meeting_date']) == PRACTICE_MEETING]
+    by = {r['article']: r for r in rows}
+    held = sorted({r['meeting_date'] for r in csv.DictReader(io.open(VOTES, encoding='utf-8')) if r['meeting'] == 'annual'})
+    if held[-1] != PRACTICE_MEETING[1]:
+        FP.fail('policy calculator: a later Annual Town Meeting (%s) is held; move Today in practice to it' % held[-1])
+    used = {}
+    for art, amt, dial in PRACTICE_VOTES + [(PRACTICE_LEFT_OUT[0], PRACTICE_LEFT_OUT[1], None)]:
+        q = by.get(art, {}).get('quote', '')
+        if 'free cash' not in q.lower() or amt not in q or by[art]['result'] not in ('passed', 'amended_and_passed'):
+            FP.fail('policy calculator: article %s of %s no longer reads as a passed transfer of %s from free cash'
+                    % (art, PRACTICE_MEETING[1], amt))
+        if dial:
+            used[dial] = used.get(dial, D(0)) + D(amt.replace('$', '').replace(',', ''))
+    # Every free cash transfer that meeting voted is accounted for, here or as left out.
+    named = {a for a, _, _ in PRACTICE_VOTES} | {PRACTICE_LEFT_OUT[0]}
+    loose = [r['article'] for r in rows if 'free cash' in r['quote'].lower() and r['article'] not in named]
+    if loose:
+        FP.fail('policy calculator: free cash votes of %s not in Today in practice: %s' % (PRACTICE_MEETING[1], loose))
+    # Article 12 paid only if no override passed by 15 November 2025: the state's databank lists every
+    # override vote, and none for Lunenburg falls between the meeting and that date.
+    import csv as _c
+    ov = [r for r in _c.DictReader(io.open(os.path.join(ROOT, 'sources', 'data', 'dls-override-votes.csv'), encoding='utf-8'))
+          if r['municipality'] == 'Lunenburg' and r['vote_type'] == 'Override'
+          and PRACTICE_MEETING[1] <= r['vote_date'] <= '2025-11-15']
+    if ov:
+        FP.fail('policy calculator: an override vote is listed before 15 November 2025; article 12 may not have paid')
+    fc = FP.build()['fact_sheet'][PRACTICE_FC_YEAR][0]
+    if sum(used.values()) >= fc:
+        FP.fail('policy calculator: the practice votes exceed that year\'s free cash')
+    return used, fc, by
+
+
 def settings(which, fc):
-    """{dial: value} for 'today' or 'draft'. A cap no rule sets is the whole free cash: no cap."""
+    """{dial: value} for 'today', 'draft' or 'practice'. A cap no rule sets is the whole free cash: no cap."""
+    if which == 'practice':
+        used, fc_then, _ = practice()
+        out = {d[0]: 0.0 for d in DIALS}
+        out.update({k: float(v / fc_then) for k, v in used.items()}, other_cap=fc)
+        return out
     i = 4 if which == 'today' else 5
     return {d[0]: (float(d[i][0]) if d[i][0] is not None else fc) for d in DIALS}
 
@@ -225,6 +291,11 @@ def independent(x, which):
     """The two rule sets worked straight from their own words, NOT through the dials, so the dial
     arithmetic is checked against something it did not produce."""
     fc = x['fc']
+    if which == 'practice':
+        used, fc_then, _ = practice()
+        u = dict(keep=0.0, general=0.0, special=0.0, capital=0.0, other=0.0, opeb=0.0)
+        u.update({k: float(v) * fc / float(fc_then) for k, v in used.items()})
+        return dict(u, left=fc - sum(u.values()), short=0.0)
     if which == 'today':
         g = max(0.0, min(fc, float(_tr['general']) * x['budget'] - x['general']))
         o = min(fc - g, float(_tr['opeb']) * fc)
@@ -290,13 +361,33 @@ def build():
     # THE DIALS' RANGES are where a slider stops, not figures about the town: a share up to half the
     # free cash, a top-up target up to the draft's own top, dollars up to the whole free cash.
     span = dict(fc=(0, 0.5, 0.01), budget=(0, 2 * BANDS['general_draft'][1], 0.0025))
+    # Today in practice, per dial: the share voted, the articles and their words.
+    p_used, p_fc, p_rows = practice()
+    p_set = settings('practice', fc)
+    long_d = '3 May 2025'
+    if C.fy(PRACTICE_FC_YEAR) != 'FY2025' or PRACTICE_MEETING[1] != '2025-05-03':
+        FP.fail('policy calculator: the practice meeting\'s date words no longer match it')
+    figs.update((U(p_fc), long_d, PRACTICE_LEFT_OUT[1]))
+    p_arts = {}
+    for art, amt, dial in PRACTICE_VOTES:
+        p_arts.setdefault(dial, []).append(art)
+    p_dial = {'opeb': 'opeb', 'capital': 'capital', 'other': 'other'}
+    def p_setting(key):
+        feeds = p_dial.get(key)
+        if not feeds or key not in p_set or not p_set[key]:
+            return dict(value=0.0 if key != 'other_cap' else None, source=None, quote=None)
+        arts = sorted(set(p_arts[feeds]), key=int)
+        src = 'Annual Town Meeting, %s, article%s %s' % (long_d, 's' if len(arts) > 1 else '', ', '.join(arts))
+        quote = ' / '.join(p_rows[a]['quote'] for a in arts)
+        allow.update((src, quote))
+        return dict(value=p_set[key], source=src, quote=quote)
     dials = []
     for key, label, unit, feeds, (tv, tr), (dv, dr) in DIALS:
         lo, hi, step = span.get(unit, (0, fc, 5000))
         dials.append(dict(
             key=key, label=label, unit=unit, feeds=feeds, min=lo, max=hi, step=step,
             today=dict(value=float(tv) if tv is not None else None, **tr),
-            draft=dict(value=float(dv), **dr)))
+            draft=dict(value=float(dv), **dr), practice=p_setting(key)))
     capital_range = [float(_dr['capital_lo']), float(_dr['capital_hi'])]
 
     inp = {i['key']: i['value'] for i in inputs}
@@ -306,6 +397,10 @@ def build():
         presets=[
             dict(key='today', label="Today's rules", source='Select Board policy, sections 3.03, 3.04 and 3.07',
                  settings=settings('today', fc)),
+            dict(key='practice', label='Today in practice',
+                 source=('What the Annual Town Meeting of %s voted from that year\'s %s of free cash, as shares '
+                         'of it; one $10,000 vote that may have been raised from taxes instead is left out'
+                         % (long_d, U(p_fc))), settings=p_set),
             dict(key='draft', label='State draft', source='DLS draft financial policy manual, April 2024, pdf pages 28-30',
                  settings=settings('draft', fc)),
         ],
@@ -331,7 +426,7 @@ def build():
     so = ('Under today\'s rules most of the free cash is left for Town Meeting to decide; under the '
           'draft most of it is assigned before Town Meeting sees it.')
     ex = {}
-    for k in ('today', 'draft'):
+    for k in ('today', 'practice', 'draft'):
         u = allocate(inp, settings(k, fc))
         ind = independent(inp, k)
         if any(abs(u[f] - ind[f]) > 0.005 for f in ind):
@@ -353,7 +448,9 @@ def page(payload):
     """The calculator's own page: the calculator first, the two settings' results at today's figures
     under it as conclusions, then the stance and the links to the four policy pages."""
     ex = payload['expected']
-    t, d = ex['today']['uses'], ex['draft']['uses']
+    t, d, p = ex['today']['uses'], ex['draft']['uses'], ex['practice']['uses']
+    if p['general'] or p['special'] or p['other'] <= 0:
+        FP.fail('policy calculator page: the practice conclusion no longer describes the votes; rewrite it')
     fc = payload['block']['data']['defaults']['fc']
     U = lambda v: figure(float(v), C.usd(v), 'dollars')
     t_set = fc - t['left']
@@ -372,6 +469,9 @@ def page(payload):
         f('draft-left', U(d_left), 'left to Town Meeting under the draft', 'estimate'),
         f('keep', U(d['keep']), 'kept back for next year under the draft', 'estimate'),
         f('opeb', U(t['opeb']), 'to the retiree health trust, under either', 'estimate'),
+        f('practice-other', U(p['other']), 'to one-time costs, at the shares voted in May 2025', 'estimate',
+          label_figures={'y': figure(2025, '2025', 'year')}),
+        f('practice-stab', U(p['general'] + p['special']), 'to stabilization, at the same shares', 'estimate'),
     ]
     if round(t['opeb']) != round(d['opeb']):
         FP.fail('policy calculator page: the two presets no longer put the same sum in the trust')
@@ -387,6 +487,9 @@ def page(payload):
             so='Both put %s into the retiree health trust; the draft adds stabilization, capital and a reserve for next year.'
                % C.usd(t['opeb']), so_figures={'a': U(t['opeb'])}),
     ]
+    cons.append(con('At the shares voted in May 2025, %s goes to one-time costs and nothing to stabilization.'
+                    % C.usd(p['other']), ['practice-other', 'practice-stab'], {'a': U(p['other'])}, allow=('2025',),
+                    so='One meeting’s votes, applied to today’s free cash; another year’s votes would set the dials differently.'))
     import brief
     bad = []
     for i, c in enumerate(cons):
@@ -403,9 +506,16 @@ def page(payload):
         'the public argument.')], place='end', tone='plain',
         links=[(BFP.PAGES[k], BFP.path(k)) for k in BFP.PAGES])
     cite = TP.cite
-    sources = [BFP.SRC_FACT, BFP.src_manual(), BFP.src_sb(), BFP.SRC_DLS_ST, BFP.SRC_AUDIT, BFP.SRC_AR25]
-    flow = ['finding', cite(payload['block'], 'factsheet', 'manual', 'today', 'dlsst', 'audit', 'ar25'),
-            ('conclusion', 0), ('conclusion', 1), cite(stance, 'manual', 'today'), cite(links, 'manual'), 'sources']
+    # The practice votes' own pages, read from the rows the setting was built from.
+    import csv
+    pages = sorted({int(r['page']) for r in csv.DictReader(io.open(VOTES, encoding='utf-8'))
+                    if (r['meeting'], r['meeting_date']) == PRACTICE_MEETING
+                    and r['article'] in {x[0] for x in PRACTICE_VOTES} | {PRACTICE_LEFT_OUT[0]}})
+    src_atm = dict(key='atm25', label='Town of Lunenburg, FY2025 annual town report: the Annual Town Meeting of '
+                   '3 May 2025, free cash votes (pp. %d-%d)' % (pages[0], pages[-1]), href='/docs/' + FP.AR25)
+    sources = [BFP.SRC_FACT, BFP.src_manual(), BFP.src_sb(), BFP.SRC_DLS_ST, BFP.SRC_AUDIT, BFP.SRC_AR25, src_atm]
+    flow = ['finding', cite(payload['block'], 'factsheet', 'manual', 'today', 'dlsst', 'audit', 'ar25', 'atm25'),
+            ('conclusion', 0), ('conclusion', 1), ('conclusion', 2), cite(stance, 'manual', 'today'), cite(links, 'manual'), 'sources']
     finding = 'Today\u2019s rules leave %s of %s in free cash to Town Meeting; the draft leaves %s.' % (
         C.usd(t['left']), C.usd(fc), C.usd(d_left))
     return TP.page(PAGE_ID, finding, [], [], sources=sources,
