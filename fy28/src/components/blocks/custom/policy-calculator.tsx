@@ -44,7 +44,7 @@ type Data = {
 // No thread-1: it is the site's coral, and a coral beside a rule reads as a warning (rule 8).
 const COLOR: Record<UseKey, string> = {
   keep: 'var(--thread-3)', general: 'var(--thread-2)', special: 'var(--thread-4)', opeb: 'var(--thread-5)',
-  capital: 'var(--text-secondary)', other: 'var(--text-muted)', left: 'var(--surface-3)',
+  capital: 'var(--text-secondary)', other: 'var(--text-muted)', left: 'var(--brand)',
 }
 const TODAY = 'var(--text-primary)', DRAFT = 'var(--text-muted)', PRACTICE = 'var(--text-secondary)'
 
@@ -88,7 +88,11 @@ const DISCRETIONARY = 'Discretionary'
 type Disc = { key: 'capital' | 'other' | 'stayed'; label: string; share: number }
 const DISC_COLOR: Record<Disc['key'], string> = { capital: 'var(--text-secondary)', other: 'var(--text-muted)', stayed: 'var(--surface-3)' }
 
-/** One setting's split of the pot: off the top, then discretionary. */
+/** One setting's split of the pot: off the top, then DISCRETIONARY -- the part drawn as the focus
+ *  (TJ, 27 November 2026: "the discretionary portion in the chart to be highlighted somehow, as THAT is
+ *  what should be the focus"). Off-the-top parts recede in their own colours; the discretionary part is
+ *  the brand colour, outlined, with its dollars on it. Under Today in practice it is split, in shades of
+ *  the same colour, into how Town Meeting actually used it. */
 function SplitBar({ label, u, fc, strong, names, disc }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string>; disc?: Disc[] }) {
   const keys: UseKey[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other']
   const top = keys.map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
@@ -96,24 +100,33 @@ function SplitBar({ label, u, fc, strong, names, disc }: { label: string; u: Use
   const offTop = Math.round(fc) - Math.round(u.left)
   const used = disc?.map(q => ({ ...q, v: q.share * fc })).filter(q => q.v > 0)
   const W = (v: number) => `${(100 * v) / fc}%`
+  const wide = u.left / fc > 0.22
+  const tag = <span><span className="font-semibold">{usd(u.left)}</span>{' discretionary · '}<span className="tabular-nums">{pct(u.left / fc, 0)}</span></span>
   return (
-    <div className="mt-3" style={{ opacity: strong ? 1 : 0.6 }}>
+    <div className="mt-4" style={{ opacity: strong ? 1 : 0.55 }}>
       <div className="flex items-baseline justify-between gap-2 text-[13px]">
         <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{label}</span>
-        <span style={secondary}>{usd(offTop)} off the top · <span style={{ color: 'var(--text-primary)' }}>{usd(u.left)} discretionary</span></span>
+        <span className="tabular-nums" style={muted}>{usd(offTop)} off the top</span>
       </div>
-      <div className="mt-1 flex h-7 w-full overflow-hidden rounded-sm" style={{ background: 'var(--surface-2)' }}
+      <div className="mt-1 flex h-9 w-full rounded-sm" style={{ background: 'var(--surface-2)' }}
         role="img" aria-label={`${label}: off the top ` + top.map(p => `${names[p.k]} ${usd(p.v)}`).join(', ') + `; discretionary ${usd(u.left)}`}>
         {top.map(p => (
-          <div key={p.k} title={`Off the top, ${names[p.k]}: ${usd(p.v)}`}
-            style={{ width: W(p.v), background: COLOR[p.k], borderRight: '1px solid var(--surface-1)' }} />
+          <div key={p.k} title={`Off the top, ${names[p.k]}: ${usd(p.v)}`} className="self-center h-5"
+            style={{ width: W(p.v), background: COLOR[p.k], opacity: 0.55, borderRight: '1px solid var(--surface-1)' }} />
         ))}
-        {used?.length ? used.map(q => (
-          <div key={q.key} title={`Discretionary, ${q.label.toLowerCase()}: ${usd(q.v)}`}
-            style={{ width: W(q.v), background: DISC_COLOR[q.key], opacity: q.key === 'stayed' ? 1 : 0.45,
-              borderRight: '1px solid var(--surface-1)', boxShadow: q.key === 'stayed' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />
-        )) : u.left > 0 ? <div title={`Discretionary: ${usd(u.left)}`} style={{ width: W(u.left), background: COLOR.left, boxShadow: 'inset 0 0 0 1px var(--grid)' }} /> : null}
+        {u.left > 0 ? (
+          <div className="relative flex h-full overflow-hidden rounded-sm" title={`Discretionary: ${usd(u.left)}`}
+            style={{ width: W(u.left), outline: '2px solid var(--brand)', outlineOffset: -1 }}>
+            {used?.length ? used.map((q, i) => (
+              <div key={q.key} title={`Discretionary, ${q.label.toLowerCase()}: ${usd(q.v)}`}
+                style={{ width: `${(100 * q.v) / u.left}%`, background: 'var(--brand)', opacity: [0.95, 0.7, 0.35][i] ?? 0.35,
+                  borderRight: '1px solid var(--surface-1)' }} />
+            )) : <div className="w-full" style={{ background: 'var(--brand)' }} />}
+            {wide ? <span className="absolute inset-0 flex items-center px-2 text-[13px] whitespace-nowrap"
+              style={{ color: '#fff', textShadow: '0 0 3px rgba(0,0,0,0.45)' }}>{tag}</span> : null}
+          </div>) : null}
       </div>
+      {!wide && u.left > 0 ? <div className="mt-1 text-right text-[13px]" style={{ color: 'var(--brand)' }}>{tag}</div> : null}
       {used?.length ? <div className="mt-1 text-[12px]" style={secondary}>Of the discretionary part, at the same shares: {used.map(q => `${q.label.toLowerCase()} ${usd(q.v)}`).join(', ')}.</div> : null}
     </div>
   )
@@ -242,19 +255,25 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   // they then stand; choosing a rule set shows it without discarding them; Clear discards them. Kept
   // in this browser so a reload keeps them -- a convenience, so storage that fails costs nothing.
   const [mine, setMine] = useState<Mine | null>(() => loadMine(d))
-  const [mode, setMode] = useState<Mode>(() => (loadMine(d) ? 'mine' : 'today'))
+  // YOUR SETTINGS ARE ALWAYS THERE, AND OPEN ON TODAY IN PRACTICE (TJ, 27 November 2026: "ALWAYS how
+  // 'Your Settings'.... not just when i change something. set it to the today in pract as the default").
+  // Until a dial moves, the slot is Today in practice's dials and nothing is stored; the rule sets are
+  // the references it is compared against. Reset returns it to Today in practice.
+  const [mode, setMode] = useState<Mode>('mine')
   const names = useMemo(() => Object.fromEntries(d.uses.map(u => [u.key, u.label])) as Record<UseKey, string>, [d.uses])
 
   // A preset's "no cap" is the whole free cash, so it follows the free cash the reader types.
   const settingsOf = (p: Preset): Dials => ({ ...p.settings, other_cap: p.settings.other_cap >= d.defaults.fc ? Math.max(x.fc, p.settings.other_cap) : p.settings.other_cap })
-  const base = mode === 'mine' ? (mine?.from ?? 'today') : mode
+  const START: PresetKey = 'practice'
+  const slot: Mine = mine ?? { dials: settingsOf(d.presets.find(p => p.key === START)!), from: START }
+  const base = mode === 'mine' ? slot.from : mode
   const preset = d.presets.find(p => p.key === base)!
-  const dials: Dials = mode === 'mine' && mine ? mine.dials : settingsOf(preset)
+  const dials: Dials = mode === 'mine' ? slot.dials : settingsOf(preset)
   const keep = (m: Mine | null) => { setMine(m); saveMine(m) }
   const move = (k: DialKey, v: number) => {
     keep({ dials: { ...dials, [k]: v }, from: base }); setMode('mine')
   }
-  const clear = () => { keep(null); setMode(base) }
+  const clear = () => { keep(null); setMode('mine') }
   const split = (k: PresetKey) => allocate(x, settingsOf(d.presets.find(p => p.key === k)!))
   const u = allocate(x, dials)
   const a = after(x, u)
@@ -262,7 +281,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   const changed = (k: keyof Inputs) => x[k] !== d.defaults[k]
   const anyChanged = (Object.keys(d.defaults) as (keyof Inputs)[]).some(changed)
   const setInput = (k: keyof Inputs, v: number) => setX(o => ({ ...o, [k]: Number.isFinite(v) ? v : 0 }))
-  const label = mode === 'mine' ? `Your settings (from ${preset.label.toLowerCase()})` : preset.label
+  const label = mode === 'mine' ? (mine ? `Your settings (from ${preset.label.toLowerCase()})` : `Your settings (${preset.label.toLowerCase()})`) : preset.label
   const btn = (on: boolean) => on
     ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
     : { background: 'var(--surface-2)', color: 'var(--text-primary)' }
@@ -280,27 +299,27 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       <div className="sticky z-20 -mx-4 px-4 sm:mx-0 sm:px-3 py-2 sm:rounded-b-md border-b"
         style={{ top: 'var(--header-h)', background: 'var(--surface-2)', borderColor: 'var(--grid)' }}>
         <div className="flex flex-wrap items-center gap-1.5">
+          <button type="button" aria-pressed={mode === 'mine'} onClick={() => setMode('mine')}
+            className="px-2.5 py-1 rounded-md text-[13.5px] font-medium"
+            style={{ ...btn(mode === 'mine'), outline: mode === 'mine' ? undefined : '1px dashed var(--text-muted)' }}>Your settings</button>
+          {mine ? <button type="button" onClick={clear} className="px-2 py-1 rounded-md text-[12.5px] underline"
+            style={{ color: 'var(--text-secondary)' }} aria-label="Reset your settings to today in practice">Reset</button> : null}
+          <span className="mx-1 h-5 border-l" style={{ borderColor: 'var(--grid)' }} aria-hidden />
           {d.presets.map(p => (
             <button key={p.key} type="button" aria-pressed={mode === p.key} onClick={() => setMode(p.key)}
               className="px-2.5 py-1 rounded-md text-[13.5px] font-medium" style={btn(mode === p.key)}>{p.label}</button>
           ))}
-          {mine ? <>
-            <button type="button" aria-pressed={mode === 'mine'} onClick={() => setMode('mine')}
-              className="px-2.5 py-1 rounded-md text-[13.5px] font-medium"
-              style={{ ...btn(mode === 'mine'), outline: mode === 'mine' ? undefined : '1px dashed var(--text-muted)' }}>Your settings</button>
-            <button type="button" onClick={clear} className="px-2 py-1 rounded-md text-[12.5px] underline"
-              style={{ color: 'var(--text-secondary)' }} aria-label="Clear your settings">Clear</button>
-          </> : null}
           <span className="ml-auto text-right leading-tight">
             <span className="block text-[11.5px]" style={muted}>{DISCRETIONARY}</span>
-            <span className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}</span>
+            <span className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}</span>
             <span className="ml-1.5 text-[12px] tabular-nums" style={secondary}>{pct(u.left / x.fc, 0)}</span>
           </span>
         </div>
       </div>
-      <p className="mt-2 text-[12.5px]" style={muted}>{mode === 'mine' ? 'Your settings, moved from ' + preset.label.toLowerCase() + ': ' + preset.source : preset.source}.
-        {mine && mode !== 'mine' ? ' Your settings are kept; moving a dial here starts them again from this rule set.' : ''}
-        {!mine ? ' Move any dial to save your own settings.' : ''}</p>
+      <p className="mt-2 text-[12.5px]" style={muted}>{mode === 'mine'
+        ? (mine ? 'Your settings, moved from ' + preset.label.toLowerCase() + ': ' + preset.source + '.'
+          : 'Your settings start as today in practice. ' + preset.source + '. Move any dial to make them your own.')
+        : preset.source + '.' + (mine ? ' Your settings are kept; moving a dial here starts them again from this setting.' : '')}</p>
 
       {/* THE SIGNATURE: what each setting does with the same free cash */}
       <div className="mt-3 rounded-md p-3" style={card}>
@@ -308,8 +327,9 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <span className="text-[13.5px]" style={secondary}>The pot: {usd(x.fc)} of free cash, split off the top and discretionary</span>
           <Tag k="ours" />
         </div>
+        <SplitBar label={mine ? 'Your settings' : 'Your settings (today in practice until a dial moves)'} u={allocate(x, slot.dials)} fc={x.fc} strong={mode === 'mine'} names={names} disc={mine ? undefined : d.practice_discretionary} />
         {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} disc={p.key === 'practice' ? d.practice_discretionary : undefined} />)}
-        {mine ? <SplitBar label="Your settings" u={allocate(x, mine.dials)} fc={x.fc} strong={mode === 'mine'} names={names} /> : null}
+
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
             <li key={q.key}><span className="inline-block w-2.5 h-2.5 mr-1.5 align-middle rounded-sm"
@@ -330,7 +350,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       </div>
       <div className="mt-3 rounded-md p-3 flex flex-wrap items-baseline justify-between gap-2" style={{ ...card, background: 'var(--surface-2)' }}>
         <span className="text-[15px] font-semibold" style={{ color: 'var(--text-primary)' }}>{DISCRETIONARY}<span className="block text-[12.5px] font-normal" style={secondary}>What no rule takes off the top: Town Meeting decides it, capital included</span></span>
-        <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}
+        <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}
           <span className="ml-2 text-[13px] font-normal" style={secondary}>{pct(u.left / x.fc, 1)} of the free cash</span></span>
         {u.short > 0 ? <p className="w-full text-[12.5px]" style={secondary}>The dials ask for {usd(u.short)} more than the free cash holds; the last dials in the order get less than they ask.</p> : null}
       </div>
