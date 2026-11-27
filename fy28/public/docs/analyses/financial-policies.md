@@ -4,7 +4,7 @@
 
 ## The short version
 
-- On the latest certified free cash, **$3,354,370** (certified 3/11/2026, available in FY2026), the state’s draft policies would fix a use for at least **$2,430,340**, 72% of it. Today’s rules fix one: **$335,437** to the retiree health trust. Each point of a share is worth $33,544.
+- On the latest certified free cash, **$3,354,370** (certified 3/11/2026, available in FY2026), the state’s draft policies would keep back **$670,874**, save **$838,592** and spend **$920,874** on set uses: **$2,430,340** in all, 72% of it. Today’s rules decide one share: **$335,437** to the retiree health trust. Each point of a share is worth $33,544.
 - The draft sets **9 of 16** dials by rule that today’s policies leave open or set lower (our reading of the two documents).
 - General stabilization was **6.24%** of the FY2025 budget, inside the draft’s five to eight percent, and 5th of 9 among the towns compared.
 - The retiree health trust held **$1,736,976** against a liability of **$57,398,019** at 30 June 2025: **3.03%** funded. Paying the full actuarially determined contribution would have taken $1,943,838 more in FY2025.
@@ -33,7 +33,7 @@ Source: the draft, pdf pages 29-30 ([DLS manual](/docs/state-dls/Lunenburg_Finan
 
 | Policy | Today (Select Board policies, Article III) | The draft (DLS, April 2024) | State law |
 |---|---|---|---|
-| Free cash | Stabilization to five percent, then at least 10% to OPEB, then special funds, then one-time uses | Target of five to seven percent of the budget; fixed minimum shares (table above) | Spent by Town Meeting once the state certifies it |
+| Free cash | Stabilization to five percent, then at least 10% to OPEB, then special funds, then one-time uses | Target of five to seven percent of the budget; a minimum share for each use (table above) | Spent by Town Meeting once the state certifies it |
 | General stabilization | At least five percent of the budget; all funds no more than ten percent; refill within about three years | Five to eight percent; a yearly deposit of 0.25% (summary) or 0.3% (text) of the budget; below five percent take at most one third and refill within two years | Any amount may go in; spending takes two thirds (c. 40, §5B) |
 | Special purpose funds | Deposit sized in capital planning; two thirds to spend | Three to five percent of the budget together; at least 10% of free cash | Spending takes a majority (c. 40, §5B) |
 | Reserve fund | $50,000, at most one half of one percent of the budget | No size set | Up to five percent of last year’s levy; the Finance Committee votes transfers (c. 40, §6) |
