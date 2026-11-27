@@ -116,3 +116,35 @@ Then arm it (`ops/FULL-RENDER-GATE-ARMED`), so a full render can never land agai
 Steps 1 and 2 together unblock the waiting deploy (the 43+ commits on main since the 23 November
 build). Steps 3-5 end the problem. The task *incremental render* (T-HY3QY) covers this plan, and
 TJ schedules it (26 November 2026).
+
+## 27 November 2026: what "only the pages that changed" has to mean
+
+TJ, 27 November 2026, declining a one-off deploy that rendered a fixed tier of pages: *"What I
+was asking was not a one-time fix. I don't know why we have a full site deploy, we shouldn't. I
+didn't change everything on every site recently, so I only want to deploy the pages that
+actually changed, with clear content changes."*
+
+**Measured against main at `d27591bba`** (a bundle build in a scratch export, the cache from
+the 23 November full render, the reuse check patched to ignore the bundle): of 3,918 routes,
+1,361 still re-render on whole-file data hashes, and most of those for a file every page of a
+family reads: `boards.json` (288 board pages), `topics.json` (277 topic pages),
+`boards-nav.json` (368), each person's JSON (440, where only a document count changed),
+`searchable-pdfs.json` (117), plus 340 board pages that read the clock. Only 46 routes are new.
+So step 1 alone is not enough. Detection has to be per page at two grains it does not have yet:
+
+1. **Code: which source files did THIS page execute.** Record them while rendering, using Chrome's
+   precise coverage over CDP (`Profiler.startPreciseCoverage`) mapped back through a hidden
+   sourcemap to `fy28/src/**`, with each file's hash. After a bundle change a page re-renders
+   only if a file it executed changed; otherwise it is relinked. The map is never deployed.
+2. **Data: which part of a shared file did THIS page read.** The probe wraps `Response.json()` so
+   the parsed value records the paths the page touched, and the entry stores a hash of those
+   values instead of the file's. A board page that reads one board's entry is untouched by an edit
+   to another board.
+3. **The script's own text leaves the key** (step 4 above, `RENDER_FORMAT`), and the shell is
+   keyed without its asset names, so relinking is the default on a bundle change.
+
+**Seeding.** The 3,887 cached pages carry no coverage or read-paths. They were rendered before
+any of this existed. The first build after this lands has to learn them, and learning a page
+means rendering it once. That pass runs at low priority in daily batches while every other
+page is relinked; until a page has been seeded, a change to any file in its route's static import
+closure re-renders it. Nothing renders the whole site in one build.
