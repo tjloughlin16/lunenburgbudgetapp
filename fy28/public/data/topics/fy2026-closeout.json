@@ -140,6 +140,227 @@
   },
   {
    "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {
+      "a": {
+       "text": "$522,629",
+       "unit": "",
+       "value": 522629.18
+      },
+      "b": {
+       "text": "$434,108",
+       "unit": "",
+       "value": 434107.56
+      }
+     },
+     "literals": [],
+     "text": "Tuition missed both ways: private schools came in $522,629 under budget, collaboratives $434,108 over."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$815,327",
+       "unit": "",
+       "value": 815327.02
+      },
+      "b": {
+       "text": "$421,731",
+       "unit": "",
+       "value": 421730.57
+      }
+     },
+     "literals": [],
+     "text": "Outside tuition, lines under budget left $815,327 and lines over budget took $421,731."
+    },
+    {
+     "figures": {
+      "d": {
+       "text": "$361,639",
+       "unit": "",
+       "value": 361639.07
+      },
+      "n": {
+       "text": "29",
+       "unit": "",
+       "value": 29
+      }
+     },
+     "literals": [],
+     "text": "Some spending did not recur: 29 vendors paid in both years before were paid $361,639 less, net of every other route."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$799,715",
+       "unit": "",
+       "value": 799715.22
+      },
+      "b": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      },
+      "c": {
+       "text": "$1,536,266",
+       "unit": "",
+       "value": 1536265.83
+      },
+      "d": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "literals": [],
+     "text": "Tuition, across both funds, rose every year: $799,715 in FY2023, $1,536,266 in FY2026."
+    },
+    {
+     "figures": {
+      "b": {
+       "text": "$333,495",
+       "unit": "",
+       "value": 333494.89
+      },
+      "c": {
+       "text": "$189,277",
+       "unit": "",
+       "value": 189276.75
+      }
+     },
+     "literals": [
+      "29 June",
+      "30 June",
+      "6 October"
+     ],
+     "text": "Two entries on 29 June and 30 June made the surplus smaller, by $333,495 and $189,277."
+    },
+    {
+     "figures": {},
+     "literals": [],
+     "text": "There is no deficit: what was left returns to the town’s general fund."
+    }
+   ],
+   "place": "lead",
+   "title": "In short",
+   "tone": "callout"
+  },
+  {
+   "block": "chart",
+   "place": "lead",
+   "so": {
+    "figures": {
+     "b": {
+      "text": "$32,000",
+      "unit": "",
+      "value": 32000.0
+     }
+    },
+    "literals": [],
+    "text": "Two years landed within about $32,000 of budget; the next two left more than ten times that."
+   },
+   "spec": {
+    "decimals": null,
+    "from_zero": true,
+    "kind": "bar",
+    "note": {
+     "figures": {},
+     "literals": [],
+     "text": "School general fund, closed-year reports, the same footing every year. Earlier years are not held."
+    },
+    "reference": null,
+    "series": [
+     {
+      "basis": "published",
+      "mark": "bar",
+      "name": "Left unspent, orders owed counted as spent",
+      "texts": [
+       "$32,022",
+       "$31,705",
+       "$554,945",
+       "$482,118"
+      ],
+      "values": [
+       32022.04,
+       31705.37,
+       554945.16,
+       482118.07
+      ]
+     }
+    ],
+    "stacked": false,
+    "title": "School budget left at year end",
+    "type": "series",
+    "unit": "$",
+    "x": [
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026"
+    ]
+   }
+  },
+  {
+   "block": "chart",
+   "place": "lead",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Four separate misses, two each way; the surplus is what is left when they are added."
+   },
+   "spec": {
+    "basis": "published",
+    "decimals": null,
+    "end": {
+     "label": "Left, FY2026",
+     "text": "$482,118",
+     "value": 482118.07
+    },
+    "note": {
+     "figures": {},
+     "literals": [
+      "13"
+     ],
+     "text": "School general fund, period 13, paid and still owed. Other lines are every other kind of spending, under and over kept apart."
+    },
+    "start": {
+     "label": "On budget",
+     "text": "$0",
+     "value": 0
+    },
+    "steps": [
+     {
+      "after": "$522,629",
+      "label": "Private tuition under",
+      "text": "+$522,629",
+      "value": 522629.18
+     },
+     {
+      "after": "$88,522",
+      "label": "Collaborative tuition over",
+      "text": "-$434,108",
+      "value": -434107.56
+     },
+     {
+      "after": "$903,849",
+      "label": "Other lines under",
+      "text": "+$815,327",
+      "value": 815327.02
+     },
+     {
+      "after": "$482,118",
+      "label": "Other lines over",
+      "text": "-$421,731",
+      "value": -421730.57
+     }
+    ],
+    "title": "What the surplus is made of",
+    "type": "bridge",
+    "unit": "$"
+   }
+  },
+  {
+   "block": "explain",
    "links": [
     {
      "href": "/school-all-funds/fy2026-closeout/fy2026-tuition-lines",
@@ -390,122 +611,8 @@
     }
    ],
    "place": "lead",
-   "title": "In short",
-   "tone": "callout"
-  },
-  {
-   "block": "chart",
-   "place": "lead",
-   "so": {
-    "figures": {
-     "b": {
-      "text": "$32,000",
-      "unit": "",
-      "value": 32000.0
-     }
-    },
-    "literals": [],
-    "text": "Two years landed within about $32,000 of budget; the next two left more than ten times that."
-   },
-   "spec": {
-    "decimals": null,
-    "from_zero": true,
-    "kind": "bar",
-    "note": {
-     "figures": {},
-     "literals": [],
-     "text": "School general fund, closed-year reports, the same footing every year. Earlier years are not held."
-    },
-    "reference": null,
-    "series": [
-     {
-      "basis": "published",
-      "mark": "bar",
-      "name": "Left unspent, orders owed counted as spent",
-      "texts": [
-       "$32,022",
-       "$31,705",
-       "$554,945",
-       "$482,118"
-      ],
-      "values": [
-       32022.04,
-       31705.37,
-       554945.16,
-       482118.07
-      ]
-     }
-    ],
-    "stacked": false,
-    "title": "School budget left at year end",
-    "type": "series",
-    "unit": "$",
-    "x": [
-     "FY2023",
-     "FY2024",
-     "FY2025",
-     "FY2026"
-    ]
-   }
-  },
-  {
-   "block": "chart",
-   "place": "lead",
-   "so": {
-    "figures": {},
-    "literals": [],
-    "text": "Four separate misses, two each way; the surplus is what is left when they are added."
-   },
-   "spec": {
-    "basis": "published",
-    "decimals": null,
-    "end": {
-     "label": "Left, FY2026",
-     "text": "$482,118",
-     "value": 482118.07
-    },
-    "note": {
-     "figures": {},
-     "literals": [
-      "13"
-     ],
-     "text": "School general fund, period 13, paid and still owed. Other lines are every other kind of spending, under and over kept apart."
-    },
-    "start": {
-     "label": "On budget",
-     "text": "$0",
-     "value": 0
-    },
-    "steps": [
-     {
-      "after": "$522,629",
-      "label": "Private tuition under",
-      "text": "+$522,629",
-      "value": 522629.18
-     },
-     {
-      "after": "$88,522",
-      "label": "Collaborative tuition over",
-      "text": "-$434,108",
-      "value": -434107.56
-     },
-     {
-      "after": "$903,849",
-      "label": "Other lines under",
-      "text": "+$815,327",
-      "value": 815327.02
-     },
-     {
-      "after": "$482,118",
-      "label": "Other lines over",
-      "text": "-$421,731",
-      "value": -421730.57
-     }
-    ],
-    "title": "What the surplus is made of",
-    "type": "bridge",
-    "unit": "$"
-   }
+   "title": "The year in detail",
+   "tone": "plain"
   }
  ],
  "category": "fy2026-closeout",

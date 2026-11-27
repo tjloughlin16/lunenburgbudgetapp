@@ -1169,7 +1169,26 @@ def build():
     why = ('the payroll by position and date, which separates a post left vacant from every other '
            'cause, and the year’s grant award records')
     D = ('29 June', '30 June', '6 October')
+    # IN SHORT IS SHORT (TJ, 27 November 2026: "we cannot use the phrase 'in short' and have 10
+    # paragraps" ... "these paragraphs are the hub-level details that show below"). One line per
+    # point, its figure in it; The year in detail, below the charts, says each in full.
     takeaways = TB.explain('In short', [
+        ('Tuition missed both ways: private schools came in %s under budget, collaboratives %s over.'
+         % (C.usd(pv_left), C.usd(co_over_)), {'a': U(pv_left), 'b': U(co_over_)}),
+        ('Outside tuition, lines under budget left %s and lines over budget took %s.'
+         % (C.usd(oth_under), C.usd(oth_over)), {'a': U(oth_under), 'b': U(oth_over)}),
+        ('Some spending did not recur: %s vendors paid in both years before were paid %s less, '
+         'net of every other route.' % (wl['nstop']['text'], wl['dropnet']['text']),
+         {'n': wf('nstop'), 'd': wf('dropnet')}),
+        ('Tuition, across both funds, rose every year: %s in %s, %s in %s.'
+         % (C.usd(tu_all[2023]), C.fy(2023), C.usd(tu_all[2026]), C.fy(2026)),
+         {'a': U(tu_all[2023]), 'b': F(2023), 'c': U(tu_all[2026]), 'd': F(2026)}),
+        ('Two entries on %s and %s made the surplus smaller, by %s and %s.'
+         % ('29 June', '30 June', C.usd(w_cb), C.usd(early_)),
+         {'b': U(w_cb), 'c': U(early_)}, D),
+        ('There is no deficit: what was left returns to the town’s general fund.', None),
+    ], place='lead', tone='callout')
+    detail = TB.explain('The year in detail', [
         ('**Tuition for students placed outside Lunenburg’s schools missed its budget badly, in '
          'both directions.** Private special education schools were budgeted at %s and cost %s: %s '
          'under, %s. Collaboratives (programs run jointly by several districts) were budgeted at %s '
@@ -1216,7 +1235,7 @@ def build():
         ('**There is no deficit.** The school budget as a whole stayed under, and what was left '
          'returns to the town’s general fund. The town’s own departments closed %s %s under budget.'
          % (C.fy(2026), C.usd(town_left)), {'y': F(2026), 't': U(town_left)}),
-    ], place='lead', tone='callout', links=[
+    ], place='lead', tone='plain', links=[
         (REG.TOPICS['fy2026-tuition-lines'][0], REG.path('fy2026-tuition-lines')),
         (REG.TOPICS['fy2026-tuition-paid-early'][0], REG.path('fy2026-tuition-paid-early')),
         (REG.TOPICS['why-it-was-left'][0], REG.path('why-it-was-left')),
@@ -1296,7 +1315,7 @@ def build():
         'This is the school budget’s year end. Before %s it finished within about %s of budget; '
         '%s left %s, the second year in a row far above that.'
         % (C.fy(2025), C.usd(about), C.fy(2026), C.usd(left26)),
-        None, blocks=[big, takeaways, four, bridge],
+        None, blocks=[big, takeaways, four, bridge, detail],
         answer_figures={'z': F(2025), 'b': U(about), 'y': F(2026), 'a': U(left26)})
     out[HUB]['group_figures'] = group_figures
 
