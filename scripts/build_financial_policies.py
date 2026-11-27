@@ -248,6 +248,35 @@ def dials_matrix(b):
         (6, 1): [M('Today', '4% and 14% of the levy', pub), M('Draft', '2% to 4% and 5% to 11%', pub)],
         (7, 0): [M('Today', 'No written rule', pub), M('Draft', 'At most 90% of last year', pub)],
     }
+    # IN PRACTICE, beside the rule (TJ, 27 November 2026: "theres a difference in 'No policy today'
+    # and the in-practice numbers"). Only where a figure is held; a cell with no compiled actual
+    # (the reserve fund's yearly size, revenue estimates against collections) gets no line rather
+    # than a guess. A share the state databank prints is 'published'; a share we compute, or a
+    # reading of Town Meeting votes, is 'estimate'.
+    import statistics
+    fcp = b['fc_pct']
+    yrs = sorted(fcp)
+    sp25 = b['stab_pct'][2025]
+    flows = json.load(io.open(os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json'),
+                              encoding='utf-8'))['flows']
+    general_out = [x for x in flows['spends'] if 'opioid' not in x['subject'].lower()]
+    gen_in = next(x for x in flows['by_fund'] if x['fund'] == 'Stabilization Fund (general)')
+    cap25 = b['capital'][2025]['total']
+    cap_share = cap25 / (b['budget25'] - D(str(b['debt25']))) * 100
+    practice = {
+        (0, 0): M('In practice', 'Latest %s; median %s since %s' % (
+            pc(fcp[yrs[-1]]), pc(statistics.median(fcp.values())), C.fy(yrs[0])), est),
+        (1, 0): M('In practice', '%s of the budget, %s' % (pc(sp25), C.fy(2025)), pub),
+        (1, 1): M('In practice, Town Meeting votes held', 'No withdrawal, %s to %s' % (
+            C.fy(flows['first_fy']), C.fy(flows['last_fy'])) if not general_out else
+            '%d withdrawals' % len(general_out), est),
+        (2, 0): M('In practice, all special funds', '%s of the budget, %s' % (pc(b['special25_pct']), C.fy(2025)), pub),
+        (4, 0): M('In practice', '%s into the trust, %s' % (C.usd(b['opeb']['rows']['contrib'][2025]), C.fy(2025)), pub),
+        (5, 0): M('In practice', '%s, %s net of debt, %s' % (C.usd(cap25), pc(cap_share), C.fy(2025)), est),
+        (6, 1): M('In practice', '%s of the budget, all debt, %s' % (pc(b['peer_debt']['Lunenburg']), C.fy(2025)), pub),
+    }
+    for k, m in practice.items():
+        MS[k].append(m)
     for k, ms in MS.items():
         cells[k]['measures'] = ms
     legend = [('new', 'Draft sets what today’s rules do not', 'other'),
@@ -848,6 +877,7 @@ def outputs():
     import financial_policies_data as _  # noqa
     s = FP.dls_stabilization()
     b['budget26'] = D(str(s[('Lunenburg', 2025)]['budget']))
+    b['special25_pct'] = D(str(s[('Lunenburg', 2025)]['special'])) / D(str(s[('Lunenburg', 2025)]['budget'])) * 100
     # The FY2026 operating budget, for today's five-percent test, from the databank's FY2026 row.
     for r in FP._xlsx(FP.DLS_STAB):
         if r['Municipality'] == 'Lunenburg' and int(r['Schedule A Fiscal Year']) == 2026:
