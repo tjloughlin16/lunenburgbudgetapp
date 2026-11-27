@@ -1060,7 +1060,7 @@
    "title": "Stabilization funds"
   },
   {
-   "answer": "Today’s rules leave $3,018,933 of $3,354,370 in free cash to Town Meeting; the state’s draft leaves $924,030. The dials apply either rule set, or any other, to these figures.",
+   "answer": "Today’s rules leave $3,018,933 of $3,354,370 in free cash to Town Meeting; the draft leaves $924,030. The calculator applies either rule set, or any other.",
    "area": "town",
    "elsewhere": [
     {
@@ -1077,6 +1077,7 @@
      "section": null,
      "title": "The rules",
      "topics": [
+      "policy-calculator",
       "financial-policy-rules",
       "policies-in-practice"
      ]
@@ -1098,8 +1099,8 @@
    "related": [],
    "shelf": "New financial policies",
    "start": [
-    "financial-policy-rules",
-    "policies-in-practice"
+    "policy-calculator",
+    "financial-policy-rules"
    ],
    "title": "New financial policies",
    "unlisted": true
@@ -4970,6 +4971,21 @@
     "financial-policies"
    ],
    "title": "The rules in practice",
+   "unlisted": true
+  },
+  "policy-calculator": {
+   "finding": "Today’s rules leave $3,018,933 of $3,354,370 in free cash to Town Meeting; the draft leaves $924,030.",
+   "generator": "scripts/build_policy_calculator.py",
+   "home": "financial-policies",
+   "id": "policy-calculator",
+   "minutes": 1,
+   "path": "/financial-policies/policy-calculator",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "financial-policies"
+   ],
+   "title": "Policy calculator",
    "unlisted": true
   },
   "positions-and-their-funds": {

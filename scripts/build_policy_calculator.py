@@ -51,11 +51,25 @@ import topic as TP  # noqa: E402
 from conclusions import figure  # noqa: E402
 
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'policy-calculator.json')
-# THE PAGE IT IS DRAWN ON: the hub of the New financial policies shelf, /financial-policies
-# (scripts/topic_registry/financial_policies.py names this script as the hub's generator). TJ,
-# 27 November 2026: "the calculator goes on the hub". The shelf is unlisted until TJ reviews it.
-HUB = 'financial-policies'
-PAGE = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', HUB + '.json')
+# WHERE IT IS DRAWN. Its own page, /financial-policies/policy-calculator (TJ, 27 November 2026: "i
+# wanted the calculator separate"), and the shelf's hub, which this script also writes: the hub
+# opens on conclusions, each linking to the page that shows it ("the hub should have conclusions or
+# direct people to the reports"). The shelf is unlisted until TJ reviews it.
+HUB, PAGE_ID = 'financial-policies', 'policy-calculator'
+TOPICS_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
+PAGE = os.path.join(TOPICS_DIR, PAGE_ID + '.json')
+HUB_OUT = os.path.join(TOPICS_DIR, HUB + '.json')
+# THE HUB'S CONCLUSIONS, by page: which of that page's own conclusions (by position) it repeats.
+# Each is read from the page's generated payload, where its figures were registered and checked, so
+# the hub states exactly what the page it links to states (rule 2).
+HUB_POINTS = [
+    # Not the calculator's finding (it is the hub's answer) and not the rules page's "stabilization is
+    # at 6.00%", which measures against FY2026 and would sit beside the 6.24% FY2025 figure below.
+    ('Free cash', [('financial-policy-rules', 1), ('financial-policy-rules', 0)]),
+    ('The reserves', [('policies-in-practice', 0), ('policies-in-practice', 1)]),
+    ('Retiree health', [('retiree-health-liability', 0), ('retiree-health-liability', 2)]),
+    ('The debate', [('financial-policy-debate', 0)]),
+]
 MATH = os.path.join(ROOT, 'fy28', 'src', 'components', 'blocks', 'custom', 'policy-calculator-math.ts')
 COMPONENT = 'policy-calculator'
 BALANCE_FY = 2025   # the last year-end every balance below is printed for
@@ -336,8 +350,8 @@ def money(x):
 
 
 def page(payload):
-    """The hub: the calculator is its signature, the two settings' results at today's figures under
-    it as conclusions, then the stance and the documents. The four pages follow as the shelf's cards."""
+    """The calculator's own page: the calculator first, the two settings' results at today's figures
+    under it as conclusions, then the stance and the links to the four policy pages."""
     ex = payload['expected']
     t, d = ex['today']['uses'], ex['draft']['uses']
     fc = payload['block']['data']['defaults']['fc']
@@ -381,19 +395,60 @@ def page(payload):
         bad += brief.check_unit(x['label'], '%s fact %s' % (HUB, x['id']))
     if bad:
         FP.fail('\n  '.join(bad))
-    calc = TB.claims(dict(payload['block'], place='lead'), cons, facts)   # under the one-line answer
     stance = TB.explain('What this page does not say', [BFP.L(
         'This project recommends neither rule set. The calculator applies each as printed to figures the '
         'town has published, and to any figures you type. The boards decide.')], place='end', tone='define')
+    links = TB.explain('The financial policy pages', [BFP.L(
+        'What each rule says, how the reserves have moved against them, the retiree health liability, and '
+        'the public argument.')], place='end', tone='plain',
+        links=[(BFP.PAGES[k], BFP.path(k)) for k in BFP.PAGES])
+    cite = TP.cite
     sources = [BFP.SRC_FACT, BFP.src_manual(), BFP.src_sb(), BFP.SRC_DLS_ST, BFP.SRC_AUDIT, BFP.SRC_AR25]
-    docs = TB.explain('Where the figures and the rules come from', [BFP.L(
-        'Every rule a dial applies is quoted from the document that sets it, and every starting figure is '
-        'read from a published record.')], place='end', tone='plain',
-        links=[(x['label'], x['href']) for x in sources])
-    answer = ('Today\u2019s rules leave %s of %s in free cash to Town Meeting; the state\u2019s draft leaves %s. '
-              'The dials apply either rule set, or any other, to these figures.' % (C.usd(t['left']), C.usd(fc), C.usd(d_left)))
-    return TP.hub(HUB, answer, None, blocks=[calc, stance, docs],
-                  answer_figures={'a': U(t['left']), 'b': U(fc), 'c': U(d_left)})
+    flow = ['finding', cite(payload['block'], 'factsheet', 'manual', 'today', 'dlsst', 'audit', 'ar25'),
+            ('conclusion', 0), ('conclusion', 1), cite(stance, 'manual', 'today'), cite(links, 'manual'), 'sources']
+    finding = 'Today\u2019s rules leave %s of %s in free cash to Town Meeting; the draft leaves %s.' % (
+        C.usd(t['left']), C.usd(fc), C.usd(d_left))
+    return TP.page(PAGE_ID, finding, [], [], sources=sources,
+                   finding_figures={'a': U(t['left']), 'b': U(fc), 'c': U(d_left)},
+                   flow=BFP.inline(PAGE_ID, flow, facts, cons))
+
+
+def hub(calc_page):
+    """The shelf's hub: conclusions, each the sentence its own page states, linked to that page."""
+    def read(pid):
+        if pid == PAGE_ID:
+            return calc_page
+        f = os.path.join(TOPICS_DIR, pid + '.json')
+        if not os.path.exists(f):
+            FP.fail('policy calculator hub: %s is not built; run build_financial_policies.py first' % pid)
+        return json.load(io.open(f, encoding='utf-8'))
+    groups, said = [], []
+    for title, refs in HUB_POINTS:
+        pts = []
+        for pid, which in refs:
+            pg = read(pid)
+            claims = [c for bl in pg.get('blocks', []) for c in bl.get('claims', [])]
+            if which == 'finding':
+                text = pg['finding']['text']
+            elif which < len(claims):
+                text = claims[which]['text']
+            else:
+                FP.fail('policy calculator hub: %s has no conclusion %d' % (pid, which + 1))
+            name = BFP.PAGES.get(pid, 'Policy calculator')
+            pts.append(dict(text=text, href=BFP.path(pid), page=name))
+            said.append(text)
+        groups.append(dict(title=title, points=pts))
+    # Every sentence is registered as a whole: it passed rule 2 on its own page, from that page's figures.
+    points = TB.custom('talking-points', 'What the policies come to', dict(groups=groups), place='lead',
+                       figures=said, alt='Conclusions from the financial policy pages, each linked to its page',
+                       so='Each line is the conclusion its own page shows; the policy calculator applies either rule set to these figures.')
+    stance = TB.explain('What this page does not say', [BFP.L(
+        'This project recommends neither direction: not to save more, and not to spend more. The pages show '
+        'what each rule set would do to figures the town has published. The boards decide.')], place='end', tone='define')
+    # The answer is the calculator page's finding, with the figures that page registered for it.
+    answer = calc_page['finding']['text'] + ' The calculator applies either rule set, or any other.'
+    figs = calc_page['finding']['figures']
+    return TP.hub(HUB, answer, None, blocks=[points, stance], answer_figures=figs)
 
 
 def run_math(payload):
@@ -437,7 +492,8 @@ def main():
     payload = build()
     n = compare(payload)
     dump = lambda o: json.dumps(o, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + '\n'
-    out = {OUT: dump(payload), PAGE: dump(page(payload))}
+    cp = page(payload)
+    out = {OUT: dump(payload), PAGE: dump(cp), HUB_OUT: dump(hub(cp))}
     stale = [k for k, v in out.items() if not os.path.exists(k) or io.open(k, encoding='utf-8').read() != v]
     if a.check:
         if stale:
