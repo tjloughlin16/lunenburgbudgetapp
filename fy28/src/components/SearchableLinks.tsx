@@ -27,7 +27,8 @@ import { abs } from '../lib/abs'
  *  flex row would move the layout, and there the original is still the link.
  */
 
-type List = { prefix: string; keys: string[] }
+type List = { prefix: string; keys: string[]; has?: Record<string, 1> }
+type Has = (key: string) => boolean
 
 const MARK = 'data-searchable'
 // /docs/minutes/... is the published address of a key under meetings/ (functions/docs/_bucket.js)
@@ -45,7 +46,7 @@ function keyOf(href: string): string | null {
 
 const rawFor = new WeakMap<HTMLAnchorElement, HTMLElement>()
 
-function enhance(a: HTMLAnchorElement, keys: Set<string>, prefix: string) {
+function enhance(a: HTMLAnchorElement, keys: Has, prefix: string) {
   if (a.closest('.raw-pdf')) return
   const href = a.getAttribute('href') || ''
   // already done, and React has not changed the href since
@@ -54,7 +55,7 @@ function enhance(a: HTMLAnchorElement, keys: Set<string>, prefix: string) {
   if (old) { old.remove(); rawFor.delete(a) }
   a.removeAttribute(MARK)
   const key = keyOf(href)
-  if (!key || !keys.has(key)) return
+  if (!key || !keys(key)) return
   const display = getComputedStyle(a).display
   if (display !== 'inline' && display !== 'inline-block' && display !== 'contents') return
 
@@ -91,8 +92,12 @@ export function SearchableLinks() {
     const start = () => fetch('/data/searchable-pdfs.json')
       .then(r => (r.ok ? r.json() : null))
       .then((list: List | null) => {
-        if (stop || !list || !list.keys.length) return
-        const keys = new Set(list.keys)
+        if (stop || !list) return
+        // Look each linked PDF up in `has`, never read the whole list: what a page READS is
+        // what the prerender keys it on, so a lookup keeps a new searchable copy an input of
+        // only the pages that link to it. `keys` is the fallback for an older file.
+        const index = list.has
+        const keys: Has = index ? k => index[k] === 1 : (s => (k: string) => s.has(k))(new Set(list.keys))
         const sweep = (root: ParentNode) =>
           root.querySelectorAll<HTMLAnchorElement>('a[href*=".pdf" i]').forEach(a => enhance(a, keys, list.prefix))
         sweep(document)

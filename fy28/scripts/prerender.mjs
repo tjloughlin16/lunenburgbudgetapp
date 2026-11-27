@@ -453,7 +453,7 @@ async function whyNot(entry, route, key) {
   if (legacy ? !adoptLegacy : entry.format !== RENDER_FORMAT) return legacy ? 'rendered before the shell key changed' : 'render format changed'
   if (!legacy && entry.shell !== key) return 'shell or probe changed'
   if (entry.external) return 'reads another host'
-  if (entry.clock && entry.date !== today()) return 'reads the clock (rendered on an earlier day)'
+  if (entry.clock && entry.date !== today()) return CLOCK_CAUSE
   // The page itself, against the hash recorded beside it: a run killed after writing a page
   // and before writing the map leaves a newer page under an older entry.
   if (!existsSync(cachedFile(route)) || sha256(await readFile(cachedFile(route))) !== entry.html) {
@@ -519,8 +519,20 @@ function fingerprint(causes, total) {
   return sha256(JSON.stringify(major)).slice(0, 12)
 }
 
+/** PAGES THAT READ THE CLOCK RENDER EVERY DAY, BECAUSE THEY CHANGE EVERY DAY: a board page
+ *  says a meeting is "in 3 days". That is content changing, not waste, so up to
+ *  CLOCK_ALLOWANCE of them are not counted against the gate. The allowance is a number and
+ *  not "all of them" because the accident the gate was built for (16 November 2026) was a
+ *  menu hook that made EVERY page read the clock: past the allowance they count again. */
+const CLOCK_ALLOWANCE = Number(process.env.PRERENDER_CLOCK_ALLOWANCE) || 400
+const CLOCK_CAUSE = 'reads the clock (rendered on an earlier day)'
+
 async function gate(render, reasons, routes, global) {
-  if (render.length <= GATE) return false
+  const clock = render.filter(r => reasons[r] === CLOCK_CAUSE).length
+  const counted = render.length - Math.min(clock, CLOCK_ALLOWANCE)
+  if (clock) console.log(`build gate: ${clock} page(s) read the clock and change daily; ` +
+    `${Math.min(clock, CLOCK_ALLOWANCE)} not counted (allowance ${CLOCK_ALLOWANCE}); ${counted} counted against ${GATE}`)
+  if (counted <= GATE) return false
   const causes = summarise(reasons)
   const token = fingerprint(causes, render.length)
   let approval = null

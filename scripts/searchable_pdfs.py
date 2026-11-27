@@ -103,7 +103,12 @@ def write_register(rows):
     built = sorted(k for k, r in rows.items() if r['state'] == 'built')
     SITE_LIST.parent.mkdir(parents=True, exist_ok=True)
     tmp = SITE_LIST.with_suffix('.tmp')
-    tmp.write_text(json.dumps({'prefix': '/docs/' + PREFIX, 'keys': built}, separators=(',', ':')) + '\n')
+    # `has`: the same keys as an object, so a page LOOKS UP the PDFs it links rather than
+    # reading the whole list. The prerender records what a page read (prerender-incremental.mjs),
+    # and a lookup reads one key: a new searchable copy then re-renders only the pages that
+    # link to that PDF, where reading the list re-rendered every page with any PDF link.
+    tmp.write_text(json.dumps({'prefix': '/docs/' + PREFIX, 'keys': built,
+                               'has': {k: 1 for k in built}}, separators=(',', ':')) + '\n')
     os.replace(tmp, SITE_LIST)
 
 
