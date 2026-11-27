@@ -232,7 +232,7 @@ export function Person() {
           : ', which has published since without the name'}</Stat>
         <Stat value={span === 1 ? '1 year' : `${span} years`}>from the first roster that prints the name to the latest, inclusive, across {p.service.length === 1 ? 'one body' : `${p.service.length} bodies`}</Stat>
         {p.votes && <Stat value={String(p.votes.moved + p.votes.seconded)}>motions moved or seconded, at {p.votes.meetings} meetings, in the town&rsquo;s minutes</Stat>}
-        {p.named.count > 0 && <Stat value={String(p.named.count)}>town documents print the full name, of {p.named.corpus.toLocaleString()} searched</Stat>}
+        {p.named.count > 0 && <Stat value={String(p.named.count)}>town documents print the full name, of <span data-live="named-corpus">{p.named.corpus.toLocaleString()}</span> searched</Stat>}
       </div>
       <Body>A roster is a snapshot, undated within its year. The first year that prints a name is not a start date, and a year that omits it
         is not a departure &mdash; it is a year the town did not print it.</Body>
@@ -367,7 +367,7 @@ export function Person() {
 
       <H2 id="named">Named in the town&rsquo;s documents</H2>
       {p.named.count > 0 ? (<>
-        <Body>{p.named.count} of the {p.named.corpus.toLocaleString()} minutes, agendas and other documents the town published print &ldquo;{p.name}&rdquo; in full,
+        <Body>{p.named.count} of the <span data-live="named-corpus">{p.named.corpus.toLocaleString()}</span> minutes, agendas and other documents the town published print &ldquo;{p.name}&rdquo; in full,
           from {longDate(p.named.first!)} to {longDate(p.named.last!)}. That is a floor: minutes mostly print &ldquo;Mr.&rdquo; or &ldquo;Ms.&rdquo; and a surname.</Body>
         <ul className="mt-3 text-[13.5px] leading-relaxed max-w-3xl">
           {p.named.recent.map((d, i) => (
@@ -375,7 +375,7 @@ export function Person() {
           ))}
         </ul>
       </>) : (
-        <Body>None of the {p.named.corpus.toLocaleString()} documents the town published prints &ldquo;{p.name}&rdquo; in full. Minutes mostly print a surname, so this does not mean the name never appears.</Body>
+        <Body>None of the <span data-live="named-corpus">{p.named.corpus.toLocaleString()}</span> documents the town published prints &ldquo;{p.name}&rdquo; in full. Minutes mostly print a surname, so this does not mean the name never appears.</Body>
       )}
       <p className="text-[13.5px] mt-3"><a className="underline" style={link}
         href={`/search?${new URLSearchParams({ q: `"${p.name}"` })}`}>Search everything for &ldquo;{p.name}&rdquo; &rarr;</a></p>

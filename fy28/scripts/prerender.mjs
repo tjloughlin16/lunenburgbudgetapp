@@ -43,6 +43,10 @@ import { existsSync, rmSync } from 'node:fs'
 import { promisify } from 'node:util'
 import { join, extname, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import {
+  shellKey, shellAssets, relink, LIVE, spliceLive, liveKeys, legacyLiveSpans, isLiveRead,
+  readValue, readsHash, onlyLiveChanged, READ_PROBE, READ_PROBE_RE,
+} from './prerender-incremental.mjs'
 
 const execFileAsync = promisify(execFile)
 const HERE = dirname(fileURLToPath(import.meta.url))
@@ -267,7 +271,7 @@ async function readRoutes() {
  *  READ -- an observed dependency list, never a hand-kept one. Several Chrome processes
  *  sharing one server could not be told apart. */
 function serve(shell) {
-  const probed = shell.replace('<script type="module"', `${PROBE}<script type="module"`)
+  const probed = shell.replace('<script type="module"', `${PROBE}${READ_PROBE}<script type="module"`)
   const seen = new Set()
   const server = createServer(async (req, res) => {
     const path = decodeURIComponent(new URL(req.url, 'http://x').pathname)
@@ -366,6 +370,16 @@ function visibleText(html) {
 const CACHE = join(APP, '.prerender-cache')
 const CACHE_HTML = join(CACHE, 'html')
 const CACHE_DEPS = join(CACHE, 'deps.json')
+// What each page read out of each JSON file (the keys; the hash is in deps.json), and the
+// bytes of every JSON file a cached page was rendered against, by sha256. See
+// prerender-incremental.mjs. Both live in the cache, never in dist/.
+const CACHE_READS = join(CACHE, 'reads')
+const CACHE_BLOBS = join(CACHE, 'blobs')
+/** RENDER_FORMAT: BUMP BY HAND WHEN THE SHAPE OF THE OUTPUT HTML CHANGES -- what this script
+ *  writes around a page, not what the app renders. It replaced this script's own text in the
+ *  key (27 November 2026), which re-rendered every page for a comment edit. A bump renders
+ *  every page, so it is a decision, and the gate below still stops it. */
+const RENDER_FORMAT = 2
 const JOBS = Math.max(1, Number(process.env.PRERENDER_JOBS) || 4)
 // `cdp` (default): ONE Chrome for the whole run, driven over the DevTools pipe -- see
 // CdpBrowser below. `launch`: the old way, a fresh Chrome per route with --dump-dom. Kept
@@ -398,11 +412,46 @@ async function hashOf(path) {
   return hashes.get(path)
 }
 
+const jsonCache = new Map()
+/** A file in dist/ parsed as JSON, memoised; undefined when it is not JSON. */
+async function jsonOf(path) {
+  if (!jsonCache.has(path)) {
+    jsonCache.set(path, (async () => {
+      try { return JSON.parse(await readFile(join(DIST, path), 'utf8')) } catch { return undefined }
+    })())
+  }
+  return jsonCache.get(path)
+}
+const readsFile = route => join(CACHE_READS, `${encodeURIComponent(route)}.json`)
+const blobFile = h => join(CACHE_BLOBS, `${h}.json`)
+/** Keep the bytes of a JSON input by hash, so a later build can say what changed in it. */
+async function keepBlob(path, h) {
+  if (h === 'shell' || !path.endsWith('.json') || existsSync(blobFile(h))) return
+  try {
+    await mkdir(CACHE_BLOBS, { recursive: true })
+    const tmp = `${blobFile(h)}.${process.pid}.tmp`
+    await writeFile(tmp, await readFile(join(DIST, path)))
+    await rename(tmp, blobFile(h))
+  } catch { /* not a file: nothing to keep */ }
+}
+
+/** Legacy entries -- rendered before the shell was keyed without its asset names -- carry
+ *  neither `shell` nor `format`. They are adopted only on request (PRERENDER_ADOPT_LEGACY),
+ *  and only after main() has proved the shell source is unchanged since they were made. */
+let adoptLegacy = false
+
 /** null when the cached page can be reused; otherwise WHY NOT, as a short stable key. The
- *  key is what the build gate below counts, so it names a cause, never a route. */
-async function whyNot(entry, route, global) {
+ *  key is what the build gate below counts, so it names a cause, never a route.
+ *
+ *  The bundle is NOT an input: a reused page is relinked to the new one (see
+ *  prerender-incremental.mjs). A data file that changed is an input change only when a value
+ *  this page READ changed, or -- for a page with no record of its reads -- when the file
+ *  changed anywhere but a LIVE path. */
+async function whyNot(entry, route, key) {
   if (!entry) return 'never rendered before'
-  if (entry.global !== global) return 'shell, probe or prerender script changed'
+  const legacy = entry.format === undefined
+  if (legacy ? !adoptLegacy : entry.format !== RENDER_FORMAT) return legacy ? 'rendered before the shell key changed' : 'render format changed'
+  if (!legacy && entry.shell !== key) return 'shell or probe changed'
   if (entry.external) return 'reads another host'
   if (entry.clock && entry.date !== today()) return 'reads the clock (rendered on an earlier day)'
   // The page itself, against the hash recorded beside it: a run killed after writing a page
@@ -410,9 +459,25 @@ async function whyNot(entry, route, global) {
   if (!existsSync(cachedFile(route)) || sha256(await readFile(cachedFile(route))) !== entry.html) {
     return 'cached page missing or altered'
   }
+  const moved = {}
+  let keys = null
   for (const [path, h] of Object.entries(entry.deps)) {
-    if (await hashOf(path) !== h) return `input changed: ${path}`
+    if (path.startsWith('/assets/')) continue
+    const now = await hashOf(path)
+    if (now === h) continue
+    const json = await jsonOf(path)
+    if (json !== undefined && entry.reads?.[path]) {
+      if (!keys) { try { keys = JSON.parse(await readFile(readsFile(route), 'utf8')) } catch { keys = {} } }
+      if (keys[path] && readsHash(json, keys[path]) === entry.reads[path]) { moved[path] = now; continue }
+    } else if (json !== undefined && existsSync(blobFile(h))) {
+      let before
+      try { before = JSON.parse(await readFile(blobFile(h), 'utf8')) } catch { /* unreadable blob */ }
+      if (before !== undefined && onlyLiveChanged(path, before, json)) { moved[path] = now; continue }
+    }
+    return `input changed: ${path}`
   }
+  // Every change was outside what this page shows: the entry follows the files.
+  for (const [path, now] of Object.entries(moved)) { entry.deps[path] = now; await keepBlob(path, now) }
   return null
 }
 
@@ -562,20 +627,71 @@ async function main() {
   // reuses nothing: 17-20 November 2026 each wanted all 3,872 routes and stopped at the
   // gate. The preamble is not rendered -- it is spliced on afterwards -- so a reused page
   // gets TODAY's preamble below instead of the one it was cached with.
-  const global = sha256(shell.slice(shell.indexOf('<html')) + PROBE + await readFile(fileURLToPath(import.meta.url), 'utf8'))
+  // THE SHELL KEY, without the bundle's names: a new bundle is not a new shell, and a reused
+  // page is relinked to it below. Nor is this script's text in it any more: RENDER_FORMAT is.
+  const global = sha256(shellKey(shell) + PROBE + READ_PROBE + RENDER_FORMAT)
+  const assets = shellAssets(shell)
+  if (!assets.js) throw new Error('dist/index.html: no /assets/*.js entry script to relink pages to')
+  const manifest = JSON.parse(await readFile(join(APP, 'src', 'data', 'agent-manifest.json'), 'utf8'))
+  // ADOPTING THE CACHE MADE BEFORE THIS KEY EXISTED. Its pages were rendered from a shell
+  // that may differ only in asset names; that is proved, not assumed: the shell source
+  // (fy28/index.html) must be byte-identical at the commit named and now.
+  if (process.env.PRERENDER_ADOPT_LEGACY) {
+    const at = process.env.PRERENDER_ADOPT_LEGACY
+    const { stdout: then } = await execFileAsync('git', ['show', `${at}:fy28/index.html`], { cwd: APP, maxBuffer: 1 << 24 })
+    const nowShell = await readFile(join(APP, 'index.html'), 'utf8')
+    if (then !== nowShell) throw new Error(`PRERENDER_ADOPT_LEGACY=${at}: fy28/index.html differs from that commit, so its cached pages cannot be adopted`)
+    adoptLegacy = true
+    console.log(`adopting cached pages rendered before the shell key changed: index.html is unchanged since ${at}`)
+    // Their JSON inputs' bytes, from that commit, kept only where the sha256 matches what
+    // the page recorded: what lets a file whose only change is a LIVE figure count as
+    // unchanged for a page that has no record of what it read.
+    let pre = {}
+    try { pre = JSON.parse(await readFile(CACHE_DEPS, 'utf8')) } catch { /* none */ }
+    const want = new Map()
+    for (const e of Object.values(pre)) {
+      if (e.format !== undefined) continue
+      for (const [path, h] of Object.entries(e.deps)) {
+        if (path.endsWith('.json') && h !== 'shell' && !existsSync(blobFile(h))) want.set(h, path)
+      }
+    }
+    let kept = 0
+    if (want.size) {
+      await mkdir(CACHE_BLOBS, { recursive: true })
+      const objs = await gitObjects(at, [...want.values()].map(p => `fy28/public${p}`))
+      for (const [h, path] of want) {
+        const buf = objs.get(`fy28/public${path}`)
+        if (buf && sha256(buf) === h) { await writeFile(blobFile(h), buf); kept++ }
+      }
+    }
+    console.log(`  kept ${kept} of ${want.size} earlier JSON inputs from ${at}, each matched by sha256`)
+  }
   let deps = {}
   try { deps = JSON.parse(await readFile(CACHE_DEPS, 'utf8')) } catch { /* first run */ }
   const full = !!process.env.FULL || only.length > 0
+  // RENDER_ALSO=/a,/b: render these as well as whatever changed, reusing everything else.
+  // For pages whose COMPONENT changed in this deploy, which a relink would leave in the
+  // previous layout for readers without JavaScript.
+  const also = (process.env.RENDER_ALSO || '').split(',').map(r => r.trim()).filter(Boolean)
+  const unknown = also.filter(r => !all.includes(r))
+  if (unknown.length) { console.error(`RENDER_ALSO names routes this build does not have: ${unknown.join(', ')}`); process.exit(1) }
   const reuse = [], render = [], reasons = {}
   for (const route of routes) {
     const why = full ? (process.env.FULL ? 'FULL=1 asked for every route' : 'named in ONLY')
+      : also.includes(route) ? 'named in RENDER_ALSO (its component changed)'
       : await whyNot(deps[route], route, global)
     if (why === null) reuse.push(route)
     else { render.push(route); reasons[route] = why }
   }
-  console.log(`${render.length} to render, ${reuse.length} reused (every input unchanged)` +
+  console.log(`${render.length} to render, ${reuse.length} reused (relinked to the new bundle; every input they read unchanged)` +
     (process.env.FULL ? ' — FULL=1' : '') + `, ${JOBS} at a time, engine ${ENGINE}`)
   for (const c of summarise(reasons).slice(0, 8)) console.log(`  ${String(c.routes).padStart(6)}  ${c.cause}`)
+  // DRYRUN=1: the decision and its causes, then stop. Nothing rendered, nothing written.
+  if (process.env.DRYRUN) {
+    for (const c of summarise(reasons)) console.log(`DRYRUN ${String(c.routes).padStart(6)}  ${c.cause}`)
+    if (process.env.DRYRUN_OUT) await writeFile(process.env.DRYRUN_OUT, JSON.stringify({ reuse, reasons }, null, 1))
+    process.exit(0)
+  }
   const approved = !only.length && await gate(render, reasons, routes, global)
 
   const servers = Array.from({ length: Math.min(JOBS, Math.max(render.length, 1)) }, () => serve(shell))
@@ -629,6 +745,20 @@ async function main() {
     return null
   }
 
+  /** Today's value of every live figure on a page. `files`: what the page read, so a
+   *  person's page takes its figure from that person's file. */
+  async function splice(route, html, files) {
+    const vals = {}
+    for (const key of liveKeys(html)) {
+      const l = LIVE[key]
+      if (!l) continue
+      if (!l.file) { vals[key] = l.value({ manifest }); continue }
+      const f = files.find(p => l.file.test(p))
+      vals[key] = f ? l.value({ json: await jsonOf(f) }) : undefined
+    }
+    return spliceLive(html, k => vals[k])
+  }
+
   async function write(route, html, text) {
     if (route !== '/' && !sitemap.includes(`<loc>https://lunenburgbudgetproject.org${route}</loc>`)) {
       failures.push(`${route}: rendered fine but is missing from public/sitemap.xml`)
@@ -645,19 +775,38 @@ async function main() {
 
   // THE REUSED PAGES go through every check a rendered one does. A cached file is not
   // trusted for being cached.
+  //
+  // A REUSED PAGE IS RELINKED: its references to the previous bundle rewritten to this
+  // one's, and its LIVE figures set to today's. A page that cannot be relinked one to one,
+  // or that names any other /assets/ file this build does not have, is rendered instead.
+  const relinkFailed = []
   for (const route of reuse) {
     const cached = await readFile(cachedFile(route), 'utf8')
     const at = cached.indexOf('<html')
     // Today's preamble, not the cached one: see THE PREAMBLE IS NOT PART OF THE KEY.
-    const html = at < 0 ? cached : preamble + cached.slice(at)
+    let html = relink(at < 0 ? cached : preamble + cached.slice(at), assets)
+    const stray = html && [...html.matchAll(/\/assets\/[A-Za-z0-9_.-]+/g)].map(m => m[0])
+      .find(a => !existsSync(join(DIST, a)))
+    if (!html || stray) { relinkFailed.push(route); reasons[route] = stray ? `names ${stray}, not in this build` : 'could not be relinked one to one'; continue }
+    const live = await splice(route, legacyLiveSpans(html), Object.keys(deps[route].deps))
+    if (live.missing.length) { relinkFailed.push(route); reasons[route] = `live figure unknown: ${live.missing.join(', ')}`; continue }
+    html = live.html
     const text = visibleText(html)
     const bad = check(route, html, text) || (html.includes(`<link rel="canonical" href="${SITE}${route}">`)
       ? null : `${route}: cached page has no canonical link`)
     if (bad) { failures.push(bad); delete deps[route]; continue }
     await write(route, html, text)
+    // An adopted legacy entry has now been proved against this shell: it carries the key.
+    deps[route].shell = global
+    deps[route].format = RENDER_FORMAT
+  }
+  if (relinkFailed.length) {
+    console.log(`${relinkFailed.length} cached page(s) could not be relinked and are rendered instead`)
+    for (const r of relinkFailed) { reuse.splice(reuse.indexOf(r), 1); render.push(r) }
   }
 
   let done = 0
+  let readsDisagreed = 0
   const t0 = Date.now()
   async function renderOne(route, server) {
     const url = `http://localhost:${server.address().port}${route}`
@@ -675,12 +824,13 @@ async function main() {
     // page, seconds — and a route that fails TWICE is a real failure and still reported,
     // so this buys tolerance of a flake without hiding a break.
     let lastErr = null
+    let pageReads = null
     for (let attempt = 0; attempt < 2 && html === undefined; attempt++) {
       server.seen.clear()
       try {
-        const stdout = browser
+        const dumped = browser
           ? await browser.dumpDom(url, ROUTE_TIMEOUT, server)
-          : (await execFileAsync(chrome, [
+          : { dom: (await execFileAsync(chrome, [
             '--headless', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
             // React and recharts settle on timers; virtual time lets Chrome run them to
             // completion immediately rather than us guessing at a sleep.
@@ -691,7 +841,9 @@ async function main() {
             maxBuffer: 64 * 1024 * 1024,
             timeout: ROUTE_TIMEOUT,   // see ROUTE_TIMEOUT: a hang must fail, not wait
             killSignal: 'SIGKILL',
-          })).stdout
+          })).stdout, reads: null }
+        const stdout = dumped.dom
+        pageReads = dumped.reads
         html = preamble + stdout.slice(stdout.indexOf('<html'))
       } catch (e) {
         lastErr = e
@@ -726,7 +878,7 @@ async function main() {
     const clock = /<html[^>]* data-pr-clock="1"/.test(html)
     const external = /<html[^>]* data-pr-external="1"/.test(html)
     const read = [...server.seen].sort()
-    html = html.replace(PROBE_RE, '').replace(MARK_RE, '')
+    html = html.replace(PROBE_RE, '').replace(READ_PROBE_RE, '').replace(MARK_RE, '')
 
     const text = visibleText(html)
     const bad = check(route, html, text)
@@ -753,12 +905,36 @@ async function main() {
       failures.push(`${route}: could not inject the canonical link — no </head> found`)
       return
     }
+    // A rendered page's live figures must already be today's: if splicing changes it, the
+    // component and LIVE format the figure differently, and every reused page would be wrong.
+    const live = await splice(route, html, read)
+    if (live.missing.length || live.html !== html) {
+      failures.push(`${route}: live figure ${live.missing.join(', ') || 'formatted differently from LIVE in prerender-incremental.mjs'}`)
+      return
+    }
     await write(route, html, text)
 
     await writeFile(cachedFile(route), html)
+    const files = read.filter(p => !p.startsWith('/assets/'))
+    const hashed = Object.fromEntries(await Promise.all(files.map(async p => [p, await hashOf(p)])))
+    // WHAT THE PAGE READ, PROVED AGAINST THE FILE. Each recorded value is recomputed from the
+    // file as served; any disagreement and that file is keyed whole, as before.
+    const reads = {}, keys = {}
+    for (const [p, rec] of Object.entries(pageReads || {})) {
+      if (!(p in hashed) || rec.whole) continue
+      const json = await jsonOf(p)
+      if (json === undefined) continue
+      const ks = Object.keys(rec.r).filter(k => !isLiveRead(p, k))
+      if (Object.keys(rec.r).some(k => readValue(json, k) !== rec.r[k])) { readsDisagreed++; continue }
+      keys[p] = ks
+      reads[p] = readsHash(json, ks)
+    }
+    await mkdir(CACHE_READS, { recursive: true })
+    await writeFile(readsFile(route), JSON.stringify(keys))
+    for (const [p, h] of Object.entries(hashed)) await keepBlob(p, h)
     deps[route] = {
-      global, clock, external, date: today(), html: sha256(html),
-      deps: Object.fromEntries(await Promise.all(read.map(async p => [p, await hashOf(p)]))),
+      shell: global, format: RENDER_FORMAT, clock, external, date: today(), html: sha256(html),
+      deps: hashed, reads,
     }
     done++
     const flags = [clock && 'clock', external && 'external'].filter(Boolean).join(', ')
@@ -807,7 +983,8 @@ async function main() {
   }
   const secs = ((Date.now() - startedAt) / 1000).toFixed(0)
   console.log(`\n${rows.length}/${routes.length} routes written into dist/: ` +
-    `rendered ${done}, reused ${reuse.length}, in ${secs}s`)
+    `rendered ${done}, reused ${reuse.length}, in ${secs}s` +
+    (readsDisagreed ? ` (${readsDisagreed} page file(s) keyed whole: recorded reads did not recompute)` : ''))
 
   if (failures.length) {
     console.error(`\n${failures.length} problem(s):`)
@@ -1123,7 +1300,12 @@ class CdpBrowser {
           returnByValue: true,
         })
         if (r.exceptionDetails || typeof r.result?.value !== 'string') throw cdpError('could not read the DOM')
-        return r.result.value + '\n'
+        // What the page read out of each JSON file (READ_PROBE). Absent is not an error: the
+        // page is then keyed on whole files, as it always was.
+        const q = await s('Runtime.evaluate', { expression: 'JSON.stringify(window.__pr_reads || null)', returnByValue: true })
+        let reads = null
+        try { reads = JSON.parse(q.result?.value) } catch { /* none */ }
+        return { dom: r.result.value + '\n', reads }
       })()
       const out = await Promise.race([work, new Promise((_, reject) => {
         timer = setTimeout(() => reject(cdpError(`no DOM in ${timeout / 1000}s — wedged`)), timeout)
@@ -1175,6 +1357,32 @@ class CdpBrowser {
     for (const d of this.dirs) await rm(d, { recursive: true, force: true }).catch(() => {})
     if (this.launches) console.log(`chrome launched ${this.launches} time(s) for this run; its profile removed`)
   }
+}
+
+/** Many files at one commit, in one `git cat-file --batch`. Missing paths are left out. */
+function gitObjects(commit, paths) {
+  return new Promise((resolve, reject) => {
+    const p = spawn('git', ['cat-file', '--batch'], { cwd: APP, stdio: ['pipe', 'pipe', 'inherit'] })
+    const chunks = []
+    p.stdout.on('data', c => chunks.push(c))
+    p.on('error', reject)
+    p.on('close', () => {
+      const buf = Buffer.concat(chunks), out = new Map()
+      let i = 0, n = 0
+      while (i < buf.length && n < paths.length) {
+        const nl = buf.indexOf(10, i)
+        const head = buf.slice(i, nl).toString()
+        i = nl + 1
+        const path = paths[n++]
+        if (head.endsWith(' missing')) continue
+        const size = Number(head.split(' ')[2])
+        out.set(path, buf.slice(i, i + size))
+        i += size + 1
+      }
+      resolve(out)
+    })
+    p.stdin.end(paths.map(x => `${commit}:${x}`).join('\n') + '\n')
+  })
 }
 
 function cdpError(message) {

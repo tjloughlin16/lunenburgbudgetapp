@@ -24,6 +24,8 @@ import MANIFEST from '../data/agent-manifest.json'
  *  resolves to a real file, and `/agents` carries the long tail. See AgentsIndex.tsx. */
 export function DataFooter() {
   const host = MANIFEST.site.replace(/^https?:\/\//, '')
+  // A LIVE figure (scripts/prerender-incremental.mjs): it changes with every refresh, so the
+  // prerender writes today's value into every page rather than re-rendering every page.
   const corpus = MANIFEST.corpus || ''
   // Absolute: this footer is the one thing on every page that names a machine-readable
   // address, and a relative href is an address only to a caller that already knows where
@@ -41,7 +43,7 @@ export function DataFooter() {
       {link('/mcp')} · {link('/llms.txt')} · {link('/minutes/INDEX.txt')} ·{' '}
       {link('/data/minutes-index.csv')}
       {' · '}{link('/api/index')} · {link('/agents')}
-      {corpus ? ` — full text of ${corpus.split(' across ')[0]}, across every town board.` : '.'}
+      {corpus ? <> — full text of <span data-live="corpus">{corpus.split(' across ')[0]}</span>, across every town board.</> : '.'}
     </p>
   )
 }
