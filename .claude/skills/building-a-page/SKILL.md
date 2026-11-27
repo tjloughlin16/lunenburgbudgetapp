@@ -152,6 +152,26 @@ in the note) · a digit in block prose needs `allow=` if it is not a registered 
 - **Same denominator everywhere.** One figure must not read "16 of 17 years" on one page and
   "12 of 13 bad years" on another.
 
+## Conventions settled 27 November 2026 (on /school-all-funds/fy2026-closeout/why-it-was-left)
+
+- **Print the difference; never leave the reader to subtract.** A table across years carries a
+  change column, and where offsets exist, what is left after them. TJ: *"i want to see the DIFFs
+  too. i am mentally doing the math constantly to find the problem lines."* The column that found
+  the real rows was "Still short": MIIA fell $836k on the vendor line and was $0 short once its
+  June reclasses were counted. Sort or flag by the figure that identifies a problem row, not by
+  raw size -- sorted by size, the false lead was the first row.
+- **A ranked set includes every category that qualifies, even one with its own page.**
+  Out-of-district tuition was excluded by name ("it has its own page") while ranking fifth by
+  what it left. TJ: *"where are the out of district lines too?!"* A reader takes a comparison set
+  as complete. Widen the set rather than displace another category, and if one truly must be left
+  out, say so beside the chart.
+- **A vendor or month view of the journal can mistake a reclass for spending that stopped.**
+  Account and category totals include every reclass; views by vendor, by month, or across the
+  town/school line do not. Check the account total before calling a vendor's fall a cut. See
+  `notes/findings/JOURNAL-RECLASSES.md`.
+- **Long category names on a bar chart wrap to their column** (`TopicCharts.tsx`, `WrapTick`);
+  nothing to do per page. Past twelve categories the axis still thins its ticks.
+
 ## Review checklist, for every page
 
 1. What is the one thing this page is for? Is it the first thing on it (rule 7a)?
