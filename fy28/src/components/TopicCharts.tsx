@@ -428,7 +428,30 @@ function Overlay({ c }: { c: SeriesChart }) {
   )
 }
 
+/** Break a label at spaces into lines of at most `n` characters (a single long word keeps
+ *  its own line rather than being cut). */
+function wrapWords(s: string, n: number): string[] {
+  const out: string[] = []
+  for (const w of s.split(' ')) {
+    const last = out[out.length - 1]
+    if (last != null && (last + ' ' + w).length <= n) out[out.length - 1] = last + ' ' + w
+    else out.push(w)
+  }
+  return out
+}
+
+function WrapTick({ x, y, payload, perLine }: { x: number; y: number; payload: { value: string }; perLine: number }) {
+  let lines = wrapWords(String(payload.value), perLine)
+  if (lines.length > 3) lines = [...lines.slice(0, 2), lines.slice(2).join(' ')]
+  return (
+    <text x={x} y={y + 4} textAnchor="middle" fill="var(--text-muted)" fontSize={11}>
+      {lines.map((l, i) => <tspan key={i} x={x} dy={i === 0 ? '0.71em' : 13}>{l}</tspan>)}
+    </text>
+  )
+}
+
 function Series({ c }: { c: SeriesChart }) {
+  const [chartW, setChartW] = useState(0)
   if (c.multiples) return <Multiples c={c} />
   if (c.overlay) return <Overlay c={c} />
   // THE TOTALS RIDE ON AN INVISIBLE CAP BAND, one per x, never on the top track: recharts
@@ -459,6 +482,14 @@ function Series({ c }: { c: SeriesChart }) {
   })()
   // One kind across every track is said once, beside the title, not on every key.
   const common = c.series.every(s => s.basis === c.series[0].basis) ? c.series[0].basis : undefined
+  // CATEGORY NAMES WRAP TO THEIR OWN SLOT. Recharts sets a tick on one line however wide,
+  // so five names like "Supplies, services & everything else" ran into each other (found
+  // 27 November 2026 on /school-all-funds/fy2026-closeout/why-it-was-left). Each tick gets
+  // the width of its column and breaks at words; the axis grows to the tallest label.
+  const every = c.x.length <= 12
+  const plot = Math.max(120, (chartW || 640) - (c.unit === '$' ? 54 : 44) - (c.secondary ? 48 : 22))
+  const perLine = Math.max(6, Math.floor((plot / c.x.length - 6) / 6.1))
+  const tickLines = every ? Math.min(3, Math.max(...c.x.map(x => wrapWords(x, perLine).length))) : 1
   return (
     <Frame title={c.title} basis={common} note={c.note} use={c.use} label={seriesLabel(c)}>
       {c.series.length > 1 ? (
@@ -469,12 +500,14 @@ function Series({ c }: { c: SeriesChart }) {
             basis={c.secondary.basis} mark="line" tag={!common} /> : null}
         </div>
       ) : null}
-      <div style={{ height: 260 }} aria-hidden>
-        <ResponsiveContainer width="100%" height="100%">
+      <div style={{ height: 260 + (tickLines - 1) * 13 }} aria-hidden>
+        <ResponsiveContainer width="100%" height="100%" onResize={w => setChartW(w)}>
           <ComposedChart data={rows} margin={{ top: c.totals ? 22 : 6, right: c.secondary ? 4 : 22, bottom: 0, left: 0 }} barGap={2}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
-            <XAxis dataKey="x" interval={c.x.length <= 12 ? 0 : 'preserveStartEnd'} minTickGap={c.x.length <= 12 ? 2 : 14}
-              tick={{ fill: 'var(--text-muted)', fontSize: 11 }} stroke="var(--axis)" tickLine={false} />
+            <XAxis dataKey="x" interval={every ? 0 : 'preserveStartEnd'} minTickGap={every ? 2 : 14}
+              height={30 + (tickLines - 1) * 13}
+              tick={tickLines > 1 ? (p: any) => <WrapTick {...p} perLine={perLine} /> : { fill: 'var(--text-muted)', fontSize: 11 }}
+              stroke="var(--axis)" tickLine={false} />
             <YAxis width={c.unit === '$' ? 54 : 44}
               domain={domain?.range} ticks={domain?.ticks} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
               stroke="var(--axis)" tickLine={false} axisLine={false}
