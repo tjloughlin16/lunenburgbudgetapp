@@ -23,7 +23,7 @@ export type Block =
       col_label: string; legend: Legend; note?: Unit
       row_measures?: Measure[][]; col_measures?: Measure[][]; gaps?: Unit[]
       cells: { verdict: string; title: string; why: Unit; basis: Basis; lands_on?: string; measures: Measure[]
-        chips?: { label: string; solidity: Measure['solidity'] }[] }[][] }
+        chips?: { label: string; solidity: Measure['solidity'] | 'reading' }[] }[][] }
   | { block: 'timeline'; place: Place; title: string; periods: string[]; legend: Legend; verdicts: Legend; note?: Unit
       marker?: { after: number; label: string }; event_label: string
       groups: { heading: string; tracks: { label: string; states: (string | null)[]; event: number | null
@@ -40,6 +40,7 @@ export type Block =
 /** A figure on a matrix, with how solid it is (scripts/topic_blocks.py measure()). */
 type Measure = { label: string; value: string; solidity: 'published' | 'estimate' | 'gap' }
 const SOLID: Record<Measure['solidity'], string> = { published: 'Published', estimate: 'Our estimate', gap: 'Gap in data' }
+const CHIP_SOLID: Record<Measure['solidity'] | 'reading', string> = { ...SOLID, reading: 'Our reading' }
 
 function Measures({ ms, compact }: { ms?: Measure[]; compact?: boolean }) {
   if (!ms?.length) return null
@@ -163,8 +164,8 @@ function MatrixCell({ c, l, col }: { c: Extract<Block, { block: 'matrix' }>['cel
           {c.chips.map(ch => (
             <span key={ch.label} className="text-[11.5px] font-semibold px-1.5 py-0.5 rounded-sm whitespace-nowrap"
               style={{ color: 'var(--surface-1)', background: 'var(--text-primary)',
-                boxShadow: ch.solidity === 'estimate' ? 'inset 3px 0 0 var(--status-warning)' : undefined }}
-              title={SOLID[ch.solidity]}>{ch.label}<span className="font-normal opacity-80"> · {SOLID[ch.solidity]}</span></span>))}
+                boxShadow: ch.solidity === 'estimate' || ch.solidity === 'reading' ? 'inset 3px 0 0 var(--status-warning)' : undefined }}
+              title={CHIP_SOLID[ch.solidity]}>{ch.label}<span className="font-normal opacity-80"> · {CHIP_SOLID[ch.solidity]}</span></span>))}
         </span>) : null}
       <span className="text-[14.5px] font-semibold leading-snug">{c.title}</span>
       {c.lands_on ? <span className="text-[13px]" style={muted}>Lands on: <span style={{ color: 'var(--text-primary)' }}>{c.lands_on}</span></span> : null}

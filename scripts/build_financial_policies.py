@@ -176,11 +176,34 @@ SRC_CAP = dict(key='capital', label='FY27 capital plan, ten-year funding table F
 
 # ------------------------------------------------------------------------------ page 1
 
+# WHICH KIND OF CHANGE EACH RULE IS (TJ, 27 November 2026: "i want to see the poilcies, and know if
+# theya re changing targets or polices ... guidelines of behavior"). A TARGET is a level the town
+# plans toward (a balance, a ceiling, a share of the budget); a GUIDELINE OF BEHAVIOR is how money is
+# set aside or spent (a split, a deposit, a draw, a method). Our reading of the draft against today's
+# rules, cell by cell of the matrix below; an absent cell is one the draft leaves as it is. Drawn as
+# chips on the rules page and rolled up per policy on the hub, never on the calculator.
+KIND_LABEL = {'target': 'Changes a target', 'guideline': 'Changes a guideline of behavior'}
+KINDS = {
+    (0, 0): ('target',), (0, 1): ('guideline',),
+    (1, 0): ('target', 'guideline'), (1, 1): ('guideline',),
+    (2, 0): ('target', 'guideline'),
+    (4, 0): ('guideline',),
+    (5, 0): ('guideline',),
+    (6, 0): ('guideline',), (6, 1): ('target',),
+    (7, 0): ('guideline',),
+}
+POLICY_ROWS = ['Free cash', 'General stabilization', 'Special purpose funds', 'Reserve fund',
+               'Retiree health (OPEB)', 'Capital', 'Debt', 'Revenue estimates']
+
+
+def row_kinds(r):
+    return [k for k in ('target', 'guideline') if any(k in KINDS.get((r, c), ()) for c in (0, 1))]
+
+
 def dials_matrix(b):
     """The two dials, policy by policy. Verdicts are our reading of today's rule against the draft."""
     fs = '{fc}'
-    rows = ['Free cash', 'General stabilization', 'Special purpose funds', 'Reserve fund',
-            'Retiree health (OPEB)', 'Capital', 'Debt', 'Revenue estimates']
+    rows = POLICY_ROWS
     cols = ['Money in: what is set aside', 'Money out: what may be spent, by what vote']
     R = ('reading', 'Our reading of both documents')
     W = ('law', 'Statute: M.G.L. c. 40, §5B')
@@ -292,6 +315,13 @@ def dials_matrix(b):
         MS[k].append(m)
     for k, ms in MS.items():
         cells[k]['measures'] = ms
+    for k, ks in KINDS.items():
+        if cells[k]['verdict'] in ('same', 'none'):
+            FP.fail('rules matrix: %s is classed as a change but its verdict is %r' % (k, cells[k]['verdict']))
+        cells[k]['chips'] = [(KIND_LABEL[x], 'reading') for x in ks]
+    for k, c in cells.items():
+        if k not in KINDS and c['verdict'] not in ('same', 'none'):
+            FP.fail('rules matrix: %s changes something and has no kind' % (k,))
     legend = [('new', 'Draft sets what today’s rules do not', 'other'),
               ('more', 'Draft sets more by rule', 'other'),
               ('same', 'Much the same', 'neutral'),
@@ -300,8 +330,8 @@ def dials_matrix(b):
     m = TB.matrix('Two dials, policy by policy', rows, cols, cells, legend, place='lead',
                   row_label='Policy', col_label='Dial',
                   note=L('Money in is what is set aside before a budget is drawn up. Money out is what a '
-                         'fund may pay for, and the vote it takes. The verdicts are our reading of the two '
-                         'documents.'))
+                         'fund may pay for, and the vote it takes. The verdicts, and whether a change is to '
+                         'a target or to a guideline of behavior, are our reading of the two documents.'))
     verdicts = [cells[(r, c)]['verdict'] for r in range(len(rows)) for c in range(2)]
     set_by_draft = sum(1 for v in verdicts if v in ('new', 'more'))
     on_in = sum(1 for r in range(len(rows)) if cells[(r, 0)]['verdict'] in ('new', 'more'))
@@ -800,6 +830,186 @@ def page_debate(b):
     return page, dict(titles=titles, n_cap=n_cap, n_rows=len(rows), rows=rows)
 
 
+# ------------------------------------------------------------------------- the hub's policy list
+
+# WHAT THE MEETING RECORD SHOWS, per policy: rows of financial-policy-record.csv by date and board,
+# each restated short. Every date is asserted present in the record with that board, so the hub
+# cites only meetings the debate page lists. A policy no meeting raises says so (TJ, 27 November
+# 2026: "im confused why the finance committee might be concerned"): the record shows WHAT was said,
+# and no line here says why anybody holds a view (rule 7).
+RECORD_BY_POLICY = {
+    'Free cash': [('2018-08-23', 'Finance Committee', 'voted 6-0 to recommend a change to the free cash policy', ('6-0',)),
+                  ('2026-03-16', 'Select Board', 'the Town Manager cautioned that less free cash will be generated', ())],
+    'General stabilization': [('2025-04-03', 'Finance Committee', 'voted 6-0 to take no action on free cash to it', ('6-0',)),
+                              ('2026-04-14', 'Select Board', 'a resident questioned adding to reserves while schools face cuts', ())],
+    'Special purpose funds': [('2025-04-03', 'Finance Committee', 'voted 6-0 to take no action on free cash to them', ('6-0',))],
+    'Reserve fund': [('2025-04-03', 'Finance Committee', 'in public comment, called an account for emergencies, not a piggy bank', ()),
+                     ('2026-05-28', 'Finance Committee', 'a larger reserve fund raised, in our captions only', ())],
+    'Retiree health (OPEB)': [('2018-01-02', 'Board of Selectmen', 'approved today’s 10% funding policy', ('10%',))],
+    'Capital': [('2026-10-22', 'Finance Committee', 'in public comment, the capital planning process called unwieldy and undemocratic, in our captions only', ())],
+    'Debt': [],
+    'Revenue estimates': [('2024-09-12', 'Finance Committee', 'receipts said to be estimated well below collections, in our captions only', ()),
+                          ('2026-05-28', 'Finance Committee', 'local receipts said not to have come in under $4 million in ten years', ('$4',))],
+}
+# The Town Manager's goal of 14 July 2026 names four policies to adopt by December (the record's own words:
+# "OPEB, stabilization and reserves, free cash, and revenue projections").
+JULY_GOAL = ('2026-07-14', 'Select Board', ('OPEB', 'stabilization and reserves', 'free cash', 'revenue projections'))
+ON_JULY_LIST = {'Free cash', 'General stabilization', 'Special purpose funds', 'Reserve fund',
+                'Retiree health (OPEB)', 'Revenue estimates'}
+
+
+def _long(d):
+    return '%d %s %s' % (int(d[8:]), ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+                                      'September', 'October', 'November', 'December'][int(d[5:7]) - 1], d[:4])
+
+
+def policy_list(b):
+    """THE HUB'S POLICY LIST: every policy area, which kind of change the draft makes to it, what that
+    would change in the next budget, and what the meeting record shows. Returns the matrix with its
+    conclusion attached (topic_blocks.claims)."""
+    rec = record()
+    have = {(r['date'], r['board']) for r in rec}
+    for pol, xs in RECORD_BY_POLICY.items():
+        for d, board, _, _ in xs:
+            if (d, board) not in have:
+                FP.fail('policy list: %s cites %s %s, which is not in the meeting record' % (pol, board, d))
+    jr = [r for r in rec if (r['date'], r['board']) == JULY_GOAL[:2]]
+    if len(jr) != 1 or not all(x in jr[0]['what'] for x in JULY_GOAL[2]):
+        FP.fail('policy list: the July 2026 goal no longer names the four policies')
+    if set(RECORD_BY_POLICY) != set(POLICY_ROWS):
+        FP.fail('policy list: the record map and the policy rows differ')
+
+    fc, claimed, fixed = b['fc'], b['claimed'], b['today_fixed']
+    sp = dict((k, v) for k, _, v in b['split'])
+    dep_lo, dep_hi = b['stab_deposit']
+    cap_lo, cap_hi = b['capital_band']
+    cap25 = b['capital'][2025]['total']
+    debt = b['peer_debt']['Lunenburg']
+    sbl, sbh = FP.BANDS['stab']
+    spl, sph = FP.BANDS['special']
+    dtl, dth = FP.BANDS['debt_target']
+    dc = FP.BANDS['debt_ceiling']
+    if not sbl <= b['stab_pct'][2025] <= sbh or not b['special25_pct'] > sph or not cap_lo <= cap25 <= cap_hi \
+            or not dtl <= debt <= dth:
+        FP.fail('policy list: a "next budget" line no longer describes where the balance sits; rewrite it')
+    if sp['opeb'] != fixed:
+        FP.fail('policy list: today and the draft no longer put the same sum in the OPEB trust')
+    R = lambda v: RULE(v, '%s%%' % v)
+    fy25 = F(2025)
+    # What each rule set would change in the next budget, from the model (rule 2).
+    nxt = {
+        'Free cash': ('moves', T('On the latest {fc} of free cash, the draft’s floors assign {c} before Town Meeting; '
+                                 'today’s rules assign {f}.', fc=U(fc), c=U(claimed), f=U(fixed))),
+        'General stabilization': ('moves', T('The draft adds {g} from free cash and a yearly deposit printed as {lo} or '
+                                             '{hi}; the balance, {p} of the budget in {y}, is inside its band.',
+                                             g=U(sp['general']), lo=U(dep_lo), hi=U(dep_hi), p=P(b['stab_pct'][2025]), y=fy25)),
+        'Special purpose funds': ('moves', T('The draft asks at least {s} of free cash, though the funds stood at {p} of '
+                                             'the budget in {y}, above its top of {t}.', s=U(sp['special']),
+                                             p=P(b['special25_pct']), y=fy25, t=R(sph))),
+        'Reserve fund': ('quiet', L('The draft sets nothing here, so it would change nothing in the next budget on its own.')),
+        'Retiree health (OPEB)': ('moves', T('Either rule set puts {o} of free cash in the trust; the full actuarial '
+                                             'contribution the draft aims at is not in the documents held here.', o=U(sp['opeb']))),
+        'Capital': ('measures', T('The draft’s level is {lo} to {hi} a year in cash; {y}’s capital plan funded {c}, inside it.',
+                                  lo=U(cap_lo), hi=U(cap_hi), y=fy25, c=U(cap25))),
+        'Debt': ('measures', T('Debt service was {d} of the {y} budget by the state’s measure, inside the draft’s target of {a} to {z} and its '
+                               'ceiling of {c}.', d=P(debt), y=fy25, a=R(dtl), z=R(dth), c=R(dc))),
+        'Revenue estimates': ('unheld', L('A lower estimate leaves more to fall to free cash a year later; the town’s '
+                                          'estimates against collections are not compiled here.')),
+    }
+    rec_text = {}
+    for pol in POLICY_ROWS:
+        parts, lits = [], []
+        for d, board, what, lit in RECORD_BY_POLICY[pol]:
+            parts.append('%s, %s: %s.' % (board, _long(d), what))
+            lits += [_long(d).split(' ')[0], d[:4]] + list(lit)
+        if pol in ON_JULY_LIST:
+            parts.append('Named in the Town Manager’s July 2026 goal.')
+            lits += ['2026']
+        rec_text[pol] = ('raised', ' '.join(parts), tuple(dict.fromkeys(lits))) if RECORD_BY_POLICY[pol] else \
+            ('unraised', ' '.join(parts) or 'No meeting in the record raises it.', tuple(dict.fromkeys(lits)))
+    # Today's rule beside the draft's, in a line, per policy: the kind it is, and both rules.
+    rule_line = {
+        'Free cash': L('Target: free cash of five to seven percent of the budget; today there is none. Guideline: a '
+                       'minimum share for each of six uses, where today’s rules set a priority order.'),
+        'General stabilization': L('Target: five to eight percent of the budget, where today’s floor is five. '
+                                   'Guideline: a yearly deposit, and a draw of at most a third, refilled in two years, not three.'),
+        'Special purpose funds': L('Target: three to five percent of the budget across the funds; today there is none. '
+                                   'Guideline: at least 10% of free cash, where today the deposit is set in capital planning.', '10%'),
+        'Reserve fund': L('Today: $50,000, and no more than one half of one percent of the budget. The draft sets no '
+                          'size and adds nothing on how it is spent.', '$50,000'),
+        'Retiree health (OPEB)': L('Today: at least 10% of free cash to the trust. Guideline: the draft keeps that as one '
+                                   'option, aims at the full actuarial contribution, and values the liability every two years.', '10%'),
+        'Capital': L('Today: no yearly level for capital in cash. Guideline: two to three percent of the budget, net of '
+                     'debt, each year, and 20% to 30% of free cash.', '20%', '30%'),
+        'Debt': L('Target: limits as a share of the budget (2% to 4% within the levy, 5% to 11% all) instead of the '
+                  'levy (4% and 14%). Guideline: a retired bond’s payment goes to savings.',
+                  '2%', '4%', '5%', '11%', '14%'),
+        'Revenue estimates': L('Today: no written rule. Guideline: local receipts estimated at no more than 90% of last '
+                               'year’s collections without firm evidence, each forecast checked afterwards.', '90%'),
+    }
+    title = {('target', 'guideline'): 'A target and a guideline', ('target',): 'A target',
+             ('guideline',): 'A guideline of behavior', (): 'Neither'}
+    kind_key = {('target', 'guideline'): 'both', ('target',): 'target', ('guideline',): 'guideline', (): 'neither'}
+    reading = ('reading', 'Our reading of both documents')
+    cells = {}
+    for r, pol in enumerate(POLICY_ROWS):
+        ks = tuple(row_kinds(r))
+        cells[(r, 0)] = TB.cell(kind_key[ks], title[ks], rule_line[pol], reading)
+        v, why = nxt[pol]
+        cells[(r, 1)] = TB.cell(v, {'moves': 'Moves dollars', 'measures': 'Sets a level', 'quiet': 'No change',
+                                    'unheld': 'Not measured here'}[v], why,
+                                ('reading', 'Our estimate, the rules applied to published figures'))
+        v, text, lits = rec_text[pol]
+        cells[(r, 2)] = TB.cell(v, {'raised': 'Raised at meetings', 'unraised': 'Not raised'}[v], (text, None, lits),
+                                ('record', 'Meeting record, on the debate page'))
+    legend = [('both', 'Changes a target and a guideline', 'other'),
+              ('target', 'Changes a target', 'other'),
+              ('guideline', 'Changes a guideline of behavior', 'other'),
+              ('neither', 'Draft changes neither', 'muted'),
+              ('moves', 'Would move dollars in the next budget', 'neutral'),
+              ('measures', 'Sets a level the budget is measured against', 'neutral'),
+              ('quiet', 'No change to the next budget', 'muted'),
+              ('unheld', 'Effect not measured here', 'muted'),
+              ('raised', 'Raised at a meeting in the record', 'neutral'),
+              ('unraised', 'No meeting in the record raises it', 'muted')]
+    m = TB.matrix('Every policy, and what it changes', POLICY_ROWS,
+                  ['What the draft changes', 'In the next budget', 'In the meeting record'], cells, legend,
+                  place='body', row_label='Policy', col_label='',
+                  note=L('A target is a level the town plans toward; a guideline of behavior is how money is set '
+                         'aside or spent. Which is which is our reading. Dollars apply each rule to the latest '
+                         'published figures.'))
+    n = len(POLICY_ROWS)
+    n_t = sum(1 for r in range(n) if 'target' in row_kinds(r))
+    n_g = sum(1 for r in range(n) if 'guideline' in row_kinds(r))
+    left = [POLICY_ROWS[r] for r in range(n) if not row_kinds(r)]
+    if left != ['Reserve fund']:
+        FP.fail('policy list: the conclusion names the reserve fund as the one left alone; it no longer is')
+    n_raised = sum(1 for p in POLICY_ROWS if RECORD_BY_POLICY[p])
+    f = LD.fact
+    Nn = lambda x: N(x, 'policy areas')
+    facts = [f('guide', Nn(n_g), 'policy areas whose guideline of behavior the draft changes', 'estimate'),
+             f('target', Nn(n_t), 'policy areas whose target the draft changes', 'estimate'),
+             f('raised', Nn(n_raised), 'policy areas raised at a meeting in the record', 'published')]
+    cons = [TP.conclusion('The draft changes a guideline in %d of %d policy areas and a target in %d; it leaves the '
+                          'reserve fund alone.' % (n_g, n, n_t), ['guide', 'target'],
+                          {'a': Nn(n_g), 'b': Nn(n), 'c': Nn(n_t)},
+                          so='Most of the draft is about how money is set aside and spent, more than the levels it reaches.'),
+            TP.conclusion('%d of the %d have been raised at a meeting in the record; debt is the one that has not.'
+                          % (n_raised, n), ['raised'], {'a': Nn(n_raised), 'b': Nn(n)},
+                          so='The record shows what was said at each meeting; it does not show why anybody holds a view.')]
+    if n - n_raised != 1 or RECORD_BY_POLICY['Debt']:
+        FP.fail('policy list: the second conclusion names debt as the one not raised; it no longer is')
+    import brief
+    bad = []
+    for i, c in enumerate(cons):
+        bad += brief.check_unit(c, 'policy list conclusion %d' % (i + 1)) + brief.check_unit(c['so'], 'policy list means %d' % (i + 1))
+    for x in facts:
+        bad += brief.check_unit(x['label'], 'policy list fact %s' % x['id'])
+    if bad:
+        FP.fail('\n  '.join(bad))
+    return TB.claims(m, cons, facts)
+
+
 # ------------------------------------------------------------------------------ the report
 
 def report(b, x1, x2, x3, x4):
@@ -954,7 +1164,8 @@ def report(b, x1, x2, x3, x4):
     return '\n'.join(L_) + '\n'
 
 
-def outputs():
+def data():
+    """The figures every financial policy page reads: FP.build() plus the databank's FY2025 and FY2026 rows."""
     b = FP.build()
     import financial_policies_data as _  # noqa
     s = FP.dls_stabilization()
@@ -964,6 +1175,11 @@ def outputs():
     for r in FP._xlsx(FP.DLS_STAB):
         if r['Municipality'] == 'Lunenburg' and int(r['Schedule A Fiscal Year']) == 2026:
             b['budget26'] = D(str(r['Operating Budget']))
+    return b
+
+
+def outputs():
+    b = data()
     p1, x1 = page_rules(b)
     p2, x2 = page_targets(b)
     p3, x3 = page_opeb(b)

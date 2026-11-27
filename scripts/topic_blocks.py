@@ -161,6 +161,9 @@ def explain(title, paragraphs, place='lead', tone='define', figures_note=None, l
 
 
 SOLIDITY = ('published', 'estimate', 'gap')
+# A chip may also be 'reading': a classification that is our reading of a document, not a figure we
+# estimated (the financial policies hub: which policies change a target and which a guideline).
+CHIP_SOLIDITY = SOLIDITY + ('reading',)
 
 
 def measure(label, value, solidity):
@@ -175,7 +178,7 @@ def measure(label, value, solidity):
 
 
 def _bad_chip(where, c):
-    raise ConclusionError('%s: chip %r solidity is not one of %s' % (where, c, SOLIDITY))
+    raise ConclusionError('%s: chip %r solidity is not one of %s' % (where, c, CHIP_SOLIDITY))
 
 
 def _measures(ms, name):
@@ -223,7 +226,7 @@ def matrix(title, rows, columns, cells, legend, place='lead', note=None,
                              measures=_measures(x.get('measures'), w),
                              chips=[dict(label=_label(c[0], w + ' chip', 40), solidity=c[1])
                                     for c in x.get('chips', ())
-                                    if c[1] in SOLIDITY or _bad_chip(w, c)],
+                                    if c[1] in CHIP_SOLIDITY or _bad_chip(w, c)],
                              **({'lands_on': _label(x['lands_on'], w + ' lands on')}
                                 if x.get('lands_on') else {})))
         out.append(line)

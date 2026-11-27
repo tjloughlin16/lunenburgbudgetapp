@@ -442,13 +442,22 @@ def hub(calc_page):
     points = TB.custom('talking-points', 'What the policies come to', dict(groups=groups), place='lead',
                        figures=said, alt='Conclusions from the financial policy pages, each linked to its page',
                        so='Each line is the conclusion its own page shows; the policy calculator applies either rule set to these figures.')
+    # EVERY POLICY, which kind of change the draft makes, what it would change in the next budget, and
+    # what the meeting record shows (TJ, 27 November 2026: "i want to see the poilcies, and know if theya
+    # re changing targets or polices"). Built by build_financial_policies.policy_list, from the figures
+    # the policy pages read.
+    policies = BFP.policy_list(BFP.data())
+    more = TB.explain('Each policy in full', [BFP.L(
+        'Both rules word for word, how the reserves have moved against them, the retiree health liability, '
+        'and every meeting in the record.')], place='body', tone='plain',
+        links=[(BFP.PAGES[k], BFP.path(k)) for k in BFP.PAGES])
     stance = TB.explain('What this page does not say', [BFP.L(
         'This project recommends neither direction: not to save more, and not to spend more. The pages show '
         'what each rule set would do to figures the town has published. The boards decide.')], place='end', tone='define')
     # The answer is the calculator page's finding, with the figures that page registered for it.
     answer = calc_page['finding']['text'] + ' The calculator applies either rule set, or any other.'
     figs = calc_page['finding']['figures']
-    return TP.hub(HUB, answer, None, blocks=[points, stance], answer_figures=figs)
+    return TP.hub(HUB, answer, None, blocks=[points, policies, more, stance], answer_figures=figs)
 
 
 def run_math(payload):
