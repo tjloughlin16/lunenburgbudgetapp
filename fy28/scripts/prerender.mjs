@@ -635,12 +635,14 @@ async function main() {
   const manifest = JSON.parse(await readFile(join(APP, 'src', 'data', 'agent-manifest.json'), 'utf8'))
   // ADOPTING THE CACHE MADE BEFORE THIS KEY EXISTED. Its pages were rendered from a shell
   // that may differ only in asset names; that is proved, not assumed: the shell source
-  // (fy28/index.html) must be byte-identical at the commit named and now.
+  // (fy28/index.html, from <html on) must be byte-identical at the commit named and now.
   if (process.env.PRERENDER_ADOPT_LEGACY) {
     const at = process.env.PRERENDER_ADOPT_LEGACY
     const { stdout: then } = await execFileAsync('git', ['show', `${at}:fy28/index.html`], { cwd: APP, maxBuffer: 1 << 24 })
     const nowShell = await readFile(join(APP, 'index.html'), 'utf8')
-    if (then !== nowShell) throw new Error(`PRERENDER_ADOPT_LEGACY=${at}: fy28/index.html differs from that commit, so its cached pages cannot be adopted`)
+    // From <html on, as the key reads it: the preamble before it is spliced fresh onto every page.
+    const body = t => t.slice(t.indexOf('<html'))
+    if (body(then) !== body(nowShell)) throw new Error(`PRERENDER_ADOPT_LEGACY=${at}: fy28/index.html differs from that commit after the preamble, so its cached pages cannot be adopted`)
     adoptLegacy = true
     console.log(`adopting cached pages rendered before the shell key changed: index.html is unchanged since ${at}`)
     // Their JSON inputs' bytes, from that commit, kept only where the sha256 matches what
