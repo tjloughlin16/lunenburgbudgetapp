@@ -141,26 +141,60 @@ USES = [
 ]
 
 
+# ---------------------------------------------------------------- the dials
+
+# EVERY RULE IS A DIAL (TJ, 27 November 2026: "i assumed i would have dials to move"), applied in
+# this order, each taking from what the ones before left: today's 3.03 is a priority list, and the
+# draft's shares are each of the whole certification and add to less than all of it, so the order
+# changes nothing they produce. `unit`: 'fc' a share of the free cash, 'budget' a share of the
+# budget, 'usd' dollars. Today's and the draft's settings come from the asserted rules above; a
+# dial neither sets is at zero for it, and says so.
+NO_RULE = dict(source=None, quote=None)
+DIALS = [
+    # key, label, unit, feeds, today (value, rule), draft (value, rule)
+    ('general_target', 'Top up general stabilization to', 'budget', 'general',
+     (_tr['general'], TODAY[0][3]), (D(0), NO_RULE)),
+    ('opeb', 'Retiree health trust', 'fc', 'opeb', (_tr['opeb'], TODAY[1][3]), (_dr['opeb'], DRAFT[4][3])),
+    ('special_dollars', 'Special purpose deposit, in dollars', 'usd', 'special',
+     (D(0), TODAY[2][3]), (D(0), NO_RULE)),
+    ('general', 'General stabilization', 'fc', 'general', (D(0), NO_RULE), (_dr['general'], DRAFT[2][3])),
+    ('special', 'Special purpose stabilization', 'fc', 'special', (D(0), NO_RULE), (_dr['special'], DRAFT[1][3])),
+    ('keep', 'Kept back for next year', 'fc', 'keep', (D(0), NO_RULE), (_dr['keep'], DRAFT[0][3])),
+    ('capital', 'Cash capital', 'fc', 'capital', (D(0), NO_RULE), (_dr['capital_lo'], DRAFT[5][3])),
+    ('other', 'Other one-time costs', 'fc', 'other', (D(0), NO_RULE), (_dr['other'], DRAFT[7][3])),
+    ('other_cap', 'Cap on other one-time costs', 'usd', 'other', (None, NO_RULE), (FP.OTHER_CAP, DRAFT[7][3])),
+]
+ORDER = [k for k, *_ in DIALS]
+
+
+def settings(which, fc):
+    """{dial: value} for 'today' or 'draft'. A cap no rule sets is the whole free cash: no cap."""
+    i = 4 if which == 'today' else 5
+    return {d[0]: (float(d[i][0]) if d[i][0] is not None else fc) for d in DIALS}
+
+
 # ---------------------------------------------------------------- the arithmetic, in Python
 
-def today(x):
-    """Select Board 3.03, in its order: each step takes from what the step before left."""
-    fc, rem = x['fc'], x['fc']
-    g = min(rem, max(0.0, float(_tr['general']) * x['budget'] - x['general'])); rem -= g
-    o = min(rem, float(_tr['opeb']) * fc); rem -= o
-    s = min(rem, max(0.0, x['special_plan'])); rem -= s
-    return dict(keep=0.0, general=g, special=s, opeb=o, capital=0.0, other=0.0, left=rem)
+def allocate(x, d):
+    """The dials in order; `short` is what they asked for beyond the free cash there was."""
+    st = dict(rem=x['fc'], asked=0.0)
 
-
-def draft(x):
-    """The draft's floors, each a share of the whole certification (pdf pages 29-30)."""
-    fc = x['fc']
-    u = dict(keep=float(_dr['keep']) * fc, general=float(_dr['general']) * fc,
-             special=float(_dr['special']) * fc, opeb=float(_dr['opeb']) * fc,
-             capital=x['capital_share'] * fc,
-             other=min(float(_dr['other']) * fc, float(FP.OTHER_CAP)))
-    u['left'] = fc - sum(u.values())
-    return u
+    def take(want):
+        w = max(0.0, want)
+        st['asked'] += w
+        t = min(st['rem'], w)
+        st['rem'] -= t
+        return t
+    topup = take(d['general_target'] * x['budget'] - x['general'])
+    opeb = take(d['opeb'] * x['fc'])
+    sd = take(d['special_dollars'])
+    g = take(d['general'] * x['fc'])
+    sp = take(d['special'] * x['fc'])
+    keep = take(d['keep'] * x['fc'])
+    cap = take(d['capital'] * x['fc'])
+    other = take(min(d['other'] * x['fc'], d['other_cap']))
+    return dict(keep=keep, general=topup + g, special=sd + sp, opeb=opeb, capital=cap, other=other,
+                left=st['rem'], short=max(0.0, st['asked'] - x['fc']))
 
 
 def after(x, u):
@@ -171,6 +205,20 @@ def after(x, u):
                 opeb_trust=x['opeb_trust'] + u['opeb'],
                 funded=(x['opeb_trust'] + u['opeb']) / x['opeb_liability'],
                 next_fc=u['keep'], next_fc_pct=u['keep'] / b)
+
+
+def independent(x, which):
+    """The two rule sets worked straight from their own words, NOT through the dials, so the dial
+    arithmetic is checked against something it did not produce."""
+    fc = x['fc']
+    if which == 'today':
+        g = max(0.0, min(fc, float(_tr['general']) * x['budget'] - x['general']))
+        o = min(fc - g, float(_tr['opeb']) * fc)
+        return dict(keep=0.0, general=g, special=0.0, opeb=o, capital=0.0, other=0.0, left=fc - g - o, short=0.0)
+    sp = {k: a for k, _, a in FP.split(D(str(fc)))}
+    u = dict(keep=float(sp['keep']), general=float(sp['general']), special=float(sp['special']),
+             opeb=float(sp['opeb']), capital=float(sp['capital']), other=float(sp['other']))
+    return dict(u, left=fc - sum(u.values()), short=0.0)
 
 
 # ---------------------------------------------------------------- the payload
@@ -212,24 +260,11 @@ def build():
              source='30 June 2025, the FY2025 audit'),
         dict(key='opeb_liability', label='Retiree health liability', value=liab, text=U(liab),
              source='30 June 2025, the FY2025 audit'),
-        dict(key='special_plan', label='Special purpose deposit under today\'s rules', value=0.0,
-             text=U(0), source='Set each year in capital planning; no figure is held, so it starts at zero',
-             basis='input'),
     ]
-    for i in inputs:
-        i.setdefault('basis', 'published')
-    figs.add('30 June 2025')
-    figs.add(b['fc_date'])
+    figs.update(('30 June 2025', b['fc_date'], 'FY2025'))
     audit_note = ('The FY2025 audit prints the general stabilization balance as %s, not %s; the '
                   'calculator starts from the figure the state\'s databank also prints.'
                   % (U(s25['audit']), U(st['general'])))
-    figs.add('FY2025')
-
-    def rules(rs):
-        out = []
-        for k, v, _, r in rs:
-            out.append(dict(key=k, value=float(v) if v is not None else None, source=r['source'], quote=r['quote']))
-        return out
 
     allow = set()
     for rs in (TODAY, DRAFT):
@@ -238,27 +273,33 @@ def build():
             allow.add(r['source'])
     allow.update(('3.03', '3.04', '3.07', 'April 2024', 'pdf pages 28-30'))
 
-    defaults = {i['key']: i['value'] for i in inputs}
-    defaults['capital_share'] = float(_dr['capital_lo'])
+    # THE DIALS' RANGES are where a slider stops, not figures about the town: a share up to half the
+    # free cash, a top-up target up to the draft's own top, dollars up to the whole free cash.
+    span = dict(fc=(0, 0.5, 0.01), budget=(0, 2 * BANDS['general_draft'][1], 0.0025))
+    dials = []
+    for key, label, unit, feeds, (tv, tr), (dv, dr) in DIALS:
+        lo, hi, step = span.get(unit, (0, fc, 5000))
+        dials.append(dict(
+            key=key, label=label, unit=unit, feeds=feeds, min=lo, max=hi, step=step,
+            today=dict(value=float(tv) if tv is not None else None, **tr),
+            draft=dict(value=float(dv), **dr)))
+    capital_range = [float(_dr['capital_lo']), float(_dr['capital_hi'])]
+
+    inp = {i['key']: i['value'] for i in inputs}
     data = dict(
-        inputs=inputs,
+        inputs=inputs, dials=dials, order=ORDER, capital_range=capital_range,
         uses=[dict(key=k, label=l) for k, l in USES],
         presets=[
-            dict(key='today', label="Today's rules",
-                 source='Select Board policy, sections 3.03, 3.04 and 3.07', rules=rules(TODAY)),
-            dict(key='draft', label='State draft',
-                 source='DLS draft financial policy manual, April 2024, pdf pages 28-30', rules=rules(DRAFT)),
-            dict(key='custom', label='Custom', source='Your own shares of the free cash', rules=[]),
+            dict(key='today', label="Today's rules", source='Select Board policy, sections 3.03, 3.04 and 3.07',
+                 settings=settings('today', fc)),
+            dict(key='draft', label='State draft', source='DLS draft financial policy manual, April 2024, pdf pages 28-30',
+                 settings=settings('draft', fc)),
         ],
-        params=dict(
-            today=dict(general=float(_tr['general']), opeb=float(_tr['opeb']),
-                       floor=float(_tr['floor']), cap=float(_tr['cap'])),
-            draft=dict(keep=float(_dr['keep']), general=float(_dr['general']), special=float(_dr['special']),
-                       opeb=float(_dr['opeb']), capital=[float(_dr['capital_lo']), float(_dr['capital_hi'])],
-                       other=float(_dr['other']), other_cap=float(FP.OTHER_CAP), cap=float(_dr['cap']),
-                       stab_annual=[float(_dr['stab_annual_summary']), float(_dr['stab_annual_text'])]),
-            bands=BANDS),
-        defaults=defaults,
+        rules=dict(today=dict(floor=float(_tr['floor']), cap=float(_tr['cap'])),
+                   draft=dict(cap=float(_dr['cap']),
+                              stab_annual=[float(_dr['stab_annual_summary']), float(_dr['stab_annual_text'])])),
+        bands=BANDS,
+        defaults=inp,
         text=dict(
             audit_note=audit_note,
             budget_note=('One budget figure is used wherever a rule names the current or the prior '
@@ -268,18 +309,25 @@ def build():
             annual_note=('The draft also sets a yearly stabilization deposit from the operating '
                          'budget, not from free cash: %s in its summary table, %s in its text.'
                          % (P(float(_dr['stab_annual_summary']) * 100, 2), P(float(_dr['stab_annual_text']) * 100, 1))),
-            floors_note='The draft\'s shares are floors ("at least"); the calculator applies each floor.',
+            floors_note='The draft\'s shares are floors ("at least"); its setting puts each dial at its floor.',
+            order_note=('The dials are applied in the order shown, each from what is left: today\'s policy '
+                        'is written as a priority list.'),
         ),
     )
-    # The draft's yearly deposit, in dollars at today's budget, for the note's figures.
     so = ('Under today\'s rules most of the free cash is left for Town Meeting to decide; under the '
           'draft most of it is assigned before Town Meeting sees it.')
-    ex = {k: dict(uses=f(defaults), after=after(defaults, f(defaults))) for k, f in (('today', today), ('draft', draft))}
+    ex = {}
+    for k in ('today', 'draft'):
+        u = allocate(inp, settings(k, fc))
+        ind = independent(inp, k)
+        if any(abs(u[f] - ind[f]) > 0.005 for f in ind):
+            FP.fail('policy calculator: the dials set to %s do not reproduce its own rules: %s vs %s' % (k, u, ind))
+        ex[k] = dict(uses=u, after=after(inp, u))
     if not ex['today']['uses']['left'] > fc / 2 or not ex['draft']['uses']['left'] < fc / 2:
         FP.fail('policy calculator: the "what it means" line no longer describes the defaults; rewrite it')
     blk = TB.custom(COMPONENT, 'Free cash, rule by rule', data, place='lead', figures=sorted(figs),
-                    allow=sorted(allow), alt='A calculator applying today\'s free cash rules or the '
-                    'state\'s draft to the latest certified free cash', so=so)
+                    allow=sorted(allow), alt='A calculator with a dial for each free cash rule, set to '
+                    'today\'s rules or the state\'s draft, applied to the latest certified free cash', so=so)
     return dict(block=blk, expected=ex)
 
 
@@ -354,8 +402,8 @@ def run_math(payload):
             "import * as M from './math.mjs'; import fs from 'fs';\n"
             "const d = JSON.parse(fs.readFileSync(process.argv[2], 'utf8')).block.data;\n"
             "const out = {};\n"
-            "for (const k of ['today','draft']) { const u = M.uses(k, d.params, d.defaults);"
-            " out[k] = { uses: u, after: M.after(d.defaults, u) } }\n"
+            "for (const p of d.presets) { const u = M.allocate(d.defaults, p.settings);"
+            " out[p.key] = { uses: u, after: M.after(d.defaults, u) } }\n"
             "console.log(JSON.stringify(out));\n")
         pj = os.path.join(td, 'p.json')
         io.open(pj, 'w').write(json.dumps(payload))

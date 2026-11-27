@@ -1,46 +1,59 @@
-/** THE POLICY CALCULATOR: today's free cash rules, the state's draft, or the reader's own shares,
- *  applied to the latest certified free cash, with every input editable.
+/** THE POLICY CALCULATOR: a dial for every free cash rule, set to today's rules or the state's
+ *  draft, applied to the latest certified free cash, with every starting figure editable.
  *
  *  TJ, 27 November 2026: "a 'Policy calculator' that the finance committee can use to adjust to
- *  show the outcomes towards free cash, that shows todays settings, policy suggestions, etc".
+ *  show the outcomes towards free cash, that shows todays settings, policy suggestions, etc" --
+ *  and then: "i assumed i would have dials to move". So every rule is a dial, and the two rule
+ *  sets are two settings of the same dials. Each dial marks where both sit on it, so moving away
+ *  from either is visible.
  *
- *  THE ONE EXCEPTION TO "A COMPONENT FORMATS NOTHING". Every default, every share and every band
- *  comes from the payload (scripts/build_policy_calculator.py, which asserts each rule verbatim on
- *  the page that prints it). But the results depend on what the reader types, so they can only be
- *  computed and formatted here. The arithmetic lives in policy-calculator-math.ts, and the
- *  generator's --check runs that file on the defaults against its own Python, so a figure this
- *  component draws at the defaults is a figure checked by script (rule 9).
+ *  LAYOUT. Equal things side by side, never a tall column beside a short one (TJ: "the right
+ *  column with lots of info, and the left column with 1 item... wasted space"): the dials are a
+ *  grid of like cards, each carrying the dollars it produces, and the outcomes a row of like
+ *  charts.
  *
- *  RULE 7, ON EVERY NUMBER. Each one carries what it is: PUBLISHED (read off a document), YOUR
- *  INPUT (the reader changed it), or OUR ARITHMETIC (a rule applied to those). Our arithmetic is
- *  drawn the way the site draws our reading: an amber edge, never the look of a record.
+ *  THE STABILIZATION CHARTS ARE BULLET CHARTS: the balance as a bar (before, plus this year's
+ *  deposit), the draft's range shaded behind it and today's line across it, each labelled on the
+ *  chart, a percentage axis under it, and one sentence saying where the result sits against each.
  *
- *  RULE 8. Neither rule set is the answer. Both are drawn in series colours, side by side, at the
- *  same weight; no status colour (red, green) appears anywhere, and nothing says which is better. */
+ *  THE ONE EXCEPTION TO "A COMPONENT FORMATS NOTHING". Every default, dial setting, range and band
+ *  comes from the payload (scripts/build_policy_calculator.py asserts each rule verbatim on the page
+ *  that prints it). The results depend on what the reader moves, so they are computed and formatted
+ *  here; the arithmetic is policy-calculator-math.ts, which the generator's --check runs on both
+ *  settings against its own Python (rule 9).
+ *
+ *  RULE 7: every number is tagged PUBLISHED, YOUR INPUT or OUR ARITHMETIC. RULE 8: the two rule
+ *  sets are drawn at the same weight in greys; no status colour appears, and nothing says which
+ *  setting is better. */
 import { useMemo, useState } from 'react'
 import type { CustomProps } from './index'
-import { after, custom, draftShares, uses, type After, type Inputs, type Params, type Shares, type UseKey, type Uses } from './policy-calculator-math'
+import { after, allocate, type DialKey, type Dials, type Inputs, type UseKey, type Uses } from './policy-calculator-math'
 
-type Input = { key: keyof Inputs; label: string; value: number; text: string; source: string; basis: 'published' | 'input' }
-type Rule = { key: string; value: number | null; source: string; quote: string }
-type Preset = { key: 'today' | 'draft' | 'custom'; label: string; source: string; rules: Rule[] }
+type Input = { key: keyof Inputs; label: string; value: number; text: string; source: string }
+type Setting = { value: number | null; source: string | null; quote: string | null }
+type Dial = { key: DialKey; label: string; unit: 'fc' | 'budget' | 'usd'; feeds: UseKey; min: number; max: number; step: number; today: Setting; draft: Setting }
+type Preset = { key: 'today' | 'draft'; label: string; source: string; settings: Dials }
 type Data = {
-  inputs: Input[]; uses: { key: UseKey; label: string }[]; presets: Preset[]; params: Params
+  inputs: Input[]; dials: Dial[]; capital_range: [number, number]; uses: { key: UseKey; label: string }[]; presets: Preset[]
+  rules: { today: { floor: number; cap: number }; draft: { cap: number; stab_annual: [number, number] } }
+  bands: { general_draft: [number, number]; special_draft: [number, number]; fc_draft: [number, number]; general_today: number }
   defaults: Inputs
-  text: { audit_note: string; budget_note: string; cap_reading: string; annual_note: string; floors_note: string }
+  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note', string>
 }
 
+// No thread-1: it is the site's coral, and a coral beside a rule reads as a warning (rule 8).
 const COLOR: Record<UseKey, string> = {
-  // No thread-1: it is the site's coral, and a coral beside a rule reads as a warning (rule 8).
   keep: 'var(--thread-3)', general: 'var(--thread-2)', special: 'var(--thread-4)', opeb: 'var(--thread-5)',
   capital: 'var(--text-secondary)', other: 'var(--text-muted)', left: 'var(--surface-3)',
 }
-const SHARE_KEYS: Exclude<UseKey, 'left'>[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other']
+const TODAY = 'var(--text-primary)', DRAFT = 'var(--text-muted)'
 
 const usd = (n: number) => (n < 0 ? '-' : '') + '$' + Math.abs(Math.round(n)).toLocaleString('en-US')
 const pct = (x: number, dp = 1) => (x * 100).toFixed(dp) + '%'
+const pctTrim = (x: number) => { const v = x * 100; return (Number.isInteger(Math.round(v * 100) / 100) ? v.toFixed(0) : v.toFixed(2).replace(/0$/, '')) + '%' }
 const secondary = { color: 'var(--text-secondary)' }
 const muted = { color: 'var(--text-muted)' }
+const card = { background: 'var(--surface-1)', border: '1px solid var(--grid)' }
 
 type Kind = 'published' | 'input' | 'ours'
 function Tag({ k }: { k: Kind }) {
@@ -56,71 +69,126 @@ function Tag({ k }: { k: Kind }) {
   )
 }
 
-/** One rule set's split of the free cash, as a 100% bar. */
-function SplitBar({ label, u, fc, active, names }: { label: string; u: Uses; fc: number; active: boolean; names: Record<UseKey, string> }) {
-  const parts = (Object.keys(COLOR) as UseKey[]).map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
-  const over = u.left < 0
+function dialText(d: Dial, v: number, fc: number) {
+  if (d.unit === 'usd') return d.key === 'other_cap' && v >= fc ? 'No cap' : usd(v)
+  return pctTrim(v) + (d.unit === 'budget' ? ' of the budget' : ' of free cash')
+}
+function settingText(d: Dial, s: Setting) {
+  if (s.value === null) return d.key === 'other_cap' ? 'no cap' : 'no rule'
+  if (!s.quote) return 'no rule'
+  return d.unit === 'usd' ? (d.key === 'special_dollars' ? 'set in capital planning' : usd(s.value)) : pctTrim(s.value)
+}
+
+/** One rule setting's split of the free cash, as a 100% bar. */
+function SplitBar({ label, u, fc, strong, names }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string> }) {
+  const keys: UseKey[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other', 'left']
+  const parts = keys.map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
   return (
-    <div className="mt-3" style={{ opacity: active ? 1 : 0.55 }}>
+    <div className="mt-3" style={{ opacity: strong ? 1 : 0.6 }}>
       <div className="flex items-baseline justify-between gap-2 text-[13px]">
         <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{label}</span>
-        <span style={secondary}>{over ? `assigns ${usd(-u.left)} more than the free cash` : `${usd(u.left)} left for Town Meeting`}</span>
+        <span style={secondary}>{usd(u.left)} left for Town Meeting</span>
       </div>
       <div className="mt-1 flex h-7 w-full overflow-hidden rounded-sm" style={{ background: 'var(--surface-2)' }}
         role="img" aria-label={`${label}: ` + parts.map(p => `${names[p.k]} ${usd(p.v)}`).join(', ')}>
         {parts.map(p => (
           <div key={p.k} title={`${names[p.k]}: ${usd(p.v)}`}
-            style={{ width: `${(100 * p.v) / Math.max(fc, fc - u.left)}%`, background: COLOR[p.k],
-              borderRight: '1px solid var(--surface-1)', boxShadow: p.k === 'left' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />
+            style={{ width: `${(100 * p.v) / fc}%`, background: COLOR[p.k], borderRight: '1px solid var(--surface-1)',
+              boxShadow: p.k === 'left' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />
         ))}
       </div>
     </div>
   )
 }
 
-/** A balance as a share of the budget, before and after, against the rules' bands. */
-function Gauge({ title, before, after: a, bands, ticks, note }: {
-  title: string; before: number; after: number; bands: { lo: number; hi: number; label: string; c: string }[]
-  ticks: { at: number; label: string; c: string }[]; note?: string
-}) {
-  const max = Math.max(0.12, a * 1.15, before * 1.15, ...ticks.map(t => t.at * 1.15), ...bands.map(b => b.hi * 1.15))
-  const X = (v: number) => `${Math.min(100, (100 * v) / max)}%`
+/** A dial: the setting, the dollars it produced, and where both rule sets sit on it. */
+function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; amount?: number; fc: number; onChange: (v: number) => void; range?: [number, number] }) {
+  const max = d.unit === 'usd' ? Math.max(d.max, fc) : d.max
+  const X = (n: number) => `${Math.max(0, Math.min(100, (100 * (n - d.min)) / (max - d.min)))}%`
+  const marks = ([['Today', d.today, TODAY], ['Draft', d.draft, DRAFT]] as const)
+    .filter(([, s]) => s.quote && s.value !== null && !(d.key === 'special_dollars'))
   return (
-    <div className="rounded-md p-3" style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+    <div className="rounded-md p-3 flex flex-col" style={card}>
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="text-[13.5px] font-semibold" style={{ color: 'var(--text-primary)' }}>
+          <span className="inline-block w-2.5 h-2.5 mr-1.5 rounded-sm align-middle" style={{ background: COLOR[d.feeds] }} />{d.label}</span>
+        {amount !== undefined ? <span className="text-[13.5px] tabular-nums font-semibold" style={{ color: 'var(--text-primary)' }}>{usd(amount)}</span> : null}
+      </div>
+      <div className="mt-0.5 text-[13px] tabular-nums" style={secondary}>{dialText(d, v, fc)}</div>
+      <div className="relative mt-2 h-8">
+        {range ? <div className="absolute top-[13px] h-1.5 rounded-sm" title="The draft's range"
+          style={{ left: X(range[0]), width: `calc(${X(range[1])} - ${X(range[0])})`, background: DRAFT, opacity: 0.45 }} /> : null}
+        {marks.map(([n, s, c]) => (
+          <div key={n} className="absolute top-0 h-8 pointer-events-none" style={{ left: X(s.value!) }}>
+            <div className="h-2.5 w-0 -ml-px" style={{ borderLeft: `2px solid ${c}` }} />
+          </div>
+        ))}
+        <input type="range" className="absolute inset-x-0 top-[6px] w-full" min={d.min} max={max} step={d.step}
+          value={Math.min(v, max)} onChange={e => onChange(Number(e.target.value))} aria-label={d.label} />
+      </div>
+      <div className="mt-auto pt-1 flex flex-wrap gap-x-3 text-[11.5px]" style={muted}>
+        <span title={d.today.quote ?? undefined}><span className="inline-block w-2 h-0.5 mr-1 align-middle" style={{ background: TODAY }} />Today: {settingText(d, d.today)}</span>
+        <span title={d.draft.quote ?? undefined}><span className="inline-block w-2 h-0.5 mr-1 align-middle" style={{ background: DRAFT }} />Draft: {settingText(d, d.draft)}{range ? ` (${pctTrim(range[0])} to ${pctTrim(range[1])})` : ''}</span>
+      </div>
+    </div>
+  )
+}
+
+/** A BULLET CHART: the balance before and this year's deposit as a bar, against the draft's range
+ *  (shaded) and today's line, every part labelled on the chart. */
+function Bullet({ title, before, after: a, deposit, band, line, verdict }: {
+  title: string; before: number; after: number; deposit: number
+  band?: { lo: number; hi: number; label: string }; line?: { at: number; label: string }; verdict: string
+}) {
+  const W = 320, top = 34, bh = 16
+  const hi = Math.max(a, before, band?.hi ?? 0, line?.at ?? 0) * 1.12
+  const step = hi > 0.16 ? 0.04 : 0.02
+  const max = Math.ceil(hi / step) * step
+  const X = (v: number) => (W * v) / max
+  const ticks = Array.from({ length: Math.round(max / step) + 1 }, (_, i) => i * step)
+  const anchor = (x: number) => (x > W * 0.6 ? 'end' : 'start')
+  return (
+    <div className="rounded-md p-3 flex flex-col" style={card}>
       <div className="flex items-baseline justify-between gap-2">
         <span className="text-[13.5px] font-semibold" style={{ color: 'var(--text-primary)' }}>{title}</span>
         <Tag k="ours" />
       </div>
       <div className="mt-1 text-[22px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>
-        {pct(a, 2)} <span className="text-[13px] font-normal" style={secondary}>of the budget, from {pct(before, 2)}</span>
+        {pct(a, 2)} <span className="text-[13px] font-normal" style={secondary}>of the budget</span>
       </div>
-      <div className="relative mt-3 h-9">
-        <div className="absolute left-0 right-0 top-3 h-3 rounded-sm" style={{ background: 'var(--surface-2)' }} />
-        {bands.map(b => (
-          <div key={b.label} className="absolute top-3 h-3" title={b.label}
-            style={{ left: X(b.lo), width: `calc(${X(b.hi)} - ${X(b.lo)})`, background: b.c, opacity: 0.35 }} />
-        ))}
+      <p className="text-[12.5px]" style={secondary}>{deposit > 0 ? `${pct(before, 2)} before this year's ${usd(deposit)} deposit` : 'No deposit this year'}</p>
+      <svg viewBox={`-4 0 ${W + 8} ${top + bh + 22}`} className="mt-2 w-full h-auto" role="img"
+        aria-label={`${title}: ${pct(a, 2)} of the budget. ${verdict}`}>
+        {band ? <g>
+          <rect x={X(band.lo)} y={top - 6} width={X(band.hi) - X(band.lo)} height={bh + 12} fill={DRAFT} opacity={0.22} />
+          {/* Labelled at the range's far end, so it never sits on today's line at its near end. */}
+          <text x={X(band.hi) - 3} y={top - 10} fontSize="11" textAnchor="end" fill="var(--text-secondary)">{band.label}</text>
+        </g> : null}
+        <rect x={0} y={top} width={X(before)} height={bh} fill="var(--text-secondary)"><title>{`Before: ${pct(before, 2)}`}</title></rect>
+        <rect x={X(before)} y={top} width={Math.max(0, X(a) - X(before))} height={bh} fill="var(--thread-2)"><title>{`This year's deposit: ${usd(deposit)}`}</title></rect>
+        {line ? <g>
+          <line x1={X(line.at)} x2={X(line.at)} y1={band ? top - 24 : top - 8} y2={top + bh + 4} stroke={TODAY} strokeWidth={2} />
+          <text x={X(line.at) + (anchor(X(line.at)) === 'end' ? -4 : 4)} y={band ? top - 26 : top - 10} fontSize="11" fontWeight="600"
+            textAnchor={anchor(X(line.at))} fill="var(--text-primary)">{line.label}</text>
+        </g> : null}
         {ticks.map(t => (
-          <div key={t.label} className="absolute top-1 h-7 w-0" title={t.label} style={{ left: X(t.at), borderLeft: `2px solid ${t.c}` }} />
+          <g key={t}>
+            <line x1={X(t)} x2={X(t)} y1={top + bh + 4} y2={top + bh + 8} stroke="var(--grid)" />
+            <text x={X(t)} y={top + bh + 19} fontSize="10.5" textAnchor={t === 0 ? 'start' : t >= max - 1e-9 ? 'end' : 'middle'} fill="var(--text-muted)">{pctTrim(t)}</text>
+          </g>
         ))}
-        <div className="absolute top-3 h-3 w-0" style={{ left: X(before), borderLeft: '2px dotted var(--text-muted)' }} title={`Before: ${pct(before, 2)}`} />
-        <div className="absolute top-2 h-5 w-1.5 -ml-[3px] rounded-sm" style={{ left: X(a), background: 'var(--text-primary)' }} title={`After: ${pct(a, 2)}`} />
-      </div>
-      <ul className="mt-1 space-y-0.5 text-[12px]" style={secondary}>
-        {bands.map(b => <li key={b.label}><span className="inline-block w-2.5 h-2.5 mr-1.5 align-middle rounded-sm" style={{ background: b.c, opacity: 0.6 }} />{b.label}</li>)}
-        {ticks.map(t => <li key={t.label}><span className="inline-block w-2.5 h-0.5 mr-1.5 align-middle" style={{ background: t.c }} />{t.label}</li>)}
-      </ul>
-      {note ? <p className="mt-1.5 text-[12px]" style={muted}>{note}</p> : null}
+      </svg>
+      <p className="mt-1 text-[13px] leading-snug" style={{ color: 'var(--text-primary)' }}>{verdict}</p>
     </div>
   )
 }
 
-function Figure({ title, value, sub, kind = 'ours' }: { title: string; value: string; sub: string; kind?: Kind }) {
+function Figure({ title, value, sub }: { title: string; value: string; sub: string }) {
   return (
-    <div className="rounded-md p-3" style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+    <div className="rounded-md p-3" style={card}>
       <div className="flex items-baseline justify-between gap-2">
         <span className="text-[13.5px] font-semibold" style={{ color: 'var(--text-primary)' }}>{title}</span>
-        <Tag k={kind} />
+        <Tag k="ours" />
       </div>
       <div className="mt-1 text-[22px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{value}</div>
       <p className="mt-0.5 text-[12.5px]" style={secondary}>{sub}</p>
@@ -128,55 +196,60 @@ function Figure({ title, value, sub, kind = 'ours' }: { title: string; value: st
   )
 }
 
+const against = (v: number, lo: number, hi?: number) =>
+  hi === undefined ? (v >= lo ? 'above' : 'below') : v < lo ? 'below' : v > hi ? 'above' : 'inside'
+
 export default function PolicyCalculator({ data, alt }: CustomProps) {
   const d = data as Data
-  const p = d.params
-  const [preset, setPreset] = useState<Preset['key']>('today')
   const [x, setX] = useState<Inputs>(d.defaults)
-  const [shares, setShares] = useState<Shares>(() => draftShares(p, d.defaults))
+  const [from, setFrom] = useState<Preset['key']>('today')
+  const [dials, setDials] = useState<Dials>(d.presets[0].settings)
   const names = useMemo(() => Object.fromEntries(d.uses.map(u => [u.key, u.label])) as Record<UseKey, string>, [d.uses])
+
+  // A preset's "no cap" is the whole free cash, so it follows the free cash the reader types.
+  const settingsOf = (p: Preset): Dials => ({ ...p.settings, other_cap: p.settings.other_cap >= d.defaults.fc ? Math.max(x.fc, p.settings.other_cap) : p.settings.other_cap })
+  const preset = d.presets.find(p => p.key === from)!
+  const mine = (Object.keys(dials) as DialKey[]).some(k => Math.abs(dials[k] - settingsOf(preset)[k]) > 1e-9)
+  const today = allocate(x, settingsOf(d.presets[0])), draft = allocate(x, settingsOf(d.presets[1]))
+  const u = allocate(x, dials)
+  const a = after(x, u)
+  const before = after(x, allocate(x, { ...dials, general_target: 0, opeb: 0, special_dollars: 0, general: 0, special: 0, keep: 0, capital: 0, other: 0 }))
   const changed = (k: keyof Inputs) => x[k] !== d.defaults[k]
-
-  const all = useMemo(() => ({ today: uses('today', p, x), draft: uses('draft', p, x), custom: custom(x, shares) }), [p, x, shares])
-  const u = all[preset]
-  const a: After = after(x, u)
-  const before = after(x, { keep: 0, general: 0, special: 0, opeb: 0, capital: 0, other: 0, left: x.fc })
-  const P = d.presets.find(q => q.key === preset)!
-  const shareSum = SHARE_KEYS.reduce((s, k) => s + shares[k], 0)
-
-  const set = (k: keyof Inputs, v: number) => setX(o => ({ ...o, [k]: Number.isFinite(v) ? v : 0 }))
-  const setShare = (k: Exclude<UseKey, 'left'>, v: number) => setShares(o => {
-    const others = SHARE_KEYS.reduce((s, j) => (j === k ? s : s + o[j]), 0)
-    return { ...o, [k]: Math.max(0, Math.min(v, 1 - others)) }
-  })
-  const reset = () => { setX(d.defaults); setShares(draftShares(p, d.defaults)) }
   const anyChanged = (Object.keys(d.defaults) as (keyof Inputs)[]).some(changed)
+  const setInput = (k: keyof Inputs, v: number) => setX(o => ({ ...o, [k]: Number.isFinite(v) ? v : 0 }))
+  const choose = (p: Preset) => { setFrom(p.key); setDials(settingsOf(p)) }
+  const label = mine ? `Your settings (from ${preset.label.toLowerCase()})` : preset.label
 
-  // The two rule sets drawn at the same weight in greys: today's as a line, the draft's as a band.
-  const tone = { today: 'var(--text-primary)', draft: 'var(--text-muted)' }
+  const b = d.bands, r = d.rules
+  const gVerdict = `${a.general_pct >= b.general_today ? 'At or above' : 'Below'} today's ${pctTrim(b.general_today)} minimum; ${against(a.general_pct, b.general_draft[0], b.general_draft[1])} the draft's ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])} range.`
+  const sVerdict = `${against(a.special_pct, b.special_draft[0], b.special_draft[1]).replace(/^./, c => c.toUpperCase())} the draft's ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])} range. Today's rules set no target for these funds.`
+  const aVerdict = `${a.all_pct > r.today.cap ? 'Above' : 'At or below'} today's ${pctTrim(r.today.cap)} ceiling on all funds. This year's deposits are ${pct(a.deposits_pct, 2)} of the budget, against the draft's ${pctTrim(r.draft.cap)} cap on deposits.`
+
   return (
-    <div className="w-full max-w-4xl min-w-0" aria-label={alt}>
-      {/* THE RULE SET */}
-      <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Rule set">
-        {d.presets.map(q => (
-          <button key={q.key} type="button" role="tab" aria-selected={preset === q.key} onClick={() => setPreset(q.key)}
+    <div className="w-full max-w-5xl min-w-0" aria-label={alt}>
+      {/* THE STARTING POSITIONS */}
+      <div className="flex flex-wrap items-center gap-1.5">
+        <span className="text-[13px] mr-1" style={secondary}>Set the dials to</span>
+        {d.presets.map(p => (
+          <button key={p.key} type="button" aria-pressed={!mine && from === p.key} onClick={() => choose(p)}
             className="px-3 py-1.5 rounded-md text-[14px] font-medium"
-            style={preset === q.key
+            style={!mine && from === p.key
               ? { background: 'var(--text-primary)', color: 'var(--surface-1)' }
-              : { background: 'var(--surface-2)', color: 'var(--text-primary)' }}>{q.label}</button>
+              : { background: 'var(--surface-2)', color: 'var(--text-primary)' }}>{p.label}</button>
         ))}
+        {mine ? <span className="ml-1 px-2 py-1 rounded-md text-[13px]" style={{ border: '1px dashed var(--text-muted)', color: 'var(--text-primary)' }}>Your settings</span> : null}
       </div>
-      <p className="mt-1.5 text-[12.5px]" style={muted}>{P.source}</p>
+      <p className="mt-1.5 text-[12.5px]" style={muted}>{mine ? 'Moved from ' + preset.label.toLowerCase() + ': ' + preset.source : preset.source}</p>
 
-      {/* THE SIGNATURE: what each rule set does with the same free cash */}
-      <div className="mt-3 rounded-md p-3" style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      {/* THE SIGNATURE: what each setting does with the same free cash */}
+      <div className="mt-3 rounded-md p-3" style={card}>
         <div className="flex items-baseline justify-between gap-2">
           <span className="text-[13.5px]" style={secondary}>Where {usd(x.fc)} of free cash goes</span>
           <Tag k="ours" />
         </div>
-        <SplitBar label={d.presets[0].label} u={all.today} fc={x.fc} active={preset === 'today'} names={names} />
-        <SplitBar label={d.presets[1].label} u={all.draft} fc={x.fc} active={preset === 'draft'} names={names} />
-        {preset === 'custom' ? <SplitBar label={d.presets[2].label} u={all.custom} fc={x.fc} active names={names} /> : null}
+        <SplitBar label={d.presets[0].label} u={today} fc={x.fc} strong={!mine && from === 'today'} names={names} />
+        <SplitBar label={d.presets[1].label} u={draft} fc={x.fc} strong={!mine && from === 'draft'} names={names} />
+        {mine ? <SplitBar label="Your settings" u={u} fc={x.fc} strong names={names} /> : null}
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
             <li key={q.key}><span className="inline-block w-2.5 h-2.5 mr-1.5 align-middle rounded-sm"
@@ -185,122 +258,81 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
         </ul>
       </div>
 
-      <div className="mt-4 grid gap-4 md:grid-cols-[1fr_1.1fr]">
-        {/* THE DOLLARS, for the rule set chosen */}
-        <div className="min-w-0">
-          <table className="w-full text-[14px] tabular-nums">
-            <thead><tr className="text-left text-[12px]" style={muted}>
-              <th className="font-normal pb-1">{P.label}</th><th className="font-normal pb-1 text-right">Dollars</th><th className="font-normal pb-1 text-right">Share</th>
-            </tr></thead>
-            <tbody>
-              {d.uses.map(q => {
-                const v = u[q.key]
-                if (q.key !== 'left' && v === 0 && preset !== 'custom') return null
-                return (
-                  <tr key={q.key} style={{ borderTop: '1px solid var(--grid)' }}>
-                    <td className="py-1.5 pr-2"><span className="inline-block w-2.5 h-2.5 mr-1.5 align-middle rounded-sm"
-                      style={{ background: COLOR[q.key], boxShadow: q.key === 'left' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />
-                      <span className={q.key === 'left' ? 'font-semibold' : ''}>{q.label}</span></td>
-                    <td className="py-1.5 text-right">{usd(v)}</td>
-                    <td className="py-1.5 pl-2 text-right" style={secondary}>{x.fc ? pct(v / x.fc, 1) : ''}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-          {preset === 'draft' ? <p className="mt-2 text-[12.5px]" style={muted}>{d.text.floors_note}</p> : null}
-
-          {/* THE DIALS each rule set leaves to the reader */}
-          {preset === 'today' ? (
-            <label className="mt-3 block text-[13px]">
-              <span style={secondary}>{d.inputs.find(i => i.key === 'special_plan')!.label}</span>
-              <Money value={x.special_plan} onChange={v => set('special_plan', v)} />
-              <span className="mt-0.5 block text-[12px]" style={muted}>{d.inputs.find(i => i.key === 'special_plan')!.source}</span>
-            </label>
-          ) : null}
-          {preset === 'draft' ? (
-            <label className="mt-3 block text-[13px]">
-              <span style={secondary}>Cash capital share: <b style={{ color: 'var(--text-primary)' }}>{pct(x.capital_share, 0)}</b> of the free cash</span>
-              <input type="range" className="mt-1 block w-full" min={p.draft.capital[0] * 100} max={p.draft.capital[1] * 100} step={1}
-                value={Math.round(x.capital_share * 100)} onChange={e => set('capital_share', Number(e.target.value) / 100)} />
-              <span className="flex justify-between text-[11.5px]" style={muted}><span>{pct(p.draft.capital[0], 0)}</span><span>{pct(p.draft.capital[1], 0)}</span></span>
-            </label>
-          ) : null}
-          {preset === 'custom' ? (
-            <div className="mt-3 space-y-2">
-              {SHARE_KEYS.map(k => (
-                <label key={k} className="block text-[13px]">
-                  <span className="flex justify-between" style={secondary}><span>{names[k]}</span>
-                    <b className="tabular-nums" style={{ color: 'var(--text-primary)' }}>{pct(shares[k], 0)}</b></span>
-                  <input type="range" className="block w-full" min={0} max={100} step={1} value={Math.round(shares[k] * 100)}
-                    onChange={e => setShare(k, Number(e.target.value) / 100)} aria-label={`${names[k]}, percent of free cash`} />
-                </label>
-              ))}
-              <p className="text-[12px]" style={muted}>The shares add to {pct(shareSum, 0)}; a slider stops where the total would pass the whole free cash.</p>
-            </div>
-          ) : null}
-        </div>
-
-        {/* THE OUTCOMES */}
-        <div className="grid gap-3 min-w-0">
-          <Gauge title="General stabilization" before={before.general_pct} after={a.general_pct}
-            bands={[{ lo: p.bands.general_draft[0], hi: p.bands.general_draft[1], label: `State draft: ${pct(p.bands.general_draft[0], 0)} to ${pct(p.bands.general_draft[1], 0)} of the budget`, c: tone.draft }]}
-            ticks={[{ at: p.bands.general_today, label: `Today's rules: at least ${pct(p.bands.general_today, 0)}`, c: tone.today },
-              { at: p.today.floor, label: `Today's rules: never below ${pct(p.today.floor, 0)} of the prior year's budget`, c: 'var(--text-muted)' }]} />
-          <Gauge title="Special purpose stabilization" before={before.special_pct} after={a.special_pct}
-            bands={[{ lo: p.bands.special_draft[0], hi: p.bands.special_draft[1], label: `State draft: ${pct(p.bands.special_draft[0], 0)} to ${pct(p.bands.special_draft[1], 0)} of the budget`, c: tone.draft }]}
-            ticks={[]} note="Today's rules set no target for these funds." />
-          <Gauge title="All stabilization funds" before={before.all_pct} after={a.all_pct} bands={[]}
-            ticks={[{ at: p.today.cap, label: `Today's rules: the total not above ${pct(p.today.cap, 0)} of the prior year's budget`, c: tone.today }]}
-            note={`${d.text.cap_reading} The state draft caps the year's deposits instead: ${pct(a.deposits_pct, 2)} of the budget here, against its ${pct(p.draft.cap, 0)}.`} />
-          <div className="grid gap-3 sm:grid-cols-2">
-            <Figure title="Retiree health trust" value={usd(a.opeb_trust)}
-              sub={`${pct(a.funded, 1)} of the ${usd(x.opeb_liability)} liability, from ${pct(before.funded, 1)}`} />
-            <Figure title="Next year's starting free cash" value={usd(a.next_fc)}
-              sub={preset === 'today' ? 'Today\'s rules set nothing aside; whatever Town Meeting leaves unspent carries over.'
-                : `${pct(a.next_fc_pct, 2)} of the budget, set aside before the next certification. The draft's target for a certification is ${pct(p.bands.fc_draft[0], 0)} to ${pct(p.bands.fc_draft[1], 0)}.`} />
-          </div>
-        </div>
+      {/* THE DIALS */}
+      <h3 className="mt-6 text-[16px] font-semibold">The dials <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
+      <p className="mt-0.5 text-[12.5px]" style={muted}>{d.text.order_note} {d.text.floors_note}</p>
+      <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {d.dials.map(q => (
+          <DialCard key={q.key} d={q} v={dials[q.key]} fc={x.fc} amount={q.key === 'other_cap' ? undefined : u.by[q.key]}
+            range={q.key === 'capital' ? d.capital_range : undefined}
+            onChange={v => setDials(o => ({ ...o, [q.key]: v }))} />
+        ))}
+      </div>
+      <div className="mt-3 rounded-md p-3 flex flex-wrap items-baseline justify-between gap-2" style={{ ...card, background: 'var(--surface-2)' }}>
+        <span className="text-[15px] font-semibold" style={{ color: 'var(--text-primary)' }}>Left for Town Meeting to decide</span>
+        <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}
+          <span className="ml-2 text-[13px] font-normal" style={secondary}>{pct(u.left / x.fc, 1)} of the free cash</span></span>
+        {u.short > 0 ? <p className="w-full text-[12.5px]" style={secondary}>The dials ask for {usd(u.short)} more than the free cash holds; the last dials in the order get less than they ask.</p> : null}
       </div>
 
-      {/* THE INPUTS */}
-      <details className="mt-5 rounded-md" style={{ border: '1px solid var(--grid)' }} open>
-        <summary className="cursor-pointer px-3 py-2 text-[14px] font-semibold">The figures it starts from</summary>
+      {/* THE OUTCOMES */}
+      <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances</h3>
+      <div className="mt-2 grid gap-3 lg:grid-cols-3">
+        <Bullet title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
+          band={{ lo: b.general_draft[0], hi: b.general_draft[1], label: `Draft: ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])}` }}
+          line={{ at: b.general_today, label: `Today: at least ${pctTrim(b.general_today)}` }} verdict={gVerdict} />
+        <Bullet title="Special purpose stabilization" before={before.special_pct} after={a.special_pct} deposit={u.special}
+          band={{ lo: b.special_draft[0], hi: b.special_draft[1], label: `Draft: ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])}` }} verdict={sVerdict} />
+        <Bullet title="All stabilization funds" before={before.all_pct} after={a.all_pct} deposit={u.general + u.special}
+          line={{ at: r.today.cap, label: `Today: at most ${pctTrim(r.today.cap)}` }} verdict={aVerdict} />
+      </div>
+      <p className="mt-2 text-[12px]" style={muted}>{d.text.cap_reading}</p>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <Figure title="Retiree health trust" value={usd(a.opeb_trust)}
+          sub={`${pct(a.funded, 1)} of the ${usd(x.opeb_liability)} liability, from ${pct(before.funded, 1)}`} />
+        <Figure title="Next year's starting free cash" value={usd(a.next_fc)}
+          sub={a.next_fc > 0 ? `${pct(a.next_fc_pct, 2)} of the budget, kept back before the next certification. The draft's target for a certification is ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])}.`
+            : 'Nothing is kept back by rule; whatever Town Meeting leaves unspent carries over.'} />
+      </div>
+
+      {/* THE STARTING FIGURES */}
+      <details className="mt-5 rounded-md" style={{ border: '1px solid var(--grid)' }}>
+        <summary className="cursor-pointer px-3 py-2 text-[14px] font-semibold">The figures it starts from{anyChanged ? ' (edited)' : ''}</summary>
         <div className="px-3 pb-3">
-          <div className="grid gap-3 sm:grid-cols-2">
-            {d.inputs.filter(i => i.key !== 'special_plan').map(i => (
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {d.inputs.map(i => (
               <label key={i.key} className="block text-[13px]">
                 <span className="flex items-baseline justify-between gap-2"><span style={secondary}>{i.label}</span>
                   <Tag k={changed(i.key) ? 'input' : 'published'} /></span>
-                <Money value={x[i.key]} onChange={v => set(i.key, v)} />
+                <Money value={x[i.key]} onChange={v => setInput(i.key, v)} />
                 <span className="mt-0.5 block text-[12px]" style={muted}>{changed(i.key) ? `Published: ${i.text}. ${i.source}` : i.source}</span>
               </label>
             ))}
           </div>
-          {anyChanged ? <button type="button" onClick={reset} className="mt-3 px-3 py-1 rounded-md text-[13px]"
+          {anyChanged ? <button type="button" onClick={() => setX(d.defaults)} className="mt-3 px-3 py-1 rounded-md text-[13px]"
             style={{ background: 'var(--surface-2)', color: 'var(--text-primary)' }}>Back to the published figures</button> : null}
           <ul className="mt-3 space-y-1 text-[12.5px]" style={muted}>
             <li>{d.text.audit_note}</li>
             <li>{d.text.budget_note}</li>
-            <li>{d.text.annual_note} At this budget that is {usd(p.draft.stab_annual[0] * x.budget)} or {usd(p.draft.stab_annual[1] * x.budget)} a year.</li>
+            <li>{d.text.annual_note} At this budget that is {usd(r.draft.stab_annual[0] * x.budget)} or {usd(r.draft.stab_annual[1] * x.budget)} a year.</li>
           </ul>
         </div>
       </details>
 
       {/* THE RULES, as printed */}
-      {P.rules.length ? (
-        <details className="mt-3 rounded-md" style={{ border: '1px solid var(--grid)' }}>
-          <summary className="cursor-pointer px-3 py-2 text-[14px] font-semibold">{P.label}, as printed</summary>
-          <ul className="px-3 pb-3 space-y-2">
-            {P.rules.map((r, i) => (
-              <li key={r.key + i} className="text-[13px]">
-                <q style={{ color: 'var(--text-primary)' }}>{r.quote}</q>
-                <span className="block text-[12px]" style={muted}>{r.source}</span>
-              </li>
-            ))}
-          </ul>
-        </details>
-      ) : null}
+      <details className="mt-3 rounded-md" style={{ border: '1px solid var(--grid)' }}>
+        <summary className="cursor-pointer px-3 py-2 text-[14px] font-semibold">The rules behind each dial, as printed</summary>
+        <ul className="px-3 pb-3 space-y-2">
+          {d.dials.flatMap(q => ([['Today', q.today], ['Draft', q.draft]] as const)
+            .filter(([, s]) => s.quote)
+            .map(([n, s]) => (
+              <li key={q.key + n} className="text-[13px]">
+                <span className="font-semibold">{q.label}, {n.toLowerCase()}: </span>
+                <q style={{ color: 'var(--text-primary)' }}>{s.quote}</q>
+                <span className="block text-[12px]" style={muted}>{s.source}</span>
+              </li>)))}
+        </ul>
+      </details>
     </div>
   )
 }
