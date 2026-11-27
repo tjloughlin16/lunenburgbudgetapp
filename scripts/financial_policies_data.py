@@ -154,6 +154,24 @@ DRAFT = {
     'test_first': on_manual(3, 'The Town should analyze its current financial operations and existing policies to determine the appropriate benchmarks and metrics before adopting these policies'),
 }
 
+# THE TARGET BANDS DRAWN ON THE CHARTS, as percent of the budget. Each pair is the number form of a
+# phrase asserted verbatim above (DRAFT / TODAY): stab_range "five to eight percent", fc_target "five
+# to seven percent", special "three to five percent", capital "two to three percent", debt_total
+# "11 percent ... target balance of five to seven percent", stab_min "five percent".
+BANDS = {
+    'stab': (5, 8), 'stab_today': 5, 'fc': (5, 7), 'special': (3, 5), 'capital': (2, 3),
+    'debt_target': (5, 7), 'debt_ceiling': 11,
+}
+_WORDS = {2: 'two', 3: 'three', 5: 'five', 7: 'seven', 8: 'eight'}
+for _k, _page, _text in (('stab', 30, 'five to eight percent'), ('fc', 29, 'f ive to seven percent'),
+                         ('special', 30, 'three to five percent'), ('capital', 21, 'two to three percent'),
+                         ('debt_target', 24, 'five to seven percent')):
+    lo, hi = BANDS[_k]
+    if not _text.replace('f ive', 'five').startswith(_WORDS[lo]) or not _text.endswith('%s percent' % _WORDS[hi]):
+        fail('BANDS[%r] = %s does not read as %r' % (_k, BANDS[_k], _text))
+    on_manual(_page, _text)
+on_manual(24, 'limited to 11 percent of total operating revenues')
+
 # The draft's free cash split, in its own order (pdf pages 29-30). Each share is a FLOOR;
 # capital is "at least 20 ... no more than 30", other one-time costs "the lesser of 10 percent
 # or $250,000". Asserted above, applied in split().

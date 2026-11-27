@@ -126,6 +126,19 @@ def inline(pid, flow, facts, cons, links=None):
     return out
 
 
+
+def band(n, key, floor_name='The draft\u2019s floor', top_name='The draft\u2019s top'):
+    """A target drawn as coloured lines in the chart's legend, not the grey reference line (TJ,
+    27 November 2026: "the light gray is too subtle"). The colour is the renderer's palette, so the
+    look changes with no new component. Values are FP.BANDS, asserted against the draft's words."""
+    v = FP.BANDS[key]
+    lo, hi = (v, None) if not isinstance(v, tuple) else v
+    out = [TP.track(floor_name, [lo] * n, 'published', 'line', colour=3)]
+    if hi is not None:
+        out.append(TP.track(top_name, [hi] * n, 'published', 'line', colour=3))
+    return out
+
+
 # ------------------------------------------------------------------------------ sources
 
 def src_manual(key='manual'):
@@ -413,16 +426,15 @@ def page_targets(b):
     years = sorted(b['stab_pct'])
     sp = b['stab_pct']
     chart_s = TP.series('General stabilization, share of the budget', [C.fy(y) for y in years],
-                        [TP.track('Lunenburg', [fl(sp[y]) for y in years])], '%', decimals=2,
-                        reference=(5, 'Today’s floor and the draft’s'), from_zero=True,
+                        [TP.track('Lunenburg', [fl(sp[y]) for y in years])] + band(len(years), 'stab', 'Floor, today and the draft'),
+                        '%', decimals=2, from_zero=True,
                         note='Year-end balance over that year’s operating budget, %s to %s.'
                              % (C.fy(years[0]), C.fy(years[-1])),
                         note_figures={'a': F(years[0]), 'b': F(years[-1])})
     fyears = sorted(b['fc_pct'])
     fp = b['fc_pct']
     chart_f = TP.series('Certified free cash, share of the budget', [C.fy(y) for y in fyears],
-                        [TP.track('Lunenburg', [fl(fp[y]) for y in fyears])], '%', decimals=2,
-                        reference=(5, 'The draft’s target floor'),
+                        [TP.track('Lunenburg', [fl(fp[y]) for y in fyears])] + band(len(fyears), 'fc'), '%', decimals=2,
                         note='By the year it is available, over the year before’s budget, %s to %s.'
                              % (C.fy(fyears[0]), C.fy(fyears[-1])),
                         note_figures={'a': F(fyears[0]), 'b': F(fyears[-1])})
@@ -511,18 +523,19 @@ def page_targets(b):
     xs = [C.fy(y) for y in py]
     span = {'a': F(py[0]), 'b': F(py[-1])}
     c_spec = TP.series('Special purpose stabilization, share of budget', xs,
-                       [TP.track('Lunenburg', [fl(spec[y]) for y in py])], '%', decimals=2,
-                       reference=(3, 'The draft\u2019s floor for the special funds'),
+                       [TP.track('Lunenburg', [fl(spec[y]) for y in py])] + band(len(py), 'special'), '%', decimals=2,
                        note='Every special fund the state counts, sewer funds included, %s to %s.' % (C.fy(py[0]), C.fy(py[-1])),
                        note_figures=span)
     c_cap = TP.series('Capital funded, share of budget less debt', [C.fy(y) for y in py if y in cap_pct],
-                      [TP.track('Lunenburg', [fl(cap_pct[y]) for y in py if y in cap_pct])], '%', decimals=2,
-                      reference=(2, 'The draft\u2019s floor for cash capital'),
+                      [TP.track('Lunenburg', [fl(cap_pct[y]) for y in py if y in cap_pct])] + band(len(cap_pct), 'capital'),
+                      '%', decimals=2,
                       note='Every source the capital plan lists, %s to %s; the draft counts cash only.' % (C.fy(py[0]), C.fy(py[-1])),
                       note_figures=span)
     c_debt = TP.series('General fund debt service, share of the budget', xs,
-                       [TP.track('Lunenburg', [fl(debt_pct[y]) for y in py])], '%', decimals=2,
-                       reference=(11, 'The draft\u2019s ceiling for all debt'),
+                       [TP.track('Lunenburg', [fl(debt_pct[y]) for y in py])] + band(len(py), 'debt_target', 'The draft\u2019s target, bottom',
+                                                                   'The draft\u2019s target, top')
+                       + [TP.track('The draft\u2019s ceiling', [FP.BANDS['debt_ceiling']] * len(py), 'published', 'line', colour=4)],
+                       '%', decimals=2,
                        note='Voter-approved debt included. The draft measures against operating revenues.')
     fc_av = b['fact_sheet']
     oy = [y for y in py if y >= 2018]
@@ -531,8 +544,8 @@ def page_targets(b):
                         TP.track('Ten percent of that year\u2019s free cash', [fl(fc_av[y][0] / 10) for y in oy], 'estimate', 'line')],
                        '$', kind='bar',
                        note='Free cash by the year it is available. Nothing held ties a deposit to one certification.')
-    above_debt = [y for y in py if debt_pct[y] > 11]
-    in_cap = [y for y in cap_pct if 2 <= round(cap_pct[y], 2) <= 3]   # as printed, so 3.00% counts
+    above_debt = [y for y in py if debt_pct[y] > FP.BANDS['debt_ceiling']]
+    in_cap = [y for y in cap_pct if FP.BANDS['capital'][0] <= round(cap_pct[y], 2) <= FP.BANDS['capital'][1]]   # as printed, so 3.00% counts
     over10 = [y for y in oy if b['opeb']['rows']['contrib'][y] >= fc_av[y][0] / 10]
     import re as _re
     _pcts = _re.findall(r'Percentage to GF Budget ([\d.]+%) ([\d.]+%) ([\d.]+%) ([\d.]+%)', FP.manual_page(31))
