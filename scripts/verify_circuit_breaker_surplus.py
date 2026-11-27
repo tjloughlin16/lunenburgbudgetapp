@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Recompute the circuit breaker facts on FY2026 school surplus by a second route, and fail if a figure differs.
+"""Recompute the circuit breaker facts by a second route, and fail if a figure differs.
 
     python3 scripts/verify_circuit_breaker_surplus.py
 
-The page is built by build_fy2026_school_surplus.py (24 November 2026; it absorbed Circuit
-breaker and surplus) from `build_circuit_breaker_surplus.data()`, which reads the journal through `journal.py` and the general fund
+The facts are built by build_fy2026_school_surplus.py (24 November 2026; it absorbed Circuit
+breaker and surplus) and, since 27 November 2026, drawn on Year-end tuition entries
+(fy2026-tuition-paid-early, built by build_journal_surplus_topics.py), with FY2026's left in
+Surplus by category's finding. Both from `build_circuit_breaker_surplus.data()`, which reads the journal through `journal.py` and the general fund
 lines through `fy_breakdown.model` (verified on its own by verify_fy_breakdown.py). This reads
 the journal CSV with csv and Decimal and the budget book's text directly, shares nothing with
 the generator, and asserts every figure on the page's facts reproduces, to the dollar:
@@ -24,7 +26,8 @@ from decimal import Decimal
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy2026-surplus-by-category.json')
+PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy2026-tuition-paid-early.json')
+BY_CAT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy2026-surplus-by-category.json')
 BOOK = os.path.join(ROOT, 'sources', 'district-budget', 'text', '3-12-25-town-manager-39-s-budget.txt')
 COLLAB = '0100-3-300-9400-51-1-06-2-535023'
 SPENT = {'API', 'APM', 'PRJ', 'PRH', 'GEN', 'GRV', 'CRP', 'POE', 'POL', 'POM', 'SOY', 'GEL'}
@@ -80,7 +83,9 @@ def main():
     bud = sum((r['v'] for r in sc if r['source'] in ('BUC', 'BUA')), Decimal(0))
     spent = sum((r['v'] for r in sc if r['source'] in SPENT), Decimal(0))
     left = bud - spent
-    check(facts['left'] == usd(left), 'left: page %s, journal %s' % (facts['left'], left))
+    finding = json.load(open(BY_CAT, encoding='utf-8'))['finding']['text']
+    check(usd(left) in finding, 'left: journal %s, not in Surplus by category’s finding %r'
+                                % (usd(left), finding))
     if bad:
         print('verify_circuit_breaker_surplus: %d FAILED' % len(bad))
         for b in bad:

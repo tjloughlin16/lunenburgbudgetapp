@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Recompute every figure on /fy2026-closeout/surplus-bridge and /surplus-repeat-lines by a
-DIFFERENT ROUTE.
+"""Recompute every figure on /fy2026-closeout/surplus-bridge, /surplus-repeat-lines (with what it
+absorbed from Two-year surplus and Surplus suggestions), the burndowns and
+/fy2026-tuition-paid-early by a DIFFERENT ROUTE.
 
     python3 scripts/verify_journal_surplus_topics.py
 
@@ -42,37 +43,26 @@ KIND = {'PRJ': 'pay', 'PRH': 'pay', 'API': 'inv', 'APM': 'inv', 'GEN': 'je', 'GR
 bad = []
 
 
-def suggestions(left, cat):
-    """The suggestions page's measurements, from the period-13 spreadsheets: how spread out
-    FY2025's leftover was, and how many accounts were under budget every year; and from the raw
-    journal, the June transfers of FY2025. Its building-upkeep figures are checked by
-    verify_buildings_topics.py, from the same sources."""
-    acct = defaultdict(D)
-    for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-ytd.csv'), encoding='utf-8')):
-        if r['period'] == '13' and r['report'] == 'gf-school' and r['type'] == 'E':
-            acct[(int(r['fiscal_year']), r['account'])] += D(r['available_budget']).quantize(D('0.01'))
+def repeat_extra(acct):
+    """What Repeat underspending absorbed on 27 November 2026, recomputed: from the period-13
+    spreadsheets, how spread out FY2025's leftover was, FY2026's largest share and the accounts
+    under budget every year (from Surplus suggestions); with the raw journal's FY2025 close (YEC),
+    the two years on one footing, account by account (from Two-year surplus)."""
     names = {a for (_, a) in acct}
-    v25 = sorted((acct[(2025, a)] for a in names if acct[(2025, a)] > 0), reverse=True)
+    v25 = sorted((acct[(Y0, a)] for a in names if acct[(Y0, a)] > 0), reverse=True)
+    v26 = sorted((acct[(Y1, a)] for a in names if acct[(Y1, a)] > 0), reverse=True)
     every = [a for a in names if all(acct[(y, a)] > 0 for y in YEARS)]
-    moved = sum(D(r['amount']) for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-journal.csv'),
-                                                            encoding='utf-8'))
-                if r['fund'] == '0100' and r['account'].split('-')[2] == '300' and r['source'] == 'BUA'
-                and r['fiscal_year'] == '2025' and r['period'] == '12' and D(r['amount']) > 0
-                and not r['description'].startswith('ENCUMBRANCE CARRY FORWARD'))
-    over26 = -sum(acct[(2026, a)] for a in names if acct[(2026, a)] < 0)
-    p = json.load(open(os.path.join(TOPICS, 'surplus-suggestions.json'), encoding='utf-8'))
-    facts = {x['id']: x['value']['value'] for x in p['facts'] if x.get('value')}
-    v26 = sorted((acct[(2026, a)] for a in names if acct[(2026, a)] > 0), reverse=True)
-    want = {'n25': len(v25), 'top': 100.0 * float(v25[0]) / float(sum(v25)), 'every': len(every),
-
-            'mv': moved, 'ov': over26}
-    for k, v in want.items():
-        if abs(float(facts[k]) - float(v)) > 0.006:
-            bad.append('surplus-suggestions %s: page %r, recomputed %r' % (k, facts[k], float(v)))
-    # FY2026's largest leftover, stated in the finding and a note (not a fact: the page is frozen)
-    t26 = '%d%%' % round(100.0 * float(v26[0]) / float(sum(v26)))
-    if t26 not in p['finding']['text']:
-        bad.append('surplus-suggestions finding: %s not in %r' % (t26, p['finding']['text']))
+    closed = defaultdict(D)
+    for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-journal.csv'), encoding='utf-8')):
+        if r['fund'] == '0100' and r['account'].split('-')[2] == '300' and r['source'] == 'YEC' \
+                and r['fiscal_year'] == str(Y0):
+            closed[r['account']] -= D(r['amount'])
+    both = sorted((acct[(Y0, a)] - closed[a] + acct[(Y1, a)] for a in names | set(closed)),
+                  reverse=True)
+    pc = lambda a, b: 100.0 * float(a) / float(b)
+    return dict(ae=len(every), n25=len(v25), top=pc(v25[0], sum(v25)), t26=pc(v26[0], sum(v26)),
+                u2=sum(x for x in both if x > 0), o2=-sum(x for x in both if x < 0),
+                t2=sum(both[:10]))
 
 
 def burndowns(col):
@@ -203,11 +193,9 @@ def main():
             diff=left[Y0] - told, db=budget[Y1] - budget[Y0],
             ds=col[(Y1, 'ytd_expended')] - col[(Y0, 'ytd_expended')]),
         'surplus-repeat-lines': dict(
-            n=len(both), b0=sum(cat[(Y0, c)] for c in both), b1=sum(cat[(Y1, c)] for c in both),
-            s0=left[Y0], s1=left[Y1], e=len(every),
+            e=len(every),
             e4=sum(cat[(y, c)] for c in every for y in YEARS),
-            l0=cat[(Y0, lead)], l1=cat[(Y1, lead)], an=len(a_both),
-            ab1=sum(acct[(Y1, a)] for a in a_both)),
+            an=len(a_both), ab1=sum(acct[(Y1, a)] for a in a_both), **repeat_extra(acct)),
     }
     if len(adj) != 1:
         bad.append('expected one ADJ FY25 BUDGET line; found %d' % len(adj))
@@ -223,7 +211,8 @@ def main():
     top = sorted(a_both, key=lambda a: -(acct[(Y0, a)] + acct[(Y1, a)]))[:30]
     percents = {pct(dk('pay'), kind[(Y0, 'pay')], 1), pct(dk('inv'), kind[(Y0, 'inv')], 1),
                 pct(dk('pay'), col[(Y1, 'ytd_expended')] - col[(Y0, 'ytd_expended')], 0),
-                pct(want['surplus-repeat-lines']['b0'], left[Y0], 0),
+                '%.0f%%' % want['surplus-repeat-lines']['top'],
+                '%.0f%%' % want['surplus-repeat-lines']['t26'],
                 pct(sum(acct[(y, a)] for a in top for y in (Y0, Y1)),
                     sum(acct[(y, a)] for a in a_both for y in (Y0, Y1)), 0)}
 
@@ -282,18 +271,18 @@ def main():
                     bad.append('%s: bridge step %r is %r, recomputed %r'
                                % (tid, s['label'], s['value'], float(w)))
         else:
+            # Repeat underspending's signature: the areas under budget every year, each year.
             for r in ch['rows']:
                 c = next(k for k, lab, *_ in CATEGORIES if lab == r['label'])
-                for v, y in zip(r['values'], (Y0, Y1)):
+                for v, y in zip(r['values'], YEARS):
                     if abs(v - float(cat[(y, c)])) > 0.006:
                         bad.append('%s: %s %d is %r, recomputed %r' % (tid, c, y, v, float(cat[(y, c)])))
-            if len(ch['rows']) != len(both):
-                bad.append('%s: the chart draws %d categories; %d were under both years'
-                           % (tid, len(ch['rows']), len(both)))
+            if len(ch['rows']) != len(every):
+                bad.append('%s: the chart draws %d categories; %d were under every year'
+                           % (tid, len(ch['rows']), len(every)))
 
     burndowns(col)
     prepaid(owed, left)
-    suggestions(left, cat)
     why_left(cat, acct)
     if bad:
         print('verify_journal_surplus_topics: %d problem(s)' % len(bad))
@@ -321,8 +310,7 @@ def prepaid(owed, left):
     budget = sum(D(r['amount']) for r in line if r['source'] in ('BUC', 'BUA'))
     before = sum(D(r['amount']) for r in line if r['source'] in KIND
                  and r['effective_date'] < '2026-06-30')
-    want = {'paid': paid, 'recl': -recl, 'before': before, 'budget': budget, 'left': left[Y1],
-            'without': left[Y1] + paid, 'owed25': owed[Y0]}
+    want = {'paid': paid, 'charged': -recl, 'before': before, 'budget': budget}
     p = json.load(open(os.path.join(TOPICS, 'fy2026-tuition-paid-early.json'), encoding='utf-8'))
     facts = {x['id']: x for x in p['facts']}
     if len(early) != 9 or {r['effective_date'] for r in early} != {'2026-06-30'} \
@@ -335,6 +323,17 @@ def prepaid(owed, left):
         got = facts[k]['value']['value']
         if abs(float(got) - float(v)) > 0.006:
             bad.append('tuition-paid-early %s: page %r, recomputed %r' % (k, got, float(v)))
+    # The surplus with and without the payment, now a chart block (27 November 2026).
+    ww = [b['spec'] for b in p.get('blocks', []) if b['block'] == 'chart'
+          and b['spec'].get('title') == 'What was left, with and without the payment']
+    if len(ww) != 1:
+        bad.append('tuition-paid-early: the with-and-without chart is missing')
+    else:
+        tr = [t['values'] for t in ww[0]['series']]
+        if [round(v, 2) for v in tr[0]] != [round(float(owed[Y0]), 2), round(float(left[Y1]), 2)] \
+                or round(tr[1][1], 2) != round(float(left[Y1] + paid), 2):
+            bad.append('tuition-paid-early: the with-and-without chart is %r; recomputed %s, %s '
+                       'and %s' % (tr, owed[Y0], left[Y1], left[Y1] + paid))
 
 
 def why_left(cat, acct):

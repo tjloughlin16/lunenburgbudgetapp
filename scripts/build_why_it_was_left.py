@@ -81,7 +81,7 @@ RENAMED = {
     # on the same account (CONTRACTED SERVICES, 1450). Same products, same account.
     'POWERSCHOOL GROUP LL': 'POWERSCHOOL HOLDINGS',
 }
-PSYCH_PAGE = 'fy2026-psychologist-line'
+PSYCH_PAGE = 'fy2026-staff-lines'
 
 
 def fail(msg):
