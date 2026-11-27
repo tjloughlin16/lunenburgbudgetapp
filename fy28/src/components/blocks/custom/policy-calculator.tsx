@@ -35,7 +35,7 @@ type Dial = { key: DialKey; label: string; unit: 'fc' | 'budget' | 'usd'; feeds:
 type PresetKey = 'today' | 'practice' | 'draft'
 type Preset = { key: PresetKey; label: string; source: string; settings: Dials }
 type Data = {
-  inputs: Input[]; dials: Dial[]; capital_range: [number, number]; uses: { key: UseKey; label: string }[]; presets: Preset[]
+  inputs: Input[]; dials: Dial[]; capital_range: [number, number]; uses: { key: UseKey; label: string }[]; presets: Preset[]; practice_discretionary: Disc[]
   rules: { today: { floor: number; cap: number }; draft: { cap: number; stab_annual: [number, number] } }
   bands: { general_draft: [number, number]; special_draft: [number, number]; fc_draft: [number, number]; general_today: number }
   defaults: Inputs
@@ -79,28 +79,42 @@ function settingText(d: Dial, s: Setting, voted = false) {
   return d.unit === 'usd' ? (d.key === 'special_dollars' ? 'set in capital planning' : usd(s.value)) : pctTrim(s.value)
 }
 
-/** One rule setting's split of the free cash, as a 100% bar. */
-// UNDER "TODAY IN PRACTICE" THE REMAINDER IS NOT LEFT TO DECIDE: Town Meeting already decided, and
-// this is what it did not vote (TJ, 27 November 2026, reading $414,733 as the certification: "you are
-// saying we only cerfitifed 414k in free cash?!"). So the words follow the setting.
-const leftWords = (practice: boolean) => practice ? 'not voted by Town Meeting' : 'left for Town Meeting'
-function SplitBar({ label, u, fc, strong, names, practice = false }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string>; practice?: boolean }) {
-  const keys: UseKey[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other', 'left']
-  const parts = keys.map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
+// THREE LAYERS (TJ, 27 November 2026: "we have the pot amount. THATS not what these dials change.
+// THEN, we have the 'off the top' things that are forced in policy. And then, whatever doesnt come off
+// the top, is 'discretionary'"). The free cash is the POT, an input no dial moves; the dials are what a
+// rule takes OFF THE TOP; the rest is DISCRETIONARY, Town Meeting's to decide. Under Today in practice
+// the discretionary part is drawn split into how Town Meeting actually used it, in lighter shades.
+const DISCRETIONARY = 'Discretionary'
+type Disc = { key: 'capital' | 'other' | 'stayed'; label: string; share: number }
+const DISC_COLOR: Record<Disc['key'], string> = { capital: 'var(--text-secondary)', other: 'var(--text-muted)', stayed: 'var(--surface-3)' }
+
+/** One setting's split of the pot: off the top, then discretionary. */
+function SplitBar({ label, u, fc, strong, names, disc }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string>; disc?: Disc[] }) {
+  const keys: UseKey[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other']
+  const top = keys.map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
+  // Shown as the pot less the discretionary part, each rounded once, so the two always foot to the pot.
+  const offTop = Math.round(fc) - Math.round(u.left)
+  const used = disc?.map(q => ({ ...q, v: q.share * fc })).filter(q => q.v > 0)
+  const W = (v: number) => `${(100 * v) / fc}%`
   return (
     <div className="mt-3" style={{ opacity: strong ? 1 : 0.6 }}>
       <div className="flex items-baseline justify-between gap-2 text-[13px]">
         <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{label}</span>
-        <span style={secondary}>{usd(u.left)} {leftWords(practice)}</span>
+        <span style={secondary}>{usd(offTop)} off the top · <span style={{ color: 'var(--text-primary)' }}>{usd(u.left)} discretionary</span></span>
       </div>
       <div className="mt-1 flex h-7 w-full overflow-hidden rounded-sm" style={{ background: 'var(--surface-2)' }}
-        role="img" aria-label={`${label}: ` + parts.map(p => `${names[p.k]} ${usd(p.v)}`).join(', ')}>
-        {parts.map(p => (
-          <div key={p.k} title={`${names[p.k]}: ${usd(p.v)}`}
-            style={{ width: `${(100 * p.v) / fc}%`, background: COLOR[p.k], borderRight: '1px solid var(--surface-1)',
-              boxShadow: p.k === 'left' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />
+        role="img" aria-label={`${label}: off the top ` + top.map(p => `${names[p.k]} ${usd(p.v)}`).join(', ') + `; discretionary ${usd(u.left)}`}>
+        {top.map(p => (
+          <div key={p.k} title={`Off the top, ${names[p.k]}: ${usd(p.v)}`}
+            style={{ width: W(p.v), background: COLOR[p.k], borderRight: '1px solid var(--surface-1)' }} />
         ))}
+        {used?.length ? used.map(q => (
+          <div key={q.key} title={`Discretionary, ${q.label.toLowerCase()}: ${usd(q.v)}`}
+            style={{ width: W(q.v), background: DISC_COLOR[q.key], opacity: q.key === 'stayed' ? 1 : 0.45,
+              borderRight: '1px solid var(--surface-1)', boxShadow: q.key === 'stayed' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />
+        )) : u.left > 0 ? <div title={`Discretionary: ${usd(u.left)}`} style={{ width: W(u.left), background: COLOR.left, boxShadow: 'inset 0 0 0 1px var(--grid)' }} /> : null}
       </div>
+      {used?.length ? <div className="mt-1 text-[12px]" style={secondary}>Of the discretionary part, at the same shares: {used.map(q => `${q.label.toLowerCase()} ${usd(q.v)}`).join(', ')}.</div> : null}
     </div>
   )
 }
@@ -278,7 +292,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
               style={{ color: 'var(--text-secondary)' }} aria-label="Clear your settings">Clear</button>
           </> : null}
           <span className="ml-auto text-right leading-tight">
-            <span className="block text-[11.5px]" style={muted}>{base === 'practice' && mode !== 'mine' ? 'Not voted by Town Meeting' : 'Left for Town Meeting'}</span>
+            <span className="block text-[11.5px]" style={muted}>{DISCRETIONARY}</span>
             <span className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}</span>
             <span className="ml-1.5 text-[12px] tabular-nums" style={secondary}>{pct(u.left / x.fc, 0)}</span>
           </span>
@@ -291,10 +305,10 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       {/* THE SIGNATURE: what each setting does with the same free cash */}
       <div className="mt-3 rounded-md p-3" style={card}>
         <div className="flex items-baseline justify-between gap-2">
-          <span className="text-[13.5px]" style={secondary}>Where {usd(x.fc)} of free cash goes</span>
+          <span className="text-[13.5px]" style={secondary}>The pot: {usd(x.fc)} of free cash, split off the top and discretionary</span>
           <Tag k="ours" />
         </div>
-        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} practice={p.key === 'practice'} />)}
+        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} disc={p.key === 'practice' ? d.practice_discretionary : undefined} />)}
         {mine ? <SplitBar label="Your settings" u={allocate(x, mine.dials)} fc={x.fc} strong={mode === 'mine'} names={names} /> : null}
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
@@ -305,7 +319,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       </div>
 
       {/* THE DIALS */}
-      <h3 className="mt-6 text-[16px] font-semibold">The dials <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
+      <h3 className="mt-6 text-[16px] font-semibold">Off the top: the dials <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
       <p className="mt-0.5 text-[12.5px]" style={muted}>{d.text.order_note} {d.text.floors_note}</p>
       <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {d.dials.map(q => (
@@ -315,7 +329,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
         ))}
       </div>
       <div className="mt-3 rounded-md p-3 flex flex-wrap items-baseline justify-between gap-2" style={{ ...card, background: 'var(--surface-2)' }}>
-        <span className="text-[15px] font-semibold" style={{ color: 'var(--text-primary)' }}>{base === 'practice' && mode !== 'mine' ? 'Not voted by Town Meeting' : 'Left for Town Meeting to decide'}</span>
+        <span className="text-[15px] font-semibold" style={{ color: 'var(--text-primary)' }}>{DISCRETIONARY}<span className="block text-[12.5px] font-normal" style={secondary}>What no rule takes off the top: Town Meeting decides it, capital included</span></span>
         <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}
           <span className="ml-2 text-[13px] font-normal" style={secondary}>{pct(u.left / x.fc, 1)} of the free cash</span></span>
         {u.short > 0 ? <p className="w-full text-[12.5px]" style={secondary}>The dials ask for {usd(u.short)} more than the free cash holds; the last dials in the order get less than they ask.</p> : null}

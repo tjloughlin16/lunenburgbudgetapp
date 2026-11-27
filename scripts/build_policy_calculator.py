@@ -151,7 +151,7 @@ USES = [
     ('opeb', 'Retiree health trust'),
     ('capital', 'Cash capital'),
     ('other', 'Other one-time costs'),
-    ('left', 'Left for Town Meeting to decide'),
+    ('left', 'Discretionary: Town Meeting decides'),
 ]
 
 
@@ -208,6 +208,13 @@ PRACTICE_VOTES = [
 # cash certified for FY2025 that no vote used ("Add Prior Year Free Cash Not Appropriated (CL#12)").
 # The votes print cents and the proof whole dollars, so ours is compared at the proof's precision.
 PROOF = os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv')
+# THREE LAYERS (TJ, 27 November 2026: "we have the pot amount. THATS not what these dials change. THEN,
+# we have the 'off the top' things that are forced in policy. And then, whatever doesnt come off the
+# top, is 'discretionary'"). In practice, OFF THE TOP is only a vote to a set-aside a written rule names
+# (the retiree trust, the stabilization funds); capital and every other vote were Town Meeting's
+# discretion, so the setting's dials hold only the first, and the payload carries how the discretionary
+# part was actually used, drawn inside it.
+SET_ASIDE = ('opeb', 'general', 'special')
 PROOF_YEAR = 2025
 VOTES = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
 
@@ -260,7 +267,7 @@ def settings(which, fc):
     if which == 'practice':
         used, fc_then, _ = practice()
         out = {d[0]: 0.0 for d in DIALS}
-        out.update({k: float(v / fc_then) for k, v in used.items()}, other_cap=fc)
+        out.update({k: float(v / fc_then) for k, v in used.items() if k in SET_ASIDE}, other_cap=fc)
         return out
     i = 4 if which == 'today' else 5
     return {d[0]: (float(d[i][0]) if d[i][0] is not None else fc) for d in DIALS}
@@ -307,7 +314,7 @@ def independent(x, which):
     if which == 'practice':
         used, fc_then, _ = practice()
         u = dict(keep=0.0, general=0.0, special=0.0, capital=0.0, other=0.0, opeb=0.0)
-        u.update({k: float(v) * fc / float(fc_then) for k, v in used.items()})
+        u.update({k: float(v) * fc / float(fc_then) for k, v in used.items() if k in SET_ASIDE})
         return dict(u, left=fc - sum(u.values()), short=0.0)
     if which == 'today':
         g = max(0.0, min(fc, float(_tr['general']) * x['budget'] - x['general']))
@@ -384,7 +391,7 @@ def build():
     p_arts = {}
     for art, amt, dial in PRACTICE_VOTES:
         p_arts.setdefault(dial, []).append(art)
-    p_dial = {'opeb': 'opeb', 'capital': 'capital', 'other': 'other'}
+    p_dial = {k: k for k in SET_ASIDE}
     def p_setting(key):
         feeds = p_dial.get(key)
         if not feeds or key not in p_set or not p_set[key]:
@@ -411,11 +418,19 @@ def build():
             dict(key='today', label="Today's rules", source='Select Board policy, sections 3.03, 3.04 and 3.07',
                  settings=settings('today', fc)),
             dict(key='practice', label='Today in practice',
-                 source=('Actual votes, not a policy: what the Annual Town Meeting of %s voted from that year\'s '
-                         '%s of free cash, as shares of it. What they left unvoted matches the state\'s free cash proof'
-                         % (long_d, U(p_fc))), settings=p_set),
+                 source=('Actual votes, not a policy: what the Annual Town Meeting of %s took off the top of that '
+                         'year\'s %s of free cash, as a share of it, and how it used the discretionary rest. What it left '
+                         'unvoted matches the state\'s free cash proof' % (long_d, U(p_fc))), settings=p_set),
             dict(key='draft', label='State draft', source='DLS draft financial policy manual, April 2024, pdf pages 28-30',
                  settings=settings('draft', fc)),
+        ],
+        # How May 2025 used its discretionary part, as shares of that year's free cash: they add, with
+        # the set-asides above, to the whole of it.
+        practice_discretionary=[
+            dict(key='capital', label='Capital, as voted', share=float(p_used.get('capital', D(0)) / p_fc)),
+            dict(key='other', label='Every other vote', share=float(p_used.get('other', D(0)) / p_fc)),
+            dict(key='stayed', label='Not voted: stayed in free cash',
+                 share=float((p_fc - sum(p_used.values())) / p_fc)),
         ],
         rules=dict(today=dict(floor=float(_tr['floor']), cap=float(_tr['cap'])),
                    draft=dict(cap=float(_dr['cap']),
@@ -462,7 +477,9 @@ def page(payload):
     under it as conclusions, then the stance and the links to the four policy pages."""
     ex = payload['expected']
     t, d, p = ex['today']['uses'], ex['draft']['uses'], ex['practice']['uses']
-    if p['general'] or p['special'] or p['other'] <= 0:
+    p_used, p_fc, _ = practice()
+    p_aside = sum(v for k, v in p_used.items() if k in SET_ASIDE)
+    if p['general'] or p['special'] or set(k for k in p_used if k in SET_ASIDE) != {'opeb'}:
         FP.fail('policy calculator page: the practice conclusion no longer describes the votes; rewrite it')
     fc = payload['block']['data']['defaults']['fc']
     U = lambda v: figure(float(v), C.usd(v), 'dollars')
@@ -482,9 +499,9 @@ def page(payload):
         f('draft-left', U(d_left), 'left to Town Meeting under the draft', 'estimate'),
         f('keep', U(d['keep']), 'kept back for next year under the draft', 'estimate'),
         f('opeb', U(t['opeb']), 'to the retiree health trust, under either', 'estimate'),
-        f('practice-other', U(p['other']), 'to one-time costs, at the shares voted in May 2025', 'estimate',
+        f('practice-set', U(p_aside), 'off the top in May 2025, all to the retiree trust', 'published',
           label_figures={'y': figure(2025, '2025', 'year')}),
-        f('practice-stab', U(p['general'] + p['special']), 'to stabilization, at the same shares', 'estimate'),
+        f('practice-disc', U(p_fc - p_aside), 'discretionary that year, for capital and every other vote', 'published'),
     ]
     if round(t['opeb']) != round(d['opeb']):
         FP.fail('policy calculator page: the two presets no longer put the same sum in the trust')
@@ -500,9 +517,10 @@ def page(payload):
             so='Both put %s into the retiree health trust; the draft adds stabilization, capital and a reserve for next year.'
                % C.usd(t['opeb']), so_figures={'a': U(t['opeb'])}),
     ]
-    cons.append(con('At the shares voted in May 2025, %s goes to one-time costs and nothing to stabilization.'
-                    % C.usd(p['other']), ['practice-other', 'practice-stab'], {'a': U(p['other'])}, allow=('2025',),
-                    so='One meeting’s votes, applied to today’s free cash; another year’s votes would set the dials differently.'))
+    cons.append(con('In May 2025 only %s came off the top; the other %s was Town Meeting’s to decide.'
+                    % (C.usd(p_aside), C.usd(p_fc - p_aside)), ['practice-set', 'practice-disc'],
+                    {'a': U(p_aside), 'b': U(p_fc - p_aside)}, allow=('2025',),
+                    so='In practice the town took off the top what today’s rules ask, and decided the rest, capital included, at the meeting.'))
     import brief
     bad = []
     for i, c in enumerate(cons):
