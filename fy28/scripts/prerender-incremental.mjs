@@ -222,6 +222,11 @@ export function readProbe() {
           if (typeof k === 'symbol') return Reflect.get(t, k, r)
           if (Object.prototype.hasOwnProperty.call(t, k)) {
             var x = t[k]
+            // A FROZEN property must be returned as itself (a Proxy invariant), so it cannot be
+            // tracked: the file is keyed whole. Found 27 November 2026, when five pages that
+            // freeze their data rendered blank.
+            var d = Object.getOwnPropertyDescriptor(t, k)
+            if (d && !d.configurable && !d.writable && x !== null && typeof x === 'object') { spoil(); return x }
             note('g' + JSON.stringify(path.concat([k])), enc(x))
             return wrap(x, path.concat([k]))
           }
@@ -245,6 +250,7 @@ export function readProbe() {
         set: function (t, k, v) { spoil(); t[k] = v; return true },
         deleteProperty: function (t, k) { spoil(); return delete t[k] },
         defineProperty: function (t, k, d) { spoil(); return Reflect.defineProperty(t, k, d) },
+        preventExtensions: function (t) { spoil(); return Reflect.preventExtensions(t) },
       })
       proxies.set(v, p)
       return p

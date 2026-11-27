@@ -72,6 +72,13 @@ assert.notEqual(readsHash(ins, keys), h)
 const d2 = await new Response('http://x/data/t.json', { xs: [3, 1, 2] }).json()
 d2.xs.sort()
 assert.equal(window.__pr_reads['/data/t.json'].whole, true)
+// Data the page freezes is returned as itself and keys the file whole (a Proxy invariant).
+const d3 = await new Response('http://x/data/f.json', { rows: [{ a: 1 }, { a: 2 }] }).json()
+const deepFreeze = o => { Object.values(o).forEach(v => typeof v === 'object' && v && deepFreeze(v)); return Object.freeze(o) }
+deepFreeze(d3)
+assert.equal(d3.rows[0].a, 1)
+assert.equal(d3.rows.map(r => r.a).join(), '1,2')
+assert.equal(window.__pr_reads['/data/f.json'].whole, true)
 // Another origin is not tracked.
 await new Response('http://elsewhere/data/x.json', { a: 1 }).json()
 assert.equal(window.__pr_reads['/data/x.json'], undefined)
