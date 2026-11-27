@@ -316,5 +316,210 @@
    "at": "2026-11-10T12:25:33Z",
    "cost_usd": 0.0234471
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11092026-8121",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2026-11-09-minutes-8121.txt",
+   "path": "sources/meetings/planning-board/2026-11-09-minutes-8121.pdf"
+  },
+  "official_sha256": "2e36cf97f91e15a13cde794a568a1f888564f8c2d8602cab0c7e4a2794949057",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the outcome of nearly every vote: all the ANR endorsements, the 760 Goodrich permit and de minimis votes, and the bond extension. Both show them passing, and the official minutes give 4-0. They differ on ANR case numbers (460 Howard and 108 Sunny Hill) and on the hearing closure and the next-meeting dates, which only our minutes record. Check the ANR numbers against the filed applications, because the official minutes list 26-10 twice.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "ANR number for 460 Howard Street",
+    "t": 910,
+    "ours": "Endorse ANR 26-9 for 460 Howard Street — passed (roll call, ayes heard)",
+    "official": "a burney moved to endorse the anr for 460 howard street",
+    "note": "Both record the endorsement passing, but our minutes give ANR 26-9 and the official minutes give ANR-26-6; check the filed application number."
+   },
+   {
+    "kind": "agree",
+    "about": "ANR endorsement, 35 Leominster Road (ANR 26-8)",
+    "t": 1208,
+    "ours": "Endorse ANR 26-8 at 35 Leominster Road — passed (roll call, ayes heard)",
+    "official": "a burney moved to endorse the anr for 35 leominster road",
+    "note": "Same item, same number, same outcome (official 4-0)."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ANR number for 108 Sunny Hill Road",
+    "t": 1487,
+    "ours": "Endorse ANR 26-11 at 108 Sunny Hill Road — passed (roll call, ayes heard)",
+    "official": "a burney moved to endorse the anr for 108 sunny hill road",
+    "note": "Our minutes say ANR 26-11 and the official minutes say ANR-26-10, which they also give to 681 Mass Avenue; check the correct number on the filed plans."
+   },
+   {
+    "kind": "agree",
+    "about": "ANR endorsement, 681 Mass Ave (ANR 26-10)",
+    "t": 1804,
+    "ours": "Endorse ANR 26-10 at 681 Mass Ave — passed (roll call, ayes heard)",
+    "official": "a burney moved to endorse the anr for 681 mass avenue",
+    "note": "Same item, same number, same outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "ANR endorsement, 452 Northfield Road (ANR 26-12)",
+    "t": 2208,
+    "ours": "Endorse ANR 26-12 at 452 Northfield Road — passed (roll call, ayes heard)",
+    "official": "a burney moved to endorse the anr for 452 northfield road",
+    "note": "Same item, same number, same outcome."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to close the public hearing for PBSP 26-10",
+    "t": 3874,
+    "ours": "Close the public hearing for PBSP 26-10, 760 Goodrich Street — passed (roll call, ayes heard)",
+    "official": "",
+    "note": "Our minutes record a vote to close the hearing, and the official minutes record none; check the official record or the video for whether it was voted."
+   },
+   {
+    "kind": "agree",
+    "about": "Special permit PBSP-26-10, 760 Goodrich Street, with stormwater and HOA conditions",
+    "t": 3894,
+    "ours": "Approve special permit for 760 Goodrich Street with prior stormwater conditions and a homeowners association condition before occupancy permits — passed (roll call, ayes heard)",
+    "official": "to approve pbsp-26-10 with all previous stormwater permit conditions",
+    "note": "Same approval and conditions; the official minutes give 4-0."
+   },
+   {
+    "kind": "agree",
+    "about": "De minimis finding, 760 Goodrich stormwater",
+    "t": 4002,
+    "ours": "Find the stormwater alteration at 760 Goodrich de minimis — passed (roll call, ayes heard)",
+    "official": "a burney to find the requested stormwater modification de minimis.",
+    "note": "Same vote and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Accept the de minimis change, 760 Goodrich",
+    "t": 4022,
+    "ours": "Accept the de minimis change at 760 Goodrich Street — passed (roll call, ayes heard)",
+    "official": "a. burney to approve the de minimis stormwater modification for 760 goodrich street.",
+    "note": "Same vote and outcome, worded 'accept' in ours and 'approve' in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Extend stormwater bond at 100 Townsend Harbor Road to July 1, 2028",
+    "t": 4346,
+    "ours": "Extend the stormwater bond at 100 Townsend Harbor Road through July 1, 2028 — passed (roll call, ayes heard)",
+    "official": "a. burney to extend the performance bond for 100 townsend harbor road through july 1, 2028.",
+    "note": "Same vote, address and date. The official budget item calls the property '110 Townsend Harbor Road', so the official minutes are inconsistent with themselves."
+   },
+   {
+    "kind": "agree",
+    "about": "Stormwater performance bond amount",
+    "t": 4069,
+    "ours": "Stormwater performance bond, 100 Townsend Harbor Road: $4000",
+    "official": "to extend a $4,000 stormwater performance bond associated with a five-lot development.",
+    "note": "Same $4,000 figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Director to write 760 Goodrich decision",
+    "t": 4044,
+    "ours": "Director to write the 760 Goodrich decision and send it to members, with signing to follow if no changes by next Monday.",
+    "official": "",
+    "note": "The official minutes quoted here do not mention the decision-drafting and signing plan."
+   },
+   {
+    "kind": "agree",
+    "about": "No meeting December 28",
+    "t": 5062,
+    "ours": "Next meetings set for November 23, December 14 and January 11 and 25; no meeting December 28.",
+    "official": "the board confirmed that no meeting would be held on december 28, 2026.",
+    "note": "Both record no meeting on December 28."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting dates (Nov 23, Dec 14, Jan 11 and 25)",
+    "t": 5062,
+    "ours": "Next meetings set for November 23, December 14 and January 11 and 25",
+    "official": "",
+    "note": "The official minutes list none of these dates."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "December 1 zoning forum",
+    "ours": "",
+    "official": "s. wallace reminded the board that a public forum regarding proposed zoning amendments",
+    "note": "The official minutes note the December 1 zoning forum, and our minutes do not."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Burney",
+    "ours": "Mr. Bernie (member)",
+    "official": "a. reid (remote), a. burney, a. nicastro",
+    "official_reading": "Adam Burney",
+    "note": "'Bernie' is a mishearing of 'Burney'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Reid",
+    "ours": "Mrs. Reed (member)",
+    "official": "a. reid (remote), a. burney, a. nicastro",
+    "official_reading": "Amanda Reid",
+    "note": "'Reed' is a mishearing of 'Reid', who attended remotely and is the clerk."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Nicastro",
+    "ours": "Mr. Nicastro (member)",
+    "official": "a. reid (remote), a. burney, a. nicastro",
+    "note": "Same member."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Wallace",
+    "ours": "Mr. Wallace (planning director)",
+    "official": "s. wallace reminded the board that a public forum regarding proposed zoning amendments",
+    "note": "Same person, the planning director."
+   },
+   {
+    "kind": "agree",
+    "about": "Chair",
+    "ours": "chair (chair)",
+    "official": "m. brenner at 6:02 pm",
+    "note": "Our minutes do not name the chair, and the official minutes name Matthew Brenner."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Willsmer",
+    "ours": "",
+    "official": "absent: t. willsmer",
+    "note": "Our minutes do not list absences."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicant presenters (O'Brien, Proctor)",
+    "ours": "",
+    "official": "ryan proctor, representing the applicant, presented a plan to divide a 17-acre parcel into",
+    "note": "Our attendee list leaves out the applicant presenters, Kevin O'Brien and Ryan Proctor."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Abutter comment on 760 Goodrich shared driveway",
+    "ours": "",
+    "official": "one abutter spoke in support of the shared driveway configuration.",
+    "note": "Our minutes record no public comment."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-27T12:31:39Z",
+   "cost_usd": 0.0624111
+  }
  }
 }

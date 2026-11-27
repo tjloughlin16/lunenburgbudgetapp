@@ -367,5 +367,212 @@
    "at": "2026-09-12T14:15:04Z",
    "cost_usd": 0.13746640000000002
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08112026-7957",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-08-11-minutes-7957.txt",
+   "path": "sources/meetings/select-board/2026-08-11-minutes-7957.pdf"
+  },
+  "official_sha256": "ee616767b034eb10c2aacaa17d24cd06d81e327de7823006bacb42fad708a976",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main figures: $20,000 electricity, the $10,000–$20,000 boiler repair estimate, $5,000 per ceiling opening, the $500,000 ADA threshold, $750,000 roof estimate, and the $5.4M, $2M and $600,000 values. Neither record has a vote or transfer. The main differences are caption-garbled attendee names, plus several figures and statements that appear in only one record (ours has the sprinkler and plumbing costs, the $625 and the $350,000 roof estimate; the official minutes have the time-and-materials commitment and the pantry contribution). One attendee, Riley, doesn't match any name in the official list.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 8,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Food pantry area electricity cost",
+    "ours": "Food pantry/TCP refrigeration and A/C electricity cost: $20,000 a year",
+    "official": "electricity for the pantry area costs roughly $20,000 per year, driven largely by refrigeration and air conditioning.",
+    "note": "Same figure and description.",
+    "t": 1149
+   },
+   {
+    "kind": "agree",
+    "about": "Boiler repair estimate",
+    "ours": "TCP boiler leak repair estimate: $10,000, 10 grand, 20",
+    "official": "one is running and has failed state inspection because of a pressure relief valve. repair estimates range from $10,000 to $20,000.",
+    "note": "Both give a $10,000 to $20,000 range. Ours calls it a leak and the official minutes cite a pressure relief valve inspection failure, so the cause is worth a quick check.",
+    "t": 1294
+   },
+   {
+    "kind": "agree",
+    "about": "Ceiling opening cost during decommissioning",
+    "ours": "Cost to open asbestos ceilings during decommissioning: $5,000",
+    "official": "each ceiling opening costs about $5,000 because drywall ceiling compound contains asbestos, and piping has been cut and cross-connected over the years.",
+    "note": "Same $5,000 figure.",
+    "t": 2312
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Valving/plumbing decommissioning cost figures",
+    "ours": "Cost of decommissioning valving/plumbing work: 5,000, 10,000, 10 for the sprinklers and another 10 for the plumbing",
+    "official": "",
+    "note": "The official minutes give no sprinkler or plumbing cost figures. They say only that the work was time-and-materials.",
+    "t": 2376
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unexpected FY23 capital funds for records digitization",
+    "ours": "Unexpected FY23 capital funds for records digitization: 625",
+    "official": "",
+    "note": "The official minutes do not mention this figure.",
+    "t": 3290
+   },
+   {
+    "kind": "agree",
+    "about": "ADA trigger threshold on roof work",
+    "ours": "ADA-trigger cost threshold on roof work: 500,000",
+    "official": "facilities director ruth reported that roof work costing over $500,000 triggers ada improvements.",
+    "note": "Same threshold.",
+    "t": 3818
+   },
+   {
+    "kind": "agree",
+    "about": "Estimate for partial roof repair/saving part of TCP",
+    "ours": "Estimated cost to save part of TCP building: $750,000",
+    "official": "the current estimate to repair the portion from the hallway edge to the decommissioning doors is about $750,000.",
+    "note": "Same $750,000 figure. Ours describes it as saving part of the building and the official minutes as a roof repair, so the description is worth checking.",
+    "t": 3818
+   },
+   {
+    "kind": "agree",
+    "about": "Full and fair cash value and prorated ADA trigger",
+    "ours": "TCP full and fair cash value and prorated ADA trigger: 5.4 million, $2 million, 600,000",
+    "official": "work above roughly 30 percent of the prorated full and fair cash value (assessed at $5.4 million, about $2 million prorated, or about $600,000) may trigger full ada upgrades.",
+    "note": "Same three figures.",
+    "t": 3862
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "November 2023 special town meeting roof estimate",
+    "ours": "November 2023 special town meeting roof estimate: 350,000",
+    "official": "",
+    "note": "The official minutes do not mention the 2023 roof estimate.",
+    "t": 4175
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Request to limit side conversations",
+    "ours": "Board asked attendees to keep side conversations to a minimum during Chris Ruth's remarks because of limited audio recording equipment for the public record.",
+    "official": "",
+    "note": "The official minutes do not record this request.",
+    "t": 1068
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Time-and-materials work and Ruth providing cost",
+    "ours": "",
+    "official": "work was performed on a time-and-materials basis because no plans exist, and he agreed to provide the cost.",
+    "note": "Our minutes do not record this commitment by Ruth."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pantry would contribute financially to a building",
+    "ours": "",
+    "official": "the pantry would expect to contribute financially to a building it occupies.",
+    "note": "Our minutes do not record Anne Nelson's statement."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "No deliberation or action outside a posted meeting",
+    "ours": "",
+    "official": "any deliberation or action regarding the future of the properties would occur only at a properly posted public meeting.",
+    "note": "Our minutes do not record this statement."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair attendee",
+    "ours": "Rene (Select Board member)",
+    "official": "chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, and member damon mcquaid",
+    "note": "Misheard first name only. This is the Chair, Renee Emkey.",
+    "official_reading": "Renee Emkey"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member McLeod",
+    "ours": "Mr. Mloud (Select Board member)",
+    "official": "chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, and member damon mcquaid",
+    "note": "Misheard surname. This is most likely Glenn McLeod.",
+    "official_reading": "Glenn McLeod"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member McQuaid",
+    "ours": "Mr. McUade (Select Board member)",
+    "official": "chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, and member damon mcquaid",
+    "note": "Misheard surname. This is most likely Damon McQuaid.",
+    "official_reading": "Damon McQuaid"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member Lehtinen",
+    "ours": "Mr. Lightning (Select Board member)",
+    "official": "chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, and member damon mcquaid",
+    "note": "Misheard surname. This is most likely Brian Lehtinen.",
+    "official_reading": "Brian Lehtinen"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Facilities Director name",
+    "ours": "Chris Ruth (Facilities Director)",
+    "official": "facilities director christopher ruth led the tour and answered members' factual questions.",
+    "note": "Same person, with the first name shortened.",
+    "official_reading": "Christopher Ruth"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Design Committee member Brzozoski",
+    "ours": "Laura Broski (Lunenburg Municipal Building Design Committee member)",
+    "official": "anthony sculimbrene, laura brzozoski, and greg roy of the lunenburg municipal building design committee",
+    "note": "Misspelled surname.",
+    "official_reading": "Laura Brzozoski"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Design Committee member Sculimbrene",
+    "ours": "Tony Stellin (Lunenburg Municipal Building Design Committee member)",
+    "official": "anthony sculimbrene, laura brzozoski, and greg roy of the lunenburg municipal building design committee",
+    "note": "Misheard name, most likely Anthony Sculimbrene.",
+    "official_reading": "Anthony Sculimbrene"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Design Committee member Roy",
+    "ours": "Berg (Lunenburg Municipal Building Design Committee member)",
+    "official": "anthony sculimbrene, laura brzozoski, and greg roy of the lunenburg municipal building design committee",
+    "note": "Likely Greg Roy, but the match is uncertain. Check against the recording.",
+    "official_reading": "Greg Roy"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Design Committee attendee Riley",
+    "ours": "Riley (Lunenburg Municipal Building Design Committee member)",
+    "official": "anthony sculimbrene, laura brzozoski, and greg roy of the lunenburg municipal building design committee",
+    "note": "The official minutes list only three Design Committee members. Check whether Riley is a fourth person or a misheard name for one of them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member, staff and other attendees",
+    "ours": "",
+    "official": "members absent: member tom alonzo",
+    "note": "Our minutes do not list Tom Alonzo as absent. They also omit Town Manager Warren-Dyment, Andrew Gillis, Kim Duffy, and Dave and Anne Nelson."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-11-27T12:32:19Z",
+   "cost_usd": 0.0570291
+  }
  }
 }
