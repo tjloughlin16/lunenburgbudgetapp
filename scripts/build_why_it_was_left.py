@@ -14,8 +14,9 @@ driving from the same place. we should be able to tell that from the ledger."*
 THREE TESTS, each read off the MUNIS journal (scripts/journal.py), scope fund 0100 department 300
 -- the scope of the period-13 `gf-school` spreadsheets, to which the journal ties to the cent:
 
-1. BUDGET AGAINST LAST YEAR'S SPENDING. For the five categories that left the most in FY2026
-   (out-of-district tuition excluded: it has its own page), the FY2026 budget and the FY2026
+1. BUDGET AGAINST LAST YEAR'S SPENDING. For the six categories that left the most in FY2026
+   (out-of-district tuition among them -- TJ, 27 November 2026, on finding it left out: "no its
+   not excluded"), the FY2026 budget and the FY2026
    spending, each as a change on what FY2025 actually spent. Categories, and what was left in
    each, are build_journal_surplus_topics.data()'s, asserted to foot here.
 2. PAYROLL BY MONTH. Every salary account in those categories that posted payroll in at least
@@ -64,8 +65,8 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
 Y0, Y1 = 2025, 2026
 D0 = Decimal(0)
 SPEND = ('payroll', 'invoice', 'journal entry', 'receipt', 'encumbrance')
-TOP_CATS = 5                 # the categories that left the most in FY2026
-EXPECT_CATS = ['buildings', 'counselors', 'teachers', 'benefits', 'supplies']
+TOP_CATS = 6                 # the categories that left the most in FY2026
+EXPECT_CATS = ['buildings', 'counselors', 'teachers', 'benefits', 'tuition', 'supplies']
 SILENT_MONTHS = 3            # months FY2025 paid and FY2026 did not, for a salary account to show
 MIN_DROP = Decimal(5000)     # a recurring vendor shows when FY2026 is this much below FY2025
 NEW_ROWS = 15
@@ -116,10 +117,10 @@ def data():
         for c in label:
             if bud(y, c) - spent(y, c) != js['cat_left'][(y, c)]:
                 fail('%s in %d: budget less spending is not what was left' % (c, y))
-    ranked = sorted((c for c in label if c != 'tuition'), key=lambda c: -js['cat_left'][(Y1, c)])
+    ranked = sorted(label, key=lambda c: -js['cat_left'][(Y1, c)])
     cats = ranked[:TOP_CATS]
     if cats != EXPECT_CATS:
-        fail('the five categories that left most are now %s; rewrite the page' % cats)
+        fail('the six categories that left most are now %s; rewrite the page' % cats)
     d['cats'] = cats
     d['bud'] = {(y, c): bud(y, c) for y in J.YEARS for c in cats}
     d['spent'] = {(y, c): spent(y, c) for y in J.YEARS for c in cats}
@@ -251,6 +252,7 @@ def page(d):
     N = lambda n, unit: figure(n, C.num(n), unit)
     P = lambda x, dp=1: figure(round(fl(x), dp), C.pct(x, dp), 'percent')
     fy0, fy1 = C.fy(Y0), C.fy(Y1)
+    many = {5: 'five', 6: 'six', 7: 'seven'}[len(cats)]   # the count, as the prose says it
 
     # ---- 1. the signature: FY2026's budget and spending, each against FY2025's spending
     chg = lambda num, c: 100 * (fl(num) / fl(d['spent'][(Y0, c)]) - 1)
@@ -291,7 +293,7 @@ def page(d):
 
     f = LD.fact
     facts = [
-        f('left5', U(left5), 'left by these five categories in %s' % fy1, 'published',
+        f('left5', U(left5), 'left by these %s categories in %s' % (many, fy1), 'published',
           label_figures={'y': F(Y1)}),
         f('above', figure(len(above), '%d of %d' % (len(above), len(cats)), 'categories'),
           'categories budgeted above last year’s spending', 'published'),
@@ -309,7 +311,7 @@ def page(d):
         con('Building upkeep was budgeted %s above its %s spending and spent %s less.'
             % (C.pct(b_up['buildings'], 1), fy0, C.pct(-s_up['buildings'], 1)), ['upk'],
             {'a': P(b_up['buildings']), 'y': F(Y0), 'b': P(-s_up['buildings'])},
-            so='The widest gap of the five: the budget grew while the bills fell.'),
+            so='The widest gap of the %s: the budget grew while the bills fell.' % many),
     ]
 
     # ---- 2. payroll by month
@@ -420,8 +422,8 @@ def page(d):
     ]
     return TP.page(
         ID,
-        'Five categories left %s in %s; %s of recurring vendor payments did not recur.'
-        % (C.usd(fl(left5)), fy1, C.usd(fl(drop_net))),
+        '%s categories left %s in %s; %s of recurring vendor payments did not recur.'
+        % (many.capitalize(), C.usd(fl(left5)), fy1, C.usd(fl(drop_net))),
         facts, conclusions, chart=chart, table=table, tables=[years_table], sources=sources, flow=flow,
         finding_figures={'a': U(left5), 'y': F(Y1), 'd': U(drop_net)})
 
