@@ -80,14 +80,18 @@ function settingText(d: Dial, s: Setting, voted = false) {
 }
 
 /** One rule setting's split of the free cash, as a 100% bar. */
-function SplitBar({ label, u, fc, strong, names }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string> }) {
+// UNDER "TODAY IN PRACTICE" THE REMAINDER IS NOT LEFT TO DECIDE: Town Meeting already decided, and
+// this is what it did not vote (TJ, 27 November 2026, reading $414,733 as the certification: "you are
+// saying we only cerfitifed 414k in free cash?!"). So the words follow the setting.
+const leftWords = (practice: boolean) => practice ? 'not voted by Town Meeting' : 'left for Town Meeting'
+function SplitBar({ label, u, fc, strong, names, practice = false }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string>; practice?: boolean }) {
   const keys: UseKey[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other', 'left']
   const parts = keys.map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
   return (
     <div className="mt-3" style={{ opacity: strong ? 1 : 0.6 }}>
       <div className="flex items-baseline justify-between gap-2 text-[13px]">
         <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{label}</span>
-        <span style={secondary}>{usd(u.left)} left for Town Meeting</span>
+        <span style={secondary}>{usd(u.left)} {leftWords(practice)}</span>
       </div>
       <div className="mt-1 flex h-7 w-full overflow-hidden rounded-sm" style={{ background: 'var(--surface-2)' }}
         role="img" aria-label={`${label}: ` + parts.map(p => `${names[p.k]} ${usd(p.v)}`).join(', ')}>
@@ -274,7 +278,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
               style={{ color: 'var(--text-secondary)' }} aria-label="Clear your settings">Clear</button>
           </> : null}
           <span className="ml-auto text-right leading-tight">
-            <span className="block text-[11.5px]" style={muted}>Left for Town Meeting</span>
+            <span className="block text-[11.5px]" style={muted}>{base === 'practice' && mode !== 'mine' ? 'Not voted by Town Meeting' : 'Left for Town Meeting'}</span>
             <span className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}</span>
             <span className="ml-1.5 text-[12px] tabular-nums" style={secondary}>{pct(u.left / x.fc, 0)}</span>
           </span>
@@ -290,7 +294,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <span className="text-[13.5px]" style={secondary}>Where {usd(x.fc)} of free cash goes</span>
           <Tag k="ours" />
         </div>
-        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} />)}
+        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} practice={p.key === 'practice'} />)}
         {mine ? <SplitBar label="Your settings" u={allocate(x, mine.dials)} fc={x.fc} strong={mode === 'mine'} names={names} /> : null}
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
@@ -311,7 +315,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
         ))}
       </div>
       <div className="mt-3 rounded-md p-3 flex flex-wrap items-baseline justify-between gap-2" style={{ ...card, background: 'var(--surface-2)' }}>
-        <span className="text-[15px] font-semibold" style={{ color: 'var(--text-primary)' }}>Left for Town Meeting to decide</span>
+        <span className="text-[15px] font-semibold" style={{ color: 'var(--text-primary)' }}>{base === 'practice' && mode !== 'mine' ? 'Not voted by Town Meeting' : 'Left for Town Meeting to decide'}</span>
         <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{usd(u.left)}
           <span className="ml-2 text-[13px] font-normal" style={secondary}>{pct(u.left / x.fc, 1)} of the free cash</span></span>
         {u.short > 0 ? <p className="w-full text-[12.5px]" style={secondary}>The dials ask for {usd(u.short)} more than the free cash holds; the last dials in the order get less than they ask.</p> : null}

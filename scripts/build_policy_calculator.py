@@ -199,10 +199,16 @@ PRACTICE_VOTES = [
     ('9', '$152,500', 'other'),          # a programme of special projects
     ('12', '$500,000', 'other'),         # to the schools if no override passed by 15 November 2025
     ('18', '$222,500', 'opeb'),
+    # Article 20 reads "raise and appropriate or transfer from Free Cash the sum of $10,000". The vote
+    # does not say which, but the state's proof does: counted, the votes leave exactly the free cash the
+    # proof says went unappropriated (PROOF_UNAPPROPRIATED below); left out, they leave $10,000 more.
+    ('20', '$10,000', 'other'),          # to the Compensated Absences Reserve Fund
 ]
-# Article 20 reads "raise and appropriate or transfer from Free Cash the sum of $10,000": the vote
-# does not say which, so it is left out and the setting says so.
-PRACTICE_LEFT_OUT = ('20', '$10,000')
+# THE CHECK THAT THESE ARE ALL OF THAT YEAR'S VOTES: the next certification's proof prints the free
+# cash certified for FY2025 that no vote used ("Add Prior Year Free Cash Not Appropriated (CL#12)").
+# The votes print cents and the proof whole dollars, so ours is compared at the proof's precision.
+PROOF = os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv')
+PROOF_YEAR = 2025
 VOTES = os.path.join(ROOT, 'sources', 'data', 'town-meeting-votes.csv')
 
 
@@ -216,7 +222,7 @@ def practice():
     if held[-1] != PRACTICE_MEETING[1]:
         FP.fail('policy calculator: a later Annual Town Meeting (%s) is held; move Today in practice to it' % held[-1])
     used = {}
-    for art, amt, dial in PRACTICE_VOTES + [(PRACTICE_LEFT_OUT[0], PRACTICE_LEFT_OUT[1], None)]:
+    for art, amt, dial in PRACTICE_VOTES:
         q = by.get(art, {}).get('quote', '')
         if 'free cash' not in q.lower() or amt not in q or by[art]['result'] not in ('passed', 'amended_and_passed'):
             FP.fail('policy calculator: article %s of %s no longer reads as a passed transfer of %s from free cash'
@@ -224,7 +230,7 @@ def practice():
         if dial:
             used[dial] = used.get(dial, D(0)) + D(amt.replace('$', '').replace(',', ''))
     # Every free cash transfer that meeting voted is accounted for, here or as left out.
-    named = {a for a, _, _ in PRACTICE_VOTES} | {PRACTICE_LEFT_OUT[0]}
+    named = {a for a, _, _ in PRACTICE_VOTES}
     loose = [r['article'] for r in rows if 'free cash' in r['quote'].lower() and r['article'] not in named]
     if loose:
         FP.fail('policy calculator: free cash votes of %s not in Today in practice: %s' % (PRACTICE_MEETING[1], loose))
@@ -237,8 +243,15 @@ def practice():
     if ov:
         FP.fail('policy calculator: an override vote is listed before 15 November 2025; article 12 may not have paid')
     fc = FP.build()['fact_sheet'][PRACTICE_FC_YEAR][0]
-    if sum(used.values()) >= fc:
-        FP.fail('policy calculator: the practice votes exceed that year\'s free cash')
+    pr = [r for r in csv.DictReader(io.open(PROOF, encoding='utf-8')) if r['town'] == 'Lunenburg'
+          and int(r['year']) == PROOF_YEAR]
+    cert = next(D(r['amount']) for r in pr if r['role'] == 'prior_year_certified')
+    unapp = next(D(r['amount']) for r in pr if r['line'].startswith('Add Prior Year Free Cash Not Appropriated'))
+    if cert != fc:
+        FP.fail('policy calculator: the proof\'s prior-year certification is %s, the fact sheet\'s %s' % (cert, fc))
+    if (fc - sum(used.values())).quantize(D('1')) != unapp:
+        FP.fail('policy calculator: the votes leave %s of %s unvoted; the state\'s proof says %s'
+                % (fc - sum(used.values()), fc, unapp))
     return used, fc, by
 
 
@@ -367,7 +380,7 @@ def build():
     long_d = '3 May 2025'
     if C.fy(PRACTICE_FC_YEAR) != 'FY2025' or PRACTICE_MEETING[1] != '2025-05-03':
         FP.fail('policy calculator: the practice meeting\'s date words no longer match it')
-    figs.update((U(p_fc), long_d, PRACTICE_LEFT_OUT[1]))
+    figs.update((U(p_fc), long_d))
     p_arts = {}
     for art, amt, dial in PRACTICE_VOTES:
         p_arts.setdefault(dial, []).append(art)
@@ -398,8 +411,8 @@ def build():
             dict(key='today', label="Today's rules", source='Select Board policy, sections 3.03, 3.04 and 3.07',
                  settings=settings('today', fc)),
             dict(key='practice', label='Today in practice',
-                 source=('What the Annual Town Meeting of %s voted from that year\'s %s of free cash, as shares '
-                         'of it; one $10,000 vote that may have been raised from taxes instead is left out'
+                 source=('Actual votes, not a policy: what the Annual Town Meeting of %s voted from that year\'s '
+                         '%s of free cash, as shares of it. What they left unvoted matches the state\'s free cash proof'
                          % (long_d, U(p_fc))), settings=p_set),
             dict(key='draft', label='State draft', source='DLS draft financial policy manual, April 2024, pdf pages 28-30',
                  settings=settings('draft', fc)),
@@ -510,7 +523,7 @@ def page(payload):
     import csv
     pages = sorted({int(r['page']) for r in csv.DictReader(io.open(VOTES, encoding='utf-8'))
                     if (r['meeting'], r['meeting_date']) == PRACTICE_MEETING
-                    and r['article'] in {x[0] for x in PRACTICE_VOTES} | {PRACTICE_LEFT_OUT[0]}})
+                    and r['article'] in {x[0] for x in PRACTICE_VOTES}})
     src_atm = dict(key='atm25', label='Town of Lunenburg, FY2025 annual town report: the Annual Town Meeting of '
                    '3 May 2025, free cash votes (pp. %d-%d)' % (pages[0], pages[-1]), href='/docs/' + FP.AR25)
     sources = [BFP.SRC_FACT, BFP.src_manual(), BFP.src_sb(), BFP.SRC_DLS_ST, BFP.SRC_AUDIT, BFP.SRC_AR25, src_atm]
