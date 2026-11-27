@@ -4435,6 +4435,18 @@ GROUPS = [
              'reads [redacted]. Built by scripts/extract_munis_school_journal.py, which refuses '
              'to write unless every account, every printed total and the grand total close to '
              'the cent.'),
+            ('data/munis-school-journal-entries.csv',
+             'Every school journal entry FY2023-FY2026, joined to its other side', 1,
+             'Written by us, by scripts/journal_join.py, from munis-school-journal.csv. One row per '
+             'general-journal entry (GEN or GRV): its kind (accrual, Town charge, reclass, reversal, '
+             'correction, one-sided), the earlier entry it reverses or corrects and on what basis, '
+             'and its correction chain. The kinds and the pairing are our classification.'),
+            ('data/journal-entry-flags.csv',
+             'School journal entries flagged as unusual, with the rule that flagged each', 1,
+             'Written by us, by scripts/build_journal_entries.py. Each row is an entry and one of '
+             'our red-flag rules (other side outside the school books, reversed or corrected, '
+             'between fund groups, citing a date after the close, booked late, no description). '
+             'A flag says an entry is unusual; it does not say it is wrong.'),
             ('data/munis-school-journal-accounts.csv',
              'The school department\u2019s 3,356 accounts, FY2026 as the journal report prints them', 1,
              'One row per account in the same journal report: fund, org, the FY2026 original '

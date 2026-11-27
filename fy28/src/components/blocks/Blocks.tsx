@@ -29,6 +29,7 @@ export type Block =
       groups: { heading: string; tracks: { label: string; states: (string | null)[]; event: number | null
         cut: boolean; tags: string[]; note?: Unit; verdict?: string; basis?: Basis }[] }[] }
   | { block: 'checks'; place: Place; title: string; columns: string[]; first: string; second: string; note?: Unit
+      column_notes?: Unit[]
       tone?: 'bad' | 'good'; so?: Unit
       rows: { label: string; why: Unit; marks: number[]; contrast: boolean }[] }
   | { block: 'panels'; place: Place; title: string; note?: Unit; so?: Unit
@@ -323,20 +324,36 @@ function Strip({ cols, marker, label, children }: { cols: string; marker?: numbe
 }
 
 function Checks({ b }: { b: Extract<Block, { block: 'checks' }> }) {
+  // THE LABEL COLUMN FITS ITS LABELS. A fixed 30% suits a row named in a phrase; a row named
+  // "FY2024" got the same width and pushed the sentence beside it into a narrow strip (TJ,
+  // 27 November 2026: "the year has a WIDE column for no reason"). Short labels: shrink to fit.
+  const short = b.rows.every(r => r.label.length <= 12)
   return (
     <section className="mt-8">
       <Head title={b.title} />
       <div className="overflow-x-auto mt-3">
         <table className="w-full text-[14px] border-collapse" style={{ minWidth: 560 + 76 * b.columns.length }}>
           <thead><tr>
-            {[b.first, b.second, ...b.columns].map((h, i) => (
-              <th key={h} className={`${eyebrow} px-3 py-2 align-bottom ${i > 1 ? 'text-center' : 'text-left'}`}
-                style={{ ...muted, borderBottom: '1px solid var(--grid)' }}>{h}</th>))}
+            {[b.first, b.second, ...b.columns].map((h, i) => {
+              // A COLUMN'S MEANING ON HOVER, and on focus, so a tap opens it on a phone.
+              const n = i > 1 ? b.column_notes?.[i - 2] : undefined
+              const edge = i > b.columns.length - 1 ? 'right-0' : 'left-1/2 -translate-x-1/2'
+              return (
+                <th key={h} className={`${eyebrow} px-3 py-2 align-bottom ${i > 1 ? 'text-center' : 'text-left'}`}
+                  style={{ ...muted, borderBottom: '1px solid var(--grid)' }}>
+                  {n ? (
+                    <span tabIndex={0} className="relative group cursor-help underline decoration-dotted underline-offset-2 outline-none">
+                      {h}
+                      <span role="tooltip" className={`pointer-events-none absolute top-full mt-1.5 ${edge} z-20 hidden group-hover:block group-focus:block w-56 rounded-md px-3 py-2 text-left normal-case tracking-normal text-[13px] font-normal leading-snug shadow-md`}
+                        style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)', color: 'var(--text-primary)' }}>
+                        {rich(n.text)}</span>
+                    </span>) : h}
+                </th>)})}
           </tr></thead>
           <tbody>
             {b.rows.map(r => (
               <tr key={r.label} style={r.contrast ? { background: 'color-mix(in srgb, var(--status-good) 9%, transparent)' } : undefined}>
-                <td className="px-3 py-2.5 align-top font-semibold w-[30%]" style={{ borderTop: '1px solid var(--grid)' }}>{r.label}</td>
+                <td className={`px-3 py-2.5 align-top font-semibold ${short ? 'w-px whitespace-nowrap' : 'w-[30%]'}`} style={{ borderTop: '1px solid var(--grid)' }}>{r.label}</td>
                 <td className="px-3 py-2.5 align-top" style={{ borderTop: '1px solid var(--grid)' }}>{rich(r.why.text)}</td>
                 {b.columns.map((c, i) => (
                   <td key={c} className="px-2 py-2.5 align-top text-center w-[76px]" style={{ borderTop: '1px solid var(--grid)' }}>

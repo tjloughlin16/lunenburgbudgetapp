@@ -58,3 +58,27 @@ one-sided journals (000237 and 001640; 001641 and 001642). Pairing them is part 
 
 Account and category totals tie to the period-13 reports to the cent and already include every
 reclass. At risk: views by VENDOR, by MONTH, and comparisons across the school/town line.
+
+## The join, built 27 November 2026 (`scripts/journal_join.py`)
+
+Every figure below is printed by `python3.11 scripts/build_journal_entries.py --show`; rerun before
+quoting. The page is the unlisted draft `/school-all-funds/journal-entries`.
+
+- **A journal number is a batch, not an entry.** 14 of 150 GEN/GRV journal numbers hold unrelated
+  postings (2023/09/000014: a sewer-postage charge, a fee move and a grant-salary move). The entry
+  grain is one description group of a journal; two groups that cancel exactly are one entry.
+- **Pairing needs a stated signal.** By amount alone, the December 2025 `Duplicate` reversal pairs
+  line for line with the June summer-pay accruals: same per-account salary figures, no relation.
+  So a pair is made by an explicit reference (`J# 2025/7/286`), by a reversal or correction word
+  plus cancelling lines, or, with no word, only when every line of the earlier entry is cancelled.
+- **The `Duplicate` (2026/06/000344, GRV)** reverses pay run 13P26, which was posted twice as PRJ
+  journals 2026/06/000321 and 000336, 96 lines each. Pairing crosses source codes.
+- **The defect named above is fixed.** 000237 and 001640 are one chain; 001641 and 001642 are one
+  chain. One-sided dollars are counted once per chain.
+- **Post-closing entries.** FY2024 and FY2025 hold entries dated 30 June whose own descriptions cite
+  memos dated after the year ended (`RECLASS SCHOOL MEMO 10/11/24`, `PER MEMO 08/20/2025`). FY2023's
+  descriptions cite in-year memos only, so the test finds none there. That is what the instrument
+  finds, not proof that nothing was keyed late. FY2026's close is not in the delivery, so it cannot be
+  measured yet.
+- **What is still unjoinable:** the three FY2026 health insurance entries declared in
+  `journal_join.UNPAIRED`, whose other side is the Town's ledger (reason 1 above).

@@ -301,7 +301,7 @@ def check_row(label, why, marks, contrast=False):
 
 
 def checks(title, columns, rows, place='body', note=None, first='What happens',
-           second='Why', tone='bad', so=None):
+           second='Why', tone='bad', so=None, column_notes=None):
     """Rows of things against columns, a mark where one lands on the other, with a reason per
     row. The causes of a surprise cost against the budget lines they reach. `tone`: the mark's
     colour -- 'bad' (it lands there: a cost) or 'good' (it holds: a reserve that covered a year)."""
@@ -320,6 +320,14 @@ def checks(title, columns, rows, place='body', note=None, first='What happens',
     extra = dict(note=_u(note, TEXT_MAX, name + ' note')) if note else {}
     if so:
         extra['so'] = _so(so, name)
+    # `column_notes`: what each column MEANS, one per column, drawn when a reader hovers or taps
+    # the column's label (TJ, 27 November 2026: "i need the column labels to hover to give detail
+    # on the meaning"). Held to rule 2 like every other unit.
+    if column_notes is not None:
+        if len(column_notes) != len(columns):
+            raise ConclusionError('%s: %d column notes for %d columns' % (name, len(column_notes), len(columns)))
+        extra['column_notes'] = [_u(n, CELL_MAX, '%s column note %d' % (name, i + 1))
+                                 for i, n in enumerate(column_notes)]
     return dict(extra, block='checks', tone=tone, place=_place(place, name), title=_label(title, name, TITLE_MAX),
                 columns=[_label(c, name + ' column') for c in columns], rows=rs,
                 first=first, second=second)
