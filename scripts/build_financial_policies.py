@@ -200,6 +200,35 @@ def row_kinds(r):
     return [k for k in ('target', 'guideline') if any(k in KINDS.get((r, c), ()) for c in (0, 1))]
 
 
+def practice_measures(b):
+    """TODAY IN PRACTICE, by cell of the rules matrix: the town's own figures beside the rule. Only
+    where a figure is held; the rules page draws these under each rule and the hub draws them per
+    policy (TJ, 27 November 2026: "we also need 'Today in practice'"), from this one function."""
+    M, pub, est = TB.measure, 'published', 'estimate'
+    import statistics
+    fcp = b['fc_pct']
+    yrs = sorted(fcp)
+    sp25 = b['stab_pct'][2025]
+    flows = json.load(io.open(os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json'),
+                              encoding='utf-8'))['flows']
+    general_out = [x for x in flows['spends'] if 'opioid' not in x['subject'].lower()]
+    gen_in = next(x for x in flows['by_fund'] if x['fund'] == 'Stabilization Fund (general)')
+    cap25 = b['capital'][2025]['total']
+    cap_share = cap25 / (b['budget25'] - D(str(b['debt25']))) * 100
+    return {
+        (0, 0): M('In practice', 'Latest %s; median %s since %s' % (
+            pc(fcp[yrs[-1]]), pc(statistics.median(fcp.values())), C.fy(yrs[0])), est),
+        (1, 0): M('In practice', '%s of the budget, %s' % (pc(sp25), C.fy(2025)), pub),
+        (1, 1): M('In practice, Town Meeting votes held', 'No withdrawal, %s to %s' % (
+            C.fy(flows['first_fy']), C.fy(flows['last_fy'])) if not general_out else
+            '%d withdrawals' % len(general_out), est),
+        (2, 0): M('In practice, all special funds', '%s of the budget, %s' % (pc(b['special25_pct']), C.fy(2025)), pub),
+        (4, 0): M('In practice', '%s into the trust, %s' % (C.usd(b['opeb']['rows']['contrib'][2025]), C.fy(2025)), pub),
+        (5, 0): M('In practice', '%s, %s net of debt, %s' % (C.usd(cap25), pc(cap_share), C.fy(2025)), est),
+        (6, 1): M('In practice', '%s of the budget, all debt, %s' % (pc(b['peer_debt']['Lunenburg']), C.fy(2025)), pub),
+    }
+
+
 def dials_matrix(b):
     """The two dials, policy by policy. Verdicts are our reading of today's rule against the draft."""
     fs = '{fc}'
@@ -289,28 +318,7 @@ def dials_matrix(b):
     # (the reserve fund's yearly size, revenue estimates against collections) gets no line rather
     # than a guess. A share the state databank prints is 'published'; a share we compute, or a
     # reading of Town Meeting votes, is 'estimate'.
-    import statistics
-    fcp = b['fc_pct']
-    yrs = sorted(fcp)
-    sp25 = b['stab_pct'][2025]
-    flows = json.load(io.open(os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json'),
-                              encoding='utf-8'))['flows']
-    general_out = [x for x in flows['spends'] if 'opioid' not in x['subject'].lower()]
-    gen_in = next(x for x in flows['by_fund'] if x['fund'] == 'Stabilization Fund (general)')
-    cap25 = b['capital'][2025]['total']
-    cap_share = cap25 / (b['budget25'] - D(str(b['debt25']))) * 100
-    practice = {
-        (0, 0): M('In practice', 'Latest %s; median %s since %s' % (
-            pc(fcp[yrs[-1]]), pc(statistics.median(fcp.values())), C.fy(yrs[0])), est),
-        (1, 0): M('In practice', '%s of the budget, %s' % (pc(sp25), C.fy(2025)), pub),
-        (1, 1): M('In practice, Town Meeting votes held', 'No withdrawal, %s to %s' % (
-            C.fy(flows['first_fy']), C.fy(flows['last_fy'])) if not general_out else
-            '%d withdrawals' % len(general_out), est),
-        (2, 0): M('In practice, all special funds', '%s of the budget, %s' % (pc(b['special25_pct']), C.fy(2025)), pub),
-        (4, 0): M('In practice', '%s into the trust, %s' % (C.usd(b['opeb']['rows']['contrib'][2025]), C.fy(2025)), pub),
-        (5, 0): M('In practice', '%s, %s net of debt, %s' % (C.usd(cap25), pc(cap_share), C.fy(2025)), est),
-        (6, 1): M('In practice', '%s of the budget, all debt, %s' % (pc(b['peer_debt']['Lunenburg']), C.fy(2025)), pub),
-    }
+    practice = practice_measures(b)
     for k, m in practice.items():
         MS[k].append(m)
     for k, ms in MS.items():
@@ -947,6 +955,25 @@ def policy_list(b):
         'Revenue estimates': L('Today: no written rule. Guideline: local receipts estimated at no more than 90% of last '
                                'year’s collections without firm evidence, each forecast checked afterwards.', '90%'),
     }
+    # TODAY IN PRACTICE: the rules page's own in-practice figures, per policy, with a line saying what
+    # each is measured against. A policy with none compiled says so (rule 7c).
+    pm = practice_measures(b)
+    flows = json.load(io.open(os.path.join(ROOT, 'fy28', 'public', 'data', 'stabilization-funds.json'),
+                              encoding='utf-8'))['flows']
+    if [x for x in flows['spends'] if 'opioid' not in x['subject'].lower()] or not b['stab_pct'][2025] > sbl \
+            or not b['special25_pct'] > sph:
+        FP.fail('policy list: a "today in practice" line no longer describes the figures; rewrite it')
+    practice_line = {
+        'Free cash': L('Today’s rules set no target, so these are the certifications as they came.'),
+        'General stabilization': L('Above today’s five percent floor, with no withdrawal voted in the years held.'),
+        'Special purpose funds': L('Above the draft’s top of five percent; today’s rules set no level for them.'),
+        'Reserve fund': L('How large the fund was each year, and what it paid for, are not compiled here.'),
+        'Retiree health (OPEB)': L('Paid into the trust that year, from every source the statements count.'),
+        'Capital': L('Today’s rules set no level; measured net of debt, as the draft measures it.'),
+        'Debt': L('By the state databank’s measure, all debt, against the total budget.'),
+        'Revenue estimates': L('The town’s estimates against its collections, year by year, are not compiled here.'),
+    }
+    gap_value = {'Reserve fund': 'Yearly size not compiled', 'Revenue estimates': 'Estimates against collections'}
     title = {('target', 'guideline'): 'A target and a guideline', ('target',): 'A target',
              ('guideline',): 'A guideline of behavior', (): 'Neither'}
     kind_key = {('target', 'guideline'): 'both', ('target',): 'target', ('guideline',): 'guideline', (): 'neither'}
@@ -955,17 +982,26 @@ def policy_list(b):
     for r, pol in enumerate(POLICY_ROWS):
         ks = tuple(row_kinds(r))
         cells[(r, 0)] = TB.cell(kind_key[ks], title[ks], rule_line[pol], reading)
+        ms = [pm[(r, c)] for c in (0, 1) if (r, c) in pm]
+        if bool(ms) == (pol in gap_value):
+            FP.fail('policy list: %s in practice: figures and the gap list disagree' % pol)
+        cells[(r, 1)] = TB.cell('held' if ms else 'notheld', 'Today in practice' if ms else 'Not compiled',
+                                practice_line[pol], ('record', 'The town’s own figures') if ms
+                                else ('reading', 'Gap in what is held'),
+                                measures=ms or [TB.measure('In practice', gap_value[pol], 'gap')])
         v, why = nxt[pol]
-        cells[(r, 1)] = TB.cell(v, {'moves': 'Moves dollars', 'measures': 'Sets a level', 'quiet': 'No change',
+        cells[(r, 2)] = TB.cell(v, {'moves': 'Moves dollars', 'measures': 'Sets a level', 'quiet': 'No change',
                                     'unheld': 'Not measured here'}[v], why,
                                 ('reading', 'Our estimate, the rules applied to published figures'))
         v, text, lits = rec_text[pol]
-        cells[(r, 2)] = TB.cell(v, {'raised': 'Raised at meetings', 'unraised': 'Not raised'}[v], (text, None, lits),
+        cells[(r, 3)] = TB.cell(v, {'raised': 'Raised at meetings', 'unraised': 'Not raised'}[v], (text, None, lits),
                                 ('record', 'Meeting record, on the debate page'))
     legend = [('both', 'Changes a target and a guideline', 'other'),
               ('target', 'Changes a target', 'other'),
               ('guideline', 'Changes a guideline of behavior', 'other'),
               ('neither', 'Draft changes neither', 'muted'),
+              ('held', 'Today, from the town’s own figures', 'neutral'),
+              ('notheld', 'Not compiled here', 'muted'),
               ('moves', 'Would move dollars in the next budget', 'neutral'),
               ('measures', 'Sets a level the budget is measured against', 'neutral'),
               ('quiet', 'No change to the next budget', 'muted'),
@@ -973,7 +1009,7 @@ def policy_list(b):
               ('raised', 'Raised at a meeting in the record', 'neutral'),
               ('unraised', 'No meeting in the record raises it', 'muted')]
     m = TB.matrix('Every policy, and what it changes', POLICY_ROWS,
-                  ['What the draft changes', 'In the next budget', 'In the meeting record'], cells, legend,
+                  ['What the draft changes', 'Today in practice', 'In the next budget', 'In the meeting record'], cells, legend,
                   place='body', row_label='Policy', col_label='',
                   note=L('A target is a level the town plans toward; a guideline of behavior is how money is set '
                          'aside or spent. Which is which is our reading. Dollars apply each rule to the latest '
