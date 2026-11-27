@@ -178,7 +178,7 @@ def dials_matrix(b):
             'each year, reached through conservative revenue estimates and budget turnbacks.'), R),
         (0, 1): TB.cell('more', 'The draft splits every year’s free cash by rule', L(
             'Today: top up general stabilization to five percent, then at least 10% to the OPEB trust, then '
-            'the special purpose fund, then any one-time use. Draft: fixed minimum shares for six uses.', '10%'), R),
+            'the special purpose fund, then any one-time use. Draft: a minimum share for each of six uses.', '10%'), R),
         (1, 0): TB.cell('more', 'A wider band and a yearly deposit', L(
             'Today: at least five percent of the budget, all stabilization funds together no more than ten '
             'percent. Draft: five to eight percent, plus a set deposit every year.'), R),
@@ -224,6 +224,32 @@ def dials_matrix(b):
             'The draft says estimates set too low leave excess revenue that cannot help the public in the '
             'year it comes in.'), R),
     }
+    # THE BEFORE AND AFTER, AS CALLED-OUT METRICS (TJ, 27 November 2026: "put the before/after
+    # metrics ... in bold called out metrics"). Each value is the rule's own figure as the document
+    # prints it (asserted in financial_policies_data.py), so it is 'published'; the two dollar
+    # amounts are the rules applied to the latest free cash, ours, so 'estimate'.
+    pub, est = 'published', 'estimate'
+    M = TB.measure
+    claimed, fixed = C.usd(b['claimed']), C.usd(b['today_fixed'])
+    MS = {
+        (0, 0): [M('Today', 'No target', pub), M('Draft', '5% to 7% of the budget', pub)],
+        (0, 1): [M('Today, on the latest free cash', fixed, est), M('Draft, on the same', claimed, est)],
+        (1, 0): [M('Today', 'At least 5% of the budget', pub), M('Draft', '5% to 8%, plus 0.3% a year', pub)],
+        (1, 1): [M('Today', 'Refill within 3 years', pub), M('Draft', 'At most a third; refill in 2', pub)],
+        (2, 0): [M('Today', 'Set each year', pub), M('Draft', '3% to 5% of the budget', pub)],
+        (2, 1): [M('Today', 'Two-thirds vote', pub), M('State law', 'Majority vote', pub)],
+        (3, 0): [M('Today', '$50,000, at most 0.5%', pub), M('Draft', 'No size', pub)],
+        (3, 1): [M('State law', 'Up to 5% of last year\u2019s levy', pub)],
+        (4, 0): [M('Today', 'At least 10% of free cash', pub), M('Draft', '10%, aiming at the full contribution', pub)],
+        (4, 1): [M('Today', 'No valuation schedule', pub), M('Draft', 'Valuation every 2 years', pub)],
+        (5, 0): [M('Today', 'No yearly level', pub), M('Draft', '2% to 3% of the budget', pub)],
+        (5, 1): [M('Both', 'Debt only over $100,000', pub)],
+        (6, 0): [M('Today', 'No step', pub), M('Draft', 'Retired debt payment to savings', pub)],
+        (6, 1): [M('Today', '4% and 14% of the levy', pub), M('Draft', '2% to 4% and 5% to 11%', pub)],
+        (7, 0): [M('Today', 'No written rule', pub), M('Draft', 'At most 90% of last year', pub)],
+    }
+    for k, ms in MS.items():
+        cells[k]['measures'] = ms
     legend = [('new', 'Draft sets what today’s rules do not', 'other'),
               ('more', 'Draft sets more by rule', 'other'),
               ('same', 'Much the same', 'neutral'),
@@ -300,7 +326,7 @@ def page_rules(b):
         f('fc', U(fc), 'certified free cash, available in %s' % C.fy(b['latest']), 'published',
           label_figures={'y': F(b['latest'])}),
         f('claimed', U(claimed), 'claimed by the draft’s minimum shares', 'estimate'),
-        f('fixed', U(fixed), 'fixed by today’s rules: the retiree health share', 'estimate'),
+        f('fixed', U(fixed), 'spoken for by today’s rules: the retiree health share', 'estimate'),
         f('s26', P(s26), 'general stabilization, as a share of the %s budget' % C.fy(2026), 'estimate',
           label_figures={'y': F(2026)}),
         f('lo', U(lo), 'deposit at the summary’s 0.25%', 'estimate', allow=('0.25%',)),
@@ -318,7 +344,7 @@ def page_rules(b):
             ['fc', 'claimed'], {'a': U(claimed), 'b': U(fc), 'c': P(share, 0)},
             so='That leaves %s with no set use. Every point of a share moves %s.' % (C.usd(b['unclaimed']), C.usd(b['point'])),
             so_figures={'a': U(b['unclaimed']), 'b': U(b['point'])}),
-        con('Today’s rules fix only the retiree health share, %s, with stabilization at %s of the budget.'
+        con('Today’s rules decide where only the retiree health share goes, %s; stabilization is at %s.'
             % (C.usd(fixed), pc(s26)), ['fixed', 's26'], {'a': U(fixed), 'b': P(s26)},
             so='Stabilization is above today’s five percent floor, so its first priority requires no deposit.'),
         con('The draft gives the yearly stabilization deposit as 0.25% in one place and 0.3% in another.',
@@ -329,19 +355,23 @@ def page_rules(b):
     cite = TP.cite
     flow = ['finding', cite(m, 'manual', 'today', 'law5B', 'law6', 'law32B'), ('conclusion', 0),
             cite(stance, 'manual'),
-            cite(TB.chart(bridge, place='body', so=T('Under today’s rules the same free cash has one fixed '
-                                                    'use, {x}; the rest goes to Town Meeting.', x=U(fixed))),
+            cite(TB.chart(bridge, place='body', so=T('Under today’s rules only {x} of the same free cash is spoken '
+                                                    'for; Town Meeting decides the rest.', x=U(fixed))),
                  'factsheet', 'manual'),
             ('conclusion', 1), ('conclusion', 2),
             cite(panels, 'manual', 'dlsst', 'audit', 'dlsdebt', 'capital'), ('conclusion', 3),
             cite(links, 'manual'), 'sources']
-    finding = 'On %s of free cash, the draft would fix a use for %s; today’s rules fix one for %s.' % (
-        C.usd(fc), C.usd(claimed), C.usd(fixed))
+    sp = {k: a for k, _, a in b['split']}
+    (keep, save, spend), _tot = C.footed([sp['keep'], sp['general'] + sp['special'] + sp['opeb'], sp['capital'] + sp['other']])
+    if _tot != round(claimed):
+        FP.fail('the three parts of the split do not foot to the claimed total')
+    finding = 'Of %s in free cash, the draft would keep back %s, save %s and spend %s on set uses.' % (
+        C.usd(fc), C.usd(keep), C.usd(save), C.usd(spend))
     page = TP.page(pid, finding, [], [], sources=sources,
-                   finding_figures={'a': U(fc), 'b': U(claimed), 'c': U(fixed)},
+                   finding_figures={'a': U(fc), 'b': U(keep), 'c': U(save), 'd': U(spend)},
                    flow=inline(pid, flow, facts, cons, {2: 'retiree-health-liability', 3: 'reserves-against-targets'}),
                    draft=dict(title=PAGES[pid], home=HOME))
-    return page, dict(set_by_draft=set_by_draft, n_dials=n_dials, on_in=on_in, n_rows=n_rows, share=share, s26=s26)
+    return page, dict(keep=keep, save=save, spend=spend, set_by_draft=set_by_draft, n_dials=n_dials, on_in=on_in, n_rows=n_rows, share=share, s26=s26)
 
 
 # ------------------------------------------------------------------------------ page 2
@@ -684,9 +714,10 @@ def report(b, x1, x2, x3, x4):
       '`scripts/build_financial_policies.py`; every figure is recomputed by `scripts/verify_financial_policies.py`.*\n')
     a('## The short version\n')
     a('- On the latest certified free cash, **%s** (certified %s, available in %s), the state’s draft policies '
-      'would fix a use for at least **%s**, %s of it. Today’s rules fix one: **%s** to the retiree health trust. '
-      'Each point of a share is worth %s.' % (C.usd(b['fc']), b['fc_date'], C.fy(b['latest']), C.usd(b['claimed']),
-                                              pc(x1['share'], 0), C.usd(b['today_fixed']), C.usd(b['point'])))
+      'would keep back **%s**, save **%s** and spend **%s** on set uses: **%s** in all, %s of it. Today’s rules decide '
+      'one share: **%s** to the retiree health trust. Each point of a share is worth %s.' % (
+          C.usd(b['fc']), b['fc_date'], C.fy(b['latest']), C.usd(x1['keep']), C.usd(x1['save']), C.usd(x1['spend']),
+          C.usd(b['claimed']), pc(x1['share'], 0), C.usd(b['today_fixed']), C.usd(b['point'])))
     a('- The draft sets **%d of %d** dials by rule that today’s policies leave open or set lower (our reading of '
       'the two documents).' % (x1['set_by_draft'], x1['n_dials']))
     a('- General stabilization was **%s** of the %s budget, inside the draft’s five to eight percent, and %s of %d '
@@ -717,7 +748,7 @@ def report(b, x1, x2, x3, x4):
     a('| Policy | Today (Select Board policies, Article III) | The draft (DLS, April 2024) | State law |')
     a('|---|---|---|---|')
     a('| Free cash | Stabilization to five percent, then at least 10% to OPEB, then special funds, then one-time uses | '
-      'Target of five to seven percent of the budget; fixed minimum shares (table above) | Spent by Town Meeting '
+      'Target of five to seven percent of the budget; a minimum share for each use (table above) | Spent by Town Meeting '
       'once the state certifies it |')
     a('| General stabilization | At least five percent of the budget; all funds no more than ten percent; refill '
       'within about three years | Five to eight percent; a yearly deposit of 0.25% (summary) or 0.3% (text) of the '

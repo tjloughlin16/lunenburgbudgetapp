@@ -55,6 +55,11 @@ expect('rules: claimed', usd(claimed), p1)
 expect('rules: today fixes OPEB 10%', usd(fc * 0.10), p1)
 expect('rules: no set use', usd(fc - claimed), p1)
 expect('rules: share', '%d%%' % round(claimed / fc * 100), p1)
+import math  # noqa: E402
+keep, save, spend = fc * 0.20, fc * 0.25, fc * 0.20 + min(fc * 0.10, 250000)
+for name, v in (('kept back', keep), ('saved', save), ('spent on set uses', spend)):
+    if usd(math.floor(v)) not in blob(p1) and usd(v) not in blob(p1):
+        bad.append('rules: %s %s not printed' % (name, usd(v)))
 
 # 2. Peer ranks, by the state's stabilization export.
 ws = openpyxl.load_workbook(os.path.join(ROOT, 'sources/state-dls/StablPerBudget351-2026-11-25-3f4c08a6593d.xlsx'),
