@@ -1109,7 +1109,13 @@ export const TOPIC_MERGED: Record<string, string> = {
   'fy2026-lines-over-budget': 'fy2026-surplus-by-category', 'fy2025-school-surplus': 'surplus-bridge',
   // TJ, 24 November 2026: Surplus by category became FY2026 school surplus (same address), and
   // Circuit breaker and surplus folded into it -- the 29 June entry is the surplus's story.
-  'fy2026-circuit-breaker': 'fy2026-surplus-by-category',
+  'fy2026-circuit-breaker': 'fy2026-tuition-paid-early',
+  // 27 November 2026, the closeout review (TJ: "each of the sections is effectively the same"):
+  // two pages that answered Repeat underspending's question, and two staff lines whose sharpest
+  // finding was the comparison between them.
+  'two-year-surplus': 'surplus-repeat-lines', 'surplus-suggestions': 'surplus-repeat-lines',
+  'fy2026-paraprofessional-overrun': 'fy2026-staff-lines',
+  'fy2026-psychologist-line': 'fy2026-staff-lines',
   // The fund's cash FY2024-FY2026, one stretch of its whole history: folded 28 October 2026
   // into the page that holds every year (both opened on the FY2025 journal entries).
   'fee-fund-ledger': 'fee-fund-history',

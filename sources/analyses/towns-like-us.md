@@ -682,13 +682,13 @@ Two calendars, never mixed. Tax figures are FY2026, the last year the Division o
 ## The sources
 
 - **Massachusetts DOR, Division of Local Services** — Average single-family tax bill, value, parcels, income per capita and rank, all 351 municipalities, FY1988 onward.
-  `sources/state-dls/AvgSingleFamTaxBill-2026-10-28-b6132feaac38.xlsx`  · sha256 `b6132feaac38b594`
+  `sources/state-dls/AvgSingleFamTaxBill-2026-11-27-91bf41274b48.xlsx`  · sha256 `91bf41274b4848e3`
   Publisher’s address: https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=AverageSingleTaxBill.SingleFamTaxBill_wRange&rdReportFormat=NativeExcel&rdExportTableID=tblSinglefamtaxbill&rdExportFilename=AvgSingleFamTaxBill&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 - **Massachusetts DOR, Division of Local Services** — Assessed value by class, so the commercial-industrial-personal share is the state’s certified figure rather than ours.
-  `sources/state-dls/assessedvalues-2026-10-28-51b6dc016488.xlsx`  · sha256 `51b6dc016488dfd6`
+  `sources/state-dls/assessedvalues-2026-11-27-7ee68186b94d.xlsx`  · sha256 `7ee68186b94d1899`
   Publisher’s address: https://dlsgateway.dor.state.ma.us/reports/rdPage.aspx?rdReport=PropertyTaxInformation.AssessedValuesbyClass.assessedvaluesbyclass&rdReportFormat=NativeExcel&rdExportTableID=tblassessedvalues&rdExportFilename=assessedvalues&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 - **Massachusetts DOR, Division of Local Services** — New growth certified onto the levy limit each year, and the prior year’s limit it is measured against.
-  `sources/state-dls/new_growth-2026-10-28-ac0edbfee484.xlsx`  · sha256 `ac0edbfee4843037`
+  `sources/state-dls/new_growth-2026-11-27-8d28b1d99829.xlsx`  · sha256 `8d28b1d99829b329`
   Publisher’s address: https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=NewGrowth.NewGrowth_dash_v2_test&rdReportFormat=NativeExcel&rdExportTableID=tblNewGrowth&rdExportFilename=new_growth&rdShowGridlines=True&rdExcelOutputFormat=Excel2007
 - **Massachusetts DOR, Division of Local Services** — Every Proposition 2½ override and underride put to a town, with the date, the tallies and the result.
   `sources/state-dls/OverrideUnderrideVotes.xlsx`  · sha256 `8fa6e1fbcf9771b1`

@@ -193,8 +193,7 @@
      "topics": [
       "unspent-by-fund",
       "carried-over-orders",
-      "fy2026-closeout",
-      "two-year-surplus"
+      "fy2026-closeout"
      ]
     },
     {
@@ -633,7 +632,7 @@
      "title": "Paraprofessional money",
      "topics": [
       "in-district-special-education",
-      "fy2026-paraprofessional-overrun"
+      "fy2026-staff-lines"
      ]
     }
    ],
@@ -1632,38 +1631,34 @@
    "groups": [
     {
      "section": null,
-     "title": "Total",
+     "title": "How big",
      "topics": [
-      "fy2026-surplus-by-category",
       "surplus-bridge",
-      "two-year-surplus",
-      "why-it-was-left"
+      "fy2026-surplus-by-category"
      ]
     },
     {
      "section": null,
-     "title": "Year-end entries",
+     "title": "Tuition",
      "topics": [
-      "fy2026-tuition-paid-early",
-      "fy2026-school-transfers"
-     ]
-    },
-    {
-     "section": null,
-     "title": "By line",
-     "topics": [
-      "fy2026-budget-vs-munis",
       "fy2026-tuition-lines",
-      "fy2026-paraprofessional-overrun",
-      "fy2026-psychologist-line",
-      "special-education-transportation",
-      "fy2026-athletics-underspend",
-      "surplus-repeat-lines"
+      "fy2026-tuition-paid-early"
      ]
     },
     {
      "section": null,
-     "title": "Month by month",
+     "title": "Where it was left",
+     "topics": [
+      "surplus-repeat-lines",
+      "fy2026-staff-lines",
+      "why-it-was-left",
+      "special-education-transportation",
+      "fy2026-athletics-underspend"
+     ]
+    },
+    {
+     "section": null,
+     "title": "When",
      "topics": [
       "budget-burndown",
       "sped-burndown"
@@ -1671,9 +1666,10 @@
     },
     {
      "section": null,
-     "title": "Uses",
+     "title": "Controls",
      "topics": [
-      "surplus-suggestions"
+      "fy2026-school-transfers",
+      "fy2026-budget-vs-munis"
      ]
     }
    ],
@@ -3376,35 +3372,6 @@
    ],
    "title": "Veterans closeout"
   },
-  "fy2026-paraprofessional-overrun": {
-   "finding": "Paraprofessional accounts ran $208,082 over in FY2026; $99,064 of it was paid against no budget.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
-   "home": "fy2026-closeout",
-   "id": "fy2026-paraprofessional-overrun",
-   "minutes": 1,
-   "path": "/school-all-funds/fy2026-closeout/fy2026-paraprofessional-overrun",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout",
-    "school-staffing"
-   ],
-   "title": "Paraprofessional overrun"
-  },
-  "fy2026-psychologist-line": {
-   "finding": "One of four school psychologist accounts, $98,784 budgeted, paid nothing in FY2026.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
-   "home": "fy2026-closeout",
-   "id": "fy2026-psychologist-line",
-   "minutes": 1,
-   "path": "/school-all-funds/fy2026-closeout/fy2026-psychologist-line",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout"
-   ],
-   "title": "Psychologist line"
-  },
   "fy2026-school-retiree-insurance": {
    "finding": "An account named for school retiree health paid $1,262,376 from the town’s insurance department.",
    "generator": "scripts/build_fy2026_closeout_topics.py",
@@ -3457,8 +3424,23 @@
    ],
    "title": "Snow and Reserve Fund"
   },
+  "fy2026-staff-lines": {
+   "finding": "Counselor and psychologist lines left $191,162 in FY2026; paraprofessional lines ran $208,082 over.",
+   "generator": "scripts/build_fy2026_closeout_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-staff-lines",
+   "minutes": 2,
+   "path": "/school-all-funds/fy2026-closeout/fy2026-staff-lines",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "fy2026-closeout",
+    "school-staffing"
+   ],
+   "title": "Staff lines"
+  },
   "fy2026-surplus-by-category": {
-   "finding": "FY2026 left $482,118, the second year running far above the $32,000 that FY2023 and FY2024 each left.",
+   "finding": "FY2026’s $482,118 is a net: $1,683,552 left on accounts under budget, $1,201,434 spent past the rest.",
    "generator": "scripts/build_fy2026_school_surplus.py",
    "home": "fy2026-closeout",
    "id": "fy2026-surplus-by-category",
@@ -3469,7 +3451,7 @@
    "shelves": [
     "fy2026-closeout"
    ],
-   "title": "FY2026 school surplus"
+   "title": "Surplus by category"
   },
   "fy2026-town-departments": {
    "finding": "Town departments closed FY2026 $964,030 under a $27,647,670 budget, 3.5% of it.",
@@ -3532,7 +3514,7 @@
     {
      "id": "fy2026-tuition-paid-early",
      "path": "/school-all-funds/fy2026-closeout/fy2026-tuition-paid-early",
-     "title": "Year-end tuition payment",
+     "title": "Year-end tuition entries",
      "why": "Tuition paid on the year’s last day, and the surplus"
     },
     {
@@ -3549,7 +3531,7 @@
    "title": "Tuition at year end"
   },
   "fy2026-tuition-paid-early": {
-   "finding": "$189,277 on FY2027-numbered FLLAC invoices was charged to FY2026 on 30 June and paid 16 July.",
+   "finding": "29 June, $333,495 of tuition moved to the circuit breaker; 30 June, $189,277 of FY2027 invoices, to FY2026.",
    "generator": "scripts/build_journal_surplus_topics.py",
    "home": "fy2026-closeout",
    "id": "fy2026-tuition-paid-early",
@@ -3573,7 +3555,7 @@
    "shelves": [
     "fy2026-closeout"
    ],
-   "title": "Year-end tuition payment"
+   "title": "Year-end tuition entries"
   },
   "fy2027-athletic-bus-cut": {
    "finding": "FY2027 cut athletic buses from the town budget, then put $60,000 back, most on the fee fund.",
@@ -5721,7 +5703,7 @@
     {
      "id": "fy2026-tuition-paid-early",
      "path": "/school-all-funds/fy2026-closeout/fy2026-tuition-paid-early",
-     "title": "Year-end tuition payment",
+     "title": "Year-end tuition entries",
      "why": "Tuition paid on the year’s last day, and the surplus"
     },
     {
@@ -6043,20 +6025,6 @@
     "fy2026-closeout"
    ],
    "title": "Repeat underspending"
-  },
-  "surplus-suggestions": {
-   "finding": "FY2025’s surplus was many small leftovers; in FY2026 one tuition account held 31% of them.",
-   "generator": "scripts/build_journal_surplus_topics.py",
-   "home": "fy2026-closeout",
-   "id": "surplus-suggestions",
-   "minutes": 1,
-   "path": "/school-all-funds/fy2026-closeout/surplus-suggestions",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout"
-   ],
-   "title": "Surplus suggestions"
   },
   "surprise-costs": {
    "finding": "A surprise cost is spending above the budget as voted: $1,235,009 over 17 years.",
@@ -6592,21 +6560,6 @@
     "athletics"
    ],
    "title": "Turf field capital plans"
-  },
-  "two-year-surplus": {
-   "finding": "FY2025 and FY2026 together left $1,037,063; private tuition alone left $523,160 of it.",
-   "generator": "scripts/build_two_year_surplus.py",
-   "home": "fy2026-closeout",
-   "id": "two-year-surplus",
-   "minutes": 2,
-   "path": "/school-all-funds/fy2026-closeout/two-year-surplus",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout",
-    "school-all-funds"
-   ],
-   "title": "Two-year surplus"
   },
   "unpriced-school-charges": {
    "finding": "Nine charges a Lunenburg family can meet have no published amount anywhere in this archive.",

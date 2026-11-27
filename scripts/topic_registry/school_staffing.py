@@ -22,7 +22,7 @@ CATEGORY = dict(
         ('People and records', ['headcount-and-fte', 'staff-retention', 'school-support-staff',
                                 'printed-school-rosters', 'district-staff-directory']),
         ('Paraprofessional money', ['in-district-special-education',
-                                    'fy2026-paraprofessional-overrun']),
+                                    'fy2026-staff-lines']),
     ],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_school_staffing_topics.py'

@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""The school surplus, read from the MUNIS journal: the bridge from FY2025 to FY2026, and the
-lines under budget in both years. Two topic pages.
+"""The school surplus, read from the MUNIS journal. Four topic pages on the FY2026 closeout shelf.
 
     python3 scripts/build_journal_surplus_topics.py           # write fy28/public/data/topics/*.json
     python3 scripts/build_journal_surplus_topics.py --check   # fail if either output would change
 
-    surplus-bridge        /fy2026-closeout/surplus-bridge        Surplus, step by step
-    surplus-repeat-lines  /fy2026-closeout/surplus-repeat-lines  Under budget twice
+    surplus-bridge             Surplus by year
+    surplus-repeat-lines       Repeat underspending (absorbed Two-year surplus and Surplus
+                               suggestions, 27 November 2026)
+    budget-burndown            Budget burndown
+    fy2026-tuition-paid-early  Year-end tuition entries (the 29 June and 30 June entries; the
+                               29 June blocks are built by build_fy2026_school_surplus.entry)
 
-Both on the FY2026 closeout shelf, in the group "Surplus from the journal"
-(scripts/topic_registry/fy2026_closeout.py; notes/plans/MUNIS-JOURNAL-REPORTS.md, Hub B;
-the method is notes/plans/SCHOOL-SURPLUS-BRIDGE.md).
+All under /school-all-funds/fy2026-closeout/ (scripts/topic_registry/fy2026_closeout.py; the
+method is notes/plans/SCHOOL-SURPLUS-BRIDGE.md).
 
 WHAT THEY READ. `scripts/journal.py` for the lines, the scope (fund 0100, department 300) and
 what each line is -- budget, carried-forward orders, other transfers, payroll, invoices,
@@ -424,14 +426,20 @@ def build():
         'Whether any cost moved to a grant or revolving fund.',
     ]
 
-    # ================================================== surplus-repeat-lines
+    # ================================================== surplus-repeat-lines: REPEAT UNDERSPENDING
+    # 27 November 2026 (T-VPW4S; TJ: "each of the sections is effectively the same"): absorbs
+    # Two-year surplus (its two-year chart and its gross-against-net conclusion; two_year()) and
+    # Surplus suggestions (how spread out the leftover was; the accounts under every year), whose
+    # addresses open this page (fy28/src/routes.ts TOPIC_MERGED). Leads on PERSISTENCE. Left out,
+    # because another page owns them: what was left by the end of March (Budget burndown), and
+    # building upkeep's leftover and teachers' (Surplus by category).
     cl = d['cat_left']
     both = [c for c in CATS if cl[(Y0, c)] > 0 and cl[(Y1, c)] > 0]
     every = [c for c in CATS if all(cl[(y, c)] > 0 for y in J.YEARS)]
-    both.sort(key=lambda c: -(cl[(Y0, c)] + cl[(Y1, c)]))
-    b0, b1 = sum(cl[(Y0, c)] for c in both), sum(cl[(Y1, c)] for c in both)
+    every.sort(key=lambda c: -sum(cl[(y, c)] for y in J.YEARS))
     e4 = sum(cl[(y, c)] for c in every for y in J.YEARS)
-    lead = both[0]
+    if not set(every) <= set(both):
+        fail('a category under every year must be under in both')
     # Line by line: every account, by its MUNIS number -- the Town Manager's grain.
     al = defaultdict(lambda: D0)
     for (y, _, a), v in d['acct_left'].items():
@@ -441,50 +449,100 @@ def build():
     a_both = sorted([a for a in accts if under(a, Y0) and under(a, Y1)],
                     key=lambda a: (-(al[(Y0, a)] + al[(Y1, a)]), a))
     a_every = {a for a in accts if all(under(a, y) for y in J.YEARS)}
-    ab0, ab1 = sum(al[(Y0, a)] for a in a_both), sum(al[(Y1, a)] for a in a_both)
+    ab1 = sum(al[(Y1, a)] for a in a_both)
     shown = a_both[:ACCOUNT_ROWS]
-    sh_share = 100.0 * fl(sum(al[(y, a)] for a in shown for y in (Y0, Y1))) / fl(ab0 + ab1)
-    sh0 = 100.0 * fl(b0) / fl(s0)
-    if not (b0 < s0 and b1 > s1):
-        fail('the first conclusion assumes the repeat categories left part of FY%d’s surplus '
-             'and more than all of FY%d’s' % (Y0, Y1))
-    # "no category ran over", not "every category came in under": the salary reserve and special
-    # details end some years at exactly nothing, neither under nor over
-    if not all(cl[(Y0, c)] >= 0 for c in CATS):
-        fail('the first conclusion’s note assumes no category ran over in FY%d' % Y0)
-    if not set(every) <= set(both):
-        fail('a category under every year must be under in both')
-    ncat = len(CATS)
+    sh_share = 100.0 * fl(sum(al[(y, a)] for a in shown for y in (Y0, Y1))) / fl(
+        sum(al[(y, a)] for a in a_both for y in (Y0, Y1)))
+    if not (len(a_every) < len(a_both) and a_every <= set(a_both)):
+        fail('the accounts conclusion says fewer accounts left money every year than in both')
+    # How spread out each year's leftover was (from Surplus suggestions).
+    s25 = spread([al[(Y0, a)] for a in accts])
+    s26 = spread([al[(Y1, a)] for a in accts])
+    top25 = 100.0 * fl(s25['top']) / fl(s25['total'])
+    top26 = 100.0 * fl(s26['top']) / fl(s26['total'])
+    if s26['v'][0] != al[(Y1, PRIVATE)]:
+        fail('private tuition is no longer FY2026’s largest leftover; the page says it is')
+    if not (s25['top'] < s25['total'] / 10 and top26 > 3 * top25):
+        fail('the spread conclusion says FY2025 was spread thin and FY2026 concentrated')
+    # The two years together (from Two-year surplus).
+    tw = two_year(d)
+    lines2, cats2 = tw['lines'], tw['cats']
+    under2 = sum(r['both'] for r in lines2 if r['both'] > 0)
+    over2 = -sum(r['both'] for r in lines2 if r['both'] < 0)
+    if abs(round(under2 - over2, 2) - tw['total']) > 0.01:
+        fail('lines under and over no longer net to the two-year surplus')
+    top2 = sum(r['both'] for r in lines2[:TOP_LINES])
+    if not top2 > tw['total']:
+        fail('the page says the lines that left most left more than the two-year surplus')
+    priv = next(r for r in lines2 if r['account'] == PRIVATE)
+    coll = next(r for r in lines2 if r['account'] == COLLAB)
+    tu = next(c for c in cats2 if c['key'] == 'tuition')
+    if abs(priv['both'] + coll['both'] - tu['both']) > 0.01:
+        fail('private and collaborative no longer make up the tuition category')
+    yspan = C.fyspan(J.YEARS[0], J.YEARS[-1])
+    YS = lambda: figure(J.YEARS[0], yspan, 'fiscal years')
+
     rx = {}
-    rx['n'] = f('n', N(len(both), 'categories'), 'of %d under budget both years' % ncat,
-                'published', {'n': N(ncat, 'categories')})
-    rx['b0'] = f('b0', U(b0), 'they left, %s' % C.fy(Y0), 'published', {'y': F(Y0)})
-    rx['b1'] = f('b1', U(b1), 'they left, %s, not yet closed' % C.fy(Y1), 'published',
-                 {'y': F(Y1)})
-    rx['s0'] = f('s0', U(s0), 'the whole surplus, %s' % C.fy(Y0), 'published', {'y': F(Y0)})
-    rx['s1'] = f('s1', U(s1), 'the whole surplus, %s, before the close' % C.fy(Y1), 'published',
-                 {'y': F(Y1)})
-    rx['e'] = f('e', N(len(every), 'categories'), 'under budget every year, %s'
-                % C.fyspan(J.YEARS[0], J.YEARS[-1]), 'published',
-                {'y': figure(J.YEARS[0], C.fyspan(J.YEARS[0], J.YEARS[-1]), 'fiscal years')})
+    rx['e'] = f('e', N(len(every), 'categories'), 'under budget every year, %s' % yspan,
+                'published', {'y': YS()})
     rx['e4'] = f('e4', U(e4), 'they left over the four years', 'published')
-    rx['l0'] = f('l0', U(cl[(Y0, lead)]), '%s, %s' % (S.CAT_SHORT[lead], C.fy(Y0)), 'published',
-                 {'y': F(Y0)})
-    rx['l1'] = f('l1', U(cl[(Y1, lead)]), '%s, %s' % (S.CAT_SHORT[lead], C.fy(Y1)), 'published',
-                 {'y': F(Y1)})
     rx['an'] = f('an', N(len(a_both), 'accounts'), 'of %s left money both years'
                  % C.num(len(accts)), 'published', {'n': N(len(accts), 'accounts')})
     rx['ab1'] = f('ab1', U(ab1), 'those accounts left, %s' % C.fy(Y1), 'published',
                   {'y': F(Y1)})
+    rx['ae'] = f('ae', N(len(a_every), 'accounts'), 'left money every year, %s' % yspan,
+                 'published', {'y': YS()})
     rx['why'] = f('why', None, 'whether budgeted high or run lean', 'gap',
                   closes='the district’s line-by-line budget build-up, with the basis for '
                          'each amount')
+    rx['u2'] = f('u2', U(under2), 'left on lines under budget, %s and %s (our sum)'
+                 % (C.fy(Y0), C.fy(Y1)), 'published', {'y': F(Y0), 'z': F(Y1)})
+    rx['o2'] = f('o2', U(over2), 'spent past budget on the other lines', 'published')
+    rx['t2'] = f('t2', U(top2), 'left on the %s lines that left most' % C.num(TOP_LINES),
+                 'published', {'n': N(TOP_LINES)})
+    rx['n25'] = f('n25', N(s25['n'], 'accounts'), 'left money in %s' % C.fy(Y0), 'published',
+                  {'y': F(Y0)})
+    rx['top'] = f('top', P(top25, 0), 'of it on the largest one', 'published')
+    rx['t26'] = f('t26', P(top26, 0), 'of %s’s on private tuition' % C.fy(Y1), 'published',
+                  {'y': F(Y1)})
     labels_every = [S.CAT_SHORT[c] for c in every]
     listing = ', '.join(labels_every[:-1]) + ' and ' + labels_every[-1]
+    shown2 = sorted([c for c in cats2 if c['key'] != 'tuition']
+                    + [dict(label='Private tuition', both=priv['both']),
+                       dict(label='Collaborative tuition', both=coll['both'])],
+                    key=lambda c: -c['both'])
+    hrefs = {c['label']: REG.path(PAGE_OF[c['key']]) for c in cats2 if c['key'] in PAGE_OF
+             and c['key'] != 'tuition'}
+    hrefs.update({k: REG.path('fy2026-tuition-lines')
+                  for k in ('Private tuition', 'Collaborative tuition')})
+    two_chart = TP.ranking(
+        'Left unspent over two years, by category',
+        [(c['label'], c['both']) for c in shown2], '$', hrefs=hrefs,
+        note='%s and %s added, school general fund. %s counts orders owed at its close as spent, '
+             'as %s does. Below zero is past budget.' % (C.fy(Y0), C.fy(Y1), C.fy(Y0), C.fy(Y1)),
+        note_figures={'a': F(Y0), 'b': F(Y1)})
+    spread_chart = TP.parts(
+        'How spread out the leftover was',
+        [('Largest %s accounts' % C.num(s25['half']), fl(sum(s25['v'][:s25['half']], D0))),
+         ('Next %s' % C.num(s25['most'] - s25['half']),
+          fl(sum(s25['v'][s25['half']:s25['most']], D0))),
+         ('The other %s' % C.num(s25['n'] - s25['most']), fl(sum(s25['v'][s25['most']:], D0)))],
+        '$',
+        note='%s, the accounts that came in under budget, by how much each left. %s, because '
+             'nothing in it ran over to offset it.' % (C.fy(Y0), C.fy(Y0)),
+        note_figures={'y': F(Y0)})
+    rl_sources = [dict(s, key=k) for s, k in zip(sources(), ('journal', 'accounts', 'provenance'))]
+    import build_fy2026_closeout_topics as CT   # sources only; CT imports nothing of ours at top
+    ct = CT.sources()
+    rl_sources += [dict(ct[k], key=k) for k in P13]
+    rl_sources += [
+        dict(key='tm', label='Town of Lunenburg — Select Board minutes, 9 September 2025',
+             href=TM_HREF)]
+    cite = TP.cite
     out['surplus-repeat-lines'] = TP.page(
         'surplus-repeat-lines',
         '%s budget areas came in under every year from %s to %s; %s of %d did in both %s and %s.'
-        % (C.num(len(every)), C.fy(J.YEARS[0]), C.fy(J.YEARS[-1]), C.num(len(both)), ncat,
+        % (C.num(len(every)), C.fy(J.YEARS[0]), C.fy(J.YEARS[-1]), C.num(len(both)), len(CATS),
            C.fy(Y0), C.fy(Y1)),
         list(rx.values()),
         [con('Over those four years, the %s areas left %s between them.'
@@ -494,47 +552,46 @@ def build():
              so='These areas ran under four years running, so each next budget has a record of '
                 'years to be set against, not one year’s result.',
              notes=[step('They are %s.' % listing, 'measured')]),
-         con('The %s under both years left %s in %s, %s of its surplus; in %s, %s, more than all of it.'
-             % (C.num(len(both)), C.usd(fl(b0)), C.fy(Y0), C.pct(sh0, 0), C.fy(Y1), C.usd(fl(b1))),
-             ['n', 'b0', 'b1', 's0', 's1'],
-             {'n': N(len(both), 'categories'), 'a': U(b0), 'y': F(Y0), 'p': P(sh0, 0), 'b': U(b1), 'z': F(Y1)},
-             so='In %s the repeat underspends were larger than the whole surplus: overruns '
-                'elsewhere absorbed the rest, so the total hides slack.' % C.fy(Y1),
-             so_figures={'y': F(Y1)},
-             notes=[step('The surplus as printed was %s, then %s. In %s no category ran over; '
-                         'in %s, the categories that ran over used the difference.'
-                         % (C.usd(fl(s0)), C.usd(fl(s1)), C.fy(Y0), C.fy(Y1)), 'measured',
-                         {'a': U(s0), 'b': U(s1), 'y': F(Y0), 'z': F(Y1)})]),
-         con('%s left the most of them over the two years: %s, then %s.'
-             % (S.CAT_LABEL[lead], C.usd(fl(cl[(Y0, lead)])), C.usd(fl(cl[(Y1, lead)]))),
-             ['l0', 'l1'],
-             {'a': U(cl[(Y0, lead)]), 'b': U(cl[(Y1, lead)])},
-             so='Its leftover grew almost four times over in a year; it is the one area where '
-                'the newer slack is concentrated.'),
-         con('Line by line, %s of %s accounts left money in both years; in %s they left %s.'
-             % (C.num(len(a_both)), C.num(len(accts)), C.fy(Y1), C.usd(fl(ab1))),
-             ['an', 'ab1', 'why'],
-             {'n': N(len(a_both), 'accounts'), 'm': N(len(accts), 'accounts'), 'y': F(Y1),
-              'a': U(ab1)},
+         con('Lines under budget left %s over %s and %s; lines past budget used %s of it.'
+             % (C.usd(fl(under2)), C.fy(Y0), C.fy(Y1), C.usd(fl(over2))), ['u2', 'o2', 't2'],
+             {'u': U(under2), 'y': F(Y0), 'z': F(Y1), 'o': U(over2)},
+             so='The %s lines that left most left %s, more than the two years’ whole surplus, so '
+                'the total hides the slack.' % (C.num(TOP_LINES), C.usd(fl(top2))),
+             so_figures={'n': N(TOP_LINES), 't': U(top2)}),
+         con('Line by line, %s of %s accounts left money in both years; %s did in all four.'
+             % (C.num(len(a_both)), C.num(len(accts)), C.num(len(a_every))),
+             ['an', 'ae', 'ab1', 'why'],
+             {'n': N(len(a_both), 'accounts'), 'm': N(len(accts), 'accounts'),
+              'e': N(len(a_every), 'accounts')},
              so='The pattern holds at the grain the Town Manager named in public, line by line, not '
                 'only in category totals.',
-             notes=[step('The table lists the %s that left the most, %s of the money, by '
-                         'account number; %s of them left money in all four years.'
-                         % (C.num(len(shown)), C.pct(sh_share, 0),
-                            C.num(sum(a in a_every for a in shown))), 'measured',
-                         {'n': N(len(shown), 'accounts'), 'p': P(sh_share, 0),
-                          'e': N(sum(a in a_every for a in shown), 'accounts')}),
+             notes=[step('In %s the accounts under both years left %s. The table lists the %s '
+                         'that left the most, %s of their money, by account number.'
+                         % (C.fy(Y1), C.usd(fl(ab1)), C.num(len(shown)), C.pct(sh_share, 0)),
+                         'measured',
+                         {'y': F(Y1), 'a': U(ab1), 'n': N(len(shown), 'accounts'),
+                          'p': P(sh_share, 0)}),
                     step('An account budgeted high and one run lean leave the same postings; '
-                         'the journal cannot tell them apart.', 'hypothesis')])],
-        chart=TP.ranking('Under budget in both years, by category',
-                         [(S.CAT_LABEL[c], [fl(cl[(Y0, c)]), fl(cl[(Y1, c)])]) for c in both],
-                         '$', highlight=[S.CAT_LABEL[c] for c in every],
-                         stack=[C.fy(Y0), C.fy(Y1)],
-                         note='Left unspent, net of accounts that ran over. Strong bars: under '
-                              'budget all four years, %s. %s is not yet closed.'
-                              % (C.fyspan(J.YEARS[0], J.YEARS[-1]), C.fy(Y1)),
-                         note_figures={'r': figure(J.YEARS[0], C.fyspan(J.YEARS[0], J.YEARS[-1]),
-                                                   'fiscal years'), 'y': F(Y1)}),
+                         'the journal cannot tell them apart.', 'hypothesis')]),
+         con('%s’s leftover was spread over %s accounts, the largest %s; in %s private tuition held %s.'
+             % (C.fy(Y0), C.num(s25['n']), C.pct(top25, 0), C.fy(Y1), C.pct(top26, 0)),
+             ['n25', 'top', 't26'],
+             {'y': F(Y0), 'n': N(s25['n'], 'accounts'), 'p': P(top25, 0), 'z': F(Y1),
+              'q': P(top26, 0)},
+             so='No single line explains %s, so a remedy aimed at one account would leave most of '
+                'it in place; %s is the opposite case.' % (C.fy(Y0), C.fy(Y1)),
+             so_figures={'y': F(Y0), 'z': F(Y1)},
+             notes=[step('Half of %s’s sat on %s accounts and four fifths on %s.'
+                         % (C.fy(Y0), C.num(s25['half']), C.num(s25['most'])), 'measured',
+                         {'y': F(Y0), 'a': N(s25['half'], 'accounts'),
+                          'b': N(s25['most'], 'accounts')})])],
+        chart=TP.ranking('Under budget every year, by area',
+                         [(S.CAT_LABEL[c], [fl(cl[(y, c)]) for y in J.YEARS]) for c in every],
+                         '$', stack=[C.fy(y) for y in J.YEARS],
+                         note='Left unspent each year, net of accounts in the area that ran over. '
+                              '%s is not yet closed.' % C.fy(Y1),
+                         note_figures={'y': F(Y1)}),
+        also=[two_chart, spread_chart],
         said=[dict(quote=TM_QUOTE, board='Select Board', date='2025-09-09', href=TM_HREF,
                    label='Select Board minutes, 9 September 2025, Town Manager’s report')],
         table=dict(caption='Left unspent, line by line and by category', views=[dict(
@@ -559,8 +616,14 @@ def build():
                                                        -fl(cl[(Y0, c)] + cl[(Y1, c)])))],
             note='Net of accounts in the category that ran over; a negative figure is a '
                  'category over budget. Categories as on the surplus pages.')]),
-        sources=sources(),
-        finding_figures={'n': N(len(both), 'categories'), 'm': N(ncat, 'categories'),
+        sources=rl_sources,
+        flow=['finding',
+              cite(('chart', 0), 'journal', *P13), ('conclusion', 0),
+              cite(('chart', 1), 'journal', 'p13-26', 'p13-25', 'accounts'), ('conclusion', 1),
+              cite(('table', 0), 'journal', 'accounts', 'tm', *P13), ('conclusion', 2),
+              cite(('chart', 2), 'journal', 'provenance', 'p13-25'), ('conclusion', 3),
+              'said', 'sources'],
+        finding_figures={'n': N(len(both), 'categories'), 'm': N(len(CATS), 'categories'),
                          'y': F(Y0), 'z': F(Y1), 'e': N(len(every), 'categories'),
                          'f': F(J.YEARS[0]), 'g': F(J.YEARS[-1])})
     out['surplus-repeat-lines']['not_established'] = [
@@ -571,7 +634,6 @@ def build():
     ]
 
     out.update(burndown_pages())
-    out['surplus-suggestions'] = suggestions_page(d)
     out[PREPAID] = prepaid_page(d)
     if sorted(out) != MINE:
         fail('the pages built are not the pages the registry gives this script: %s vs %s'
@@ -579,16 +641,67 @@ def build():
     return out, d
 
 
-# ================================================== surplus suggestions
-# TJ, 20 October 2026: "so what should the school committee DO or the superintendent to correct
-# for this next year?" and "can you put this into a SURPLUS suggestions page". Rule 8 governs it:
-# each card is a PLANNING OPTION with what it costs and who bears it, and the question it raises
-# for the budget; the page gives the district the credit the record supports; nothing on it
-# names a cause, because none of the options depends on one. The page's own conclusions stay
-# measurements (topic.py refuses an instruction there); the options live in the cards.
-FINCOM_JUNE = '/docs/minutes/text/finance-committee/2026-06-11-minutes-7845.txt'
-FINCOM_JUNE_QUOTE = ('The documents needed on this topic were not provided but should be '
-                     'available for the next meeting.')
+# ================================================== the two years together
+# From build_two_year_surplus.py, retired 27 November 2026 (T-VPW4S) when Two-year surplus folded
+# into Repeat underspending. TJ, 26 November 2026: "look at the COMBINED surpluses from FY25 and
+# FY26, totalling in all cateogires, to say what lines have the most unspent amounts."
+#
+# ONE FOOTING FOR BOTH YEARS. FY2025's closed report leaves out the orders it still owed at its
+# close (re-opened in FY2026 as carried-forward budget); FY2026's report counts its open orders as
+# spent. So FY2025 is counted the way FY2026 is -- each account's period-13 leftover less the
+# orders closed out of it (the journal's YEC lines) -- the footing Surplus by year and the hub use.
+PAY = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy%d-school-surplus.json')
+P13 = ('p13-26', 'p13-25', 'p13-24', 'p13-23')
+PRIVATE = '0100-3-300-9300-51-1-06-2-535019'    # general fund private (out-of-district) tuition
+TOP_LINES = 10            # lines in the "left most" sum
+# Categories with a page of their own, linked from the two-year chart.
+PAGE_OF = {'paras': 'fy2026-staff-lines', 'counselors': 'fy2026-staff-lines',
+           'tuition': 'fy2026-tuition-lines', 'transport': 'special-education-transportation'}
+
+
+def two_year(d):
+    """FY2025 and FY2026 on one footing, by category and by account: dict(total, owed, cats,
+    lines), every list sorted by what the two years left, largest first."""
+    YRS = (Y0, Y1)
+    A = J.accounts()
+    scope = [r for r in J.lines() if J.in_surplus_scope(A[r['account']])]
+    yec_a, yec_c = defaultdict(lambda: D0), defaultdict(lambda: D0)
+    for r in scope:
+        if r['source'] == 'YEC' and r['fy'] == Y0:
+            yec_a[r['account']] -= r['amt']
+            yec_c[cat_of(r)] -= r['amt']
+    if sum(yec_a.values(), D0) != d['closed'][Y0]:
+        fail('the orders closed out of FY%d, by account, no longer sum to the carry-forward' % Y0)
+    owed = {Y0: d['left'][Y0] - d['closed'][Y0], Y1: d['left'][Y1]}
+    acct = defaultdict(lambda: {y: D0 for y in YRS})
+    for (y, c, a), v in d['acct_left'].items():
+        if y in YRS:
+            acct[a][y] += v - (yec_a.get(a, D0) if y == Y0 else D0)
+    cat = defaultdict(lambda: {y: D0 for y in YRS})
+    for (y, c), v in d['cat_left'].items():
+        if y in YRS:
+            cat[c][y] += v - (yec_c.get(c, D0) if y == Y0 else D0)
+    for y in YRS:
+        if sum(v[y] for v in acct.values()) != owed[y] or sum(v[y] for v in cat.values()) != owed[y]:
+            fail('FY%d accounts or categories no longer sum to what was left, same footing' % y)
+    total = owed[Y0] + owed[Y1]
+    hub = json.dumps(json.load(open(os.path.join(OUT_DIR, 'fy2026-closeout.json'),
+                                    encoding='utf-8')), ensure_ascii=False)
+    for y in YRS:
+        if C.usd(fl(owed[y])) not in hub:
+            fail('the hub no longer states FY%d as %s' % (y, C.usd(fl(owed[y]))))
+    label = {}
+    for y in YRS:
+        for c in json.load(open(PAY % (y % 100), encoding='utf-8'))['causes']['categories']:
+            label[c['key']] = c['label']
+    if set(cat) - set(label):
+        fail('a category in the journal has no label in the surplus payloads')
+    r2 = lambda x: round(fl(x), 2)
+    cats = sorted([dict(key=k, label=label[k], both=r2(v[Y0] + v[Y1]))
+                   for k, v in cat.items() if v[Y0] or v[Y1]], key=lambda c: -c['both'])
+    lines = sorted([dict(account=a, both=r2(v[Y0] + v[Y1])) for a, v in acct.items()],
+                   key=lambda r: -r['both'])
+    return dict(total=r2(total), owed={y: r2(owed[y]) for y in YRS}, cats=cats, lines=lines)
 
 
 def spread(left_by_account):
@@ -601,259 +714,6 @@ def spread(left_by_account):
         half = half or (i if run >= tot / 2 else None)
         most = most or (i if run >= tot * Decimal('0.8') else None)
     return dict(n=len(v), total=tot, top=v[0], half=half, most=most, v=v)
-
-
-def suggestions_page(d):
-    import build_buildings_topics as BB
-    src = os.path.join(ROOT, 'sources', 'meetings', 'text',
-                       FINCOM_JUNE.split('/docs/minutes/text/')[1])
-    if FINCOM_JUNE_QUOTE not in ' '.join(open(src, encoding='utf-8').read().split()):
-        fail('the Finance Committee quotation is no longer verbatim in %s' % FINCOM_JUNE)
-    U = lambda v: figure(fl(v), C.usd(fl(v)))
-    F = lambda v: figure(v, C.fy(v), 'fiscal year')
-    P = lambda v, dp=1: figure(v, C.pct(v, dp))
-    N = lambda v, unit=None: figure(v, C.num(v), unit)
-    f, con = LD.fact, TP.conclusion
-    A = J.accounts()
-    gf = [r for r in J.lines() if J.in_surplus_scope(A[r['account']])]
-    # ---- the leftover, by account, every year
-    al = defaultdict(lambda: D0)
-    for (y, _, a), v in d['acct_left'].items():
-        al[(y, a)] += v
-    accts = sorted({a for (_, a) in al})
-    every = [a for a in accts if all(al[(y, a)] > Decimal('0.005') for y in J.YEARS)]
-    s25 = spread([al[(Y0, a)] for a in accts])
-    s26 = spread([al[(Y1, a)] for a in accts])
-    top26 = 100.0 * fl(s26['top']) / fl(s26['total'])
-    if s26['v'][0] != al[(Y1, '0100-3-300-9300-51-1-06-2-535019')]:
-        fail('private tuition is no longer FY2026’s largest leftover; the suggestions say it is')
-    over = {y: -sum((al[(y, a)] for a in accts if al[(y, a)] < 0), D0) for y in (Y0, Y1)}
-    cl = d['cat_left']
-    cats_every = [c for c in CATS if all(cl[(y, c)] > 0 for y in J.YEARS)]
-    # ---- timing: the burndown's March
-    bud, cum = curves(gf, lambda r: r['fy'])
-    mar = {y: left_pct(bud, cum, y, MARCH) for y in J.YEARS}
-    # ---- year-end transfers between lines
-    moved = defaultdict(lambda: D0)
-    for r in gf:
-        if r['source'] == 'BUA' and not J.is_carry_forward(r) and int(r['period']) == JUNE \
-                and r['amt'] > 0:
-            moved[r['fy']] += r['amt']
-    # ---- building upkeep, from its own generator
-    bd = BB.data()
-    up_o = (bd['orig'][J.YEARS[0]], bd['orig'][Y1])
-    up_s = (bd['spent'][J.YEARS[0]], bd['spent'][Y1])
-    grow = lambda a, b: 100.0 * (fl(b) - fl(a)) / fl(a)
-    cat = lambda r: S.category_of(dict(account=r['account'], obj=r['object']))
-    up_lines = [r for r in gf if cat(r) == 'buildings']
-    # By ACCOUNT, as the ledger counts them: one order split across two accounts is two releases.
-    up_rel = {}
-    for a in sorted({r['account'] for r in up_lines}):
-        _, rel_a, _ = BB.orders([r for r in up_lines if r['account'] == a])
-        up_rel.update({(a, k): v for k, v in rel_a.items()})
-    cbs_lines = [r for r in up_lines if r['account'] == BB.SERVICES]
-    _, cbs_rel, cbs_soy = BB.orders(cbs_lines)
-    carried_rel = sum((v for k, v in cbs_rel.items() if cbs_soy[k] > 0), D0)
-    released = sum(up_rel.values(), D0)
-    book = BB.book()
-    (gl0, ga0), (gl1, ga1) = BB.GROUNDS
-    # ---- the circuit breaker
-    monthly = defaultdict(lambda: D0)
-    for r in J.sped_actuals():
-        if J.sped_fund(A[r['account']]) == 'Circuit breaker' and r['fy'] == Y1:
-            monthly['june' if int(r['period']) == JUNE else 'early'] += r['amt']
-    cb_off = Decimal(CB_BOOK.split()[1].replace(',', '').lstrip('-'))
-    # ---- what the record gives the district credit for (rule 8)
-    up26 = [a for a in bd['accounts'] if any(bd['acct'][(Y1, a, k)] for k in ('orig', 'trans', 'spent', 'enc'))]
-    up_over = [a for a in up26 if bd['acct_left'](Y1, a) < 0]
-    if up_over:
-        fail('the credit conclusion assumes no upkeep account ran over in FY%d' % Y1)
-    open26 = d['piece'].get((Y1, 'encumbrance'), D0)
-    if not (len(every) > 20 and mar[Y1] > mar[J.YEARS[0]] and s25['top'] < s25['total'] / 10):
-        fail('the suggestions page’s conclusions no longer match the data')
-
-    fx = dict(
-        n25=f('n25', N(s25['n'], 'accounts'), 'left money in %s' % C.fy(Y0), 'published', {'y': F(Y0)}),
-        top=f('top', P(100.0 * fl(s25['top']) / fl(s25['total']), 0), 'of it on the largest one',
-              'published'),
-        every=f('every', N(len(every), 'accounts'), 'under budget every year, %s'
-                % C.fyspan(J.YEARS[0], Y1), 'published',
-                {'y': figure(J.YEARS[0], C.fyspan(J.YEARS[0], Y1), 'fiscal years')}),
-        m23=f('m23', P(mar[J.YEARS[0]]), 'budget left at end of March, %s' % C.fy(J.YEARS[0]),
-              'published', {'y': F(J.YEARS[0])}),
-        m26=f('m26', P(mar[Y1]), 'budget left at end of March, %s' % C.fy(Y1), 'published',
-              {'y': F(Y1)}),
-        rel=f('rel', U(released), 'upkeep orders released unpaid, %s' % C.fy(Y1), 'published',
-              {'y': F(Y1)}),
-        cb=f('cb', U(cb_off), 'tuition budget set lower for the circuit breaker', 'published'),
-        mv=f('mv', U(moved[Y0]), 'moved between lines in June, %s' % C.fy(Y0), 'published',
-             {'y': F(Y0)}),
-        ov=f('ov', U(over[Y1]), 'spent past budget, %s, before its close' % C.fy(Y1), 'published',
-             {'y': F(Y1)}),
-        uo=f('uo', N(len(up26), 'accounts'), 'upkeep accounts, none over budget', 'published'),
-    )
-    q = lambda label, rows: dict(title=label, columns=[''], rows=[(k, [v]) for k, v in rows])
-    fy = C.fy
-    cards = [
-        dict(id='actuals', open=True, label='Build next year’s lines from actual spending',
-             account='Who: the Superintendent and the business manager, with the School Committee',
-             left=C.num(len(every)), value_label='accounts under budget every year, %s'
-             % C.fyspan(J.YEARS[0], Y1),
-             shape='%s of %s accounts, and %s of %s budget areas, left money in every year from %s '
-                   'to %s.' % (C.num(len(every)), C.num(len(accts)), C.num(len(cats_every)),
-                               C.num(len(CATS)), fy(J.YEARS[0]), fy(Y1)),
-             figures=[('Upkeep budget, %s' % C.fyspan(J.YEARS[0], Y1), '+' + C.pct(grow(*up_o), 0)),
-                      ('Upkeep spending', '+' + C.pct(grow(*up_s), 0))],
-             sections=[q('The option', [
-                 ('The question for the budget', 'What is each line’s request against its last '
-                  'three years of actual spending, and what is the basis where it is higher?'),
-                 ('What it costs', 'Less cushion: some lines will run short in the year and need a '
-                  'transfer the Committee votes, in the open.'),
-                 ('Who bears it', 'The business office, in a longer budget build; the Committee, in '
-                  'more transfer votes.')])],
-             quotes=[dict(quote=TM_QUOTE, href=TM_HREF,
-                          label='The Town Manager, Select Board minutes, 9 September 2025')],
-             unknown='why these lines are set above what they spend: caution, a level-service rule '
-                     'carried forward and vacancies all fit.',
-             closes='the district’s line-by-line budget build-up, with the basis for each line'),
-        dict(id='reforecast', label='Reforecast the year in February or March',
-             account='Who: the business manager reports; the School Committee decides',
-             left=C.pct(mar[Y1]), value_label='of the budget left at the end of March, %s' % fy(Y1),
-             shape='At the end of March %s had %s left; %s had %s. The gap opens in February.'
-                   % (fy(Y1), C.pct(mar[Y1]), fy(J.YEARS[0]), C.pct(mar[J.YEARS[0]])),
-             figures=[('March, %s' % fy(2024), C.pct(mar[2024])), ('March, %s' % fy(Y0), C.pct(mar[Y0]))],
-             sections=[q('The option', [
-                 ('The question for the budget', 'What does the spring forecast say will lapse, '
-                  'line by line, and should any of it be moved before June by transfer?'),
-                 ('What it costs', 'Staff time, and a risk of buying for its own sake: a forecast '
-                  'surplus would fund priorities already planned, not whatever can be ordered.'),
-                 ('Who bears it', 'The business office; the Committee, which votes the transfers.')])],
-             quotes=[],
-             unknown='how much of a spring gap is timing, as with health insurance posted in June, '
-                     'and how much will lapse.',
-             closes='a spring year-end forecast by line, from the business office'),
-        dict(id='orders', label='Review open purchase orders every quarter',
-             account='Who: the business office',
-             left=C.usd(fl(released)), value_label='building upkeep orders released unpaid, %s' % fy(Y1),
-             shape='%s of %s’s orders on contracted building services were budgeted again in %s and '
-                   'closed unpaid on 30 June.' % (C.usd(fl(carried_rel)), fy(Y0), fy(Y1)),
-             figures=[('Open orders when the %s report ran' % fy(Y1), C.usd(fl(open26)))],
-             sections=[q('The option', [
-                 ('The question for the budget', 'Which open orders are still needed, and which '
-                  'should be closed so the money is seen as available before June?'),
-                 ('What it costs', 'A quarterly review in the business office; nothing else.'),
-                 ('Who bears it', 'The business office.')])],
-             quotes=[],
-             unknown='whether a released order’s job was done another way.',
-             closes='the facilities work orders, matched to each purchase order'),
-        dict(id='circuit-breaker', label='Budget the circuit breaker in the open',
-             account='Who: the business manager',
-             left=C.usd(fl(cb_off)), value_label='collaborative tuition budgeted lower, for the '
-             'circuit breaker',
-             shape='The reimbursement arrived as one June entry of %s; July to May the fund paid %s.'
-                   % (C.usd(fl(monthly['june'])), C.usd(fl(monthly['early']))),
-             figures=[],
-             sections=[q('The option', [
-                 ('The question for the budget', 'What is tuition’s gross cost, what circuit '
-                  'breaker money is expected, and how do the two compare each quarter?'),
-                 ('What it costs', 'Two lines where there is one; a quarterly reconciliation.'),
-                 ('Who bears it', 'The business manager.')])],
-             quotes=[],
-             unknown='why the reimbursement was taken in one entry at year end.',
-             closes='the district’s circuit breaker claim and the state’s payment schedule'),
-        dict(id='ledger', label='Check the ledger against the voted budget',
-             account='Who: the business office, once a year',
-             left=C.num(2), value_label='grounds lines loaded the other way round',
-             shape='The budget book puts %s on grounds contracted services and %s on grounds '
-                   'supplies; MUNIS holds them the other way round.'
-                   % (C.usd(fl(book[gl0][1])), C.usd(fl(book[gl1][1]))),
-             figures=[],
-             sections=[q('The option', [
-                 ('The question for the budget', 'Does every MUNIS line hold the figure the '
-                  'Committee voted for it?'),
-                 ('What it costs', 'A one-time comparison when the budget is loaded.'),
-                 ('Who bears it', 'The business office.')])],
-             quotes=[],
-             unknown='whether any other line was loaded differently from the book.',
-             closes='the voted budget against the MUNIS original appropriation, line by line'),
-        dict(id='monthly', label='Report budget against actual every month',
-             account='Who: the School Committee, as a standing item',
-             left=C.usd(fl(moved[Y0])), value_label='moved between lines in June, %s' % fy(Y0),
-             shape='After those transfers %s ran over by %s; %s, before its own, by %s.'
-                   % (fy(Y0), C.usd(fl(over[Y0])), fy(Y1), C.usd(fl(over[Y1]))),
-             figures=[],
-             sections=[q('The option', [
-                 ('The question for the budget', 'What does this month’s year-to-date report show, '
-                  'line by line, against the plan?'),
-                 ('What it costs', 'Little: MUNIS already prints the report each month.'),
-                 ('Who bears it', 'The business office prepares it; the Committee reads it.')])],
-             quotes=[dict(quote=FINCOM_JUNE_QUOTE, href=FINCOM_JUNE,
-                          label='Finance Committee minutes, 11 June 2026, on year-end transfers')],
-             unknown='which lines the June transfers covered, and why.',
-             closes='the FY2025 year-end transfer memos, with the line each covered'),
-    ]
-    led = TP.check_ledger(TP.ledger(
-        'Six options, each with what it costs',
-        'Options, not findings: each rests on the figures above it, and none depends on knowing '
-        'why the money was left. Open a card for the question it raises for the budget.', cards),
-        'surplus-suggestions')
-    page = TP.page(
-        'surplus-suggestions',
-        '%s’s surplus was many small leftovers; in %s one tuition account held %s of them.'
-        % (fy(Y0), fy(Y1), C.pct(top26, 0)),
-        list(fx.values()),
-        [con('%s’s leftover was spread over %s accounts; the largest held %s of it.'
-             % (fy(Y0), C.num(s25['n']), C.pct(100.0 * fl(s25['top']) / fl(s25['total']), 0)),
-             ['n25', 'top'],
-             {'y': F(Y0), 'n': N(s25['n'], 'accounts'),
-              'p': P(100.0 * fl(s25['top']) / fl(s25['total']), 0)},
-             so='No single line explains that year, so a remedy aimed at one account would '
-                'leave most of it in place.',
-             notes=[step('Half of it sat on %s accounts and four fifths on %s.'
-                         % (C.num(s25['half']), C.num(s25['most'])), 'measured',
-                         {'a': N(s25['half'], 'accounts'), 'b': N(s25['most'], 'accounts')}),
-                    step('%s is different: private tuition alone held %s of what accounts under '
-                         'budget left.' % (fy(Y1), C.pct(top26, 0)), 'measured',
-                         {'y': F(Y1), 'p': P(top26, 0)})]),
-         con('%s accounts left money in every year from %s to %s.'
-             % (C.num(len(every)), fy(J.YEARS[0]), fy(Y1)), ['every'],
-             {'n': N(len(every), 'accounts'), 'a': F(J.YEARS[0]), 'b': F(Y1)},
-             so='These are the accounts where a budget built from recent spending would differ '
-                'most from the one voted.'),
-         con('By the end of March %s had %s of its budget left, against %s in %s.'
-             % (fy(Y1), C.pct(mar[Y1]), C.pct(mar[J.YEARS[0]]), fy(J.YEARS[0])), ['m23', 'm26'],
-             {'y': F(Y1), 'a': P(mar[Y1]), 'b': P(mar[J.YEARS[0]]), 'z': F(J.YEARS[0])},
-             so='The surplus was visible in the monthly report by spring, months before the '
-                'close and before the next budget was voted.'),
-         con('None of the %s building upkeep accounts ran over in %s.' % (C.num(len(up26)), fy(Y1)),
-             ['uo'], {'n': N(len(up26), 'accounts'), 'y': F(Y1)},
-             so='Credit where the ledger shows it: upkeep was kept inside its budget on every '
-                'account, and an emergency went to a public vote.',
-             notes=[step('And %s’s unbudgeted emergency cabling went to the Finance Committee as a '
-                         'Reserve Fund vote, in the open.' % fy(Y0), 'measured', {'y': F(Y0)},
-                         cite=(BB.FINCOM, 'Finance Committee minutes, 13 February 2025'))])],
-        chart=TP.parts(
-            'How spread out the leftover was',
-            [('Largest %s accounts' % C.num(s25['half']), fl(sum(s25['v'][:s25['half']], D0))),
-             ('Next %s' % C.num(s25['most'] - s25['half']),
-              fl(sum(s25['v'][s25['half']:s25['most']], D0))),
-             ('The other %s' % C.num(s25['n'] - s25['most']), fl(sum(s25['v'][s25['most']:], D0)))],
-            '$',
-            note='%s, the accounts that came in under budget, by how much each left. %s, because '
-                 'nothing in it ran over to offset it.' % (fy(Y0), fy(Y0)),
-            note_figures={'y': F(Y0)}),
-        sources=sources() + [
-            dict(label='Town of Lunenburg — Select Board minutes, 9 September 2025', href=TM_HREF),
-            dict(label='Town of Lunenburg — Finance Committee minutes, 11 June 2026', href=FINCOM_JUNE)],
-        finding_figures={'a': F(Y0), 'b': F(Y1), 'p': P(top26, 0)})
-    page['ledger'] = led
-    page['not_established'] = [
-        'Why the lines are budgeted above what they spend: nothing here tests a cause, and none of '
-        'the options needs one.',
-        'Whether 1.8 per cent unspent is unusual: no peer district’s year-end variance is in hand.',
-        'The FY2026 figures after the close.',
-    ]
-    return page
 
 
 # ================================================== the burndowns
@@ -1394,87 +1254,24 @@ def prepaid_page(d):
                                   '26 October 2026', '27 October 2026', BATCH, '6 to 20 July',
                                   usd2(w_july)}))
 
-    fx = {}
-    fx['paid'] = f('paid', U2(paid), 'charged to %s 30 June; check %s cut %s'
-                   % (C.fy(Y1), check, check_when), 'published',
-                   {'y': F(Y1)}, allow=('30 June', check, check_when))
-    fx['n'] = f('n', N(len(early), 'invoices'), 'invoices, all numbered for %s' % C.fy(Y1 + 1),
-                'published', {'y': F(Y1 + 1)})
-    fx['r27'] = f('r27', U2(std[Y1 + 1]), 'the quarterly rate on those invoices', 'published')
-    fx['r26'] = f('r26', U2(std[Y1]), 'the rate on every %s-numbered invoice' % C.fy(Y1),
-                  'published', {'y': F(Y1)})
-    fx['recl'] = f('recl', U2(out_gf), 'charged to the circuit breaker instead, 29 June 2026',
-                   'published', allow=('29 June 2026',))
-    fx['before'] = f('before', U(paid_before), 'already paid on the line before 30 June',
-                     'published', allow=('30 June',))
-    fx['budget'] = f('budget', U(budget), 'the line’s %s budget, never added to by transfer'
-                     % C.fy(Y1), 'published', {'y': F(Y1)})
-    fx['left'] = f('left', U(d['left'][Y1]), '%s left, as reported' % C.fy(Y1), 'published',
-                   {'y': F(Y1)})
-    fx['without'] = f('without', U(without), '%s left without the payment (our sum)' % C.fy(Y1),
-                      'published', {'y': F(Y1)})
-    fx['owed25'] = f('owed25', U(owed[Y0]), '%s left, counted the same way' % C.fy(Y0),
-                     'published', {'y': F(Y0)})
-    fx['period'] = f('period', None, 'the service period the invoices bill', 'gap',
-                     closes='FLLAC’s invoices 27L2KEY11 to 27L2KEY19, with their service dates',
-                     allow=('27', '11', '19'))
-    fx['approval'] = f('approval', None, 'who approved the payment', 'gap',
-                       closes='the signed original of batch %s, which the district says went to '
-                              'Town Hall for the Select Board’s signature' % BATCH, allow=(BATCH,))
-    conclusions = [
-        con('%s on %s FLLAC invoices priced for %s: charged to %s on 30 June, paid %s.'
-            % (C.usd(fl(paid)), C.num(len(early)), C.fy(Y1 + 1), C.fy(Y1), check_when),
-            ['paid', 'n', 'r27', 'r26', 'period'],
-            {'a': U(paid), 'n': N(len(early)), 'y': F(Y1 + 1), 'z': F(Y1)},
-            allow=('30 June', check_when),
-            so='If they pay for %s, %s’s surplus reads %s smaller than what %s needed for itself.'
-               % (C.fy(Y1 + 1), C.fy(Y1), C.usd(fl(paid)), C.fy(Y1)),
-            so_figures={'y': F(Y1 + 1), 'z': F(Y1), 'a': U(paid)},
-            notes=[step('That they bill %s’s first quarter is our reading: each invoice prefix '
-                        'was paid in its own year, %s had paid four quarters, and the rate is '
-                        'new.' % (C.fy(Y1 + 1), C.fy(Y1)),
-                        'hypothesis', {'y': F(Y1 + 1), 'z': F(Y1)})]),
-        con('Taken back out, %s left %s, more than %s’s %s counted the same way.'
-            % (C.fy(Y1), C.usd(fl(without)), C.fy(Y0), C.usd(fl(owed[Y0]))),
-            ['left', 'without', 'owed25'],
-            {'y': F(Y1), 'a': U(without), 'z': F(Y0), 'b': U(owed[Y0])},
-            so='In July the Committee heard %s would close well below %s. That holds as reported '
-               'and reverses with this payment taken out.' % (C.fy(Y1), C.fy(Y0)),
-            so_figures={'y': F(Y1), 'z': F(Y0)}),
-        con('The day before, %s of %s tuition was charged to the circuit breaker instead of the '
-            'general fund.' % (C.usd(fl(out_gf)), C.fy(Y1)), ['recl'],
-            {'a': U(out_gf), 'y': F(Y1)},
-            so='General fund money unspent at year end returns to the town as free cash; circuit '
-               'breaker money, the district says, can carry a year.',
-            notes=[step('That the two entries were made together, for that purpose, is a '
-                        'hypothesis; moving tuition onto the circuit breaker at year end is '
-                        'routine, and no document links them.', 'hypothesis')]),
-        con('No School Committee agenda, minutes or warrant we hold shows this payment presented '
-            'or approved.', ['approval', 'before', 'budget'], {},
-            so='The copy of the batch supplied has blank signature lines; the district says the '
-               'originals went to Town Hall.',
-            notes=[step('Approval may exist off the record: year-end warrants are often signed '
-                        'between meetings.', 'gap',
-                        closes='the signed original of batch %s' % BATCH, allow=(BATCH,))])]
+    # THE 29 JUNE ENTRY, from Surplus by category's generator (moved here 27 November 2026,
+    # T-VPW4S): its facts, two conclusions and blocks are built there from its data(), which
+    # ties the fund to the Town's report, the form and the thread. Tied to this page's reading.
+    import build_fy2026_school_surplus as SP
+    sf = SP.data()
+    ent = SP.entry(sf)
+    if sf['charged'] != out_gf or sf['early'] != paid or sf['journal'] != recl[0]['journal']:
+        fail('the 29 June entry and the 30 June charge differ between this page and Surplus by '
+             'category’s reading')
 
-    # The circuit breaker fund itself: what came in (CRP receipts) and what it paid, by year.
-    cb = [r for r in J.lines() if r['fund'] == '2640']
-    cb_in = [-fl(sum((r['amt'] for r in cb if r['fy'] == y and r['source'] == 'CRP'), D0))
-             for y in J.YEARS]
-    cb_out = [fl(sum((r['amt'] for r in cb if r['fy'] == y and J.COLUMN_OF[r['source']] == 'actual'
-                      and r['source'] != 'CRP'), D0)) for y in J.YEARS]
-    cb_early = fl(sum((r['amt'] for r in cb if r['fy'] == Y1 and r['source'] == 'API'), D0))
-    if not (max(cb_in) == cb_in[J.YEARS.index(Y0)] and cb_in[J.YEARS.index(Y0)]
-            > cb_out[J.YEARS.index(Y0)] and cb_early < 10000):
-        fail('the circuit breaker block assumes FY%d took in the most and FY%d paid almost '
-             'nothing before June' % (Y0, Y1))
-    # The fund's balance, from the Town's special-revenue report at 31 March 2026 (period 9,
-    # published with the period-9 package), carried to 30 June with the journal's own entries.
-    # DESE: "FY26 reimbursements must be spent ... in FY26 and/or FY27, and cannot be carried
-    # into FY28" (circuit breaker FAQ, question 10). One fund, 2640, holds every year's money,
-    # so which dollars are "older" is our arithmetic: what the fund held on 1 July 2025, less
-    # what FY2026 spent before the re-charge, could only be FY2025's or earlier.
+    # The circuit breaker fund's balance, from the Town's special-revenue report at 31 March 2026
+    # (period 9, published with the period-9 package), carried to 30 June with the journal's own
+    # entries. DESE: "FY26 reimbursements must be spent ... in FY26 and/or FY27, and cannot be
+    # carried into FY28" (circuit breaker FAQ, question 10). One fund, 2640, holds every year's
+    # money, so which dollars are "older" is our arithmetic: what the fund held on 1 July 2025,
+    # less what FY2026 spent before the re-charge, could only be FY2025's or earlier.
     import openpyxl
+    cb = [r for r in J.lines() if r['fund'] == '2640']
     ws = openpyxl.load_workbook(os.path.join(ROOT, SPECREV), read_only=True, data_only=True).worksheets[0]
     sr = [r for r in ws.iter_rows(values_only=True) if r and r[0] == 2640]
     if len(sr) != 1:
@@ -1490,56 +1287,221 @@ def prepaid_page(d):
              '2640 in FY%d but the 29 June re-charge' % Y1)
     if any(r['source'] not in ('CRP', 'API', 'GEN', 'POE', 'POL', 'POM') for r in cb if r['fy'] == Y1):
         fail('fund 2640 has an FY%d entry of a kind the balance arithmetic does not handle' % Y1)
-    # When the fund was DRAWN, FY2025 against FY2026: what the budget book planned it to pay,
-    # what it paid July to May, and in June (payments and re-charges; receipts excluded).
-    drawn = lambda y, june: fl(sum((r['amt'] for r in cb if r['fy'] == y
-                                    and J.COLUMN_OF[r['source']] == 'actual' and r['source'] != 'CRP'
-                                    and (r['effective_date'][5:7] == '06') == june), D0))
-    # Planned: FY2025 the ADJ FY25 journal line; FY2026 the circuit breaker offset the FY2026
-    # budget book prints under 9400 Collaborative Tuitions, read from our copy of the book.
+    # What the budget book planned the fund to pay, FY2026, read from our copy of the book: the
+    # same figure Surplus by category reads from the circuit breaker module.
     book26 = ' '.join(open(os.path.join(ROOT, BOOK26_TEXT), encoding='utf-8').read().split())
     m26 = re.search(r'Circuit Breaker \(70% = \$[\d,]+\) \(75% = [\d,]+\) \([\d,.]+\)\$ '
                     r'\(([\d,.]+)\)\$', book26)
     if not m26:
         fail('the FY2026 circuit breaker offset is no longer in %s' % BOOK26_TEXT)
-    plan = {Y0: fl(-d['adj']), Y1: float(m26.group(1).replace(',', ''))}
-    if not (drawn(Y0, False) > 100 * drawn(Y1, False) and drawn(Y1, True) > drawn(Y0, True)):
-        fail('the timing block assumes FY%d drew the fund through the year and FY%d in June'
-             % (Y0, Y1))
+    # The book prints cents, the module whole dollars: within $1 rounding tolerance
+    # (notes/process/TOLERANCES.md).
+    if abs(float(m26.group(1).replace(',', '')) - fl(sf['plan'])) >= 1:
+        fail('the FY2026 budget book and the circuit breaker module give different plans')
     older = open_bal - sr_exp           # what could only be FY2025's money or earlier
     june_bal = mar_bal - out_gf          # after the 29 June re-charge (our arithmetic)
     if not (out_gf > older > 0 and june_bal < sr_rev):
         fail('the circuit breaker block assumes the re-charge used all the older money')
+    if older != sf['older']:
+        fail('the older money differs between the Town’s report and the circuit breaker module')
     yrs = J.YEARS
     same = [fl(sum((r['amt'] for r in rows if r['fy'] == y and r not in early), D0)) for y in yrs]
     ahead = [fl(sum((r['amt'] for r in early if r['fy'] == y), D0)) for y in yrs]
-    record = [
-        ('4 February 2026', 'School Committee', 'Prepaying special education tuition named as a use '
-         'for a large year-end leftover; an open conversation called for if leftover is spent '
-         'before it reaches free cash', 'recording'),
-        ('24 June 2026', 'School Committee', 'Four line-item transfers and the carry-forward '
-         'orders voted; no tuition payment among them', 'minutes, recording'),
-        ('29 June 2026', 'Journal', 'Collaborative tuition the general fund had paid charged to '
-         'the circuit breaker instead', 'journal %s' % recl[0]['journal']),
-        ('30 June 2026', 'Journal', 'Nine FLLAC invoices numbered for %s charged to the %s '
-         'general fund, the effective date, as batch %s' % (C.fy(Y1 + 1), C.fy(Y1), BATCH),
-         'journal %s' % jnl),
-        ('%s %d' % (check_when, check_day.year), 'Check register', 'Check %s cut, %s, for these '
-         'nine and three other FLLAC invoices' % (check, usd2(CHECK['amount'])),
-         'Munis check register line, sent 19 November 2026'),
-        ('15 July 2026', 'School Committee', 'Warrants for 18 to 30 June, on the agenda and in '
-         'the minutes with no motion or vote; batch %s is not among its batches;' % BATCH + ' the Chair, '
-         '27 October: no vote was taken', 'agenda, minutes posted 29 October, recording, email'),
-        ('29 July 2026', 'School Committee', 'Told %s would close well below the year before'
-         % C.fy(Y1), 'minutes'),
-        ('22 October 2026', 'Finance Committee', 'Prepaying a first quarter from circuit breaker '
-         'money explained as a rule; this payment not mentioned', 'recording'),
+
+    fx = {}
+    fx['paid'] = f('paid', U2(paid), 'charged to %s 30 June; check %s cut %s'
+                   % (C.fy(Y1), check, check_when), 'published',
+                   {'y': F(Y1)}, allow=('30 June', check, check_when))
+    fx['n'] = f('n', N(len(early), 'invoices'), 'invoices, all numbered for %s' % C.fy(Y1 + 1),
+                'published', {'y': F(Y1 + 1)})
+    fx['r27'] = f('r27', U2(std[Y1 + 1]), 'the quarterly rate on those invoices', 'published')
+    fx['r26'] = f('r26', U2(std[Y1]), 'the rate on every %s-numbered invoice' % C.fy(Y1),
+                  'published', {'y': F(Y1)})
+    fx['before'] = f('before', U(paid_before), 'already paid on the line before 30 June',
+                     'published', allow=('30 June',))
+    fx['budget'] = f('budget', U(budget), 'the line’s %s budget, never added to by transfer'
+                     % C.fy(Y1), 'published', {'y': F(Y1)})
+    fx['period'] = f('period', None, 'the service period the invoices bill', 'gap',
+                     closes='FLLAC’s invoices 27L2KEY11 to 27L2KEY19, with their service dates',
+                     allow=('27', '11', '19'))
+    fx['approval'] = f('approval', None, 'who approved the payment', 'gap',
+                       closes='the signed original of batch %s, which the district says went to '
+                              'Town Hall for the Select Board’s signature' % BATCH, allow=(BATCH,))
+    facts = ent['facts'] + list(fx.values())
+    conclusions = [
+        ent['conclusions']['plan'],
+        ent['conclusions']['draws'],
+        con('%s on %s FLLAC invoices priced for %s: charged to %s on 30 June, paid %s.'
+            % (C.usd(fl(paid)), C.num(len(early)), C.fy(Y1 + 1), C.fy(Y1), check_when),
+            ['paid', 'n', 'r27', 'r26', 'period'],
+            {'a': U(paid), 'n': N(len(early)), 'y': F(Y1 + 1), 'z': F(Y1)},
+            allow=('30 June', check_when),
+            so='If they pay for %s, %s’s surplus reads that much smaller than what %s needed for '
+               'itself.' % (C.fy(Y1 + 1), C.fy(Y1), C.fy(Y1)),
+            so_figures={'y': F(Y1 + 1), 'z': F(Y1)},
+            notes=[step('That they bill %s’s first quarter is our reading: each invoice prefix '
+                        'was paid in its own year, %s had paid four quarters, and the rate is '
+                        'new.' % (C.fy(Y1 + 1), C.fy(Y1)),
+                        'hypothesis', {'y': F(Y1 + 1), 'z': F(Y1)})]),
+        con('No School Committee agenda, minutes or warrant we hold shows this payment presented '
+            'or approved.', ['approval', 'before', 'budget'], {},
+            so='The copy of the batch supplied has blank signature lines; the district says the '
+               'originals went to Town Hall.',
+            notes=[step('Approval may exist off the record: year-end warrants are often signed '
+                        'between meetings.', 'gap',
+                        closes='the signed original of batch %s' % BATCH, allow=(BATCH,))])]
+
+    # THE SIGNATURE (27 November 2026): the two entries in the year's last two days, on one line.
+    d29, d30 = '29 June', '30 June'
+    timeline = TB.timeline(
+        'Two entries in the last two days of the year', ['July to May', d29, d30, check_when],
+        [(('Circuit breaker, fund 2640', None, ('2640',)), [
+            TB.track('Tuition the fund paid', ['light', 'cb', None, None], event=1,
+                     note=('Almost nothing from July to May; then one charge for the year’s '
+                           'collaborative tuition on %s.' % d29, None, (d29,)),
+                     basis=('record', 'the school journal'))]),
+         ('General fund, collaborative tuition', [
+             TB.track(('Reclass onto the circuit breaker: %s' % usd2(out_gf), {'a': U2(out_gf)}),
+                      [None, 'cb', None, None], event=1,
+                      note=('Tuition the general fund had already paid, moved by one journal entry, '
+                            '%s. The vote planned %s from the fund.'
+                            % (recl[0]['journal'], C.usd(fl(sf['plan']))),
+                            {'p': U(sf['plan'])}, (recl[0]['journal'],)),
+                      basis=('record', 'the form, the journal proof and the journal')),
+             TB.track(('Nine %s invoices charged to %s: %s' % (C.fy(Y1 + 1), C.fy(Y1), usd2(paid)),
+                       {'y': F(Y1 + 1), 'z': F(Y1), 'a': U2(paid)}),
+                      [None, None, 'charged', 'paid'], event=2,
+                      note=('Charged on the year’s last day as batch %s; check %s cut on %s.'
+                            % (BATCH, check, check_when), None, (BATCH, check, check_when)),
+                      basis=('record', 'the journal and the Munis check register line'))])],
+        [('light', 'Little or nothing', 'muted'), ('cb', 'Charged to the circuit breaker', 'neutral'),
+         ('charged', 'Charged to the year that is ending', 'other'),
+         ('paid', 'Check cut', 'muted', 'outline')],
+        place='lead', marker=(2, ('%s closes' % C.fy(Y1), {'y': F(Y1)})),
+        note=('One account, %s, one day apart. The journal records both; no document we hold links '
+              'them.' % COLLAB, None, (COLLAB,)))
+    with_without = TB.chart(TP.series(
+        'What was left, with and without the payment', [C.fy(Y0), C.fy(Y1)],
+        [TP.track('Left, counting orders still owed', [fl(owed[Y0]), fl(owed[Y1])],
+                  'published', 'bar'),
+         TP.track('Without the 30 June charge (our sum)', [None, fl(without)], 'estimate',
+                  'bar')],
+        '$', kind='bar',
+        note='School general fund, department 300. Counting orders owed is the footing on '
+             'Surplus by year.', note_allow=('300',)),
+        place='body',
+        so=('In July the Committee heard %s would close well below %s. That holds as reported and '
+            'reverses with this payment taken out.' % (C.fy(Y1), C.fy(Y0)),
+            {'y': F(Y1), 'z': F(Y0)}, ()))
+    fund_panels = TB.panels('The circuit breaker fund, before and after', [
+        TB.panel('To the end of March, as the Town printed it', [
+            ('Held at the start of the year', usd2(open_bal), None),
+            ('Received this year', usd2(sr_rev), None),
+            ('Spent this year, to March', usd2(sr_exp), None),
+            ('Held at the end of March', usd2(mar_bal), None)]),
+        TB.panel('At year end (our arithmetic)', [
+            ('Older money, to be spent by year end', usd2(older), 'bad'),
+            ('Tuition charged to it at year end', usd2(out_gf), None),
+            ('Left at year end, all this year’s receipts', usd2(june_bal), 'good')])],
+        place='body',
+        note='One fund holds every year’s money, so older money is what it held at the start of '
+             'the year less what the year spent before June. The Town’s special-revenue report, '
+             'then the school journal.',
+        so=('What the fund holds after the re-charge, %s, is all this year’s receipts, and carries '
+            'into %s.' % (C.usd(fl(june_bal)), C.fy(Y1 + 1)),
+            {'b': U(june_bal), 'y': F(Y1 + 1)}))
+    define = TB.explain('A payment, not a transfer', [
+        'A **transfer** moves budget from one line to another; no money leaves, and the '
+        'School Committee votes each one. A **reclass** moves a cost already paid from one '
+        'fund to another. A **payment** sends money to a vendor, on a warrant.',
+        ('The 30 June entry is a payment, charged that day and paid by check on %s. It went '
+         'to a line that had already spent past its budget, and was covered, inside the school '
+         'total, by other lines’ leftovers.' % check_when,
+         None, ('30 June', check_when))],
+        place='body', tone='define')
+    meeting_trail = TB.custom(
+        'meeting-trail', 'Where the approval would be on the record', dict(rows=trail),
+        place='body', figures=(usd2(w_june), usd2(w_late)), allow=trail_allow,
+        alt='School Committee meetings from 24 June to 16 September 2026: what each '
+            'agenda held, what the record shows, and links to every record that exists',
+        so=('No School Committee warrant on record carries batch %s: it is not among '
+            'the 15 July batches, and the 29 July warrant is smaller.' % BATCH,
+            None, (BATCH, '15 July', '29 July')))
+    shows = TB.explain('What the record shows, and does not', [
+        ('**Allowed.** State law lets a school committee approve paying up to three months '
+         'of tuition in advance (G.L. c. 71, s. 71D), and the state’s Division of Local '
+         'Services uses this case as its example: a July to September bill, due 30 June, '
+         'charged to the year that is ending.', None, ('71', '71D', '30 June')),
+        ('**Not announced.** Every June and July 2026 meeting of the School Committee, '
+         'Finance Committee and Select Board was read, minutes and recordings. None '
+         'mentions this payment or the re-charge to the circuit breaker. No minutes record '
+         'an advance-tuition vote. The warrant for the last two weeks of June was on the '
+         'School Committee’s 15 July agenda and is in that meeting’s minutes with no '
+         'motion or vote; the Chair wrote on 27 October that no vote was taken. No later '
+         'agenda or minutes lists it.',
+         None, ('2026', '15 July', '27 October')),
+        ('**Not presented, on any record we hold.** The payment is batch %s. The '
+         'district says the 15 July warrant was its batches to 30 June; the nine delivered '
+         'do not include %s. The 29 July warrant, 6 to 20 July, is %s in all, less than the '
+         'batch. No agenda, minutes or recording names the batch, check %s or the '
+         'invoices. The copy the district supplied on 19 November 2026 has blank signature '
+         'lines, and the district says the signed originals “were immediately sent to Town '
+         'Hall for processing and signature by the SelectBoard.”'
+         % (BATCH, BATCH, usd2(w_july), check),
+         None, (BATCH, '15 July', '30 June', '29 July', '6 to 20 July', usd2(w_july),
+                check, '19 November 2026')),
+        ('**Not yet held.** The signed original of batch %s, and the School Committee’s '
+         'September year-end budget reviews. Each is a '
+         'registered gap, listed on What we cannot answer.' % BATCH, None, (BATCH,))],
+        place='end', tone='plain')
+
+    srcs = SP.entry_sources() + [
+        dict(key='check', label='Lunenburg Public Schools — Munis check register line, check %s '
+                                '(sent 19 November 2026)' % check, href=CHECK['href']),
+        dict(key='jun24', label='Lunenburg School Committee — 2026-06-24 minutes',
+             href='/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt'),
+        dict(key='jul15', label='Lunenburg School Committee — 2026-07-15-minutes-7901.pdf (item '
+                                '5b, the 6/18 to 6/30 warrant)', href=JUL15_HREF),
+        dict(key='chair', label='Lunenburg Public Schools — the warrant-folder thread of 27 '
+                                'October 2026, with the Chair’s reply (by email)', href=CHAIR_HREF),
+        dict(key='feb4', label='School Committee recording, 4 February 2026', href=FEB4_HREF),
+        dict(key='law', label='G.L. c. 71, s. 71D — advance payment of tuition',
+             href='https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/section71D'),
+        dict(key='dls', label='Division of Local Services — prepayment from prior fiscal year funds',
+             href='https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds'),
+    ]
+    hrefs = [s_['href'] for s_ in srcs]
+    if len(set(hrefs)) != len(hrefs):
+        fail('two sources on %s share an address: %s'
+             % (PREPAID, sorted({h for h in hrefs if hrefs.count(h) > 1})))
+    B = ent['blocks']
+    cite = TP.cite
+    flow = [
+        'finding',
+        cite(timeline, 'journal', 'form', 'proof', 'check', 'book'),
+        cite(B['plan'], 'book', 'p13-26', 'journal', 'invoices'), ('conclusion', 0),
+        cite(B['draws'], 'journal', 'specrev', 'dese'), ('conclusion', 1),
+        cite(fund_panels, 'specrev', 'journal', 'dese'),
+        cite(('chart', 0), 'journal', 'accounts', 'invoices'), ('conclusion', 2),
+        cite(with_without, 'journal', 'p13-26'),
+        cite(define, 'journal', 'check', 'law'),
+        'lead_quote',
+        cite(meeting_trail, 'jun24', 'jul15', 'chair', 'sc0729', 'feb4'), ('conclusion', 3),
+        cite(B['trail'], 'form', 'proof', 'journal', 'thread1', 'thread2', 'thread4', 'thread6',
+             'p13-26', 'fincom'),
+        cite(B['reversal'], 'thread4', 'p13-26', 'book', 'journal', 'dese'),
+        cite(B['explanations'], 'thread3', 'thread5', 'atr25', 'specrev', 'journal', 'dese',
+             'provenance'),
+        cite(B['settle'], 'thread1', 'specrev'),
+        cite(shows, 'law', 'dls', 'jul15', 'chair', 'invoices'),
+        cite(B['credit'], 'thread2'),
+        'said', 'sources',
     ]
     page = TP.page(
         PREPAID,
-        '%s on %s-numbered FLLAC invoices was charged to %s on 30 June and paid %s.'
-        % (C.usd(fl(paid)), C.fy(Y1 + 1), C.fy(Y1), check_when),
-        list(fx.values()), conclusions,
+        '%s, %s of tuition moved to the circuit breaker; %s, %s of %s invoices, to %s.'
+        % (d29, C.usd(fl(out_gf)), d30, C.usd(fl(paid)), C.fy(Y1 + 1), C.fy(Y1)),
+        facts, conclusions,
         chart=TP.series(
             'FLLAC tuition paid, by year it was paid', [C.fy(y) for y in yrs],
             [TP.track('Invoices numbered for that year', same, 'published', 'bar'),
@@ -1547,109 +1509,6 @@ def prepaid_page(d):
             '$', kind='bar', stacked=True,
             note='Every FLLAC payment on a tuition account, every fund. The year is FLLAC’s '
                  'invoice number; a few invoices carry none.'),
-        also=[TP.series(
-            'What was left, with and without the payment', [C.fy(Y0), C.fy(Y1)],
-            [TP.track('Left, counting orders still owed', [fl(owed[Y0]), fl(owed[Y1])],
-                      'published', 'bar'),
-             TP.track('Without the 30 June charge (our sum)', [None, fl(without)], 'estimate',
-                      'bar')],
-            '$', kind='bar',
-            note='School general fund, department 300. Counting orders owed is the footing on '
-                 'Surplus by year.', note_allow=('300',))],
-        blocks=[TB.explain('A payment, not a transfer', [
-            'A **transfer** moves budget from one line to another; no money leaves, and the '
-            'School Committee votes each one. A **reclass** moves a cost already paid from one '
-            'fund to another. A **payment** sends money to a vendor, on a warrant.',
-            ('The 30 June entry is a payment, charged that day and paid by check on %s. It went '
-             'to a line that had already spent past its budget, and was covered, inside the school '
-             'total, by other lines’ leftovers.' % check_when,
-             None, ('30 June', check_when))],
-            place='lead', tone='define'),
-            TB.chart(TP.series(
-                'The circuit breaker fund, in and out', [C.fy(y) for y in J.YEARS],
-                [TP.track('Received from the state', cb_in, 'published', 'bar'),
-                 TP.track('Paid out, or charged to it', cb_out, 'published', 'bar')],
-                '$', kind='bar',
-                note='Fund 2640, from the school journal. The fund’s balance is not in the '
-                     'journal, so what would have expired is not known.', note_allow=('2640',)),
-                place='body',
-                so=('%s took in the most and %s paid almost nothing from it until the 29 June '
-                    're-charge. That it was spent before receipts expired fits, as a hypothesis.'
-                    % (C.fy(Y0), C.fy(Y1)), {'y': F(Y0), 'z': F(Y1)}, ('29 June',))),
-            TB.panels('The circuit breaker fund, before and after', [
-                TB.panel('To the end of March, as the Town printed it', [
-                    ('Held at the start of the year', usd2(open_bal), None),
-                    ('Received this year', usd2(sr_rev), None),
-                    ('Spent this year, to March', usd2(sr_exp), None),
-                    ('Held at the end of March', usd2(mar_bal), None)]),
-                TB.panel('At year end (our arithmetic)', [
-                    ('Older money, to be spent by year end', usd2(older), 'bad'),
-                    ('Tuition charged to it at year end', usd2(out_gf), None),
-                    ('Left at year end, all this year’s receipts', usd2(june_bal), 'good')])],
-                place='body',
-                note='One fund holds every year’s money, so older money is what it held at the '
-                     'start of the year less what the year spent before June. The Town’s '
-                     'special-revenue report, then the school journal.',
-                so=('Without the re-charge, %s would have passed the state’s one-year limit. The '
-                    're-charge used all of it, and %s carries into %s.'
-                    % (C.usd(fl(older)), C.usd(fl(june_bal)), C.fy(Y1 + 1)),
-                    {'a': U(older), 'b': U(june_bal), 'y': F(Y1 + 1)})),
-            TB.panels('When the circuit breaker was drawn', [
-                TB.panel('The year before', [
-                    ('Planned to pay tuition (budget)', C.usd(plan[Y0]), None),
-                    ('Drawn July to May', C.usd(drawn(Y0, False)), 'good'),
-                    ('Drawn in June', C.usd(drawn(Y0, True)), None),
-                    ('Left in the fund at year end', C.usd(fl(open_bal)), None)]),
-                TB.panel('The year of this surplus', [
-                    ('Planned to pay tuition (budget)', C.usd(plan[Y1]), None),
-                    ('Drawn July to May', C.usd(drawn(Y1, False)), 'bad'),
-                    ('Drawn in June', C.usd(drawn(Y1, True)), None),
-                    ('Left in the fund at year end (ours)', C.usd(fl(june_bal)), None)])],
-                place='body',
-                note='The state pays each year’s reimbursement for the year before, and the money '
-                     'is spent within a year of arriving, or not at all. Month by month: Special '
-                     'education burndown.',
-                so=('One year drew the fund as bills came in; the next left it untouched until the '
-                    'year’s last days. Why is not in any document held.', None, ())),
-            TB.custom('meeting-trail', 'Where the approval would be on the record',
-                      dict(rows=trail), place='body',
-                      figures=(usd2(w_june), usd2(w_late)), allow=trail_allow,
-                      alt='School Committee meetings from 24 June to 16 September 2026: what each '
-                          'agenda held, what the record shows, and links to every record that exists',
-                      so=('No School Committee warrant on record carries batch %s: it is not among '
-                          'the 15 July batches, and the 29 July warrant is smaller.' % BATCH,
-                          None, (BATCH, '15 July', '29 July'))),
-            TB.explain('The record, in order', [
-                ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
-                 tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))
-                for w, b_, c_, e_ in record], place='body', tone='plain'),
-            TB.explain('What the record shows, and does not', [
-                ('**Allowed.** State law lets a school committee approve paying up to three months '
-                 'of tuition in advance (G.L. c. 71, s. 71D), and the state’s Division of Local '
-                 'Services uses this case as its example: a July to September bill, due 30 June, '
-                 'charged to the year that is ending.', None, ('71', '71D', '30 June')),
-                ('**Not announced.** Every June and July 2026 meeting of the School Committee, '
-                 'Finance Committee and Select Board was read, minutes and recordings. None '
-                 'mentions this payment or the re-charge to the circuit breaker. No minutes record '
-                 'an advance-tuition vote. The warrant for the last two weeks of June was on the '
-                 'School Committee’s 15 July agenda and is in that meeting’s minutes with no '
-                 'motion or vote; the Chair wrote on 27 October that no vote was taken. No later '
-                 'agenda or minutes lists it.',
-                 None, ('2026', '15 July', '27 October')),
-                ('**Not presented, on any record we hold.** The payment is batch %s. The '
-                 'district says the 15 July warrant was its batches to 30 June; the nine delivered '
-                 'do not include %s. The 29 July warrant, 6 to 20 July, is %s in all, less than the '
-                 'batch. No agenda, minutes or recording names the batch, check %s or the '
-                 'invoices. The copy the district supplied on 19 November 2026 has blank signature '
-                 'lines, and the district says the signed originals “were immediately sent to Town '
-                 'Hall for processing and signature by the SelectBoard.”'
-                 % (BATCH, BATCH, usd2(w_july), check),
-                 None, (BATCH, '15 July', '30 June', '29 July', '6 to 20 July', usd2(w_july),
-                        check, '19 November 2026')),
-                ('**Not yet held.** The signed original of batch %s, and the School Committee’s '
-                 'September year-end budget reviews. Each is a '
-                 'registered gap, listed on What we cannot answer.' % BATCH, None, (BATCH,))],
-                place='end', tone='plain')],
         lead_quote=TP.lead_quote(
             FEB4_QUOTE, 'Christopher McNamara, Business Administrator', 'School Committee',
             '2026-02-04', FEB4_HREF, 'School Committee recording, 4 February 2026',
@@ -1662,35 +1521,18 @@ def prepaid_page(d):
                    label='School Committee minutes, 29 July 2026, the business manager'),
               dict(quote=OCT22_QUOTE, board='Finance Committee', date='2026-10-22',
                    href=OCT22_HREF, label='Finance Committee recording (machine captions)')],
-        sources=sources() + [
-            dict(label='Lunenburg School Committee — 2026-07-29-minutes-7930.pdf',
-                 href='/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf'),
-            dict(label='Lunenburg School Committee — 2026-06-24 minutes',
-                 href='/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt'),
-            dict(label='Lunenburg School Committee — 2026-07-15-minutes-7901.pdf (item 5b, the '
-                       '6/18 to 6/30 warrant)', href=JUL15_HREF),
-            dict(label='Lunenburg Public Schools — the warrant-folder thread of 27 October 2026, '
-                       'with the Chair’s reply (by email)', href=CHAIR_HREF),
-            dict(label='School Committee recording, 4 February 2026', href=FEB4_HREF),
-            dict(label='Finance Committee recording, 22 October 2026', href=OCT22_HREF),
-            dict(label='G.L. c. 71, s. 71D — advance payment of tuition',
-                 href='https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/section71D'),
-            dict(label='Town of Lunenburg — special-revenue-fy2026-p09.xlsx (fund balances, '
-                       '31 March 2026)',
-                 href='/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'),
-            dict(label='DESE — circuit breaker FAQ, question 10 (the one-year carry-forward)',
-                 href=DESE_CB_FAQ),
-            dict(label='Division of Local Services — prepayment from prior fiscal year funds',
-                 href='https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds')],
-        finding_figures={'a': U(paid), 'y': F(Y1 + 1), 'z': F(Y1)},
-         finding_allow=('30 June', check_when))
+        sources=srcs, flow=flow,
+        finding_figures={'a': U(out_gf), 'b': U(paid), 'y': F(Y1 + 1), 'z': F(Y1)},
+        finding_allow=(d29, d30))
     page['not_established'] = [
+        'Whether the school department stands by the 29 June 2026 entry, or has reversed it.',
+        'Why the circuit breaker was not drawn from July to May in FY2026.',
+        'Whether the 29 June charge and the 30 June prepayment were decided together.',
         'What service period the invoices bill: the journal records no dates of service.',
         'Who approved the payment, and whether the School Committee voted advance tuition.',
-        'Whether the 29 June reclass and the 30 June charge were made together on purpose.',
-        'Whether this happened before FY2023: the journal begins there.',
     ]
     return page
+
 
 def outputs():
     pages, _ = build()

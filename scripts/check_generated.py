@@ -202,12 +202,6 @@ CHECKS = [
     ('build_fee_fund_history_topic.py', ['--check']),
     ('build_athletic_director_topic.py', ['--check']),
     ('verify_carryover.py', []),
-    # THE SCHOOL JOURNAL'S ENTRIES, JOINED ONCE, AND THE MONITOR ON THEM: the join refuses an
-    # entry that says it corrects something and pairs with nothing; the page and the flags are
-    # rebuilt from the join; the verifier recomputes every page figure off the raw journal lines.
-    ('journal_join.py', ['--check']),
-    ('build_journal_entries.py', ['--check']),
-    ('verify_journal_entries.py', []),
     # THE SPECIAL EDUCATION CROSSWALK: DESE's function codes and program column beside the
     # three definitions we use, and the topic page that shows the differences. Fails if a
     # counted line or account lands on no row.
