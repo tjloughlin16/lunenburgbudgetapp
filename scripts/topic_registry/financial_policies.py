@@ -5,14 +5,13 @@ state's April 2024 draft that would replace them, how the reserves have moved ag
 policy calculator, its own page, which applies either rule set (or the reader's own) to the latest
 free cash. The hub opens on conclusions, each linked to the page that shows it.
 
-UNLISTED UNTIL TJ REVIEWS IT. `unlisted=True` keeps the hub and its pages off /reports, the menu,
-the home page's count, the search index, the sitemap and the prerender, while every address still
-routes (build_topics_index.py writes the flag; each of those readers skips it). Deleting the flag is
-how the shelf joins the site.
+LISTED 27 November 2026 (TJ: "yea it needs to go in the menu"). It was unlisted while TJ reviewed it;
+the flag that kept it off /reports, the menu, the home page's count, the search index, the sitemap
+and the prerender is gone.
 """
 CATEGORY = dict(
     id='financial-policies', shelf='New financial policies', title='New financial policies', area='town',
-    order=51, unlisted=True,
+    order=51,
     start=['policy-calculator', 'financial-policy-rules'],
     groups=[
         ('The rules', ['policy-calculator', 'financial-policy-rules', 'policies-in-practice']),

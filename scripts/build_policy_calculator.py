@@ -135,6 +135,8 @@ for key, _, share in FP.SPLIT:
     if (share if share is not None else FP.OTHER_SHARE) != _dr[want]:
         FP.fail('policy calculator: the pages apply %s at %s, the calculator at %s' % (key, share, _dr[want]))
 _tr = {k: v for k, v, _, _ in TODAY}
+DRAFT_TARGET_WORDS = 'to achieve this policy’s target balances'
+FP.on_manual(29, DRAFT_TARGET_WORDS)
 
 # THE BANDS drawn beside each result: the pages' own BANDS, as fractions.
 BANDS = dict(general_draft=[FP.BANDS['stab'][0] / 100, FP.BANDS['stab'][1] / 100],
@@ -164,13 +166,24 @@ USES = [
 # budget, 'usd' dollars. Today's and the draft's settings come from the asserted rules above; a
 # dial neither sets is at zero for it, and says so.
 NO_RULE = dict(source=None, quote=None)
+# TODAY'S SPECIAL PURPOSE DEPOSIT IS A DOLLAR FIGURE THE RULE LEAVES TO CAPITAL PLANNING (Section 3.03,
+# TODAY[2]). For this certification the plan's figure is the one the Town Manager gave the Finance
+# Committee (TJ, 27 November 2026: use it). It is a plan, not a vote: the May 2026 votes are not held.
+SPECIAL_PLAN = D('250000')
+SPECIAL_MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text', 'finance-committee', '2026-03-26-minutes-7737.txt')
+SPECIAL_PHRASE = 'An article to appropriate free cash to the Health Insurance Special Purpose Stabilization Fund totaling $250,000'
+if FP.norm(SPECIAL_PHRASE) not in FP.norm(io.open(SPECIAL_MINUTES, encoding='utf-8').read()):
+    FP.fail('policy calculator: the 26 March 2026 Finance Committee minutes no longer print the special purpose plan')
+SPECIAL_RULE = dict(source='Select Board policy, Section 3.03; the amount: the Town Manager to the Finance Committee, '
+                           '26 March 2026, as planned, not voted',
+                    quote=TODAY[2][3]['quote'] + ' / ' + SPECIAL_PHRASE)
 DIALS = [
     # key, label, unit, feeds, today (value, rule), draft (value, rule)
     ('general_target', 'Top up general stabilization to', 'budget', 'general',
      (_tr['general'], TODAY[0][3]), (D(0), NO_RULE)),
     ('opeb', 'Retiree health trust', 'fc', 'opeb', (_tr['opeb'], TODAY[1][3]), (_dr['opeb'], DRAFT[4][3])),
     ('special_dollars', 'Special purpose deposit, in dollars', 'usd', 'special',
-     (D(0), TODAY[2][3]), (D(0), NO_RULE)),
+     (SPECIAL_PLAN, SPECIAL_RULE), (D(0), NO_RULE)),
     ('general', 'General stabilization', 'fc', 'general', (D(0), NO_RULE), (_dr['general'], DRAFT[2][3])),
     ('special', 'Special purpose stabilization', 'fc', 'special', (D(0), NO_RULE), (_dr['special'], DRAFT[1][3])),
     ('keep', 'Kept back for next year', 'fc', 'keep', (D(0), NO_RULE), (_dr['keep'], DRAFT[0][3])),
@@ -208,6 +221,71 @@ PRACTICE_VOTES = [
 # cash certified for FY2025 that no vote used ("Add Prior Year Free Cash Not Appropriated (CL#12)").
 # The votes print cents and the proof whole dollars, so ours is compared at the proof's precision.
 PROOF = os.path.join(ROOT, 'sources', 'data', 'free-cash-proof.csv')
+# TODAY IN PRACTICE IS AN AVERAGE YEAR (TJ, 27 November 2026, choosing it: "Typical year, 2018-2025").
+# May 2025 alone took only the retiree trust off the top, because the Finance Committee moved no action
+# on both stabilization articles (16 and 17, minutes of 3 April 2025) in a hard year; every Annual Town
+# Meeting from 2018 to 2024 voted free cash into general stabilization. So each set-aside dial is the
+# MEDIAN share of that year's certified free cash the eight meetings voted to it, a zero counted as a
+# zero. Free cash votes only: November 2020 raised special purpose and retiree trust money from the levy.
+TYPICAL_VOTES = [
+    # meeting date, article, the amount as printed, the dial
+    ('2018-05-05', '8', '$87,000', 'general'), ('2018-05-05', '9', '$200,000', 'special'),
+    ('2018-05-05', '10', '$100,000', 'opeb'),
+    ('2019-05-04', '9', '$100,000', 'general'), ('2019-05-04', '10', '$200,000', 'special'),
+    ('2019-05-04', '11', '$150,000', 'opeb'),
+    ('2020-06-13', '8', '$210,000', 'general'),
+    ('2021-05-01', '7', '$100,000', 'general'), ('2021-05-01', '8', '$250,000', 'special'),
+    ('2022-05-07', '9', '$100,000', 'general'), ('2022-05-07', '10', '$450,000', 'special'),
+    ('2022-05-07', '11', '$266,696', 'opeb'),
+    ('2023-05-06', '10', '$100,000', 'general'), ('2023-05-06', '11', '$250,000', 'special'),
+    ('2023-05-06', '12', '$282,855', 'opeb'),
+    ('2024-05-04', '12', '$100,000', 'general'), ('2024-05-04', '13', '$250,000', 'special'),
+    ('2024-05-04', '14', '$187,061', 'opeb'),
+    ('2025-05-03', '18', '$222,500', 'opeb'),
+]
+TYPICAL_YEARS = (2018, 2025)
+
+
+def typical():
+    """{dial: median share}, and per dial the (year, dollars, share) it is the median of."""
+    import csv
+    import statistics
+    rows = list(csv.DictReader(io.open(VOTES, encoding='utf-8')))
+    meetings = {}
+    for r in rows:
+        if not r['meeting_date']:
+            continue
+        y = int(r['meeting_date'][:4])
+        if r['meeting'] == 'annual' and TYPICAL_YEARS[0] <= y <= TYPICAL_YEARS[1]:
+            meetings[y] = r['meeting_date']
+    if sorted(meetings) != list(range(TYPICAL_YEARS[0], TYPICAL_YEARS[1] + 1)):
+        FP.fail('policy calculator: an Annual Town Meeting of %s-%s is not held' % TYPICAL_YEARS)
+    by = {(r['meeting_date'], r['article']): r for r in rows if r['meeting'] == 'annual'}
+    named = set()
+    got = {k: {y: D(0) for y in meetings} for k in SET_ASIDE}
+    for date, art, amt, dial in TYPICAL_VOTES:
+        r = by.get((date, art), {})
+        q = r.get('quote', '')
+        if 'free cash' not in q.lower() or amt not in q or r['result'] not in ('passed', 'amended_and_passed'):
+            FP.fail('policy calculator: article %s of %s no longer reads as a passed transfer of %s from free cash' % (art, date, amt))
+        named.add((date, art))
+        got[dial][int(date[:4])] += D(amt.replace('$', '').replace(',', ''))
+    # Every free cash vote of those meetings to a stabilization fund or the retiree trust is counted.
+    for r in rows:
+        q = r['quote'].lower()
+        if (r['meeting'] == 'annual' and r['meeting_date'] in meetings.values() and 'free cash' in q
+                and ('stabiliz' in q or 'opeb' in q) and r['result'] in ('passed', 'amended_and_passed')
+                and (r['meeting_date'], r['article']) not in named):
+            FP.fail('policy calculator: %s article %s moves free cash to a set-aside and is not counted'
+                    % (r['meeting_date'], r['article']))
+    fcs = FP.dls_free_cash()
+    med, rows_out = {}, {}
+    for k in SET_ASIDE:
+        pts = [(y, got[k][y], got[k][y] / D(str(fcs[('Lunenburg', y)]['amount']))) for y in sorted(meetings)]
+        med[k] = statistics.median([p[2] for p in pts])
+        rows_out[k] = pts
+    return med, rows_out
+
 # THREE LAYERS (TJ, 27 November 2026: "we have the pot amount. THATS not what these dials change. THEN,
 # we have the 'off the top' things that are forced in policy. And then, whatever doesnt come off the
 # top, is 'discretionary'"). In practice, OFF THE TOP is only a vote to a set-aside a written rule names
@@ -265,9 +343,9 @@ def practice():
 def settings(which, fc):
     """{dial: value} for 'today', 'draft' or 'practice'. A cap no rule sets is the whole free cash: no cap."""
     if which == 'practice':
-        used, fc_then, _ = practice()
+        med, _ = typical()
         out = {d[0]: 0.0 for d in DIALS}
-        out.update({k: float(v / fc_then) for k, v in used.items() if k in SET_ASIDE}, other_cap=fc)
+        out.update({k: float(v) for k, v in med.items()}, other_cap=fc)
         return out
     i = 4 if which == 'today' else 5
     return {d[0]: (float(d[i][0]) if d[i][0] is not None else fc) for d in DIALS}
@@ -312,14 +390,15 @@ def independent(x, which):
     arithmetic is checked against something it did not produce."""
     fc = x['fc']
     if which == 'practice':
-        used, fc_then, _ = practice()
+        med, _ = typical()
         u = dict(keep=0.0, general=0.0, special=0.0, capital=0.0, other=0.0, opeb=0.0)
-        u.update({k: float(v) * fc / float(fc_then) for k, v in used.items() if k in SET_ASIDE})
+        u.update({k: float(v) * fc for k, v in med.items()})
         return dict(u, left=fc - sum(u.values()), short=0.0)
     if which == 'today':
         g = max(0.0, min(fc, float(_tr['general']) * x['budget'] - x['general']))
         o = min(fc - g, float(_tr['opeb']) * fc)
-        return dict(keep=0.0, general=g, special=0.0, opeb=o, capital=0.0, other=0.0, left=fc - g - o, short=0.0)
+        sp = min(fc - g - o, float(SPECIAL_PLAN))
+        return dict(keep=0.0, general=g, special=sp, opeb=o, capital=0.0, other=0.0, left=fc - g - o - sp, short=0.0)
     sp = {k: a for k, _, a in FP.split(D(str(fc)))}
     u = dict(keep=float(sp['keep']), general=float(sp['general']), special=float(sp['special']),
              opeb=float(sp['opeb']), capital=float(sp['capital']), other=float(sp['other']))
@@ -383,6 +462,7 @@ def build():
     span = dict(fc=(0, 0.5, 0.01), budget=(0, 2 * BANDS['general_draft'][1], 0.0025))
     # Today in practice, per dial: the share voted, the articles and their words.
     p_used, p_fc, p_rows = practice()
+    p_disc = p_fc - sum(v for k, v in p_used.items() if k in SET_ASIDE)
     p_set = settings('practice', fc)
     long_d = '3 May 2025'
     if C.fy(PRACTICE_FC_YEAR) != 'FY2025' or PRACTICE_MEETING[1] != '2025-05-03':
@@ -391,16 +471,16 @@ def build():
     p_arts = {}
     for art, amt, dial in PRACTICE_VOTES:
         p_arts.setdefault(dial, []).append(art)
-    p_dial = {k: k for k in SET_ASIDE}
+    med, med_rows = typical()
+    yrs = '%d to %d' % TYPICAL_YEARS
     def p_setting(key):
-        feeds = p_dial.get(key)
-        if not feeds or key not in p_set or not p_set[key]:
+        if key not in SET_ASIDE:
             return dict(value=0.0 if key != 'other_cap' else None, source=None, quote=None)
-        arts = sorted(set(p_arts[feeds]), key=int)
-        src = 'Annual Town Meeting, %s, article%s %s' % (long_d, 's' if len(arts) > 1 else '', ', '.join(arts))
-        quote = ' / '.join(p_rows[a]['quote'] for a in arts)
+        src = 'The median of the Annual Town Meetings, %s, each as a share of that year\'s certified free cash' % yrs
+        quote = '; '.join('%d: %s' % (y, ('%s, %s' % (C.usd(v), C.pct(float(sh) * 100, 1))) if v else 'none')
+                          for y, v, sh in med_rows[key])
         allow.update((src, quote))
-        return dict(value=p_set[key], source=src, quote=quote)
+        return dict(value=float(med[key]), source=src, quote=quote)
     dials = []
     for key, label, unit, feeds, (tv, tr), (dv, dr) in DIALS:
         lo, hi, step = span.get(unit, (0, fc, 5000))
@@ -418,19 +498,21 @@ def build():
             dict(key='today', label="Today's rules", source='Select Board policy, sections 3.03, 3.04 and 3.07',
                  settings=settings('today', fc)),
             dict(key='practice', label='Today in practice',
-                 source=('Actual votes, not a policy: what the Annual Town Meeting of %s took off the top of that '
-                         'year\'s %s of free cash, as a share of it, and how it used the discretionary rest. What it left '
-                         'unvoted matches the state\'s free cash proof' % (long_d, U(p_fc))), settings=p_set),
+                 source=('An average year, not a policy: for each set-aside, the median share of free cash the Annual '
+                         'Town Meetings of %s voted to it; the discretionary rest is split as the meeting of %s split '
+                         'its own, which matches the state\'s free cash proof' % (yrs, long_d)), settings=p_set),
             dict(key='draft', label='State draft', source='DLS draft financial policy manual, April 2024, pdf pages 28-30',
                  settings=settings('draft', fc)),
         ],
         # How May 2025 used its discretionary part, as shares of that year's free cash: they add, with
         # the set-asides above, to the whole of it.
+        # Shares of May 2025's DISCRETIONARY part, not of its free cash: the set-asides above are now an
+        # average year's, so it is the split of what is left that carries over.
         practice_discretionary=[
-            dict(key='capital', label='Capital, as voted', share=float(p_used.get('capital', D(0)) / p_fc)),
-            dict(key='other', label='Every other vote', share=float(p_used.get('other', D(0)) / p_fc)),
+            dict(key='capital', label='Capital, as voted', share=float(p_used.get('capital', D(0)) / p_disc)),
+            dict(key='other', label='Every other vote', share=float(p_used.get('other', D(0)) / p_disc)),
             dict(key='stayed', label='Not voted: stayed in free cash',
-                 share=float((p_fc - sum(p_used.values())) / p_fc)),
+                 share=float((p_fc - sum(p_used.values())) / p_disc)),
         ],
         rules=dict(today=dict(floor=float(_tr['floor']), cap=float(_tr['cap'])),
                    draft=dict(cap=float(_dr['cap']),
@@ -447,6 +529,11 @@ def build():
                          'budget, not from free cash: %s in its summary table, %s in its text.'
                          % (P(float(_dr['stab_annual_summary']) * 100, 2), P(float(_dr['stab_annual_text']) * 100, 1))),
             floors_note='The draft\'s shares are floors ("at least"); its setting puts each dial at its floor.',
+            practice_note=('Today in practice is an average year: the median of the Annual Town Meetings of %s. '
+                           'In May 2025 the Finance Committee moved no action on both stabilization articles, '
+                           'so that year only the retiree trust came off the top.' % yrs),
+            target_reading=('Our reading: the draft makes its stabilization deposits "%s", so a fund already past '
+                            'its target would need none.' % DRAFT_TARGET_WORDS),
             order_note=('The dials are applied in the order shown, each from what is left: today\'s policy '
                         'is written as a priority list.'),
         ),
@@ -462,6 +549,9 @@ def build():
         ex[k] = dict(uses=u, after=after(inp, u))
     if not ex['today']['uses']['left'] > fc / 2 or not ex['draft']['uses']['left'] < fc / 2:
         FP.fail('policy calculator: the "what it means" line no longer describes the defaults; rewrite it')
+    # Quoted words and dates, each asserted above against its document.
+    allow.update((SPECIAL_RULE['source'], SPECIAL_RULE['quote'], data['text']['practice_note'],
+                  data['text']['target_reading'], next(p['source'] for p in data['presets'] if p['key'] == 'practice')))
     blk = TB.custom(COMPONENT, 'Free cash, rule by rule', data, place='lead', figures=sorted(figs),
                     allow=sorted(allow), alt='A calculator with a dial for each free cash rule, set to '
                     'today\'s rules or the state\'s draft, applied to the latest certified free cash', so=so)
@@ -479,16 +569,20 @@ def page(payload):
     t, d, p = ex['today']['uses'], ex['draft']['uses'], ex['practice']['uses']
     p_used, p_fc, _ = practice()
     p_aside = sum(v for k, v in p_used.items() if k in SET_ASIDE)
-    if p['general'] or p['special'] or set(k for k in p_used if k in SET_ASIDE) != {'opeb'}:
+    if set(k for k in p_used if k in SET_ASIDE) != {'opeb'} or not (p['general'] and p['special']):
         FP.fail('policy calculator page: the practice conclusion no longer describes the votes; rewrite it')
     fc = payload['block']['data']['defaults']['fc']
     U = lambda v: figure(float(v), C.usd(v), 'dollars')
+    PC = lambda v, dp=1: figure(v, C.pct(v, dp), 'percent')
+    x0 = payload['block']['data']['defaults']
+    all_pct = (x0['general'] + x0['special']) / x0['budget'] * 100
+    cap_today = payload['block']['data']['rules']['today']['cap'] * 100
     t_set = fc - t['left']
     # Half a dollar rounds UP, as the component's Math.round does, so the page and the bar agree;
     # the amount assigned is then the free cash less that, so the two foot.
     d_left = int(D(str(d['left'])).quantize(D('1'), rounding='ROUND_HALF_UP'))
     d_set = round(fc) - d_left
-    if d_set + d_left != round(fc) or round(t_set) != round(t['opeb']):
+    if d_set + d_left != round(fc) or round(t_set) != round(t['opeb'] + t['special']):
         FP.fail('policy calculator page: the presets no longer foot to the free cash')
     f = LD.fact
     facts = [
@@ -502,6 +596,8 @@ def page(payload):
         f('practice-set', U(p_aside), 'off the top in May 2025, all to the retiree trust', 'published',
           label_figures={'y': figure(2025, '2025', 'year')}),
         f('practice-disc', U(p_fc - p_aside), 'discretionary that year, for capital and every other vote', 'published'),
+        f('all-funds', PC(all_pct), 'all stabilization funds, share of the budget, 30 June 2025', 'published',
+          label_figures={'y': figure(2025, '2025', 'year'), 'd': figure(30, '30', 'day')}),
     ]
     if round(t['opeb']) != round(d['opeb']):
         FP.fail('policy calculator page: the two presets no longer put the same sum in the trust')
@@ -514,13 +610,20 @@ def page(payload):
         con('The draft’s floors assign %s and leave %s, with %s kept for next year.'
             % (C.usd(d_set), C.usd(d_left), C.usd(d['keep'])), ['draft-set', 'draft-left', 'keep', 'opeb'],
             {'a': U(d_set), 'b': U(d_left), 'c': U(d['keep'])},
-            so='Both put %s into the retiree health trust; the draft adds stabilization, capital and a reserve for next year.'
+            so='Both put %s into the retiree health trust; the draft adds general stabilization, capital and a reserve.'
                % C.usd(t['opeb']), so_figures={'a': U(t['opeb'])}),
     ]
-    cons.append(con('In May 2025 only %s came off the top; the other %s was Town Meeting’s to decide.'
-                    % (C.usd(p_aside), C.usd(p_fc - p_aside)), ['practice-set', 'practice-disc'],
-                    {'a': U(p_aside), 'b': U(p_fc - p_aside)}, allow=('2025',),
-                    so='In practice the town took off the top what today’s rules ask, and decided the rest, capital included, at the meeting.'))
+    cons.append(con('In May 2025 only %s came off the top: both stabilization articles were passed over.'
+                    % C.usd(p_aside), ['practice-set', 'practice-disc'],
+                    {'a': U(p_aside)}, allow=('2025',),
+                    so='From 2018 to 2024 every annual meeting voted free cash into general stabilization.',
+                    so_allow=('2018', '2024')))
+    if not all_pct > cap_today:
+        FP.fail('policy calculator page: the funds are no longer past today\'s ceiling; rewrite the last conclusion')
+    cons.append(con('All stabilization funds together are %s of the budget, past today’s %s ceiling.'
+                    % (C.pct(all_pct, 1), C.pct(cap_today, 0)), ['all-funds'],
+                    {'a': PC(all_pct), 'b': PC(cap_today, 0)},
+                    so='So today’s rules ask no top-up this year; an average year’s deposits would add to funds past it.'))
     import brief
     bad = []
     for i, c in enumerate(cons):
@@ -544,9 +647,17 @@ def page(payload):
                     and r['article'] in {x[0] for x in PRACTICE_VOTES}})
     src_atm = dict(key='atm25', label='Town of Lunenburg, FY2025 annual town report: the Annual Town Meeting of '
                    '3 May 2025, free cash votes (pp. %d-%d)' % (pages[0], pages[-1]), href='/docs/' + FP.AR25)
-    sources = [BFP.SRC_FACT, BFP.src_manual(), BFP.src_sb(), BFP.SRC_DLS_ST, BFP.SRC_AUDIT, BFP.SRC_AR25, src_atm]
-    flow = ['finding', cite(payload['block'], 'factsheet', 'manual', 'today', 'dlsst', 'audit', 'ar25', 'atm25'),
-            ('conclusion', 0), ('conclusion', 1), ('conclusion', 2), cite(stance, 'manual', 'today'), cite(links, 'manual'), 'sources']
+    src_fc26 = dict(key='fincom26', label='Finance Committee minutes, 26 March 2026: the special purpose '
+                    'stabilization article planned for this free cash', href='/docs/meetings/finance-committee/2026-03-26-minutes-7737.pdf')
+    src_fc25 = dict(key='fincom25', label='Finance Committee minutes, 3 April 2025: no action on articles 16 and 17, '
+                    'the two stabilization transfers', href='/docs/meetings/finance-committee/2025-04-03-minutes-7134.pdf')
+    src_tmv = dict(key='tmvotes', label='Annual Town Meeting votes, 2018 to 2025, as each annual town report prints them',
+                   href='/docs/data/town-meeting-votes.csv')
+    sources = [BFP.SRC_FACT, BFP.src_manual(), BFP.src_sb(), BFP.SRC_DLS_ST, BFP.SRC_AUDIT, BFP.SRC_AR25, src_atm,
+               src_fc26, src_fc25, src_tmv]
+    flow = ['finding', cite(payload['block'], 'factsheet', 'manual', 'today', 'dlsst', 'audit', 'ar25', 'atm25',
+                            'fincom26', 'fincom25', 'tmvotes'),
+            ('conclusion', 0), ('conclusion', 1), ('conclusion', 2), ('conclusion', 3), cite(stance, 'manual', 'today'), cite(links, 'manual'), 'sources']
     finding = 'Today\u2019s rules leave %s of %s in free cash to Town Meeting; the draft leaves %s.' % (
         C.usd(t['left']), C.usd(fc), C.usd(d_left))
     return TP.page(PAGE_ID, finding, [], [], sources=sources,

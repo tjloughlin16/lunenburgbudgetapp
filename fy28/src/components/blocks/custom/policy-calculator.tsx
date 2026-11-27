@@ -39,7 +39,7 @@ type Data = {
   rules: { today: { floor: number; cap: number }; draft: { cap: number; stab_annual: [number, number] } }
   bands: { general_draft: [number, number]; special_draft: [number, number]; fc_draft: [number, number]; general_today: number }
   defaults: Inputs
-  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note', string>
+  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note' | 'practice_note' | 'target_reading', string>
 }
 // No thread-1: it is the site's coral, and a coral beside a rule reads as a warning (rule 8).
 const COLOR: Record<UseKey, string> = {
@@ -76,7 +76,7 @@ function dialText(d: Dial, v: number, fc: number) {
 function settingText(d: Dial, s: Setting, voted = false) {
   if (s.value === null) return d.key === 'other_cap' ? 'no cap' : voted ? 'none voted' : 'no rule'
   if (!s.quote) return voted ? 'none voted' : 'no rule'
-  return d.unit === 'usd' ? (d.key === 'special_dollars' ? 'set in capital planning' : usd(s.value)) : pctTrim(s.value)
+  return d.unit === 'usd' ? usd(s.value) : pctTrim(s.value)
 }
 
 // THREE LAYERS (TJ, 27 November 2026: "we have the pot amount. THATS not what these dials change.
@@ -92,12 +92,19 @@ type Disc = { key: 'capital' | 'other' | 'stayed'; label: string; share: number 
  *  what should be the focus"). Off-the-top parts recede in their own colours; the discretionary part is
  *  the brand colour, outlined, with its dollars on it. Under Today in practice it is split, in shades of
  *  the same colour, into how Town Meeting actually used it. */
-function SplitBar({ label, u, fc, strong, names, disc }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string>; disc?: Disc[] }) {
+function SplitBar({ label, u, fc, strong, names, disc, why }: { label: string; u: Uses; fc: number; strong: boolean; names: Record<UseKey, string>; disc?: Disc[]; why: (k: UseKey) => string }) {
   const keys: UseKey[] = ['keep', 'general', 'special', 'opeb', 'capital', 'other']
   const top = keys.map(k => ({ k, v: Math.max(0, u[k]) })).filter(p => p.v > 0)
+  // EVERY CATEGORY IS NAMED, ZEROS INCLUDED (TJ, 27 November 2026: "why does it ONLY show retiree health
+  // trust and none of the other categories broken out?!"). A zero has no width on the bar, so without this
+  // line a category that came to $0 -- a top-up already met, a rule that sets no share -- vanished without
+  // saying why. Zeros with the same reason are named together.
+  const zero = keys.filter(k => !(u[k] > 0))
+  const reasons = [...new Set(zero.map(why))].map(r => ({ r, ks: zero.filter(k => why(k) === r) }))
   // Shown as the pot less the discretionary part, each rounded once, so the two always foot to the pot.
   const offTop = Math.round(fc) - Math.round(u.left)
-  const used = disc?.map(q => ({ ...q, v: q.share * fc })).filter(q => q.v > 0)
+  // A discretionary share is of the discretionary part (May 2025's split of its own), not of the pot.
+  const used = disc?.map(q => ({ ...q, v: q.share * u.left })).filter(q => q.v > 0)
   const W = (v: number) => `${(100 * v) / fc}%`
   const wide = u.left / fc > 0.22
   const tag = <span><span className="font-semibold">{usd(u.left)}</span>{' discretionary · '}<span className="tabular-nums">{pct(u.left / fc, 0)}</span></span>
@@ -126,7 +133,12 @@ function SplitBar({ label, u, fc, strong, names, disc }: { label: string; u: Use
           </div>) : null}
       </div>
       {!wide && u.left > 0 ? <div className="mt-1 text-right text-[13px]" style={{ color: 'var(--brand)' }}>{tag}</div> : null}
-      {used?.length ? <div className="mt-1 text-[12px]" style={secondary}>Of the discretionary part, at the same shares: {used.map(q => `${q.label.toLowerCase()} ${usd(q.v)}`).join(', ')}.</div> : null}
+      <div className="mt-1 text-[12px]" style={secondary}>
+        <span style={muted}>Off the top: </span>
+        {top.map((p, i) => <span key={p.k}>{i ? ' · ' : ''}<span className="inline-block w-2 h-2 mr-1 align-middle rounded-sm" style={{ background: COLOR[p.k] }} />{names[p.k]} <span className="tabular-nums">{usd(p.v)}</span></span>)}
+        {reasons.map(({ r, ks }, i) => <span key={r}>{top.length || i ? ' · ' : ''}{ks.map(k => names[k]).join(', ')} <span className="tabular-nums">$0</span>, {r}</span>)}
+      </div>
+      {used?.length ? <div className="mt-1 text-[12px]" style={secondary}>Of the discretionary part, split as May 2025 split its own: {used.map(q => `${q.label.toLowerCase()} ${usd(q.v)}`).join(', ')}.</div> : null}
     </div>
   )
 }
@@ -136,7 +148,7 @@ function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; a
   const max = d.unit === 'usd' ? Math.max(d.max, fc) : d.max
   const X = (n: number) => `${Math.max(0, Math.min(100, (100 * (n - d.min)) / (max - d.min)))}%`
   const marks = ([['Today', d.today, TODAY], ['In practice', d.practice, PRACTICE], ['Draft', d.draft, DRAFT]] as const)
-    .filter(([, s]) => s.quote && s.value !== null && !(d.key === 'special_dollars'))
+    .filter(([, s]) => s.quote && s.value !== null)
   return (
     <div className="rounded-md p-3 flex flex-col" style={card}>
       <div className="flex items-baseline justify-between gap-2">
@@ -274,6 +286,17 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   }
   const clear = () => { keep(null); setMode('mine') }
   const split = (k: PresetKey) => allocate(x, settingsOf(d.presets.find(p => p.key === k)!))
+  // Why a category came to $0 under one setting: read off that setting's dials, never typed per preset.
+  const whyZero = (s: Dials, from: PresetKey | 'mine', uu: Uses) => (k: UseKey): string => {
+    const feeding = d.dials.filter(q => q.feeds === k && q.key !== 'other_cap')
+    const set = feeding.filter(q => s[q.key] > 0)
+    if (set.length && uu.short > 0) return 'the free cash ran out before this dial'
+    if (k === 'general' && s.general_target > 0 && !(s.general > 0))
+      return `already ${pct(x.general / x.budget, 2)} of the budget, above the ${pctTrim(s.general_target)} it is topped up to`
+    if (from === 'practice' && (k === 'capital' || k === 'other') && d.practice_discretionary.some(q => q.key === k))
+      return 'voted, but from the discretionary part'
+    return from === 'practice' ? 'none voted' : from === 'mine' ? 'dial at zero' : 'no rule'
+  }
   const u = allocate(x, dials)
   const a = after(x, u)
   const before = after(x, allocate(x, { ...dials, general_target: 0, opeb: 0, special_dollars: 0, general: 0, special: 0, keep: 0, capital: 0, other: 0 }))
@@ -326,8 +349,10 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <span className="text-[13.5px]" style={secondary}>The pot: {usd(x.fc)} of free cash, split off the top and discretionary</span>
           <Tag k="ours" />
         </div>
-        <SplitBar label={mine ? 'Your settings' : 'Your settings (today in practice until a dial moves)'} u={allocate(x, slot.dials)} fc={x.fc} strong={mode === 'mine'} names={names} disc={mine ? undefined : d.practice_discretionary} />
-        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} disc={p.key === 'practice' ? d.practice_discretionary : undefined} />)}
+        <SplitBar label={mine ? 'Your settings' : 'Your settings (today in practice until a dial moves)'} u={allocate(x, slot.dials)} fc={x.fc} strong={mode === 'mine'} names={names} disc={mine ? undefined : d.practice_discretionary}
+          why={whyZero(slot.dials, mine ? 'mine' : START, allocate(x, slot.dials))} />
+        {d.presets.map(p => <SplitBar key={p.key} label={p.label} u={split(p.key)} fc={x.fc} strong={mode === p.key} names={names} disc={p.key === 'practice' ? d.practice_discretionary : undefined}
+          why={whyZero(settingsOf(p), p.key, split(p.key))} />)}
 
         <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px]" style={secondary}>
           {d.uses.map(q => (
@@ -335,6 +360,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
               style={{ background: COLOR[q.key], boxShadow: q.key === 'left' ? 'inset 0 0 0 1px var(--grid)' : undefined }} />{q.label}</li>
           ))}
         </ul>
+        <Scenarios x={x} d={d} />
       </div>
 
       {/* THE DIALS */}
@@ -412,6 +438,31 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
               </li>)))}
         </ul>
       </details>
+    </div>
+  )
+}
+
+/** AN AVERAGE YEAR IS NOT THIS YEAR (TJ, 27 November 2026: "make a note about when we're at the max and
+ *  dont need to top off anymore... those are differnet scnearios" -- "next year's planning will look
+ *  differnet in state pollicies if we already hit the max for all of it"). Where the balances stand
+ *  against each rule's line, from the starting figures, so it follows an edit; and the budget at which
+ *  each line would bind again, arithmetic on the same figures, with no deposit assumed. */
+function Scenarios({ x, d }: { x: Inputs; d: Data }) {
+  const b = d.bands, cap = d.rules.today.cap
+  const g = x.general / x.budget, s = x.special / x.budget, all = (x.general + x.special) / x.budget
+  const past = g >= b.general_today && all > cap
+  return (
+    <div className="mt-3 rounded-md p-3 text-[12.5px] space-y-1.5" style={{ background: 'var(--surface-2)' }}>
+      <p style={secondary}><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>An average year. </span>{d.text.practice_note}</p>
+      <p style={secondary}><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{past ? 'A year when the funds are already past the lines. ' : 'Where the funds stand. '}</span>
+        General stabilization is {pct(g, 2)} of the budget ({g >= b.general_today ? 'above' : 'below'} the {pctTrim(b.general_today)} today's rules top up to; the draft's range is {pctTrim(b.general_draft[0])} to {pctTrim(b.general_draft[1])}).
+        Special purpose is {pct(s, 2)} ({against(s, b.special_draft[0], b.special_draft[1])} the draft's {pctTrim(b.special_draft[0])} to {pctTrim(b.special_draft[1])}).
+        All of them together are {pct(all, 2)}, {all > cap ? 'above' : 'at or below'} today's {pctTrim(cap)} ceiling.
+        {past ? ` So today's rules ask no top-up this year, and an average year's deposits would add to funds already past the ceiling.` : ''}
+        {' '}{d.text.target_reading}</p>
+      {past ? <p style={secondary}><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>The years ahead. </span>
+        With no further deposits, general stabilization stays at or above {pctTrim(b.general_today)} until the budget passes {usd(x.general / b.general_today)},
+        and all the funds stay above {pctTrim(cap)} until it passes {usd((x.general + x.special) / cap)}. Until then each year starts past those lines, as this one does, not where an average year started. <Tag k="ours" /></p> : null}
     </div>
   )
 }
