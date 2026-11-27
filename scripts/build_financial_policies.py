@@ -80,6 +80,9 @@ def L(text, *lits):
     return (text, None, tuple(lits))
 
 
+WORD = {2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten'}
+
+
 def ordinal(n):
     return '%d%s' % (n, 'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th'))
 
@@ -191,7 +194,7 @@ def dials_matrix(b):
             'each year, reached through conservative revenue estimates and budget turnbacks.'), R),
         (0, 1): TB.cell('more', 'The draft splits every year’s free cash by rule', L(
             'Today: top up general stabilization to five percent, then at least 10% to the OPEB trust, then '
-            'the special purpose fund, then any one-time use. Draft: a minimum share for each of six uses.', '10%'), R),
+            'the special purpose fund, then any one-time use. Draft: a minimum share for each of %s uses.' % WORD[len(FP.SPLIT)], '10%'), R),
         (1, 0): TB.cell('more', 'A wider band and a yearly deposit', L(
             'Today: at least five percent of the budget, all stabilization funds together no more than ten '
             'percent. Draft: five to eight percent, plus a set deposit every year.'), R),
@@ -329,7 +332,7 @@ def page_rules(b):
     rlo, rhi = b['reserves_band']
     clo, chi = b['capital_band']
     c25 = b['capital'][2025]['total']
-    panels = TB.panels('Three more figures the draft would set', [
+    panels = TB.panels('More figures the draft would set', [
         TB.panel('Yearly stabilization deposit', [
             ('At the summary’s rate', C.usd(lo), None), ('At the text’s rate', C.usd(hi), None)],
             sub=(T('0.25% and 0.3% of the {y} budget of {b}.', y=F(2025), b=U(b['budget25']))[0],
@@ -445,7 +448,7 @@ def page_targets(b):
     ps, pf, pd = b['peer_stab'], b['peer_fc'], b['peer_debt']
     rk_s, rk_f, rk_d = rank(ps), rank(pf), rank(pd)
     n = len(b['peers'])
-    r_s = TP.ranking('General stabilization, %s, nine towns' % C.fy(2025) if False else 'General stabilization by town',
+    r_s = TP.ranking('General stabilization by town',
                      sorted([(t, fl(v)) for t, v in ps.items()], key=lambda r: -r[1]), '%', highlight='Lunenburg',
                      decimals=2, note='Share of each town’s own %s operating budget.' % C.fy(2025),
                      note_figures={'y': F(2025)})
@@ -571,10 +574,11 @@ def page_targets(b):
                                                  n=figure(len(over10), '%d of %d' % (len(over10), len(oy)), 'years'))),
              'audit', 'factsheet'),
     ]
+    others = [t for t in sorted(b['peers']) if t != 'Lunenburg']
     peers_note = TB.explain('Which towns', [L(
-        'The eight towns this project already compares on free cash: Ayer, Groton, Littleton, Shirley, '
-        'Townsend, Upton, Uxbridge and Westford. Each is measured against its own budget, by the state’s figures. '
-        'This is where Lunenburg sits, not a ranking of better or worse.')], place='body', tone='define')
+        'The %s towns this project already compares on free cash: %s and %s. Each is measured against its '
+        'own budget, by the state’s figures. This is where Lunenburg sits, not a ranking of better or worse.'
+        % (WORD[len(others)], ', '.join(others[:-1]), others[-1]))], place='body', tone='define')
     cite = TP.cite
     flow = ['finding',
             cite(TB.chart(chart_s, place='lead', so=T('The draft’s band runs five to eight percent; {y} sits in it.',
@@ -737,16 +741,16 @@ def page_debate(b):
         key = {'rules': 'rules', 'draft': 'draft'}.get(r['thread'])
         if r['thread'] == 'argument':
             key = 'in' if r['dial'] == 'in' else 'out' if r['dial'] == 'out' else 'said'
-        state.setdefault(key, {})[y] = key
+        state.setdefault(key, {})[y] = 'raised' if key in ('in', 'out') else key
     lab = lambda k: [state.get(k, {}).get(y) for y in years]
-    timeline = TB.timeline('Twelve years of the same rules', [str(y)[2:] if i else str(y) for i, y in enumerate(years)],
+    timeline = TB.timeline('The rules and the argument, year by year', [str(y)[2:] if i else str(y) for i, y in enumerate(years)],
                            [('The rules', [TB.track('Today’s rules adopted or amended', lab('rules')),
                                            TB.track('The state’s draft before a board', lab('draft'))]),
                             ('The argument', [TB.track('Money in: how much to set aside', lab('in')),
                                               TB.track('Money out: what reserves may pay for', lab('out')),
                                               TB.track('The town’s reserves described', lab('said'))])],
                            [('rules', 'A vote on today’s rules', 'neutral'), ('draft', 'The draft discussed', 'other'),
-                            ('in', 'Raised at a meeting', 'other'), ('out', 'Raised at a meeting', 'other'),
+                            ('raised', 'Raised at a meeting', 'other'),
                             ('said', 'Reported at a meeting', 'muted')],
                            place='lead', note=L('Each mark is a dated meeting in the list below; years run 2013 to 2026.',
                                                 '2013', '2026'))
