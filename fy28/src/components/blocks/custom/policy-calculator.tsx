@@ -38,23 +38,8 @@ type Data = {
   rules: { today: { floor: number; cap: number }; draft: { cap: number; stab_annual: [number, number] } }
   bands: { general_draft: [number, number]; special_draft: [number, number]; fc_draft: [number, number]; general_today: number }
   defaults: Inputs
-  kinds: Record<RuleKind, { label: string; text: string }>
-  targets: { key: string; chart: string; source: string; quote: string }[]
-  moves_other: { key: string; label: string; source: string; quote: string }[]
-  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note' | 'kinds_note', string>
+  text: Record<'audit_note' | 'budget_note' | 'cap_reading' | 'annual_note' | 'floors_note' | 'order_note', string>
 }
-type RuleKind = 'moves' | 'target'
-
-/** WHICH KIND OF RULE: one that moves money, or a planning target (TJ, 27 November 2026: "some have
- *  direct 'savings' impact and some have more guideline impact"). Our reading, said on the page. Both
- *  neutral: a solid edge for money moved, a dashed one for a range measured against. */
-function KindTag({ k, kinds }: { k: RuleKind; kinds: Data['kinds'] }) {
-  return (
-    <span title={kinds[k].text} className="inline-block text-[10.5px] leading-tight px-1.5 py-0.5 rounded-sm whitespace-nowrap align-middle font-semibold"
-      style={{ color: 'var(--text-primary)', border: `1.5px ${k === 'moves' ? 'solid' : 'dashed'} var(--text-secondary)` }}>{kinds[k].label}</span>
-  )
-}
-
 // No thread-1: it is the site's coral, and a coral beside a rule reads as a warning (rule 8).
 const COLOR: Record<UseKey, string> = {
   keep: 'var(--thread-3)', general: 'var(--thread-2)', special: 'var(--thread-4)', opeb: 'var(--thread-5)',
@@ -150,8 +135,8 @@ function DialCard({ d, v, amount, fc, onChange, range }: { d: Dial; v: number; a
 
 /** A BULLET CHART: the balance before and this year's deposit as a bar, against the draft's range
  *  (shaded) and today's line, every part labelled on the chart. */
-function Bullet({ title, before, after: a, deposit, band, line, verdict, kinds }: {
-  kinds: Data['kinds']; title: string; before: number; after: number; deposit: number
+function Bullet({ title, before, after: a, deposit, band, line, verdict }: {
+  title: string; before: number; after: number; deposit: number
   band?: { lo: number; hi: number; label: string }; line?: { at: number; label: string }; verdict: string
 }) {
   const W = 320, top = 34, bh = 16
@@ -193,7 +178,6 @@ function Bullet({ title, before, after: a, deposit, band, line, verdict, kinds }
         ))}
       </svg>
       <p className="mt-1 text-[13px] leading-snug" style={{ color: 'var(--text-primary)' }}>{verdict}</p>
-      <p className="mt-2 text-[11.5px]" style={muted}><KindTag k="target" kinds={kinds} /> the shaded range and the line</p>
     </div>
   )
 }
@@ -298,14 +282,6 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
         {mine && mode !== 'mine' ? ' Your settings are kept; moving a dial here starts them again from this rule set.' : ''}
         {!mine ? ' Move any dial to save your own settings.' : ''}</p>
 
-      {/* THE TWO KINDS OF RULE, defined once where a reader first meets them */}
-      <div className="mt-3 grid gap-2 sm:grid-cols-2 text-[12.5px]" style={secondary}>
-        {(['moves', 'target'] as const).map(k => (
-          <p key={k}><KindTag k={k} kinds={d.kinds} /> {d.kinds[k].text}</p>
-        ))}
-      </div>
-      <p className="mt-1 text-[11.5px]" style={muted}>{d.text.kinds_note}</p>
-
       {/* THE SIGNATURE: what each setting does with the same free cash */}
       <div className="mt-3 rounded-md p-3" style={card}>
         <div className="flex items-baseline justify-between gap-2">
@@ -324,7 +300,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       </div>
 
       {/* THE DIALS */}
-      <h3 className="mt-6 text-[16px] font-semibold">The dials <KindTag k="moves" kinds={d.kinds} /> <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
+      <h3 className="mt-6 text-[16px] font-semibold">The dials <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
       <p className="mt-0.5 text-[12.5px]" style={muted}>{d.text.order_note} {d.text.floors_note}</p>
       <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {d.dials.map(q => (
@@ -341,15 +317,14 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       </div>
 
       {/* THE OUTCOMES */}
-      <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances <KindTag k="target" kinds={d.kinds} /></h3>
-      <p className="mt-0.5 text-[12.5px]" style={muted}>The bars move with the dials. The ranges and lines they are measured against are planning targets: they set no deposit.</p>
+      <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances</h3>
       <div className="mt-2 grid gap-3 lg:grid-cols-3">
-        <Bullet kinds={d.kinds} title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
+        <Bullet title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
           band={{ lo: b.general_draft[0], hi: b.general_draft[1], label: `Draft: ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])}` }}
           line={{ at: b.general_today, label: `Today: at least ${pctTrim(b.general_today)}` }} verdict={gVerdict} />
-        <Bullet kinds={d.kinds} title="Special purpose stabilization" before={before.special_pct} after={a.special_pct} deposit={u.special}
+        <Bullet title="Special purpose stabilization" before={before.special_pct} after={a.special_pct} deposit={u.special}
           band={{ lo: b.special_draft[0], hi: b.special_draft[1], label: `Draft: ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])}` }} verdict={sVerdict} />
-        <Bullet kinds={d.kinds} title="All stabilization funds" before={before.all_pct} after={a.all_pct} deposit={u.general + u.special}
+        <Bullet title="All stabilization funds" before={before.all_pct} after={a.all_pct} deposit={u.general + u.special}
           line={{ at: r.today.cap, label: `Today: at most ${pctTrim(r.today.cap)}` }} verdict={aVerdict} />
       </div>
       <p className="mt-2 text-[12px]" style={muted}>{d.text.cap_reading}</p>
@@ -380,7 +355,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
           <ul className="mt-3 space-y-1 text-[12.5px]" style={muted}>
             <li>{d.text.audit_note}</li>
             <li>{d.text.budget_note}</li>
-            <li><KindTag k="moves" kinds={d.kinds} /> {d.text.annual_note} At this budget that is {usd(r.draft.stab_annual[0] * x.budget)} or {usd(r.draft.stab_annual[1] * x.budget)} a year.</li>
+            <li>{d.text.annual_note} At this budget that is {usd(r.draft.stab_annual[0] * x.budget)} or {usd(r.draft.stab_annual[1] * x.budget)} a year.</li>
           </ul>
         </div>
       </details>
@@ -391,15 +366,12 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
         <ul className="px-3 pb-3 space-y-2">
           {d.dials.flatMap(q => ([['Today', q.today], ['Draft', q.draft]] as const)
             .filter(([, s]) => s.quote)
-            .map(([n, s]) => ({ id: q.key + n, kind: 'moves' as RuleKind, head: `${q.label}, ${n.toLowerCase()}`, quote: s.quote!, source: s.source! })))
-            .concat(d.moves_other.map(m => ({ id: m.key, kind: 'moves' as RuleKind, head: `${m.label}, draft`, quote: m.quote, source: m.source })))
-            .concat(d.targets.map(t => ({ id: t.key, kind: 'target' as RuleKind, head: t.chart, quote: t.quote, source: t.source })))
-            .map(r => (
-              <li key={r.id} className="text-[13px]">
-                <KindTag k={r.kind} kinds={d.kinds} /> <span className="font-semibold">{r.head}: </span>
-                <q style={{ color: 'var(--text-primary)' }}>{r.quote}</q>
-                <span className="block text-[12px]" style={muted}>{r.source}</span>
-              </li>))}
+            .map(([n, s]) => (
+              <li key={q.key + n} className="text-[13px]">
+                <span className="font-semibold">{q.label}, {n.toLowerCase()}: </span>
+                <q style={{ color: 'var(--text-primary)' }}>{s.quote}</q>
+                <span className="block text-[12px]" style={muted}>{s.source}</span>
+              </li>)))}
         </ul>
       </details>
     </div>
