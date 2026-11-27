@@ -5,11 +5,11 @@ what each setting does to today's figures. Four topic pages and one markdown rep
     python3.11 scripts/build_financial_policies.py           # write the payloads and the report
     python3.11 scripts/build_financial_policies.py --check   # fail if any output would change
 
-UNLISTED UNTIL TJ REVIEWS IT (27 November 2026). The four pages are DRAFTS (topic.page(draft=)):
-not in scripts/topics.py, so not in topics.json, so not on any shelf, not in the sitemap and not
-prerendered. They are served at /town-reserves/<id> to whoever is given the address. The report
-is in sources/analyses/UNLISTED. Registering the four ids in scripts/topic_registry/
-town_reserves.py and deleting the UNLISTED line is how they join the site.
+UNLISTED UNTIL TJ REVIEWS IT (27 November 2026). The four pages are registered on the New
+financial policies shelf (scripts/topic_registry/financial_policies.py), served at
+/financial-policies/<id>, under the hub the policy calculator draws (build_policy_calculator.py).
+The shelf is `unlisted`: off /reports, the menu, search, the sitemap and the prerender until the
+flag is deleted. The report is in sources/analyses/UNLISTED.
 
 NO NEW COMPONENT: every part is an existing topic block or chart (matrix, bridge, series,
 ranking, panels, timeline, checks, explain), so the bundle does not change and nothing forces a
@@ -44,7 +44,7 @@ import topic as TP  # noqa: E402
 import topic_blocks as TB  # noqa: E402
 import financial_policies_data as FP  # noqa: E402
 
-HOME = 'town-reserves'
+HOME = 'financial-policies'   # the New financial policies shelf (topic_registry/financial_policies.py)
 PAGES = {
     'financial-policy-rules': 'Financial policy rules',
     'policies-in-practice': 'The rules in practice',
@@ -414,8 +414,7 @@ def page_rules(b):
         C.usd(fc), C.usd(keep), C.usd(save), C.usd(spend))
     page = TP.page(pid, finding, [], [], sources=sources,
                    finding_figures={'a': U(fc), 'b': U(keep), 'c': U(save), 'd': U(spend)},
-                   flow=inline(pid, flow, facts, cons, {2: 'retiree-health-liability', 3: 'policies-in-practice'}),
-                   draft=dict(title=PAGES[pid], home=HOME))
+                   flow=inline(pid, flow, facts, cons, {2: 'retiree-health-liability', 3: 'policies-in-practice'}))
     return page, dict(keep=keep, save=save, spend=spend, set_by_draft=set_by_draft, n_dials=n_dials, on_in=on_in, n_rows=n_rows, share=share, s26=s26)
 
 
@@ -598,8 +597,7 @@ def page_targets(b):
         pc(sp[years[-1]]), C.fy(years[-1]))
     page = TP.page(pid, finding, [], [], sources=sources,
                    finding_figures={'a': P(sp[years[-1]]), 'y': F(years[-1])},
-                   flow=inline(pid, flow, facts, cons, {0: 'financial-policy-rules', 1: 'financial-policy-rules'}),
-                   draft=dict(title=PAGES[pid], home=HOME))
+                   flow=inline(pid, flow, facts, cons, {0: 'financial-policy-rules', 1: 'financial-policy-rules'}))
     return page, dict(in_range=in_range, fyears=fyears, rk_s=rk_s, rk_f=rk_f, rk_d=rk_d, n=n, above_since=above_since,
                       lo_t=lo_t, hi_t=hi_t, diff=diff)
 
@@ -693,8 +691,7 @@ def page_opeb(b):
         C.usd(trust[ys[-1]]), C.usd(total[ys[-1]]), pc(o['funded'][ys[-1]]))
     page = TP.page(pid, finding, [], [], sources=sources,
                    finding_figures={'a': U(trust[ys[-1]]), 'b': U(total[ys[-1]]), 'c': P(o['funded'][ys[-1]])},
-                   finding_allow=('30', '2025'), flow=inline(pid, flow, facts, cons, {2: 'financial-policy-rules'}),
-                   draft=dict(title=PAGES[pid], home=HOME))
+                   finding_allow=('30', '2025'), flow=inline(pid, flow, facts, cons, {2: 'financial-policy-rules'}))
     return page, dict(swamped=swamped)
 
 
@@ -799,8 +796,7 @@ def page_debate(b):
     sources = srcs
     finding = 'The town’s financial policies date from 2014; the state’s replacement draft has waited since June 2024.'
     page = TP.page(pid, finding, [], [], sources=sources, finding_allow=('2014', '2024'),
-                   flow=inline(pid, flow, facts, cons, {0: 'financial-policy-rules'}),
-                   draft=dict(title=PAGES[pid], home=HOME))
+                   flow=inline(pid, flow, facts, cons, {0: 'financial-policy-rules'}))
     return page, dict(titles=titles, n_cap=n_cap, n_rows=len(rows), rows=rows)
 
 

@@ -1060,6 +1060,51 @@
    "title": "Stabilization funds"
   },
   {
+   "answer": "Today’s rules leave $3,018,933 of $3,354,370 in free cash to Town Meeting; the state’s draft leaves $924,030. The dials apply either rule set, or any other, to these figures.",
+   "area": "town",
+   "elsewhere": [
+    {
+     "href": "/town-reserves",
+     "title": "Stabilization funds"
+    },
+    {
+     "href": "/free-cash",
+     "title": "Free cash"
+    }
+   ],
+   "groups": [
+    {
+     "section": null,
+     "title": "The rules",
+     "topics": [
+      "financial-policy-rules",
+      "policies-in-practice"
+     ]
+    },
+    {
+     "section": null,
+     "title": "Behind them",
+     "topics": [
+      "retiree-health-liability",
+      "financial-policy-debate"
+     ]
+    }
+   ],
+   "id": "financial-policies",
+   "minutes": 1,
+   "order": 51,
+   "path": "/financial-policies",
+   "ready": true,
+   "related": [],
+   "shelf": "New financial policies",
+   "start": [
+    "financial-policy-rules",
+    "policies-in-practice"
+   ],
+   "title": "New financial policies",
+   "unlisted": true
+  },
+  {
    "answer": "Town Meeting voted $44,024,349 across twelve groups for FY2025; the schools are 57.1%. Ranked by dollars past the 2.5% levy cap, employee benefits push the budget hardest, then the schools.",
    "area": "town",
    "elsewhere": [],
@@ -2809,6 +2854,36 @@
     "athletics"
    ],
    "title": "Fee fund history"
+  },
+  "financial-policy-debate": {
+   "finding": "The town’s financial policies date from 2014; the state’s replacement draft has waited since June 2024.",
+   "generator": "scripts/build_financial_policies.py",
+   "home": "financial-policies",
+   "id": "financial-policy-debate",
+   "minutes": 1,
+   "path": "/financial-policies/financial-policy-debate",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "financial-policies"
+   ],
+   "title": "The policy debate",
+   "unlisted": true
+  },
+  "financial-policy-rules": {
+   "finding": "Of $3,354,370 in free cash, the draft would keep back $670,874, save $838,592 and spend $920,874 on set uses.",
+   "generator": "scripts/build_financial_policies.py",
+   "home": "financial-policies",
+   "id": "financial-policy-rules",
+   "minutes": 1,
+   "path": "/financial-policies/financial-policy-rules",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "financial-policies"
+   ],
+   "title": "Financial policy rules",
+   "unlisted": true
   },
   "foundation-budget": {
    "finding": "The state priced Lunenburg’s schools at $22,073,946 for FY2026; Chapter 70 equals 41.8% of that.",
@@ -4882,6 +4957,21 @@
    ],
    "title": "Spending per pupil"
   },
+  "policies-in-practice": {
+   "finding": "General stabilization held 6.24% of the FY2025 budget; the draft’s range is five to eight percent.",
+   "generator": "scripts/build_financial_policies.py",
+   "home": "financial-policies",
+   "id": "policies-in-practice",
+   "minutes": 1,
+   "path": "/financial-policies/policies-in-practice",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "financial-policies"
+   ],
+   "title": "The rules in practice",
+   "unlisted": true
+  },
   "positions-and-their-funds": {
    "finding": "Of 10 general fund leadership accounts, 2 had any pay moved to or from another fund.",
    "generator": "scripts/build_pay_by_fund_topics.py",
@@ -5133,6 +5223,21 @@
     "health-insurance"
    ],
    "title": "Retiree health accounts"
+  },
+  "retiree-health-liability": {
+   "finding": "At 30 June 2025 the retiree health trust held $1,736,976 of a $57,398,019 liability: 3.03% funded.",
+   "generator": "scripts/build_financial_policies.py",
+   "home": "financial-policies",
+   "id": "retiree-health-liability",
+   "minutes": 1,
+   "path": "/financial-policies/retiree-health-liability",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "financial-policies"
+   ],
+   "title": "Retiree health liability",
+   "unlisted": true
   },
   "revolving-fund-history": {
    "finding": "The 9 school revolving funds closed FY2023 holding $1,074,431, against $306,471 at the close of FY2011.",
@@ -6629,7 +6734,7 @@
    "title": "Who may spend it"
   },
   "why-it-was-left": {
-   "finding": "Five categories left $733,953 in FY2026; $361,639 of recurring vendor payments did not recur.",
+   "finding": "Six categories left $822,475 in FY2026; $361,639 of recurring vendor payments did not recur.",
    "generator": "scripts/build_why_it_was_left.py",
    "home": "fy2026-closeout",
    "id": "why-it-was-left",

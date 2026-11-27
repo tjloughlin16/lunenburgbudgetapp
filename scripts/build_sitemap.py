@@ -216,8 +216,10 @@ def topic_pages():
     if not os.path.exists(p):
         return []
     d = json.load(io.open(p, encoding='utf-8'))
-    hubs = [c['path'] for c in d.get('categories', []) if c.get('ready') and not c.get('merged_into')]
-    return hubs + sorted(t['path'] for t in d.get('topics', {}).values() if t.get('ready'))
+    # An UNLISTED shelf (build_topics_index.py) is served and never pushed to be indexed.
+    hubs = [c['path'] for c in d.get('categories', [])
+            if c.get('ready') and not c.get('merged_into') and not c.get('unlisted')]
+    return hubs + sorted(t['path'] for t in d.get('topics', {}).values() if t.get('ready') and not t.get('unlisted'))
 
 
 def feed_pages():

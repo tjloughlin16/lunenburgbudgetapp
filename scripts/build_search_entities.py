@@ -160,11 +160,11 @@ def build():
     # 1. HUBS AND TOPIC PAGES, as the shelves name them.
     topics = load(os.path.join(DATA, 'topics.json'))
     for c in topics.get('categories', []):
-        if c.get('ready') is False or c.get('merged_into'):
+        if c.get('ready') is False or c.get('merged_into') or c.get('unlisted'):
             continue
         reg.add('hub', c.get('title') or words(c['id']), c['path'], 'Hub', aliases=[words(c['id'])])
     for t in topics.get('topics', {}).values():
-        if not t.get('ready'):
+        if not t.get('ready') or t.get('unlisted'):
             continue
         reg.add('topic', t['title'], t['path'], 'Topic page', aliases=[words(t['id'])])
     for a, target in topic_aliases.items():

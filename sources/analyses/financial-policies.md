@@ -12,7 +12,7 @@
 
 **This project recommends neither direction**: not to save more and not to spend more. It shows what each setting would do to figures the town has already published. The boards decide.
 
-The pages: [Financial policy rules](/town-reserves/financial-policy-rules), [The rules in practice](/town-reserves/policies-in-practice), [Retiree health liability](/town-reserves/retiree-health-liability), [The policy debate](/town-reserves/financial-policy-debate).
+The pages: [Financial policy rules](/financial-policies/financial-policy-rules), [The rules in practice](/financial-policies/policies-in-practice), [Retiree health liability](/financial-policies/retiree-health-liability), [The policy debate](/financial-policies/financial-policy-debate).
 
 ## The free cash split
 

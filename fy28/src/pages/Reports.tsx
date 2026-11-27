@@ -213,9 +213,11 @@ type TopicIndex = {
     groups: { title: string | null; topics: string[]; section?: string | null }[]
     elsewhere: { href: string; title: string }[]; area: string | null; archive_after?: string
     /** Drawn only as part of another hub (scripts/topics.py): not a shelf of its own here. */
-    merged_into?: string }[]
+    merged_into?: string
+    /** An unlisted shelf (scripts/build_topics_index.py): served at its address, on no shelf here. */
+    unlisted?: boolean }[]
   topics: Record<string, { id: string; title: string; path: string; finding: string | null
-    shelves: string[]; ready: boolean }>
+    shelves: string[]; ready: boolean; unlisted?: boolean }>
 }
 
 /** THE HUBS, AT THE TOP. TJ, 14 October 2026: "on the reports page, we need a table of
@@ -229,7 +231,7 @@ function HubContents() {
   const [ix, setIx] = useState<TopicIndex | null>(null)
   useEffect(() => { fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {}) }, [])
   if (!ix) return null
-  const areas = ix.areas.map(a => ({ ...a, hubs: ix.categories.filter(c => c.area === a.id && !c.merged_into) }))
+  const areas = ix.areas.map(a => ({ ...a, hubs: ix.categories.filter(c => c.area === a.id && !c.merged_into && !c.unlisted) }))
     .filter(a => a.hubs.length)
   const pages = (c: TopicIndex['categories'][number]) =>
     c.groups.reduce((n, g) => n + g.topics.filter(id => ix.topics[id]?.ready).length, 0)
@@ -291,7 +293,7 @@ function TopicShelves({ area, archived }: { area: string; archived?: boolean }) 
   const past = (c: TopicIndex['categories'][number]) => !!c.archive_after && c.archive_after < today
   return (
     <>
-      {ix.categories.filter(c => c.area === area && !c.merged_into && (archived === undefined || past(c) === archived)).map(c => (
+      {ix.categories.filter(c => c.area === area && !c.merged_into && !c.unlisted && (archived === undefined || past(c) === archived)).map(c => (
         // ONE DOOR TO THE HUB. The heading is the link; its answer sits under it. A boxed
         // card for the hub used to follow, linking the same page under its other title --
         // "Athletics ->" then "Athletics costs ->" -- two doors that looked like two places.

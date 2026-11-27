@@ -137,12 +137,12 @@ export const GROUPS: Group[] = [
  *  the archive on /reports. Nothing is regenerated for a report to leave -- the date is
  *  compared here, against today, like the NEW badge. */
 type SpecialHub = { id: string; shelf: string; title: string; path: string; area: string;
-                    order: number; archive_after?: string }
+                    order: number; archive_after?: string; unlisted?: boolean }
 
 export function useSpecialReports() {
   const { d } = useReport<{ categories: SpecialHub[] }>('topics.json')
   const today = todayIso()
-  const all = (d?.categories ?? []).filter(c => c.area === 'special')
+  const all = (d?.categories ?? []).filter(c => c.area === 'special' && !c.unlisted)
     .sort((a, b) => (b.archive_after ?? '').localeCompare(a.archive_after ?? ''))
   return { current: all.filter(c => !c.archive_after || c.archive_after >= today),
            archived: all.filter(c => c.archive_after && c.archive_after < today) }

@@ -145,6 +145,19 @@ def build(strict):
             pays[tid] = json.load(open(f, encoding='utf-8'))
         elif strict:
             bad.append('%s is registered and has no payload (%s)' % (tid, os.path.relpath(f, ROOT)))
+    # AN UNLISTED SHELF (`unlisted=True` in its registry file) keeps its addresses and loses its
+    # doors. Its hub and every page it is home to carry `unlisted` here, and every reader that
+    # turns this index into a door skips them: /reports and the menu (Reports.tsx, SiteMenu.tsx),
+    # the home page's count, the search index (build_search_entities.py), the sitemap
+    # (build_sitemap.py) and the prerender (prerender.mjs). The router still lists it, so the
+    # address works for whoever is given it. TJ, 27 November 2026, for the financial policies hub.
+    hidden = {c['id'] for c in REG.CATEGORIES if c.get('unlisted')}
+    for c in REG.CATEGORIES:
+        if c['id'] not in hidden:
+            listed_hidden = [t for _, ids in c['groups'] for t in ids if t in REG.TOPICS and REG.TOPICS[t][1] in hidden]
+            if listed_hidden:
+                bad.append('%s lists %s, whose home shelf is unlisted: a listed shelf would be its door'
+                           % (c['id'], listed_hidden))
     topics = {}
     for tid, (title, home, gen) in REG.TOPICS.items():
         p = pays.get(tid)
@@ -152,7 +165,8 @@ def build(strict):
             id=tid, title=title, path=REG.path(tid), home=home, shelves=REG.shelves_of(tid),
             finding=p['finding']['text'] if p else None,
             minutes=max(1, math.ceil(words(p) / 200)) if p else None,
-            ready=bool(p), generator='scripts/' + gen, related=rel.get(tid, []))
+            ready=bool(p), generator='scripts/' + gen, related=rel.get(tid, []),
+            **({'unlisted': True} if home in hidden else {}))
     cats = []
     for c in REG.CATEGORIES:
         h = pays.get(c['id'])
@@ -167,7 +181,8 @@ def build(strict):
             elsewhere=[dict(href=a, title=b) for a, b in c.get('elsewhere', [])],
             start=list(c.get('start', [])), related=rel.get(c['id'], []),
             area=c.get('area'), order=c.get('order', 99),
-            **({'archive_after': c['archive_after']} if c.get('archive_after') else {})))
+            **({'archive_after': c['archive_after']} if c.get('archive_after') else {}),
+            **({'unlisted': True} if c['id'] in hidden else {})))
     out = dict(generated_by='scripts/build_topics_index.py', categories=cats, topics=topics,
                areas=[dict(id=a, title=t) for a, t in REG.AREAS])
     routes = json.dumps(sorted(c['id'] for c in cats if c['ready']), indent=1) + '\n'

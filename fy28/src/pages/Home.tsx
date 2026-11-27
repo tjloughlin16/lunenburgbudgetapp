@@ -299,7 +299,7 @@ function DoorLink({ d, children, ...rest }: { d: Door; children: React.ReactNode
 
 type Shelf = { id: string; shelf: string; path: string; area: string; order: number; ready: boolean
   groups: { topics: string[] }[] }
-type Shelves = { categories: Shelf[]; areas: { id: string; title: string }[]; topics: Record<string, { ready: boolean }> }
+type Shelves = { categories: (Shelf & { unlisted?: boolean })[]; areas: { id: string; title: string }[]; topics: Record<string, { ready: boolean; unlisted?: boolean }> }
 
 /** REPORTS: TOWN AND SCHOOLS -- the largest thing this site holds, drawn as what it is.
  *
@@ -312,8 +312,8 @@ type Shelves = { categories: Shelf[]; areas: { id: string; title: string }[]; to
  *  hub read, so a new subject appears here the day it is built and the count cannot drift. */
 function ReportsShelf() {
   const { d } = useReport<Shelves>('topics.json')
-  const cats = (d?.categories ?? []).filter(c => c.ready).length
-  const pages = d ? Object.values(d.topics).filter(t => t.ready).length : null
+  const cats = (d?.categories ?? []).filter(c => c.ready && !c.unlisted).length
+  const pages = d ? Object.values(d.topics).filter(t => t.ready && !t.unlisted).length : null
   // ONE BUTTON, NOT A LIST. The first version drew all sixteen subjects as chips under the
   // count; TJ, on a phone: "SUPER overwhelming... we need a Reports button that just
   // suggests its a deeper page". The depth is said by the count and drawn by the two
