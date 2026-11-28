@@ -496,12 +496,16 @@ const YEARS = 30
  *  floating panel if its outside new policy drafts"). The one place in the calculator that uses status
  *  colour, and only against the state draft, never against today's rules; each mark carries a word as
  *  well as a colour. --status-bad is the site's colour for "outside a stated guideline". */
-type Mark = 'good' | 'warning' | 'bad'
+type Mark = 'good' | 'warning' | 'bad' | 'flag'
 const SOON = 3
 const MARK: Record<Mark, { c: string; sym: string; word: string }> = {
   good: { c: 'var(--status-good)', sym: '✓', word: "Meets the draft's minimum" },
   warning: { c: 'var(--status-warning)', sym: '!', word: `Reaches the draft's minimum within ${SOON} years` },
   bad: { c: 'var(--status-bad)', sym: '✕', word: "Below the draft's minimum" },
+  // A FLAG, NOT A FAILURE (TJ, 28 November 2026: "They should show as a flag but make it clear that the
+  // settings can't fix it Because it's a balance"). A fund already above the top of the draft's range
+  // before any deposit: no setting here can lower an existing balance, so it is neither good nor bad.
+  flag: { c: 'var(--text-secondary)', sym: '⚑', word: "Already above the range; no setting changes a balance" },
 }
 function MarkPill({ m, word }: { m: Mark; word?: string }) {
   const k = MARK[m]
@@ -530,8 +534,10 @@ function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: 
   // The mark: at or above the bottom is good; below it but reaching it within SOON years is a warning;
   // below and staying below is bad.
   const soon = (f: (p: After) => boolean) => { const i = P.findIndex(f); return i > 0 && i <= SOON }
-  const range = (m: (p: After) => number, lo: number, hi: number, who: string): { at: string; next: string; mark: Mark; word?: string } => {
+  const range = (m: (p: After) => number, lo: number, hi: number, who: string, start: number): { at: string; next: string; mark: Mark; word?: string } => {
     const v = m(P[0]), at = against(v, lo, hi), span = `${who}'s ${pctTrim(lo)} to ${pctTrim(hi)} minimum`
+    if (start > hi) return { at: `Above ${span} before any deposit (${pct(start, 2)})`,
+      next: `The draft sets a minimum, not a ceiling${rising(m) ? '; the dials still deposit every year' : ''}`, mark: 'flag' }
     if (at === 'below') return { at: `Below ${span}`, next: `Reaches ${pctTrim(lo)} ${when(p => m(p) >= lo, m)}`, mark: soon(p => m(p) >= lo) ? 'warning' : 'bad' }
     if (at === 'inside') return { at: `Within ${span}`, next: rising(m) ? `Passes ${pctTrim(hi)} ${when(p => m(p) > hi, m)}; the draft sets no ceiling` : 'No further deposit',
       mark: 'good' }
@@ -542,8 +548,8 @@ function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: 
     ? `At or above today's ${pctTrim(b.general_today)} minimum`
     // When today's minimum is the draft's floor, the draft's line already says when it is reached.
     : `Below today's ${pctTrim(b.general_today)} minimum` + (b.general_today === b.general_draft[0] ? '' : `; reaches it ${when(p => p.general_pct >= b.general_today, G)}`)
-  const gDraft = range(G, b.general_draft[0], b.general_draft[1], 'the draft')
-  const sDraft = range(S, b.special_draft[0], b.special_draft[1], 'the draft')
+  const gDraft = range(G, b.general_draft[0], b.general_draft[1], 'the draft', x.general / x.budget)
+  const sDraft = range(S, b.special_draft[0], b.special_draft[1], 'the draft', x.special / x.budget)
   const allLine = a.all_pct > cap
     ? `Above today's ${pctTrim(cap)} ceiling${rising(ALL) ? ', and still rising' : ''}`
     : `At or below today's ${pctTrim(cap)} ceiling; passes it ${when(p => p.all_pct > cap, ALL)}`
@@ -594,8 +600,8 @@ function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: 
         <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}</span>
       </div>
       <p className="text-[12px] mb-1" style={secondary}>{pct(u.left / x.fc, 0)} of the {usd(x.fc)} free cash, for Town Meeting to decide</p>
-      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, ...(x.general / x.budget >= b.general_draft[0] ? ['Already met before this year\'s deposit'] : []), gDraft.next]} mark={gDraft.mark} />
-      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, ...(x.special / x.budget >= b.special_draft[0] ? ['Already met before this year\'s deposit'] : []), sDraft.next, "Today's rules set no target"]} mark={sDraft.mark} />
+      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, ...(x.general / x.budget >= b.general_draft[0] && x.general / x.budget <= b.general_draft[1] ? ['Already met before this year\'s deposit'] : []), gDraft.next]} mark={gDraft.mark} />
+      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, ...(x.special / x.budget >= b.special_draft[0] && x.special / x.budget <= b.special_draft[1] ? ['Already met before this year\'s deposit'] : []), sDraft.next, "Today's rules set no target"]} mark={sDraft.mark} />
       <Row title="All stabilization funds" value={pct(a.all_pct, 2)} mark={depMark}
         word={depMark === 'good' ? "Deposits within the draft's cap" : "Deposits over the draft's cap"} lines={[allLine,
         `Deposits ${pct(a.deposits_pct, 2)} of the budget this year; the draft caps them at ${pctTrim(d.rules.draft.cap)}`]} />
@@ -614,6 +620,7 @@ function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: 
         Percent of the budget. Timelines repeat these settings every year with the free cash and the budget held at
         today's figures; neither is known ahead, and a budget that grows moves every line further away.
         Marks are against the state draft only. Its stabilization ranges are minimums, so a balance above one meets it;
+        a flag is a balance already above the range before any deposit, which no setting here can change;
         there, the warning is a balance below the minimum that reaches it within {SOON} years at this pace. On the free
         cash rules, the warning is a gap {freeWord} could close.
         On all funds the mark is the draft's cap on a year's deposits; the 10% ceiling is today's rule, not the draft's.</p>
