@@ -319,8 +319,8 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
     : { background: 'var(--surface-2)', color: 'var(--text-primary)' }
 
   const b = d.bands, r = d.rules
-  const gVerdict = `${a.general_pct >= b.general_today ? 'At or above' : 'Below'} today's ${pctTrim(b.general_today)} minimum; ${against(a.general_pct, b.general_draft[0], b.general_draft[1])} the draft's ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])} range.`
-  const sVerdict = `${against(a.special_pct, b.special_draft[0], b.special_draft[1]).replace(/^./, c => c.toUpperCase())} the draft's ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])} range. Today's rules set no target for these funds.`
+  const gVerdict = `${a.general_pct >= b.general_today ? 'At or above' : 'Below'} today's ${pctTrim(b.general_today)} minimum; ${against(a.general_pct, b.general_draft[0], b.general_draft[1])} the draft's ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])} minimum.`
+  const sVerdict = `${against(a.special_pct, b.special_draft[0], b.special_draft[1]).replace(/^./, c => c.toUpperCase())} the draft's ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])} minimum. Today's rules set no target for these funds.`
   const panel = <Panel x={x} d={d} dials={dials} u={u} a={a} label={label} />
   const aVerdict = `${a.all_pct > r.today.cap ? 'Above' : 'At or below'} today's ${pctTrim(r.today.cap)} ceiling on all funds. This year's deposits are ${pct(a.deposits_pct, 2)} of the budget, against the draft's ${pctTrim(r.draft.cap)} cap on deposits.`
 
@@ -396,10 +396,10 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances</h3>
       <div className="mt-2 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         <Bullet title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
-          band={{ lo: b.general_draft[0], hi: b.general_draft[1], label: `Draft: ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])}` }}
+          band={{ lo: b.general_draft[0], hi: b.general_draft[1], label: `Draft minimum: ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])}` }}
           line={{ at: b.general_today, label: `Today: at least ${pctTrim(b.general_today)}` }} verdict={gVerdict} />
         <Bullet title="Special purpose stabilization" before={before.special_pct} after={a.special_pct} deposit={u.special}
-          band={{ lo: b.special_draft[0], hi: b.special_draft[1], label: `Draft: ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])}` }} verdict={sVerdict} />
+          band={{ lo: b.special_draft[0], hi: b.special_draft[1], label: `Draft minimum: ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])}` }} verdict={sVerdict} />
         <Bullet title="All stabilization funds" before={before.all_pct} after={a.all_pct} deposit={u.general + u.special}
           line={{ at: r.today.cap, label: `Today: at most ${pctTrim(r.today.cap)}` }} verdict={aVerdict} />
       </div>
@@ -472,8 +472,8 @@ function Scenarios({ x, d }: { x: Inputs; d: Data }) {
     <div className="mt-3 rounded-md p-3 text-[12.5px] space-y-1.5" style={{ background: 'var(--surface-2)' }}>
       <p style={secondary}><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>An average year. </span>{d.text.practice_note}</p>
       <p style={secondary}><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>{past ? 'A year when the funds are already past the lines. ' : 'Where the funds stand. '}</span>
-        General stabilization is {pct(g, 2)} of the budget ({g >= b.general_today ? 'above' : 'below'} the {pctTrim(b.general_today)} today's rules top up to; the draft's range is {pctTrim(b.general_draft[0])} to {pctTrim(b.general_draft[1])}).
-        Special purpose is {pct(s, 2)} ({against(s, b.special_draft[0], b.special_draft[1])} the draft's {pctTrim(b.special_draft[0])} to {pctTrim(b.special_draft[1])}).
+        General stabilization is {pct(g, 2)} of the budget ({g >= b.general_today ? 'above' : 'below'} the {pctTrim(b.general_today)} today's rules top up to; the draft's minimum is {pctTrim(b.general_draft[0])} to {pctTrim(b.general_draft[1])}).
+        Special purpose is {pct(s, 2)} ({against(s, b.special_draft[0], b.special_draft[1])} the draft's {pctTrim(b.special_draft[0])} to {pctTrim(b.special_draft[1])} minimum).
         All of them together are {pct(all, 2)}, {all > cap ? 'above' : 'at or below'} today's {pctTrim(cap)} ceiling.
         {past ? ` So today's rules ask no top-up this year, and an average year's deposits would add to funds already past the ceiling.` : ''}
         {' '}{d.text.target_reading}</p>
@@ -499,9 +499,9 @@ const YEARS = 30
 type Mark = 'good' | 'warning' | 'bad'
 const SOON = 3
 const MARK: Record<Mark, { c: string; sym: string; word: string }> = {
-  good: { c: 'var(--status-good)', sym: '✓', word: 'Inside the draft' },
-  warning: { c: 'var(--status-warning)', sym: '!', word: "Near the draft's edge" },
-  bad: { c: 'var(--status-bad)', sym: '✕', word: 'Outside the draft' },
+  good: { c: 'var(--status-good)', sym: '✓', word: "Meets the draft's minimum" },
+  warning: { c: 'var(--status-warning)', sym: '!', word: `Reaches the draft's minimum within ${SOON} years` },
+  bad: { c: 'var(--status-bad)', sym: '✕', word: "Below the draft's minimum" },
 }
 function MarkPill({ m, word }: { m: Mark; word?: string }) {
   const k = MARK[m]
@@ -523,15 +523,19 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
   }
   const rising = (m: (p: After) => number) => m(P[1]) > m(P[0]) + 1e-12
   // A range: where it sits this year, and the next line it will cross at this pace.
-  // The mark reads the same glide path: inside and staying inside is good; inside but leaving, or outside
-  // but entering, within SOON years is a warning; outside and staying outside is bad.
+  // BOTH OF THE DRAFT'S RANGES ARE MINIMUMS, NOT BANDS (TJ, 28 November 2026: the draft's own setting marked
+  // "outside policy", "which makes no sense"). General: "achieve and maintain a minimum balance of five to
+  // eight percent"; special purpose: "a minimum target balance total in the range of three to five percent"
+  // (pdf page 30). So a balance above the top meets the draft; only one below the bottom is short of it.
+  // The mark: at or above the bottom is good; below it but reaching it within SOON years is a warning;
+  // below and staying below is bad.
   const soon = (f: (p: After) => boolean) => { const i = P.findIndex(f); return i > 0 && i <= SOON }
-  const range = (m: (p: After) => number, lo: number, hi: number, who: string): { at: string; next: string; mark: Mark } => {
-    const v = m(P[0]), at = against(v, lo, hi), span = `${who}'s ${pctTrim(lo)} to ${pctTrim(hi)}`
+  const range = (m: (p: After) => number, lo: number, hi: number, who: string): { at: string; next: string; mark: Mark; word?: string } => {
+    const v = m(P[0]), at = against(v, lo, hi), span = `${who}'s ${pctTrim(lo)} to ${pctTrim(hi)} minimum`
     if (at === 'below') return { at: `Below ${span}`, next: `Reaches ${pctTrim(lo)} ${when(p => m(p) >= lo, m)}`, mark: soon(p => m(p) >= lo) ? 'warning' : 'bad' }
-    if (at === 'inside') return { at: `Inside ${span}`, next: rising(m) ? `Passes ${pctTrim(hi)} ${when(p => m(p) > hi, m)}` : 'Stays inside: no further deposit',
-      mark: soon(p => m(p) > hi) ? 'warning' : 'good' }
-    return { at: `Above ${span}`, next: rising(m) ? 'Still rising: the dials deposit every year' : 'No further deposit', mark: 'bad' }
+    if (at === 'inside') return { at: `Within ${span}`, next: rising(m) ? `Passes ${pctTrim(hi)} ${when(p => m(p) > hi, m)}; the draft sets no ceiling` : 'No further deposit',
+      mark: 'good' }
+    return { at: `Above ${span}`, next: `The draft sets a minimum, not a ceiling${rising(m) ? '; the dials still deposit every year' : ''}`, mark: 'good' }
   }
   const G = (p: After) => p.general_pct, S = (p: After) => p.special_pct, ALL = (p: After) => p.all_pct
   const gMin = a.general_pct >= b.general_today
@@ -580,7 +584,8 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
       <p className="pt-2 border-t text-[11.5px] leading-snug" style={{ ...muted, borderColor: 'var(--grid)' }}>
         Percent of the budget. Timelines repeat these settings every year with the free cash and the budget held at
         today's figures; neither is known ahead, and a budget that grows moves every line further away.
-        Marks are against the state draft only: near the edge means crossing a line of it within {SOON} years at this pace.
+        Marks are against the state draft only. Its stabilization ranges are minimums, so a balance above one meets it;
+        the warning is a balance below the minimum that reaches it within {SOON} years at this pace.
         On all funds the mark is the draft's cap on a year's deposits; the 10% ceiling is today's rule, not the draft's.</p>
     </div>
   )
