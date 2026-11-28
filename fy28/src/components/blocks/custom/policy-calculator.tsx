@@ -562,7 +562,8 @@ function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: 
     ? { mark: 'good', word: "Meets the draft" }
     : want - have <= free ? { mark: 'warning', word: `Short ${usd(want - have)}; ${freeWord} could cover it` }
     : { mark: 'bad', word: `Short ${usd(want - have)} of the draft` }
-  const fcPct = (v: number) => pct(v / x.fc, 1) + ' of free cash'
+  // The value column holds the percent alone: the panel is 272px wide and "of free cash" wrapped it.
+  const fcPct = (v: number) => pct(v / x.fc, 1)
   const opebWant = rule('opeb') * x.fc, keepWant = rule('keep') * x.fc
   const [capLo, capHi] = d.capital_range
   const capHave = u.capital + share('capital'), otherHave = u.other + share('other')
@@ -601,14 +602,14 @@ function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: 
       <Row title="Retiree health trust" value={usd(a.opeb_trust)} lines={[`${pct(a.funded, 1)} funded`, 'Neither rule set sets a funding target, so no timeline']} />
       <p className="pt-3 text-[11.5px] font-semibold uppercase tracking-wide" style={muted}>The draft's free cash rules</p>
       <Row title="Retiree health trust share" value={fcPct(u.opeb)} {...floorMark(u.opeb, opebWant)}
-        lines={[`The draft: at least ${pctTrim(rule('opeb'))} of free cash, ${usd(opebWant)}`]} />
+        lines={[`Of free cash. The draft: at least ${pctTrim(rule('opeb'))}, ${usd(opebWant)}`]} />
       <Row title="Cash capital" value={fcPct(capHave)} {...capMark}
-        lines={[`The draft: ${pctTrim(capLo)} to ${pctTrim(capHi)} of free cash, ${usd(capLo * x.fc)} to ${usd(capHi * x.fc)}`, from]} />
+        lines={[`Of free cash. The draft: ${pctTrim(capLo)} to ${pctTrim(capHi)}, ${usd(capLo * x.fc)} to ${usd(capHi * x.fc)}`, from]} />
       <Row title="Other one-time costs" value={usd(otherHave)} {...otherMark}
         lines={[`The draft: the lesser of ${pctTrim(rule('other'))} of free cash or ${usd(rule('other_cap'))}, here ${usd(otherCap)}`, from]} />
       <Row title="Kept for next year" value={fcPct(u.keep)} {...floorMark(u.keep, keepWant)}
-        lines={[`The draft: at least ${pctTrim(rule('keep'))} of free cash set aside, ${usd(keepWant)}`,
-          disc ? `${usd(free)} (${fcPct(free)}) was left unspent, not set aside` : `${pct(a.next_fc_pct, 2)} of the budget; the draft's target for a certification is ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])}`]} />
+        lines={[`Of free cash. The draft: at least ${pctTrim(rule('keep'))} set aside, ${usd(keepWant)}`,
+          disc ? `${usd(free)} (${fcPct(free)} of free cash) was left unspent, not set aside` : `${pct(a.next_fc_pct, 2)} of the budget; the draft's target for a certification is ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])}`]} />
       <p className="pt-2 border-t text-[11.5px] leading-snug" style={{ ...muted, borderColor: 'var(--grid)' }}>
         Percent of the budget. Timelines repeat these settings every year with the free cash and the budget held at
         today's figures; neither is known ahead, and a budget that grows moves every line further away.
