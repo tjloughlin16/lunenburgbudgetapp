@@ -570,12 +570,27 @@ def causes(rows):
             a['over'] += av
         a['accounts'] += 1
         a['functions'].add(func_of(r))
+    # MOVED BETWEEN FUNDS (TJ, 28 November 2026: say how much of the para and teacher figures came
+    # from moves between funds). The cost journal reclasses moved onto each category from another
+    # school fund, read off the joined journal (journal_join.between_funds); None for a year the
+    # journal does not hold, never 0, because no journal is not no moves (rule 13c).
+    import journal as J
+    import journal_join as JJ
+    fys = {int(r['fiscal_year']) for r in rows}
+    moved = {}
+    held = len(fys) == 1 and next(iter(fys)) in {x['fy'] for x in J.lines()}
+    if held:
+        m = JJ.between_funds(next(iter(fys)), [r['account'] for r in rows])
+        for r in rows:
+            k = category_of(r)
+            moved[k] = moved.get(k, 0.0) + float(m.get(r['account'], 0))
     out = []
     for key, label, kind, rule, _ in CATEGORIES:
         a = acc.get(key)
         if not a:
             continue
         row = {k: round(v, 2) for k, v in a.items() if isinstance(v, float)}
+        row['between_funds'] = round(moved.get(key, 0.0), 2) if held else None
         row.update(key=key, label=label, kind=kind, accounts=a['accounts'],
                    functions=sorted(a['functions']))
         row['pct_of_revised'] = (round(100 * a['unspent'] / a['revised'], 1)

@@ -216,6 +216,7 @@ def sources():
         dict(src['p13-24'], key='p13-24'), dict(src['p13-23'], key='p13-23'),
         dict(src['d-munis'], key='d-munis'),
         dict(JS.sources()[1], key='accounts'),
+        dict(src['d-je'], key='d-je'),
     ]
 
 
@@ -517,6 +518,14 @@ def page(f):
         fact('chron', UF(f['chron']), 'electricity and therapy short of their votes, four years',
              'published'),
     ]
+    # MOVED BETWEEN FUNDS (TJ, 28 November 2026): how much of the teacher and para figures is cost
+    # journal reclasses moved to or from other school funds (payload categories[].between_funds).
+    te_bf, pa_bf = te['between_funds'], cats['paras']['between_funds']
+    if te_bf is None or pa_bf is None or not (te_bf < 0 < pa_bf) or not (te['unspent'] + te_bf > 0):
+        fail('the reclass note says teacher cost moved off and para cost on; it no longer does')
+    moved = CT.step('Of teachers’ leftover, %s is cost journal reclasses moved to other school funds; '
+                    'paraprofessional lines took on %s that way.' % (U(-te_bf), U(pa_bf)),
+                    'measured', {'a': UF(-te_bf), 'b': UF(pa_bf)})
     conclusions = [
         con('Building upkeep left %s, %s of its budget; teachers left %s, %s of theirs.'
             % (U(bl['unspent']), C.pct(bl['pct_of_revised'], 0), U(te['unspent']),
@@ -524,7 +533,8 @@ def page(f):
             {'a': UF(bl['unspent']), 'p': P(bl['pct_of_revised']), 'b': UF(te['unspent']),
              'q': P(te['pct_of_revised'], 1)},
             so='A leftover’s size says little without its budget: the largest line, teachers, '
-               'missed by one of the smallest shares.'),
+               'missed by one of the smallest shares.',
+            notes=[moved]),
         con('%s accounts closed past budget in %s; %s had %s, %s %s, and %s only %s.'
             % (C.num(ov[2026][0]), C.fy(2026), C.fy(2023), C.num(ov[2023][0]), C.fy(2024),
                C.num(ov[2024][0]), C.fy(2025), C.num(ov[2025][0])),
@@ -573,7 +583,7 @@ def page(f):
     cite = TP.cite
     flow = [
         'finding',
-        cite(('chart', 0), 'p13-26', 'd-munis'), cite(('table', 0), 'p13-26', 'd-munis'),
+        cite(('chart', 0), 'p13-26', 'd-munis'), cite(('table', 0), 'p13-26', 'd-munis', 'd-je'),
         ('conclusion', 0),
         cite(('table', 1), 'p13-26', 'p13-25', 'p13-24', 'p13-23', 'd-munis'),
         ('conclusion', 1),

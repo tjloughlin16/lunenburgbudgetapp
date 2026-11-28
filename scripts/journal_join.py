@@ -351,6 +351,35 @@ def entries():
     return out
 
 
+def between_funds(fy, accounts):
+    """{account: Decimal}: the cost moved ONTO each of `accounts` in fiscal year `fy` by a `reclass`
+    entry whose other side is in another school fund (TJ, 28 November 2026: say how much of the para
+    and teacher figures came from moves between funds). `accounts` is the scope a page measures --
+    the school general fund ledger's accounts. A reclass that nets to zero inside that scope moved
+    money between its own lines; one that does not has its other side in a grant or revolving fund.
+    Positive is cost moved on, so backing it out lowers what the line left by that much. A fact
+    about the ledger; why anybody posted it is not in it."""
+    import journal as J
+    accounts = set(accounts)
+    kinds = {r['entry']: r['kind'] for r in entries() if int(r['fiscal_year']) == fy}
+    by_j = defaultdict(list)
+    for r in J.lines():
+        if r['source'] in SOURCES and r['fy'] == fy:
+            by_j[r['journal']].append(r)
+    moved = defaultdict(lambda: Decimal(0))
+    for j, v in by_j.items():
+        parts = split(v)
+        for i, g in enumerate(parts, 1):
+            eid = j if len(parts) == 1 else '%s-%d' % (j, i)
+            if kinds[eid] != 'reclass':
+                continue
+            mine = [r for r in g if r['account'] in accounts]
+            if mine and sum(r['amt'] for r in mine) != 0:
+                for r in mine:
+                    moved[r['account']] += r['amt']
+    return dict(moved)
+
+
 def main():
     rows = build()
     text = render(rows)

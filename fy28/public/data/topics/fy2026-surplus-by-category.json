@@ -30,6 +30,25 @@
     }
    },
    "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$135,062",
+       "unit": "",
+       "value": 135061.5
+      },
+      "b": {
+       "text": "$205,645",
+       "unit": "",
+       "value": 205644.96
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Of teachers’ leftover, $135,062 is cost journal reclasses moved to other school funds; paraprofessional lines took on $205,645 that way."
+    }
+   ],
    "rests_on": [
     "bldg",
     "teach",
@@ -351,7 +370,8 @@
   {
    "cites": [
     0,
-    4
+    4,
+    6
    ],
    "i": 0,
    "part": "table"
@@ -436,6 +456,11 @@
    "href": "/docs/data/munis-school-journal-accounts.csv",
    "key": "accounts",
    "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-entries.csv",
+   "key": "d-je",
+   "label": "Lunenburg Budget Project — munis-school-journal-entries.csv (the school journal, each entry joined to its other side)"
   }
  ],
  "table": {

@@ -173,6 +173,7 @@ def sources():
         'd-munis': ('munis-school-ytd.csv', 'the period-13 school reports, one row an account'),
         'd-ledger': ('munis-ledger.csv', 'the period-12 general fund report, one row an account'),
         'd-wb': ('lps-budget-lines.csv', 'the FY2027 district workbook, line by line'),
+        'd-je': ('munis-school-journal-entries.csv', 'the school journal, each entry joined to its other side'),
     }
     for k, (f, what) in ours.items():
         if not os.path.exists(os.path.join(ROOT, 'fy28', 'public', 'docs', 'data', f)):
@@ -660,13 +661,23 @@ def build():
           % C.fy(2027), 'published', {'y': F(2027)}),
         f('post', None, 'whether the post was vacant, on leave, or paid elsewhere', 'gap',
           closes='the position-control roster by month, and payroll by account')]
+    # MOVED BETWEEN FUNDS (TJ, 28 November 2026): how much of the overrun is cost that journal
+    # reclasses moved onto the para lines from other school funds (fy26-school-surplus.json,
+    # categories[].between_funds, from journal_join.between_funds).
+    pa_bf = pa['between_funds']
+    if pa_bf is None or not 0 < pa_bf < -pa['unspent']:
+        fail('Staff lines says reclasses from other funds account for part, not all, of the para overrun')
+    pa_moved = step('Of that, %s is cost journal reclasses moved onto the para lines from other school '
+                    'funds; without it they ran %s over.' % (C.usd(pa_bf), C.usd(-pa['unspent'] - pa_bf)),
+                    'measured', {'m': U(pa_bf), 'r': U(-pa['unspent'] - pa_bf)})
     cons_s = [
         con('Counselor and psychologist lines left %s; paraprofessional lines ran %s past budget.'
             % (C.usd(cs['unspent']), C.usd(-pa['unspent'])), ['cs-left', 'pa-over'],
             {'c': U(cs['unspent']), 'p': U(-pa['unspent'])},
             so='Within one appropriation the two roughly offset, so the school total shows '
                'neither.',
-            notes=[step('That one paid for the other is a hypothesis. Late hires, contract steps '
+            notes=[pa_moved,
+                   step('That one paid for the other is a hypothesis. Late hires, contract steps '
                         'and hours fit the same two numbers, and no headcount is published.',
                         'hypothesis')]),
         con('Two kindergarten aide accounts with no budget and no transfer paid %s.'
@@ -752,9 +763,9 @@ def build():
                         'School Committee')],
         sources=[dict(src['p13-26'], key='p13'), dict(src['wb27'], key='wb27'),
                  dict(src['sc0729'], key='sc0729'), dict(src['d-munis'], key='d-munis'),
-                 dict(src['d-wb'], key='d-wb')],
+                 dict(src['d-wb'], key='d-wb'), dict(src['d-je'], key='d-je')],
         flow=['finding',
-              TP.cite(('block', 0), 'p13', 'd-munis'), ('conclusion', 0),
+              TP.cite(('block', 0), 'p13', 'd-munis', 'd-je'), ('conclusion', 0),
               TP.cite(('chart', 0), 'p13', 'd-munis'), ('conclusion', 1), ('conclusion', 2),
               TP.cite(('table', 0), 'p13', 'd-munis', 'wb27', 'd-wb'), 'said',
               TP.cite(('chart', 1), 'p13', 'd-munis'), ('conclusion', 3),
@@ -1153,6 +1164,11 @@ def build():
     pv_pct = 100 * pv_left / pv['revised_budget']
     co_pct = 100 * co_over_ / co['revised_budget']
     bldg, cnsl, tch = (cats[k]['unspent'] for k in ('buildings', 'counselors', 'teachers'))
+    # Moved between funds (TJ, 28 November 2026): teacher cost moved OFF the general fund (negative),
+    # para cost moved ON (positive); the paragraph below says so and would read wrong otherwise.
+    te_bf, pa_bf_ = cats['teachers']['between_funds'], cats['paras']['between_funds']
+    if te_bf is None or pa_bf_ is None or not (te_bf < 0 < pa_bf_) or not (tch + te_bf > 0):
+        fail('The year in detail says reclasses moved teacher cost off and para cost on; they no longer do')
     hov = {c['key'] for c in oth if c['unspent'] < 0}
     if not (bldg > 0 and cnsl > 0 and tch > 0 and hov >= {'paras', 'sped_services', 'transport'}):
         fail('In short names upkeep, counselors and teachers under; paras, special-ed services and '
@@ -1203,6 +1219,12 @@ def build():
          '%s; paraprofessionals, special education contracted services and transportation ran over.'
          % (C.usd(oth_under), C.usd(oth_over), C.usd(bldg), C.usd(cnsl), C.usd(tch)),
          {'a': U(oth_under), 'b': U(oth_over), 'c': U(bldg), 'd': U(cnsl), 'e': U(tch)}),
+        ('**Part of both staff figures is money moved between funds.** Journal reclasses moved %s of '
+         'teacher cost from the general fund to other school funds, and %s of paraprofessional cost '
+         'onto it; without those moves teachers left %s and paraprofessionals ran %s over. The '
+         'journal shows the moves, not why they were made.'
+         % (C.usd(-te_bf), C.usd(pa_bf_), C.usd(tch + te_bf), C.usd(-cats['paras']['unspent'] - pa_bf_)),
+         {'a': U(-te_bf), 'b': U(pa_bf_), 'c': U(tch + te_bf), 'd': U(-cats['paras']['unspent'] - pa_bf_)}),
         ('**What the budget assumed, and the ledger does not show.** All %s kinds of spending that '
          'left the most were budgeted above what they spent the year before, and %s then spent less '
          'again; building upkeep was budgeted %s above its %s spending. A psychologist account and a '
