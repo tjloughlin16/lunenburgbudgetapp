@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**749 of 6631 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**750 of 6662 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **5882 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **5912 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -48,7 +48,7 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY24 | 93 |
 | FY25 | 122 |
 | FY26 | 165 |
-| FY27 | 297 |
+| FY27 | 298 |
 | FY28 | 36 |
 | FY29 | 5 |
 | FY30 | 3 |
@@ -127,6 +127,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/connecting-the-budget.pdf` — The same analysis, rendered for reading on paper
 - `analyses/department-budgets.md` — The town departments and the schools, budget by budget, FY2010–FY2025
 - `analyses/early-learning-center.md` — The Early Learning Center: what we hold, where it comes from, and a timeline
+- `analyses/financial-policies.md` — Financial policies: the rules, the draft, and the figures
 - `analyses/free-cash.md` — Free cash: is Lunenburg hoarding, or rebuilding?
 - `analyses/hiring-here-or-placing-there.md` — Hiring here instead of placing there
 - `analyses/historical-report.md` — Lunenburg Historical Report: what sixty-seven annual reports say
@@ -412,6 +413,7 @@ Listed so this view cannot look more complete than it is.
 - `data/finance-committee-delivery.csv` — Every file in the Finance Committee’s delivery, and what became of it
 - `data/finance-committee-task-docs.csv` — Which reading task each delivered file belongs to
 - `data/finance-committee-tasks.csv` — The Finance Committee’s files, as reading tasks
+- `data/financial-policy-record.csv` — The financial policies in public meetings, 2013 to 2026, meeting by meeting
 - `data/fincom-ledgers.csv` — The MUNIS ledgers in the Finance Committee’s files, one table
 - `data/fincom-presentation-survey.csv` — Every Finance Committee presentation, surveyed for tables
 - `data/fincom-presentation-tables.csv` — Tables read from Finance Committee presentations
@@ -433,11 +435,13 @@ Listed so this view cannot look more complete than it is.
 - `data/ingest-plan.csv` — The plan for the annual-report backlog, in batches
 - `data/j1-unreadable.csv` — Trust fund pages that could not be read reliably
 - `data/job-posting-owners.csv` — Which board or department each job posting is linked from, and why
+- `data/journal-entry-flags.csv` — School journal entries flagged as unusual, with the rule that flagged each
 - `data/keystone-tuition-rates.csv` — Keystone Collaborative tuition rates, as printed, FY2024–FY2027
 - `data/line-history-coverage.csv` — What the line reader could and could not read, document by document
 - `data/line-history-disagreements.csv` — Where two documents state the same budget line differently
 - `data/line-history.csv` — Every budget line, budget and actual, year by year
 - `data/link-status.csv` — Whether each source document is still public
+- `data/local-receipts-estimates.csv` — Local receipts: what the town estimated, against what it collected
 - `data/lps-budget-lines.csv` — Budget lines, tidy CSV
 - `data/lunenburg.db` — The whole analysis database, SQLite
 - `data/meeting-document-timestamps.csv` — When each agenda and each set of minutes was MADE, from the document itself
@@ -459,7 +463,3 @@ Listed so this view cannot look more complete than it is.
 - `data/monty-tech-expenses.csv` — Monty Tech’s spending by category, three years, off a chart
 - `data/munis-gf-p13-reading-totals.csv` — The GRAND TOTAL line of each of those two reports, as printed
 - `data/munis-gf-p13-reading.csv` — The town general fund at the FY2025 and FY2026 close, 1,160 accounts each
-- `data/munis-ledger.csv` — Every MUNIS budget report we hold, one table
-- `data/munis-parks-journal-accounts.csv` — The parks funds’ 18 accounts, FY2026 as the journal report prints them
-- `data/munis-parks-journal.csv` — The parks funds, every posting, FY2023 to FY2026
-- `data/munis-school-journal-accounts.csv` — The school department’s 3,356 accounts, FY2026 as the journal report prints them

@@ -3929,7 +3929,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Analysis: Town and Schools](/reports) | reference | — / 55.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.7 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 21.5 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.9 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 15.0 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 15.7 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 499.8 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |

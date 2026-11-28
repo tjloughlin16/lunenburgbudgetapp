@@ -1,7 +1,7 @@
 # The Lunenburg Budget Project
 
 An independent, checkable archive of the Lunenburg, Massachusetts town and school budget:
-53,918 documents, 455 datasets, and 12,364 agendas and sets
+53,967 documents, 455 datasets, and 12,364 agendas and sets
 of minutes across 52 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
@@ -27,7 +27,7 @@ clone is needed:
 | you want | fetch |
 |---|---|
 | what this holds, and its limits | [`fy28/public/llms.txt`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/llms.txt) |
-| every dataset, with row counts and sizes | [`fy28/public/api/tables.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/tables.json) — 243 of them |
+| every dataset, with row counts and sizes | [`fy28/public/api/tables.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/tables.json) — 244 of them |
 | the grain of every table, and the traps | [`fy28/public/api/schema.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/api/schema.json) |
 | every figure the site computes | [`fy28/public/data/model/index.json`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/fy28/public/data/model/index.json) — 38 sections, one file each |
 | every source document, with its sha256 | [`sources/data/archive-manifest.csv`](https://raw.githubusercontent.com/tjloughlin16/lunenburgbudgetapp/main/sources/data/archive-manifest.csv) |
@@ -36,7 +36,7 @@ clone is needed:
 **Nothing in `fy28/public/api/` is larger than one fetch.** Anything that would be is split
 — `staff_roster_entries.json` is an index and `staff_roster_entries/2022.json` is that year.
 
-**The documents themselves are not in this repository.** 53,918 files, 1.47 GB, live
+**The documents themselves are not in this repository.** 53,967 files, 1.47 GB, live
 in a public object store; `sources/data/archive-manifest.csv` lists every one with its
 sha256 and `python3 scripts/sync_archive.py --pull` fetches them. The extracted text IS
 here, under `sources/*/text/`, and that is what the analysis reads.
