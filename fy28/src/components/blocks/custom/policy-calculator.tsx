@@ -23,8 +23,8 @@
  *  settings against its own Python (rule 9).
  *
  *  RULE 7: every number is tagged PUBLISHED, YOUR INPUT or OUR ARITHMETIC. RULE 8: the two rule
- *  sets are drawn at the same weight in greys; no status colour appears, and nothing says which
- *  setting is better. */
+ *  sets are drawn at the same weight in greys, and nothing says which setting is better. The one
+ *  exception is the floating panel's marks, which TJ asked for, against the state draft only. */
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { CustomProps } from './index'
 import { after, allocate, project, type After, type DialKey, type Dials, type Inputs, type UseKey, type Uses } from './policy-calculator-math'
@@ -492,6 +492,25 @@ function Scenarios({ x, d }: { x: Inputs; d: Data }) {
  *  settings ran every year, how long until it reaches or passes that line. A yearly amount that builds no
  *  balance (what is kept back for next year) has no timeline, and says so. No status colour (rule 8). */
 const YEARS = 30
+/** GOOD, WARNING, BAD AGAINST THE DRAFT (TJ, 28 November 2026: "mark things as good, bad, warning in the
+ *  floating panel if its outside new policy drafts"). The one place in the calculator that uses status
+ *  colour, and only against the state draft, never against today's rules; each mark carries a word as
+ *  well as a colour. --status-bad is the site's colour for "outside a stated guideline". */
+type Mark = 'good' | 'warning' | 'bad'
+const SOON = 3
+const MARK: Record<Mark, { c: string; sym: string; word: string }> = {
+  good: { c: 'var(--status-good)', sym: '✓', word: 'Inside the draft' },
+  warning: { c: 'var(--status-warning)', sym: '!', word: "Near the draft's edge" },
+  bad: { c: 'var(--status-bad)', sym: '✕', word: 'Outside the draft' },
+}
+function MarkPill({ m, word }: { m: Mark; word?: string }) {
+  const k = MARK[m]
+  return (
+    <span className="mt-0.5 mb-0.5 inline-flex items-center gap-1 rounded-sm pl-1.5 pr-2 py-0.5 text-[11.5px] font-semibold"
+      style={{ background: 'var(--surface-2)', boxShadow: `inset 3px 0 0 ${k.c}`, color: 'var(--text-primary)' }}>
+      <span aria-hidden style={{ color: k.c }}>{k.sym}</span>{word ?? k.word}</span>
+  )
+}
 function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials; u: Uses; a: After; label: string }) {
   const P = useMemo(() => project(x, dials, YEARS), [x, dials])
   const b = d.bands, cap = d.rules.today.cap
@@ -504,11 +523,15 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
   }
   const rising = (m: (p: After) => number) => m(P[1]) > m(P[0]) + 1e-12
   // A range: where it sits this year, and the next line it will cross at this pace.
-  const range = (m: (p: After) => number, lo: number, hi: number, who: string) => {
+  // The mark reads the same glide path: inside and staying inside is good; inside but leaving, or outside
+  // but entering, within SOON years is a warning; outside and staying outside is bad.
+  const soon = (f: (p: After) => boolean) => { const i = P.findIndex(f); return i > 0 && i <= SOON }
+  const range = (m: (p: After) => number, lo: number, hi: number, who: string): { at: string; next: string; mark: Mark } => {
     const v = m(P[0]), at = against(v, lo, hi), span = `${who}'s ${pctTrim(lo)} to ${pctTrim(hi)}`
-    if (at === 'below') return { at: `Below ${span}`, next: `Reaches ${pctTrim(lo)} ${when(p => m(p) >= lo, m)}` }
-    if (at === 'inside') return { at: `Inside ${span}`, next: rising(m) ? `Passes ${pctTrim(hi)} ${when(p => m(p) > hi, m)}` : 'Stays inside: no further deposit' }
-    return { at: `Above ${span}`, next: rising(m) ? 'Still rising: the dials deposit every year' : 'No further deposit' }
+    if (at === 'below') return { at: `Below ${span}`, next: `Reaches ${pctTrim(lo)} ${when(p => m(p) >= lo, m)}`, mark: soon(p => m(p) >= lo) ? 'warning' : 'bad' }
+    if (at === 'inside') return { at: `Inside ${span}`, next: rising(m) ? `Passes ${pctTrim(hi)} ${when(p => m(p) > hi, m)}` : 'Stays inside: no further deposit',
+      mark: soon(p => m(p) > hi) ? 'warning' : 'good' }
+    return { at: `Above ${span}`, next: rising(m) ? 'Still rising: the dials deposit every year' : 'No further deposit', mark: 'bad' }
   }
   const G = (p: After) => p.general_pct, S = (p: After) => p.special_pct, ALL = (p: After) => p.all_pct
   const gMin = a.general_pct >= b.general_today
@@ -521,12 +544,14 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
     ? `Above today's ${pctTrim(cap)} ceiling${rising(ALL) ? ', and still rising' : ''}`
     : `At or below today's ${pctTrim(cap)} ceiling; passes it ${when(p => p.all_pct > cap, ALL)}`
   const fcAt = against(a.next_fc_pct, b.fc_draft[0], b.fc_draft[1])
-  const Row = ({ title, value, lines }: { title: string; value: string; lines: string[] }) => (
+  const depMark: Mark = a.deposits_pct <= d.rules.draft.cap ? 'good' : 'bad'
+  const Row = ({ title, value, lines, mark, word }: { title: string; value: string; lines: string[]; mark?: Mark; word?: string }) => (
     <div className="py-2 border-t" style={{ borderColor: 'var(--grid)' }}>
       <div className="flex items-baseline justify-between gap-2">
         <span className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>{title}</span>
         <span className="text-[14px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{value}</span>
       </div>
+      {mark ? <MarkPill m={mark} word={word} /> : null}
       {lines.map(l => <p key={l} className="text-[12px] leading-snug" style={secondary}>{l}</p>)}
     </div>
   )
@@ -541,17 +566,22 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
         <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}</span>
       </div>
       <p className="text-[12px] mb-1" style={secondary}>{pct(u.left / x.fc, 0)} of the {usd(x.fc)} free cash, for Town Meeting to decide</p>
-      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, gDraft.next]} />
-      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, sDraft.next, "Today's rules set no target"]} />
-      <Row title="All stabilization funds" value={pct(a.all_pct, 2)} lines={[allLine,
+      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, gDraft.next]} mark={gDraft.mark} />
+      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, sDraft.next, "Today's rules set no target"]} mark={sDraft.mark} />
+      <Row title="All stabilization funds" value={pct(a.all_pct, 2)} mark={depMark}
+        word={depMark === 'good' ? "Deposits within the draft's cap" : "Deposits over the draft's cap"} lines={[allLine,
         `Deposits ${pct(a.deposits_pct, 2)} of the budget this year; the draft caps them at ${pctTrim(d.rules.draft.cap)}`]} />
       <Row title="Retiree health trust" value={usd(a.opeb_trust)} lines={[`${pct(a.funded, 1)} funded`, 'Neither rule set sets a funding target, so no timeline']} />
+      {/* No mark: the draft's 5 to 7% is a target for a whole certification, and what is kept back is only
+          where the next one starts, so the draft's own setting would read as outside its own target. */}
       <Row title="Kept for next year" value={pct(a.next_fc_pct, 2)} lines={[
         a.next_fc > 0 ? `${usd(a.next_fc)}, ${fcAt} the draft's ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])} for a certification` : 'Nothing kept back by rule',
         'A yearly amount, not a balance that builds, so no timeline']} />
       <p className="pt-2 border-t text-[11.5px] leading-snug" style={{ ...muted, borderColor: 'var(--grid)' }}>
         Percent of the budget. Timelines repeat these settings every year with the free cash and the budget held at
-        today's figures; neither is known ahead, and a budget that grows moves every line further away.</p>
+        today's figures; neither is known ahead, and a budget that grows moves every line further away.
+        Marks are against the state draft only: near the edge means crossing a line of it within {SOON} years at this pace.
+        On all funds the mark is the draft's cap on a year's deposits; the 10% ceiling is today's rule, not the draft's.</p>
     </div>
   )
 }
