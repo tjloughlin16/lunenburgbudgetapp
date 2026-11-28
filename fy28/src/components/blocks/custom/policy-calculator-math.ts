@@ -56,3 +56,20 @@ export function after(x: Inputs, u: Uses): After {
     next_fc: u.keep, next_fc_pct: u.keep / x.budget,
   }
 }
+
+/** THE SAME SETTINGS, YEAR AFTER YEAR (TJ, 28 November 2026: "an estimate of how long before the target
+ *  topoffs are hit"). Each year applies the dials as set to the balances the year before left, with the
+ *  free cash and the budget held at the starting figures -- an assumption the panel states, since
+ *  neither is known ahead. A top-up dial deposits only the gap, so it stops once its line is met; a
+ *  share-of-free-cash dial deposits the same each year and never stops at a target. Index 0 is this
+ *  year, the same figures as after(x, allocate(x, d)). */
+export function project(x: Inputs, d: Dials, years: number): After[] {
+  let s = { ...x }
+  const out: After[] = []
+  for (let i = 0; i < years; i++) {
+    const u = allocate(s, d)
+    out.push(after(s, u))
+    s = { ...s, general: s.general + u.general, special: s.special + u.special, opeb_trust: s.opeb_trust + u.opeb }
+  }
+  return out
+}

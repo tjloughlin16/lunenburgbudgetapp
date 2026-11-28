@@ -25,9 +25,9 @@
  *  RULE 7: every number is tagged PUBLISHED, YOUR INPUT or OUR ARITHMETIC. RULE 8: the two rule
  *  sets are drawn at the same weight in greys; no status colour appears, and nothing says which
  *  setting is better. */
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { CustomProps } from './index'
-import { after, allocate, type DialKey, type Dials, type Inputs, type UseKey, type Uses } from './policy-calculator-math'
+import { after, allocate, project, type After, type DialKey, type Dials, type Inputs, type UseKey, type Uses } from './policy-calculator-math'
 
 type Input = { key: keyof Inputs; label: string; value: number; text: string; source: string }
 type Setting = { value: number | null; source: string | null; quote: string | null }
@@ -271,6 +271,16 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   // Until a dial moves, the slot is Today in practice's dials and nothing is stored; the rule sets are
   // the references it is compared against. Reset returns it to Today in practice.
   const [mode, setMode] = useState<Mode>('mine')
+  // The phone bar shows only while the calculator is on screen.
+  const root = useRef<HTMLDivElement>(null)
+  const [onScreen, setOnScreen] = useState(false)
+  useEffect(() => {
+    const el = root.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(([e]) => setOnScreen(e.isIntersecting))
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   const names = useMemo(() => Object.fromEntries(d.uses.map(u => [u.key, u.label])) as Record<UseKey, string>, [d.uses])
 
   // A preset's "no cap" is the whole free cash, so it follows the free cash the reader types.
@@ -311,10 +321,12 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   const b = d.bands, r = d.rules
   const gVerdict = `${a.general_pct >= b.general_today ? 'At or above' : 'Below'} today's ${pctTrim(b.general_today)} minimum; ${against(a.general_pct, b.general_draft[0], b.general_draft[1])} the draft's ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])} range.`
   const sVerdict = `${against(a.special_pct, b.special_draft[0], b.special_draft[1]).replace(/^./, c => c.toUpperCase())} the draft's ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])} range. Today's rules set no target for these funds.`
+  const panel = <Panel x={x} d={d} dials={dials} u={u} a={a} label={label} />
   const aVerdict = `${a.all_pct > r.today.cap ? 'Above' : 'At or below'} today's ${pctTrim(r.today.cap)} ceiling on all funds. This year's deposits are ${pct(a.deposits_pct, 2)} of the budget, against the draft's ${pctTrim(r.draft.cap)} cap on deposits.`
 
   return (
-    <div className="w-full max-w-5xl min-w-0" aria-label={alt}>
+    <div ref={root} className="w-full max-w-6xl min-w-0 lg:grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-5 lg:items-start" aria-label={alt}>
+      <div className="min-w-0">
       {/* PINNED WHILE THE CALCULATOR IS ON SCREEN: which setting is showing, the switch between them,
           and what the dials leave for Town Meeting (TJ: "a pinned header ... that shows the amount of
           money left for town meeting appropriation from the dials set"). */}
@@ -331,7 +343,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
             <button key={p.key} type="button" aria-pressed={mode === p.key} onClick={() => setMode(p.key)}
               className="px-2.5 py-1 rounded-md text-[13.5px] font-medium" style={btn(mode === p.key)}>{p.label}</button>
           ))}
-          <span className="ml-auto text-right leading-tight">
+          <span className="ml-auto text-right leading-tight lg:hidden">
             <span className="block text-[11.5px]" style={muted}>{DISCRETIONARY}</span>
             <span className="text-[18px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}</span>
             <span className="ml-1.5 text-[12px] tabular-nums" style={secondary}>{pct(u.left / x.fc, 0)}</span>
@@ -366,7 +378,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
       {/* THE DIALS */}
       <h3 className="mt-6 text-[16px] font-semibold">Off the top: the dials <span className="text-[13px] font-normal" style={muted}>· {label}</span></h3>
       <p className="mt-0.5 text-[12.5px]" style={muted}>{d.text.order_note} {d.text.floors_note}</p>
-      <div className="mt-2 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-2 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {d.dials.map(q => (
           <DialCard key={q.key} d={q} v={dials[q.key]} fc={x.fc} amount={q.key === 'other_cap' ? undefined : u.by[q.key]}
             range={q.key === 'capital' ? d.capital_range : undefined}
@@ -382,7 +394,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
 
       {/* THE OUTCOMES */}
       <h3 className="mt-6 text-[16px] font-semibold">What it does to the balances</h3>
-      <div className="mt-2 grid gap-3 lg:grid-cols-3">
+      <div className="mt-2 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         <Bullet title="General stabilization" before={before.general_pct} after={a.general_pct} deposit={u.general}
           band={{ lo: b.general_draft[0], hi: b.general_draft[1], label: `Draft: ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])}` }}
           line={{ at: b.general_today, label: `Today: at least ${pctTrim(b.general_today)}` }} verdict={gVerdict} />
@@ -438,6 +450,11 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
               </li>)))}
         </ul>
       </details>
+      </div>
+      <aside className="hidden lg:block sticky self-start overflow-y-auto"
+        style={{ top: 'calc(var(--header-h) + 12px)', maxHeight: 'calc(100vh - var(--header-h) - 24px)' }}
+        aria-label="What the settings do to the balances">{panel}</aside>
+      <PhonePanel show={onScreen} left={u.left}>{panel}</PhonePanel>
     </div>
   )
 }
@@ -463,6 +480,98 @@ function Scenarios({ x, d }: { x: Inputs; d: Data }) {
       {past ? <p style={secondary}><span className="font-semibold" style={{ color: 'var(--text-primary)' }}>The years ahead. </span>
         With no further deposits, general stabilization stays at or above {pctTrim(b.general_today)} until the budget passes {usd(x.general / b.general_today)},
         and all the funds stay above {pctTrim(cap)} until it passes {usd((x.general + x.special) / cap)}. Until then each year starts past those lines, as this one does, not where an average year started. <Tag k="ours" /></p> : null}
+    </div>
+  )
+}
+
+/** THE FLOATING PANEL (TJ, 28 November 2026: "a floating side panel that includes the total discretionary,
+ *  as well as the fields in 'What it does to the balances'. AND an estimate of how long before the target
+ *  topoffs are hit ... for things like 'general stabilization', we need to show when the selected settings
+ *  put those within target or not"). It stays beside the dials so a reader moving one sees every balance
+ *  answer. Each fund with a target says where this year leaves it against each line, and, if the same
+ *  settings ran every year, how long until it reaches or passes that line. A yearly amount that builds no
+ *  balance (what is kept back for next year) has no timeline, and says so. No status colour (rule 8). */
+const YEARS = 30
+function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials; u: Uses; a: After; label: string }) {
+  const P = useMemo(() => project(x, dials, YEARS), [x, dials])
+  const b = d.bands, cap = d.rules.today.cap
+  // When a line is first crossed: "this year", "in N years", or why never.
+  const when = (f: (p: After) => boolean, m: (p: After) => number) => {
+    const i = P.findIndex(f)
+    if (i === 0) return 'this year'
+    if (i > 0) return `in ${i} year${i === 1 ? '' : 's'}`
+    return m(P[YEARS - 1]) > m(P[0]) + 1e-12 ? `not within ${YEARS} years at this pace` : 'never: these settings add nothing to it'
+  }
+  const rising = (m: (p: After) => number) => m(P[1]) > m(P[0]) + 1e-12
+  // A range: where it sits this year, and the next line it will cross at this pace.
+  const range = (m: (p: After) => number, lo: number, hi: number, who: string) => {
+    const v = m(P[0]), at = against(v, lo, hi), span = `${who}'s ${pctTrim(lo)} to ${pctTrim(hi)}`
+    if (at === 'below') return { at: `Below ${span}`, next: `Reaches ${pctTrim(lo)} ${when(p => m(p) >= lo, m)}` }
+    if (at === 'inside') return { at: `Inside ${span}`, next: rising(m) ? `Passes ${pctTrim(hi)} ${when(p => m(p) > hi, m)}` : 'Stays inside: no further deposit' }
+    return { at: `Above ${span}`, next: rising(m) ? 'Still rising: the dials deposit every year' : 'No further deposit' }
+  }
+  const G = (p: After) => p.general_pct, S = (p: After) => p.special_pct, ALL = (p: After) => p.all_pct
+  const gMin = a.general_pct >= b.general_today
+    ? `At or above today's ${pctTrim(b.general_today)} minimum`
+    // When today's minimum is the draft's floor, the draft's line already says when it is reached.
+    : `Below today's ${pctTrim(b.general_today)} minimum` + (b.general_today === b.general_draft[0] ? '' : `; reaches it ${when(p => p.general_pct >= b.general_today, G)}`)
+  const gDraft = range(G, b.general_draft[0], b.general_draft[1], 'the draft')
+  const sDraft = range(S, b.special_draft[0], b.special_draft[1], 'the draft')
+  const allLine = a.all_pct > cap
+    ? `Above today's ${pctTrim(cap)} ceiling${rising(ALL) ? ', and still rising' : ''}`
+    : `At or below today's ${pctTrim(cap)} ceiling; passes it ${when(p => p.all_pct > cap, ALL)}`
+  const fcAt = against(a.next_fc_pct, b.fc_draft[0], b.fc_draft[1])
+  const Row = ({ title, value, lines }: { title: string; value: string; lines: string[] }) => (
+    <div className="py-2 border-t" style={{ borderColor: 'var(--grid)' }}>
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>{title}</span>
+        <span className="text-[14px] font-semibold tabular-nums" style={{ color: 'var(--text-primary)' }}>{value}</span>
+      </div>
+      {lines.map(l => <p key={l} className="text-[12px] leading-snug" style={secondary}>{l}</p>)}
+    </div>
+  )
+  return (
+    <div className="rounded-md p-3" style={{ ...card, boxShadow: '0 2px 10px rgba(0,0,0,0.08)' }}>
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="text-[11.5px]" style={muted}>{label}</span>
+        <Tag k="ours" />
+      </div>
+      <div className="mt-1 flex items-baseline justify-between gap-2">
+        <span className="text-[13px] font-semibold" style={{ color: 'var(--text-primary)' }}>{DISCRETIONARY}</span>
+        <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}</span>
+      </div>
+      <p className="text-[12px] mb-1" style={secondary}>{pct(u.left / x.fc, 0)} of the {usd(x.fc)} free cash, for Town Meeting to decide</p>
+      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, gDraft.next]} />
+      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, sDraft.next, "Today's rules set no target"]} />
+      <Row title="All stabilization funds" value={pct(a.all_pct, 2)} lines={[allLine,
+        `Deposits ${pct(a.deposits_pct, 2)} of the budget this year; the draft caps them at ${pctTrim(d.rules.draft.cap)}`]} />
+      <Row title="Retiree health trust" value={usd(a.opeb_trust)} lines={[`${pct(a.funded, 1)} funded`, 'Neither rule set sets a funding target, so no timeline']} />
+      <Row title="Kept for next year" value={pct(a.next_fc_pct, 2)} lines={[
+        a.next_fc > 0 ? `${usd(a.next_fc)}, ${fcAt} the draft's ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])} for a certification` : 'Nothing kept back by rule',
+        'A yearly amount, not a balance that builds, so no timeline']} />
+      <p className="pt-2 border-t text-[11.5px] leading-snug" style={{ ...muted, borderColor: 'var(--grid)' }}>
+        Percent of the budget. Timelines repeat these settings every year with the free cash and the budget held at
+        today's figures; neither is known ahead, and a budget that grows moves every line further away.</p>
+    </div>
+  )
+}
+
+/** On a phone the panel is a bar along the bottom, shown only while the calculator is on screen, that opens
+ *  upward. */
+function PhonePanel({ show, children, left }: { show: boolean; children: React.ReactNode; left: number }) {
+  const [open, setOpen] = useState(false)
+  if (!show) return null
+  return (
+    <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 px-3 pb-3 pointer-events-none">
+      <div className="pointer-events-auto mx-auto max-w-md">
+        {open ? <div className="mb-2 max-h-[65vh] overflow-y-auto rounded-md">{children}</div> : null}
+        <button type="button" onClick={() => setOpen(o => !o)} aria-expanded={open}
+          className="w-full flex items-center justify-between gap-2 rounded-md px-3 py-2 text-[13.5px] font-medium"
+          style={{ background: 'var(--text-primary)', color: 'var(--surface-1)', boxShadow: '0 2px 10px rgba(0,0,0,0.25)' }}>
+          <span>{open ? 'Hide the balances' : 'Balances and targets'}</span>
+          <span className="tabular-nums">{usd(left)} discretionary {open ? '▾' : '▴'}</span>
+        </button>
+      </div>
     </div>
   )
 }
