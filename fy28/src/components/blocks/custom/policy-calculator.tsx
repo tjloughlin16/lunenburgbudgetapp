@@ -321,7 +321,7 @@ export default function PolicyCalculator({ data, alt }: CustomProps) {
   const b = d.bands, r = d.rules
   const gVerdict = `${a.general_pct >= b.general_today ? 'At or above' : 'Below'} today's ${pctTrim(b.general_today)} minimum; ${against(a.general_pct, b.general_draft[0], b.general_draft[1])} the draft's ${pctTrim(b.general_draft[0])} to ${pctTrim(b.general_draft[1])} minimum.`
   const sVerdict = `${against(a.special_pct, b.special_draft[0], b.special_draft[1]).replace(/^./, c => c.toUpperCase())} the draft's ${pctTrim(b.special_draft[0])} to ${pctTrim(b.special_draft[1])} minimum. Today's rules set no target for these funds.`
-  const panel = <Panel x={x} d={d} dials={dials} u={u} a={a} label={label} />
+  const panel = <Panel x={x} d={d} dials={dials} u={u} a={a} label={label} disc={mode === 'practice' ? d.practice_discretionary : undefined} />
   const aVerdict = `${a.all_pct > r.today.cap ? 'Above' : 'At or below'} today's ${pctTrim(r.today.cap)} ceiling on all funds. This year's deposits are ${pct(a.deposits_pct, 2)} of the budget, against the draft's ${pctTrim(r.draft.cap)} cap on deposits.`
 
   return (
@@ -511,7 +511,7 @@ function MarkPill({ m, word }: { m: Mark; word?: string }) {
       <span aria-hidden style={{ color: k.c }}>{k.sym}</span>{word ?? k.word}</span>
   )
 }
-function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials; u: Uses; a: After; label: string }) {
+function Panel({ x, d, dials, u, a, label, disc }: { x: Inputs; d: Data; dials: Dials; u: Uses; a: After; label: string; disc?: Disc[] }) {
   const P = useMemo(() => project(x, dials, YEARS), [x, dials])
   const b = d.bands, cap = d.rules.today.cap
   // When a line is first crossed: "this year", "in N years", or why never.
@@ -547,8 +547,31 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
   const allLine = a.all_pct > cap
     ? `Above today's ${pctTrim(cap)} ceiling${rising(ALL) ? ', and still rising' : ''}`
     : `At or below today's ${pctTrim(cap)} ceiling; passes it ${when(p => p.all_pct > cap, ALL)}`
-  const fcAt = against(a.next_fc_pct, b.fc_draft[0], b.fc_draft[1])
   const depMark: Mark = a.deposits_pct <= d.rules.draft.cap ? 'good' : 'bad'
+  // THE DRAFT'S FREE CASH RULES, each judged by where the money ENDS UP (TJ, 28 November 2026, choosing it:
+  // "that makes sense to me"). Under today in practice, Town Meeting's own votes from the discretionary part
+  // count toward capital and one-time costs, split as May 2025 split its own; what no vote used is
+  // "free". Under any other setting the discretionary part is undecided, so all of it is free. A rule
+  // short of the draft is a warning when the free money alone could close the gap (each row on its own,
+  // so two warnings may lean on the same dollars), and bad when it could not.
+  const rule = (k: DialKey) => d.dials.find(q => q.key === k)!.draft.value ?? 0
+  const share = (k: Disc['key']) => (disc?.find(q => q.key === k)?.share ?? 0) * u.left
+  const free = disc ? share('stayed') : u.left
+  const freeWord = disc ? 'what no vote used' : 'the discretionary part'
+  const floorMark = (have: number, want: number): { mark: Mark; word: string } => have >= want - 0.5
+    ? { mark: 'good', word: "Meets the draft" }
+    : want - have <= free ? { mark: 'warning', word: `Short ${usd(want - have)}; ${freeWord} could cover it` }
+    : { mark: 'bad', word: `Short ${usd(want - have)} of the draft` }
+  const fcPct = (v: number) => pct(v / x.fc, 1) + ' of free cash'
+  const opebWant = rule('opeb') * x.fc, keepWant = rule('keep') * x.fc
+  const [capLo, capHi] = d.capital_range
+  const capHave = u.capital + share('capital'), otherHave = u.other + share('other')
+  const otherCap = Math.min(rule('other') * x.fc, rule('other_cap'))
+  const capMark = capHave > capHi * x.fc + 0.5 ? { mark: 'bad' as Mark, word: `Over the draft's ${pctTrim(capHi)} by ${usd(capHave - capHi * x.fc)}` }
+    : floorMark(capHave, capLo * x.fc)
+  const otherMark = otherHave > otherCap + 0.5 ? { mark: 'bad' as Mark, word: `Over the draft's limit by ${usd(otherHave - otherCap)}` }
+    : { mark: 'good' as Mark, word: 'Within the draft' }
+  const from = disc ? "Town Meeting's votes, as May 2025 split its discretionary part" : 'Off the top only; the discretionary part is not yet decided'
   const Row = ({ title, value, lines, mark, word }: { title: string; value: string; lines: string[]; mark?: Mark; word?: string }) => (
     <div className="py-2 border-t" style={{ borderColor: 'var(--grid)' }}>
       <div className="flex items-baseline justify-between gap-2">
@@ -570,22 +593,28 @@ function Panel({ x, d, dials, u, a, label }: { x: Inputs; d: Data; dials: Dials;
         <span className="text-[22px] font-semibold tabular-nums" style={{ color: 'var(--brand)' }}>{usd(u.left)}</span>
       </div>
       <p className="text-[12px] mb-1" style={secondary}>{pct(u.left / x.fc, 0)} of the {usd(x.fc)} free cash, for Town Meeting to decide</p>
-      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, gDraft.next]} mark={gDraft.mark} />
-      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, sDraft.next, "Today's rules set no target"]} mark={sDraft.mark} />
+      <Row title="General stabilization" value={pct(a.general_pct, 2)} lines={[gMin, gDraft.at, ...(x.general / x.budget >= b.general_draft[0] ? ['Already met before this year\'s deposit'] : []), gDraft.next]} mark={gDraft.mark} />
+      <Row title="Special purpose" value={pct(a.special_pct, 2)} lines={[sDraft.at, ...(x.special / x.budget >= b.special_draft[0] ? ['Already met before this year\'s deposit'] : []), sDraft.next, "Today's rules set no target"]} mark={sDraft.mark} />
       <Row title="All stabilization funds" value={pct(a.all_pct, 2)} mark={depMark}
         word={depMark === 'good' ? "Deposits within the draft's cap" : "Deposits over the draft's cap"} lines={[allLine,
         `Deposits ${pct(a.deposits_pct, 2)} of the budget this year; the draft caps them at ${pctTrim(d.rules.draft.cap)}`]} />
       <Row title="Retiree health trust" value={usd(a.opeb_trust)} lines={[`${pct(a.funded, 1)} funded`, 'Neither rule set sets a funding target, so no timeline']} />
-      {/* No mark: the draft's 5 to 7% is a target for a whole certification, and what is kept back is only
-          where the next one starts, so the draft's own setting would read as outside its own target. */}
-      <Row title="Kept for next year" value={pct(a.next_fc_pct, 2)} lines={[
-        a.next_fc > 0 ? `${usd(a.next_fc)}, ${fcAt} the draft's ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])} for a certification` : 'Nothing kept back by rule',
-        'A yearly amount, not a balance that builds, so no timeline']} />
+      <p className="pt-3 text-[11.5px] font-semibold uppercase tracking-wide" style={muted}>The draft's free cash rules</p>
+      <Row title="Retiree health trust share" value={fcPct(u.opeb)} {...floorMark(u.opeb, opebWant)}
+        lines={[`The draft: at least ${pctTrim(rule('opeb'))} of free cash, ${usd(opebWant)}`]} />
+      <Row title="Cash capital" value={fcPct(capHave)} {...capMark}
+        lines={[`The draft: ${pctTrim(capLo)} to ${pctTrim(capHi)} of free cash, ${usd(capLo * x.fc)} to ${usd(capHi * x.fc)}`, from]} />
+      <Row title="Other one-time costs" value={usd(otherHave)} {...otherMark}
+        lines={[`The draft: the lesser of ${pctTrim(rule('other'))} of free cash or ${usd(rule('other_cap'))}, here ${usd(otherCap)}`, from]} />
+      <Row title="Kept for next year" value={fcPct(u.keep)} {...floorMark(u.keep, keepWant)}
+        lines={[`The draft: at least ${pctTrim(rule('keep'))} of free cash set aside, ${usd(keepWant)}`,
+          disc ? `${usd(free)} (${fcPct(free)}) was left unspent, not set aside` : `${pct(a.next_fc_pct, 2)} of the budget; the draft's target for a certification is ${pctTrim(b.fc_draft[0])} to ${pctTrim(b.fc_draft[1])}`]} />
       <p className="pt-2 border-t text-[11.5px] leading-snug" style={{ ...muted, borderColor: 'var(--grid)' }}>
         Percent of the budget. Timelines repeat these settings every year with the free cash and the budget held at
         today's figures; neither is known ahead, and a budget that grows moves every line further away.
         Marks are against the state draft only. Its stabilization ranges are minimums, so a balance above one meets it;
-        the warning is a balance below the minimum that reaches it within {SOON} years at this pace.
+        there, the warning is a balance below the minimum that reaches it within {SOON} years at this pace. On the free
+        cash rules, the warning is a gap {freeWord} could close.
         On all funds the mark is the draft's cap on a year's deposits; the 10% ceiling is today's rule, not the draft's.</p>
     </div>
   )
