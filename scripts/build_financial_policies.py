@@ -1050,6 +1050,74 @@ def policy_list(b):
     return TB.claims(m, cons, facts)
 
 
+# ------------------------------------------------------------------- already where the draft wants it
+
+def already_there(b):
+    """WHAT IS ALREADY AT THE DRAFT'S LEVEL, AND WHAT KEEPS IT THERE (TJ, 28 November 2026: "show what
+    things already are at the balance And that and within range but need to be put into a policy").
+    Each level the draft sets, against the town's latest figure, and whether a rule of today's holds it.
+    A balance already above a level is a flag, not a failure: no budget setting can lower a balance."""
+    sbl, sbh = FP.BANDS['stab']
+    spl, sph = FP.BANDS['special']
+    fcl, fch = FP.BANDS['fc']
+    dtl, dth = FP.BANDS['debt_target']
+    cap_lo, cap_hi = b['capital_band']
+    g, sp_, fcp = b['stab_pct'][2025], b['special25_pct'], b['fc_pct'][b['latest']]
+    cap, debt = b['capital'][2025]['total'], b['peer_debt']['Lunenburg']
+    fy25, fyl = F(2025), F(b['latest'])
+    R = lambda v: RULE(v, '%s%%' % v)
+    # (label, the town's figure inside the draft's level, above its top, held by today's rule, why)
+    rows = [
+        ('General stabilization', sbl <= g <= sbh, g > sbh, g >= FP.BANDS['stab_today'],
+         T('{p} of the budget in {y}; the draft asks {a} to {z}. Today’s five percent floor holds the bottom.',
+           p=P(g), y=fy25, a=R(sbl), z=R(sbh))),
+        ('Special purpose funds', spl <= sp_ <= sph, sp_ > sph, False,
+         T('{p} of the budget in {y}, above the draft’s {a} to {z}; no rule today sets a level for them.',
+           p=P(sp_), y=fy25, a=R(spl), z=R(sph))),
+        ('Free cash', fcl <= fcp <= fch, fcp > fch, False,
+         T('The {y} certification was {p} of the budget; the draft aims at {a} to {z}. Today sets no target.',
+           p=P(fcp), y=fyl, a=R(fcl), z=R(fch))),
+        ('Capital in cash', cap_lo <= cap <= cap_hi, cap > cap_hi, False,
+         T('{y}’s plan funded {c}, inside the draft’s {a} to {z}. Today sets no yearly level.',
+           c=U(cap), y=fy25, a=U(cap_lo), z=U(cap_hi))),
+        ('Debt service', dtl <= debt <= dth, debt > dth, False,
+         T('{p} of the {y} budget, inside the draft’s {a} to {z}; today’s limits are on the levy, not the budget.',
+           p=P(debt), y=fy25, a=R(dtl), z=R(dth))),
+    ]
+    if any(not (inn or above) for _, inn, above, _, _ in rows):
+        FP.fail('already there: a level is no longer met; this block lists only levels already met, rewrite it')
+    blk = TB.checks('Already at the draft’s level',
+                    ['Within the draft’s level', 'Above its top', 'Held there by a rule today'],
+                    [dict(label=lab, why=why, contrast=False,
+                          marks=[i for i, on in enumerate((inn, above, held)) if on])
+                     for lab, inn, above, held, why in rows],
+                    place='body', tone='good', first='Level', second='Where it stands',
+                    column_notes=[L('The town’s latest figure sits inside the range the draft sets.'),
+                                  L('Above the top of the draft’s range: a balance no budget setting lowers. The draft’s '
+                                    'stabilization ranges are minimums, so above is not short of it.'),
+                                  L('A rule the town has adopted today keeps it at that level.')],
+                    note=L('Latest year held for each. Which rule holds a level is our reading of both documents.'))
+    n = len(rows)
+    n_held = sum(1 for r in rows if r[3])
+    f = LD.fact
+    Nn = lambda x: N(x, 'levels')
+    facts = [f('met', Nn(n), 'levels the town already meets in the draft’s terms', 'estimate'),
+             f('held', Nn(n_held), 'of them held there by a rule of today’s', 'estimate')]
+    if n_held != 1:
+        FP.fail('already there: the conclusion says one level is held by today\'s rules; it no longer is')
+    cons = [TP.conclusion('All %d of these levels are already met; a rule of today’s holds only %d of them.'
+                          % (n, n_held), ['met', 'held'], {'a': Nn(n), 'b': Nn(n_held)},
+                          so='Adopting the draft would write down levels the town already reaches; '
+                             'today no adopted rule keeps the others there.')]
+    import brief
+    bad = []
+    for i, c in enumerate(cons):
+        bad += brief.check_unit(c, 'already there conclusion %d' % (i + 1)) + brief.check_unit(c['so'], 'already there means %d' % (i + 1))
+    if bad:
+        FP.fail('\n  '.join(bad))
+    return TB.claims(blk, cons, facts)
+
+
 # ------------------------------------------------------------------------------ the report
 
 def report(b, x1, x2, x3, x4):

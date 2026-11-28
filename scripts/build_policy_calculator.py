@@ -709,7 +709,9 @@ def hub(calc_page):
     # The answer is the calculator page's finding, with the figures that page registered for it.
     answer = calc_page['finding']['text'] + ' The calculator applies either rule set, or any other.'
     figs = calc_page['finding']['figures']
-    return TP.hub(HUB, answer, None, blocks=[points, policies, more, stance], answer_figures=figs)
+    # WHAT IS ALREADY THERE (TJ, 28 November 2026): the levels the town meets now, and which a rule holds.
+    there = BFP.already_there(BFP.data())
+    return TP.hub(HUB, answer, None, blocks=[points, policies, there, more, stance], answer_figures=figs)
 
 
 def run_math(payload):
